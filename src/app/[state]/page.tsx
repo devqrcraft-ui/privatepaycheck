@@ -71,4 +71,4 @@ export default function StatePage({ params }: { params: { state: string } }) {
       </footer>
     </main>
   );
-}}
+}
