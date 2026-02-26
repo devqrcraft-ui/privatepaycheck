@@ -179,22 +179,22 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
         }
 
         select option { background: #1e1b4b; }
+        @media (max-width: 768px) { .ad-tall { display: none; } }
 
         /* ── TICKER ─────────────────────────────────────────────── */
         .ticker-wrap {
           overflow: hidden;
           white-space: nowrap;
           width: 100%;
-          border-top: 1px solid rgba(255,255,255,0.07);
-          border-bottom: 1px solid rgba(255,255,255,0.07);
-          background: rgba(99,102,241,0.08);
-          padding: 8px 0;
+          border-top: 1px solid rgba(99,102,241,0.4);
+          border-bottom: 1px solid rgba(99,102,241,0.4);
+          background: rgba(99,102,241,0.18);
+          padding: 9px 0;
         }
         .ticker-inner {
           display: inline-block;
           white-space: nowrap;
-          /* animation duration: shorter = faster. 60s is comfortable reading speed */
-          animation: ticker-scroll 60s linear infinite;
+          animation: ticker-scroll 55s linear infinite;
           will-change: transform;
         }
         @keyframes ticker-scroll {
@@ -204,11 +204,12 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
         .ticker-inner:hover { animation-play-state: paused; }
         .ticker-item {
           display: inline-block;
-          padding: 0 28px;
-          font-size: 12px;
-          font-weight: 500;
-          color: rgba(255,255,255,0.55);
-          letter-spacing: 0.02em;
+          padding: 0 32px;
+          font-size: 12.5px;
+          font-weight: 600;
+          color: #c4b5fd;
+          letter-spacing: 0.03em;
+          text-shadow: 0 0 12px rgba(167,139,250,0.7);
         }
 
         /* ── RESPONSIVE ─────────────────────────────────────────── */
@@ -235,11 +236,21 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
         .row2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
         .tax-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 10px; margin-bottom: 10px; }
 
-        /* Mobile: stack layout */
+        /* Mobile */
         @media (max-width: 768px) {
           .calc-layout { flex-direction: column; padding: 0 12px; }
-          .calc-sidebar { width: 100%; position: static; flex-direction: row; flex-wrap: wrap; }
-          .calc-sidebar .adbox { flex: 1 1 calc(50% - 8px); min-width: 140px; }
+          .calc-sidebar {
+            width: 100%;
+            position: static;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 12px;
+          }
+          .calc-sidebar .adbox {
+            flex: 1 1 calc(50% - 6px);
+            min-width: 140px;
+            height: 120px !important;
+          }
 
           .row1 { grid-template-columns: 1fr 1fr; }
           .row1 > :last-child { grid-column: 1 / -1; }
@@ -258,6 +269,7 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
           .row1 { grid-template-columns: 1fr; }
           .row2 { grid-template-columns: 1fr; }
           .row1 > :last-child, .row2 > :last-child { grid-column: auto; }
+          .calc-sidebar .adbox { flex: 1 1 100%; }
         }
       `}</style>
 
@@ -390,7 +402,7 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
           <div className="adbox" style={{ height: '250px' }}>
             Ad · 300×250
           </div>
-          <div className="adbox" style={{ height: '600px' }}>
+          <div className="adbox ad-tall" style={{ height: '600px' }}>
             Ad · 300×600
           </div>
         </div>
