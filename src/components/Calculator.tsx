@@ -108,7 +108,7 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
         <div style={{flex:'1 1 0',minWidth:0}}>
 
           {/* Freq buttons */}
-          <div style={{display:'flex',gap:'8px',flexWrap:'wrap',marginBottom:'20px'}}>
+          <div style={{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'16px'}}>
             {FREQS.map(x=>(
               <button key={x.id} className={`fb${freq===x.id?' on':''}`} onClick={()=>setFreq(x.id)}>{x.label}</button>
             ))}

@@ -48,7 +48,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               {st.name + ' has NO state income tax!'}
             </div>
           )}
-          <h1 style={{ fontSize:'clamp(24px,4vw,44px)', fontWeight:900, margin:'0 0 12px' }}>
+          <h1 style={{ fontSize:'clamp(24px,4vw,44px)',fontWeight:900,margin:'0 0 12px',textTransform:'uppercase' as const,letterSpacing:'-0.5px' }}>
             {st.name + ' Paycheck Calculator 2026'}
           </h1>
           <p style={{ fontSize:'16px', opacity:0.65, maxWidth:'550px', margin:'0 auto', lineHeight:1.7 }}>

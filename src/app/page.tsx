@@ -39,7 +39,7 @@ export default function HomePage() {
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#4ade80' }}>
             🔒 Your salary data NEVER leaves your browser
           </div>
-          <h1 style={{ fontSize: 'clamp(36px,6vw,68px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>
+          <h1 style={{ fontSize:'clamp(28px,5vw,56px)',textTransform:'uppercase' as const,letterSpacing:'-1px', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>
             Paycheck Calculator 2026<br/>
             <span style={{ color: '#818cf8' }}>Free & 100% Private</span>
           </h1>
