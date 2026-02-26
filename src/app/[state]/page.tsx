@@ -40,7 +40,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <Link href={homeHref} style={{ color:'rgba(255,255,255,0.6)', fontSize:'13px', textDecoration:'none' }}>
           {'All States'}
         </Link>
-      </nav>
+      </nav><div style={{overflow:'hidden',background:'linear-gradient(90deg,#4f46e5,#7c3aed)',padding:'10px 0'}}><style>{('@keyframes marquee{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}')}</style><div style={{display:'inline-block',whiteSpace:'nowrap',animation:'marquee 28s linear infinite',fontSize:'13px',color:'white',opacity:0.95}}>🔒 Your salary data NEVER leaves your browser &nbsp;·&nbsp; ⚡ Instant calculations &nbsp;·&nbsp; 🗺️ All 50 US States &nbsp;·&nbsp; 🆓 100% Free — no signup &nbsp;·&nbsp; 💼 Federal + State + FICA + 401k + HSA &nbsp;·&nbsp; 📱 Works on any device &nbsp;·&nbsp; 🔒 Your salary data NEVER leaves your browser &nbsp;·&nbsp; ⚡ Instant results</div></div>
       <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ textAlign:'center', marginBottom:'40px' }}>
           {noTax && (
