@@ -1,172 +1,303 @@
-'use client';
-import { useState } from 'react';
-import {
-  FEDERAL_BRACKETS_SINGLE, FEDERAL_BRACKETS_MARRIED, FEDERAL_BRACKETS_HOH,
-  STANDARD_DEDUCTION, FICA, STATE_TAXES, STATES_LIST
-} from '@/lib/taxRates2026';
+"use client";
+// src/components/Calculator.tsx
 
-function calcFederalTax(taxable: number, status: string) {
-  const brackets =
-    status === 'married' ? FEDERAL_BRACKETS_MARRIED :
-    status === 'hoh'     ? FEDERAL_BRACKETS_HOH :
-                           FEDERAL_BRACKETS_SINGLE;
-  let tax = 0;
-  for (const b of brackets) {
-    if (taxable <= b.min) break;
-    tax += (Math.min(taxable, b.max) - b.min) * b.rate;
-  }
-  return tax;
-}
+import { useState, useCallback } from "react";
+import { calculatePaycheck, type CalculatorInput, type TaxBreakdown } from "@/lib/calculator";
+import { STATE_TAX_RATES, PAY_FREQUENCIES, FILING_STATUS } from "@/lib/taxRates";
 
-function calcFICA(annual: number) {
-  const ss    = Math.min(annual, FICA.socialSecurity.cap) * FICA.socialSecurity.rate;
-  const med   = annual * FICA.medicare.rate;
-  const addMed = annual > FICA.additionalMedicare.threshold
-    ? (annual - FICA.additionalMedicare.threshold) * FICA.additionalMedicare.rate : 0;
-  return { ss, med: med + addMed, total: ss + med + addMed };
-}
+const fmt = (n: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n);
 
-const PERIODS = [
-  { key: 'hourly',       label: 'Hourly',        mult: 2080 },
-  { key: 'weekly',       label: 'Weekly',         mult: 52 },
-  { key: 'biweekly',     label: 'Bi-Weekly',      mult: 26 },
-  { key: 'semimonthly',  label: 'Semi-Monthly',   mult: 24 },
-  { key: 'monthly',      label: 'Monthly',        mult: 12 },
-  { key: 'annual',       label: 'Annual',         mult: 1 },
-];
+const pct = (n: number) => n.toFixed(2) + "%";
 
-const fmt = (v: number) =>
-  '$' + Math.round(v).toLocaleString('en-US');
+const stateList = Object.entries(STATE_TAX_RATES).sort((a, b) =>
+  a[1].name.localeCompare(b[1].name)
+);
 
-const fmtD = (v: number) =>
-  '$' + v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export default function Calculator() {
+  const [form, setForm] = useState<CalculatorInput>({
+    grossIncome: 75000,
+    filingStatus: "single",
+    payFrequency: "biweekly",
+    stateCode: "CA",
+    preTax401k: 0,
+    preTaxHSA: 0,
+    preTaxHealthInsurance: 0,
+  });
 
-export default function Calculator({ defaultState = 'ca' }: { defaultState?: string }) {
-  const [salary,  setSalary]  = useState('75000');
-  const [period,  setPeriod]  = useState('annual');
-  const [status,  setStatus]  = useState('single');
-  const [state,   setState]   = useState(defaultState);
-  const [k401,    setK401]    = useState('0');
-  const [hsa,     setHsa]     = useState('0');
-  const [health,  setHealth]  = useState('0');
+  const [result, setResult] = useState<TaxBreakdown | null>(null);
 
-  const periodObj = PERIODS.find(p => p.key === period)!;
-  const gross     = parseFloat(salary) || 0;
-  const annual    = gross * periodObj.mult;
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const { name, value } = e.target;
+      setForm((prev) => ({
+        ...prev,
+        [name]: ["grossIncome", "preTax401k", "preTaxHSA", "preTaxHealthInsurance"].includes(name)
+          ? parseFloat(value) || 0
+          : value,
+      }));
+    },
+    []
+  );
 
-  const preTax    = (parseFloat(k401) || 0) + (parseFloat(hsa) || 0) + (parseFloat(health) || 0);
-  const stdDed    = STANDARD_DEDUCTION[status as keyof typeof STANDARD_DEDUCTION] || 14600;
-  const taxable   = Math.max(0, annual - preTax - stdDed);
-
-  const federal   = calcFederalTax(taxable, status);
-  const fica      = calcFICA(annual);
-  const stateRate = STATE_TAXES[state]?.rate || 0;
-  const stateTax  = taxable * stateRate;
-  const totalTax  = federal + fica.total + stateTax;
-  const netAnnual = annual - totalTax - preTax;
-
-  const perP = (v: number) => v / periodObj.mult;
-  const effRate = annual > 0 ? ((totalTax / annual) * 100).toFixed(1) : '0.0';
-
-  const inp: React.CSSProperties = {
-    width: '100%', padding: '10px 14px', borderRadius: '8px',
-    border: '1px solid rgba(255,255,255,0.15)',
-    background: 'rgba(255,255,255,0.08)', color: 'white',
-    fontSize: '15px', fontWeight: 600, outline: 'none',
+  const handleCalculate = () => {
+    const res = calculatePaycheck(form);
+    setResult(res);
   };
-  const sel: React.CSSProperties = { ...inp, cursor: 'pointer' };
-  const label: React.CSSProperties = { fontSize: '12px', opacity: 0.6, marginBottom: '6px', display: 'block' };
+
+  const stateName = STATE_TAX_RATES[form.stateCode]?.name || "";
+  const isNoTaxState = STATE_TAX_RATES[form.stateCode]?.noTax;
+  const periodLabel = PAY_FREQUENCIES[form.payFrequency].label;
 
   return (
-    <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '24px', maxWidth: '900px', margin: '0 auto' }}>
-
-      {/* Pay Period Selector */}
-      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '20px' }}>
-        {PERIODS.map(p => (
-          <button key={p.key} onClick={() => setPeriod(p.key)} style={{
-            padding: '8px 14px', borderRadius: '8px', border: '1px solid',
-            borderColor: period === p.key ? '#818cf8' : 'rgba(255,255,255,0.15)',
-            background: period === p.key ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.04)',
-            color: 'white', cursor: 'pointer', fontSize: '13px', fontWeight: 600,
-          }}>{p.label}</button>
-        ))}
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '16px', marginBottom: '20px' }}>
-        <div>
-          <label style={label}>{periodObj.label} Gross Pay</label>
-          <input type="number" value={salary} onChange={e => setSalary(e.target.value)} style={inp} placeholder="75000" />
-        </div>
-        <div>
-          <label style={label}>Filing Status</label>
-          <select value={status} onChange={e => setStatus(e.target.value)} style={sel}>
-            <option value="single">Single</option>
-            <option value="married">Married Filing Jointly</option>
-            <option value="hoh">Head of Household</option>
-          </select>
-        </div>
-        <div>
-          <label style={label}>State</label>
-          <select value={state} onChange={e => setState(e.target.value)} style={sel}>
-            {STATES_LIST.map(s => (
-              <option key={s.slug} value={s.slug}>
-                {s.name}{s.noTax ? ' (No Tax)' : ''}
-              </option>
-            ))}
-          </select>
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      {/* Header */}
+      <div className="text-center mb-10">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          💰 Paycheck Calculator 2026
+        </h1>
+        <p className="text-gray-500 text-sm">
+          Federal + State taxes · FICA · Pre-tax deductions · All 50 states
+        </p>
+        <div className="inline-flex items-center gap-2 mt-3 bg-green-50 border border-green-200 rounded-full px-4 py-1 text-xs text-green-700 font-medium">
+          🔒 Your data never leaves your browser
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '16px', marginBottom: '24px' }}>
-        <div>
-          <label style={label}>Annual 401(k) Contribution</label>
-          <input type="number" value={k401} onChange={e => setK401(e.target.value)} style={inp} placeholder="0" />
+      {/* Form */}
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Annual Gross Income */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Annual Gross Income
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input
+                type="number"
+                name="grossIncome"
+                value={form.grossIncome}
+                onChange={handleChange}
+                className="w-full pl-7 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                placeholder="75000"
+                min="0"
+              />
+            </div>
+          </div>
+
+          {/* Pay Frequency */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Pay Frequency
+            </label>
+            <select
+              name="payFrequency"
+              value={form.payFrequency}
+              onChange={handleChange}
+              className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
+            >
+              {Object.entries(PAY_FREQUENCIES).map(([key, val]) => (
+                <option key={key} value={key}>{val.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Filing Status */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Filing Status
+            </label>
+            <select
+              name="filingStatus"
+              value={form.filingStatus}
+              onChange={handleChange}
+              className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
+            >
+              {Object.entries(FILING_STATUS).map(([key, label]) => (
+                <option key={key} value={key}>{label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* State */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              State
+            </label>
+            <select
+              name="stateCode"
+              value={form.stateCode}
+              onChange={handleChange}
+              className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 bg-white"
+            >
+              {stateList.map(([code, state]) => (
+                <option key={code} value={code}>
+                  {state.name} {state.noTax ? "🟢" : ""}
+                </option>
+              ))}
+            </select>
+            {isNoTaxState && (
+              <p className="text-xs text-green-600 mt-1">✅ {stateName} has no state income tax</p>
+            )}
+          </div>
+
+          {/* Pre-tax deductions */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              401(k) Contribution (Annual)
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+              <input
+                type="number"
+                name="preTax401k"
+                value={form.preTax401k}
+                onChange={handleChange}
+                className="w-full pl-7 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                placeholder="0"
+                min="0"
+                max="23500"
+              />
+            </div>
+            <p className="text-xs text-gray-400 mt-1">2026 limit: $23,500</p>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              HSA Contribution (Annual)
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+              <input
+                type="number"
+                name="preTaxHSA"
+                value={form.preTaxHSA}
+                onChange={handleChange}
+                className="w-full pl-7 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                placeholder="0"
+                min="0"
+              />
+            </div>
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Health Insurance Premium (Annual)
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">$</span>
+              <input
+                type="number"
+                name="preTaxHealthInsurance"
+                value={form.preTaxHealthInsurance}
+                onChange={handleChange}
+                className="w-full pl-7 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                placeholder="0"
+                min="0"
+              />
+            </div>
+          </div>
         </div>
-        <div>
-          <label style={label}>Annual HSA Contribution</label>
-          <input type="number" value={hsa} onChange={e => setHsa(e.target.value)} style={inp} placeholder="0" />
-        </div>
-        <div>
-          <label style={label}>Health Insurance (Annual)</label>
-          <input type="number" value={health} onChange={e => setHealth(e.target.value)} style={inp} placeholder="0" />
-        </div>
+
+        <button
+          onClick={handleCalculate}
+          className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition-colors text-base"
+        >
+          Calculate My Paycheck →
+        </button>
       </div>
 
       {/* Results */}
-      <div style={{ background: 'linear-gradient(135deg,rgba(99,102,241,0.15),rgba(34,211,238,0.1))', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '20px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <div>
-            <div style={{ fontSize: '13px', opacity: 0.65 }}>Take-Home Pay ({periodObj.label})</div>
-            <div style={{ fontSize: 'clamp(28px,5vw,44px)', fontWeight: 900, color: '#4ade80' }}>{fmtD(perP(netAnnual))}</div>
+      {result && (
+        <div className="space-y-5">
+          {/* Top summary */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-blue-600 text-white rounded-2xl p-5 text-center">
+              <div className="text-xs font-medium opacity-80 mb-1">{periodLabel} Take-Home</div>
+              <div className="text-2xl font-bold">{fmt(result.netPerPaycheck)}</div>
+            </div>
+            <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-5 text-center">
+              <div className="text-xs font-medium text-gray-500 mb-1">Annual Net Pay</div>
+              <div className="text-2xl font-bold text-gray-900">{fmt(result.netAnnual)}</div>
+            </div>
+            <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-5 text-center">
+              <div className="text-xs font-medium text-gray-500 mb-1">Total Tax Rate</div>
+              <div className="text-2xl font-bold text-red-500">{pct(result.effectiveTotalRate)}</div>
+            </div>
+            <div className="bg-white border border-gray-100 shadow-sm rounded-2xl p-5 text-center">
+              <div className="text-xs font-medium text-gray-500 mb-1">Federal Rate</div>
+              <div className="text-2xl font-bold text-orange-500">{pct(result.effectiveFederalRate)}</div>
+            </div>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: '13px', opacity: 0.65 }}>Annual Net</div>
-            <div style={{ fontSize: '24px', fontWeight: 800 }}>{fmt(netAnnual)}</div>
-            <div style={{ fontSize: '12px', opacity: 0.55, marginTop: '4px' }}>Effective tax rate: {effRate}%</div>
+
+          {/* Breakdown table */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <h2 className="font-semibold text-gray-800 mb-4 text-lg">
+              {periodLabel} Paycheck Breakdown
+            </h2>
+            <div className="space-y-3">
+              <Row label="Gross Pay" value={fmt(result.grossPerPaycheck)} color="text-gray-900" />
+              {result.preTaxDeductionsPerPaycheck > 0 && (
+                <Row label="Pre-Tax Deductions" value={`-${fmt(result.preTaxDeductionsPerPaycheck)}`} color="text-purple-600" />
+              )}
+              <div className="border-t border-dashed border-gray-200 pt-3">
+                <Row label="Federal Income Tax" value={`-${fmt(result.federalTaxPerPaycheck)}`} color="text-red-500" sub={pct(result.effectiveFederalRate)} />
+                {!isNoTaxState && (
+                  <Row label={`${stateName} State Tax`} value={`-${fmt(result.stateTaxPerPaycheck)}`} color="text-orange-500" sub={pct(result.effectiveStateRate)} />
+                )}
+                {isNoTaxState && (
+                  <Row label={`${stateName} State Tax`} value="$0.00" color="text-green-500" sub="No state tax 🟢" />
+                )}
+                <Row label="Social Security (6.2%)" value={`-${fmt(result.socialSecurityPerPaycheck)}`} color="text-yellow-600" />
+                <Row label="Medicare (1.45%)" value={`-${fmt(result.medicarePerPaycheck)}`} color="text-yellow-600" />
+              </div>
+              <div className="border-t-2 border-gray-200 pt-3 mt-3">
+                <Row label="Net Take-Home Pay" value={fmt(result.netPerPaycheck)} color="text-blue-600 font-bold text-lg" />
+              </div>
+            </div>
           </div>
+
+          {/* Annual summary */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <h2 className="font-semibold text-gray-800 mb-4 text-lg">Annual Summary</h2>
+            <div className="space-y-3">
+              <Row label="Annual Gross Income" value={fmt(result.grossAnnual)} color="text-gray-900" />
+              {result.preTaxDeductions > 0 && (
+                <Row label="Total Pre-Tax Deductions" value={`-${fmt(result.preTaxDeductions)}`} color="text-purple-600" />
+              )}
+              <Row label="Federal Taxable Income" value={fmt(result.federalTaxableIncome)} color="text-gray-600" />
+              <div className="border-t border-dashed border-gray-200 pt-3">
+                <Row label="Annual Federal Tax" value={`-${fmt(result.federalTax)}`} color="text-red-500" />
+                {!isNoTaxState && <Row label={`Annual ${stateName} Tax`} value={`-${fmt(result.stateTax)}`} color="text-orange-500" />}
+                <Row label="Annual Social Security" value={`-${fmt(result.socialSecurity)}`} color="text-yellow-600" />
+                <Row label="Annual Medicare" value={`-${fmt(result.medicare)}`} color="text-yellow-600" />
+                <Row label="Total Annual Taxes" value={`-${fmt(result.totalTax)}`} color="text-red-600 font-semibold" />
+              </div>
+              <div className="border-t-2 border-gray-200 pt-3">
+                <Row label="Annual Net Income" value={fmt(result.netAnnual)} color="text-blue-600 font-bold text-lg" />
+              </div>
+            </div>
+          </div>
+
+          <p className="text-xs text-gray-400 text-center pb-4">
+            * Estimates based on 2026 federal and state tax tables. Standard deduction applied. Actual taxes may vary.
+            Your data never leaves your browser.
+          </p>
         </div>
-      </div>
+      )}
+    </div>
+  );
+}
 
-      {/* Tax Breakdown */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '12px' }}>
-        {[
-          { label: 'Federal Income Tax', value: federal, color: '#f87171' },
-          { label: 'Social Security',    value: fica.ss, color: '#fb923c' },
-          { label: 'Medicare',           value: fica.med, color: '#fbbf24' },
-          { label: `State Tax (${STATE_TAXES[state]?.name || state})`, value: stateTax, color: '#a78bfa' },
-          { label: 'Pre-Tax Deductions', value: preTax, color: '#34d399' },
-        ].map(item => (
-          <div key={item.label} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '14px' }}>
-            <div style={{ fontSize: '11px', opacity: 0.6, marginBottom: '6px' }}>{item.label}</div>
-            <div style={{ fontSize: '18px', fontWeight: 800, color: item.color }}>{fmtD(perP(item.value))}</div>
-            <div style={{ fontSize: '11px', opacity: 0.45, marginTop: '3px' }}>{fmt(item.value)}/yr</div>
-          </div>
-        ))}
+function Row({ label, value, color, sub }: { label: string; value: string; color?: string; sub?: string }) {
+  return (
+    <div className="flex items-center justify-between">
+      <div>
+        <span className="text-sm text-gray-600">{label}</span>
+        {sub && <span className="ml-2 text-xs text-gray-400">({sub})</span>}
       </div>
-
-      <div style={{ marginTop: '16px', fontSize: '12px', opacity: 0.4, textAlign: 'center' }}>
-        Calculations use 2026 tax tables. Your salary data never leaves your browser.
-      </div>
+      <span className={`text-sm font-medium ${color || "text-gray-900"}`}>{value}</span>
     </div>
   );
 }
