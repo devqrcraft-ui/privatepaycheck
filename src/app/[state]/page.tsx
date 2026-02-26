@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Calculator from '@/components/Calculator';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return Object.keys(STATE_SLUG_MAP).map(s => ({ state: s + '-paycheck-calculator' }));
 }
