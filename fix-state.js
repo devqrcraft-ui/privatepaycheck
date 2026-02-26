@@ -1,4 +1,7 @@
-import type { Metadata } from 'next';
+// fix-state.js
+const fs = require('fs');
+
+const content = `import type { Metadata } from 'next';
 import Link from 'next/link';
 import Calculator from '@/components/Calculator';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
@@ -69,3 +72,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     </main>
   );
 }
+`;
+
+fs.writeFileSync('src/app/[state]/page.tsx', content);
+console.log('Done! State page fixed.');
