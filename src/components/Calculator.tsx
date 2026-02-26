@@ -47,6 +47,19 @@ const FREQS = [
   {id:'monthly',label:'Monthly',mult:12},
   {id:'annual',label:'Annual',mult:1},
 ];
+
+// Ticker items — no gaps, seamless loop
+const TICKER_ITEMS = [
+  '🔒 Your data never leaves your browser',
+  '✅ All 50 states supported',
+  '💡 2026 federal & state tax tables',
+  '⚡ Instant calculations — no signup needed',
+  '📊 Includes FICA, Social Security & Medicare',
+  '💰 Pre-tax deductions: 401(k), HSA, health insurance',
+  '🏖️ 9 states with zero income tax highlighted',
+  '🔄 Switch between hourly, weekly, monthly & annual',
+];
+
 function calcFed(annual: number, filing: string) {
   const brackets = filing === 'married' ? FEDERAL_MARRIED : FEDERAL_SINGLE;
   const std = filing === 'married' ? 29200 : 14600;
@@ -58,7 +71,7 @@ function calcFed(annual: number, filing: string) {
   }
   return tax;
 }
-const fmt = (n: number) => '$' + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmt = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
 export default function Calculator({ defaultState = 'ca' }: { defaultState?: string }) {
   const [freq, setFreq] = useState('annual');
@@ -69,63 +82,226 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
   const [hsa, setHsa] = useState('0');
   const [insurance, setInsurance] = useState('0');
 
-  const f = FREQS.find(x=>x.id===freq)!;
-  const g = parseFloat(gross)||0;
+  const f = FREQS.find(x => x.id === freq)!;
+  const g = parseFloat(gross) || 0;
   const annual = g * f.mult;
-  const preTax = (parseFloat(k401)||0)+(parseFloat(hsa)||0)+(parseFloat(insurance)||0);
+  const preTax = (parseFloat(k401) || 0) + (parseFloat(hsa) || 0) + (parseFloat(insurance) || 0);
   const taxable = Math.max(0, annual - preTax);
   const fed = calcFed(taxable, filing);
-  const ss = Math.min(annual,168600)*0.062;
-  const med = annual*0.0145;
-  const stData = STATE_TAXES[state]||STATE_TAXES.ca;
-  const stTax = stData.noTax ? 0 : taxable*stData.rate;
-  const totalTax = fed+ss+med+stTax+preTax;
-  const netAnnual = annual-totalTax;
-  const netPer = netAnnual/f.mult;
-  const effRate = annual>0?((fed+ss+med+stTax)/annual*100):0;
+  const ss = Math.min(annual, 168600) * 0.062;
+  const med = annual * 0.0145;
+  const stData = STATE_TAXES[state] || STATE_TAXES.ca;
+  const stTax = stData.noTax ? 0 : taxable * stData.rate;
+  const totalTax = fed + ss + med + stTax + preTax;
+  const netAnnual = annual - totalTax;
+  const netPer = netAnnual / f.mult;
+  const effRate = annual > 0 ? ((fed + ss + med + stTax) / annual * 100) : 0;
 
-  const inp: React.CSSProperties = {width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box'};
-  const lbl: React.CSSProperties = {fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'6px',display:'block'};
+  // Build seamless ticker string (repeated to fill wide screens)
+  const tickerText = Array(4).fill(TICKER_ITEMS.join('  ·  ')).join('  ·  ');
+
+  const inp: React.CSSProperties = {
+    width: '100%',
+    background: 'rgba(255,255,255,0.07)',
+    border: '1.5px solid rgba(255,255,255,0.12)',
+    borderRadius: '10px',
+    padding: '11px 14px',
+    color: 'white',
+    fontSize: '15px',
+    fontFamily: 'inherit',
+    outline: 'none',
+    boxSizing: 'border-box',
+  };
+  const lbl: React.CSSProperties = {
+    fontSize: '11px',
+    color: 'rgba(255,255,255,0.45)',
+    fontWeight: 600,
+    textTransform: 'uppercase',
+    letterSpacing: '0.06em',
+    marginBottom: '6px',
+    display: 'block',
+  };
 
   return (
-    <div style={{fontFamily:"'Inter',-apple-system,sans-serif"}}>
+    <div style={{ fontFamily: "'Inter',-apple-system,sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        input:focus,select:focus{border-color:#6366f1!important;box-shadow:0 0 0 3px rgba(99,102,241,0.15);}
-        input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}
-        .fb{cursor:pointer;transition:all 0.18s;border:1.5px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6);border-radius:8px;padding:9px 16px;font-size:13px;font-weight:600;font-family:inherit;white-space:nowrap;}
-        .fb:hover{background:rgba(255,255,255,0.1);color:white;}
-        .fb.on{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:transparent;color:white;box-shadow:0 4px 12px rgba(99,102,241,0.35);}
-        .tc{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 16px;}
-        .tc:hover{background:rgba(255,255,255,0.08);}
-        select option{background:#1e1b4b;}
-        .adbox{background:rgba(255,255,255,0.03);border:1.5px dashed rgba(255,255,255,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-size:12px;letter-spacing:0.05em;text-align:center;}
+        input:focus, select:focus { border-color: #6366f1 !important; box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+        input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
+        input[type=number] { -moz-appearance: textfield; }
+
+        /* Frequency buttons */
+        .fb {
+          cursor: pointer;
+          transition: all 0.18s;
+          border: 1.5px solid rgba(255,255,255,0.12);
+          background: rgba(255,255,255,0.06);
+          color: rgba(255,255,255,0.6);
+          border-radius: 8px;
+          padding: 9px 14px;
+          font-size: 13px;
+          font-weight: 600;
+          font-family: inherit;
+          white-space: nowrap;
+          flex: 1 1 auto;
+          min-width: 0;
+          text-align: center;
+        }
+        .fb:hover { background: rgba(255,255,255,0.1); color: white; }
+        .fb.on {
+          background: linear-gradient(135deg,#6366f1,#8b5cf6);
+          border-color: transparent;
+          color: white;
+          box-shadow: 0 4px 12px rgba(99,102,241,0.35);
+        }
+
+        /* Tax card */
+        .tc {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 10px;
+          padding: 14px 16px;
+        }
+        .tc:hover { background: rgba(255,255,255,0.08); }
+
+        /* Ad box */
+        .adbox {
+          background: rgba(255,255,255,0.03);
+          border: 1.5px dashed rgba(255,255,255,0.1);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgba(255,255,255,0.2);
+          font-size: 12px;
+          letter-spacing: 0.05em;
+          text-align: center;
+        }
+
+        select option { background: #1e1b4b; }
+
+        /* ── TICKER ─────────────────────────────────────────────── */
+        .ticker-wrap {
+          overflow: hidden;
+          white-space: nowrap;
+          width: 100%;
+          border-top: 1px solid rgba(255,255,255,0.07);
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+          background: rgba(99,102,241,0.08);
+          padding: 8px 0;
+        }
+        .ticker-inner {
+          display: inline-block;
+          white-space: nowrap;
+          /* animation duration: shorter = faster. 60s is comfortable reading speed */
+          animation: ticker-scroll 60s linear infinite;
+          will-change: transform;
+        }
+        @keyframes ticker-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .ticker-inner:hover { animation-play-state: paused; }
+        .ticker-item {
+          display: inline-block;
+          padding: 0 28px;
+          font-size: 12px;
+          font-weight: 500;
+          color: rgba(255,255,255,0.55);
+          letter-spacing: 0.02em;
+        }
+
+        /* ── RESPONSIVE ─────────────────────────────────────────── */
+        .calc-layout {
+          display: flex;
+          gap: 28px;
+          align-items: flex-start;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 16px;
+        }
+        .calc-main { flex: 1 1 0; min-width: 0; }
+        .calc-sidebar {
+          width: 300px;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          position: sticky;
+          top: 80px;
+        }
+
+        .row1 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        .row2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+        .tax-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 10px; margin-bottom: 10px; }
+
+        /* Mobile: stack layout */
+        @media (max-width: 768px) {
+          .calc-layout { flex-direction: column; padding: 0 12px; }
+          .calc-sidebar { width: 100%; position: static; flex-direction: row; flex-wrap: wrap; }
+          .calc-sidebar .adbox { flex: 1 1 calc(50% - 8px); min-width: 140px; }
+
+          .row1 { grid-template-columns: 1fr 1fr; }
+          .row1 > :last-child { grid-column: 1 / -1; }
+          .row2 { grid-template-columns: 1fr 1fr; }
+          .row2 > :last-child { grid-column: 1 / -1; }
+
+          .freq-wrap { gap: 4px; }
+          .fb { padding: 8px 10px; font-size: 12px; }
+
+          .result-inner { flex-direction: column !important; gap: 8px !important; }
+          .result-net { font-size: 36px !important; }
+          .result-right { text-align: left !important; }
+        }
+
+        @media (max-width: 400px) {
+          .row1 { grid-template-columns: 1fr; }
+          .row2 { grid-template-columns: 1fr; }
+          .row1 > :last-child, .row2 > :last-child { grid-column: auto; }
+        }
       `}</style>
 
-      <div style={{display:'flex',gap:'28px',alignItems:'flex-start',maxWidth:'1200px',margin:'0 auto',padding:'0 20px'}}>
+      {/* ── TICKER ── */}
+      <div className="ticker-wrap">
+        {/*
+          We render the items TWICE inside .ticker-inner so the second copy
+          seamlessly continues when the first copy scrolls off-screen.
+          translateX(-50%) lands exactly at the start of the second copy.
+        */}
+        <div className="ticker-inner">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+            <span key={i} className="ticker-item">{item}</span>
+          ))}
+        </div>
+      </div>
 
-        {/* CALCULATOR 70% */}
-        <div style={{flex:'1 1 0',minWidth:0}}>
+      {/* ── MAIN LAYOUT ── */}
+      <div className="calc-layout" style={{ paddingTop: '24px', paddingBottom: '32px' }}>
 
-          {/* Freq buttons */}
-          <div style={{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'16px'}}>
-            {FREQS.map(x=>(
-              <button key={x.id} className={`fb${freq===x.id?' on':''}`} onClick={()=>setFreq(x.id)}>{x.label}</button>
+        {/* CALCULATOR */}
+        <div className="calc-main">
+
+          {/* Frequency buttons */}
+          <div className="freq-wrap" style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
+            {FREQS.map(x => (
+              <button key={x.id} className={`fb${freq === x.id ? ' on' : ''}`} onClick={() => setFreq(x.id)}>
+                {x.label}
+              </button>
             ))}
           </div>
 
-          {/* Row 1 */}
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'14px',marginBottom:'14px'}}>
+          {/* Row 1: Pay / Filing / State */}
+          <div className="row1">
             <div>
-              <label style={lbl}>{f.id==='hourly'?'Hourly Rate':f.id==='annual'?'Annual Salary':`${f.label} Pay`}</label>
-              <div style={{position:'relative'}}>
-                <span style={{position:'absolute',left:'13px',top:'50%',transform:'translateY(-50%)',color:'rgba(255,255,255,0.35)',fontSize:'15px'}}>$</span>
-                <input type="number" value={gross} onChange={e=>setGross(e.target.value)} style={{...inp,paddingLeft:'28px'}}/>
+              <label style={lbl}>{f.id === 'hourly' ? 'Hourly Rate' : f.id === 'annual' ? 'Annual Salary' : `${f.label} Pay`}</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.35)', fontSize: '15px' }}>$</span>
+                <input type="number" value={gross} onChange={e => setGross(e.target.value)} style={{ ...inp, paddingLeft: '28px' }} />
               </div>
             </div>
             <div>
               <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e=>setFiling(e.target.value)} style={inp}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={inp}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="head">Head of Household</option>
@@ -133,77 +309,88 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
             </div>
             <div>
               <label style={lbl}>State</label>
-              <select value={state} onChange={e=>setState(e.target.value)} style={inp}>
-                {Object.entries(STATE_TAXES).sort((a,b)=>a[1].name.localeCompare(b[1].name)).map(([c,d])=>(
-                  <option key={c} value={c}>{d.name}{d.noTax?' ✓ No Tax':''}</option>
+              <select value={state} onChange={e => setState(e.target.value)} style={inp}>
+                {Object.entries(STATE_TAXES).sort((a, b) => a[1].name.localeCompare(b[1].name)).map(([c, d]) => (
+                  <option key={c} value={c}>{d.name}{d.noTax ? ' ✓ No Tax' : ''}</option>
                 ))}
               </select>
             </div>
           </div>
 
-          {/* Row 2 */}
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'14px',marginBottom:'20px'}}>
-            {[{l:'Annual 401(k)',v:k401,s:setK401},{l:'Annual HSA',v:hsa,s:setHsa},{l:'Health Insurance/yr',v:insurance,s:setInsurance}].map(x=>(
+          {/* Row 2: Deductions */}
+          <div className="row2">
+            {[
+              { l: 'Annual 401(k)', v: k401, s: setK401 },
+              { l: 'Annual HSA', v: hsa, s: setHsa },
+              { l: 'Health Insurance / yr', v: insurance, s: setInsurance },
+            ].map(x => (
               <div key={x.l}>
                 <label style={lbl}>{x.l}</label>
-                <div style={{position:'relative'}}>
-                  <span style={{position:'absolute',left:'13px',top:'50%',transform:'translateY(-50%)',color:'rgba(255,255,255,0.35)',fontSize:'15px'}}>$</span>
-                  <input type="number" value={x.v} onChange={e=>x.s(e.target.value)} style={{...inp,paddingLeft:'28px'}}/>
+                <div style={{ position: 'relative' }}>
+                  <span style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.35)', fontSize: '15px' }}>$</span>
+                  <input type="number" value={x.v} onChange={e => x.s(e.target.value)} style={{ ...inp, paddingLeft: '28px' }} />
                 </div>
               </div>
             ))}
           </div>
 
           {/* Ad leaderboard */}
-          <div className="adbox" style={{height:'90px',marginBottom:'20px'}}>
+          <div className="adbox" style={{ height: '90px', marginBottom: '20px' }}>
             {/* AdSense 728×90 */}
             Advertisement
           </div>
 
           {/* Result */}
-          <div style={{background:'linear-gradient(135deg,rgba(99,102,241,0.18),rgba(139,92,246,0.12))',border:'1px solid rgba(99,102,241,0.3)',borderRadius:'14px',padding:'22px 24px',marginBottom:'14px'}}>
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:'16px'}}>
+          <div style={{ background: 'linear-gradient(135deg,rgba(99,102,241,0.18),rgba(139,92,246,0.12))', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '14px', padding: '22px 24px', marginBottom: '14px' }}>
+            <div className="result-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
               <div>
-                <div style={{fontSize:'12px',color:'rgba(255,255,255,0.5)',marginBottom:'6px',fontWeight:500}}>Take-Home Pay ({f.label})</div>
-                <div style={{fontSize:'46px',fontWeight:800,color:'#4ade80',letterSpacing:'-0.02em',lineHeight:1}}>{fmt(netPer)}</div>
+                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginBottom: '6px', fontWeight: 500 }}>
+                  Take-Home Pay ({f.label})
+                </div>
+                <div className="result-net" style={{ fontSize: '46px', fontWeight: 800, color: '#4ade80', letterSpacing: '-0.02em', lineHeight: 1 }}>
+                  {fmt(netPer)}
+                </div>
               </div>
-              <div style={{textAlign:'right'}}>
-                <div style={{fontSize:'12px',color:'rgba(255,255,255,0.5)',marginBottom:'4px'}}>Annual Net</div>
-                <div style={{fontSize:'26px',fontWeight:700,color:'white'}}>{fmt(netAnnual)}</div>
-                <div style={{fontSize:'12px',color:'rgba(255,255,255,0.4)',marginTop:'4px'}}>Effective rate: {effRate.toFixed(1)}%</div>
+              <div className="result-right" style={{ textAlign: 'right' }}>
+                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}>Annual Net</div>
+                <div style={{ fontSize: '26px', fontWeight: 700, color: 'white' }}>{fmt(netAnnual)}</div>
+                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>Effective rate: {effRate.toFixed(1)}%</div>
               </div>
             </div>
           </div>
 
-          {/* Breakdown */}
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(155px,1fr))',gap:'10px',marginBottom:'10px'}}>
+          {/* Tax breakdown cards */}
+          <div className="tax-grid">
             {[
-              {l:'Federal Income Tax',v:fed,c:'#f87171'},
-              {l:'Social Security',v:ss,c:'#fb923c'},
-              {l:'Medicare',v:med,c:'#fbbf24'},
-              {l:`State Tax (${stData.name})`,v:stTax,c:'#a78bfa'},
-              {l:'Pre-Tax Deductions',v:preTax,c:'#34d399'},
-            ].map(x=>(
+              { l: 'Federal Income Tax', v: fed, c: '#f87171' },
+              { l: 'Social Security', v: ss, c: '#fb923c' },
+              { l: 'Medicare', v: med, c: '#fbbf24' },
+              { l: `State Tax (${stData.name})`, v: stTax, c: '#a78bfa' },
+              { l: 'Pre-Tax Deductions', v: preTax, c: '#34d399' },
+            ].map(x => (
               <div key={x.l} className="tc">
-                <div style={{fontSize:'10px',color:'rgba(255,255,255,0.4)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.05em',marginBottom:'6px'}}>{x.l}</div>
-                <div style={{fontSize:'19px',fontWeight:700,color:x.c}}>{fmt(x.v/f.mult)}</div>
-                <div style={{fontSize:'11px',color:'rgba(255,255,255,0.3)',marginTop:'2px'}}>{fmt(x.v)}/yr</div>
+                <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.4)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>{x.l}</div>
+                <div style={{ fontSize: '19px', fontWeight: 700, color: x.c }}>{fmt(x.v / f.mult)}</div>
+                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>{fmt(x.v)}/yr</div>
               </div>
             ))}
           </div>
-          <div style={{textAlign:'center',fontSize:'11px',color:'rgba(255,255,255,0.25)',padding:'8px 0 4px'}}>🔒 2026 tax tables · Your data never leaves your browser</div>
+
+          <div style={{ textAlign: 'center', fontSize: '11px', color: 'rgba(255,255,255,0.25)', padding: '8px 0 4px' }}>
+            🔒 2026 tax tables · Your data never leaves your browser
+          </div>
         </div>
 
-        {/* AD SIDEBAR 30% */}
-        <div style={{width:'300px',flexShrink:0,display:'flex',flexDirection:'column',gap:'16px',position:'sticky',top:'80px'}}>
-          <div className="adbox" style={{height:'250px'}}>
+        {/* SIDEBAR ADS */}
+        <div className="calc-sidebar">
+          <div className="adbox" style={{ height: '250px' }}>
             {/* AdSense 300×250 */}
             Ad · 300×250
           </div>
-          <div className="adbox" style={{height:'250px'}}>
+          <div className="adbox" style={{ height: '250px' }}>
             Ad · 300×250
           </div>
-          <div className="adbox" style={{height:'600px'}}>
+          <div className="adbox" style={{ height: '600px' }}>
             Ad · 300×600
           </div>
         </div>
