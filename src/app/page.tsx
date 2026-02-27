@@ -21,9 +21,32 @@ const TOP_STATES = [
   { slug: 'michigan',       name: 'Michigan',         searches: '40K/mo' },
 ];
 
+const TICKER_ITEMS = [
+  '🔒 Your salary data NEVER leaves your browser',
+  '⚡ Instant calculations',
+  '🗺️ All 50 US States',
+  '💚 100% Free — no signup',
+  '📊 Federal + State + FICA + 401k + HSA',
+  '📱 Works on any device',
+  '🏆 Updated for 2026 tax year',
+];
+
 export default function HomePage() {
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+      <style>{`
+        @keyframes tickerScroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .ticker-track {
+          display: inline-block;
+          white-space: nowrap;
+          animation: tickerScroll 30s linear infinite;
+        }
+        .ticker-track:hover { animation-play-state: paused; }
+      `}</style>
+
       <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
         <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
           <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
@@ -33,6 +56,17 @@ export default function HomePage() {
           <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>Hourly</Link>
         </div>
       </nav>
+
+      {/* TOP TICKER */}
+      <div style={{ overflow: 'hidden', borderBottom: '1px solid rgba(99,102,241,0.4)', background: 'rgba(99,102,241,0.18)', padding: '9px 0' }}>
+        <div className="ticker-track">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+            <span key={i} style={{ padding: '0 32px', fontSize: '12.5px', fontWeight: 600, color: '#c4b5fd', letterSpacing: '0.03em', textShadow: '0 0 12px rgba(167,139,250,0.7)' }}>
+              {item} ·
+            </span>
+          ))}
+        </div>
+      </div>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -58,7 +92,6 @@ export default function HomePage() {
               <Link key={s.slug} href={`/${s.slug}-paycheck-calculator`} style={{
                 display: 'block', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
                 borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none',
-                transition: 'border-color 0.2s',
               }}>
                 <div style={{ fontWeight: 700, fontSize: '14px' }}>{s.name}</div>
                 <div style={{ fontSize: '12px', opacity: 0.45, marginTop: '4px' }}>{s.searches} searches</div>
