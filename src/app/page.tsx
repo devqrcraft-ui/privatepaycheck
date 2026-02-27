@@ -69,7 +69,7 @@ export default function HomePage() {
       </div>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 16px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#4ade80' }}>
             🔒 Your salary data NEVER leaves your browser
           </div>
