@@ -5,7 +5,7 @@ import Calculator from '@/components/Calculator';
 export const metadata: Metadata = {
   title: 'Paycheck Calculator 2026 — Free, Private | PrivatePaycheck',
   description: 'Calculate your exact take-home pay for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private — your salary never leaves your browser.',
-  alternates: { canonical: 'https://privatepaycheck.com' },
+  alternates: { canonical: 'https://www.privatepaycheck.com' },
 };
 
 const TOP_STATES = [
@@ -29,6 +29,41 @@ const TICKER_ITEMS = [
   '📊 Federal + State + FICA + 401k + HSA',
   '📱 Works on any device',
   '🏆 Updated for 2026 tax year',
+];
+
+const CALCULATORS = [
+  {
+    href: '/overtime-calculator',
+    icon: '⏰',
+    title: 'Overtime Calculator',
+    desc: 'Calculate overtime pay by state. California double-time, federal 1.5x rules and more.',
+    color: '#f59e0b',
+    badge: 'By State',
+  },
+  {
+    href: '/unemployment-calculator',
+    icon: '📋',
+    title: 'Unemployment Calculator',
+    desc: 'Estimate your weekly unemployment benefits based on your state and prior earnings.',
+    color: '#6366f1',
+    badge: 'Benefits',
+  },
+  {
+    href: '/minimum-wage',
+    icon: '💵',
+    title: 'Minimum Wage by State',
+    desc: 'Current 2026 minimum wage rates for all 50 states with hourly, daily, weekly and annual breakdowns.',
+    color: '#10b981',
+    badge: '2026 Rates',
+  },
+  {
+    href: '/hourly-paycheck-calculator',
+    icon: '🕐',
+    title: 'Hourly Paycheck Calculator',
+    desc: 'Enter your hourly rate and hours worked to see exact take-home pay after all taxes.',
+    color: '#ec4899',
+    badge: 'Hourly',
+  },
 ];
 
 export default function HomePage() {
@@ -77,7 +112,7 @@ export default function HomePage() {
             {
               "@type": "Question",
               "name": "How accurate is this paycheck calculator for 2026?",
-              "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses 2026 federal tax brackets, the 2026 standard deduction of <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>5,000 for single filers and $30,000 for married filing jointly, current FICA rates of 7.65%, and up-to-date state tax rates for all 50 states." }
+              "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses 2026 federal tax brackets, the 2026 standard deduction of $15,000 for single filers and $30,000 for married filing jointly, current FICA rates of 7.65%, and up-to-date state tax rates for all 50 states." }
             }
           ]
         })}}
@@ -93,19 +128,35 @@ export default function HomePage() {
           animation: tickerScroll 30s linear infinite;
         }
         .ticker-track:hover { animation-play-state: paused; }
+        .calc-card:hover {
+          background: rgba(255,255,255,0.08) !important;
+          transform: translateY(-2px);
+          transition: all 0.2s ease;
+        }
+        .calc-card {
+          transition: all 0.2s ease;
+        }
+        .state-link:hover {
+          background: rgba(255,255,255,0.08) !important;
+          border-color: rgba(129,140,248,0.4) !important;
+        }
       `}</style>
 
+      {/* NAV */}
       <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
         <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
           <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
         </Link>
-        <div style={{ display: 'flex', gap: '20px', fontSize: '13px' }}>
-          <Link href="/blog" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>Blog</Link>
-          <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>Hourly</Link>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '13px', flexWrap: 'wrap' }}>
+          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 600 }}>Overtime</Link>
+          <Link href="/unemployment-calculator" style={{ color: '#a5b4fc', textDecoration: 'none', fontWeight: 600 }}>Unemployment</Link>
+          <Link href="/minimum-wage" style={{ color: '#6ee7b7', textDecoration: 'none', fontWeight: 600 }}>Min Wage</Link>
+          <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Hourly</Link>
+          <Link href="/blog" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Blog</Link>
         </div>
       </nav>
 
-      {/* TOP TICKER */}
+      {/* TICKER */}
       <div style={{ overflow: 'hidden', borderBottom: '1px solid rgba(99,102,241,0.4)', background: 'rgba(99,102,241,0.18)', padding: '9px 0' }}>
         <div className="ticker-track">
           {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
@@ -117,11 +168,13 @@ export default function HomePage() {
       </div>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px 16px' }}>
+
+        {/* HERO */}
         <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '10px', color: '#4ade80' }}>
             🔒 Your salary data NEVER leaves your browser
           </div>
-          <h1 style={{ fontSize:'clamp(28px,5vw,56px)',textTransform:'uppercase' as const,letterSpacing:'-1px', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>
+          <h1 style={{ fontSize: 'clamp(28px,5vw,56px)', textTransform: 'uppercase', letterSpacing: '-1px', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>
             Paycheck Calculator 2026<br/>
             <span style={{ color: '#818cf8' }}>Free & 100% Private</span>
           </h1>
@@ -132,12 +185,49 @@ export default function HomePage() {
 
         <Calculator />
 
-        <div style={{ marginTop: '28px' }}>
+        {/* ALL CALCULATORS SECTION */}
+        <div style={{ marginTop: '48px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '8px', textAlign: 'center' }}>
+            All Free Calculators
+          </h2>
+          <p style={{ textAlign: 'center', opacity: 0.55, fontSize: '14px', marginBottom: '24px' }}>
+            Everything you need to understand your compensation
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: '14px' }}>
+            {CALCULATORS.map(c => (
+              <Link key={c.href} href={c.href} className="calc-card" style={{
+                display: 'block',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '14px',
+                padding: '20px',
+                color: 'white',
+                textDecoration: 'none',
+                cursor: 'pointer',
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '28px' }}>{c.icon}</span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, background: `${c.color}22`, color: c.color, border: `1px solid ${c.color}44`, borderRadius: '20px', padding: '3px 10px' }}>
+                    {c.badge}
+                  </span>
+                </div>
+                <div style={{ fontWeight: 700, fontSize: '15px', marginBottom: '8px' }}>{c.title}</div>
+                <div style={{ fontSize: '13px', opacity: 0.55, lineHeight: 1.6 }}>{c.desc}</div>
+                <div style={{ marginTop: '12px', fontSize: '13px', color: c.color, fontWeight: 600 }}>
+                  Calculate →
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* PAYCHECK BY STATE */}
+        <div style={{ marginTop: '40px' }}>
           <h2 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '8px', textAlign: 'center' }}>Paycheck Calculator by State</h2>
           <p style={{ textAlign: 'center', opacity: 0.55, fontSize: '14px', marginBottom: '24px' }}>Select your state for accurate local tax calculations</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: '10px' }}>
             {TOP_STATES.map(s => (
-              <Link key={s.slug} href={`/${s.slug}-paycheck-calculator`} style={{
+              <Link key={s.slug} href={`/${s.slug}-paycheck-calculator`} className="state-link" style={{
                 display: 'block', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
                 borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none',
               }}>
@@ -153,7 +243,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '16px' }}>
+        {/* FEATURES */}
+        <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '16px' }}>
           {[
             { icon: '🔒', title: '100% Private', desc: 'All calculations happen in your browser. Your salary is never sent to any server.' },
             { icon: '📊', title: 'All 50 States', desc: 'Accurate state tax rates for every US state including DC. Updated for 2026.' },
