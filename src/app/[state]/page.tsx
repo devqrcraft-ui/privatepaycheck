@@ -107,7 +107,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div>
               <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'6px' }}>{'Is this ' + st.name + ' paycheck calculator accurate for 2026?'}</h3>
               <p style={{ fontSize:'13px', opacity:0.7, lineHeight:1.7, margin:0 }}>
-                {'Yes. This calculator uses 2026 federal tax brackets, the 2026 standard deduction ($15,000 for single filers), current FICA rates, and ' + (noTax ? 'reflects ' + st.name + ''s zero state income tax.' : 'the ' + st.name + ' state tax rate of ' + rateStr + '.')}
+                {'Yes. This calculator uses 2026 federal tax brackets, the 2026 standard deduction ($15,000 for single filers), current FICA rates, and ' + (noTax ? 'reflects ' + st.name + `’s zero state income tax.`' : 'the ' + st.name + ' state tax rate of ' + rateStr + '.')}
               </p>
             </div>
           </div>
