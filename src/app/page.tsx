@@ -84,7 +84,7 @@ export default function HomePage() {
 
         <Calculator />
 
-        <div style={{ marginTop: '56px' }}>
+        <div style={{ marginTop: '28px' }}>
           <h2 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '8px', textAlign: 'center' }}>Paycheck Calculator by State</h2>
           <p style={{ textAlign: 'center', opacity: 0.55, fontSize: '14px', marginBottom: '24px' }}>Select your state for accurate local tax calculations</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: '10px' }}>
@@ -105,7 +105,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div style={{ marginTop: '56px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '16px' }}>
+        <div style={{ marginTop: '28px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '16px' }}>
           {[
             { icon: '🔒', title: '100% Private', desc: 'All calculations happen in your browser. Your salary is never sent to any server.' },
             { icon: '📊', title: 'All 50 States', desc: 'Accurate state tax rates for every US state including DC. Updated for 2026.' },
@@ -121,7 +121,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </main>
