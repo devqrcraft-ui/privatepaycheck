@@ -20,10 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   };
 }
 
-// Real 2026 unemployment data by state
 const STATE_UNEMPLOYMENT: Record<string, {
   maxWeekly: number; maxWeeks: number; minWeekly: number;
-  baseRate: number; // % of avg weekly wage
+  baseRate: number;
   note?: string;
 }> = {
   al: { maxWeekly: 275,  maxWeeks: 14, minWeekly: 45,  baseRate: 0.50 },
@@ -114,10 +113,23 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
         <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
           <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
         </Link>
-        <Link href="/unemployment-calculator" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', textDecoration: 'none' }}>← All States</Link>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '13px' }}>
+          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none' }}>Overtime</Link>
+          <Link href="/unemployment-calculator" style={{ color: '#a5b4fc', textDecoration: 'none', fontWeight: 700 }}>← All States</Link>
+          <Link href="/minimum-wage" style={{ color: '#6ee7b7', textDecoration: 'none' }}>Min Wage</Link>
+        </div>
       </nav>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 16px' }}>
+        {/* Breadcrumb */}
+        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+          <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
+          {' › '}
+          <Link href="/unemployment-calculator" style={{ color: 'inherit', textDecoration: 'none' }}>Unemployment Calculator</Link>
+          {' › '}
+          <span>{st.name}</span>
+        </div>
+
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px' }}>
             {st.name} Unemployment Calculator 2026
@@ -127,7 +139,6 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
           </p>
         </div>
 
-        {/* Key stats */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '14px', marginBottom: '32px' }}>
           {[
             { label: 'Max Weekly Benefit', value: `$${ui.maxWeekly}`, color: '#4ade80', icon: '💰' },
@@ -143,7 +154,6 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
           ))}
         </div>
 
-        {/* Calculator */}
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '20px', textAlign: 'center' }}>Estimate Your {st.name} Unemployment Benefit</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '16px', marginBottom: '20px' }}>
@@ -153,9 +163,7 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
             ].map(f => (
               <div key={f.id}>
                 <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
-                <div style={{ position: 'relative' }}>
-                  <input id={f.id} type="number" placeholder={f.placeholder} style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }} />
-                </div>
+                <input id={f.id} type="number" placeholder={f.placeholder} style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }} />
               </div>
             ))}
           </div>
@@ -188,10 +196,28 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
           </div>
         </div>
 
-        <div style={{ marginTop: '24px', textAlign: 'center' }}>
-          <Link href={`/${state}-paycheck-calculator`} style={{ color: '#818cf8', fontSize: '14px' }}>
-            → Calculate your regular {st.name} paycheck
-          </Link>
+        {/* CROSS-LINKS */}
+        <div style={{ marginTop: '32px' }}>
+          <h2 style={{ fontSize: '16px', fontWeight: 800, marginBottom: '16px', opacity: 0.7 }}>
+            More {st.name} Calculators
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '12px' }}>
+            <Link href={`/${state}-paycheck-calculator`} style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💰</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Paycheck Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Take-home pay after all taxes →</div>
+            </Link>
+            <Link href={`/overtime-calculator/${state}`} style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>⏰</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Overtime Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Calculate overtime pay →</div>
+            </Link>
+            <Link href={`/minimum-wage/${state}`} style={{ display: 'block', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💵</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Minimum Wage 2026</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Current hourly rate & breakdown →</div>
+            </Link>
+          </div>
         </div>
       </div>
 

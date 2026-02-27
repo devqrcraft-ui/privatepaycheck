@@ -22,9 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
 
 const FEDERAL_MIN_WAGE = 7.25;
 
-const STATE_MIN_WAGE: Record<string, {
-  hourly: number; tipped?: number; notes?: string; scheduled?: string;
-}> = {
+const STATE_MIN_WAGE: Record<string, { hourly: number; tipped?: number; notes?: string; scheduled?: string }> = {
   al: { hourly: 7.25, notes: 'Alabama follows federal minimum wage.' },
   ak: { hourly: 11.73, tipped: 11.73, notes: 'Alaska has no tipped minimum wage — all workers get the same rate.' },
   az: { hourly: 14.35, tipped: 11.35, notes: 'Arizona increases annually with inflation.' },
@@ -111,10 +109,23 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
           <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
         </Link>
-        <Link href="/minimum-wage" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', textDecoration: 'none' }}>← All States</Link>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '13px' }}>
+          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none' }}>Overtime</Link>
+          <Link href="/unemployment-calculator" style={{ color: '#a5b4fc', textDecoration: 'none' }}>Unemployment</Link>
+          <Link href="/minimum-wage" style={{ color: '#6ee7b7', textDecoration: 'none', fontWeight: 700 }}>← All States</Link>
+        </div>
       </nav>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 16px' }}>
+        {/* Breadcrumb */}
+        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+          <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
+          {' › '}
+          <Link href="/minimum-wage" style={{ color: 'inherit', textDecoration: 'none' }}>Minimum Wage</Link>
+          {' › '}
+          <span>{st.name}</span>
+        </div>
+
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           {aboveFederal && (
             <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#4ade80' }}>
@@ -131,7 +142,6 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
           {mw.scheduled && <p style={{ fontSize: '13px', color: '#fbbf24', marginTop: '8px' }}>📅 {mw.scheduled}</p>}
         </div>
 
-        {/* Earnings breakdown */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '14px', marginBottom: '32px' }}>
           {[
             { label: 'Per Hour', value: `$${mw.hourly}`, color: '#4ade80' },
@@ -147,7 +157,6 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
           ))}
         </div>
 
-        {/* Tipped rate */}
         {mw.tipped !== mw.hourly && mw.tipped && (
           <div style={{ background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
             <h3 style={{ fontWeight: 700, marginBottom: '8px', color: '#fbbf24' }}>💁 Tipped Minimum Wage: ${mw.tipped}/hour</h3>
@@ -175,11 +184,28 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
           </div>
         </div>
 
-        <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '13px', opacity: 0.5, marginBottom: '12px' }}>Calculate your actual take-home pay:</p>
-          <Link href={`/${state}-paycheck-calculator`} style={{ color: '#818cf8', fontSize: '14px' }}>
-            → {st.name} Paycheck Calculator 2026
-          </Link>
+        {/* CROSS-LINKS */}
+        <div style={{ marginTop: '8px' }}>
+          <h2 style={{ fontSize: '16px', fontWeight: 800, marginBottom: '16px', opacity: 0.7 }}>
+            More {st.name} Calculators
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '12px' }}>
+            <Link href={`/${state}-paycheck-calculator`} style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💰</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Paycheck Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Take-home pay after all taxes →</div>
+            </Link>
+            <Link href={`/overtime-calculator/${state}`} style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>⏰</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Overtime Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Calculate overtime pay →</div>
+            </Link>
+            <Link href={`/unemployment-calculator/${state}`} style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>📋</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Unemployment Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Estimate weekly benefits →</div>
+            </Link>
+          </div>
         </div>
       </div>
 

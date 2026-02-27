@@ -20,7 +20,6 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   };
 }
 
-// Overtime rules by state (some states have extra protections)
 const STATE_OT_RULES: Record<string, { doubleTime?: boolean; dailyOT?: boolean; dailyOTHours?: number; note?: string }> = {
   ca: { doubleTime: true, dailyOT: true, dailyOTHours: 8, note: 'California requires overtime after 8 hours/day AND double time after 12 hours/day or 8 hours on 7th consecutive day.' },
   co: { dailyOT: true, dailyOTHours: 12, note: 'Colorado requires overtime after 12 hours/day or 40 hours/week.' },
@@ -62,10 +61,23 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
           <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
         </Link>
-        <Link href="/overtime-calculator" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '13px', textDecoration: 'none' }}>← All States</Link>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '13px' }}>
+          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 700 }}>← All States</Link>
+          <Link href="/unemployment-calculator" style={{ color: '#a5b4fc', textDecoration: 'none' }}>Unemployment</Link>
+          <Link href="/minimum-wage" style={{ color: '#6ee7b7', textDecoration: 'none' }}>Min Wage</Link>
+        </div>
       </nav>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 16px' }}>
+        {/* Breadcrumb */}
+        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+          <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
+          {' › '}
+          <Link href="/overtime-calculator" style={{ color: 'inherit', textDecoration: 'none' }}>Overtime Calculator</Link>
+          {' › '}
+          <span>{st.name}</span>
+        </div>
+
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           {rules.doubleTime && (
             <div style={{ display: 'inline-block', background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#fbbf24' }}>
@@ -80,10 +92,8 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           </p>
         </div>
 
-        {/* CALCULATOR */}
         <OvertimeCalculatorWidget stateName={st.name} hasDoubleTime={!!rules.doubleTime} hasDailyOT={!!rules.dailyOT} dailyOTHours={rules.dailyOTHours} />
 
-        {/* Info boxes */}
         <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '16px' }}>
           {[
             { label: 'Federal OT Rule', value: '40 hrs/week', icon: '⚖️' },
@@ -104,22 +114,10 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '20px' }}>Overtime Rules in {st.name} — FAQ</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {[
-              {
-                q: `How is overtime calculated in ${st.name}?`,
-                a: rules.note || `In ${st.name}, overtime follows federal FLSA law: any hours over 40 in a single workweek must be paid at 1.5x your regular hourly rate. Your employer cannot average hours across multiple weeks.`,
-              },
-              {
-                q: 'What is the overtime rate for salaried employees?',
-                a: 'Salaried employees earning under $684/week ($35,568/year) are entitled to overtime under FLSA. For those above the threshold, it depends on their job duties. Non-exempt salaried workers use their regular rate: annual salary ÷ 52 weeks ÷ 40 hours.',
-              },
-              {
-                q: 'Can my employer give comp time instead of overtime pay?',
-                a: 'Private sector employers generally cannot substitute comp time for overtime pay under federal law. Government employees may receive comp time. Some states have additional restrictions.',
-              },
-              {
-                q: `Does ${st.name} have any additional overtime protections?`,
-                a: rules.note || `${st.name} follows the federal FLSA standard. Overtime is required after 40 hours in a workweek at 1.5x regular pay. Always check with your state labor department for the most current rules.`,
-              },
+              { q: `How is overtime calculated in ${st.name}?`, a: rules.note || `In ${st.name}, overtime follows federal FLSA law: any hours over 40 in a single workweek must be paid at 1.5x your regular hourly rate. Your employer cannot average hours across multiple weeks.` },
+              { q: 'What is the overtime rate for salaried employees?', a: 'Salaried employees earning under $684/week ($35,568/year) are entitled to overtime under FLSA. For those above the threshold, it depends on their job duties. Non-exempt salaried workers use their regular rate: annual salary ÷ 52 weeks ÷ 40 hours.' },
+              { q: 'Can my employer give comp time instead of overtime pay?', a: 'Private sector employers generally cannot substitute comp time for overtime pay under federal law. Government employees may receive comp time. Some states have additional restrictions.' },
+              { q: `Does ${st.name} have any additional overtime protections?`, a: rules.note || `${st.name} follows the federal FLSA standard. Overtime is required after 40 hours in a workweek at 1.5x regular pay. Always check with your state labor department for the most current rules.` },
             ].map(item => (
               <div key={item.q}>
                 <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '6px' }}>{item.q}</h3>
@@ -129,11 +127,28 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           </div>
         </div>
 
-        <div style={{ marginTop: '24px', textAlign: 'center' }}>
-          <p style={{ fontSize: '13px', opacity: 0.5, marginBottom: '12px' }}>Also calculate your regular paycheck:</p>
-          <Link href={`/${state}-paycheck-calculator`} style={{ color: '#818cf8', fontSize: '14px' }}>
-            → {st.name} Paycheck Calculator 2026
-          </Link>
+        {/* CROSS-LINKS — всі 4 розділи для цього штату */}
+        <div style={{ marginTop: '32px' }}>
+          <h2 style={{ fontSize: '16px', fontWeight: 800, marginBottom: '16px', opacity: 0.7 }}>
+            More {st.name} Calculators
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '12px' }}>
+            <Link href={`/${state}-paycheck-calculator`} style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💰</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Paycheck Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Take-home pay after all taxes →</div>
+            </Link>
+            <Link href={`/unemployment-calculator/${state}`} style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>📋</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Unemployment Calculator</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Estimate weekly benefits →</div>
+            </Link>
+            <Link href={`/minimum-wage/${state}`} style={{ display: 'block', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💵</div>
+              <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Minimum Wage 2026</div>
+              <div style={{ fontSize: '12px', opacity: 0.55 }}>Current hourly rate & breakdown →</div>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -146,7 +161,6 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
   );
 }
 
-// Client calculator widget — inline for SSG compatibility
 function OvertimeCalculatorWidget({ stateName, hasDoubleTime, hasDailyOT, dailyOTHours }: {
   stateName: string; hasDoubleTime: boolean; hasDailyOT: boolean; dailyOTHours?: number;
 }) {
