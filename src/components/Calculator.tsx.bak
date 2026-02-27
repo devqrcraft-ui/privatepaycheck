@@ -48,6 +48,18 @@ const FREQS = [
   {id:'annual',label:'Annual',mult:1},
 ];
 
+
+
+  '🔒 Your data never leaves your browser',
+  '✅ All 50 states supported',
+  '💡 2026 federal & state tax tables',
+  '⚡ Instant calculations — no signup needed',
+  '📊 Includes FICA, Social Security & Medicare',
+  '💰 Pre-tax deductions: 401(k), HSA, health insurance',
+  '🏖️ 9 states with zero income tax highlighted',
+  '🔄 Switch between hourly, weekly, monthly & annual',
+];
+
 function calcFed(annual: number, filing: string) {
   const brackets = filing === 'married' ? FEDERAL_MARRIED : FEDERAL_SINGLE;
   const std = filing === 'married' ? 29200 : 14600;
@@ -170,6 +182,36 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
         @media (max-width: 768px) { .ad-tall { display: none; } }
 
 
+
+          overflow: hidden;
+          white-space: nowrap;
+          width: 100%;
+          border-top: 1px solid rgba(99,102,241,0.4);
+          border-bottom: 1px solid rgba(99,102,241,0.4);
+          background: rgba(99,102,241,0.18);
+          padding: 9px 0;
+        }
+
+          display: inline-block;
+          white-space: nowrap;
+
+          will-change: transform;
+        }
+
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+
+
+          display: inline-block;
+          padding: 0 32px;
+          font-size: 12.5px;
+          font-weight: 600;
+          color: #c4b5fd;
+          letter-spacing: 0.03em;
+          text-shadow: 0 0 12px rgba(167,139,250,0.7);
+        }
+
         /* ── RESPONSIVE ─────────────────────────────────────────── */
         .calc-layout {
           display: flex;
@@ -230,6 +272,20 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
           .calc-sidebar .adbox { flex: 1 1 100%; }
         }
       `}</style>
+
+
+
+        {/*
+
+          seamlessly continues when the first copy scrolls off-screen.
+          translateX(-50%) lands exactly at the start of the second copy.
+        */}
+
+
+
+          ))}
+        </div>
+      </div>
 
       {/* ── MAIN LAYOUT ── */}
       <div className="calc-layout" style={{ paddingTop: '24px', paddingBottom: '32px' }}>

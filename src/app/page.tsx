@@ -32,7 +32,7 @@ export default function HomePage() {
           <Link href="/blog" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>Blog</Link>
           <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}>Hourly</Link>
         </div>
-      </nav><div style={{overflow:"hidden",background:"linear-gradient(90deg,#4f46e5,#7c3aed)",padding:"8px 0"}}><style>{("@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}")}</style><div style={{display:"inline-block",whiteSpace:"nowrap",animation:"mq 50s linear infinite",fontSize:"13px",color:"white",opacity:0.95,letterSpacing:"0.3px"}}>{"🔒 Your salary data NEVER leaves your browser  ·  ⚡ Instant calculations  ·  🗺️ All 50 US States  ·  🆓 100% Free — no signup  ·  💼 Federal + State + FICA + 401k + HSA  ·  📱 Works on any device  ·  🏆 Updated for 2026 tax year  ·  🔒 Your salary data NEVER leaves your browser  ·  ⚡ Instant calculations  ·  🗺️ All 50 US States  ·  🆓 100% Free — no signup  ·  💼 Federal + State + FICA + 401k + HSA  ·  📱 Works on any device  ·  🏆 Updated for 2026 tax year  · "}</div></div>
+      </nav>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
