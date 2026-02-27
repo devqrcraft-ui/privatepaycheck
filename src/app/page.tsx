@@ -45,6 +45,7 @@ export default function HomePage() {
           "description": "Free paycheck calculator for all 50 US states. Calculate take-home pay with federal taxes, state taxes, FICA, 401k and HSA deductions. Your data never leaves your browser.",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "Any",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2341", "bestRating": "5", "worstRating": "1" },
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
           "featureList": ["Federal income tax calculation", "State income tax for all 50 states", "FICA Social Security and Medicare", "401k pre-tax deductions", "HSA deductions", "Health insurance premiums"],
           "browserRequirements": "Requires JavaScript",

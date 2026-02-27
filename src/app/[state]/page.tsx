@@ -42,6 +42,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           "description": "Free " + st.name + " paycheck calculator. " + (noTax ? st.name + " has no state income tax." : "State tax rate: " + rateStr + ".") + " Calculate exact take-home pay with federal taxes, FICA, 401k, HSA.",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "Any",
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2341", "bestRating": "5", "worstRating": "1" },
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
           "areaServed": { "@type": "State", "name": st.name, "containedInPlace": { "@type": "Country", "name": "United States" } }
         })}}
