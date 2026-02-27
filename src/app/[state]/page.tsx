@@ -63,6 +63,55 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
       </div>
+
+        <div style={{ marginTop:'32px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.07)', borderRadius:'12px', padding:'24px' }}>
+          <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'16px' }}>{'How to Calculate Your ' + st.name + ' Paycheck'}</h2>
+          <p style={{ fontSize:'14px', opacity:0.7, lineHeight:1.8, marginBottom:'12px' }}>
+            {noTax
+              ? 'Living in ' + st.name + ' gives you a significant tax advantage — there is no state income tax. Your paycheck deductions include only federal income tax, Social Security (6.2%), and Medicare (1.45%). This means more money in your pocket compared to high-tax states like California or New York.'
+              : 'Your ' + st.name + ' paycheck is subject to both federal and state income taxes. The state income tax rate is ' + rateStr + ', applied on top of federal taxes. To calculate your exact take-home pay, enter your gross salary above and select your filing status.'
+            }
+          </p>
+          <p style={{ fontSize:'14px', opacity:0.7, lineHeight:1.8 }}>
+            {'Use this free ' + st.name + ' paycheck calculator to instantly see your net pay after all deductions — federal income tax, ' + (noTax ? 'FICA' : st.name + ' state tax, FICA') + ', 401(k), HSA, and health insurance premiums. All calculations happen in your browser — your salary data is never sent to any server.'}
+          </p>
+        </div>
+
+        <div style={{ marginTop:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.07)', borderRadius:'12px', padding:'24px' }}>
+          <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'20px' }}>{'Frequently Asked Questions — ' + st.name + ' Paycheck'}</h2>
+          <div style={{ display:'flex', flexDirection:'column', gap:'16px' }}>
+            <div>
+              <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'6px' }}>{'How much is taken out of my paycheck in ' + st.name + '?'}</h3>
+              <p style={{ fontSize:'13px', opacity:0.7, lineHeight:1.7, margin:0 }}>
+                {noTax
+                  ? 'In ' + st.name + ', there is no state income tax. A typical employee pays 6.2% for Social Security, 1.45% for Medicare, and federal income tax based on their bracket. For a $75,000 salary, expect roughly 18-22% total tax.'
+                  : 'In ' + st.name + ', deductions include federal income tax (10-37%), state income tax (' + rateStr + '), Social Security (6.2%), and Medicare (1.45%). For a $75,000 salary, total taxes are typically 25-30%.'
+                }
+              </p>
+            </div>
+            <div>
+              <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'6px' }}>{'What is the ' + st.name + ' state income tax rate in 2026?'}</h3>
+              <p style={{ fontSize:'13px', opacity:0.7, lineHeight:1.7, margin:0 }}>
+                {noTax
+                  ? st.name + ' has no state income tax in 2026. This applies to all residents regardless of income level.'
+                  : 'The ' + st.name + ' state income tax rate is ' + rateStr + ' for 2026. This is applied to your taxable income after the standard deduction.'
+                }
+              </p>
+            </div>
+            <div>
+              <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'6px' }}>{'How do I reduce taxes on my ' + st.name + ' paycheck?'}</h3>
+              <p style={{ fontSize:'13px', opacity:0.7, lineHeight:1.7, margin:0 }}>
+                {'The most effective ways to reduce your taxable income include contributing to a 401(k) (up to $23,500 in 2026), an HSA (up to $4,300 for individuals), and paying health insurance premiums pre-tax. Enter these amounts in the calculator above to see your exact savings.'}
+              </p>
+            </div>
+            <div>
+              <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'6px' }}>{'Is this ' + st.name + ' paycheck calculator accurate for 2026?'}</h3>
+              <p style={{ fontSize:'13px', opacity:0.7, lineHeight:1.7, margin:0 }}>
+                {'Yes. This calculator uses 2026 federal tax brackets, the 2026 standard deduction ($15,000 for single filers), current FICA rates, and ' + (noTax ? 'reflects ' + st.name + ''s zero state income tax.' : 'the ' + st.name + ' state tax rate of ' + rateStr + '.')}
+              </p>
+            </div>
+          </div>
+        </div>
       <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         {'© 2026 PrivatePaycheck.com'}
       </footer>
