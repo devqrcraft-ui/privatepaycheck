@@ -34,6 +34,53 @@ const TICKER_ITEMS = [
 export default function HomePage() {
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+      {/* Schema.org — WebApplication */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "PrivatePaycheck — Free Paycheck Calculator 2026",
+          "url": "https://www.privatepaycheck.com",
+          "description": "Free paycheck calculator for all 50 US states. Calculate take-home pay with federal taxes, state taxes, FICA, 401k and HSA deductions. Your data never leaves your browser.",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Any",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "featureList": ["Federal income tax calculation", "State income tax for all 50 states", "FICA Social Security and Medicare", "401k pre-tax deductions", "HSA deductions", "Health insurance premiums"],
+          "browserRequirements": "Requires JavaScript",
+          "inLanguage": "en-US"
+        })}}
+      />
+      {/* Schema.org — FAQPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I calculate my paycheck after taxes?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Enter your annual gross salary, select your filing status, state, and any pre-tax deductions like 401k or HSA. The calculator instantly shows your net take-home pay after all federal, state, and FICA taxes." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this paycheck calculator free?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, PrivatePaycheck is 100% free with no signup required. Your salary data never leaves your browser — all calculations happen locally." }
+            },
+            {
+              "@type": "Question",
+              "name": "Which states have no income tax in 2026?",
+              "acceptedAnswer": { "@type": "Answer", "text": "In 2026, the following states have no state income tax: Texas, Florida, Nevada, Wyoming, Washington, South Dakota, Alaska, Tennessee, and New Hampshire." }
+            },
+            {
+              "@type": "Question",
+              "name": "How accurate is this paycheck calculator for 2026?",
+              "acceptedAnswer": { "@type": "Answer", "text": "This calculator uses 2026 federal tax brackets, the 2026 standard deduction of <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>5,000 for single filers and $30,000 for married filing jointly, current FICA rates of 7.65%, and up-to-date state tax rates for all 50 states." }
+            }
+          ]
+        })}}
+      />
       <style>{`
         @keyframes tickerScroll {
           0%   { transform: translateX(0); }
