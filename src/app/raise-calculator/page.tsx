@@ -101,7 +101,7 @@ export default function RaiseCalculator() {
             <br/><span style={{ color:'#818cf8' }}>How Much Will Your Raise Actually Be?</span>
           </h1>
           <p style={{ fontSize:'16px', opacity:0.65, maxWidth:'560px', margin:'0 auto', lineHeight:1.7 }}>
-            A 10% raise doesn't mean 10% more in your pocket. See exactly how much extra take-home pay you'll get after all taxes.
+            A 10% raise doesn&apos;t mean 10% more in your pocket. See exactly how much extra take-home pay you'll get after all taxes.
           </p>
         </div>
 
@@ -197,7 +197,7 @@ export default function RaiseCalculator() {
         <div style={{ marginTop:'40px', ...CARD }}>
           <h2 style={{ fontSize:'20px', fontWeight:800, marginBottom:'20px' }}>Raise FAQ</h2>
           {[
-            { q:'Why do I keep less than my raise percentage?', a:'As your salary increases, more of your income falls into higher tax brackets. A 10% raise doesn't mean 10% more net pay — typically you keep 60%–70% of the raise after taxes depending on your state and situation.' },
+            { q:'Why do I keep less than my raise percentage?', a:'As your salary increases, more of your income falls into higher tax brackets. A 10% raise doesn&apos;t mean 10% more net pay — typically you keep 60%–70% of the raise after taxes depending on your state and situation.' },
             { q:'How do I use this to negotiate a raise?', a:'Work backwards: decide how much extra monthly income you need, then use this calculator to find the gross raise required. For example, to get $500/month more in Texas, you may only need a $7,500 raise. In California, you might need $10,000+.' },
             { q:'Does a raise change my 401k contribution?', a:'If your 401k contribution is percentage-based, yes — it increases automatically. If it's a fixed dollar amount, you may want to revisit your contribution to take advantage of the extra income.' },
             { q:'What if my raise pushes me into a higher tax bracket?', a:'Only the income above the bracket threshold is taxed at the higher rate. A raise never makes you take home less money. The marginal rate only applies to the new dollars, not your entire salary.' },
