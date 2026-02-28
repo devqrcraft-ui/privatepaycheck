@@ -21,11 +21,11 @@ const BLOG_SLUGS = [
   'california-paycheck-calculator-guide',
   'overtime-pay-rules-by-state',
   'hsa-contribution-limits-2026',
-  'how-much-is-50k-a-year-hourly',
-  'texas-vs-california-salary',
-  '2026-federal-tax-brackets',
+  'texas-paycheck-calculator-guide',
+  'florida-unemployment-benefits-2026',
   'what-is-fica-tax',
-  'how-to-increase-take-home-pay',
+  'california-minimum-wage-2026',
+  'how-to-calculate-paycheck-taxes',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -39,6 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/overtime-calculator`,           lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/unemployment-calculator`,       lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/minimum-wage`,                  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/bonus-calculator`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/tip-calculator`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog`,                          lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE_URL}/privacy-policy`,                lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE_URL}/terms`,                         lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
@@ -49,14 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-    })),
-
-    // ── hourly/[state] ────────────────────────────────────
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/hourly-paycheck-calculator/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
     })),
 
     // ── overtime/[state] ──────────────────────────────────
@@ -78,6 +72,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── minimum-wage/[state] ──────────────────────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/minimum-wage/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+
+    // ── bonus-calculator/[state] ──────────────────────────
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/bonus-calculator/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+
+    // ── tip-calculator/[state] ────────────────────────────
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/tip-calculator/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.75,
