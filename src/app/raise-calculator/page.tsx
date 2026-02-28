@@ -199,7 +199,7 @@ export default function RaiseCalculator() {
           {[
             { q:'Why do I keep less than my raise percentage?', a:'As your salary increases, more of your income falls into higher tax brackets. A 10% raise doesn&apos;t mean 10% more net pay — typically you keep 60%–70% of the raise after taxes depending on your state and situation.' },
             { q:'How do I use this to negotiate a raise?', a:'Work backwards: decide how much extra monthly income you need, then use this calculator to find the gross raise required. For example, to get $500/month more in Texas, you may only need a $7,500 raise. In California, you might need $10,000+.' },
-            { q:'Does a raise change my 401k contribution?', a:'If your 401k contribution is percentage-based, yes — it increases automatically. If it's a fixed dollar amount, you may want to revisit your contribution to take advantage of the extra income.' },
+            { q:'Does a raise change my 401k contribution?', a:'If your 401k contribution is percentage-based, yes — it increases automatically. If it&apos;s a fixed dollar amount, you may want to revisit your contribution to take advantage of the extra income.' },
             { q:'What if my raise pushes me into a higher tax bracket?', a:'Only the income above the bracket threshold is taxed at the higher rate. A raise never makes you take home less money. The marginal rate only applies to the new dollars, not your entire salary.' },
           ].map(({q,a})=>(
             <div key={q} style={{ marginBottom:'16px', paddingBottom:'16px', borderBottom:'1px solid rgba(255,255,255,0.06)' }}>

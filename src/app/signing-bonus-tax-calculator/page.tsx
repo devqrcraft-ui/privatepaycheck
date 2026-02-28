@@ -190,7 +190,7 @@ export default function SigningBonusCalculator() {
           <h2 style={{ fontSize:'20px', fontWeight:800, marginBottom:'20px' }}>Signing Bonus FAQ</h2>
           {[
             { q:'Is a signing bonus taxed differently than regular salary?', a:'Not in terms of your final liability — it adds to your taxable income and is taxed at your marginal rate. However, employers often withhold at a flat 22% supplemental rate. If your actual rate is higher, you may owe more at tax time.' },
-            { q:'What happens if I leave before the clawback period?', a:'You typically owe back the gross amount — before taxes. But since you already paid taxes on it, you can claim a deduction or credit on next year's return. This is a critical detail most people miss.' },
+            { q:'What happens if I leave before the clawback period?', a:'You typically owe back the gross amount — before taxes. But since you already paid taxes on it, you can claim a deduction or credit on next year&apos;s return. This is a critical detail most people miss.' },
             { q:'Should I negotiate a higher signing bonus or higher salary?', a:'Higher base salary is almost always better long-term: it compounds into raises, bonuses, 401k matches, and severance. A signing bonus is taxed heavily and is one-time. Use this calculator to see the real after-tax value.' },
             { q:'Can I reduce taxes on my signing bonus?', a:'Yes — ask your employer if you can defer part into your 401k directly, or time it into a year where your other income is lower. Some negotiate to receive it in Q1 of the following year.' },
           ].map(({q,a})=>(
