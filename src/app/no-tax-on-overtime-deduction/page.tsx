@@ -1,5 +1,4 @@
-import type { Metadata } from 'next'
-import TipsCalculator from './TipsCalculator'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'No Tax on Tips Calculator 2025 — How Much Will You Save?',
@@ -8,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <TipsCalculator />
+  return 
 }
