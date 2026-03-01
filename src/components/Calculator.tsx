@@ -152,22 +152,18 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
         }
         .tc:hover { background: rgba(255,255,255,0.08); }
 
-        /* Ad box */
+        /* Ad box — invisible until AdSense fills it */
         .adbox {
-          background: rgba(255,255,255,0.03);
-          border: 1.5px dashed rgba(255,255,255,0.1);
           border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: rgba(255,255,255,0.2);
-          font-size: 12px;
-          letter-spacing: 0.05em;
-          text-align: center;
+          overflow: hidden;
+          min-height: 0;
         }
+        /* Show placeholder only in dev (when contains text) — hidden in prod */
+        .adbox:empty { display: none; }
 
         select option { background: #1e1b4b; }
-        @media (max-width: 768px) { .ad-tall { display: none; } }
+        /* Hide sidebar entirely on mobile until ads load */
+        @media (max-width: 768px) { .calc-sidebar { display: none; } }
 
 
         /* ── RESPONSIVE ─────────────────────────────────────────── */
@@ -290,10 +286,9 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
             ))}
           </div>
 
-          {/* Ad leaderboard */}
-          <div className="adbox" style={{ height: '90px', marginBottom: '20px' }}>
-            {/* AdSense 728×90 */}
-            Advertisement
+          {/* Ad leaderboard 728×90 — shows when AdSense loads */}
+          <div className="adbox" style={{ marginBottom: '20px' }}>
+            {/* ins class="adsbygoogle" goes here */}
           </div>
 
           {/* Result */}
@@ -337,17 +332,16 @@ export default function Calculator({ defaultState = 'ca' }: { defaultState?: str
           </div>
         </div>
 
-        {/* SIDEBAR ADS */}
+        {/* SIDEBAR ADS — hidden on mobile, filled by AdSense on desktop */}
         <div className="calc-sidebar">
-          <div className="adbox" style={{ height: '250px' }}>
-            {/* AdSense 300×250 */}
-            Ad · 300×250
+          <div className="adbox" style={{ minHeight: '250px' }}>
+            {/* ins class="adsbygoogle" 300×250 */}
           </div>
-          <div className="adbox" style={{ height: '250px' }}>
-            Ad · 300×250
+          <div className="adbox" style={{ minHeight: '250px' }}>
+            {/* ins class="adsbygoogle" 300×250 */}
           </div>
-          <div className="adbox ad-tall" style={{ height: '600px' }}>
-            Ad · 300×600
+          <div className="adbox ad-tall" style={{ minHeight: '600px' }}>
+            {/* ins class="adsbygoogle" 300×600 */}
           </div>
         </div>
       </div>
