@@ -1,11 +1,126 @@
-﻿import type { Metadata } from 'next'
+﻿'use client';
+import { useState, useMemo } from 'react';
+import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'No Tax on Tips Calculator 2025 — How Much Will You Save?',
-  description: 'Calculate your federal tax savings under the new No Tax on Tips law. Up to $25,000 tax-free. 100% private — zero data stored.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/no-tax-on-tips-calculator' },
-}
+export default function NoTaxOnOvertimePage() {
+  const [regular, setRegular] = useState('25');
+  const [otHours, setOtHours] = useState('10');
+  const [weeks, setWeeks] = useState('52');
+  const [filing, setFiling] = useState('single');
 
-export default function Page() {
-  return 
+  const r = useMemo(() => {
+    const reg = parseFloat(regular) || 0;
+    const ot = parseFloat(otHours) || 0;
+    const wk = parseFloat(weeks) || 52;
+    const otRate = reg * 1.5;
+    const annualOT = otRate * ot * wk;
+    const annualRegular = reg * 40 * wk;
+    const annualTotal = annualRegular + annualOT;
+    const std = filing === 'married' ? 30000 : 15000;
+
+    function fedTax(income: number, f: string) {
+      const b: [number, number][] = f === 'married'
+        ? [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]]
+        : [[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]];
+      let tax = 0, prev = 0;
+      for (const [lim, rate] of b) { if (income <= prev) break; tax += (Math.min(income, lim) - prev) * rate; prev = lim; }
+      return tax;
+    }
+
+    const taxableOld = Math.max(0, annualTotal - std);
+    const taxableNew = Math.max(0, annualRegular - std);
+    const fedOld = fedTax(taxableOld, filing);
+    const fedNew = fedTax(taxableNew, filing);
+    const savings = fedOld - fedNew;
+    const ficaSavings = Math.min(annualOT, Math.max(0, 176100 - annualRegular)) * 0.0765;
+
+    return { annualOT, annualRegular, annualTotal, fedOld, fedNew, savings, ficaSavings, totalSavings: savings + ficaSavings, otRate };
+  }, [regular, otHours, weeks, filing]);
+
+  const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
+  const inp: React.CSSProperties = { width: '100%', padding: '10px 14px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: 'white', fontSize: '15px', outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit' };
+  const lbl: React.CSSProperties = { fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' };
+
+  return (
+    <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Overtime Calculator 2026', url: 'https://www.privatepaycheck.com/no-tax-on-overtime-deduction', description: 'Calculate your federal tax savings if overtime pay becomes tax-free under proposed 2026 legislation.' }) }} />
+      <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
+        <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}><span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck</Link>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '13px' }}>
+          <Link href="/no-tax-on-tips-calculator" style={{ color: '#4ade80', textDecoration: 'none' }}>No Tax on Tips</Link>
+          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none' }}>OT Calculator</Link>
+        </div>
+      </nav>
+
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+          <div style={{ display: 'inline-block', background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#fbbf24' }}>рџ”Ґ Proposed 2026 вЂ” No Tax on Overtime</div>
+          <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Overtime Calculator 2026</h1>
+          <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much extra you would keep if overtime pay (the 0.5Г— premium portion) becomes federal income tax-free.</p>
+        </div>
+
+        <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(170px,1fr))', gap: '16px', marginBottom: '16px' }}>
+            <div><label style={lbl}>Regular Hourly Rate ($)</label><input type="number" value={regular} onChange={e => setRegular(e.target.value)} style={inp} placeholder="25" /></div>
+            <div><label style={lbl}>OT Hours/Week</label><input type="number" value={otHours} onChange={e => setOtHours(e.target.value)} style={inp} placeholder="10" /></div>
+            <div><label style={lbl}>Weeks/Year</label><input type="number" value={weeks} onChange={e => setWeeks(e.target.value)} style={inp} placeholder="52" /></div>
+            <div>
+              <label style={lbl}>Filing Status</label>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={inp}>
+                <option value="single">Single</option>
+                <option value="married">Married Filing Jointly</option>
+              </select>
+            </div>
+          </div>
+
+          <div style={{ background: 'linear-gradient(135deg,rgba(251,191,36,0.12),rgba(99,102,241,0.12))', border: '1px solid rgba(251,191,36,0.25)', borderRadius: '12px', padding: '24px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+              <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '4px' }}>Annual Tax Savings on Overtime</div>
+              <div style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 900, color: '#fbbf24', lineHeight: 1 }}>{fmt(r.totalSavings)}</div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '10px' }}>
+              {[
+                { l: 'OT Rate', v: '$' + r.otRate.toFixed(2) + '/hr' },
+                { l: 'Annual OT Pay', v: fmt(r.annualOT) },
+                { l: 'Fed Tax Saved', v: fmt(r.savings), c: '#fbbf24' },
+                { l: 'FICA Saved', v: fmt(r.ficaSavings), c: '#fbbf24' },
+              ].map(b => (
+                <div key={b.l} style={{ background: 'rgba(0,0,0,0.25)', borderRadius: '8px', padding: '10px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '11px', opacity: 0.5, marginBottom: '3px' }}>{b.l}</div>
+                  <div style={{ fontWeight: 800, fontSize: '16px', color: b.c || 'white' }}>{b.v}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}>рџ”’ All calculations in your browser вЂ” data never sent anywhere</p>
+        </div>
+
+        <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
+          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>вљ пёЏ Legislative Status</h3>
+          <p style={{ fontSize: '13px', opacity: 0.8, lineHeight: 1.7, margin: 0 }}>No Tax on Overtime has been proposed but not yet enacted as of March 2026. The proposal would exempt the overtime premium (0.5Г— portion above regular pay) from federal income tax. This calculator shows potential savings if passed. Verify current status at IRS.gov before making financial decisions.</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
+          <Link href="/no-tax-on-tips-calculator" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}>рџЌЅпёЏ</div>
+            <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Tips</div>
+            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate tip savings в†’</div>
+          </Link>
+          <Link href="/overtime-calculator" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}>вЏ°</div>
+            <div style={{ fontWeight: 700, fontSize: '13px' }}>Overtime Calculator</div>
+            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Current OT pay в†’</div>
+          </Link>
+          <Link href="/" style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}>рџ’°</div>
+            <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
+            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full tax breakdown в†’</div>
+          </Link>
+        </div>
+      </div>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+        В© 2026 PrivatePaycheck.com В· <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> В· <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
+      </footer>
+    </main>
+  );
 }
