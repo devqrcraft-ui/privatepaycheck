@@ -5,6 +5,9 @@ import Footer from '@/components/Footer';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.privatepaycheck.com' },
+  robots: { index: true, follow: true },
+  keywords: 'paycheck calculator, salary calculator, tax calculator 2026, US paycheck, take home pay, FICA calculator, 401k calculator',
   metadataBase: new URL('https://www.privatepaycheck.com'),
   title: {
     default: 'Paycheck Calculator 2026 — Free & Private | PrivatePaycheck',
@@ -12,6 +15,8 @@ export const metadata: Metadata = {
   },
   description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private — your salary never leaves your browser.',
   openGraph: {
+    locale: 'en_US',
+    url: 'https://www.privatepaycheck.com',
     siteName: 'PrivatePaycheck',
     type: 'website',
     images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck — Free Paycheck Calculator 2026' }],
@@ -30,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
         <SpeedInsights />
       <Footer />
-      </body>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my paycheck?","acceptedAnswer":{"@type":"Answer","text":"Enter your gross salary, pay frequency, state, and deductions. Our calculator computes federal tax, state tax, FICA, and net pay instantly."}},{"@type":"Question","name":"Which states have no income tax?","acceptedAnswer":{"@type":"Answer","text":"Florida, Texas, Nevada, Washington, Wyoming, South Dakota, Tennessee, and New Hampshire have no state income tax."}},{"@type":"Question","name":"What is FICA tax?","acceptedAnswer":{"@type":"Answer","text":"FICA is Social Security (6.2%) and Medicare (1.45%) tax, totaling 7.65% for employees."}}]}) }} /></body>
     </html>
   );
 }
