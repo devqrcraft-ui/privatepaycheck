@@ -39,9 +39,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/overtime-calculator`,           lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/unemployment-calculator`,       lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/minimum-wage`,                  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/bonus-calculator`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/bonus-tax-calculator`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/tip-calculator`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog`,                          lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE_URL}/no-tax-on-overtime-deduction`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/no-tax-on-tips-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/raise-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/signing-bonus-tax-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/two-jobs-tax-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/w4-withholding-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/privacy-policy`,                lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE_URL}/terms`,                         lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
 
@@ -79,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── bonus-calculator/[state] ──────────────────────────
     ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/bonus-calculator/${slug}`,
+      url: `${BASE_URL}/bonus-tax-calculator/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.75,
