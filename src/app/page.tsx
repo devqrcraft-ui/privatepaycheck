@@ -5,7 +5,7 @@ import Calculator from '@/components/Calculator';
 export const metadata: Metadata = {
   title: 'Paycheck Calculator 2026 — Free, Private | PrivatePaycheck',
   description: 'Calculate your exact take-home pay for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private — your salary never leaves your browser.',
-  alternates: { canonical: 'https://www.privatepaycheck.com' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/' },
 };
 
 const TOP_STATES = [
