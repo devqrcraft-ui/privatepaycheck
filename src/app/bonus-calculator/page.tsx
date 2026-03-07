@@ -15,7 +15,7 @@ export default function BonusHub() {
   })).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <main style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color:'white', fontFamily:'system-ui,sans-serif' }}>
+    <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ textAlign:'center', marginBottom:'40px' }}>
           <h1 style={{ fontSize:'clamp(28px,5vw,52px)', fontWeight:900, margin:'0 0 12px' }}>Bonus Tax Calculator 2026</h1>

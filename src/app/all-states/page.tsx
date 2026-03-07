@@ -12,7 +12,7 @@ export default function AllStatesPage() {
   const slugs = Object.keys(STATE_SLUG_MAP);
 
   return (
-    <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>

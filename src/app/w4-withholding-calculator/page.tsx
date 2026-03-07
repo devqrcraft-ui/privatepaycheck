@@ -46,7 +46,7 @@ export default function W4Calculator(){
   const lbl:React.CSSProperties={fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'6px',display:'block'};
 
   return(
-    <main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}>
+    <main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
       <div style={{maxWidth:'900px',margin:'0 auto',padding:'32px 16px'}}>
         <div style={{textAlign:'center',marginBottom:'28px'}}>
           <h1 style={{fontSize:'clamp(24px,4vw,42px)',fontWeight:900,margin:'0 0 12px',lineHeight:1.2}}>W-4 Withholding Calculator 2026</h1>

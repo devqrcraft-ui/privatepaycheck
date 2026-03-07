@@ -56,7 +56,7 @@ export default function OvertimeDeductionCalculator() {
   }
 
   return (
-    <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
           { '@type': 'Question', 'name': 'What is the overtime premium deduction?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'FLSA-covered hourly workers can deduct the overtime premium — the extra 0.5x above their regular rate. For a $20/hr worker, overtime is $30/hr; the deductible premium is $10/hr.' } },

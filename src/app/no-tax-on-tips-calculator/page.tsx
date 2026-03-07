@@ -46,7 +46,7 @@ export default function NoTaxOnTipsCalculator() {
   const lbl: React.CSSProperties = { fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' };
 
   return (
-    <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Tips Calculator 2026', url: 'https://www.privatepaycheck.com/no-tax-on-tips-calculator', description: 'Calculate your federal tax savings under the No Tax on Tips exemption. Up to $25,000 in tips tax-free.', applicationCategory: 'FinanceApplication', operatingSystem: 'Any' }) }} />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>

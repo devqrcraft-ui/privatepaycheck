@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Working two jobs means each employer under-withholds. Learn exactly how much extra to put on your W-4 to avoid a tax bill. 2026 guide.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/two-jobs-tax-withholding' },
 };
-export default function Post(){return(<main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}>
+export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> вЂє <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> вЂє Two Jobs Tax</div>
 <div style={{display:'inline-block',background:'rgba(248,113,113,0.1)',color:'#f87171',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>вљ пёЏ TAX TRAP</div>

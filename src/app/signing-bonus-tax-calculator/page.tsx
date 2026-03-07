@@ -40,7 +40,7 @@ function federalTax(income: number, filing: string): number {
   return tax;
 }
 
-const BG = { minHeight:'100vh', background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color:'white', fontFamily:'system-ui,sans-serif' };
+const BG = { minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' };
 const NAV_STYLE = { padding:'14px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.08)', background:'rgba(0,0,0,0.3)', position:'sticky' as const, top:0, zIndex:100 };
 const CARD = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'16px', padding:'24px' };
 const LABEL = { fontSize:'11px', fontWeight:700, letterSpacing:'0.08em', color:'rgba(255,255,255,0.5)', textTransform:'uppercase' as const, marginBottom:'8px' };
