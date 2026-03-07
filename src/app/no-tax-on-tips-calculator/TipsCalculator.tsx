@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -78,18 +78,6 @@ export default function TipsCalculator() {
           { '@type': 'Question', 'name': 'Do I still pay Social Security and Medicare on tips?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes. Only federal income tax is removed. FICA (6.2% SS + 1.45% Medicare) still applies to all tip income.' } },
         ],
       })}} />
-
-      <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
-        <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
-          <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
-        </Link>
-        <div style={{ display: 'flex', gap: '16px', fontSize: '13px', flexWrap: 'wrap' }}>
-          <Link href="/no-tax-on-overtime-deduction" style={{ color: '#c084fc', textDecoration: 'none', fontWeight: 600 }}>OT Deduction</Link>
-          <Link href="/two-jobs-tax-calculator"      style={{ color: '#67e8f9', textDecoration: 'none', fontWeight: 600 }}>Two Jobs</Link>
-          <Link href="/overtime-calculator"          style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 600 }}>Overtime</Link>
-          <Link href="/blog"                         style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Blog</Link>
-        </div>
-      </nav>
 
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#4ade80', marginBottom: '20px' }}>

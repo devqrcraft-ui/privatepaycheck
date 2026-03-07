@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
@@ -13,17 +13,6 @@ export default function AllStatesPage() {
 
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
-      <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
-        <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
-          <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
-        </Link>
-        <div style={{ display: 'flex', gap: '16px', fontSize: '13px' }}>
-          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none' }}>Overtime</Link>
-          <Link href="/unemployment-calculator" style={{ color: '#a5b4fc', textDecoration: 'none' }}>Unemployment</Link>
-          <Link href="/minimum-wage" style={{ color: '#6ee7b7', textDecoration: 'none' }}>Min Wage</Link>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Paycheck</Link>
-        </div>
-      </nav>
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>

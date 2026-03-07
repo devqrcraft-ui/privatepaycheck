@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -23,14 +23,6 @@ export default function Post() {
           { '@type':'Question', name:'How do I apply for unemployment in Florida?', acceptedAnswer:{ '@type':'Answer', text:'Apply online at connect.myflorida.com. You need your Social Security number, employment history for the past 18 months, and reason for separation.' }},
         ],
       })}} />
-
-      <nav style={{ padding:'14px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.08)', background:'rgba(0,0,0,0.3)', position:'sticky', top:0, zIndex:100 }}>
-        <Link href="/" style={{ fontWeight:800, fontSize:'18px', color:'white', textDecoration:'none' }}><span style={{ color:'#4ade80' }}>$</span> PrivatePaycheck</Link>
-        <div style={{ display:'flex', gap:'16px', fontSize:'13px' }}>
-          <Link href="/blog" style={{ color:'#818cf8', textDecoration:'none' }}>← Blog</Link>
-          <Link href="/unemployment-calculator/florida" style={{ color:'#a5b4fc', textDecoration:'none' }}>FL Calculator</Link>
-        </div>
-      </nav>
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>

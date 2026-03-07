@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: '2026 Federal Income Tax Brackets — Complete Guide',
@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 const SINGLE=[[0,11600,'10%'],[11600,47150,'12%'],[47150,100525,'22%'],[100525,191950,'24%'],[191950,243725,'32%'],[243725,609350,'35%'],[609350,Infinity,'37%']];
 const MARRIED=[[0,23200,'10%'],[23200,94300,'12%'],[94300,201050,'22%'],[201050,383900,'24%'],[383900,487450,'32%'],[487450,731200,'35%'],[731200,Infinity,'37%']];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'2026 Federal Income Tax Brackets — Complete Guide',url:'https://www.privatepaycheck.com/blog/2026-federal-tax-brackets',datePublished:'2026-01-10',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
-<nav style={{padding:'14px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',borderBottom:'1px solid rgba(255,255,255,0.08)',background:'rgba(0,0,0,0.3)',position:'sticky',top:0,zIndex:100}}><Link href="/" style={{fontWeight:800,fontSize:'18px',color:'white',textDecoration:'none'}}><span style={{color:'#4ade80'}}>$</span> PrivatePaycheck</Link><Link href="/blog" style={{color:'#818cf8',fontSize:'13px',textDecoration:'none'}}>← Blog</Link></nav>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › 2026 Tax Brackets</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>TAX BASICS</div>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Texas vs California Salary: How Much More Do You Keep in Texas? (2026)',
@@ -7,7 +7,6 @@ export const metadata: Metadata = {
 };
 const ROWS=[{inc:50000,tx:41239,ca:38200},{inc:75000,tx:60284,ca:54844},{inc:100000,tx:78684,ca:70909},{inc:150000,tx:114284,ca:99259},{inc:200000,tx:146284,ca:125209}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'Texas vs California Salary 2026',url:'https://www.privatepaycheck.com/blog/texas-vs-california-salary',datePublished:'2026-02-22',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
-<nav style={{padding:'14px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',borderBottom:'1px solid rgba(255,255,255,0.08)',background:'rgba(0,0,0,0.3)',position:'sticky',top:0,zIndex:100}}><Link href="/" style={{fontWeight:800,fontSize:'18px',color:'white',textDecoration:'none'}}><span style={{color:'#4ade80'}}>$</span> PrivatePaycheck</Link><Link href="/blog" style={{color:'#818cf8',fontSize:'13px',textDecoration:'none'}}>← Blog</Link></nav>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › Texas vs California</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>COMPARISON</div>

@@ -44,13 +44,6 @@ export default function NoTaxOnOvertimePage() {
   return (
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Overtime Calculator 2026', url: 'https://www.privatepaycheck.com/no-tax-on-overtime-deduction', description: 'Calculate your federal tax savings if overtime pay becomes tax-free under proposed 2026 legislation.' }) }} />
-      <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
-        <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}><span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck</Link>
-        <div style={{ display: 'flex', gap: '16px', fontSize: '13px' }}>
-          <Link href="/no-tax-on-tips-calculator" style={{ color: '#4ade80', textDecoration: 'none' }}>No Tax on Tips</Link>
-          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none' }}>OT Calculator</Link>
-        </div>
-      </nav>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>

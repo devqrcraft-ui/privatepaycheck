@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -35,13 +35,6 @@ export default function Post() {
         datePublished:'2026-01-22', dateModified:'2026-01-22',
         author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
-      <nav style={{ padding:'14px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.08)', background:'rgba(0,0,0,0.3)', position:'sticky', top:0, zIndex:100 }}>
-        <Link href="/" style={{ fontWeight:800, fontSize:'18px', color:'white', textDecoration:'none' }}><span style={{ color:'#4ade80' }}>$</span> PrivatePaycheck</Link>
-        <div style={{ display:'flex', gap:'16px', fontSize:'13px' }}>
-          <Link href="/blog" style={{ color:'#818cf8', textDecoration:'none' }}>← Blog</Link>
-          <Link href="/" style={{ color:'rgba(255,255,255,0.6)', textDecoration:'none' }}>Calculator</Link>
-        </div>
-      </nav>
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › No Income Tax States 2026

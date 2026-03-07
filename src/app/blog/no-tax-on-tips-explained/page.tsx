@@ -6,9 +6,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/no-tax-on-tips-explained' },
 };
 export default function Post(){return(<main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}>
-<nav style={{padding:'14px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',borderBottom:'1px solid rgba(255,255,255,0.08)',background:'rgba(0,0,0,0.3)',position:'sticky',top:0,zIndex:100}}>
-<Link href="/" style={{fontWeight:800,fontSize:'18px',color:'white',textDecoration:'none'}}><span style={{color:'#4ade80'}}>$</span> PrivatePaycheck</Link>
-<Link href="/blog" style={{color:'#818cf8',fontSize:'13px',textDecoration:'none'}}>в†ђ Blog</Link></nav>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> вЂє <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> вЂє No Tax on Tips Explained</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>рџ”Ґ NEW 2026</div>

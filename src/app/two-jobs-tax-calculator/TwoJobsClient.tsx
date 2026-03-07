@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
@@ -46,13 +46,6 @@ export default function TwoJobsClient() {
 
   return (
     <main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}>
-      <nav style={{padding:'14px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',borderBottom:'1px solid rgba(255,255,255,0.08)',background:'rgba(0,0,0,0.3)',position:'sticky',top:0,zIndex:100}}>
-        <Link href="/" style={{fontWeight:800,fontSize:'18px',color:'white',textDecoration:'none'}}><span style={{color:'#4ade80'}}>$</span> PrivatePaycheck</Link>
-        <div style={{display:'flex',gap:'16px',fontSize:'13px'}}>
-          <Link href="/w4-withholding-calculator" style={{color:'#a5b4fc',textDecoration:'none'}}>W-4 Calculator</Link>
-          <Link href="/" style={{color:'rgba(255,255,255,0.6)',textDecoration:'none'}}>Paycheck</Link>
-        </div>
-      </nav>
       <div style={{maxWidth:'860px',margin:'0 auto',padding:'40px 16px'}}>
         <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}>
           <Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link>{' › Two Jobs Tax Calculator'}

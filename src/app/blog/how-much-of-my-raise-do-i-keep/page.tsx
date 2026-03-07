@@ -7,9 +7,6 @@ export const metadata: Metadata = {
 };
 const EXAMPLES=[{from:40000,raise:5000,kept:3350,pct:67},{from:60000,raise:8000,kept:5360,pct:67},{from:80000,raise:10000,kept:6720,pct:67},{from:100000,raise:15000,kept:9180,pct:61},{from:150000,raise:20000,kept:11280,pct:56},{from:200000,raise:25000,kept:13500,pct:54}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)',color:'white',fontFamily:'system-ui,sans-serif'}}>
-<nav style={{padding:'14px 24px',display:'flex',alignItems:'center',justifyContent:'space-between',borderBottom:'1px solid rgba(255,255,255,0.08)',background:'rgba(0,0,0,0.3)',position:'sticky',top:0,zIndex:100}}>
-<Link href="/" style={{fontWeight:800,fontSize:'18px',color:'white',textDecoration:'none'}}><span style={{color:'#4ade80'}}>$</span> PrivatePaycheck</Link>
-<Link href="/blog" style={{color:'#818cf8',fontSize:'13px',textDecoration:'none'}}>в†ђ Blog</Link></nav>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> вЂє <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> вЂє How Much of My Raise Do I Keep</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY</div>

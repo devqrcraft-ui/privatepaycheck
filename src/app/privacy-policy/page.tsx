@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -10,12 +10,6 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <main style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f0c29,#302b63,#24243e)', color:'white', fontFamily:'system-ui,sans-serif' }}>
-      <nav style={{ padding:'14px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.08)', background:'rgba(0,0,0,0.3)', position:'sticky', top:0, zIndex:100 }}>
-        <Link href="/" style={{ fontWeight:800, fontSize:'18px', color:'white', textDecoration:'none' }}>
-          <span style={{ color:'#4ade80' }}>$</span> PrivatePaycheck
-        </Link>
-        <Link href="/" style={{ color:'rgba(255,255,255,0.6)', fontSize:'13px', textDecoration:'none' }}>← Home</Link>
-      </nav>
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <h1 style={{ fontSize:'clamp(24px,4vw,40px)', fontWeight:900, margin:'0 0 8px' }}>Privacy Policy</h1>

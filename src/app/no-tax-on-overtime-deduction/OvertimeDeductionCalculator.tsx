@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -64,18 +64,6 @@ export default function OvertimeDeductionCalculator() {
           { '@type': 'Question', 'name': 'Do salaried workers qualify?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Generally no. Only FLSA-eligible hourly workers qualify. Most salaried exempt employees cannot claim this deduction.' } },
         ],
       })}} />
-
-      <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
-        <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
-          <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
-        </Link>
-        <div style={{ display: 'flex', gap: '16px', fontSize: '13px', flexWrap: 'wrap' }}>
-          <Link href="/no-tax-on-tips-calculator" style={{ color: '#4ade80', textDecoration: 'none', fontWeight: 600 }}>Tips</Link>
-          <Link href="/overtime-calculator"        style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 600 }}>Overtime Pay</Link>
-          <Link href="/two-jobs-tax-calculator"    style={{ color: '#67e8f9', textDecoration: 'none', fontWeight: 600 }}>Two Jobs</Link>
-          <Link href="/blog"                       style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Blog</Link>
-        </div>
-      </nav>
 
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(192,132,252,0.1)', border: '1px solid rgba(192,132,252,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#c084fc', marginBottom: '20px' }}>
