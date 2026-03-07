@@ -178,40 +178,6 @@ export default function HomePage() {
         <Link href="/all-states" className="all-link">View All 50 States →</Link>
       </section>
 
-      {/* FOOTER */}
-      <footer>
-        <div className="foot-inner">
-          <div className="foot-grid">
-            <div>
-              <div className="foot-brand">PrivatePaycheck.com</div>
-              <p className="foot-desc">Free, private paycheck calculator for US workers. All calculations happen in your browser. No data stored. No accounts required. Updated for 2026 IRS rules.</p>
-            </div>
-            <div>
-              <div className="foot-col-title">Calculators</div>
-              <ul className="foot-links">
-                <li><Link href="/calculator">Salary Calculator</Link></li>
-                <li><Link href="/hourly-paycheck-calculator">Hourly Calculator</Link></li>
-                <li><Link href="/bonus-calculator">Bonus Calculator</Link></li>
-                <li><Link href="/overtime-calculator">Overtime Calculator</Link></li>
-                <li><Link href="/w4-withholding-calculator">W-4 Calculator</Link></li>
-              </ul>
-            </div>
-            <div>
-              <div className="foot-col-title">Info</div>
-              <ul className="foot-links">
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/all-states">All 50 States</Link></li>
-                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link href="/terms">Terms of Use</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="foot-bottom">
-            <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
-            <span>Free · Private · No Data Stored</span>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }
