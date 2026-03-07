@@ -1,350 +1,146 @@
 'use client';
 import { useState } from 'react';
 
-const FEDERAL_SINGLE = [
-  { min: 0, max: 11600, rate: 0.10 },
-  { min: 11600, max: 47150, rate: 0.12 },
-  { min: 47150, max: 100525, rate: 0.22 },
-  { min: 100525, max: 191950, rate: 0.24 },
-  { min: 191950, max: 243725, rate: 0.32 },
-  { min: 243725, max: 609350, rate: 0.35 },
-  { min: 609350, max: Infinity, rate: 0.37 },
+const STATES = [
+  {v:'0',     l:'No income tax (TX, FL, WA\u2026)'},
+  {v:'9.3',   l:'California (up to 13.3%)'},
+  {v:'10.9',  l:'New York (up to 10.9%)'},
+  {v:'10.75', l:'New Jersey (up to 10.75%)'},
+  {v:'9.85',  l:'Minnesota (up to 9.85%)'},
+  {v:'9.9',   l:'Oregon (up to 9.9%)'},
+  {v:'8.75',  l:'Vermont (up to 8.75%)'},
+  {v:'7.65',  l:'Wisconsin (7.65%)'},
+  {v:'6.99',  l:'Connecticut (6.99%)'},
+  {v:'6.84',  l:'Nebraska (up to 6.84%)'},
+  {v:'5.75a', l:'Georgia (5.75%)'},
+  {v:'5.75b', l:'Maryland (up to 5.75%)'},
+  {v:'5.75c', l:'Virginia (5.75%)'},
+  {v:'5.3',   l:'Missouri (up to 5.3%)'},
+  {v:'5.0',   l:'Massachusetts (5%)'},
+  {v:'4.95',  l:'Illinois (4.95%)'},
+  {v:'4.85',  l:'Utah (4.85%)'},
+  {v:'4.4',   l:'Colorado (4.4%)'},
+  {v:'4.25',  l:'Michigan (4.25%)'},
+  {v:'3.99',  l:'Ohio (up to 3.99%)'},
+  {v:'3.07',  l:'Pennsylvania (3.07%)'},
+  {v:'2.5',   l:'Arizona (2.5%)'},
+  {v:'2.0',   l:'Indiana (3.15%)'},
 ];
-const FEDERAL_MARRIED = [
-  { min: 0, max: 23200, rate: 0.10 },
-  { min: 23200, max: 94300, rate: 0.12 },
-  { min: 94300, max: 201050, rate: 0.22 },
-  { min: 201050, max: 383900, rate: 0.24 },
-  { min: 383900, max: 487450, rate: 0.32 },
-  { min: 487450, max: 731200, rate: 0.35 },
-  { min: 731200, max: Infinity, rate: 0.37 },
-];
-const STATE_TAXES: Record<string, { rate: number; name: string; noTax?: boolean }> = {
-  al:{rate:0.050,name:'Alabama'},ak:{rate:0,name:'Alaska',noTax:true},az:{rate:0.025,name:'Arizona'},
-  ar:{rate:0.047,name:'Arkansas'},ca:{rate:0.093,name:'California'},co:{rate:0.044,name:'Colorado'},
-  ct:{rate:0.070,name:'Connecticut'},de:{rate:0.066,name:'Delaware'},fl:{rate:0,name:'Florida',noTax:true},
-  ga:{rate:0.055,name:'Georgia'},hi:{rate:0.110,name:'Hawaii'},id:{rate:0.058,name:'Idaho'},
-  il:{rate:0.049,name:'Illinois'},in:{rate:0.030,name:'Indiana'},ia:{rate:0.060,name:'Iowa'},
-  ks:{rate:0.057,name:'Kansas'},ky:{rate:0.045,name:'Kentucky'},la:{rate:0.043,name:'Louisiana'},
-  me:{rate:0.075,name:'Maine'},md:{rate:0.058,name:'Maryland'},ma:{rate:0.050,name:'Massachusetts'},
-  mi:{rate:0.042,name:'Michigan'},mn:{rate:0.098,name:'Minnesota'},ms:{rate:0.050,name:'Mississippi'},
-  mo:{rate:0.049,name:'Missouri'},mt:{rate:0.069,name:'Montana'},ne:{rate:0.068,name:'Nebraska'},
-  nv:{rate:0,name:'Nevada',noTax:true},nh:{rate:0,name:'New Hampshire',noTax:true},
-  nj:{rate:0.108,name:'New Jersey'},nm:{rate:0.059,name:'New Mexico'},ny:{rate:0.109,name:'New York'},
-  nc:{rate:0.045,name:'North Carolina'},nd:{rate:0.025,name:'North Dakota'},oh:{rate:0.040,name:'Ohio'},
-  ok:{rate:0.050,name:'Oklahoma'},or:{rate:0.099,name:'Oregon'},pa:{rate:0.031,name:'Pennsylvania'},
-  ri:{rate:0.059,name:'Rhode Island'},sc:{rate:0.070,name:'South Carolina'},
-  sd:{rate:0,name:'South Dakota',noTax:true},tn:{rate:0,name:'Tennessee',noTax:true},
-  tx:{rate:0,name:'Texas',noTax:true},ut:{rate:0.046,name:'Utah'},vt:{rate:0.086,name:'Vermont'},
-  va:{rate:0.058,name:'Virginia'},wa:{rate:0,name:'Washington',noTax:true},wv:{rate:0.065,name:'West Virginia'},
-  wi:{rate:0.076,name:'Wisconsin'},wy:{rate:0,name:'Wyoming',noTax:true},dc:{rate:0.109,name:'DC'},
+
+const BRACKETS: Record<string,[number,number][]> = {
+  single:  [[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]],
+  married: [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]],
+  head:    [[16550,.10],[63100,.12],[100500,.22],[191950,.24],[243700,.32],[609350,.35],[Infinity,.37]],
 };
-const FREQS = [
-  {id:'hourly',label:'Hourly',mult:2080},
-  {id:'weekly',label:'Weekly',mult:52},
-  {id:'biweekly',label:'Bi-Weekly',mult:26},
-  {id:'semimonthly',label:'Semi-Monthly',mult:24},
-  {id:'monthly',label:'Monthly',mult:12},
-  {id:'annual',label:'Annual',mult:1},
-];
 
-function calcFed(annual: number, filing: string) {
-  const brackets = filing === 'married' ? FEDERAL_MARRIED : FEDERAL_SINGLE;
-  const std = filing === 'married' ? 29200 : 14600;
-  const taxable = Math.max(0, annual - std);
-  let tax = 0;
-  for (const b of brackets) {
-    if (taxable <= b.min) break;
-    tax += (Math.min(taxable, b.max) - b.min) * b.rate;
+function fmt(n: number){ return '$'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+
+export default function Calculator() {
+  const [payType, setPayType] = useState('salary');
+  const [income,  setIncome]  = useState('');
+  const [freq,    setFreq]    = useState('26');
+  const [stateR,  setStateR]  = useState('0');
+  const [filing,  setFiling]  = useState('single');
+  const [result,  setResult]  = useState<null|{gross:number,fed:number,ss:number,med:number,state:number,net:number}>(null);
+  const [err,     setErr]     = useState('');
+
+  function calculate(){
+    const raw = parseFloat(income);
+    if(!raw||raw<=0){setErr('Please enter your income.');return;}
+    setErr('');
+    const f = parseInt(freq);
+    const sr = parseFloat(stateR)||0;
+    const annual = payType==='hourly' ? raw*40*52 : raw;
+    const gross = annual/f;
+    const br = BRACKETS[filing];
+    let fed=0,prev=0,inc=annual;
+    for(const [lim,rate] of br){
+      if(inc<=0)break;
+      const chunk=Math.min(inc,lim-prev);
+      fed+=chunk*rate; inc-=chunk; prev=lim;
+    }
+    const fedPer=fed/f;
+    const ss=Math.min(annual,168600)*0.062/f;
+    const med=annual*0.0145/f;
+    const state=gross*(sr/100);
+    const net=gross-fedPer-ss-med-state;
+    setResult({gross,fed:fedPer,ss,med,state,net});
   }
-  return tax;
-}
-const fmt = (n: number) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
-export default function Calculator({ defaultState = 'ca' }: { defaultState?: string }) {
-  const [freq, setFreq] = useState('annual');
-  const [gross, setGross] = useState('75000');
-  const [filing, setFiling] = useState('single');
-  const [state, setState] = useState(defaultState);
-  const [k401, setK401] = useState('0');
-  const [hsa, setHsa] = useState('0');
-  const [insurance, setInsurance] = useState('0');
-
-  const f = FREQS.find(x => x.id === freq)!;
-  const g = parseFloat(gross) || 0;
-  const annual = g * f.mult;
-  const preTax = (parseFloat(k401) || 0) + (parseFloat(hsa) || 0) + (parseFloat(insurance) || 0);
-  const taxable = Math.max(0, annual - preTax);
-  const fed = calcFed(taxable, filing);
-  const ss = Math.min(annual, 168600) * 0.062;
-  const med = annual * 0.0145;
-  const stData = STATE_TAXES[state] || STATE_TAXES.ca;
-  const stTax = stData.noTax ? 0 : taxable * stData.rate;
-  const totalTax = fed + ss + med + stTax + preTax;
-  const netAnnual = annual - totalTax;
-  const netPer = netAnnual / f.mult;
-  const effRate = annual > 0 ? ((fed + ss + med + stTax) / annual * 100) : 0;
-
-
-
 
   const inp: React.CSSProperties = {
-    width: '100%',
-    background: 'rgba(255,255,255,0.07)',
-    border: '1.5px solid rgba(255,255,255,0.12)',
-    borderRadius: '10px',
-    padding: '11px 14px',
-    color: 'white',
-    fontSize: '15px',
-    fontFamily: 'inherit',
-    outline: 'none',
-    boxSizing: 'border-box',
-  };
-  const lbl: React.CSSProperties = {
-    fontSize: '11px',
-    color: 'rgba(255,255,255,0.45)',
-    fontWeight: 600,
-    textTransform: 'uppercase',
-    letterSpacing: '0.06em',
-    marginBottom: '6px',
-    display: 'block',
+    width:'100%',background:'rgba(255,255,255,.07)',
+    border:'1.5px solid rgba(245,200,66,.28)',color:'#fff',
+    padding:'12px 13px',borderRadius:7,fontSize:14,
+    fontFamily:'inherit',marginBottom:14,
+    WebkitAppearance:'none',appearance:'none' as 'none',
   };
 
   return (
-    <div style={{ fontFamily: "'Inter',-apple-system,sans-serif" }}>
+    <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        input:focus, select:focus { border-color: #6366f1 !important; box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
-        input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
-        input[type=number] { -moz-appearance: textfield; }
-
-        /* Frequency buttons */
-        .fb {
-          cursor: pointer;
-          transition: all 0.18s;
-          border: 1.5px solid rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.06);
-          color: rgba(255,255,255,0.6);
-          border-radius: 8px;
-          padding: 9px 14px;
-          font-size: 13px;
-          font-weight: 600;
-          font-family: inherit;
-          white-space: nowrap;
-          flex: 1 1 auto;
-          min-width: 0;
-          text-align: center;
-        }
-        .fb:hover { background: rgba(255,255,255,0.1); color: white; }
-        .fb.on {
-          background: linear-gradient(135deg,#6366f1,#8b5cf6);
-          border-color: transparent;
-          color: white;
-          box-shadow: 0 4px 12px rgba(99,102,241,0.35);
-        }
-
-        /* Tax card */
-        .tc {
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 10px;
-          padding: 14px 16px;
-        }
-        .tc:hover { background: rgba(255,255,255,0.08); }
-
-        /* Ad box — invisible until AdSense fills it */
-        .adbox {
-          border-radius: 12px;
-          overflow: hidden;
-          min-height: 0;
-        }
-        /* Show placeholder only in dev (when contains text) — hidden in prod */
-        .adbox:empty { display: none; }
-
-        select option { background: #1e1b4b; }
-        /* Hide sidebar entirely on mobile until ads load */
-        @media (max-width: 768px) { .calc-sidebar { display: none; } }
-
-
-        /* ── RESPONSIVE ─────────────────────────────────────────── */
-        .calc-layout {
-          display: flex;
-          gap: 28px;
-          align-items: flex-start;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 16px;
-        }
-        .calc-main { flex: 1 1 0; min-width: 0; }
-        .calc-sidebar {
-          width: 300px;
-          flex-shrink: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          position: sticky;
-          top: 80px;
-        }
-
-        .row1 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-        .row2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
-        .tax-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 10px; margin-bottom: 10px; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-          .calc-layout { flex-direction: column; padding: 0 12px; }
-          .calc-sidebar {
-            width: 100%;
-            position: static;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 12px;
-          }
-          .calc-sidebar .adbox {
-            flex: 1 1 calc(50% - 6px);
-            min-width: 140px;
-            height: 120px !important;
-          }
-
-          .row1 { grid-template-columns: 1fr 1fr; }
-          .row1 > :last-child { grid-column: 1 / -1; }
-          .row2 { grid-template-columns: 1fr 1fr; }
-          .row2 > :last-child { grid-column: 1 / -1; }
-
-          .freq-wrap { gap: 4px; }
-          .fb { padding: 8px 10px; font-size: 12px; }
-
-          .result-inner { flex-direction: column !important; gap: 8px !important; }
-          .result-net { font-size: 36px !important; }
-          .result-right { text-align: left !important; }
-        }
-
-        @media (max-width: 400px) {
-          .row1 { grid-template-columns: 1fr; }
-          .row2 { grid-template-columns: 1fr; }
-          .row1 > :last-child, .row2 > :last-child { grid-column: auto; }
-          .calc-sidebar .adbox { flex: 1 1 100%; }
-        }
+        .calc-card{background:linear-gradient(165deg,#122050 0%,#091526 100%);border:2px solid rgba(245,200,66,.48);border-radius:12px;padding:30px 28px;box-shadow:0 24px 64px rgba(0,0,0,.60),inset 0 1px 0 rgba(245,200,66,.15);}
+        .card-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#FFD700;margin-bottom:3px;}
+        .card-sub{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#7A9FBF;padding-bottom:16px;border-bottom:1px solid rgba(245,200,66,.3);margin-bottom:20px;}
+        .fl{display:block;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#88AACC;margin-bottom:6px;}
+        .calc-btn{width:100%;background:linear-gradient(135deg,#E8B820,#FFD700);color:#091526;padding:15px;border:none;border-radius:8px;font-size:15px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:transform .22s,box-shadow .22s;box-shadow:0 4px 20px rgba(245,200,66,.40);margin-top:4px;font-family:inherit;}
+        .calc-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(255,215,0,.60);}
+        .results{margin-top:18px;background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.32);border-radius:8px;padding:16px;}
+        .r-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:8px;}
+        .r-row:last-child{border:none;font-size:15px;font-weight:800;color:#FFD700;padding-top:11px;}
+        .r-row span:first-child{color:#88AACC;flex-shrink:0;}
+        .r-row span:last-child{font-weight:700;text-align:right;}
+        .err-msg{color:#f87171;font-size:13px;margin-bottom:8px;}
+        select option{background:#0F2040;color:#fff;}
       `}</style>
+      <div className="calc-card">
+        <div className="card-title">Paycheck Calculator</div>
+        <div className="card-sub">2026 IRS Rules &middot; Instant Results</div>
 
-      {/* ── MAIN LAYOUT ── */}
-      <div className="calc-layout" style={{ paddingTop: '24px', paddingBottom: '32px' }}>
+        <label className="fl">Pay Type</label>
+        <select value={payType} onChange={e=>setPayType(e.target.value)} style={inp}>
+          <option value="salary">Annual Salary</option>
+          <option value="hourly">Hourly Wage</option>
+        </select>
 
-        {/* CALCULATOR */}
-        <div className="calc-main">
+        <label className="fl">{payType==='hourly'?'Hourly Rate ($)':'Annual Gross Salary ($)'}</label>
+        <input type="number" value={income} onChange={e=>setIncome(e.target.value)}
+          placeholder={payType==='hourly'?'e.g. 25.00':'e.g. 65000'}
+          min="0" inputMode="decimal" style={inp}/>
 
-          {/* Frequency buttons */}
-          <div className="freq-wrap" style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '16px' }}>
-            {FREQS.map(x => (
-              <button key={x.id} className={`fb${freq === x.id ? ' on' : ''}`} onClick={() => setFreq(x.id)}>
-                {x.label}
-              </button>
-            ))}
-          </div>
+        <label className="fl">Pay Frequency</label>
+        <select value={freq} onChange={e=>setFreq(e.target.value)} style={inp}>
+          <option value="26">Bi-Weekly (every 2 weeks)</option>
+          <option value="24">Semi-Monthly (twice/month)</option>
+          <option value="12">Monthly</option>
+          <option value="52">Weekly</option>
+        </select>
 
-          {/* Row 1: Pay / Filing / State */}
-          <div className="row1">
-            <div>
-              <label style={lbl}>{f.id === 'hourly' ? 'Hourly Rate' : f.id === 'annual' ? 'Annual Salary' : `${f.label} Pay`}</label>
-              <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.35)', fontSize: '15px' }}>$</span>
-                <input type="number" value={gross} onChange={e => setGross(e.target.value)} style={{ ...inp, paddingLeft: '28px' }} />
-              </div>
-            </div>
-            <div>
-              <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={inp}>
-                <option value="single">Single</option>
-                <option value="married">Married Filing Jointly</option>
-                <option value="head">Head of Household</option>
-              </select>
-            </div>
-            <div>
-              <label style={lbl}>State</label>
-              <select value={state} onChange={e => setState(e.target.value)} style={inp}>
-                {Object.entries(STATE_TAXES).sort((a, b) => a[1].name.localeCompare(b[1].name)).map(([c, d]) => (
-                  <option key={c} value={c}>{d.name}{d.noTax ? ' ✓ No Tax' : ''}</option>
-                ))}
-              </select>
-            </div>
-          </div>
+        <label className="fl">State of Residence</label>
+        <select value={stateR} onChange={e=>setStateR(e.target.value)} style={inp}>
+          {STATES.map(s=><option key={s.v} value={parseFloat(s.v).toString()}>{s.l}</option>)}
+        </select>
 
-          {/* Row 2: Deductions */}
-          <div className="row2">
-            {[
-              { l: 'Annual 401(k)', v: k401, s: setK401 },
-              { l: 'Annual HSA', v: hsa, s: setHsa },
-              { l: 'Health Insurance / yr', v: insurance, s: setInsurance },
-            ].map(x => (
-              <div key={x.l}>
-                <label style={lbl}>{x.l}</label>
-                <div style={{ position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: '13px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.35)', fontSize: '15px' }}>$</span>
-                  <input type="number" value={x.v} onChange={e => x.s(e.target.value)} style={{ ...inp, paddingLeft: '28px' }} />
-                </div>
-              </div>
-            ))}
-          </div>
+        <label className="fl">Filing Status</label>
+        <select value={filing} onChange={e=>setFiling(e.target.value)} style={inp}>
+          <option value="single">Single</option>
+          <option value="married">Married Filing Jointly</option>
+          <option value="head">Head of Household</option>
+        </select>
 
-          {/* Ad leaderboard 728×90 — shows when AdSense loads */}
-          <div className="adbox" style={{ marginBottom: '20px' }}>
-            {/* ins class="adsbygoogle" goes here */}
-          </div>
+        {err && <div className="err-msg">{err}</div>}
+        <button className="calc-btn" onClick={calculate}>Calculate My Take-Home Pay &rarr;</button>
 
-          {/* Result */}
-          <div style={{ background: 'linear-gradient(135deg,rgba(99,102,241,0.18),rgba(139,92,246,0.12))', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '14px', padding: '22px 24px', marginBottom: '14px' }}>
-            <div className="result-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-              <div>
-                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginBottom: '6px', fontWeight: 500 }}>
-                  Take-Home Pay ({f.label})
-                </div>
-                <div className="result-net" style={{ fontSize: '46px', fontWeight: 800, color: '#4ade80', letterSpacing: '-0.02em', lineHeight: 1 }}>
-                  {fmt(netPer)}
-                </div>
-              </div>
-              <div className="result-right" style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}>Annual Net</div>
-                <div style={{ fontSize: '26px', fontWeight: 700, color: 'white' }}>{fmt(netAnnual)}</div>
-                <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>Effective rate: {effRate.toFixed(1)}%</div>
-              </div>
-            </div>
+        {result && (
+          <div className="results">
+            <div className="r-row"><span>Gross Pay (per period)</span><span>{fmt(result.gross)}</span></div>
+            <div className="r-row"><span>Federal Income Tax</span><span>&minus;{fmt(result.fed)}</span></div>
+            <div className="r-row"><span>Social Security (6.2%)</span><span>&minus;{fmt(result.ss)}</span></div>
+            <div className="r-row"><span>Medicare (1.45%)</span><span>&minus;{fmt(result.med)}</span></div>
+            <div className="r-row"><span>State Income Tax</span><span>&minus;{fmt(result.state)}</span></div>
+            <div className="r-row"><span>&#x1F3E6; Net Take-Home Pay</span><span>{fmt(result.net)}</span></div>
           </div>
-
-          {/* Tax breakdown cards */}
-          <div className="tax-grid">
-            {[
-              { l: 'Federal Income Tax', v: fed, c: '#f87171' },
-              { l: 'Social Security', v: ss, c: '#fb923c' },
-              { l: 'Medicare', v: med, c: '#fbbf24' },
-              { l: `State Tax (${stData.name})`, v: stTax, c: '#a78bfa' },
-              { l: 'Pre-Tax Deductions', v: preTax, c: '#34d399' },
-            ].map(x => (
-              <div key={x.l} className="tc">
-                <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.4)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>{x.l}</div>
-                <div style={{ fontSize: '19px', fontWeight: 700, color: x.c }}>{fmt(x.v / f.mult)}</div>
-                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>{fmt(x.v)}/yr</div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', fontSize: '11px', color: 'rgba(255,255,255,0.25)', padding: '8px 0 4px' }}>
-            🔒 2026 tax tables · Your data never leaves your browser
-          </div>
-        </div>
-
-        {/* SIDEBAR ADS — hidden on mobile, filled by AdSense on desktop */}
-        <div className="calc-sidebar">
-          <div className="adbox" style={{ minHeight: '250px' }}>
-            {/* ins class="adsbygoogle" 300×250 */}
-          </div>
-          <div className="adbox" style={{ minHeight: '250px' }}>
-            {/* ins class="adsbygoogle" 300×250 */}
-          </div>
-          <div className="adbox ad-tall" style={{ minHeight: '600px' }}>
-            {/* ins class="adsbygoogle" 300×600 */}
-          </div>
-        </div>
+        )}
       </div>
-    </div>
+    </>
   );
 }
