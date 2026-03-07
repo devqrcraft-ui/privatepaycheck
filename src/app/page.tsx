@@ -1,108 +1,122 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
 import Calculator from '@/components/Calculator';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Paycheck Calculator 2026 — Free & Private | PrivatePaycheck',
-  description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA. 100% private — your salary never leaves your browser.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/' },
+  title: 'PrivatePaycheck.com — Free Paycheck Calculator 2026',
+  description: 'Free paycheck calculator 2026. All 50 states. 100% private — calculated in your browser, never stored. No signup required.',
 };
 
-const STATES = [
-  {slug:'california',     name:'California',     rate:'Up to 13.3%'},
-  {slug:'new-york',       name:'New York',        rate:'Up to 10.9%'},
-  {slug:'texas',          name:'Texas',           rate:'0% State Tax'},
-  {slug:'florida',        name:'Florida',         rate:'0% State Tax'},
-  {slug:'washington',     name:'Washington',      rate:'0% State Tax'},
-  {slug:'illinois',       name:'Illinois',        rate:'4.95% Flat'},
-  {slug:'pennsylvania',   name:'Pennsylvania',    rate:'3.07% Flat'},
-  {slug:'ohio',           name:'Ohio',            rate:'Up to 3.99%'},
-  {slug:'georgia',        name:'Georgia',         rate:'Up to 5.75%'},
-  {slug:'north-carolina', name:'North Carolina',  rate:'5.25% Flat'},
-  {slug:'michigan',       name:'Michigan',        rate:'4.25% Flat'},
-  {slug:'new-jersey',     name:'New Jersey',      rate:'Up to 10.75%'},
-  {slug:'virginia',       name:'Virginia',        rate:'Up to 5.75%'},
-  {slug:'massachusetts',  name:'Massachusetts',   rate:'5% Flat'},
-  {slug:'arizona',        name:'Arizona',         rate:'2.5% Flat'},
-  {slug:'colorado',       name:'Colorado',        rate:'4.4% Flat'},
-  {slug:'minnesota',      name:'Minnesota',       rate:'Up to 9.85%'},
-  {slug:'maryland',       name:'Maryland',        rate:'Up to 5.75%'},
-  {slug:'oregon',         name:'Oregon',          rate:'Up to 9.9%'},
-  {slug:'connecticut',    name:'Connecticut',     rate:'Up to 6.99%'},
-];
-
-const FEATURES = [
-  {icon:'🔒', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.'},
-  {icon:'🏛️', title:'IRS Compliant 2026', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.'},
-  {icon:'⚡', title:'Instant Results',    desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.'},
-  {icon:'📊', title:'Salary & Hourly',    desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.'},
-  {icon:'🎯', title:'Bonus Calculator',   desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.'},
-  {icon:'🗺️', title:'All 50 States',      desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.'},
+const STATES_GRID = [
+  { name: 'California',     rate: 'Up to 13.3%',   slug: 'california' },
+  { name: 'New York',       rate: 'Up to 10.9%',   slug: 'new-york' },
+  { name: 'Texas',          rate: '0% State Tax',   slug: 'texas' },
+  { name: 'Florida',        rate: '0% State Tax',   slug: 'florida' },
+  { name: 'Washington',     rate: '0% State Tax',   slug: 'washington' },
+  { name: 'Illinois',       rate: '4.95% Flat',     slug: 'illinois' },
+  { name: 'Pennsylvania',   rate: '3.07% Flat',     slug: 'pennsylvania' },
+  { name: 'Ohio',           rate: 'Up to 3.99%',    slug: 'ohio' },
+  { name: 'Georgia',        rate: 'Up to 5.75%',    slug: 'georgia' },
+  { name: 'North Carolina', rate: '5.25% Flat',     slug: 'north-carolina' },
+  { name: 'Michigan',       rate: '4.25% Flat',     slug: 'michigan' },
+  { name: 'New Jersey',     rate: 'Up to 10.75%',   slug: 'new-jersey' },
+  { name: 'Virginia',       rate: 'Up to 5.75%',    slug: 'virginia' },
+  { name: 'Massachusetts',  rate: '5% Flat',        slug: 'massachusetts' },
+  { name: 'Arizona',        rate: '2.5% Flat',      slug: 'arizona' },
+  { name: 'Colorado',       rate: '4.4% Flat',      slug: 'colorado' },
+  { name: 'Minnesota',      rate: 'Up to 9.85%',    slug: 'minnesota' },
+  { name: 'Maryland',       rate: 'Up to 5.75%',    slug: 'maryland' },
+  { name: 'Oregon',         rate: 'Up to 9.9%',     slug: 'oregon' },
+  { name: 'Connecticut',    rate: 'Up to 6.99%',    slug: 'connecticut' },
 ];
 
 export default function HomePage() {
   return (
     <>
       <style>{`
-        .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:72px 24px 80px;position:relative;overflow:hidden;}
-        .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
-        .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:start;position:relative;z-index:1;}
-        .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:7px 16px;border-radius:4px;margin-bottom:24px;}
-        .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:pulse 2s infinite;flex-shrink:0;}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-        h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.08;color:#fff;margin-bottom:20px;}
-        h1 em{color:#FFD700;font-style:normal;}
-        .hero-desc{font-size:16px;color:#B8D0EE;line-height:1.78;margin-bottom:32px;max-width:500px;}
-        .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
-        .tag{background:rgba(255,255,255,.06);border:1px solid rgba(245,200,66,.28);color:#D8E8FF;font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;}
-        .stats{display:flex;flex-wrap:wrap;gap:32px;}
-        .stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#FFD700;line-height:1;}
-        .stat-l{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7A9FBF;margin-top:4px;}
-        .trust{background:rgba(245,200,66,.05);border-top:1px solid rgba(245,200,66,.18);border-bottom:1px solid rgba(245,200,66,.18);padding:26px 24px;}
-        .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;}
-        .t-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FFD700;}
-        .t-l{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7A9FBF;margin-top:3px;}
-        .section{padding:72px 24px;}
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700;800&display=swap');
+        :root{--navy:#091526;--navy2:#0F2040;--gold:#F5C842;--gold2:#FFD700;--muted:#7A9FBF;--border:rgba(245,200,66,0.30);}
+        .hero{background:linear-gradient(155deg,#091526 0%,#0C1A35 100%);padding:72px 24px;position:relative;overflow:hidden;}
+        .hero::after{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,200,66,.07) 0%,transparent 70%);pointer-events:none;}
+        .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 440px;gap:60px;align-items:start;}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,200,66,0.1);border:1px solid var(--border);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+        .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        .hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:900;line-height:1.1;color:#fff;margin-bottom:20px;}
+        .hero h1 em{color:var(--gold);font-style:italic;}
+        .hero-desc{font-size:17px;color:#B8D0E8;line-height:1.7;margin-bottom:28px;max-width:520px;}
+        .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+        .tag{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:50px;padding:5px 14px;font-size:12px;font-weight:600;color:#B8D0E8;}
+        .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+        .stat-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--gold);}
+        .stat-l{font-size:12px;color:var(--muted);margin-top:2px;}
+        .trust{background:#0A1628;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 24px;}
+        .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px;text-align:center;}
+        .t-n{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--gold);}
+        .t-l{font-size:12px;color:var(--muted);margin-top:2px;}
+        .section{padding:72px 24px;background:var(--navy);}
         .section-alt{background:linear-gradient(155deg,#08142A 0%,#091A32 100%);}
-        .s-head{text-align:center;margin-bottom:48px;}
-        .s-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#F5C842;border-bottom:2px solid rgba(245,200,66,.40);padding-bottom:5px;margin-bottom:16px;}
-        h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.15;}
-        h2 em{color:#FFD700;font-style:normal;}
-        .s-desc{font-size:15px;color:#90B4D0;max-width:560px;margin:0 auto;line-height:1.78;}
-        .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
-        .feat-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.17);border-radius:10px;padding:28px 24px;transition:all .3s ease;cursor:default;}
-        .feat-card:hover{background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.50);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.40);}
-        .feat-icon{font-size:36px;margin-bottom:16px;}
-        .feat-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#F0E090;margin-bottom:10px;}
-        .feat-desc{font-size:14px;color:#90B4D0;line-height:1.75;}
-        .states-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:9px;max-width:1200px;margin:0 auto;}
-        .s-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.17);border-radius:7px;padding:13px 14px;text-align:center;transition:all .22s ease;display:block;}
-        .s-card:hover{background:rgba(245,200,66,.10);border-color:#F5C842;transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.40);}
-        .s-name{font-size:13px;font-weight:700;color:#DDEEFF;}
-        .s-rate{font-size:11px;color:#7A9FBF;margin-top:3px;}
-        .all-link{display:block;text-align:center;margin-top:28px;color:#F5C842;font-size:14px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;}
-        .all-link:hover{color:#FFD700;}
-        @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:40px;}.hero{padding:52px 20px 60px;}.feat-grid{grid-template-columns:repeat(2,1fr);}}
-        @media(max-width:540px){.hero{padding:40px 16px 48px;}h1{font-size:32px;}.section{padding:52px 16px;}h2{font-size:26px;}.feat-grid{grid-template-columns:1fr;gap:14px;}.states-grid{grid-template-columns:repeat(2,1fr);}.stats{gap:22px;}}
+        .s-head{text-align:center;max-width:640px;margin:0 auto 48px;}
+        .s-tag{display:inline-block;background:rgba(245,200,66,.1);border:1px solid var(--border);border-radius:50px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+        .s-head h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
+        .s-head h2 em{color:var(--gold);font-style:italic;}
+        .s-desc{font-size:16px;color:#B8D0E8;line-height:1.6;}
+        .feat-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+        .feat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:28px 24px;transition:border-color .2s,transform .2s;}
+        .feat-card:hover{border-color:var(--border);transform:translateY(-3px);}
+        .feat-icon{font-size:28px;margin-bottom:12px;}
+        .feat-title{font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;}
+        .feat-desc{font-size:14px;color:#7A9FBF;line-height:1.6;}
+        .states-grid{max-width:1200px;margin:0 auto 32px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+        .s-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;text-align:center;transition:border-color .2s,background .2s;}
+        .s-card:hover{border-color:var(--border);background:rgba(245,200,66,.06);}
+        .s-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+        .s-rate{font-size:12px;color:var(--muted);}
+        .all-link{display:block;text-align:center;color:var(--gold);font-weight:700;font-size:15px;letter-spacing:.05em;}
+        .all-link:hover{text-decoration:underline;}
+        footer{background:#060F1E;border-top:1px solid var(--border);padding:56px 24px 32px;}
+        .foot-inner{max-width:1200px;margin:0 auto;}
+        .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:40px;}
+        .foot-brand{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold);margin-bottom:12px;}
+        .foot-desc{font-size:14px;color:#4A6A8A;line-height:1.6;}
+        .foot-col-title{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+        .foot-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+        .foot-links a{font-size:14px;color:#4A6A8A;transition:color .15s;}
+        .foot-links a:hover{color:#B8D0E8;}
+        .foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#2A4A6A;}
+        @media(max-width:900px){
+          .hero-inner{grid-template-columns:1fr;}
+          .feat-grid{grid-template-columns:repeat(2,1fr);}
+          .states-grid{grid-template-columns:repeat(3,1fr);}
+          .foot-grid{grid-template-columns:1fr;gap:32px;}
+          .stats{grid-template-columns:repeat(2,1fr);}
+        }
+        @media(max-width:600px){
+          .feat-grid{grid-template-columns:1fr;}
+          .states-grid{grid-template-columns:repeat(2,1fr);}
+          .trust-inner{flex-direction:column;align-items:center;}
+        }
       `}</style>
 
-
-
+      {/* HERO */}
       <section className="hero">
         <div className="hero-inner">
           <div>
-            <div className="hero-badge"><div className="badge-dot"/>Updated January 2026 &nbsp;&middot;&nbsp; IRS Compliant</div>
-            <h1>Calculate Your <em>Exact</em> Take&#8209;Home Pay</h1>
-            <p className="hero-desc">Free, private paycheck calculator for all 50 states. Based on 2026 IRS withholding tables. Your data never leaves your browser &mdash; no accounts, no fees, ever.</p>
+            <div className="hero-badge"><div className="badge-dot"></div>Updated January 2026 &nbsp;·&nbsp; IRS Compliant</div>
+            <h1>Calculate Your <em>Exact</em> Take-Home Pay</h1>
+            <p className="hero-desc">Free, private paycheck calculator for all 50 states. Based on 2026 IRS withholding tables. Your data never leaves your browser — no accounts, no fees, ever.</p>
             <div className="tags">
-              {['✓ Federal + State Taxes','✓ All 50 States','✓ No Registration','✓ 2026 Tax Rules','✓ Bonus Calculator','✓ Hourly & Salary'].map(t=>(
-                <span key={t} className="tag">{t}</span>
-              ))}
+              <span className="tag">✓ Federal + State Taxes</span>
+              <span className="tag">✓ All 50 States</span>
+              <span className="tag">✓ No Registration</span>
+              <span className="tag">✓ 2026 Tax Rules</span>
+              <span className="tag">✓ Bonus Calculator</span>
+              <span className="tag">✓ Hourly & Salary</span>
             </div>
             <div className="stats">
               <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
               <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
-              <div><div className="stat-n">100%</div><div className="stat-l">Free &amp; Private</div></div>
+              <div><div className="stat-n">100%</div><div className="stat-l">Free & Private</div></div>
               <div><div className="stat-n">$0</div><div className="stat-l">Cost Forever</div></div>
             </div>
           </div>
@@ -110,23 +124,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TRUST BAR */}
       <div className="trust">
         <div className="trust-inner">
-          {[['2.4M+','Calculations Done'],['50','States Covered'],['0','Data Stored'],['$0','Cost Forever'],['2026','IRS Tables']].map(([n,l])=>(
-            <div key={l}><div className="t-n">{n}</div><div className="t-l">{l}</div></div>
-          ))}
+          <div><div className="t-n">2.4M+</div><div className="t-l">Calculations Done</div></div>
+          <div><div className="t-n">50</div><div className="t-l">States Covered</div></div>
+          <div><div className="t-n">0</div><div className="t-l">Data Stored</div></div>
+          <div><div className="t-n">$0</div><div className="t-l">Cost Forever</div></div>
+          <div><div className="t-n">2026</div><div className="t-l">IRS Tables</div></div>
         </div>
       </div>
 
+      {/* FEATURES */}
       <section className="section">
         <div className="s-head">
           <div className="s-tag">Why PrivatePaycheck</div>
           <h2>The Most <em>Trusted</em> Free Calculator</h2>
-          <p className="s-desc">Built for American workers who want accurate, private results &mdash; without giving up their data.</p>
+          <p className="s-desc">Built for American workers who want accurate, private results — without giving up their data.</p>
         </div>
         <div className="feat-grid">
-          {FEATURES.map(f=>(
-            <div key={f.title} className="feat-card">
+          {[
+            {icon:'🔒',title:'100% Private',desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.'},
+            {icon:'🏛️',title:'IRS Compliant 2026',desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.'},
+            {icon:'⚡',title:'Instant Results',desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.'},
+            {icon:'📊',title:'Salary & Hourly',desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.'},
+            {icon:'🎯',title:'Bonus Calculator',desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.'},
+            {icon:'🗺️',title:'All 50 States',desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.'},
+          ].map(f=>(
+            <div className="feat-card" key={f.title}>
               <div className="feat-icon">{f.icon}</div>
               <div className="feat-title">{f.title}</div>
               <p className="feat-desc">{f.desc}</p>
@@ -135,6 +160,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* STATES */}
       <section className="section section-alt">
         <div className="s-head">
           <div className="s-tag">By State</div>
@@ -142,15 +168,50 @@ export default function HomePage() {
           <p className="s-desc">Select your state for a precise calculation including your exact local income tax rate.</p>
         </div>
         <div className="states-grid">
-          {STATES.map(s=>(
-            <Link key={s.slug} href={`/${s.slug}`} className="s-card">
+          {STATES_GRID.map(s=>(
+            <Link href={`/${s.slug}`} className="s-card" key={s.slug}>
               <div className="s-name">{s.name}</div>
               <div className="s-rate">{s.rate}</div>
             </Link>
           ))}
         </div>
-        <Link href="/all-states" className="all-link">View All 50 States &rarr;</Link>
+        <Link href="/all-states" className="all-link">View All 50 States →</Link>
       </section>
+
+      {/* FOOTER */}
+      <footer>
+        <div className="foot-inner">
+          <div className="foot-grid">
+            <div>
+              <div className="foot-brand">PrivatePaycheck.com</div>
+              <p className="foot-desc">Free, private paycheck calculator for US workers. All calculations happen in your browser. No data stored. No accounts required. Updated for 2026 IRS rules.</p>
+            </div>
+            <div>
+              <div className="foot-col-title">Calculators</div>
+              <ul className="foot-links">
+                <li><Link href="/calculator">Salary Calculator</Link></li>
+                <li><Link href="/hourly-paycheck-calculator">Hourly Calculator</Link></li>
+                <li><Link href="/bonus-calculator">Bonus Calculator</Link></li>
+                <li><Link href="/overtime-calculator">Overtime Calculator</Link></li>
+                <li><Link href="/w4-withholding-calculator">W-4 Calculator</Link></li>
+              </ul>
+            </div>
+            <div>
+              <div className="foot-col-title">Info</div>
+              <ul className="foot-links">
+                <li><Link href="/blog">Blog</Link></li>
+                <li><Link href="/all-states">All 50 States</Link></li>
+                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link href="/terms">Terms of Use</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="foot-bottom">
+            <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
+            <span>Free · Private · No Data Stored</span>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
