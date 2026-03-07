@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Nav from '@/components/Nav';
 import Calculator from '@/components/Calculator';
 
 export const metadata: Metadata = {
