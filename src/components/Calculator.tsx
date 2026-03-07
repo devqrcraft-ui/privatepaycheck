@@ -37,11 +37,13 @@ function fmt(n: number) {
   return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-export default function Calculator() {
+interface CalcProps { defaultState?: string; }
+
+export default function Calculator({ defaultState }: CalcProps) {
   const [payType, setPayType] = useState('salary');
   const [income, setIncome] = useState('');
   const [freq, setFreq] = useState('26');
-  const [stateRate, setStateRate] = useState('0');
+  const [stateRate, setStateRate] = useState(defaultState || '0');
   const [filing, setFiling] = useState('single');
   const [results, setResults] = useState<null|{gross:number,fed:number,ss:number,med:number,state:number,net:number}>(null);
 
