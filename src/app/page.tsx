@@ -178,6 +178,5 @@ export default function HomePage() {
         <Link href="/all-states" className="all-link">View All 50 States →</Link>
       </section>
 
-    </>
   );
 }
