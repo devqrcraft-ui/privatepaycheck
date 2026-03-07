@@ -86,7 +86,7 @@ export default function HomePage() {
         @media(max-width:540px){.hero{padding:40px 16px 48px;}h1{font-size:32px;}.section{padding:52px 16px;}h2{font-size:26px;}.feat-grid{grid-template-columns:1fr;gap:14px;}.states-grid{grid-template-columns:repeat(2,1fr);}.stats{gap:22px;}}
       `}</style>
 
-      <Nav />
+
 
       <section className="hero">
         <div className="hero-inner">
