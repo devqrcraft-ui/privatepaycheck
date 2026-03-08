@@ -150,7 +150,7 @@ export default function OvertimeDeductionCalculator() {
               { href: '/no-tax-on-tips-calculator',    label: 'No Tax on Tips',   color: '#4ade80' },
               { href: '/overtime-calculator',           label: 'Overtime Pay',     color: '#fbbf24' },
               { href: '/two-jobs-tax-calculator',       label: 'Two Jobs Tax',     color: '#67e8f9' },
-              { href: '/raise-calculator',              label: 'Raise Calculator', color: '#818cf8' },
+              { href: '/raise-calculator',              label: 'Raise Calculator', color: '#F5C842' },
             ].map(({ href, label, color }) => (
               <Link key={href} href={href} style={{ display: 'block', padding: '16px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', color, textDecoration: 'none', fontWeight: 700, fontSize: '14px' }}>
                 {label} →

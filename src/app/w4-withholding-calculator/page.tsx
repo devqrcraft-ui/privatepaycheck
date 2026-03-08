@@ -53,8 +53,8 @@ export default function W4Calculator(){
           <p style={{fontSize:'15px',opacity:0.65,maxWidth:'560px',margin:'0 auto',lineHeight:1.7}}>Find the exact numbers to enter on your W-4 so you get the right refund вЂ” not too big, not too small.</p>
         </div>
 
-        <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(99,102,241,0.3)',borderRadius:'16px',padding:'28px',marginBottom:'24px'}}>
-          <h2 style={{fontSize:'15px',fontWeight:800,marginBottom:'16px',color:'#818cf8'}}>Your Tax Situation</h2>
+        <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(201,168,76,0.3)',borderRadius:'16px',padding:'28px',marginBottom:'24px'}}>
+          <h2 style={{fontSize:'15px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}>Your Tax Situation</h2>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(170px,1fr))',gap:'16px',marginBottom:'16px'}}>
             <div><label style={lbl}>Annual Salary ($)</label><input type="number" value={salary} onChange={e=>setSalary(e.target.value)} style={inp}/></div>
             <div>
@@ -70,8 +70,8 @@ export default function W4Calculator(){
             <div><label style={lbl}>Tax Credits/yr (child, etc)</label><input type="number" value={credits} onChange={e=>setCredits(e.target.value)} style={inp} placeholder="0"/></div>
           </div>
 
-          <div style={{background:'linear-gradient(135deg,rgba(99,102,241,0.12),rgba(129,140,248,0.08))',border:'1px solid rgba(99,102,241,0.25)',borderRadius:'12px',padding:'24px'}}>
-            <h3 style={{fontSize:'16px',fontWeight:800,marginBottom:'16px',color:'#818cf8'}}>рџ“ќ Enter These Numbers on Your W-4</h3>
+          <div style={{background:'linear-gradient(135deg,rgba(201,168,76,0.12),rgba(129,140,248,0.08))',border:'1px solid rgba(201,168,76,0.25)',borderRadius:'12px',padding:'24px'}}>
+            <h3 style={{fontSize:'16px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}>рџ“ќ Enter These Numbers on Your W-4</h3>
             <div style={{display:'flex',flexDirection:'column',gap:'12px'}}>
               {[
                 {step:'Step 1',field:'Filing Status',value:filing==='married'?'Married Filing Jointly':'Single or Married Filing Separately',note:'Check the appropriate box'},
@@ -81,7 +81,7 @@ export default function W4Calculator(){
                 {step:'Step 4(c)',field:'Extra Withholding/paycheck',value:fmtD(r.extraWithholding),note:'Add this if you have other income sources'},
               ].map(row=>(
                 <div key={row.step} style={{display:'flex',alignItems:'flex-start',gap:'12px',background:'rgba(0,0,0,0.2)',borderRadius:'8px',padding:'12px'}}>
-                  <div style={{background:'rgba(129,140,248,0.2)',color:'#818cf8',padding:'4px 10px',borderRadius:'6px',fontSize:'11px',fontWeight:700,whiteSpace:'nowrap'}}>{row.step}</div>
+                  <div style={{background:'rgba(201,168,76,0.15)',color:'#F5C842',padding:'4px 10px',borderRadius:'6px',fontSize:'11px',fontWeight:700,whiteSpace:'nowrap'}}>{row.step}</div>
                   <div style={{flex:1}}>
                     <div style={{fontWeight:700,fontSize:'13px',marginBottom:'2px'}}>{row.field}: <span style={{color:'#4ade80'}}>{row.value}</span></div>
                     <div style={{fontSize:'11px',opacity:0.5}}>{row.note}</div>
@@ -116,7 +116,7 @@ export default function W4Calculator(){
         </div>
 
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
-          <Link href="/two-jobs-tax-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(129,140,248,0.2)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
+          <Link href="/two-jobs-tax-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
             <div style={{fontSize:'20px',marginBottom:'6px'}}>рџ’ј</div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Two Jobs Tax Calculator</div>
             <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>Fix two-job shortfall в†’</div>

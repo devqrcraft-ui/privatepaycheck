@@ -98,7 +98,7 @@ export default function RaiseCalculator() {
           </div>
           <h1 style={{ fontSize:'clamp(24px,5vw,48px)', fontWeight:900, margin:'0 0 12px', lineHeight:1.15 }}>
             Raise Calculator 2026
-            <br/><span style={{ color:'#818cf8' }}>How Much Will Your Raise Actually Be?</span>
+            <br/><span style={{ color:'#F5C842' }}>How Much Will Your Raise Actually Be?</span>
           </h1>
           <p style={{ fontSize:'16px', opacity:0.65, maxWidth:'560px', margin:'0 auto', lineHeight:1.7 }}>
             A 10% raise doesn&apos;t mean 10% more in your pocket. See exactly how much extra take-home pay you'll get after all taxes.
@@ -124,8 +124,8 @@ export default function RaiseCalculator() {
                 {(['pct','fixed'] as const).map(t=>(
                   <button key={t} onClick={()=>setRaiseType(t)} style={{
                     flex:1, padding:'10px', borderRadius:'8px', border:'1px solid',
-                    borderColor: raiseType===t ? '#818cf8' : 'rgba(255,255,255,0.15)',
-                    background: raiseType===t ? 'rgba(129,140,248,0.2)' : 'rgba(255,255,255,0.04)',
+                    borderColor: raiseType===t ? '#F5C842' : 'rgba(255,255,255,0.15)',
+                    background: raiseType===t ? 'rgba(201,168,76,0.15)' : 'rgba(255,255,255,0.04)',
                     color:'white', fontWeight:700, fontSize:'13px', cursor:'pointer',
                   }}>{t==='pct' ? 'Percentage %' : 'Fixed Amount $'}</button>
                 ))}
@@ -135,7 +135,7 @@ export default function RaiseCalculator() {
             <div style={{ marginBottom:'16px', marginTop:'12px' }}>
               <div style={LABEL}>{raiseType==='pct' ? 'Raise Percentage' : 'Raise Amount'}</div>
               <div style={{ position:'relative' }}>
-                <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#818cf8', fontWeight:700 }}>
+                <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#F5C842', fontWeight:700 }}>
                   {raiseType==='pct' ? '%' : '$'}
                 </span>
                 <input type="number" value={raise} onChange={e=>setRaise(+e.target.value)} step={raiseType==='pct'?0.5:500} style={{ ...INPUT_S, paddingLeft:'28px' }} />
@@ -162,7 +162,7 @@ export default function RaiseCalculator() {
 
           <div style={{ display:'flex', flexDirection:'column', gap:'14px' }}>
 
-            <div style={{ ...CARD, background:'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(99,102,241,0.15))', border:'1px solid rgba(74,222,128,0.3)', textAlign:'center', padding:'24px' }}>
+            <div style={{ ...CARD, background:'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(201,168,76,0.15))', border:'1px solid rgba(74,222,128,0.3)', textAlign:'center', padding:'24px' }}>
               <div style={{ fontSize:'13px', opacity:0.65, marginBottom:'4px' }}>Extra Take-Home Per Year</div>
               <div style={{ fontSize:'48px', fontWeight:900, color:'#4ade80' }}>{fmtD(netGain)}</div>
               <div style={{ fontSize:'13px', opacity:0.5 }}>= {fmt(netGain/12)}/month · {fmt(netGain/26)}/bi-weekly</div>

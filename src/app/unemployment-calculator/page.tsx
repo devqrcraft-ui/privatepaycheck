@@ -43,12 +43,12 @@ export default function UnemploymentHubPage() {
 
         {/* Hero */}
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <div style={{ display: 'inline-block', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#a5b4fc' }}>
+          <div style={{ display: 'inline-block', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#a5b4fc' }}>
             📋 All 50 States — 2026 Data
           </div>
           <h1 style={{ fontSize: 'clamp(28px,5vw,52px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15, textTransform: 'uppercase', letterSpacing: '-1px' }}>
             Unemployment Benefits<br/>
-            <span style={{ color: '#818cf8' }}>Calculator by State</span>
+            <span style={{ color: '#F5C842' }}>Calculator by State</span>
           </h1>
           <p style={{ fontSize: '17px', opacity: 0.65, maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
             Estimate your weekly unemployment benefit based on your state and prior earnings. Benefits and duration vary significantly by state — select yours below.
@@ -56,7 +56,7 @@ export default function UnemploymentHubPage() {
         </div>
 
         {/* Top states by benefit */}
-        <div style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '12px', padding: '20px 24px', marginBottom: '40px' }}>
+        <div style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', borderRadius: '12px', padding: '20px 24px', marginBottom: '40px' }}>
           <div style={{ fontWeight: 700, marginBottom: '16px', color: '#a5b4fc' }}>🏆 Highest Max Weekly Benefits</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(160px,1fr))', gap: '10px' }}>
             {Object.entries(MAX_BENEFITS)
@@ -66,7 +66,7 @@ export default function UnemploymentHubPage() {
                 const name = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
                 return (
                   <Link key={slug} href={`/unemployment-calculator/${slug}`} style={{
-                    background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)',
+                    background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)',
                     borderRadius: '8px', padding: '12px 14px', color: 'white', textDecoration: 'none',
                   }}>
                     <div style={{ fontWeight: 700, fontSize: '13px' }}>{name}</div>

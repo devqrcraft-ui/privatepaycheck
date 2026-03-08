@@ -106,7 +106,7 @@ export default function BonusTaxCalculator() {
           </div>
           <h1 style={{ fontSize: 'clamp(24px,5vw,48px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.15 }}>
             Bonus Tax Calculator 2026
-            <br/><span style={{ color: '#818cf8' }}>Free & 100% Private</span>
+            <br/><span style={{ color: '#F5C842' }}>Free & 100% Private</span>
           </h1>
           <p style={{ fontSize: '16px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
             Find out exactly how much of your bonus you'll actually keep after federal taxes, state taxes, and FICA. No signup. No data sent anywhere.
@@ -157,7 +157,7 @@ export default function BonusTaxCalculator() {
           {/* RESULTS */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
 
-            <div style={{ ...CARD, background: 'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(99,102,241,0.15))', border: '1px solid rgba(74,222,128,0.3)', textAlign: 'center', padding: '28px' }}>
+            <div style={{ ...CARD, background: 'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(201,168,76,0.15))', border: '1px solid rgba(74,222,128,0.3)', textAlign: 'center', padding: '28px' }}>
               <div style={{ fontSize: '13px', opacity: 0.65, marginBottom: '6px' }}>You'll Take Home</div>
               <div style={{ fontSize: '48px', fontWeight: 900, color: '#4ade80' }}>{fmt(res.takeHome)}</div>
               <div style={{ fontSize: '13px', opacity: 0.5, marginTop: '6px' }}>out of {fmt(bonus)} bonus</div>

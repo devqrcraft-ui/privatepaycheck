@@ -98,7 +98,7 @@ export default function TwoJobsClient() {
           <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,marginTop:'12px'}}>All calculations happen in your browser</p>
         </div>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
-          <Link href="/w4-withholding-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(129,140,248,0.2)',borderRadius:'12px',padding:'16px',color:'white',textDecoration:'none'}}>
+          <Link href="/w4-withholding-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'16px',color:'white',textDecoration:'none'}}>
             <div style={{fontSize:'20px',marginBottom:'8px'}}>📋</div>
             <div style={{fontWeight:700,fontSize:'14px',marginBottom:'4px'}}>W-4 Withholding Calculator</div>
             <div style={{fontSize:'12px',opacity:0.55}}>Fill out W-4 correctly</div>

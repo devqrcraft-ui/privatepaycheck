@@ -105,7 +105,7 @@ export default function HourlyPaycheckCalculator() {
   const stObj = STATES.find(s => s.code === sel)!;
 
   return (
-    <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
+    <main style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebApplication',
         name:'Hourly Paycheck Calculator 2026 — PrivatePaycheck',
@@ -141,7 +141,7 @@ export default function HourlyPaycheckCalculator() {
             🔒 Your data NEVER leaves your browser
           </div>
           <h1 style={{ fontSize:'clamp(26px,5vw,52px)', fontWeight:900, margin:'0 0 12px', textTransform:'uppercase', letterSpacing:'-1px', lineHeight:1.15 }}>
-            Hourly Paycheck<br/><span style={{ color:'#818cf8' }}>Calculator 2026</span>
+            Hourly Paycheck<br/><span style={{ color:'#FFFFFF' }}>Calculator 2026</span>
           </h1>
           <p style={{ fontSize:'17px', opacity:0.65, maxWidth:'580px', margin:'0 auto', lineHeight:1.7 }}>
             Enter your hourly rate and hours worked. Instantly see your weekly, biweekly, and annual take-home pay after all taxes for all 50 states.
@@ -149,7 +149,7 @@ export default function HourlyPaycheckCalculator() {
         </div>
 
         {/* CALCULATOR CARD */}
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:'16px', padding:'28px', marginBottom:'28px' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(201,168,76,0.3)', borderRadius:'16px', padding:'28px', marginBottom:'28px' }}>
 
           {/* ROW 1: Hourly + Hours + Weeks */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
@@ -198,7 +198,7 @@ export default function HourlyPaycheckCalculator() {
           </div>
 
           {/* RESULTS */}
-          <div style={{ background:'linear-gradient(135deg,rgba(74,222,128,0.12),rgba(99,102,241,0.12))', border:'1px solid rgba(74,222,128,0.25)', borderRadius:'12px', padding:'24px' }}>
+          <div style={{ background:'linear-gradient(135deg,rgba(74,222,128,0.12),rgba(201,168,76,0.12))', border:'1px solid rgba(74,222,128,0.25)', borderRadius:'12px', padding:'24px' }}>
             <div style={{ textAlign:'center', marginBottom:'20px' }}>
               <div style={{ fontSize:'13px', opacity:0.6, marginBottom:'4px' }}>Annual Gross → Take-Home</div>
               <div style={{ fontSize:'clamp(28px,5vw,48px)', fontWeight:900, color:'#4ade80', lineHeight:1 }}>{fmt(r.net)}</div>
@@ -270,7 +270,7 @@ export default function HourlyPaycheckCalculator() {
                   const net = ann-fed-fica;
                   return (
                     <tr key={rate} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ padding:'8px 12px', fontWeight:700, color:'#818cf8' }}>${rate}/hr</td>
+                      <td style={{ padding:'8px 12px', fontWeight:700, color:'#F5C842' }}>${rate}/hr</td>
                       <td style={{ padding:'8px 12px' }}>{fmt(ann)}</td>
                       <td style={{ padding:'8px 12px', color:'#f87171' }}>-{fmt(fed)}</td>
                       <td style={{ padding:'8px 12px', color:'#f87171' }}>-{fmt(fica)}</td>
@@ -327,7 +327,7 @@ export default function HourlyPaycheckCalculator() {
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Overtime Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Time-and-a-half & double time →</div>
             </Link>
-            <Link href="/unemployment-calculator" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
+            <Link href="/unemployment-calculator" style={{ display:'block', background:'rgba(201,168,76,0.08)', border:'1px solid rgba(201,168,76,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
               <div style={{ fontSize:'20px', marginBottom:'8px' }}>📋</div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Unemployment Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Estimate weekly benefits →</div>
