@@ -104,7 +104,7 @@ export default function HomePage() {
               <div><div className="stat-n">$0</div><div className="stat-l">Cost Forever</div></div>
             </div>
           </div>
-          <Calculator />
+          <div id="calculator"><Calculator /></div>
         </div>
       </section>
 

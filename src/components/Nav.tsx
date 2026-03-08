@@ -70,10 +70,10 @@ export default function Nav() {
           </Link>
           <div className="nav-menu">
             <Link href="/" className="nav-link">Home</Link>
-            <Link href="/calculator" className="nav-link">Calculator</Link>
+            <Link href="/#calculator" className="nav-link">Calculator</Link>
             <Link href="/all-states" className="nav-link">All States</Link>
             <Link href="/blog" className="nav-link">Blog</Link>
-            <Link href="/calculator" className="nav-cta">Calculate My Pay →</Link>
+            <Link href="/#calculator" className="nav-cta">Calculate My Pay →</Link>
           </div>
           <button className="hamburger" onClick={()=>setOpen(o=>!o)} aria-expanded={open} aria-label="Menu">
             <span/><span/><span/>
@@ -81,10 +81,10 @@ export default function Nav() {
         </div>
         <div className={`mobile-menu${open?' open':''}`}>
           <Link href="/" className="mobile-link" onClick={()=>setOpen(false)}>Home</Link>
-          <Link href="/calculator" className="mobile-link" onClick={()=>setOpen(false)}>Calculator</Link>
+          <Link href="/#calculator" className="mobile-link" onClick={()=>setOpen(false)}>Calculator</Link>
           <Link href="/all-states" className="mobile-link" onClick={()=>setOpen(false)}>All States</Link>
           <Link href="/blog" className="mobile-link" onClick={()=>setOpen(false)}>Blog</Link>
-          <Link href="/calculator" className="mobile-cta" onClick={()=>setOpen(false)}>Calculate My Pay →</Link>
+          <Link href="/#calculator" className="mobile-cta" onClick={()=>setOpen(false)}>Calculate My Pay →</Link>
         </div>
       </nav>
     </>
