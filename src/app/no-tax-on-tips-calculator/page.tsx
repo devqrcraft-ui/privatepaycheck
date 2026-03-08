@@ -131,7 +131,7 @@ export default function NoTaxOnTipsCalculator() {
         </div>
       </div>
       <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
-        В© 2026 PrivatePaycheck.com В· <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> В· <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
+        © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </main>
   );
