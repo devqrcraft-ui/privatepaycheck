@@ -143,7 +143,7 @@ export default function HomePage() {
         </div>
         <div className="states-grid">
           {TOP_STATES.map((s)=>(
-            <Link key={s.slug} href={`/${s.slug}`} className="s-card">
+            <Link key={s.slug} href={`/${s.slug}-paycheck-calculator`} className="s-card">
               <div className="s-name">{s.name}</div>
               <div className="s-rate">{s.rate}</div>
             </Link>
