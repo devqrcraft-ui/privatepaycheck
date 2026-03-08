@@ -84,18 +84,6 @@ export default function BonusTaxCalculator() {
         "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
       })}} />
 
-      <nav style={NAV_STYLE}>
-        <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
-          <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
-        </Link>
-        <div style={{ display: 'flex', gap: '16px', fontSize: '13px', flexWrap: 'wrap' as const }}>
-          <Link href="/overtime-calculator" style={{ color: '#fbbf24', textDecoration: 'none', fontWeight: 600 }}>Overtime</Link>
-          <Link href="/unemployment-calculator" style={{ color: '#a5b4fc', textDecoration: 'none', fontWeight: 600 }}>Unemployment</Link>
-          <Link href="/minimum-wage" style={{ color: '#6ee7b7', textDecoration: 'none', fontWeight: 600 }}>Min Wage</Link>
-          <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Hourly</Link>
-          <Link href="/blog" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Blog</Link>
-        </div>
-      </nav>
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
 
