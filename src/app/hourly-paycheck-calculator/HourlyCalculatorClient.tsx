@@ -98,7 +98,7 @@ export default function HourlyPaycheckCalculator() {
   }, [hourly, hours, weeks, filing, state, k401, hsa]);
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
-  const input: React.CSSProperties = { width:'100%', padding:'10px 14px', background:'rgba(255,255,255,0.08)', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'8px', color:'white', fontSize:'15px', outline:'none', boxSizing:'border-box', fontFamily:'inherit' };
+  const input: React.CSSProperties = { width:'100%', padding:'10px 14px', background:'#0F2040', border:'1px solid rgba(201,168,76,0.3)', borderRadius:'8px', color:'white', fontSize:'15px', outline:'none', boxSizing:'border-box', fontFamily:'inherit' };
   const lbl:   React.CSSProperties = { fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' };
   const card:  React.CSSProperties = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'16px' };
   const sel = state;
