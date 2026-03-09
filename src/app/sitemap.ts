@@ -91,6 +91,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     })),
 
+
+    // ── hourly-paycheck-calculator/[state] ───────────────
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/hourly-paycheck-calculator/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
     // ── tip-calculator/[state] ────────────────────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/tip-calculator/${slug}`,
