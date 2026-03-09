@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Unemployment Calculator' };
   return {
-    title: `${st.name} Unemployment Benefits Calculator 2026 — Free`,
-    description: `Calculate ${st.name} unemployment benefits. Weekly benefit amount, max weeks, eligibility. Free & instant.`,
+    title: `${st.name} Unemployment Calculator 2026 — Estimate Your Weekly Benefit`,
+    description: `How much unemployment will you get in ${st.name}? Enter your wages — get your weekly benefit amount, max weeks & eligibility instantly. Free 2026 calculator.`,
     alternates: { canonical: `https://www.privatepaycheck.com/unemployment-calculator/${state}` },
   };
 }
@@ -93,7 +93,7 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
         '@type': 'WebApplication',
         name: `${st.name} Unemployment Calculator 2026`,
         url: `https://www.privatepaycheck.com/unemployment-calculator/${state}`,
-        description: `Calculate ${st.name} unemployment benefits. Max weekly: $${ui.maxWeekly}. Up to ${ui.maxWeeks} weeks.`,
+        description: `${st.name} unemployment 2026: max ${ui.maxWeekly}/week, up to ${ui.maxWeeks} weeks. Calculate your exact benefit amount free — no signup needed.`,
         applicationCategory: 'FinanceApplication',
         operatingSystem: 'Any',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
