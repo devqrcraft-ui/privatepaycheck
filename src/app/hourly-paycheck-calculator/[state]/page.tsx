@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import TipCalculatorState from './TipCalculatorState';
+import HourlyStateClient from './HourlyStateClient';
 
 const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number; noStateTax: boolean }> = {
   "alabama": {
@@ -323,9 +323,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return { title: 'Not Found' };
   const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state tax';
   return {
-    title: data.name + ' Tip Tax Calculator 2026 — No Tax on Tips by State',
-    description: 'Calculate your tip tax savings in ' + data.name + ' (' + taxNote + '). The No Tax on Tips law lets you deduct up to $25,000 in tips. Free & instant.',
-    alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator/' + state },
+    title: data.name + ' Hourly Paycheck Calculator 2026 — Free & Private',
+    description: 'Free hourly paycheck calculator for ' + data.name + ' (' + taxNote + '). Enter your hourly rate to see exact take-home pay after federal, state, and FICA taxes. No signup.',
+    alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator/' + state },
   };
 }
 
@@ -333,5 +333,5 @@ export default async function Page({ params }: Props) {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) notFound();
-  return <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+  return <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
 }
