@@ -342,6 +342,7 @@ export default async function Page({ params }: Props) {
           {'@type':'HowToStep',position:4,name:'Pick your state',text:'Select your state for accurate state tax calculation.'},
           {'@type':'HowToStep',position:5,name:'See net take-home',text:'View your after-tax paycheck including tip income.'}
           ]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[{'@type':'Question',name:'Are tips taxable income in 2026?',acceptedAnswer:{'@type':'Answer',text:'Yes, tips are taxable. However, the 2026 No Tax on Tips deduction allows eligible workers to exclude up to $25,000 in tip income from federal taxes.'}},{'@type':'Question',name:'How does the No Tax on Tips law affect my paycheck?',acceptedAnswer:{'@type':'Answer',text:'Under the 2026 rule, tipped workers may deduct up to $25,000 in tip income. This calculator applies that deduction automatically to show your correct net pay.'}},{'@type':'Question',name:'Which states have no income tax on tips?',acceptedAnswer:{'@type':'Answer',text:'States with no income tax (Texas, Florida, Nevada, Washington, Wyoming, South Dakota, Alaska, Tennessee, New Hampshire) effectively have no state tax on tips either.'}}]}) }} />
       return <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
     </>
   );
