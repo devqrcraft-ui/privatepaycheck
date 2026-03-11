@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand-col">
             <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#FFD700",fontWeight:700,marginBottom:10}}>PrivatePaycheck.com</div>
-            <p style={{fontSize:13,color:"#7A96B8",lineHeight:1.7,maxWidth:360}}>Free, private paycheck calculator for US workers. All calculations happen in your browser. No data stored. No accounts required. Updated for 2026.</p>
+            <p style={{fontSize:13,color:"#A8C4E0",lineHeight:1.7,maxWidth:360}}>Free, private paycheck calculator for US workers. All calculations happen in your browser. No data stored. No accounts required. Updated for 2026.</p>
           </div>
           <div>
             <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Calculators</div>
