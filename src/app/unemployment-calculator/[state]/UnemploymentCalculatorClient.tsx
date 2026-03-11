@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface Props {
   stateName: string;
@@ -13,23 +13,22 @@ interface Props {
 export default function UnemploymentCalculatorClient({ stateName, maxWeekly, minWeekly, maxWeeks, baseRate, note }: Props) {
   const [q1, setQ1] = useState('');
   const [q2, setQ2] = useState('');
-  const [result, setResult] = useState<{
-    weekly: number; total: number; months: number; biweekly: number;
-  } | null>(null);
 
-  useEffect(() => {
-    const w1 = parseFloat(q1) || 0;
-    const w2 = parseFloat(q2) || 0;
-    if (w1 <= 0 && w2 <= 0) { setResult(null); return; }
+  const w1 = Math.max(0, parseFloat(q1) || 0);
+  const w2 = Math.max(0, parseFloat(q2) || 0);
+  const hasInput = w1 > 0 || w2 > 0;
+
+  let result: { weekly: number; total: number; months: number; biweekly: number } | null = null;
+  if (hasInput) {
     const totalBase = w1 + w2;
-    const avgWeekly = totalBase > 0 ? totalBase / 26 : Math.max(w1, w2) / 13;
+    const divisor = (w1 > 0 && w2 > 0) ? 26 : 13;
+    const avgWeekly = totalBase / divisor;
     let weekly = Math.round(avgWeekly * baseRate);
     weekly = Math.max(minWeekly, Math.min(maxWeekly, weekly));
     const total = weekly * maxWeeks;
     const months = Math.round((maxWeeks / 4.33) * 10) / 10;
-    const biweekly = weekly * 2;
-    setResult({ weekly, total, months, biweekly });
-  }, [q1, q2, baseRate, minWeekly, maxWeekly, maxWeeks]);
+    result = { weekly, total, months, biweekly: weekly * 2 };
+  }
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
 
@@ -42,14 +41,20 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
         {note || `Enter your earnings from your two highest-earning quarters in the last 18 months.`}
       </p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '16px', marginBottom: '20px' }}>
-        {[
+        {([
           { label: 'Highest Quarter Earnings ($)', value: q1, set: setQ1, placeholder: '15000', hint: 'Your best 3-month earnings' },
           { label: '2nd Highest Quarter ($)', value: q2, set: setQ2, placeholder: '13000', hint: 'Second best 3-month earnings' },
-        ].map(f => (
+        ] as const).map(f => (
           <div key={f.label}>
             <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
-            <input type="number" value={f.value} onChange={e => f.set(e.target.value)} placeholder={f.placeholder}
-              style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' }} />
+            <input
+              type="number"
+              min="0"
+              value={f.value}
+              onChange={e => f.set(e.target.value)}
+              placeholder={f.placeholder}
+              style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }}
+            />
             <div style={{ fontSize: '11px', opacity: 0.4, marginTop: '4px' }}>{f.hint}</div>
           </div>
         ))}
