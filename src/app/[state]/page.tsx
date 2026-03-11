@@ -48,6 +48,19 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         ],
       })}} />
 
+        {/* —— Schema: HowTo —— */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: `How to Calculate Your ${st.name} Paycheck`,
+          description: `Step-by-step guide to calculating take-home pay in ${st.name} for 2026.`,
+          step: [
+            { '@type': 'HowToStep', name: 'Enter your salary or hourly rate', text: 'Input your gross pay — annual salary or hourly rate with hours per week.' },
+            { '@type': 'HowToStep', name: 'Select pay frequency', text: 'Choose weekly, bi-weekly, semi-monthly, or monthly pay schedule.' },
+            { '@type': 'HowToStep', name: 'Add pre-tax deductions', text: 'Enter 401k, HSA, and other pre-tax deductions to lower your taxable income.' },
+            { '@type': 'HowToStep', name: 'See your take-home pay', text: `Your net pay appears instantly after federal tax, ${st.name} state tax, Social Security, and Medicare.` },
+          ],
+        })}} />
       {/* ── Schema: BreadcrumbList ── */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BreadcrumbList',
