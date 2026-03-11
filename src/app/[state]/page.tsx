@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!st) return { title: 'Paycheck Calculator' };
   return {
     title: `${st.name} Paycheck Calculator 2026 — Free, No Signup, Instant Results`,
-    description: `How much will you take home in ${st.name}? Free 2026 paycheck calculator — federal & state taxes, FICA, 401k. Results in seconds, your data never leaves your browser.`,
+    description: `${st.name} paycheck calculator 2026: see exact take-home pay after federal tax, ${noTax ? '0% state tax' : 'state tax'}, Social Security & Medicare. Free, instant, private — no signup needed.`,
     alternates: { canonical: `https://www.privatepaycheck.com/${slug}-paycheck-calculator` },
   };
 }
@@ -39,18 +39,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         '@context':'https://schema.org','@type':'WebApplication',
         name: `${st.name} Paycheck Calculator 2026 — PrivatePaycheck`,
         url: `https://www.privatepaycheck.com/${slug}-paycheck-calculator`,
-        description: `Free ${st.name} paycheck calculator. ${noTax ? st.name+' has no state income tax.' : 'State tax rate: '+rateStr+'.'} Calculate exact take-home pay with federal taxes, FICA, 401k, HSA.`,
-        applicationCategory:'FinanceApplication', operatingSystem:'Any',
-        aggregateRating:{'@type':'AggregateRating', ratingValue:'4.8', ratingCount:'2341', bestRating:'5', worstRating:'1'},
-        offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},
-        areaServed:{'@type':'State', name:st.name, containedInPlace:{'@type':'Country', name:'United States'}},
-      })}} />
-
-      {/* ── Schema: FAQPage ── */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org','@type':'FAQPage',
-        mainEntity:[
-          { '@type':'Question', name:`What is the ${st.name} state income tax rate in 2026?`,
+        description: `Free ${st.name} paycheck calculator 2026. ${noTax ? st.name+' has no state income tax — keep more of every paycheck.' : 'State tax rate: '+rateStr+'.'} Includes federal, FICA, 401k, HSA.`What is the ${st.name} state income tax rate in 2026?`,
             acceptedAnswer:{'@type':'Answer', text: noTax ? `${st.name} has no state income tax in 2026. Residents only pay federal income tax and FICA.` : `The ${st.name} state income tax rate is ${rateStr} in 2026.` }},
           { '@type':'Question', name:`How much of my paycheck goes to taxes in ${st.name}?`,
             acceptedAnswer:{'@type':'Answer', text: noTax ? `In ${st.name}, there is no state income tax. You pay federal income tax (10–37%) plus 6.2% Social Security and 1.45% Medicare.` : `In ${st.name}, you pay federal income tax, ${rateStr} state income tax, 6.2% Social Security, and 1.45% Medicare. For a $75,000 salary expect roughly 25–30% total.` }},
