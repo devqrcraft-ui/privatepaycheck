@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!st) return { title: 'Paycheck Calculator' };
   return {
     title: `${st.name} Paycheck Calculator 2026 — Free, No Signup, Instant Results`,
-    description: `${st.name} paycheck calculator 2026: see exact take-home pay after federal tax, ${noTax ? '0% state tax' : 'state tax'}, Social Security & Medicare. Free, instant, private — no signup needed.`,
+    description: `${st.name} paycheck calculator 2026: see exact take-home pay after federal tax, state tax, Social Security & Medicare. Free, instant, private — no signup needed.`,
     alternates: { canonical: `https://www.privatepaycheck.com/${slug}-paycheck-calculator` },
   };
 }
