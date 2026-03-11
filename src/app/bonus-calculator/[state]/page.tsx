@@ -146,7 +146,18 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
 
       <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
-      </footer>
+            {/* Related Calculators */}
+      <div style={{ margin:'40px 0 0', padding:'28px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'16px' }}>
+        <h3 style={{ margin:'0 0 16px', fontSize:'16px', fontWeight:700, color:'#e2e8f0' }}>Related Calculators</h3>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))', gap:'10px' }}>
+                <a href={`/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>🧮</span><span>Paycheck Calculator</span></a>
+                <a href={`/hourly-paycheck-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>⏱️</span><span>Hourly Paycheck</span></a>
+                <a href={`/overtime-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>💼</span><span>Overtime Pay</span></a>
+                <a href={`/unemployment-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>📋</span><span>Unemployment</span></a>
+                <a href={`/minimum-wage/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>📊</span><span>Minimum Wage</span></a>
+        </div>
+      </div>
+</footer>
     </main>
   );
 }
