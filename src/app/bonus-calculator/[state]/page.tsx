@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Bonus Tax Calculator' };
   return {
-    title: `${st.name} Bonus Tax Calculator 2026 — See Your Exact Take-Home Pay`,
-    description: `${st.name} bonus tax calculator 2026. Enter your bonus — see exactly how much goes to federal & state taxes vs your pocket. Free, instant, no signup.`,
+    title: `${st.name} Bonus Tax Calculator 2026 — How Much Will You Actually Keep?`,
+    description: `Got a bonus in ${st.name}? IRS withholds 22% flat — but you may owe more or less. See your exact take-home in seconds. Free, no login, updated 2026.`,
     alternates: { canonical: `https://www.privatepaycheck.com/bonus-calculator/${state}` },
   };
 }
