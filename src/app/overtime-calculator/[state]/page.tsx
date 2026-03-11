@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Overtime Calculator' };
   return {
-    title: `${st.name} Overtime Pay Calculator 2026 — Free`,
-    description: `Calculate overtime pay in ${st.name}. Federal overtime rules, ${st.name} state law, time-and-a-half, double time. Free & private.`,
+    title: `${st.name} Overtime Pay Calculator 2026 — Time-and-a-Half & Double Time Instantly`,
+    description: `How much overtime will you earn in ${st.name}? Calculate time-and-a-half & double time instantly — 2026 federal & state rules. Free, no signup.`,
     alternates: { canonical: `https://www.privatepaycheck.com/overtime-calculator/${state}` },
   };
 }

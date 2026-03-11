@@ -323,8 +323,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return { title: 'Not Found' };
   const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state tax';
   return {
-    title: data.name + ' Tip Tax Calculator 2026 — No Tax on Tips by State',
-    description: 'Calculate your tip tax savings in ' + data.name + ' (' + taxNote + '). The No Tax on Tips law lets you deduct up to $25,000 in tips. Free & instant.',
+    title: data.name + ' Tip Tax Calculator 2026 — How Much of Your Tips Do You Keep?',
+    description: 'Working for tips in ' + data.name + '? See exactly how much you keep after taxes with the 2026 No Tax on Tips deduction — up to $25,000 excluded. Free & instant.',
     alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator/' + state },
   };
 }
