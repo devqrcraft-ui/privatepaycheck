@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Unemployment Benefits Calculator by State 2026 — Free | PrivatePaycheck',
+  title: 'Unemployment Benefits Calculator by State 2026 — Free',
   description: 'Estimate your weekly unemployment benefits for all 50 US states. See max weekly benefit, duration, and total benefits. Free calculator updated for 2026.',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator' },
 };

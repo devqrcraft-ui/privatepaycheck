@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Minimum Wage by State 2026 — All 50 States | PrivatePaycheck',
+  title: 'Minimum Wage by State 2026 — All 50 States',
   description: 'Current minimum wage rates for all 50 US states in 2026. See hourly, daily, weekly, monthly and annual earnings at minimum wage. Updated for 2026.',
   alternates: { canonical: 'https://www.privatepaycheck.com/minimum-wage' },
 };

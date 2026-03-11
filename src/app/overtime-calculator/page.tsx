@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Overtime Pay Calculator by State 2026 — Free | PrivatePaycheck',
+  title: 'Overtime Pay Calculator by State 2026 — Free',
   description: 'Calculate overtime pay for all 50 US states. Federal 1.5x rules, California double-time, and more. Free overtime calculator updated for 2026.',
   alternates: { canonical: 'https://www.privatepaycheck.com/overtime-calculator' },
 };
