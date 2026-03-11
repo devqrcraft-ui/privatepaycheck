@@ -333,5 +333,16 @@ export default async function Page({ params }: Props) {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) notFound();
-  return <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'HowTo',name:data.name+' Tip and Paycheck Calculator 2026',description:'How to calculate your '+data.name+' take-home pay in 2026.',step:[
+          {'@type':'HowToStep',position:1,name:'Enter base hourly wage',text:'Type your base hourly rate before tips.'},
+          {'@type':'HowToStep',position:2,name:'Add tip income',text:'Enter your average weekly tip amount.'},
+          {'@type':'HowToStep',position:3,name:'Select pay frequency',text:'Choose how often you get paid.'},
+          {'@type':'HowToStep',position:4,name:'Pick your state',text:'Select your state for accurate state tax calculation.'},
+          {'@type':'HowToStep',position:5,name:'See net take-home',text:'View your after-tax paycheck including tip income.'}
+          ]}) }} />
+      return <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+    </>
+  );
 }

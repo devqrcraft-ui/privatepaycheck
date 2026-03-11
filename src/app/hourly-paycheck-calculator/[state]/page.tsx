@@ -333,5 +333,16 @@ export default async function Page({ params }: Props) {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) notFound();
-  return <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'HowTo',name:data.name+' Hourly Paycheck Calculator 2026',description:'How to calculate your '+data.name+' take-home pay in 2026.',step:[
+          {'@type':'HowToStep',position:1,name:'Enter hourly wage',text:'Type your hourly rate into the wage field.'},
+          {'@type':'HowToStep',position:2,name:'Set hours per week',text:'Enter how many hours you work per week.'},
+          {'@type':'HowToStep',position:3,name:'Choose pay frequency',text:'Select weekly, bi-weekly, or monthly pay schedule.'},
+          {'@type':'HowToStep',position:4,name:'Pick your state',text:'Select your state to apply correct state income tax.'},
+          {'@type':'HowToStep',position:5,name:'View take-home pay',text:'See your net pay after federal, state, and FICA taxes instantly.'}
+          ]}) }} />
+      return <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+    </>
+  );
 }
