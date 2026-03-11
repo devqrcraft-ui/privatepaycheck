@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Bonus Tax Calculator' };
   return {
-    title: `${st.name} Bonus Tax Calculator 2026 — How Much Will You Actually Keep?`,
+    title: `${st.name} Bonus Tax Calculator 2026 — Keep More of Your Bonus (22% Flat vs Aggregate)`,
     description: `Got a bonus in ${st.name}? IRS withholds 22% flat — but you may owe more or less. See your exact take-home in seconds. Free, no login, updated 2026.`,
     alternates: { canonical: `https://www.privatepaycheck.com/bonus-calculator/${state}` },
   };
@@ -35,7 +35,7 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
         '@context':'https://schema.org','@type':'WebApplication',
         name:`${st.name} Bonus Tax Calculator 2026`,
         url:`https://www.privatepaycheck.com/bonus-calculator/${state}`,
-        description:`${st.name} bonus tax 2026: flat 22% vs aggregate method. Enter amount — get your exact take-home in seconds. Free & private.`,
+        description:`${st.name} bonus tax 2026: IRS 22% flat rate vs aggregate method. Enter bonus + salary → instant take-home breakdown. Free & private, no signup.`,
         applicationCategory:'FinanceApplication', operatingSystem:'Any',
         offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},
         aggregateRating:{'@type':'AggregateRating', ratingValue:'4.8', ratingCount:'2156', bestRating:'5', worstRating:'1'},
