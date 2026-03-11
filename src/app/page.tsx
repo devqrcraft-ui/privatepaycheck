@@ -36,6 +36,19 @@ const FEATURES = [
 ];
 
 const CSS = `
+  
+  .obbb-section{padding:64px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
+  .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;}
+  .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:24px 20px;text-decoration:none;transition:all .25s ease;display:block;}
+  .obbb-card:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.60);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.40);}
+  .obbb-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;background:rgba(99,102,241,.25);color:#a5b4fc;padding:3px 8px;border-radius:3px;margin-bottom:12px;}
+  .obbb-icon{font-size:28px;margin-bottom:10px;}
+  .obbb-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#e0e7ff;margin-bottom:8px;line-height:1.3;}
+  .obbb-save{font-size:22px;font-weight:900;color:#818cf8;margin-bottom:6px;}
+  .obbb-desc{font-size:12px;color:#6b7280;line-height:1.6;}
+  @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:480px){.obbb-grid{grid-template-columns:1fr 1fr;gap:12px;}.obbb-card{padding:16px 14px;}.obbb-save{font-size:18px;}.obbb-title{font-size:14px;}}
+
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:72px 24px 80px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
   .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;position:relative;z-index:1;}
@@ -117,6 +130,45 @@ export default function HomePage() {
           <div><div className="t-n">2026</div><div className="t-l">IRS Tables</div></div>
         </div>
       </div>
+
+      <section className="obbb-section">
+        <div className="s-head">
+          <div className="s-tag" style={{color:'#a5b4fc',borderColor:'rgba(99,102,241,.40)'}}>One Big Beautiful Bill — Signed Law 2025–2028</div>
+          <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'clamp(26px,4vw,36px)',fontWeight:700,color:'#fff',marginBottom:14,lineHeight:1.15}}>New Tax Cuts — <em style={{color:'#818cf8'}}>Calculate Your Savings</em></h2>
+          <p className="s-desc">Federal law now eliminates tax on overtime and tips, adds $6,000 for seniors, and creates savings accounts for children.</p>
+        </div>
+        <div className="obbb-grid">
+          <Link href="/no-tax-on-overtime-deduction" className="obbb-card">
+            <div className="obbb-badge">New Law</div>
+            <div className="obbb-icon">⏱️</div>
+            <div className="obbb-title">No Tax on Overtime</div>
+            <div className="obbb-save">Save $2,750+</div>
+            <div className="obbb-desc">Up to $12,500 overtime deduction. 60M+ eligible workers.</div>
+          </Link>
+          <Link href="/no-tax-on-tips-calculator" className="obbb-card">
+            <div className="obbb-badge">New Law</div>
+            <div className="obbb-icon">💵</div>
+            <div className="obbb-title">No Tax on Tips</div>
+            <div className="obbb-save">Save $5,500+</div>
+            <div className="obbb-desc">Up to $25,000 tip deduction. Servers, bartenders, drivers.</div>
+          </Link>
+          <Link href="/senior-deduction-calculator" className="obbb-card">
+            <div className="obbb-badge">New Law</div>
+            <div className="obbb-icon">👴</div>
+            <div className="obbb-title">Senior $6,000 Deduction</div>
+            <div className="obbb-save">Save $1,320+</div>
+            <div className="obbb-desc">Extra $6,000 deduction for age 65+. Phaseout at $75K.</div>
+          </Link>
+          <Link href="/trump-account-calculator" className="obbb-card">
+            <div className="obbb-badge">New Law</div>
+            <div className="obbb-icon">👶</div>
+            <div className="obbb-title">Trump Account</div>
+            <div className="obbb-save">$38,000+ at 18</div>
+            <div className="obbb-desc">$1,000 gov seed + $2,500/yr employer. See your child total.</div>
+          </Link>
+        </div>
+      </section>
+
 
       <section className="pp-section">
         <div className="s-head">
