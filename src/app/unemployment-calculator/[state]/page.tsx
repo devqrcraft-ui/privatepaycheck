@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Unemployment Calculator' };
   return {
-    title: `${st.name} Unemployment Benefits 2026 — How Much Will You Get Per Week?`,
-    description: `${st.name} unemployment 2026: up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/week for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} weeks. Enter wages → get your exact weekly benefit. Free, no signup.`,
+    title: `${st.name} Unemployment Calculator 2026 — Up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/Week for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} Weeks`,
+    description: `Free ${st.name} unemployment calculator 2026. Instantly see your weekly benefit — up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/wk for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} weeks (${((STATE_UNEMPLOYMENT[code]?.maxWeekly??400)*(STATE_UNEMPLOYMENT[code]?.maxWeeks??26)).toLocaleString()} max). Enter wages, get results in seconds.`,
     alternates: { canonical: `https://www.privatepaycheck.com/unemployment-calculator/${state}` },
   };
 }
@@ -100,6 +100,20 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '3241', bestRating: '5', worstRating: '1' },
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: `How to Calculate ${st.name} Unemployment Benefits 2026`,
+        description: `Step-by-step guide to calculate your ${st.name} unemployment benefit amount.`,
+        step: [
+          { '@type': 'HowToStep', name: 'Find your base period wages', text: 'Locate your W-2 or pay stubs for the last 18 months. Identify your two highest-earning quarters.' },
+          { '@type': 'HowToStep', name: 'Enter quarterly earnings above', text: `Enter your highest and second-highest quarter earnings in the calculator. ${st.name} pays approximately ${Math.round(ui.baseRate*100)}% of your average weekly wage.` },
+          { '@type': 'HowToStep', name: 'See your weekly benefit', text: `Your estimated weekly benefit will appear instantly. ${st.name} pays between ${ui.minWeekly} and ${ui.maxWeekly} per week.` },
+          { '@type': 'HowToStep', name: 'Apply online', text: `Apply through the ${st.name} Department of Labor website. You will need your Social Security number and employment history.` },
+        ],
+        totalTime: 'PT2M',
+      })}} />
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
