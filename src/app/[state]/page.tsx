@@ -40,13 +40,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         name: `${st.name} Paycheck Calculator 2026 — PrivatePaycheck`,
         url: `https://www.privatepaycheck.com/${slug}-paycheck-calculator`,
         description: `Free ${st.name} paycheck calculator 2026. ${noTax ? st.name+' has no state income tax — keep more of every paycheck.' : 'State tax rate: '+rateStr+'.'} Includes federal, FICA, 401k, HSA.`,
-          { '@type':'Question', name:`What is the ${st.name} state income tax rate in 2026?`,
-            acceptedAnswer:{'@type':'Answer', text: noTax ? `${st.name} has no state income tax in 2026. Residents only pay federal income tax and FICA.` : `The ${st.name} state income tax rate is ${rateStr} in 2026.` }},
-          { '@type':'Question', name:`How much of my paycheck goes to taxes in ${st.name}?`,
-            acceptedAnswer:{'@type':'Answer', text: noTax ? `In ${st.name}, there is no state income tax. You pay federal income tax (10–37%) plus 6.2% Social Security and 1.45% Medicare.` : `In ${st.name}, you pay federal income tax, ${rateStr} state income tax, 6.2% Social Security, and 1.45% Medicare. For a $75,000 salary expect roughly 25–30% total.` }},
-          { '@type':'Question', name:`Is the ${st.name} paycheck calculator free?`,
-            acceptedAnswer:{'@type':'Answer', text:'Yes, completely free. No signup needed. Your salary data never leaves your browser — all calculations are done locally using 2026 tax tables.' }},
-        ],
       })}} />
 
         {/* —— Schema: HowTo —— */}
