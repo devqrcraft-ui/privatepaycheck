@@ -12,6 +12,18 @@ export const metadata: Metadata = {
   },
 };
 
+
+  const schemaJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    'name': 'Hourly Paycheck Calculator 2026',
+    'url': 'https://www.privatepaycheck.com/hourly-paycheck-calculator',
+    'description': 'Free hourly paycheck calculator. Federal + state taxes, FICA for all 50 states.',
+    'applicationCategory': 'FinanceApplication',
+    'operatingSystem': 'Web',
+    'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+  }
+
 export default function HourlyPaycheckPage() {
   return <HourlyCalculatorClient />;
 }

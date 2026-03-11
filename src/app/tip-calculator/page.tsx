@@ -8,11 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator' },
 };
 
+
+  const schemaJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    'name': 'Tip & Tax Calculator 2026',
+    'url': 'https://www.privatepaycheck.com/tip-calculator',
+    'description': 'Free tip and tax calculator for tipped workers. All 50 US states.',
+    'applicationCategory': 'FinanceApplication',
+    'operatingSystem': 'Web',
+    'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+  }
+
 export default function TipHub() {
   const states = Object.entries(STATE_SLUG_MAP).map(([slug, code]) => ({
     slug, code, name: STATE_TAXES[code]?.name || code,
     noTax: STATE_TAXES[code]?.noTax === true,
   })).sort((a, b) => a.name.localeCompare(b.name));
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
+
 
   return (
     <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>

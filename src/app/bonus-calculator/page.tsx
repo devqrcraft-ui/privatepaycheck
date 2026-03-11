@@ -8,11 +8,25 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.privatepaycheck.com/bonus-calculator' },
 };
 
+
+  const schemaJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    'name': 'Bonus Tax Calculator 2026',
+    'url': 'https://www.privatepaycheck.com/bonus-calculator',
+    'description': 'Free bonus tax calculator for all 50 US states. IRS 22% withholding rate.',
+    'applicationCategory': 'FinanceApplication',
+    'operatingSystem': 'Web',
+    'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+  }
+
 export default function BonusHub() {
   const states = Object.entries(STATE_SLUG_MAP).map(([slug, code]) => ({
     slug, code, name: STATE_TAXES[code]?.name || code,
     noTax: STATE_TAXES[code]?.noTax === true,
   })).sort((a, b) => a.name.localeCompare(b.name));
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
+
 
   return (
     <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
