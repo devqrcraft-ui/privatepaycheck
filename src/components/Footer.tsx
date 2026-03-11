@@ -5,7 +5,7 @@ export default function Footer() {
     <footer style={{background:"#060E28",borderTop:"3px solid #C9A84C",padding:"52px 24px 28px",fontFamily:"'Source Serif 4',serif"}}>
       <style>{`
         .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:36px; }
-        .foot-link { font-size:13px; color:#7A96B8; text-decoration:none; display:block; margin-bottom:9px; transition:color .2s; }
+        .foot-link { font-size:13px; color:#A8C4E0; text-decoration:none; display:block; margin-bottom:9px; transition:color .2s; }
         .foot-link:hover { color:#F5DC80; }
         @media(max-width:640px) {
           .foot-grid { grid-template-columns:1fr 1fr; gap:28px; }
@@ -36,7 +36,7 @@ export default function Footer() {
             <Link href="/terms" className="foot-link">Terms of Use</Link>
           </div>
         </div>
-        <div style={{borderTop:"1px solid rgba(201,168,76,.18)",paddingTop:18,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8,fontSize:12,color:"#5A7090"}}>
+        <div style={{borderTop:"1px solid rgba(201,168,76,.18)",paddingTop:18,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8,fontSize:12,color:"#8AAAC8"}}>
           <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
           <span>Free · Private · No Data Stored</span>
         </div>
