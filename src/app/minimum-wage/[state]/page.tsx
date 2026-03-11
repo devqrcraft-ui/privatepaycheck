@@ -89,7 +89,22 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
   const aboveFederal = mw.hourly > FEDERAL_MIN_WAGE;
 
   return (
-    <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    
+      {/* HowTo Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context':'https://schema.org',
+        '@type':'HowTo',
+        name:`Minimum Wage Paycheck Calculator — ${st.name} 2026`,
+        description:`How to calculate your ${st.name} take-home pay using the minimum wage paycheck calculator in 2026.`,
+        step:[
+          { '@type':'HowToStep', position:1, name:'Select your state', text:'Choose your state to load the 2026 minimum wage rate.' },
+          { '@type':'HowToStep', position:2, name:'Set hours per week', text:'Enter your weekly hours at minimum wage.' },
+          { '@type':'HowToStep', position:3, name:'Choose pay frequency', text:'Select weekly, bi-weekly, or monthly pay period.' },
+          { '@type':'HowToStep', position:4, name:'Review tax breakdown', text:'See federal, state, and FICA deductions applied.' },
+          { '@type':'HowToStep', position:5, name:'View take-home pay', text:'Get your net minimum wage paycheck after all taxes.' }
+        ]
+      })}} />
+      <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebPage',

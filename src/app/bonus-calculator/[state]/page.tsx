@@ -30,7 +30,22 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
   const stateRate = st.rate;
 
   return (
-    <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
+    
+      {/* HowTo Schema */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context':'https://schema.org',
+        '@type':'HowTo',
+        name:`Bonus Tax Calculator — ${st.name} 2026`,
+        description:`How to calculate your ${st.name} take-home pay using the bonus tax calculator in 2026.`,
+        step:[
+          { '@type':'HowToStep', position:1, name:'Enter bonus amount', text:'Type your gross bonus payment amount.' },
+          { '@type':'HowToStep', position:2, name:'Choose withholding method', text:'Select flat rate (22%) or aggregate method.' },
+          { '@type':'HowToStep', position:3, name:'Add annual salary', text:'Enter your base salary for aggregate calculation.' },
+          { '@type':'HowToStep', position:4, name:'Pick your state', text:'Select your state to include state bonus tax.' },
+          { '@type':'HowToStep', position:5, name:'View net bonus', text:'See exactly how much of your bonus you keep after taxes.' }
+        ]
+      })}} />
+      <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebApplication',
         name:`${st.name} Bonus Tax Calculator 2026`,
