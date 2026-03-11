@@ -36,6 +36,19 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
 
   return (
     <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: `How to Calculate Overtime Pay in ${st.name}`,
+        description: `Calculate time-and-a-half and double time overtime pay in ${st.name} for 2026.`,
+        step: [
+          { '@type': 'HowToStep', name: 'Enter your regular hourly rate', text: 'Input your standard hourly wage before overtime.' },
+          { '@type': 'HowToStep', name: 'Enter overtime hours', text: 'Add hours worked beyond 40 per week. Federal law requires 1.5× pay for these hours.' },
+          { '@type': 'HowToStep', name: 'Check double time', text: `Some ${st.name} workers qualify for 2× pay. Enter any double-time hours separately.` },
+          { '@type': 'HowToStep', name: 'See your total pay', text: 'Your regular pay + overtime pay + double time pay are calculated instantly.' },
+        ],
+      })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
