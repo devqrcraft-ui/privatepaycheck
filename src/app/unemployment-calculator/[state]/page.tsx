@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import UnemploymentCalculatorClient from './UnemploymentCalculatorClient';
 
 export const dynamicParams = false;
 
@@ -154,28 +155,15 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
           ))}
         </div>
 
-        <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '32px' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '20px', textAlign: 'center' }}>Estimate Your {st.name} Unemployment Benefit</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '16px', marginBottom: '20px' }}>
-            {[
-              { label: 'Your Weekly Earnings ($)', placeholder: '1000', id: 'ui-wage' },
-              { label: 'Weeks Worked (last 12 mo)', placeholder: '52', id: 'ui-weeks' },
-            ].map(f => (
-              <div key={f.id}>
-                <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
-                <input id={f.id} type="number" placeholder={f.placeholder} style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }} />
-              </div>
-            ))}
-          </div>
-          <div id="ui-result" style={{ background: 'linear-gradient(135deg,rgba(74,222,128,0.1),rgba(99,102,241,0.1))', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '20px', textAlign: 'center' }}>
-            <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '8px' }}>Estimated Weekly Benefit ({st.name})</div>
-            <div style={{ fontSize: '13px', opacity: 0.7, lineHeight: 1.8 }}>
-              Based on {Math.round(ui.baseRate * 100)}% of your average weekly wage<br />
-              <strong>Range: ${ui.minWeekly} – ${ui.maxWeekly}/week</strong><br />
-              <span style={{ fontSize: '12px', opacity: 0.5 }}>Enter your earnings above for an estimate</span>
-            </div>
-          </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}>🔒 All calculations happen in your browser · Estimates only</p>
+        <div style={{ marginBottom: '32px' }}>
+          <UnemploymentCalculatorClient
+            stateName={st.name}
+            maxWeekly={ui.maxWeekly}
+            minWeekly={ui.minWeekly}
+            maxWeeks={ui.maxWeeks}
+            baseRate={ui.baseRate}
+            note={ui.note}
+          />
         </div>
 
         {/* FAQ */}
