@@ -89,7 +89,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
   const aboveFederal = mw.hourly > FEDERAL_MIN_WAGE;
 
   return (
-    
+    <>
       {/* HowTo Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org',
@@ -114,8 +114,8 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         mainEntity: {
           '@type': 'FAQPage',
           mainEntity: [
-            { '@type': 'Question', name: `What is the minimum wage in ${st.name} in 2026?`, acceptedAnswer: { '@type': 'Answer', text: `The minimum wage in ${st.name} is $${mw.hourly}/hour in 2026. Working full-time (40 hrs/week, 52 weeks), that equals $${annualFT.toLocaleString()}/year before taxes.` } },
-            { '@type': 'Question', name: `What is the tipped minimum wage in ${st.name}?`, acceptedAnswer: { '@type': 'Answer', text: mw.tipped === mw.hourly ? `${st.name} has no separate tipped minimum wage — all workers receive $${mw.hourly}/hour.` : `The tipped minimum wage in ${st.name} is $${mw.tipped}/hour. Employers must ensure total earnings (tips + wages) reach $${mw.hourly}/hour.` } },
+            { '@type': 'Question', name: `What is the minimum wage in ${st.name} in 2026?`, acceptedAnswer: { '@type': 'Answer', text: `The minimum wage in ${st.name} is ${mw.hourly}/hour in 2026. Working full-time (40 hrs/week, 52 weeks), that equals ${annualFT.toLocaleString()}/year before taxes.` } },
+            { '@type': 'Question', name: `What is the tipped minimum wage in ${st.name}?`, acceptedAnswer: { '@type': 'Answer', text: mw.tipped === mw.hourly ? `${st.name} has no separate tipped minimum wage — all workers receive ${mw.hourly}/hour.` : `The tipped minimum wage in ${st.name} is ${mw.tipped}/hour. Employers must ensure total earnings (tips + wages) reach ${mw.hourly}/hour.` } },
           ],
         },
       })}} />
@@ -159,11 +159,11 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '14px', marginBottom: '32px' }}>
           {[
-            { label: 'Per Hour', value: `$${mw.hourly}`, color: '#4ade80' },
-            { label: 'Per Day (8h)', value: `$${(mw.hourly * 8).toFixed(2)}`, color: '#818cf8' },
-            { label: 'Per Week (40h)', value: `$${weeklyFT}`, color: '#fbbf24' },
-            { label: 'Per Month', value: `$${monthlyFT.toLocaleString()}`, color: '#fb923c' },
-            { label: 'Per Year (FT)', value: `$${annualFT.toLocaleString()}`, color: '#f87171' },
+            { label: 'Per Hour', value: `${mw.hourly}`, color: '#4ade80' },
+            { label: 'Per Day (8h)', value: `${(mw.hourly * 8).toFixed(2)}`, color: '#818cf8' },
+            { label: 'Per Week (40h)', value: `${weeklyFT}`, color: '#fbbf24' },
+            { label: 'Per Month', value: `${monthlyFT.toLocaleString()}`, color: '#fb923c' },
+            { label: 'Per Year (FT)', value: `${annualFT.toLocaleString()}`, color: '#f87171' },
           ].map(s => (
             <div key={s.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
               <div style={{ fontSize: '11px', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>{s.label}</div>
@@ -186,9 +186,9 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '20px' }}>{st.name} Minimum Wage FAQ 2026</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {[
-              { q: `What is the minimum wage in ${st.name} in 2026?`, a: `The ${st.name} minimum wage is $${mw.hourly}/hour in 2026. This applies to most employees. Working full-time (2,080 hours/year), a minimum wage worker earns $${annualFT.toLocaleString()}/year before taxes.` },
-              { q: `How much is ${st.name} minimum wage per year?`, a: `At $${mw.hourly}/hour, a full-time worker (40 hrs/week, 52 weeks) earns $${annualFT.toLocaleString()}/year gross. After taxes, take-home pay will be lower — use our paycheck calculator to see your exact net pay.` },
-              { q: `Is ${st.name} minimum wage above federal minimum wage?`, a: aboveFederal ? `Yes — ${st.name}'s minimum wage of $${mw.hourly}/hour is above the federal minimum of $${FEDERAL_MIN_WAGE}/hour. The higher state rate applies.` : `${st.name} follows the federal minimum wage of $${FEDERAL_MIN_WAGE}/hour. State and federal minimums are the same.` },
+              { q: `What is the minimum wage in ${st.name} in 2026?`, a: `The ${st.name} minimum wage is ${mw.hourly}/hour in 2026. This applies to most employees. Working full-time (2,080 hours/year), a minimum wage worker earns ${annualFT.toLocaleString()}/year before taxes.` },
+              { q: `How much is ${st.name} minimum wage per year?`, a: `At ${mw.hourly}/hour, a full-time worker (40 hrs/week, 52 weeks) earns ${annualFT.toLocaleString()}/year gross. After taxes, take-home pay will be lower — use our paycheck calculator to see your exact net pay.` },
+              { q: `Is ${st.name} minimum wage above federal minimum wage?`, a: aboveFederal ? `Yes — ${st.name}'s minimum wage of ${mw.hourly}/hour is above the federal minimum of ${FEDERAL_MIN_WAGE}/hour. The higher state rate applies.` : `${st.name} follows the federal minimum wage of ${FEDERAL_MIN_WAGE}/hour. State and federal minimums are the same.` },
               { q: 'Who is exempt from minimum wage laws?', a: 'Some workers are exempt including certain farm workers, outside salespeople, and some apprentices/students. Tipped employees can be paid a lower direct wage if tips bring total compensation to minimum wage.' },
             ].map(item => (
               <div key={item.q}>
@@ -241,5 +241,6 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
       </div>
 </footer>
     </main>
+    </>
   );
 }

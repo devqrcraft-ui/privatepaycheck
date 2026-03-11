@@ -30,7 +30,7 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
   const stateRate = st.rate;
 
   return (
-    
+    <>
       {/* HowTo Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org',
@@ -118,7 +118,7 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'20px' }}>Bonus Tax FAQ — {st.name}</h2>
           <div style={{ display:'flex', flexDirection:'column', gap:'16px' }}>
             {[
-              { q:`How much tax will I pay on my bonus in ${st.name}?`, a:`Your bonus is taxed at 22% federal flat rate plus ${noTax ? 'no state tax ('+st.name+' has no income tax)' : (stateRate*100).toFixed(1)+'% '+st.name+' state tax'}, plus 7.65% FICA. On a $10,000 bonus, expect to keep roughly $${noTax ? Math.round(10000*(1-0.22-0.0765)).toLocaleString() : Math.round(10000*(1-0.22-stateRate-0.0765)).toLocaleString()} after all taxes.` },
+              { q:`How much tax will I pay on my bonus in ${st.name}?`, a:`Your bonus is taxed at 22% federal flat rate plus ${noTax ? 'no state tax ('+st.name+' has no income tax)' : (stateRate*100).toFixed(1)+'% '+st.name+' state tax'}, plus 7.65% FICA. On a $10,000 bonus, expect to keep roughly ${noTax ? Math.round(10000*(1-0.22-0.0765)).toLocaleString() : Math.round(10000*(1-0.22-stateRate-0.0765)).toLocaleString()} after all taxes.` },
               { q:'What is the flat rate method for bonus taxes?', a:'The IRS allows employers to withhold a flat 22% federal income tax on supplemental wages (bonuses, commissions) under $1 million. This is the most common method. It\'s separate from your regular paycheck withholding.' },
               { q:'What is the aggregate method for bonus taxes?', a:'The aggregate method adds your bonus to a regular paycheck and calculates withholding on the total. If your effective tax rate is below 22%, this method results in less withholding. Ask your payroll department which method they use.' },
               { q:'Are bonuses subject to Social Security and Medicare?', a:'Yes. Bonuses are considered regular wages for FICA purposes. You pay 6.2% Social Security (on wages up to $176,100) and 1.45% Medicare on all wages. Your employer also matches these amounts.' },
@@ -174,5 +174,6 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
       </div>
 </footer>
     </main>
+    </>
   );
 }
