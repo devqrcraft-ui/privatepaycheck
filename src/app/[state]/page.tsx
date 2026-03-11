@@ -196,12 +196,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '16px', opacity: 0.85 }}>Related Calculators for {st.name}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
             {[
-              { label: '⏱️ Hourly Paycheck', href: `/hourly-paycheck-calculator/${params.state}` },
-              { label: '💼 Overtime Pay', href: `/overtime-calculator/${params.state}` },
-              { label: '📋 Unemployment', href: `/unemployment-calculator/${params.state}` },
-              { label: '🎁 Bonus Tax', href: `/bonus-calculator/${params.state}` },
-              { label: '💡 Tip Tax', href: `/tip-calculator/${params.state}` },
-              { label: '📊 Minimum Wage', href: `/minimum-wage/${params.state}` },
+              { label: '⏱️ Hourly Paycheck', href: `/hourly-paycheck-calculator/${slug}` },
+              { label: '💼 Overtime Pay', href: `/overtime-calculator/${slug}` },
+              { label: '📋 Unemployment', href: `/unemployment-calculator/${slug}` },
+              { label: '🎁 Bonus Tax', href: `/bonus-calculator/${slug}` },
+              { label: '💡 Tip Tax', href: `/tip-calculator/${slug}` },
+              { label: '📊 Minimum Wage', href: `/minimum-wage/${slug}` },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ display: 'block', padding: '12px 16px', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '10px', color: '#a5b4fc', fontSize: '13px', fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}>
                 {l.label}
