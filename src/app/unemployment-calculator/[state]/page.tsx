@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Unemployment Calculator' };
   return {
-    title: `${st.name} Unemployment Calculator 2026 — Estimate Your Weekly Benefit`,
-    description: `How much unemployment will you get in ${st.name}? Enter your wages — get your weekly benefit amount, max weeks & eligibility instantly. Free 2026 calculator.`,
+    title: `${st.name} Unemployment Benefits 2026 — How Much Will You Get Per Week?`,
+    description: `${st.name} unemployment 2026: up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/week for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} weeks. Enter wages → get your exact weekly benefit. Free, no signup.`,
     alternates: { canonical: `https://www.privatepaycheck.com/unemployment-calculator/${state}` },
   };
 }
@@ -167,7 +167,7 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
               </div>
             ))}
           </div>
-          <div style={{ background: 'linear-gradient(135deg,rgba(74,222,128,0.1),rgba(99,102,241,0.1))', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '20px', textAlign: 'center' }}>
+          <div id="ui-result" style={{ background: 'linear-gradient(135deg,rgba(74,222,128,0.1),rgba(99,102,241,0.1))', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '20px', textAlign: 'center' }}>
             <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '8px' }}>Estimated Weekly Benefit ({st.name})</div>
             <div style={{ fontSize: '13px', opacity: 0.7, lineHeight: 1.8 }}>
               Based on {Math.round(ui.baseRate * 100)}% of your average weekly wage<br />
