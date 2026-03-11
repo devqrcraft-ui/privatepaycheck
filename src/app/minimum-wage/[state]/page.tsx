@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Minimum Wage' };
   return {
-    title: `${st.name} Minimum Wage 2026 — $${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hour`,
-    description: `${st.name} minimum wage in 2026 is $${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hour. Annual salary, monthly, weekly breakdown. Tipped worker rates included.`,
+    title: `${st.name} Minimum Wage 2026: ${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hr — What Workers Must Be Paid`,
+    description: `${st.name} minimum wage is ${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hour in 2026. See annual, monthly & weekly breakdown, tipped worker rates, and scheduled increases.`,
     alternates: { canonical: `https://www.privatepaycheck.com/minimum-wage/${state}` },
   };
 }
