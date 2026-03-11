@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Bonus Tax Calculator 2026 — By State, Free & Private',
-  description: 'Calculate how much of your bonus you keep after federal and state taxes. All 50 states. Flat rate vs aggregate method. Free & instant.',
+  title: 'Bonus Tax Calculator 2026 — How Much of Your Bonus Will You Keep?',
+  description: 'IRS withholds 22% on bonuses — but your real tax may be higher or lower. Free 2026 bonus tax calculator for all 50 states. See your exact take-home instantly.',
   alternates: { canonical: 'https://www.privatepaycheck.com/bonus-calculator' },
 };
 
