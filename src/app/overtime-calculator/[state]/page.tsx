@@ -174,11 +174,11 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '16px', opacity: 0.85 }}>Related Calculators for {st.name}</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           {[
-        { label: '🧮 Paycheck Calculator', href: `/${params.state}` },
-        { label: '⏱️ Hourly Paycheck', href: `/hourly-paycheck-calculator/${params.state}` },
-        { label: '📋 Unemployment', href: `/unemployment-calculator/${params.state}` },
-        { label: '🎁 Bonus Tax', href: `/bonus-calculator/${params.state}` },
-        { label: '📊 Minimum Wage', href: `/minimum-wage/${params.state}` },
+        { label: '🧮 Paycheck Calculator', href: `/${state}` },
+        { label: '⏱️ Hourly Paycheck', href: `/hourly-paycheck-calculator/${state}` },
+        { label: '📋 Unemployment', href: `/unemployment-calculator/${state}` },
+        { label: '🎁 Bonus Tax', href: `/bonus-calculator/${state}` },
+        { label: '📊 Minimum Wage', href: `/minimum-wage/${state}` },
           ].map(l => (
             <a key={l.href} href={l.href} style={{ display: 'block', padding: '12px 16px', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '10px', color: '#a5b4fc', fontSize: '13px', fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}>
               {l.label}
