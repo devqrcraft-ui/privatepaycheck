@@ -1,3 +1,13 @@
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: "How does having two jobs affect my taxes?", acceptedAnswer: { '@type': 'Answer', text: "Each employer withholds taxes as if that job is your only income. This means you may be under-withheld overall since your combined income could push you into a higher bracket. You should adjust your W-4 to withhold extra." } },
+    { '@type': 'Question', name: "How do I avoid owing taxes when working two jobs?", acceptedAnswer: { '@type': 'Answer', text: "On your W-4 for your second job, use the IRS withholding estimator to calculate the extra amount to withhold per paycheck. Even $50-$100 extra per paycheck can prevent a surprise tax bill." } },
+    { '@type': 'Question', name: "Do I pay more taxes if I have two jobs?", acceptedAnswer: { '@type': 'Answer', text: "Not necessarily more overall, but your withholding may be insufficient. Your total tax owed is the same whether from one job or two. The issue is that employers withhold based on each job separately, not your combined income." } }
+  ],
+};
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {

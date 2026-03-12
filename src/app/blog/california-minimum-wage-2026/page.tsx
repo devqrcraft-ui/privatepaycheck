@@ -1,3 +1,13 @@
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: "What is the minimum wage in California in 2026?", acceptedAnswer: { '@type': 'Answer', text: "California minimum wage is $16.50/hour as of 2026 for most workers. Fast food workers earn $20/hour under AB 1228. Healthcare workers have a $25/hour minimum under SB 525." } },
+    { '@type': 'Question', name: "How much is California minimum wage per year?", acceptedAnswer: { '@type': 'Answer', text: "At $16.50/hour working full-time (40 hrs/week, 52 weeks), a California worker earns $34,320/year before taxes. After federal and state taxes, take-home is approximately $27,000-$28,000/year." } },
+    { '@type': 'Question', name: "Does California have a higher minimum wage than federal?", acceptedAnswer: { '@type': 'Answer', text: "Yes. The federal minimum wage is $7.25/hour, while California is $16.50/hour — more than double. California has had a higher state minimum wage than the federal rate since 2008." } }
+  ],
+};
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -22,6 +32,8 @@ const HISTORY = [
 ];
 
 export default function Post() {
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
   return (
     <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

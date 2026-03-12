@@ -1,3 +1,13 @@
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: "Are tips tax-free in 2026?", acceptedAnswer: { '@type': 'Answer', text: "The No Tax on Tips provision (2025-2028) allows workers to deduct up to $25,000 in tip income from federal taxable income. Tips are still reported on your W-2, but the deduction reduces your federal tax bill." } },
+    { '@type': 'Question', name: "Who qualifies for the no tax on tips deduction?", acceptedAnswer: { '@type': 'Answer', text: "Workers in traditionally tipped occupations: servers, bartenders, hotel staff, rideshare drivers, delivery drivers, salon workers. Tips must be voluntary customer payments — mandatory service charges do not qualify." } },
+    { '@type': 'Question', name: "Do I still owe state tax on tips in 2026?", acceptedAnswer: { '@type': 'Answer', text: "The no tax on tips deduction is federal only. Most states still tax tip income. Nine states (TX, FL, NV, WA, WY, SD, TN, NH, AK) have no state income tax, so tips are fully exempt from state tax there." } }
+  ],
+};
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
