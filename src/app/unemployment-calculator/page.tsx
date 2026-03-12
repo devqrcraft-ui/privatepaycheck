@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Unemployment Benefits Calculator by State 2026 — Free',
-  description: 'Estimate your weekly unemployment benefits for all 50 US states. See max weekly benefit, duration, and total benefits. Free calculator updated for 2026.',
+  title: 'Unemployment Calculator by State 2026 — Weekly Benefit Amount Estimator',
+  description: 'Free unemployment calculator 2026. Texas pays up to $563/wk, California $450/wk, New York $504/wk. Enter wages to see your exact weekly benefit for all 50 states. Instant & private.',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator' },
 };
 
@@ -20,11 +20,60 @@ const MAX_BENEFITS: Record<string, { max: number; weeks: number }> = {
   florida: { max: 275, weeks: 12 },
 };
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much is the maximum unemployment benefit in Texas in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The maximum weekly unemployment benefit in Texas is $563 per week for up to 26 weeks, for a maximum total of $14,638. Texas pays approximately 47% of your average weekly wage during your base period.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is the weekly unemployment benefit amount calculated?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most states pay 40-60% of your average weekly wage during the base period (the first four of the last five completed calendar quarters). Find your two highest-earning quarters, add them together, and divide by 26 to get your average weekly wage. Then multiply by your state rate.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which state pays the highest unemployment benefits in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Massachusetts pays the highest maximum at $1,033/week for up to 30 weeks. Washington State follows at $1,019/week, then Minnesota at $857/week and New Jersey at $854/week.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long do unemployment benefits last?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most states provide up to 26 weeks of unemployment benefits. Some states offer fewer weeks: Florida (12 weeks), North Carolina (12 weeks), Georgia (14 weeks), Alabama (14 weeks). Massachusetts offers the most at 30 weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are unemployment benefits taxable in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, unemployment benefits are fully taxable as ordinary income at the federal level. You can request 10% federal withholding when you apply. Some states also tax unemployment benefits — check your state rules.',
+      },
+    },
+  ],
+};
+
 export default function UnemploymentHubPage() {
   const slugs = Object.keys(STATE_SLUG_MAP);
 
   return (
     <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
