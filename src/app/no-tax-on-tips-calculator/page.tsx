@@ -47,9 +47,6 @@ export default function NoTaxOnTipsCalculator() {
 
   return (
     <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
-const faqSchemaInline = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is there no tax on tips in 2026?","acceptedAnswer":{"@type":"Answer","text":"No Tax on Tips has been proposed but not yet enacted as law in 2026. Currently, all tip income is subject to federal income tax and FICA. Tipped workers must report all tips to their employer and on their tax return."}},{"@type":"Question","name":"How much would I save if tips were tax-free?","acceptedAnswer":{"@type":"Answer","text":"A server earning $20,000/year in tips at the 22% federal bracket would save approximately $4,400/year in federal income tax alone. In states with income tax, total savings could reach $5,000-$7,000 annually."}},{"@type":"Question","name":"Do I have to report tips to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tips over $20/month must be reported to your employer and are included on your W-2. The IRS requires tip income to be reported on your tax return. Unreported tips can result in penalties and back taxes."}}]};
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaInline) }} />
-
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Tips Calculator 2026', url: 'https://www.privatepaycheck.com/no-tax-on-tips-calculator', description: 'Calculate your federal tax savings under the No Tax on Tips exemption. Up to $25,000 in tips tax-free.', applicationCategory: 'FinanceApplication', operatingSystem: 'Any' }) }} />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
