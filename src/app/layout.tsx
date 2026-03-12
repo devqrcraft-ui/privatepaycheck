@@ -8,6 +8,7 @@ import Nav from '@/components/Nav';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://www.privatepaycheck.com' },
   robots: { index: true, follow: true },
   keywords: 'paycheck calculator, salary calculator, tax calculator 2026, US paycheck, take home pay, FICA calculator, 401k calculator',
   metadataBase: new URL('https://www.privatepaycheck.com'),
@@ -34,6 +35,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body style={{ margin: 0, padding: 0 }}>
         <Nav />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: 'PrivatePaycheck — Paycheck Calculator 2026',
+        url: 'https://www.privatepaycheck.com',
+        applicationCategory: 'FinanceApplication',
+        operatingSystem: 'All',
+        description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private.',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      }) }} />
         {children}
         <Analytics />
         <SpeedInsights />
