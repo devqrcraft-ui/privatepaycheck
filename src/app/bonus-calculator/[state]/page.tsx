@@ -53,7 +53,6 @@ export default async function BonusPage({ params }: { params: Promise<{ state: s
         description:`${st.name} bonus tax 2026: IRS 22% flat rate vs aggregate method. Enter bonus + salary → instant take-home breakdown. Free & private, no signup.`,
         applicationCategory:'FinanceApplication', operatingSystem:'Any',
         offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},
-        aggregateRating:{'@type':'AggregateRating', ratingValue:'4.8', ratingCount:'2156', bestRating:'5', worstRating:'1'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',

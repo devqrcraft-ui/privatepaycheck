@@ -113,7 +113,6 @@ export default function HourlyPaycheckCalculator() {
         description:'Free hourly paycheck calculator. Enter your hourly rate and hours per week to see exact take-home pay after federal, state, FICA taxes, 401k and HSA. All 50 states.',
         applicationCategory:'FinanceApplication', operatingSystem:'Any',
         offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},
-        aggregateRating:{'@type':'AggregateRating', ratingValue:'4.8', ratingCount:'1847', bestRating:'5', worstRating:'1'},
         featureList:['Hourly to annual salary conversion','Federal income tax','State income tax all 50 states','FICA Social Security Medicare','401k HSA deductions'],
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
