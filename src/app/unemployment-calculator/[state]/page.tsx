@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: `${st.name} Unemployment Calculator 2026 — Weekly Benefit Amount | PrivatePaycheck` };
   return {
-    title: `${st.name} Unemployment Calculator 2026 — Up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/Week for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} Weeks`,
+    title: `${st.name} Unemployment Calculator 2026 — Up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/wk · Instant Estimate`,
     description: `Free ${st.name} unemployment calculator 2026. Instantly see your weekly benefit — up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/wk for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} weeks (${((STATE_UNEMPLOYMENT[code]?.maxWeekly??400)*(STATE_UNEMPLOYMENT[code]?.maxWeeks??26)).toLocaleString()} max). Enter wages, get results in seconds.`,
     alternates: { canonical: `https://www.privatepaycheck.com/unemployment-calculator/${state}` },
   };
@@ -98,7 +98,7 @@ export default async function UnemploymentPage({ params }: { params: Promise<{ s
         applicationCategory: 'FinanceApplication',
         operatingSystem: 'Any',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '3241', bestRating: '5', worstRating: '1' },
+
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
