@@ -15,6 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const code = STATE_SLUG_MAP[slug];
   const st   = STATE_TAXES[code];
   if (!st) return { title: 'Paycheck Calculator' };
+  const noTax = !st.rate || st.rate === 0;
+  const rateStr = noTax ? '' : (st.rate * 100).toFixed(1) + '%';
   return {
     title: `${st.name} Paycheck Calculator 2026 — Exact Take-Home Pay in Seconds`,
     description: `${st.name} paycheck calculator 2026. See take-home pay after ${noTax ? 'federal tax + FICA (no state income tax)' : 'federal tax, '+rateStr+' state tax & FICA'}. Free, instant, private — results in under 5 seconds.`,
