@@ -15,6 +15,34 @@ const STATE_NOTES: Record<string, string> = {
   colorado: '1.5x after 12 hrs/day',
 };
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+  {
+    '@type': 'Question',
+    name: 'How is overtime calculated in 2026?',
+    acceptedAnswer: { '@type': 'Answer', text: 'Federal law requires 1.5x your regular rate for hours over 40/week. Some states like California require daily overtime (over 8 hours/day) and double time (over 12 hours/day or 7th consecutive day).' },
+  },
+  {
+    '@type': 'Question',
+    name: 'Which states have daily overtime rules?',
+    acceptedAnswer: { '@type': 'Answer', text: 'California requires overtime after 8 hours/day and double time after 12 hours/day. Alaska and Nevada also have daily overtime rules. All other states follow the federal 40-hour weekly threshold.' },
+  },
+  {
+    '@type': 'Question',
+    name: 'Is overtime taxed differently?',
+    acceptedAnswer: { '@type': 'Answer', text: 'Overtime wages are taxed as regular income — there is no special overtime tax rate. However, the No Tax on Overtime deduction (2025-2028 law) allows you to deduct up to $12,500 in overtime wages from your federal taxable income.' },
+  },
+  {
+    '@type': 'Question',
+    name: 'How much overtime can I earn before hitting a higher tax bracket?',
+    acceptedAnswer: { '@type': 'Answer', text: 'Only the dollars above a bracket threshold are taxed at the higher rate. Use the calculator to enter your base salary and overtime hours to see your exact take-home at any income level.' },
+  }
+  ],
+};
+
 export default function OvertimeHubPage() {
   const slugs = Object.keys(STATE_SLUG_MAP);
   const stateNames = Object.fromEntries(
@@ -22,7 +50,9 @@ export default function OvertimeHubPage() {
   );
 
   return (
-    <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -114,5 +144,6 @@ export default function OvertimeHubPage() {
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </main>
-  );
+    </>
+    );
 }

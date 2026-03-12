@@ -20,6 +20,34 @@ export const metadata: Metadata = {
     'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
   }
 
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+  {
+    '@type': 'Question',
+    name: 'Are tips tax-free in 2026?',
+    acceptedAnswer: { '@type': 'Answer', text: 'The No Tax on Tips law (2025-2028) allows workers to deduct up to $25,000 in tip income from federal taxable income. Tips are still reported on your W-2, but the deduction reduces your tax bill. State taxes may still apply.' },
+  },
+  {
+    '@type': 'Question',
+    name: 'Who qualifies for the no tax on tips deduction?',
+    acceptedAnswer: { '@type': 'Answer', text: 'Workers in traditionally tipped occupations qualify: servers, bartenders, hotel staff, rideshare and delivery drivers, salon workers. Tips must be voluntary customer payments — mandatory service charges do not qualify.' },
+  },
+  {
+    '@type': 'Question',
+    name: 'How much can I save with the no tax on tips deduction?',
+    acceptedAnswer: { '@type': 'Answer', text: 'At the 22% federal bracket, a worker with $25,000 in tips saves up to $5,500/year. At 12%, savings are $3,000. The deduction phases out for higher incomes above $150,000.' },
+  },
+  {
+    '@type': 'Question',
+    name: 'Do I still owe state tax on tips?',
+    acceptedAnswer: { '@type': 'Answer', text: 'The no tax on tips deduction is federal only. Most states still tax tip income as regular income. Nine states (TX, FL, NV, WA, WY, SD, TN, NH, AK) have no income tax, so tips are fully exempt from state tax there.' },
+  }
+  ],
+};
+
 export default function TipHub() {
   const states = Object.entries(STATE_SLUG_MAP).map(([slug, code]) => ({
     slug, code, name: STATE_TAXES[code]?.name || code,
@@ -29,7 +57,9 @@ export default function TipHub() {
 
 
   return (
-    <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ textAlign:'center', marginBottom:'40px' }}>
           <div style={{ display:'inline-block', background:'rgba(244,114,182,0.1)', border:'1px solid rgba(244,114,182,0.3)', borderRadius:'20px', padding:'6px 16px', fontSize:'13px', marginBottom:'16px', color:'#f472b6' }}>
@@ -73,5 +103,6 @@ export default function TipHub() {
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>
-  );
+    </>
+    );
 }
