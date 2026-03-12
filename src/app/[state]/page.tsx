@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st   = STATE_TAXES[code];
   if (!st) return { title: 'Paycheck Calculator' };
   return {
-    title: `${st.name} Paycheck Calculator 2026 — Free, No Signup, Instant Results`,
-    description: `${st.name} paycheck calculator 2026: see exact take-home pay after federal tax, state tax, Social Security & Medicare. Free, instant, private — no signup needed.`,
+    title: `${st.name} Paycheck Calculator 2026 — Exact Take-Home Pay in Seconds`,
+    description: `${st.name} paycheck calculator 2026. See take-home pay after ${noTax ? 'federal tax + FICA (no state income tax)' : 'federal tax, '+rateStr+' state tax & FICA'}. Free, instant, private — results in under 5 seconds.`,
     alternates: { canonical: `https://www.privatepaycheck.com/${slug}-paycheck-calculator` },
   };
 }
@@ -68,7 +68,54 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
       <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'40px 16px' }}>
 
-        {/* ── BREADCRUMB ── */}
+  
+      {/* ── Schema: FAQPage ── */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: `How much is taken out of my paycheck in ${st.name}?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: noTax
+                ? `In ${st.name}, there is no state income tax. A typical employee pays 6.2% for Social Security, 1.45% for Medicare, and federal income tax based on their bracket. For a $75,000 salary, expect roughly 18–22% total tax.`
+                : `In ${st.name}, deductions include federal income tax (10–37%), state income tax (${rateStr}), Social Security (6.2%), and Medicare (1.45%). For a $75,000 salary, total taxes are typically 25–30%.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `What is the ${st.name} state income tax rate in 2026?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: noTax
+                ? `${st.name} has no state income tax in 2026. This applies to all residents regardless of income level.`
+                : `The ${st.name} state income tax rate is ${rateStr} for 2026, applied to your taxable income after the standard deduction of $15,000 (single) or $30,000 (married).`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `How do I reduce taxes on my ${st.name} paycheck?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `The most effective ways: contribute to a 401(k) (up to $23,500 in 2026), an HSA (up to $4,300 for individuals), and pay health insurance premiums pre-tax. These reduce your taxable income before federal${noTax ? '' : ' and '+st.name} taxes are applied.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `Is this ${st.name} paycheck calculator accurate for 2026?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: noTax
+                ? `Yes. ${st.name} has no state income tax. Uses 2026 federal brackets, standard deduction ($15,000 single / $30,000 married), and current FICA rates (6.2% SS + 1.45% Medicare).`
+                : `Yes. Uses 2026 IRS federal tax brackets, standard deduction ($15,000 single / $30,000 married), current FICA rates, and ${st.name} state tax rate of ${rateStr}.`,
+            },
+          },
+        ],
+      })}} />
+
+      {/* ── BREADCRUMB ── */}
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link>
           {' › '}
