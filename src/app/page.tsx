@@ -37,6 +37,19 @@ const FEATURES = [
 
 const CSS = `
   
+  
+  .featured-states{padding:64px 24px;background:linear-gradient(155deg,#071420 0%,#0C1C38 100%);border-top:1px solid rgba(245,200,66,.10);}
+  .fs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+  .fs-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.20);border-radius:14px;padding:28px 24px;text-decoration:none;display:block;transition:all .25s ease;}
+  .fs-card:hover{background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.50);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.45);}
+  .fs-state{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#F5C842;margin-bottom:10px;}
+  .fs-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3;}
+  .fs-rate{font-size:26px;font-weight:900;color:#4ade80;margin-bottom:10px;}
+  .fs-facts{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .fs-fact{font-size:12px;color:#90B4D0;line-height:1.5;}
+  .fs-cta{font-size:13px;font-weight:700;color:#F5C842;}
+  @media(max-width:768px){.fs-grid{grid-template-columns:1fr;}}
+
   .obbb-section{padding:64px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
   .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;}
   .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:24px 20px;text-decoration:none;transition:all .25s ease;display:block;}
@@ -184,6 +197,54 @@ export default function HomePage() {
               <p className="feat-desc">{f.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+
+      {/* featured-states-block */}
+      <section className="featured-states">
+        <div className="s-head">
+          <div className="s-tag">Most Searched States</div>
+          <h2>Top State <em>Paycheck Calculators</em></h2>
+          <p className="s-desc">Texas, Florida, and California account for 40% of all US payroll. Get your exact take-home pay in seconds.</p>
+        </div>
+        <div className="fs-grid">
+          <Link href="/texas-paycheck-calculator" className="fs-card">
+            <div className="fs-state">Texas</div>
+            <div className="fs-title">Texas Paycheck Calculator 2026</div>
+            <div className="fs-rate">0% State Tax</div>
+            <div className="fs-facts">
+              <div className="fs-fact">✓ No state income tax — keep more of every paycheck</div>
+              <div className="fs-fact">✓ Federal tax + 7.65% FICA only</div>
+              <div className="fs-fact">✓ $75,000 salary → ~$58,500 take-home</div>
+              <div className="fs-fact">✓ Updated for 2026 IRS brackets</div>
+            </div>
+            <div className="fs-cta">Calculate Texas Paycheck →</div>
+          </Link>
+          <Link href="/florida-paycheck-calculator" className="fs-card">
+            <div className="fs-state">Florida</div>
+            <div className="fs-title">Florida Paycheck Calculator 2026</div>
+            <div className="fs-rate">0% State Tax</div>
+            <div className="fs-facts">
+              <div className="fs-fact">✓ Florida has no state income tax</div>
+              <div className="fs-fact">✓ Min wage $13.00/hr in 2026 (reaches $15 this year)</div>
+              <div className="fs-fact">✓ $75,000 salary → ~$58,500 take-home</div>
+              <div className="fs-fact">✓ Federal + FICA deductions only</div>
+            </div>
+            <div className="fs-cta">Calculate Florida Paycheck →</div>
+          </Link>
+          <Link href="/california-paycheck-calculator" className="fs-card">
+            <div className="fs-state">California</div>
+            <div className="fs-title">California Paycheck Calculator 2026</div>
+            <div className="fs-rate">Up to 13.3%</div>
+            <div className="fs-facts">
+              <div className="fs-fact">✓ Highest state income tax in the US</div>
+              <div className="fs-fact">✓ Min wage $16.50/hr — highest in contiguous US</div>
+              <div className="fs-fact">✓ $75,000 salary → ~$52,000 take-home</div>
+              <div className="fs-fact">✓ SDI + federal + state + FICA included</div>
+            </div>
+            <div className="fs-cta">Calculate California Paycheck →</div>
+          </Link>
         </div>
       </section>
 
