@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import BonusCalculatorClient from './BonusCalculatorClient';
 
 export const metadata: Metadata = {
-  title: 'Bonus Tax Calculator 2026 — How Much of Your Bonus Do You Keep? | PrivatePaycheck',
-  description: 'Calculate exactly how much of your bonus you keep after federal and state taxes in 2026. All 50 states, IRS aggregate & flat rate methods. Free & 100% private.',
+  title: 'Bonus Tax Calculator 2026 — 22% Flat Rate or Aggregate? See Your Real Take-Home',
+  description: 'Bonus tax calculator 2026: IRS taxes bonuses at 22% flat rate (or aggregate). Enter your bonus to see exact take-home after federal + state taxes. All 50 states, free & private.',
   alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator' },
   openGraph: {
     title: 'Bonus Tax Calculator 2026 — How Much Do You Keep?',
@@ -12,6 +12,18 @@ export const metadata: Metadata = {
     siteName: 'PrivatePaycheck',
     type: 'website',
   },
+};
+
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Bonus Tax Calculator 2026',
+  url: 'https://www.privatepaycheck.com/bonus-tax-calculator',
+  description: 'Calculate exact take-home pay on your bonus after federal 22% flat rate or aggregate method, plus state taxes for all 50 states.',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Web',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 const faqSchema = {
@@ -64,10 +76,8 @@ const faqSchema = {
 export default function BonusTaxCalculatorPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <BonusCalculatorClient />
     </>
   );
