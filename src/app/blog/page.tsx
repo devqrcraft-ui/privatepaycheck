@@ -1,3 +1,5 @@
+
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: "What paycheck topics does the PrivatePaycheck blog cover?", acceptedAnswer: { '@type': 'Answer', text: "The blog covers 2026 IRS tax brackets, paycheck deductions, state-by-state tax guides, W-4 withholding tips, overtime and bonus tax rules, HSA and 401k strategies, and the latest tax law changes like No Tax on Tips and No Tax on Overtime." } },{ '@type': 'Question', name: "How often is the blog updated?", acceptedAnswer: { '@type': 'Answer', text: "The blog is updated regularly with new 2026 IRS data, state tax law changes, and new calculator guides. All articles reflect the latest federal and state tax rules for 2026." } }] };
 ﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -26,6 +28,8 @@ const POSTS = [
 ];
 
 export default function BlogPage() {
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
   return (
     <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
