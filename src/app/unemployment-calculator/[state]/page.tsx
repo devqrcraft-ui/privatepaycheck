@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state } = await params;
   const code = STATE_SLUG_MAP[state];
   const st = STATE_TAXES[code];
-  if (!st) return { title: `${st.name} Unemployment Calculator 2026 — Weekly Benefit Amount | PrivatePaycheck` };
+  if (!st) return { title: 'Unemployment Calculator 2026 | PrivatePaycheck' };
   return {
     title: `${st.name} Unemployment Calculator 2026 — Up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/wk · Instant Estimate`,
     description: `Free ${st.name} unemployment calculator 2026. Instantly see your weekly benefit — up to ${STATE_UNEMPLOYMENT[code]?.maxWeekly??400}/wk for ${STATE_UNEMPLOYMENT[code]?.maxWeeks??26} weeks (${((STATE_UNEMPLOYMENT[code]?.maxWeekly??400)*(STATE_UNEMPLOYMENT[code]?.maxWeeks??26)).toLocaleString()} max). Enter wages, get results in seconds.`,
