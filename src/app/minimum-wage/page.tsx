@@ -48,7 +48,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'How much is minimum wage per year in 2026?',
-      acceptedAnswer: { '@type': 'Answer', text: 'At the federal minimum wage of $7.25/hour, a full-time worker (40 hrs/week, 52 weeks) earns $15,080/year before taxes. At California's $16.50/hour, that rises to $34,320/year. Use our state pages to see exact take-home pay after taxes.' },
+      acceptedAnswer: { '@type': 'Answer', text: "At the federal minimum wage of $7.25/hour, a full-time worker (40 hrs/week, 52 weeks) earns $15,080/year before taxes. At California's $16.50/hour, that rises to $34,320/year. Use our state pages to see exact take-home pay after taxes." },
     },
   ],
 };

@@ -33,5 +33,5 @@ export default function HourlyPaycheckPage() {
       { '@type': 'Question', 'name': 'Is this hourly paycheck calculator free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No signup required and no data is stored — all calculations happen in your browser.' } },
     ],
   };
-  return ( <HourlyCalculatorClient />;
+  return <HourlyCalculatorClient />;
 }
