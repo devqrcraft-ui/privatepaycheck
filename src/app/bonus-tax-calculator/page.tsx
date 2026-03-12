@@ -14,6 +14,61 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How is a bonus taxed in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The IRS taxes bonuses as supplemental wages. The flat withholding rate is 22% for bonuses under $1 million, and 37% for the amount above $1 million. Alternatively, employers may use the aggregate method combining your regular salary and bonus.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between the flat rate and aggregate method?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The flat rate method withholds a fixed 22% federal tax on your bonus. The aggregate method adds your bonus to your regular paycheck and withholds based on your total income bracket, which may result in higher withholding.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I pay state tax on my bonus?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, most states tax bonuses as regular income. Nine states have no income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I reduce taxes on my bonus?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can reduce taxes on your bonus by contributing to a 401(k), HSA, or FSA before year-end, timing the bonus payment to a lower-income year, or requesting your employer use the aggregate method if it results in lower withholding.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this bonus tax calculator free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, completely free. No signup required and no data is stored — all calculations happen in your browser.',
+      },
+    },
+  ],
+};
+
 export default function BonusTaxCalculatorPage() {
-  return <BonusCalculatorClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <BonusCalculatorClient />
+    </>
+  );
 }
