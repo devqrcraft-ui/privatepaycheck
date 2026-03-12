@@ -24,6 +24,27 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/401k-contribution-limits-2026',
         datePublished:'2026-02-01', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the 401k contribution limit for 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 401(k) employee contribution limit is  />3,500. Workers age 50+ can add a $7,500 catch-up contribution for a total of $31,000. The total employer + employee limit is $70,000.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much does a 401k reduce my paycheck?',
+        acceptedAnswer: { '@type': 'Answer', text: 'A  />3,500 annual 401(k) contribution reduces your taxable income by  />3,500, saving roughly $5,170 in taxes at the 22% bracket. Your net paycheck reduction is less than the contribution amount.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Should I max out my 401k in 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'If you can afford it, maxing the 401(k) is one of the best ways to reduce taxes and build retirement savings. Use our paycheck calculator to see exactly how different contribution amounts affect your take-home pay.' },
+      }
+        ],
+      })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › 401(k) Limits 2026

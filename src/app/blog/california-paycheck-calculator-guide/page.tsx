@@ -22,6 +22,27 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/california-paycheck-calculator-guide',
         datePublished:'2026-02-08', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the California income tax rate in 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'California has progressive income tax rates from 1% to 13.3%. Most middle-income earners pay 9.3%. California also has SDI (State Disability Insurance) at 1.1% on all wages.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much is taken out of a California paycheck?',
+        acceptedAnswer: { '@type': 'Answer', text: 'For a $75,000 salary in California, expect roughly  />2,000- />4,000 in total taxes (federal + state + FICA + SDI), leaving about $51,000-$53,000 take-home per year.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does California tax bonuses?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes. California taxes bonuses as regular income at your marginal rate — up to 13.3%. There is no separate tipped minimum wage in California either.' },
+      }
+        ],
+      })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › California Paycheck Guide

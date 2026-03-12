@@ -7,6 +7,27 @@ export const metadata: Metadata = {
 };
 const ROWS=[{inc:50000,tx:41239,ca:38200},{inc:75000,tx:60284,ca:54844},{inc:100000,tx:78684,ca:70909},{inc:150000,tx:114284,ca:99259},{inc:200000,tx:146284,ca:125209}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'Texas vs California Salary 2026',url:'https://www.privatepaycheck.com/blog/texas-vs-california-salary',datePublished:'2026-02-22',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is it better to work in Texas or California for taxes?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Texas has no state income tax, saving workers $5,000-})}}/>5,000+/year vs California at the same salary. However, California has higher wages in tech and entertainment. The net benefit depends on your industry and income.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much more do you take home in Texas vs California?',
+        acceptedAnswer: { '@type': 'Answer', text: 'On a })}}/>00,000 salary, Texas workers take home roughly $7,500-$9,000 more than California workers annually due to no state income tax. At />00,000, the difference exceeds })}}/>8,000/year.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Does California or Texas have a higher minimum wage?',
+        acceptedAnswer: { '@type': 'Answer', text: 'California has a much higher minimum wage at })}}/>6.50/hour in 2026. Texas follows the federal minimum of $7.25/hour — less than half of California\'s rate.' },
+      }
+        ],
+      })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › Texas vs California</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>COMPARISON</div>

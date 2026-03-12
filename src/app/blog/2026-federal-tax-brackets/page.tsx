@@ -8,6 +8,27 @@ export const metadata: Metadata = {
 const SINGLE=[[0,11600,'10%'],[11600,47150,'12%'],[47150,100525,'22%'],[100525,191950,'24%'],[191950,243725,'32%'],[243725,609350,'35%'],[609350,Infinity,'37%']];
 const MARRIED=[[0,23200,'10%'],[23200,94300,'12%'],[94300,201050,'22%'],[201050,383900,'24%'],[383900,487450,'32%'],[487450,731200,'35%'],[731200,Infinity,'37%']];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'2026 Federal Income Tax Brackets — Complete Guide',url:'https://www.privatepaycheck.com/blog/2026-federal-tax-brackets',datePublished:'2026-01-10',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What are the 2026 federal tax brackets?',
+        acceptedAnswer: { '@type': 'Answer', text: 'For single filers: 10% up to })}}/>1,600, 12% up to $47,150, 22% up to })}}/>00,525, 24% up to })}}/>91,950, 32% up to />43,725, 35% up to $609,350, 37% above $609,350. Married filing jointly thresholds are double.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the standard deduction in 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 standard deduction is })}}/>5,000 for single filers, $30,000 for married filing jointly, and />2,500 for head of household. This reduces your taxable income before brackets are applied.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Did tax brackets change for 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 brackets are adjusted for inflation from 2025. The One Big Beautiful Bill also added new deductions: })}}/>2,500 for overtime, />5,000 for tips, and $6,000 extra for seniors age 65+.' },
+      }
+        ],
+      })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › 2026 Tax Brackets</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>TAX BASICS</div>

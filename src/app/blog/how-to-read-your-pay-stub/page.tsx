@@ -19,6 +19,27 @@ export default function Post() {
         author:{'@type':'Organization', name:'PrivatePaycheck'},
         publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://www.privatepaycheck.com'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What does YTD mean on a pay stub?',
+        acceptedAnswer: { '@type': 'Answer', text: 'YTD stands for Year-to-Date — the total amount earned or deducted since January 1st of the current year. YTD gross shows total earnings; YTD tax shows total taxes withheld so far this year.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between gross and net pay?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Gross pay is your total earnings before any deductions. Net pay (take-home) is what you receive after federal tax, state tax, FICA, 401(k), health insurance, and other deductions are subtracted.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Why does my federal withholding change each paycheck?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Withholding can vary if your hours/earnings vary, you updated your W-4, you hit the Social Security wage cap (})}} />76,100 in 2026), or your employer uses the aggregate method for withholding calculations.' },
+      }
+        ],
+      })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › How to Read Your Pay Stub

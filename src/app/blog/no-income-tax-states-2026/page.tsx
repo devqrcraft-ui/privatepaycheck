@@ -35,6 +35,27 @@ export default function Post() {
         datePublished:'2026-01-22', dateModified:'2026-01-22',
         author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Which states have no income tax in 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Nine states have no individual income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. New Hampshire taxes only interest and dividends, not wages.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much do you save living in a no-tax state?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Moving from California to Texas on a })}} />00,000 salary saves roughly $6,000-$9,000/year in state income taxes. The exact amount depends on your income, filing status, and deductions.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do no-income-tax states have higher other taxes?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Some offset income tax with higher property or sales taxes. Texas has high property taxes (1.7% average). Washington has a 6.5% sales tax. Tennessee has a 7% sales tax — the highest in the US.' },
+      }
+        ],
+      })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › No Income Tax States 2026

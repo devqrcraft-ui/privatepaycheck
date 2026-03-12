@@ -6,6 +6,27 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/what-is-fica-tax' },
 };
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'What is FICA Tax? Social Security & Medicare Explained (2026)',url:'https://www.privatepaycheck.com/blog/what-is-fica-tax',datePublished:'2026-01-28',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is FICA tax?',
+        acceptedAnswer: { '@type': 'Answer', text: 'FICA (Federal Insurance Contributions Act) tax funds Social Security and Medicare. In 2026: Social Security is 6.2% on wages up to })}}/>76,100, and Medicare is 1.45% on all wages. Employers match these amounts.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I avoid paying FICA tax?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Most employees cannot avoid FICA. Exceptions include some government employees, certain student workers, and self-employed workers who pay both the employee and employer portions (15.3% self-employment tax).' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the FICA wage base limit in 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The Social Security wage base is })}}/>76,100 in 2026. You stop paying the 6.2% Social Security tax once your earnings exceed this amount. The 1.45% Medicare tax has no cap — high earners also pay an extra 0.9% above />00,000.' },
+      }
+        ],
+      })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › What is FICA Tax</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>BASICS</div>

@@ -7,6 +7,27 @@ export const metadata: Metadata = {
 };
 const STATES=[{n:'Texas',net:41239,rate:0},{n:'Florida',net:41239,rate:0},{n:'California',net:38200,rate:0.093},{n:'New York',net:38890,rate:0.0685},{n:'Illinois',net:39762,rate:0.0495},{n:'Oregon',net:36800,rate:0.099}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'$50,000 a Year is How Much an Hour?',url:'https://www.privatepaycheck.com/blog/how-much-is-50k-a-year-hourly',datePublished:'2026-02-20',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How much is $50,000 a year per hour?',
+        acceptedAnswer: { '@type': 'Answer', text: '$50,000/year equals approximately />4.04/hour based on a standard 2,080-hour work year (40 hours/week, 52 weeks). This is before taxes.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the take-home pay for $50,000 a year?',
+        acceptedAnswer: { '@type': 'Answer', text: 'At $50,000/year, a single filer takes home approximately $39,000-$42,000 depending on state. In Texas (no state tax): ~$41,500. In California: ~$38,500. Use the calculator for your exact state.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is $50,000 a year a good salary in 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: '$50,000/year is above the US median individual income. It is comfortable in lower cost-of-living states but tight in cities like NYC, SF, or LA where average rent exceeds />,500/month.' },
+      }
+        ],
+      })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › $50k a Year Hourly</div>
 <div style={{display:'inline-block',background:'rgba(129,140,248,0.1)',color:'#818cf8',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY MATH</div>

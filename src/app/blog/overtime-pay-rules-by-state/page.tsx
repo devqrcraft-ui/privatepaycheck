@@ -24,6 +24,27 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state',
         datePublished:'2026-02-14', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'When does overtime pay start?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Federal law (FLSA) requires 1.5x overtime after 40 hours/week. California also requires daily overtime after 8 hours and double time after 12 hours. Alaska and Nevada have similar daily rules.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is overtime pay mandatory in all states?',
+        acceptedAnswer: { '@type': 'Answer', text: 'All states must follow the federal 40-hour weekly rule at minimum. Some states (CA, AK, NV) have stricter daily overtime rules. Some states also have higher overtime thresholds for certain industries.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How does the 2026 overtime tax deduction work?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The No Tax on Overtime deduction (2025-2028) lets workers deduct up to })}} />2,500 in overtime wages from federal taxable income. You still pay FICA on overtime. Claim the deduction when filing your federal tax return.' },
+      }
+        ],
+      })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › Overtime Rules by State

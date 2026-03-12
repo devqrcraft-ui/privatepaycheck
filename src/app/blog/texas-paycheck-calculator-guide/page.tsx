@@ -17,6 +17,27 @@ export default function Post() {
         datePublished:'2026-02-20', author:{'@type':'Organization', name:'PrivatePaycheck'},
         publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://www.privatepaycheck.com'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Does Texas have state income tax?',
+        acceptedAnswer: { '@type': 'Answer', text: 'No. Texas has no state income tax. Workers only pay federal income tax and FICA (6.2% Social Security + 1.45% Medicare). This makes Texas one of the most tax-friendly states for workers.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much is taken out of a Texas paycheck?',
+        acceptedAnswer: { '@type': 'Answer', text: 'For a $75,000 salary in Texas, expect roughly })}} />6,500 in federal income tax and FICA combined — a take-home of about $58,500/year or $4,875/month. There is no state income tax deduction.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I calculate my Texas paycheck?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Enter your salary or hourly rate in our Texas paycheck calculator. It applies 2026 IRS federal brackets, the standard deduction (})}} />5,000 single), and FICA rates to show your exact take-home pay.' },
+      }
+        ],
+      })}} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>

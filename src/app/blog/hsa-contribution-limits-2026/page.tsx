@@ -16,6 +16,27 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/hsa-contribution-limits-2026',
         datePublished:'2026-02-20', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the HSA contribution limit for 2026?',
+        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 HSA contribution limit is $4,300 for individual coverage and $8,550 for family coverage. Workers age 55+ can add a })}} />,000 catch-up contribution.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'How does an HSA reduce my taxes?',
+        acceptedAnswer: { '@type': 'Answer', text: 'HSA contributions are pre-tax, reducing both federal income tax and FICA taxes. A $4,300 HSA contribution saves roughly $946 in taxes at the 22% bracket plus $329 in FICA — total })}} />,275 in savings.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I use an HSA with any health plan?',
+        acceptedAnswer: { '@type': 'Answer', text: 'No — you must be enrolled in a High Deductible Health Plan (HDHP) to contribute to an HSA. For 2026, an HDHP has a minimum deductible of })}} />,650 (individual) or $3,300 (family).' },
+      }
+        ],
+      })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › HSA Limits 2026
