@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, padding: 0 }}>
+      <body style={{ margin: 0, padding: 0 }} style={{overflowX:"hidden",maxWidth:"100%"}}>
         <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
         <SpeedInsights />
       <Footer />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my paycheck?","acceptedAnswer":{"@type":"Answer","text":"Enter your gross salary, pay frequency, state, and deductions. Our calculator computes federal tax, state tax, FICA, and net pay instantly."}},{"@type":"Question","name":"Which states have no income tax?","acceptedAnswer":{"@type":"Answer","text":"Florida, Texas, Nevada, Washington, Wyoming, South Dakota, Tennessee, and New Hampshire have no state income tax."}},{"@type":"Question","name":"What is FICA tax?","acceptedAnswer":{"@type":"Answer","text":"FICA is Social Security (6.2%) and Medicare (1.45%) tax, totaling 7.65% for employees."}}]}) }} />      <Script src="/ai-chat-widget.js" strategy="lazyOnload" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate my paycheck?","acceptedAnswer":{"@type":"Answer","text":"Enter your gross salary, pay frequency, state, and deductions. Our calculator computes federal tax, state tax, FICA, and net pay instantly."}},{"@type":"Question","name":"Which states have no income tax?","acceptedAnswer":{"@type":"Answer","text":"Florida, Texas, Nevada, Washington, Wyoming, South Dakota, Tennessee, and New Hampshire have no state income tax."}},{"@type":"Question","name":"What is FICA tax?","acceptedAnswer":{"@type":"Answer","text":"FICA is Social Security (6.2%) and Medicare (1.45%) tax, totaling 7.65% for employees."}}]}) }} />      <Script src="/ai-chat-widget-v5.js" strategy="lazyOnload" />
     
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRMYZKZN69" />
