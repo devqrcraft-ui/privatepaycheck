@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, padding: 0 }} style={{overflowX:"hidden",maxWidth:"100%"}}>
+      <body style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
         <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
