@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state } = await params;
   const code = STATE_SLUG_MAP[state];
   const st = STATE_TAXES[code];
-  if (!st) return { title: `${st.name} Bonus Tax Calculator 2026 — How Much Do You Keep? | PrivatePaycheck` };
+  if (!st) return { title: 'Bonus Tax Calculator 2026 | PrivatePaycheck' };
   return {
     title: `${st.name} Bonus Tax Calculator 2026 — Keep More of Your Bonus (22% Flat vs Aggregate)`,
     description: `Got a bonus in ${st.name}? IRS withholds 22% flat — but you may owe more or less. See your exact take-home in seconds. Free, no login, updated 2026.`,
