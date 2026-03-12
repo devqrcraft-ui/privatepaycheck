@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://www.privatepaycheck.com/hourly-paycheck-calculator',
   },
 };
-
+export default function HourlyPaycheckPage() {
 
   const schemaJson = {
     '@context': 'https://schema.org',
@@ -22,8 +22,16 @@ export const metadata: Metadata = {
     'applicationCategory': 'FinanceApplication',
     'operatingSystem': 'Web',
     'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
-  }
+  };
 
-export default function HourlyPaycheckPage() {
-  return <HourlyCalculatorClient />;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      { '@type': 'Question', 'name': 'How do I calculate my hourly paycheck after taxes?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Multiply your hourly rate by hours worked, then subtract federal tax, state tax, Social Security (6.2%) and Medicare (1.45%). Use our calculator for exact results.' } },
+      { '@type': 'Question', 'name': 'What percentage is taken out of my paycheck?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Typically 20-35% total: federal income tax (10-37%), state tax (0-13%), Social Security (6.2%), Medicare (1.45%).' } },
+      { '@type': 'Question', 'name': 'Is this hourly paycheck calculator free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, completely free. No signup required and no data is stored — all calculations happen in your browser.' } },
+    ],
+  };
+  return ( <HourlyCalculatorClient />;
 }
