@@ -164,8 +164,8 @@ BEHAVIOR:
       right: 0;
       bottom: 0;
       width: 100%;
-      height: 50vh;
-      max-height: 50vh;
+      height: 40vh;
+      max-height: 40vh;
       background: #0D1F38;
       border: none;
       border-top: 1px solid rgba(184,146,74,0.35);
