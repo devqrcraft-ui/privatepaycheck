@@ -1,13 +1,18 @@
 {
   "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "privatepaycheck.com" }],
+      "destination": "https://www.privatepaycheck.com/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "index, follow"
-        }
+        { "key": "X-Robots-Tag", "value": "index, follow" }
       ]
     }
   ]

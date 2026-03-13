@@ -26,91 +26,93 @@ const BLOG_SLUGS = [
   'what-is-fica-tax',
   'california-minimum-wage-2026',
   'how-to-calculate-paycheck-taxes',
+  '2026-federal-tax-brackets',
+  'how-much-is-50k-a-year-hourly',
+  'how-much-of-my-raise-do-i-keep',
+  'how-to-increase-take-home-pay',
+  'no-tax-on-tips-explained',
+  'one-big-beautiful-bill-tax-calculator-2026',
+  'texas-vs-california-salary',
+  'two-jobs-tax-withholding',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const stateSlugs = Object.keys(STATE_SLUG_MAP);
+  const now = new Date();
 
   return [
-    // ── Core ──────────────────────────────────────────────
-    { url: BASE_URL,                                    lastModified: new Date(), changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${BASE_URL}/all-states`,                    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/hourly-paycheck-calculator`,    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/overtime-calculator`,           lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/unemployment-calculator`,       lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/minimum-wage`,                  lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/bonus-tax-calculator`,              lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/tip-calculator`,                lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/blog`,                          lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE_URL}/no-tax-on-overtime-deduction`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/no-tax-on-tips-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/raise-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/signing-bonus-tax-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/two-jobs-tax-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/w4-withholding-calculator`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/privacy-policy`,                lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${BASE_URL}/terms`,                         lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
+    { url: BASE_URL,                                      lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
+    { url: `${BASE_URL}/all-states`,                      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/hourly-paycheck-calculator`,      lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/overtime-calculator`,             lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/unemployment-calculator`,         lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/minimum-wage`,                    lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/bonus-tax-calculator`,            lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/tip-calculator`,                  lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/blog`,                            lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE_URL}/no-tax-on-overtime-deduction`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/no-tax-on-tips-calculator`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/raise-calculator`,                lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/signing-bonus-tax-calculator`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/two-jobs-tax-calculator`,         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/w4-withholding-calculator`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/senior-deduction-calculator`,     lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/trump-account-calculator`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/privacy-policy`,                  lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${BASE_URL}/terms`,                           lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
 
-    // ── [state]-paycheck-calculator ───────────────────────
     ...stateSlugs.map(slug => ({
       url: `${BASE_URL}/${slug}-paycheck-calculator`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
 
-    // ── overtime/[state] ──────────────────────────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/overtime-calculator/${slug}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
 
-    // ── unemployment/[state] ──────────────────────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/unemployment-calculator/${slug}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
 
-    // ── minimum-wage/[state] ──────────────────────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/minimum-wage/${slug}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
 
-    // ── bonus-calculator/[state] ──────────────────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/bonus-tax-calculator/${slug}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
 
-
-    // ── hourly-paycheck-calculator/[state] ───────────────
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/hourly-paycheck-calculator/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    })),
-    // ── tip-calculator/[state] ────────────────────────────
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/tip-calculator/${slug}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
 
-    // ── Blog posts ────────────────────────────────────────
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/tip-calculator/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+
     ...BLOG_SLUGS.map(slug => ({
       url: `${BASE_URL}/blog/${slug}`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
