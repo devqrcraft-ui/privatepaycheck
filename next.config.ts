@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/calculator", destination: "/", permanent: true },
       { source: "/hr/week/hourly-paycheck-calculator", destination: "/hourly-paycheck-calculator", permanent: true },
+      { source: "/bonus-calculator", destination: "/bonus-tax-calculator", permanent: true },
+      { source: "/bonus-calculator/:state", destination: "/bonus-tax-calculator/:state", permanent: true },
     ];
   },
 };
