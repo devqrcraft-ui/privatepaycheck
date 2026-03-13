@@ -19,7 +19,6 @@ export default function Nav() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap');
         .ticker-outer{background:#8B1A1A;border-bottom:2px solid #F5C842;height:40px;overflow:hidden;display:flex;align-items:center;}
         .ticker-track{display:flex;white-space:nowrap;animation:tick 70s linear infinite;will-change:transform;}
         @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
