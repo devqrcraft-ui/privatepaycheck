@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer style={{background:"#060E28",borderTop:"3px solid #C9A84C",padding:"52px 24px 28px",fontFamily:"'Source Serif 4',serif"}}>
@@ -7,9 +6,13 @@ export default function Footer() {
         .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:36px; }
         .foot-link { font-size:13px; color:#A8C4E0; text-decoration:none; display:block; margin-bottom:9px; transition:color .2s; }
         .foot-link:hover { color:#F5DC80; }
+        .sister-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:36px; }
+        .sister-card { display:flex; align-items:center; gap:10px; background:rgba(245,200,66,0.05); border:1px solid rgba(201,168,76,0.2); border-radius:10px; padding:12px 14px; text-decoration:none; transition:border-color .2s,background .2s; }
+        .sister-card:hover { background:rgba(245,200,66,0.1); border-color:rgba(201,168,76,0.45); }
         @media(max-width:640px) {
           .foot-grid { grid-template-columns:1fr 1fr; gap:28px; }
           .foot-brand-col { grid-column:1/-1; }
+          .sister-grid { grid-template-columns:1fr; }
         }
       `}</style>
       <div style={{maxWidth:1160,margin:"0 auto"}}>
@@ -36,6 +39,30 @@ export default function Footer() {
             <Link href="/terms" className="foot-link">Terms of Use</Link>
           </div>
         </div>
+
+        {/* ── Sister Sites ── */}
+        <div style={{marginBottom:24}}>
+          <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>
+            🔧 Our Free Tax Tools
+          </div>
+          <div className="sister-grid">
+            <a href="https://www.gigwisetax.com" target="_blank" rel="noopener" className="sister-card">
+              <span style={{fontSize:22}}>🚗</span>
+              <div>
+                <div style={{fontSize:13,fontWeight:600,color:"#F5DC80",marginBottom:2}}>GigWiseTax.com</div>
+                <div style={{fontSize:11,color:"#8AAAC8",lineHeight:1.4}}>Self-employment tax calculator for DoorDash, Uber, Etsy & all 1099 gigs. Quarterly deadlines included.</div>
+              </div>
+            </a>
+            <a href="https://www.1099deductions.com" target="_blank" rel="noopener" className="sister-card">
+              <span style={{fontSize:22}}>📋</span>
+              <div>
+                <div style={{fontSize:13,fontWeight:600,color:"#F5DC80",marginBottom:2}}>1099Deductions.com</div>
+                <div style={{fontSize:11,color:"#8AAAC8",lineHeight:1.4}}>Free write-off checklists for every gig job. Find every IRS Schedule C deduction you're missing.</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <div style={{borderTop:"1px solid rgba(201,168,76,.18)",paddingTop:18,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8,fontSize:12,color:"#8AAAC8"}}>
           <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
           <span>Free · Private · No Data Stored</span>
