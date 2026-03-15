@@ -267,6 +267,65 @@ export default function HomePage() {
         </div>
         <Link href="/all-states" className="all-link">View All 50 States →</Link>
       </section>
+    
+      <section className="pp-section" style={{background:'#0d1a2e'}}>
+        <div className="s-head">
+          <div className="s-tag">Transparency</div>
+          <h2>How We <em>Calculate</em> Your Paycheck</h2>
+          <p className="s-desc">Every number is based on official IRS sources. No guesswork.</p>
+        </div>
+        <div className="feat-grid">
+          <div className="feat-card">
+            <div className="feat-icon">🏛️</div>
+            <div className="feat-title">Federal Tax</div>
+            <p className="feat-desc">2026 IRS Publication 15-T brackets. Standard deduction $14,600 (single) / $29,200 (married). Progressive rates 10%–37%.</p>
+          </div>
+          <div className="feat-card">
+            <div className="feat-icon">💼</div>
+            <div className="feat-title">FICA Tax</div>
+            <p className="feat-desc">Social Security 6.2% up to $176,100 wage base. Medicare 1.45% on all wages. Additional 0.9% Medicare above $200,000.</p>
+          </div>
+          <div className="feat-card">
+            <div className="feat-icon">🗺️</div>
+            <div className="feat-title">State Tax</div>
+            <p className="feat-desc">Official 2026 rates for all 50 states. 9 states have $0 income tax. Flat rates and progressive brackets both supported.</p>
+          </div>
+          <div className="feat-card">
+            <div className="feat-icon">🔒</div>
+            <div className="feat-title">100% Private</div>
+            <p className="feat-desc">All math runs in your browser. Zero data sent to any server. No cookies, no tracking, no accounts required — ever.</p>
+          </div>
+        </div>
+        <p style={{textAlign:'center',fontSize:'12px',color:'#4a6080',marginTop:'24px'}}>
+          Sources: <a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS Pub 15-T</a> · <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" style={{color:'#F5C842'}}>SSA Wage Base</a> · State Revenue Departments
+        </p>
+      </section>
+
+      <section className="pp-section pp-section-alt">
+        <div className="s-head">
+          <div className="s-tag">All Calculators</div>
+          <h2>More Free <em>Paycheck Tools</em></h2>
+        </div>
+        <div className="states-grid">
+          {[
+            {href:'/hourly-paycheck-calculator',name:'Hourly Calculator',rate:'Per hour → net pay'},
+            {href:'/bonus-tax-calculator',name:'Bonus Calculator',rate:'Supplemental rate'},
+            {href:'/overtime-calculator',name:'Overtime Calculator',rate:'1.5× rate + no tax'},
+            {href:'/no-tax-on-tips-calculator',name:'Tips Calculator',rate:'Up to $25,000 free'},
+            {href:'/no-tax-on-overtime-deduction',name:'Overtime Deduction',rate:'Save $2,750+'},
+            {href:'/w4-withholding-calculator',name:'W-4 Calculator',rate:'Optimize withholding'},
+            {href:'/senior-deduction-calculator',name:'Senior Deduction',rate:'$6,000 extra'},
+            {href:'/trump-account-calculator',name:'Trump Account',rate:'$38K+ at age 18'},
+            {href:'/teacher-paycheck-calculator',name:'Teacher Calculator',rate:'All 50 states'},
+            {href:'/raise-calculator',name:'Raise Calculator',rate:'See your real gain'},
+          ].map((s)=>(
+            <Link key={s.href} href={s.href} className="s-card">
+              <div className="s-name">{s.name}</div>
+              <div className="s-rate">{s.rate}</div>
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
