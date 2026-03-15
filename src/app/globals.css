@@ -54,3 +54,8 @@ button:active,[role=button]:active{transform:translateY(0) scale(0.97);box-shado
 button{box-shadow:0 4px 0 rgba(0,0,0,0.25),0 2px 8px rgba(0,0,0,0.2);}
 *{-webkit-user-drag:none;user-drag:none;}
 img,a,h1,h2,h3,h4,h5,h6,p,span,div{-webkit-user-drag:none;draggable:false;}
+
+/* === STRONGER BUTTON HOVER === */
+button:hover{transform:translateY(-5px) scale(1.03)!important;box-shadow:0 10px 0 rgba(0,0,0,0.4),0 6px 24px rgba(0,0,0,0.3)!important;filter:brightness(1.15)!important;}
+a[href]:hover{transform:translateY(-3px)!important;}
+div[style*="cursor"]:hover,div[style*="pointer"]:hover{transform:translateY(-4px) scale(1.02)!important;box-shadow:0 8px 20px rgba(0,0,0,0.3)!important;transition:all 0.15s!important;}
