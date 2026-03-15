@@ -52,3 +52,5 @@ a:hover{color:inherit;}
 button:hover,[role=button]:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.35);}
 button:active,[role=button]:active{transform:translateY(0) scale(0.97);box-shadow:0 2px 8px rgba(0,0,0,0.2);}
 button{box-shadow:0 4px 0 rgba(0,0,0,0.25),0 2px 8px rgba(0,0,0,0.2);}
+*{-webkit-user-drag:none;user-drag:none;}
+img,a,h1,h2,h3,h4,h5,h6,p,span,div{-webkit-user-drag:none;draggable:false;}
