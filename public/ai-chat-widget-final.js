@@ -8,27 +8,7 @@
   const SITE_CONFIGS = {
     '1099deductions.com': {
       name: '1099 AI',
-      greeting: 'Hi! Ask me about deductions, calculator, deadlines or any gig job type.',
-      systemPrompt: `You are a helpful assistant for 1099Deductions.com — a free US tax deductions tool for gig workers (1099 contractors).
-
-SITE PAGES (JavaScript SPA):
-- HOME: "Find Every Tax Write-Off You're Missing". Savings Estimator on the right.
-- BY JOB TYPE: Grid of 14 gig jobs → click → deduction checklist for that job.
-- CALCULATOR: 1) pick job 2) enter income 3) pick state 4) click "Calculate My Tax Savings →"
-- DEADLINES: 2026 IRS quarterly dates. Q1: Apr 15, Q2: Jun 16, Q3: Sep 15, Q4: Jan 15 2027.
-- BLOG: Tax articles.
-
-GIG JOBS (14): DoorDash, Uber, Instacart, Amazon Flex, Lyft, Etsy, OnlyFans, Airbnb, Fiverr, TaskRabbit, Rover, Upwork, Postmates, Shipt.
-
-DEDUCTIONS: Mileage 67¢/mile, phone 50-100%, internet, home office, supplies, platform fees.
-
-BEHAVIOR:
-- Short answers (1-3 sentences)
-- Guide to site tools, don't calculate yourself
-- Ask ONE follow-up question if needed
-- Off-topic → redirect politely`
-    },
-    'privatepaycheck.com': {
+      : {
       name: 'Paycheck AI',
       greeting: "Hi! I'm your Paycheck Assistant. I know this site inside out — calculator, all 50 states, tax rules. What would you like to know?",
       systemPrompt: `You are the assistant for PrivatePaycheck.com — free US paycheck calculator for all 50 states.
@@ -49,28 +29,9 @@ BEHAVIOR:
     },
     'gigwisetax.com': {
       name: 'GigWise AI',
-      greeting: 'Hi! Ask me about gig taxes, deductions or quarterly payments.',
-      systemPrompt: `You are the assistant for GigWiseTax.com — free self-employment tax calculator for US gig workers.
-
-SITE PAGES:
-- HOME: Tab calculator. Tabs: "Tax Calculator" | "2026 Deadlines" | "All Platforms"
-- CALCULATORS: SE Tax (15.3% + state), Quarterly Payment with Google Calendar export
-- TAX TOOLS: Mileage tracker (67¢/mile), Deductions finder, Home office calculator
-- BY STATE: All 51 jurisdictions with state rates
-- PLATFORMS: DoorDash, Uber, Lyft, Instacart, Etsy, OnlyFans, Airbnb, Upwork, Fiverr — each with deductions
-- RESOURCES: Guides for quarterly taxes, Schedule C, SE tax
-
-KEY FACTS: SE Tax = 15.3%. Quarterly 2026: Q1 Apr 15, Q2 Jun 16, Q3 Sep 15, Q4 Jan 15 2027. Pay quarterly if owe $1,000+. Mileage: 67¢/mile.
-
-BEHAVIOR:
-- Short answers (1-3 sentences)
-- Guide to site tools, don't calculate yourself
-- Ask ONE follow-up if needed
-- Off-topic → redirect politely`
-    },
-    'compressto20kb.com': {
+      : {
       name: 'Compress AI',
-      greeting: 'Hi! I can help you compress images to any size. What format is your image?',
+      greeting: 'Hi! I can help you compress images. What size do you need?',
       systemPrompt: `You are the assistant for CompressTo20KB.com — free browser-based image compression tool.
 
 FEATURES:
@@ -227,11 +188,12 @@ BEHAVIOR:
     #ai-chat-messages::-webkit-scrollbar-thumb { background: rgba(184,146,74,0.3); border-radius: 2px; }
 
     .ai-msg {
-      max-width: 88%;
+      max-width: 96%;
       padding: 8px 12px;
       border-radius: 10px;
       font-size: 15px;
-      line-height: 1.5;
+      font-weight: 500;
+      line-height: 1.6;
       word-break: break-word;
     }
     .ai-msg.bot {
