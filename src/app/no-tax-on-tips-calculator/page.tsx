@@ -98,7 +98,7 @@ export default function NoTaxOnTipsCalculator() {
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
-          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>вљ пёЏ Important: Current Status of No Tax on Tips</h3>
+          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>вљ ️ Important: Current Status of No Tax on Tips</h3>
           <p style={{ fontSize: '13px', opacity: 0.8, lineHeight: 1.7, margin: 0 }}>The No Tax on Tips exemption was proposed during the 2024 campaign and has been discussed in Congress. As of early 2026, it has not been signed into law. This calculator shows your potential savings if the exemption is enacted with a $25,000 annual cap. Check IRS.gov for current status before making tax decisions.</p>
         </div>
 
@@ -119,7 +119,7 @@ export default function NoTaxOnTipsCalculator() {
 
         <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-overtime-deduction" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}>вЏ°</div>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}>⏰</div>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Overtime</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate OT savings в†’</div>
           </Link>

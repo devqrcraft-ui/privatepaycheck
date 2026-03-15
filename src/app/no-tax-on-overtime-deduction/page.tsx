@@ -20,8 +20,8 @@ export default function NoTaxOnOvertimePage() {
 
     function fedTax(income: number, f: string) {
       const b: [number, number][] = f === 'married'
-        ? [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]]
-        : [[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]];
+        ? [[23850,.10],[96950,.12],[206700,.22],[394600,.24],[501050,.32],[751600,.35],[Infinity,.37]]
+        : [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]];
       let tax = 0, prev = 0;
       for (const [lim, rate] of b) { if (income <= prev) break; tax += (Math.min(income, lim) - prev) * rate; prev = lim; }
       return tax;
@@ -47,9 +47,9 @@ export default function NoTaxOnOvertimePage() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div style={{ display: 'inline-block', background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#fbbf24' }}>рџ”Ґ Proposed 2026 вЂ” No Tax on Overtime</div>
+          <div style={{ display: 'inline-block', background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#fbbf24' }}>рџ”Ґ Signed Law 2025–2028 — No Tax on Overtime</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Overtime Calculator 2026</h1>
-          <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much extra you would keep if overtime pay (the 0.5Г— premium portion) becomes federal income tax-free.</p>
+          <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much extra you would keep if overtime pay (the 0.5× premium portion) becomes federal income tax-free.</p>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '24px' }}>
@@ -89,18 +89,18 @@ export default function NoTaxOnOvertimePage() {
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
-          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>вљ пёЏ Legislative Status</h3>
-          <p style={{ fontSize: '13px', opacity: 0.8, lineHeight: 1.7, margin: 0 }}>No Tax on Overtime has been proposed but not yet enacted as of March 2026. The proposal would exempt the overtime premium (0.5Г— portion above regular pay) from federal income tax. This calculator shows potential savings if passed. Verify current status at IRS.gov before making financial decisions.</p>
+          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>вљ ️ Legislative Status</h3>
+          <p style={{ fontSize: '13px', opacity: 0.8, lineHeight: 1.7, margin: 0 }}>The One Big Beautiful Bill was signed into law in 2025. It allows eligible W-2 employees to deduct up to $12,500 of overtime pay annually from federal taxable income for tax years 2025–2028. The deduction applies to the overtime premium (the extra 0.5× above regular pay). Self-employed and 1099 workers do not qualify.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-tips-calculator" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}>рџЌЅпёЏ</div>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}>🍽️</div>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Tips</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate tip savings в†’</div>
           </Link>
           <Link href="/overtime-calculator" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}>вЏ°</div>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}>⏰</div>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>Overtime Calculator</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Current OT pay в†’</div>
           </Link>
