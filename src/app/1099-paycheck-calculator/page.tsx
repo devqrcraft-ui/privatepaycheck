@@ -1,3 +1,4 @@
+declare global { interface Window { calc1099?: () => void; } }
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
