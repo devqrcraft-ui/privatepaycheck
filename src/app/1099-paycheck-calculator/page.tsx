@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import 1099PaycheckCalculatorClient from './client';
+import PaycheckCalculator1099Client from './client';
 
 export const metadata: Metadata = {
   title: '1099 Paycheck Calculator 2026 — Self-Employed & Contractor Take-Home Pay',
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <1099PaycheckCalculatorClient />;
+  return <PaycheckCalculator1099Client />;
 }
