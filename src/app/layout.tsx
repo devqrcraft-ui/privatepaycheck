@@ -41,14 +41,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <style>
+      <style>{`
   *{box-sizing:border-box;}
   body{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;}
   input,textarea,select,[contenteditable]{user-select:text;-webkit-user-select:text;-moz-user-select:text;}
   a,button,[role=button]{cursor:pointer;transition:transform 0.15s,box-shadow 0.15s,background 0.15s,opacity 0.15s;}
   a:hover,button:hover,[role=button]:hover{transform:translateY(-2px);opacity:0.92;}
   button:active,[role=button]:active{transform:scale(0.97);}
-</style>
+`}</style>
 <body style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
         <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
