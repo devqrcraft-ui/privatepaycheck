@@ -139,11 +139,11 @@ export default function HomePage() {
 
       <div className="trust">
         <div className="trust-inner">
-          <div><div className="t-n">2.4M+</div><div className="t-l">Calculations Done</div></div>
-          <div><div className="t-n">50</div><div className="t-l">States Covered</div></div>
-          <div><div className="t-n">0</div><div className="t-l">Data Stored</div></div>
-          <div><div className="t-n">$0</div><div className="t-l">Cost Forever</div></div>
-          <div><div className="t-n">2026</div><div className="t-l">IRS Tables</div></div>
+          <div><div className="t-n">100%</div><div className="t-l">Browser-Only</div></div>
+          <div><div className="t-n">0 ms</div><div className="t-l">Server Calls</div></div>
+          <div><div className="t-n">IRS</div><div className="t-l">Pub 15-T Source</div></div>
+          <div><div className="t-n">SSA</div><div className="t-l">Wage Base Official</div></div>
+          <div><div className="t-n">2026</div><div className="t-l">Tax Tables Live</div></div>
         </div>
       </div>
 
@@ -251,6 +251,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="pp-section" style={{background:'#08142a'}}>
+        <div className="s-head">
+          <div className="s-tag">Salary Examples</div>
+          <h2>Real Take-Home <em>Pay Examples</em></h2>
+          <p className="s-desc">See exactly what common salaries and hourly rates bring home after all taxes — by state.</p>
+        </div>
+        <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:'12px'}}>
+          {[
+            {salary:'$20/hr in Texas',net:'~$33,200/yr · $1,277/biweekly',note:'No state tax. Federal + FICA only.',href:'/hourly-paycheck-calculator/texas'},
+            {salary:'$20/hr in California',net:'~$30,400/yr · $1,169/biweekly',note:'State tax up to 9.3% applies.',href:'/hourly-paycheck-calculator/california'},
+            {salary:'$60,000 salary Florida',net:'~$47,200/yr · $1,815/biweekly',note:'No Florida state income tax.',href:'/florida-paycheck-calculator'},
+            {salary:'$75,000 salary New York',net:'~$53,800/yr · $2,069/biweekly',note:'NYC adds extra local tax if applicable.',href:'/new-york-paycheck-calculator'},
+            {salary:'$50,000 salary Illinois',net:'~$38,900/yr · $1,496/biweekly',note:'Flat 4.95% state tax rate.',href:'/illinois-paycheck-calculator'},
+            {salary:'$100,000 salary California',net:'~$70,500/yr · $2,712/biweekly',note:'SDI + state up to 9.3% + federal.',href:'/california-paycheck-calculator'},
+          ].map((ex,i)=>(
+            <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.15)',borderRadius:'10px',padding:'18px 20px',textDecoration:'none',display:'block',transition:'all .2s'}}
+              onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(245,200,66,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(245,200,66,0.06)';}}
+              onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(245,200,66,0.15)';(e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.03)';}}>
+              <div style={{fontSize:'16px',fontWeight:800,color:'#F5C842',marginBottom:'6px'}}>{ex.salary}</div>
+              <div style={{fontSize:'18px',fontWeight:900,color:'#4ade80',marginBottom:'6px'}}>{ex.net}</div>
+              <div style={{fontSize:'12px',color:'#7A9FBF'}}>{ex.note}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section className="pp-section pp-section-alt">
         <div className="s-head">
           <div className="s-tag">By State</div>
@@ -299,6 +325,29 @@ export default function HomePage() {
         <p style={{textAlign:'center',fontSize:'12px',color:'#4a6080',marginTop:'24px'}}>
           Sources: <a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS Pub 15-T</a> · <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" style={{color:'#F5C842'}}>SSA Wage Base</a> · State Revenue Departments
         </p>
+      </section>
+
+      <section className="pp-section" style={{background:'#07111f'}}>
+        <div className="s-head">
+          <div className="s-tag">FAQ</div>
+          <h2>Common <em>Paycheck Questions</em></h2>
+          <p className="s-desc">Answers based on 2026 IRS rules. All calculations verified against official IRS Publication 15-T.</p>
+        </div>
+        <div style={{maxWidth:'800px',margin:'0 auto',display:'flex',flexDirection:'column',gap:'12px'}}>
+          {[
+            ['How much of my paycheck goes to taxes?','For most Americans: 22–24% federal income tax + 7.65% FICA (Social Security + Medicare) + state tax. A $60,000 salary in Texas takes home ~$47,000. The same salary in California takes home ~$44,000 after state income tax up to 9.3%.'],
+            ['What is the difference between gross and net pay?','Gross pay is your salary or hourly rate before any deductions. Net pay (take-home) is what hits your bank account after federal tax, state tax, Social Security (6.2%), and Medicare (1.45%) are withheld.'],
+            ['How do I calculate my biweekly paycheck?','Divide your annual salary by 26 (biweekly pay periods). Then subtract federal withholding based on your W-4, state tax, and FICA. Example: $75,000 ÷ 26 = $2,884 gross → ~$2,150 net in Texas, ~$1,980 net in California.'],
+            ['Does overtime get taxed more?','No — overtime is taxed at your regular marginal rate, not a higher rate. However, under the 2025 One Big Beautiful Bill, up to $12,500 of overtime pay is now deductible, saving workers up to $2,750+ per year.'],
+            ['How much is $20 an hour after taxes?','$20/hr × 2,080 hours = $41,600 gross. After federal tax (~10–12%), FICA (7.65%), and state tax: ~$33,000/yr in Texas (no state tax), ~$30,500/yr in California. That is ~$1,270/biweekly in Texas.'],
+            ['Why does my paycheck vary each period?','Withholding can shift based on bonuses, overtime, or W-4 changes. The IRS uses an annualized method — a large single payment can push you into a higher bracket for that period. Use our bonus calculator to see the exact impact.'],
+          ].map(([q,a],i)=>(
+            <details key={i} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.15)',borderRadius:'10px',padding:'16px 20px'}}>
+              <summary style={{fontFamily:"'Playfair Display',serif",fontSize:'16px',fontWeight:700,color:'#F0E090',cursor:'pointer',listStyle:'none'}}>{q}</summary>
+              <p style={{fontSize:'14px',color:'#90B4D0',lineHeight:1.75,marginTop:'12px',marginBottom:0}}>{a}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       <section className="pp-section pp-section-alt">
