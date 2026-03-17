@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: '/:path*', has: [{ type: 'host', value: 'www.privatepaycheck.com' }], destination: 'https://privatepaycheck.com/:path*', permanent: true },
       { source: "/calculator", destination: "/", permanent: true },
       { source: "/hr/week/hourly-paycheck-calculator", destination: "/hourly-paycheck-calculator", permanent: true },
       { source: "/bonus-calculator", destination: "/bonus-tax-calculator", permanent: true },
