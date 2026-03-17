@@ -19,14 +19,14 @@ export default function Nav() {
   return (
     <>
       <style>{`
-        .ticker-outer{background:#8B1A1A;border-bottom:2px solid #F5C842;height:40px;overflow:hidden;display:flex;align-items:center;}
+        .ticker-outer{background:#8B1A1A;border-bottom:2px solid #F5C842;height:40px;overflow:hidden;display:flex;align-items:center;width:100%;max-width:100vw;position:relative;}
         .ticker-track{display:flex;white-space:nowrap;animation:tick 70s linear infinite;will-change:transform;}
         @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
         .ticker-set{display:inline-flex;align-items:center;flex-shrink:0;}
         .t-item{color:#fff;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:0 40px;white-space:nowrap;}
         .t-sep{color:#FFD700;font-size:14px;padding:0 2px;flex-shrink:0;}
-        .navbar{background:#0F2040;border-bottom:3px solid #F5C842;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.5);}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+        .navbar{background:#0F2040;border-bottom:3px solid #F5C842;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.5);width:100%;max-width:100vw;overflow:hidden;}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;}
         .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;}
         .bname{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:#F5C842;line-height:1.1;}
         .bsub{font-size:11px;color:#7A9FBF;letter-spacing:.06em;text-transform:uppercase;}
