@@ -101,8 +101,10 @@
 
     #ai-chat-window {
       position: fixed;
-      left: 0;
-      right: 0;
+        left: 0;
+        right: 0;
+        max-width: 100vw;
+        overflow-x: hidden;
       bottom: 0;
       width: 100%;
       height: 40vh;
