@@ -71,7 +71,7 @@ export default function RaiseCalculator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"WebApplication",
         "name":"Raise Calculator 2026 — How Much Will I Take Home?",
-        "url":"https://www.privatepaycheck.com/raise-calculator",
+        "url":"https://privatepaycheck.com/raise-calculator",
         "description":"See exactly how much extra take-home pay a raise gives you after federal, state and FICA taxes. Free, private, no signup.",
         "applicationCategory":"FinanceApplication","operatingSystem":"Any",
         "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},

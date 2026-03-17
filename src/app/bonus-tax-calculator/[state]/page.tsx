@@ -327,7 +327,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.name + ' Bonus Tax Calculator 2026 — Exact Take-Home After IRS 22% + State Tax',
     description: 'Got a bonus in ' + data.name + '? See exactly how much you keep after IRS 22% flat rate + state tax + FICA. Free 2026 calculator — results in seconds, no login.',
-    alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/' + state },
+    alternates: { canonical: 'https://privatepaycheck.com/bonus-tax-calculator/' + state },
   };
 }
 

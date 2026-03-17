@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?',
   description: 'California, Alaska, Nevada, and Colorado have stricter overtime rules than federal 40-hour standard. Know your rights. Free 2026 guide.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/overtime-pay-rules-by-state' },
 };
 
 const OT_STATES = [
@@ -21,7 +21,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?',
-        url:'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state',
+        url:'https://privatepaycheck.com/blog/overtime-pay-rules-by-state',
         datePublished:'2026-02-14', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

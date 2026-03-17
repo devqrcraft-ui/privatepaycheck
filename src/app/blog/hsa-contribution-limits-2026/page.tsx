@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'HSA Contribution Limits 2026 — The Most Underrated Tax Shelter',
   description: 'HSA contributions are triple tax-advantaged: pre-tax contributions, tax-free growth, tax-free withdrawals. 2026 limits and strategy guide.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/hsa-contribution-limits-2026' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/hsa-contribution-limits-2026' },
 };
 
 export default function Post() {
@@ -13,7 +13,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'HSA Contribution Limits 2026 — The Most Underrated Tax Shelter',
-        url:'https://www.privatepaycheck.com/blog/hsa-contribution-limits-2026',
+        url:'https://privatepaycheck.com/blog/hsa-contribution-limits-2026',
         datePublished:'2026-02-20', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

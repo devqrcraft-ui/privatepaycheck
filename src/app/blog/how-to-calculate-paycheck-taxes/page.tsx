@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How to Calculate Paycheck Taxes 2026 — Step by Step Guide',
   description: 'Learn exactly how to calculate federal income tax, Social Security, Medicare, and state tax on your paycheck in 2026. Includes examples for every income level.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-to-calculate-paycheck-taxes' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes' },
 };
 
 export default function Post() {
@@ -13,7 +13,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'How to Calculate Paycheck Taxes 2026 — Step by Step Guide',
-        url:'https://www.privatepaycheck.com/blog/how-to-calculate-paycheck-taxes',
+        url:'https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes',
         datePublished:'2026-02-24', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

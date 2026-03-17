@@ -3,9 +3,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'What is FICA Tax? Social Security & Medicare Explained (2026)',
   description: 'FICA is 7.65% of your paycheck — 6.2% Social Security + 1.45% Medicare. Learn the 2026 wage base, limits, and how to calculate your FICA.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/what-is-fica-tax' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/what-is-fica-tax' },
 };
-export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'What is FICA Tax? Social Security & Medicare Explained (2026)',url:'https://www.privatepaycheck.com/blog/what-is-fica-tax',datePublished:'2026-01-28',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'What is FICA Tax? Social Security & Medicare Explained (2026)',url:'https://privatepaycheck.com/blog/what-is-fica-tax',datePublished:'2026-01-28',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

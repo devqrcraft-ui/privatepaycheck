@@ -109,7 +109,7 @@ export default function HourlyPaycheckCalculator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebApplication',
         name:'Hourly Paycheck Calculator 2026 — PrivatePaycheck',
-        url:'https://www.privatepaycheck.com/hourly-paycheck-calculator',
+        url:'https://privatepaycheck.com/hourly-paycheck-calculator',
         description:'Free hourly paycheck calculator. Enter your hourly rate and hours per week to see exact take-home pay after federal, state, FICA taxes, 401k and HSA. All 50 states.',
         applicationCategory:'FinanceApplication', operatingSystem:'Any',
         offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},

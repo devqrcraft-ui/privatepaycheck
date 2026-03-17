@@ -5,11 +5,11 @@ import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 export const metadata: Metadata = {
   title: 'Minimum Wage by State 2026 — All 51 States + DC | PrivatePaycheck',
   description: 'Current minimum wage rates for all 50 US states and DC in 2026. See hourly, weekly, monthly and annual earnings. DC leads at $17.50/hr. Federal minimum: $7.25/hr.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/minimum-wage' },
+  alternates: { canonical: 'https://privatepaycheck.com/minimum-wage' },
   openGraph: {
     title: 'Minimum Wage by State 2026 — All 51 States',
     description: 'Find your state minimum wage for 2026. Updated rates, tipped worker rules, and take-home pay calculator.',
-    url: 'https://www.privatepaycheck.com/minimum-wage',
+    url: 'https://privatepaycheck.com/minimum-wage',
   },
 };
 
@@ -64,7 +64,7 @@ export default function MinWageHubPage() {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: 'Minimum Wage by State 2026',
-        url: 'https://www.privatepaycheck.com/minimum-wage',
+        url: 'https://privatepaycheck.com/minimum-wage',
         description: 'Current 2026 minimum wage rates for all 51 US states and DC.',
       })}} />
 

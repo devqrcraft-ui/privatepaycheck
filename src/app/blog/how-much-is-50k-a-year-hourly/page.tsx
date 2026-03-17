@@ -3,10 +3,10 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '$50,000 a Year is How Much an Hour? (2026 After-Tax Breakdown)',
   description: '$50k a year is $24.04/hour gross. After federal taxes, FICA, and state taxes, take-home is $38,000–$42,000 depending on your state. Full 2026 breakdown.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-much-is-50k-a-year-hourly' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/how-much-is-50k-a-year-hourly' },
 };
 const STATES=[{n:'Texas',net:41239,rate:0},{n:'Florida',net:41239,rate:0},{n:'California',net:38200,rate:0.093},{n:'New York',net:38890,rate:0.0685},{n:'Illinois',net:39762,rate:0.0495},{n:'Oregon',net:36800,rate:0.099}];
-export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'$50,000 a Year is How Much an Hour?',url:'https://www.privatepaycheck.com/blog/how-much-is-50k-a-year-hourly',datePublished:'2026-02-20',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'$50,000 a Year is How Much an Hour?',url:'https://privatepaycheck.com/blog/how-much-is-50k-a-year-hourly',datePublished:'2026-02-20',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

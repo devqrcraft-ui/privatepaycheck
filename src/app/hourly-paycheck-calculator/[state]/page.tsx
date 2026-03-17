@@ -325,7 +325,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.name + ' Hourly Paycheck Calculator 2026 — Exact Take-Home Pay, No Signup',
     description: 'How much do you take home hourly in ' + data.name + '? Free 2026 calculator — enter rate → see exact pay after federal, state & FICA taxes in seconds. No login, no data stored.',
-    alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator/' + state },
+    alternates: { canonical: 'https://privatepaycheck.com/hourly-paycheck-calculator/' + state },
   };
 }
 

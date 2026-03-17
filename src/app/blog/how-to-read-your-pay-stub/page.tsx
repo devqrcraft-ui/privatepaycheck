@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How to Read Your Pay Stub: Every Line Explained (2026)',
   description: 'Federal tax, FICA, state tax, YTD — decode every deduction on your paycheck with real examples. Free guide from PrivatePaycheck.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-to-read-your-pay-stub' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/how-to-read-your-pay-stub' },
 };
 
 export default function Post() {
@@ -14,10 +14,10 @@ export default function Post() {
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'How to Read Your Pay Stub: Every Line Explained (2026)',
         description:'Federal tax, FICA, state tax, YTD — decode every deduction on your paycheck with real examples.',
-        url:'https://www.privatepaycheck.com/blog/how-to-read-your-pay-stub',
+        url:'https://privatepaycheck.com/blog/how-to-read-your-pay-stub',
         datePublished:'2026-01-15', dateModified:'2026-01-15',
         author:{'@type':'Organization', name:'PrivatePaycheck'},
-        publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://www.privatepaycheck.com'},
+        publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

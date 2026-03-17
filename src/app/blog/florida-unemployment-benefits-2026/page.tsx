@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Florida Unemployment Benefits 2026 — How Much Will You Get?',
   description: 'Florida unemployment pays up to $275/week for 12 weeks. Learn eligibility, how to apply, and how to calculate your weekly benefit amount in 2026.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/florida-unemployment-benefits-2026' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/florida-unemployment-benefits-2026' },
 };
 
 export default function Post() {
@@ -13,7 +13,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Florida Unemployment Benefits 2026 — How Much Will You Get?',
-        url:'https://www.privatepaycheck.com/blog/florida-unemployment-benefits-2026',
+        url:'https://privatepaycheck.com/blog/florida-unemployment-benefits-2026',
         datePublished:'2026-02-21', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

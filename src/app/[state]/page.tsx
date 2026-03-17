@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: `${st.name} Paycheck Calculator 2026 — Exact Take-Home Pay in Seconds`,
     description: `${st.name} paycheck calculator 2026. See take-home pay after ${noTax ? 'federal tax + FICA (no state income tax)' : 'federal tax, '+rateStr+' state tax & FICA'}. Free, instant, private — results in under 5 seconds.`,
-    alternates: { canonical: `https://www.privatepaycheck.com/${slug}-paycheck-calculator` },
+    alternates: { canonical: `https://privatepaycheck.com/${slug}-paycheck-calculator` },
   };
 }
 
@@ -40,7 +40,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebApplication',
         name: `${st.name} Paycheck Calculator 2026 — PrivatePaycheck`,
-        url: `https://www.privatepaycheck.com/${slug}-paycheck-calculator`,
+        url: `https://privatepaycheck.com/${slug}-paycheck-calculator`,
         description: `Free ${st.name} paycheck calculator 2026. ${noTax ? st.name+' has no state income tax — keep more of every paycheck.' : 'State tax rate: '+rateStr+'.'} Includes federal, FICA, 401k, HSA.`,
       })}} />
 
@@ -61,9 +61,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BreadcrumbList',
         itemListElement:[
-          {'@type':'ListItem', position:1, name:'Home', item:'https://www.privatepaycheck.com'},
-          {'@type':'ListItem', position:2, name:'All States', item:'https://www.privatepaycheck.com/all-states'},
-          {'@type':'ListItem', position:3, name:`${st.name} Paycheck Calculator`, item:`https://www.privatepaycheck.com/${slug}-paycheck-calculator`},
+          {'@type':'ListItem', position:1, name:'Home', item:'https://privatepaycheck.com'},
+          {'@type':'ListItem', position:2, name:'All States', item:'https://privatepaycheck.com/all-states'},
+          {'@type':'ListItem', position:3, name:`${st.name} Paycheck Calculator`, item:`https://privatepaycheck.com/${slug}-paycheck-calculator`},
         ],
       })}} />
 

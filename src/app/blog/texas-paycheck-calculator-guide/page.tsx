@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Texas Paycheck Calculator Guide 2026 — No State Income Tax Explained',
   description: 'Texas has no state income tax. Learn exactly what comes out of your Texas paycheck in 2026 — federal taxes, FICA, 401k. Free calculator included.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/texas-paycheck-calculator-guide' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/texas-paycheck-calculator-guide' },
 };
 
 export default function Post() {
@@ -13,9 +13,9 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Texas Paycheck Calculator Guide 2026 — No State Income Tax Explained',
-        url:'https://www.privatepaycheck.com/blog/texas-paycheck-calculator-guide',
+        url:'https://privatepaycheck.com/blog/texas-paycheck-calculator-guide',
         datePublished:'2026-02-20', author:{'@type':'Organization', name:'PrivatePaycheck'},
-        publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://www.privatepaycheck.com'},
+        publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',

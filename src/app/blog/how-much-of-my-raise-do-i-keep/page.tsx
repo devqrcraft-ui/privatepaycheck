@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How Much of My Raise Do I Actually Keep After Taxes? (2026)',
   description: 'A 10% raise does not mean 10% more take-home pay. See exactly what percentage of a raise you keep at every income level in 2026.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-much-of-my-raise-do-i-keep' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/how-much-of-my-raise-do-i-keep' },
 };
 const EXAMPLES=[{from:40000,raise:5000,kept:3350,pct:67},{from:60000,raise:8000,kept:5360,pct:67},{from:80000,raise:10000,kept:6720,pct:67},{from:100000,raise:15000,kept:9180,pct:61},{from:150000,raise:20000,kept:11280,pct:56},{from:200000,raise:25000,kept:13500,pct:54}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>

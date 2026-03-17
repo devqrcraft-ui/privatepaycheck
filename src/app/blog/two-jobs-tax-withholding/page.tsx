@@ -13,7 +13,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Two Jobs and Taxes: Why You Owe More & How to Fix It (2026)',
   description: 'Working two jobs means each employer under-withholds. Learn exactly how much extra to put on your W-4 to avoid a tax bill. 2026 guide.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/two-jobs-tax-withholding' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/two-jobs-tax-withholding' },
 };
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>

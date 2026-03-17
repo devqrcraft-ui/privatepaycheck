@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy | PrivatePaycheck',
   description: 'PrivatePaycheck privacy policy. Your salary data never leaves your browser — we collect no personal information.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/privacy-policy' },
+  alternates: { canonical: 'https://privatepaycheck.com/privacy-policy' },
 };
 
 export default function PrivacyPolicy() {

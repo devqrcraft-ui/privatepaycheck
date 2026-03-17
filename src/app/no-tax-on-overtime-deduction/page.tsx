@@ -44,7 +44,7 @@ export default function NoTaxOnOvertimePage() {
 
   return (
     <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Overtime Calculator 2026', url: 'https://www.privatepaycheck.com/no-tax-on-overtime-deduction', description: 'Calculate your federal tax savings if overtime pay becomes tax-free under proposed 2026 legislation.' }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Overtime Calculator 2026', url: 'https://privatepaycheck.com/no-tax-on-overtime-deduction', description: 'Calculate your federal tax savings if overtime pay becomes tax-free under proposed 2026 legislation.' }) }} />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>

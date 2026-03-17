@@ -14,7 +14,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'California Minimum Wage 2026 — History, Changes & What Workers Need to Know',
   description: 'California minimum wage is $16.50/hour in 2026. See the full history from 2016 to 2026, fast food exceptions, local rates, and tipped worker rules.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/california-minimum-wage-2026' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/california-minimum-wage-2026' },
 };
 
 const HISTORY = [
@@ -39,7 +39,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'California Minimum Wage 2026 — History, Changes & What Workers Need to Know',
-        url:'https://www.privatepaycheck.com/blog/california-minimum-wage-2026',
+        url:'https://privatepaycheck.com/blog/california-minimum-wage-2026',
         datePublished:'2026-02-23', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
 

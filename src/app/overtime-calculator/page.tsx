@@ -5,7 +5,7 @@ import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 export const metadata: Metadata = {
   title: 'Overtime Pay Calculator by State 2026 — Free',
   description: 'Calculate overtime pay for all 50 US states. Federal 1.5x rules, California double-time, and more. Free overtime calculator updated for 2026.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/overtime-calculator' },
+  alternates: { canonical: 'https://privatepaycheck.com/overtime-calculator' },
 };
 
 const STATE_NOTES: Record<string, string> = {
@@ -57,7 +57,7 @@ export default function OvertimeHubPage() {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Overtime Pay Calculator by State 2026",
-        "url": "https://www.privatepaycheck.com/overtime-calculator",
+        "url": "https://privatepaycheck.com/overtime-calculator",
         "description": "Free overtime pay calculator for all 50 US states. Covers federal FLSA rules and state-specific overtime laws.",
       })}} />
 

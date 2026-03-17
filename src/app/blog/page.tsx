@@ -6,7 +6,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Paycheck & Tax Blog 2026 | PrivatePaycheck',
   description: 'Free guides on paycheck calculations, tax saving tips, overtime rules, and salary insights for US workers in 2026.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog' },
 };
 
 const POSTS = [
@@ -35,13 +35,13 @@ export default function BlogPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'Blog',
         name:'PrivatePaycheck Blog',
-        url:'https://www.privatepaycheck.com/blog',
+        url:'https://privatepaycheck.com/blog',
         description:'Paycheck calculation guides, tax tips, and salary insights for US workers.',
         blogPost: POSTS.map(p => ({
           '@type':'BlogPosting',
           headline: p.title,
           description: p.desc,
-          url: `https://www.privatepaycheck.com/blog/${p.slug}`,
+          url: `https://privatepaycheck.com/blog/${p.slug}`,
           datePublished: p.date,
         })),
       })}} />

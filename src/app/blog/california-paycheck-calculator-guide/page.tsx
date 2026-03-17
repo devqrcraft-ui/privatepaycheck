@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'California Paycheck 2026: Why Your Take-Home Is Lower Than Expected',
   description: 'CA has federal tax, state income tax up to 13.3%, SDI, and more. Full breakdown with real examples at $60k, $80k, $120k salaries.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/blog/california-paycheck-calculator-guide' },
+  alternates: { canonical: 'https://privatepaycheck.com/blog/california-paycheck-calculator-guide' },
 };
 
 const EXAMPLES = [
@@ -19,7 +19,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'California Paycheck 2026: Why Your Take-Home Is Lower Than Expected',
-        url:'https://www.privatepaycheck.com/blog/california-paycheck-calculator-guide',
+        url:'https://privatepaycheck.com/blog/california-paycheck-calculator-guide',
         datePublished:'2026-02-08', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
