@@ -8,6 +8,8 @@ export const metadata: Metadata = {
 }
 
 const salaryPosts = [
+  { slug: '250k-a-year-after-taxes', title: '$250,000 a Year After Taxes 2026', desc: 'Take-home for top earners — all states' },
+  { slug: '200k-a-year-after-taxes', title: '$200,000 a Year After Taxes 2026', desc: '$200k salary net pay by state' },
   { slug: '150k-a-year-after-taxes', title: '$150,000 a Year After Taxes 2026', desc: 'Take-home for high earners — all states' },
   { slug: '120k-a-year-after-taxes', title: '$120,000 a Year After Taxes 2026', desc: 'Monthly take-home for $120k salary' },
   { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Exact net pay for $80k by state' },
@@ -17,6 +19,7 @@ const salaryPosts = [
   { slug: '90k-a-year-after-taxes', title: '$90,000 a Year After Taxes 2026', desc: 'Monthly & hourly breakdown for $90k' },
   { slug: '17-dollars-an-hour-after-taxes', title: '$17 an Hour After Taxes 2026', desc: '$35,360/year — net pay by state' },
   { slug: '12-dollars-an-hour-after-taxes', title: '$12 an Hour After Taxes 2026', desc: '$24,960/year — take-home by state' },
+  { slug: '10-dollars-an-hour-after-taxes', title: '$10 an Hour After Taxes 2026', desc: '$20,800/year — take-home by state' },
   { slug: '100k-a-year-after-taxes', title: '$100,000 a Year After Taxes 2026', desc: 'Monthly & hourly take-home for all 50 states' },
   { slug: '45-dollars-an-hour-after-taxes', title: '$45 an Hour After Taxes 2026', desc: '$93,600/year gross — see net pay by state' },
   { slug: '18-dollars-an-hour-after-taxes', title: '$18 an Hour After Taxes 2026', desc: '$37,440/year gross — state comparisons' },
@@ -45,6 +48,8 @@ const taxPosts = [
   { slug: 'no-tax-on-tips-explained', title: 'No Tax on Tips — Explained', desc: 'What the tip tax exemption means for you' },
   { slug: 'one-big-beautiful-bill-tax-calculator-2026', title: 'One Big Beautiful Bill Tax Calculator 2026', desc: 'How the proposed tax changes affect your paycheck' },
   { slug: 'texas-vs-california-salary', title: 'Texas vs California Salary Comparison', desc: 'Side-by-side take-home pay comparison' },
+  { slug: 'washington-vs-california-salary', title: 'Washington vs California Salary 2026', desc: 'WA no-tax advantage vs CA' },
+  { slug: 'nevada-vs-california-salary', title: 'Nevada vs California Salary 2026', desc: 'Las Vegas vs LA take-home comparison' },
   { slug: 'florida-vs-new-york-salary', title: 'Florida vs New York Salary 2026', desc: 'How much more FL residents keep vs NYC' },
   { slug: 'how-to-calculate-paycheck-taxes', title: 'How to Calculate Paycheck Taxes', desc: 'Step-by-step federal + state withholding guide' },
 ]
