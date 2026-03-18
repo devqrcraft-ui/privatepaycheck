@@ -36,6 +36,10 @@ const BLOG_SLUGS = [
   '25-dollars-an-hour-after-taxes',
   'biweekly-paycheck-after-taxes',
   '50k-a-year-after-taxes',
+  '20-dollars-an-hour-after-taxes',
+  '25-dollars-an-hour-after-taxes',
+  'biweekly-paycheck-after-taxes',
+  '50k-a-year-after-taxes',
   'texas-vs-california-salary',
   'two-jobs-tax-withholding',
 ];
