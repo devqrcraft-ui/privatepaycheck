@@ -40,6 +40,21 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>What is West Virginia income tax rate 2026?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>West Virginia top rate is 5.12% in 2026, reduced from 6.5%.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $50,000 take-home in West Virginia?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Approximately $38,040/year ($3,170/month) after federal, FICA, and WV state tax.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is West Virginia reducing income taxes?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Yes. WV is aggressively cutting rates and aims to eliminate income tax entirely over the next decade.</p>
+    
+      <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>
+          {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
+            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'8px 12px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{n} Calculator</a>
+          ))}
+        </div>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
+          <a href="/" style={{ color: '#1a56db', fontSize: 14 }}>Free Paycheck Calculator</a>
+          <a href="/blog" style={{ color: '#1a56db', fontSize: 14 }}>Tax & Paycheck Blog</a>
+          <a href="/blog/no-income-tax-states-2026" style={{ color: '#1a56db', fontSize: 14 }}>No Income Tax States</a>
+          <a href="/blog/2026-federal-tax-brackets" style={{ color: '#1a56db', fontSize: 14 }}>2026 Tax Brackets</a>
+        </div>
+      </div>
     </main>
   )
 }

@@ -39,6 +39,31 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $30 an hour after taxes?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>$30/hr = $62,400/year gross. In a no-tax state like Texas, take-home is approximately $53,040/year ($25.50/hr effective). In California, about $47,400/year.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is $30 an hour a good wage in 2026?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>$30/hr = $62,400/year, which is above the US median individual income. It provides a comfortable living in most states outside high cost-of-living metros.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $30 an hour monthly after taxes?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>In Texas, $30/hr = $4,420/month take-home. In California, approximately $3,950/month after state and federal taxes.</p>
+    
+      <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 8, marginBottom: 24 }}>
+          {([
+            ['$20 an Hour After Taxes','20-dollars-an-hour-after-taxes'],
+            ['$25 an Hour After Taxes','25-dollars-an-hour-after-taxes'],
+            ['$30 an Hour After Taxes','30-dollars-an-hour-after-taxes'],
+            ['$35 an Hour After Taxes','35-dollars-an-hour-after-taxes'],
+            ['$40 an Hour After Taxes','40-dollars-an-hour-after-taxes'],
+            ['$50k a Year After Taxes','50k-a-year-after-taxes'],
+            ['$75k a Year After Taxes','75k-a-year-after-taxes'],
+            ['$100k a Year After Taxes','100k-a-year-after-taxes'],
+            ['Biweekly Paycheck Guide','biweekly-paycheck-after-taxes'],
+          ] as [string,string][]).map(([t,s]) => (
+            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
+          ))}
+        </div>
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
+          <a href="/" style={{ color: '#1a56db', fontSize: 14 }}>Free Paycheck Calculator</a>
+          <a href="/blog" style={{ color: '#1a56db', fontSize: 14 }}>All Tax Guides</a>
+          <a href="/california-paycheck-calculator" style={{ color: '#1a56db', fontSize: 14 }}>California Calculator</a>
+          <a href="/texas-paycheck-calculator" style={{ color: '#1a56db', fontSize: 14 }}>Texas Calculator</a>
+        </div>
+      </div>
     </main>
   )
 }

@@ -1,120 +1,135 @@
-
-const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: "What paycheck topics does the PrivatePaycheck blog cover?", acceptedAnswer: { '@type': 'Answer', text: "The blog covers 2026 IRS tax brackets, paycheck deductions, state-by-state tax guides, W-4 withholding tips, overtime and bonus tax rules, HSA and 401k strategies, and the latest tax law changes like No Tax on Tips and No Tax on Overtime." } },{ '@type': 'Question', name: "How often is the blog updated?", acceptedAnswer: { '@type': 'Answer', text: "The blog is updated regularly with new 2026 IRS data, state tax law changes, and new calculator guides. All articles reflect the latest federal and state tax rules for 2026." } }] };
-﻿import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Paycheck & Tax Blog 2026 | PrivatePaycheck',
-  description: 'Free guides on paycheck calculations, tax saving tips, overtime rules, and salary insights for US workers in 2026.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog' },
-};
+  title: 'Paycheck & Tax Blog 2026 — Guides, Calculators & Tips | PrivatePaycheck',
+  description: 'Free paycheck and tax guides for 2026. How much is your salary after taxes? State-by-state take-home pay tables, hourly wage calculators, and tax tips.',
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog' },
+}
 
-const POSTS = [
-  { slug:'how-to-calculate-paycheck-taxes',      title:'How to Calculate Paycheck Taxes 2026 — Step by Step Guide',      desc:'Federal brackets, FICA, state tax — exactly how every deduction is calculated with real examples.', date:'2026-02-24', readTime:'8 min', tag:'Taxes',       tagColor:'#fbbf24' },
-  { slug:'what-is-fica-tax',                     title:'What is FICA Tax? Social Security & Medicare Explained 2026',     desc:'FICA = 6.2% SS + 1.45% Medicare. 2026 wage base $176,100. Who pays, how to reduce it.',         date:'2026-02-22', readTime:'5 min', tag:'Basics',      tagColor:'#4ade80' },
-  { slug:'california-minimum-wage-2026',          title:'California Minimum Wage 2026 — History, Changes & Guide',         desc:'$16.50/hr in 2026. Fast food workers: $20/hr. Full history from 2016, local rates, tipped rules.', date:'2026-02-23', readTime:'6 min', tag:'Min Wage',    tagColor:'#6ee7b7' },
-  { slug:'texas-paycheck-calculator-guide',       title:'Texas Paycheck Calculator Guide 2026 — No State Income Tax',      desc:'Texas residents keep more — no state income tax. Exact take-home at $50k, $75k, $100k.',          date:'2026-02-20', readTime:'6 min', tag:'Texas',       tagColor:'#4ade80' },
-  { slug:'florida-unemployment-benefits-2026',    title:'Florida Unemployment Benefits 2026 — How Much Will You Get?',     desc:'Max $275/week for 12 weeks. How to calculate, apply, and what to expect.',                       date:'2026-02-21', readTime:'5 min', tag:'Unemployment',tagColor:'#a5b4fc' },
-  { slug:'how-to-increase-take-home-pay',        title:'7 Ways to Increase Your Take-Home Pay in 2026 (Without a Raise)', desc:'401k, HSA, FSA, W-4 adjustments and more. Real dollar savings at $60k, $80k, $100k.',           date:'2026-02-25', readTime:'5 min', tag:'Strategy',    tagColor:'#34d399' },
-  { slug:'overtime-pay-rules-by-state',          title:'Overtime Pay Rules by State 2026 — Know Your Rights',             desc:'CA, AK, NV, CO have daily OT rules stricter than federal 40-hour standard.',                   date:'2026-02-14', readTime:'5 min', tag:'Overtime',    tagColor:'#fb7185' },
-  { slug:'texas-vs-california-salary',           title:'Texas vs California Salary: How Much More Do You Keep?',          desc:'On a $100k salary you keep $7,775 more per year in Texas. Full 2026 numbers.',                date:'2026-02-22', readTime:'5 min', tag:'Comparison',  tagColor:'#fbbf24' },
-  { slug:'no-income-tax-states-2026',            title:'9 States With No Income Tax — How Much Do You Save?',             desc:'Texas, Florida, Nevada + 6 more. We ran the numbers at $50k, $75k, $100k.',                   date:'2026-01-22', readTime:'5 min', tag:'State Taxes', tagColor:'#818cf8' },
-  { slug:'hsa-contribution-limits-2026',         title:'HSA Contribution Limits 2026 — The Most Underrated Tax Shelter',  desc:'Triple tax advantage: pre-tax in, tax-free growth, tax-free withdrawals.',                     date:'2026-02-20', readTime:'4 min', tag:'HSA',         tagColor:'#34d399' },
-  { slug:'401k-contribution-limits-2026',        title:'401(k) Limits 2026 — Max Out & Save Thousands in Taxes',          desc:'$23,500 limit ($31,000 if 50+). See tax savings at every income level.',                       date:'2026-02-01', readTime:'4 min', tag:'401(k)',      tagColor:'#fbbf24' },
-  { slug:'california-paycheck-calculator-guide', title:'California Paycheck 2026: Why Your Take-Home Is Lower',           desc:'CA state tax up to 13.3% + SDI. Real examples at $60k, $80k, $120k.',                         date:'2026-02-08', readTime:'7 min', tag:'California',  tagColor:'#f97316' },
-  { slug:'how-much-is-50k-a-year-hourly',        title:'$50,000 a Year is How Much an Hour? (After-Tax Breakdown)',       desc:'$50k = $24.04/hr gross. After taxes: $38k–$42k depending on state. Full breakdown.',           date:'2026-02-20', readTime:'4 min', tag:'Salary Math', tagColor:'#818cf8' },
-  { slug:'2026-federal-tax-brackets',            title:'2026 Federal Income Tax Brackets — Complete Guide',               desc:'All brackets for single, married, HOH. Standard deduction $15k. FICA rates.',                 date:'2026-01-10', readTime:'5 min', tag:'Tax Basics',  tagColor:'#4ade80' },
-  { slug:'how-to-read-your-pay-stub',            title:'How to Read Your Pay Stub: Every Line Explained',                 desc:'Federal tax, FICA, state tax, YTD — decode every deduction with real examples.',             date:'2026-01-15', readTime:'6 min', tag:'Basics',      tagColor:'#4ade80' },
-];
+const salaryPosts = [
+  { slug: '100k-a-year-after-taxes', title: '$100,000 a Year After Taxes 2026', desc: 'Monthly & hourly take-home for all 50 states' },
+  { slug: '75k-a-year-after-taxes', title: '$75,000 a Year After Taxes 2026', desc: 'Exact take-home pay by state for $75k salary' },
+  { slug: '50k-a-year-after-taxes', title: '$50,000 a Year After Taxes 2026', desc: 'Monthly, biweekly, and hourly breakdown' },
+  { slug: '40-dollars-an-hour-after-taxes', title: '$40 an Hour After Taxes 2026', desc: '$83,200/year gross — see net pay by state' },
+  { slug: '35-dollars-an-hour-after-taxes', title: '$35 an Hour After Taxes 2026', desc: '$72,800/year gross — state-by-state tables' },
+  { slug: '30-dollars-an-hour-after-taxes', title: '$30 an Hour After Taxes 2026', desc: '$62,400/year gross — take-home by state' },
+  { slug: '25-dollars-an-hour-after-taxes', title: '$25 an Hour After Taxes 2026', desc: '$52,000/year gross — exact net pay' },
+  { slug: '20-dollars-an-hour-after-taxes', title: '$20 an Hour After Taxes 2026', desc: '$41,600/year gross — state comparisons' },
+  { slug: 'biweekly-paycheck-after-taxes', title: 'Biweekly Paycheck After Taxes 2026', desc: 'Take-home tables for $30k–$100k salaries' },
+]
 
-export default function BlogPage() {
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+const taxPosts = [
+  { slug: 'how-to-read-your-pay-stub', title: 'How to Read Your Pay Stub', desc: 'Every line item explained simply' },
+  { slug: 'no-income-tax-states-2026', title: 'No Income Tax States 2026', desc: '9 states with zero state income tax' },
+  { slug: '2026-federal-tax-brackets', title: '2026 Federal Tax Brackets', desc: 'IRS income tax brackets and rates' },
+  { slug: 'what-is-fica-tax', title: 'What Is FICA Tax?', desc: 'Social Security + Medicare explained' },
+  { slug: '401k-contribution-limits-2026', title: '401(k) Contribution Limits 2026', desc: 'Max contributions and catch-up limits' },
+  { slug: 'hsa-contribution-limits-2026', title: 'HSA Contribution Limits 2026', desc: 'Health savings account limits for 2026' },
+  { slug: 'how-to-increase-take-home-pay', title: 'How to Increase Take-Home Pay', desc: '7 legal ways to keep more of your paycheck' },
+  { slug: 'how-much-of-my-raise-do-i-keep', title: 'How Much of My Raise Do I Keep?', desc: 'Marginal vs effective tax rate explained' },
+  { slug: 'two-jobs-tax-withholding', title: 'Two Jobs Tax Withholding Guide', desc: 'Avoid underpaying when you have two jobs' },
+  { slug: 'overtime-pay-rules-by-state', title: 'Overtime Pay Rules by State 2026', desc: 'State-by-state overtime requirements' },
+  { slug: 'no-tax-on-tips-explained', title: 'No Tax on Tips — Explained', desc: 'What the tip tax exemption means for you' },
+  { slug: 'one-big-beautiful-bill-tax-calculator-2026', title: 'One Big Beautiful Bill Tax Calculator 2026', desc: 'How the proposed tax changes affect your paycheck' },
+  { slug: 'texas-vs-california-salary', title: 'Texas vs California Salary Comparison', desc: 'Side-by-side take-home pay comparison' },
+  { slug: 'how-to-calculate-paycheck-taxes', title: 'How to Calculate Paycheck Taxes', desc: 'Step-by-step federal + state withholding guide' },
+]
 
+const statePosts = [
+  { slug: 'california-paycheck-calculator-guide', title: 'California Paycheck Calculator Guide', desc: 'CA state tax, SDI, and take-home explained' },
+  { slug: 'texas-paycheck-calculator-guide', title: 'Texas Paycheck Calculator Guide', desc: 'No state tax — what TX workers actually keep' },
+  { slug: 'florida-unemployment-benefits-2026', title: 'Florida Unemployment Benefits 2026', desc: 'FL unemployment eligibility and amounts' },
+  { slug: 'california-minimum-wage-2026', title: 'California Minimum Wage 2026', desc: 'CA minimum wage rates by industry' },
+]
+
+const card: React.CSSProperties = {
+  background: '#fff',
+  border: '1px solid #e5e7eb',
+  borderRadius: 10,
+  padding: '16px 20px',
+  textDecoration: 'none',
+  color: 'inherit',
+  display: 'block',
+  transition: 'border-color 0.15s',
+}
+
+export default function BlogIndex() {
   return (
-    <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org','@type':'Blog',
-        name:'PrivatePaycheck Blog',
-        url:'https://privatepaycheck.com/blog',
-        description:'Paycheck calculation guides, tax tips, and salary insights for US workers.',
-        blogPost: POSTS.map(p => ({
-          '@type':'BlogPosting',
-          headline: p.title,
-          description: p.desc,
-          url: `https://privatepaycheck.com/blog/${p.slug}`,
-          datePublished: p.date,
-        })),
-      })}} />
+    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
+      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
+        <a href="/" style={{ color: '#666' }}>Home</a> › Blog
+      </nav>
+      <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Paycheck & Tax Blog 2026</h1>
+      <p style={{ fontSize: 17, color: '#444', marginBottom: 40 }}>Free guides on take-home pay, tax brackets, and paycheck calculators for every state.</p>
 
-      <div style={{ maxWidth:'900px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
-          <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › Blog
-        </div>
-
-        <div style={{ textAlign:'center', marginBottom:'48px' }}>
-          <h1 style={{ fontSize:'clamp(26px,4vw,44px)', fontWeight:900, margin:'0 0 12px', textTransform:'uppercase', letterSpacing:'-1px' }}>
-            Paycheck & Tax<br/><span style={{ color:'#818cf8' }}>Blog 2026</span>
-          </h1>
-          <p style={{ fontSize:'16px', opacity:0.6, maxWidth:'520px', margin:'0 auto', lineHeight:1.7 }}>
-            Free guides on paycheck calculations, tax saving strategies, overtime rules, and everything about your take-home pay.
-          </p>
-        </div>
-
-        {/* Featured */}
-        <Link href={`/blog/${POSTS[0].slug}`} style={{ display:'block', background:'rgba(251,191,36,0.06)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'16px', padding:'28px', color:'white', textDecoration:'none', marginBottom:'24px' }}>
-          <div style={{ display:'flex', alignItems:'center', gap:'10px', marginBottom:'12px' }}>
-            <span style={{ background:'rgba(251,191,36,0.15)', color:'#fbbf24', padding:'4px 10px', borderRadius:'20px', fontSize:'11px', fontWeight:700 }}>⭐ FEATURED</span>
-            <span style={{ background:'rgba(255,255,255,0.08)', color:POSTS[0].tagColor, padding:'4px 10px', borderRadius:'20px', fontSize:'11px', fontWeight:700 }}>{POSTS[0].tag}</span>
-          </div>
-          <h2 style={{ fontSize:'clamp(18px,3vw,26px)', fontWeight:800, margin:'0 0 10px', lineHeight:1.3 }}>{POSTS[0].title}</h2>
-          <p style={{ fontSize:'14px', opacity:0.65, lineHeight:1.7, margin:'0 0 16px' }}>{POSTS[0].desc}</p>
-          <div style={{ fontSize:'12px', opacity:0.45 }}>{POSTS[0].date} · {POSTS[0].readTime} read</div>
-        </Link>
-
-        {/* Grid */}
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))', gap:'16px' }}>
-          {POSTS.slice(1).map(post => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'20px', color:'white', textDecoration:'none' }}>
-              <div style={{ display:'inline-block', background:'rgba(255,255,255,0.06)', color:post.tagColor, padding:'3px 9px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'10px' }}>
-                {post.tag}
-              </div>
-              <h2 style={{ fontSize:'15px', fontWeight:700, margin:'0 0 8px', lineHeight:1.4 }}>{post.title}</h2>
-              <p style={{ fontSize:'13px', opacity:0.6, lineHeight:1.6, margin:'0 0 12px' }}>{post.desc}</p>
-              <div style={{ fontSize:'11px', opacity:0.4 }}>{post.date} · {post.readTime} read</div>
-            </Link>
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>💰 Salary & Hourly Take-Home Pay</h2>
+        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Exact after-tax income for common wages — every state included.</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
+          {salaryPosts.map(p => (
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+            </a>
           ))}
         </div>
+      </section>
 
-        {/* Calculator hub */}
-        <div style={{ marginTop:'40px', display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'10px' }}>
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>📋 Tax Guides & Tips</h2>
+        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Understand your withholding, deductions, and how to keep more.</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
+          {taxPosts.map(p => (
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>🗺️ State Tax Guides</h2>
+        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>State-specific paycheck and tax guides.</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
+          {statePosts.map(p => (
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>🧮 State Paycheck Calculators</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: 8 }}>
           {[
-            { href:'/overtime-calculator',     label:'⏰ Overtime', color:'#fbbf24' },
-            { href:'/bonus-calculator',        label:'🎁 Bonus Tax', color:'#fb923c' },
-            { href:'/tip-calculator',          label:'🍽️ Tip Tax', color:'#f472b6' },
-            { href:'/unemployment-calculator', label:'📋 Unemployment', color:'#a5b4fc' },
-            { href:'/minimum-wage',            label:'💵 Min Wage', color:'#6ee7b7' },
-          ].map(c => (
-            <Link key={c.href} href={c.href} style={{ display:'block', background:'rgba(255,255,255,0.04)', border:`1px solid ${c.color}33`, borderRadius:'10px', padding:'14px', color:c.color, textDecoration:'none', textAlign:'center', fontWeight:700, fontSize:'13px' }}>
-              {c.label} →
-            </Link>
+            ['Alabama','alabama'],['Alaska','alaska'],['Arizona','arizona'],['Arkansas','arkansas'],
+            ['California','california'],['Colorado','colorado'],['Connecticut','connecticut'],
+            ['Delaware','delaware'],['Florida','florida'],['Georgia','georgia'],['Hawaii','hawaii'],
+            ['Idaho','idaho'],['Illinois','illinois'],['Indiana','indiana'],['Iowa','iowa'],
+            ['Kansas','kansas'],['Kentucky','kentucky'],['Louisiana','louisiana'],['Maine','maine'],
+            ['Maryland','maryland'],['Massachusetts','massachusetts'],['Michigan','michigan'],
+            ['Minnesota','minnesota'],['Mississippi','mississippi'],['Missouri','missouri'],
+            ['Montana','montana'],['Nebraska','nebraska'],['Nevada','nevada'],
+            ['New Hampshire','new-hampshire'],['New Jersey','new-jersey'],['New Mexico','new-mexico'],
+            ['New York','new-york'],['North Carolina','north-carolina'],['North Dakota','north-dakota'],
+            ['Ohio','ohio'],['Oklahoma','oklahoma'],['Oregon','oregon'],['Pennsylvania','pennsylvania'],
+            ['Rhode Island','rhode-island'],['South Carolina','south-carolina'],
+            ['South Dakota','south-dakota'],['Tennessee','tennessee'],['Texas','texas'],
+            ['Utah','utah'],['Vermont','vermont'],['Virginia','virginia'],['Washington','washington'],
+            ['West Virginia','west-virginia'],['Wisconsin','wisconsin'],['Wyoming','wyoming'],
+            ['Washington DC','washington-dc'],
+          ].map(([name, slug]) => (
+            <a key={slug} href={"/" + slug + "-paycheck-calculator"}
+              style={{ display:'block', padding:'10px 14px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:8, fontSize:14, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>
+              {name}
+            </a>
           ))}
         </div>
-
-        {/* CTA */}
-        <div style={{ marginTop:'32px', background:'rgba(129,140,248,0.08)', border:'1px solid rgba(129,140,248,0.2)', borderRadius:'16px', padding:'28px', textAlign:'center' }}>
-          <h2 style={{ fontSize:'20px', fontWeight:800, margin:'0 0 8px' }}>Calculate Your Exact Take-Home Pay</h2>
-          <p style={{ fontSize:'14px', opacity:0.65, margin:'0 0 16px' }}>Free, private, instant. All 50 states. No signup required.</p>
-          <Link href="/" style={{ display:'inline-block', background:'linear-gradient(135deg,#4ade80,#22c55e)', color:'#052e16', fontWeight:800, padding:'12px 28px', borderRadius:'10px', textDecoration:'none', fontSize:'15px' }}>
-            Open Paycheck Calculator →
-          </Link>
-        </div>
-      </div>
-
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
-        © 2026 PrivatePaycheck.com ·{' '}
-        <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> ·{' '}
-        <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
-      </footer>
+      </section>
     </main>
-  );
+  )
 }
