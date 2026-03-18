@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 
 const salaryPosts = [
   { slug: '150k-a-year-after-taxes', title: '$150,000 a Year After Taxes 2026', desc: 'Take-home for high earners — all states' },
+  { slug: '120k-a-year-after-taxes', title: '$120,000 a Year After Taxes 2026', desc: 'Monthly take-home for $120k salary' },
+  { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Exact net pay for $80k by state' },
+  { slug: '60k-a-year-after-taxes', title: '$60,000 a Year After Taxes 2026', desc: 'Monthly & hourly breakdown for $60k' },
+  { slug: '17-dollars-an-hour-after-taxes', title: '$17 an Hour After Taxes 2026', desc: '$35,360/year — net pay by state' },
+  { slug: '12-dollars-an-hour-after-taxes', title: '$12 an Hour After Taxes 2026', desc: '$24,960/year — take-home by state' },
   { slug: '100k-a-year-after-taxes', title: '$100,000 a Year After Taxes 2026', desc: 'Monthly & hourly take-home for all 50 states' },
   { slug: '45-dollars-an-hour-after-taxes', title: '$45 an Hour After Taxes 2026', desc: '$93,600/year gross — see net pay by state' },
   { slug: '18-dollars-an-hour-after-taxes', title: '$18 an Hour After Taxes 2026', desc: '$37,440/year gross — state comparisons' },
@@ -42,6 +47,8 @@ const taxPosts = [
 
 const professionPosts = [
   { slug: 'software-engineer-take-home-pay', title: 'Software Engineer Take-Home Pay 2026', desc: '$100k–$200k SWE salaries after taxes by state' },
+  { slug: 'police-officer-salary-after-taxes', title: 'Police Officer Salary After Taxes 2026', desc: 'Net pay with pension deductions' },
+  { slug: 'married-filing-jointly-paycheck-2026', title: 'Married Filing Jointly Paycheck 2026', desc: 'How MFJ changes your withholding and take-home' },
   { slug: 'nurse-paycheck-calculator', title: 'Nurse Paycheck Calculator 2026', desc: 'RN take-home pay — all 50 states' },
   { slug: 'teacher-salary-after-taxes', title: 'Teacher Salary After Taxes 2026', desc: 'Net teacher pay with pension deductions' },
 ]
