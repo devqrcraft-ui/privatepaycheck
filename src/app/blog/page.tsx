@@ -12,6 +12,9 @@ const salaryPosts = [
   { slug: '120k-a-year-after-taxes', title: '$120,000 a Year After Taxes 2026', desc: 'Monthly take-home for $120k salary' },
   { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Exact net pay for $80k by state' },
   { slug: '60k-a-year-after-taxes', title: '$60,000 a Year After Taxes 2026', desc: 'Monthly & hourly breakdown for $60k' },
+  { slug: '70k-a-year-after-taxes', title: '$70,000 a Year After Taxes 2026', desc: 'Take-home for $70k by state' },
+  { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Exact net pay for $80k by state' },
+  { slug: '90k-a-year-after-taxes', title: '$90,000 a Year After Taxes 2026', desc: 'Monthly & hourly breakdown for $90k' },
   { slug: '17-dollars-an-hour-after-taxes', title: '$17 an Hour After Taxes 2026', desc: '$35,360/year — net pay by state' },
   { slug: '12-dollars-an-hour-after-taxes', title: '$12 an Hour After Taxes 2026', desc: '$24,960/year — take-home by state' },
   { slug: '100k-a-year-after-taxes', title: '$100,000 a Year After Taxes 2026', desc: 'Monthly & hourly take-home for all 50 states' },
@@ -42,11 +45,14 @@ const taxPosts = [
   { slug: 'no-tax-on-tips-explained', title: 'No Tax on Tips — Explained', desc: 'What the tip tax exemption means for you' },
   { slug: 'one-big-beautiful-bill-tax-calculator-2026', title: 'One Big Beautiful Bill Tax Calculator 2026', desc: 'How the proposed tax changes affect your paycheck' },
   { slug: 'texas-vs-california-salary', title: 'Texas vs California Salary Comparison', desc: 'Side-by-side take-home pay comparison' },
+  { slug: 'florida-vs-new-york-salary', title: 'Florida vs New York Salary 2026', desc: 'How much more FL residents keep vs NYC' },
   { slug: 'how-to-calculate-paycheck-taxes', title: 'How to Calculate Paycheck Taxes', desc: 'Step-by-step federal + state withholding guide' },
 ]
 
 const professionPosts = [
   { slug: 'software-engineer-take-home-pay', title: 'Software Engineer Take-Home Pay 2026', desc: '$100k–$200k SWE salaries after taxes by state' },
+  { slug: 'truck-driver-salary-after-taxes', title: 'Truck Driver Salary After Taxes 2026', desc: 'OTR net pay with per diem deductions' },
+  { slug: 'electrician-salary-after-taxes', title: 'Electrician Salary After Taxes 2026', desc: 'Journeyman & self-employed net pay' },
   { slug: 'police-officer-salary-after-taxes', title: 'Police Officer Salary After Taxes 2026', desc: 'Net pay with pension deductions' },
   { slug: 'married-filing-jointly-paycheck-2026', title: 'Married Filing Jointly Paycheck 2026', desc: 'How MFJ changes your withholding and take-home' },
   { slug: 'nurse-paycheck-calculator', title: 'Nurse Paycheck Calculator 2026', desc: 'RN take-home pay — all 50 states' },

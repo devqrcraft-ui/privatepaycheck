@@ -12,6 +12,7 @@ const STATE_SLUGS = [
   'oklahoma','oregon','pennsylvania','rhode-island','south-carolina','south-dakota',
   'tennessee','texas','utah','vermont','virginia','washington','west-virginia',
   'wisconsin','wyoming','washington-dc',
+  'methodology',
 ];
 
 const BLOG_SLUGS = [
@@ -103,6 +104,11 @@ const BLOG_SLUGS = [
   '120k-a-year-after-taxes',
   'married-filing-jointly-paycheck-2026',
   'police-officer-salary-after-taxes',
+  'truck-driver-salary-after-taxes',
+  'electrician-salary-after-taxes',
+  '70k-a-year-after-taxes',
+  '90k-a-year-after-taxes',
+  'florida-vs-new-york-salary',
   'nurse-paycheck-calculator',
   'teacher-salary-after-taxes',
   'software-engineer-take-home-pay',
