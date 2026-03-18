@@ -8,7 +8,11 @@ export const metadata: Metadata = {
 }
 
 const salaryPosts = [
+  { slug: '150k-a-year-after-taxes', title: '$150,000 a Year After Taxes 2026', desc: 'Take-home for high earners — all states' },
   { slug: '100k-a-year-after-taxes', title: '$100,000 a Year After Taxes 2026', desc: 'Monthly & hourly take-home for all 50 states' },
+  { slug: '45-dollars-an-hour-after-taxes', title: '$45 an Hour After Taxes 2026', desc: '$93,600/year gross — see net pay by state' },
+  { slug: '18-dollars-an-hour-after-taxes', title: '$18 an Hour After Taxes 2026', desc: '$37,440/year gross — state comparisons' },
+  { slug: '15-dollars-an-hour-after-taxes', title: '$15 an Hour After Taxes 2026', desc: 'Minimum wage take-home — every state' },
   { slug: '75k-a-year-after-taxes', title: '$75,000 a Year After Taxes 2026', desc: 'Exact take-home pay by state for $75k salary' },
   { slug: '50k-a-year-after-taxes', title: '$50,000 a Year After Taxes 2026', desc: 'Monthly, biweekly, and hourly breakdown' },
   { slug: '40-dollars-an-hour-after-taxes', title: '$40 an Hour After Taxes 2026', desc: '$83,200/year gross — see net pay by state' },
@@ -34,6 +38,12 @@ const taxPosts = [
   { slug: 'one-big-beautiful-bill-tax-calculator-2026', title: 'One Big Beautiful Bill Tax Calculator 2026', desc: 'How the proposed tax changes affect your paycheck' },
   { slug: 'texas-vs-california-salary', title: 'Texas vs California Salary Comparison', desc: 'Side-by-side take-home pay comparison' },
   { slug: 'how-to-calculate-paycheck-taxes', title: 'How to Calculate Paycheck Taxes', desc: 'Step-by-step federal + state withholding guide' },
+]
+
+const professionPosts = [
+  { slug: 'software-engineer-take-home-pay', title: 'Software Engineer Take-Home Pay 2026', desc: '$100k–$200k SWE salaries after taxes by state' },
+  { slug: 'nurse-paycheck-calculator', title: 'Nurse Paycheck Calculator 2026', desc: 'RN take-home pay — all 50 states' },
+  { slug: 'teacher-salary-after-taxes', title: 'Teacher Salary After Taxes 2026', desc: 'Net teacher pay with pension deductions' },
 ]
 
 const statePosts = [
@@ -81,6 +91,19 @@ export default function BlogIndex() {
         <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Understand your withholding, deductions, and how to keep more.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {taxPosts.map(p => (
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ marginBottom: 48 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>👩‍⚕️ Profession Guides</h2>
+        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Take-home pay breakdowns for specific careers.</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
+          {professionPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
               <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
