@@ -11,7 +11,7 @@ const STATE_SLUGS = [
   'new-jersey','new-mexico','new-york','north-carolina','north-dakota','ohio',
   'oklahoma','oregon','pennsylvania','rhode-island','south-carolina','south-dakota',
   'tennessee','texas','utah','vermont','virginia','washington','west-virginia',
-  'wisconsin','wyoming',
+  'wisconsin','wyoming','washington-dc',
 ];
 
 const BLOG_SLUGS = [
@@ -32,6 +32,10 @@ const BLOG_SLUGS = [
   'how-to-increase-take-home-pay',
   'no-tax-on-tips-explained',
   'one-big-beautiful-bill-tax-calculator-2026',
+  '20-dollars-an-hour-after-taxes',
+  '25-dollars-an-hour-after-taxes',
+  'biweekly-paycheck-after-taxes',
+  '50k-a-year-after-taxes',
   'texas-vs-california-salary',
   'two-jobs-tax-withholding',
 ];

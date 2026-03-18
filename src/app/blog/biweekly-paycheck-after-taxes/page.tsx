@@ -1,0 +1,51 @@
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Biweekly Paycheck After Taxes 2026 — Calculator & Tables | PrivatePaycheck',
+  description: 'How much is your biweekly paycheck after taxes? See take-home pay tables for $30k, $40k, $50k, $60k, $75k, $100k salaries. All 50 states covered.',
+  keywords: 'biweekly paycheck after taxes 2026, biweekly take home pay, biweekly pay after taxes calculator',
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/biweekly-paycheck-after-taxes' },
+}
+export default function Page() {
+  const rows = [
+    ['$30,000', '$1,154', '$952',  '$870'],
+    ['$40,000', '$1,538', '$1,258','$1,145'],
+    ['$50,000', '$1,923', '$1,548','$1,403'],
+    ['$60,000', '$2,308', '$1,820','$1,644'],
+    ['$75,000', '$2,885', '$2,212','$1,991'],
+    ['$100,000','$3,846', '$2,837','$2,520'],
+  ]
+  return (
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui, sans-serif' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+          {"@type":"Question","name":"How is a biweekly paycheck calculated after taxes?","acceptedAnswer":{"@type":"Answer","text":"Annual salary ÷ 26 pay periods = gross biweekly pay. Then subtract federal income tax (based on W-4), Social Security (6.2%), Medicare (1.45%), and any state income tax. The result is your net biweekly take-home pay."}},
+          {"@type":"Question","name":"How much is a $50,000 salary biweekly after taxes?","acceptedAnswer":{"@type":"Answer","text":"A $50,000 salary gives $1,923 gross per biweekly paycheck. After federal taxes, FICA, and state taxes (varies), take-home is approximately $1,403–$1,548 depending on your state."}},
+          {"@type":"Question","name":"How many biweekly paychecks in 2026?","acceptedAnswer":{"@type":"Answer","text":"There are 26 biweekly pay periods in 2026. Some employees may receive 27 paychecks depending on when their pay cycle started."}}
+        ]
+      }) }} />
+      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
+        <a href="/" style={{ color: '#666' }}>Home</a> › <a href="/blog" style={{ color: '#666' }}>Blog</a> › Biweekly Paycheck After Taxes
+      </nav>
+      <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Biweekly Paycheck After Taxes 2026</h1>
+      <p style={{ fontSize: 17, color: '#444', marginBottom: 32 }}>There are <strong>26 biweekly pay periods</strong> in 2026. Here are exact take-home amounts after federal taxes, FICA, and state taxes for common salaries.</p>
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Biweekly Take-Home by Salary (Single Filer)</h2>
+      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
+        <thead><tr style={{ background: '#f0f4ff' }}>
+          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Annual Salary</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Gross/Period</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Net (No State Tax)</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Net (CA/NY)</th>
+        </tr></thead>
+        <tbody>{rows.map(([sal,gross,net,ca]) => (
+          <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
+            <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
+            <td style={{ padding: '10px 14px' }}>{gross}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
+            <td style={{ padding: '10px 14px', color: '#888' }}>{ca}</td>
+          </tr>
+        ))}</tbody>
+      </table>
+      <p style={{ color: '#555' }}>Get exact biweekly pay for your salary and state → <a href="/" style={{ color: '#1a56db' }}>free private calculator</a></p>
+    </main>
+  )
+}
