@@ -12,9 +12,6 @@ export const metadata: Metadata = {
 
 export default function AllStatesPage() {
   const slugs = Object.keys(STATE_SLUG_MAP);
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-
-
   return (
     <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
 
@@ -23,6 +20,10 @@ export default function AllStatesPage() {
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link> › All States
         </div>
 
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        <p style={{ fontSize: '16px', lineHeight: 1.7, opacity: 0.75, maxWidth: '680px', margin: '0 auto 32px', textAlign: 'center' }}>
+          Use this free paycheck calculator for all 50 U.S. states plus D.C. Select your state to estimate take-home pay after federal, state, and FICA taxes. Updated for 2026 IRS tax brackets.
+        </p>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', textTransform: 'uppercase', letterSpacing: '-1px' }}>
             Paycheck Calculator<br/>
@@ -33,7 +34,12 @@ export default function AllStatesPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: '10px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+          <a href="/" style={{ display: 'inline-block', padding: '14px 36px', borderRadius: '10px', background: 'linear-gradient(135deg,#6366f1,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '16px', textDecoration: 'none', cursor: 'pointer' }}>
+            ⚡ Calculate My Paycheck →
+          </a>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(160px,1fr))', gap: '10px' }}>
           {slugs.map(slug => {
             const name = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
             return (

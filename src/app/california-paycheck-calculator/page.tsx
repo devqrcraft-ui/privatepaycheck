@@ -16,7 +16,7 @@ export default function Page() {
     ['$150,000','$12,500','$7,650','$5,412'],
   ]
   return (
-    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
+    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
           {"@type":"Question","name":"How much is taken out of a paycheck in California 2026?","acceptedAnswer":{"@type":"Answer","text":"California withholds federal income tax, Social Security (6.2%), Medicare (1.45%), California state income tax (1%–13.3%), and SDI (0.9%). On a $60,000 salary, total withholding is roughly 27%–31% depending on filing status."}},
@@ -28,14 +28,20 @@ export default function Page() {
       <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
         <a href="/" style={{ color: '#666' }}>Home</a> › California Paycheck Calculator
       </nav>
-      <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>California Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 17, color: '#444', marginBottom: 12 }}>California has the highest state income tax in the US — up to <strong>13.3%</strong> — plus SDI. Use the table below to see your exact take-home pay, or use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a> for your specific situation.</p>
-      <div style={{ background: '#fff3cd', border: '1px solid #ffc107', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14 }}>
+      <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>California Paycheck Calculator 2026</h1>
+      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>California has the highest state income tax in the US — up to <strong>13.3%</strong> — plus SDI. Use the table below to see your exact take-home pay, or use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a> for your specific situation.</p>
+      <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14 }}>
         CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 0.9% (no cap). CA SDI changed in 2024 — no wage base limit.
       </div>
+      <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>
+        <div style={{ fontSize: '15px', opacity: 0.8 }}>California has the highest state income tax — up to 13.3%. Use the calculator below for your exact take-home.</div>
+        <a href="/?state=california" style={{ display: 'inline-block', padding: '13px 32px', borderRadius: '10px', background: 'linear-gradient(135deg,#3b82f6,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>
+          ⚡ Calculate My California Paycheck →
+        </a>
+      </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>California Take-Home Pay by Salary (Single Filer, 2026)</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}><table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+        <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Annual Salary</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Monthly Gross</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Monthly Net</th>
@@ -44,15 +50,14 @@ export default function Page() {
         <tbody>{rows.map(([sal,gross,net,bw]) => (
           <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
-            <td style={{ padding: '10px 14px', color: '#555' }}>{gross}</td>
+            <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
             <td style={{ padding: '10px 14px' }}>{bw}</td>
           </tr>
-        ))}</tbody>
-      </table>
+        ))}</tbody></table></div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>California Paycheck Deductions Breakdown</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}><table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+        <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Deduction</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Rate</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Notes</th>
@@ -67,21 +72,20 @@ export default function Page() {
           <tr key={d} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{d}</td>
             <td style={{ padding: '10px 14px', color: '#c00', fontWeight: 700 }}>{r}</td>
-            <td style={{ padding: '10px 14px', color: '#555', fontSize: 13 }}>{n}</td>
+            <td style={{ padding: '10px 14px', color: '#94a3b8', fontSize: 13 }}>{n}</td>
           </tr>
-        ))}</tbody>
-      </table>
-      <div style={{ background: '#f0f4ff', borderRadius: 8, padding: 20, marginBottom: 32 }}>
+        ))}</tbody></table></div>
+      <div style={{ background: 'rgba(99,102,241,0.12)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
         <strong>Want the exact number?</strong> The table uses single-filer estimates. Your actual take-home depends on filing status, allowances, and pre-tax deductions (401k, health insurance).{' '}
         <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact California paycheck →</a>
       </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Frequently Asked Questions</h2>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is California the highest taxed state?</h3>
-      <p style={{ color: '#444', lineHeight: 1.7 }}>Yes, for high earners. California top rate of 13.3% is the highest state income tax in the US. However, for earners under $60,000, the effective state rate is typically 4%–6%, which is moderate compared to other high-tax states like New York or Oregon.</p>
+      <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>Yes, for high earners. California top rate of 13.3% is the highest state income tax in the US. However, for earners under $60,000, the effective state rate is typically 4%–6%, which is moderate compared to other high-tax states like New York or Oregon.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How do I reduce my California paycheck taxes?</h3>
-      <p style={{ color: '#444', lineHeight: 1.7 }}>Maximize pre-tax contributions: 401(k) up to $23,500 in 2026, HSA up to $4,300 (self-only). These reduce both federal and CA state taxable income. California does not conform to HSA deductions, but federal savings still apply.</p>
+      <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>Maximize pre-tax contributions: 401(k) up to $23,500 in 2026, HSA up to $4,300 (self-only). These reduce both federal and CA state taxable income. California does not conform to HSA deductions, but federal savings still apply.</p>
     
-      <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
+      <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>
           {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
