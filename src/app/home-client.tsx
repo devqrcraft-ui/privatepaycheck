@@ -304,6 +304,33 @@ export default function HomeClient() {
         </div>
       </section>
 
+
+      <section className="pp-section" style={{background:'#050e1a',paddingTop:'40px',paddingBottom:'48px'}}>
+        <div style={{maxWidth:'900px',margin:'0 auto',padding:'0 20px'}}>
+          <div style={{fontSize:'12px',fontWeight:700,color:'rgba(245,200,66,0.6)',letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:'16px',textAlign:'center'}}>More Free Tax Tools</div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'12px'}}>
+            <a href="https://gigwisetax.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(178,34,52,0.08)',border:'1px solid rgba(178,34,52,0.25)',borderRadius:'10px',padding:'18px 20px'}}>
+              <div style={{fontSize:'11px',fontWeight:700,color:'rgba(178,34,52,0.8)',letterSpacing:'0.08em',textTransform:'uppercase',marginBottom:'6px'}}>1099 Gig Tax Tool</div>
+              <div style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:700,color:'#fff',marginBottom:'4px'}}>GigWiseTax.com</div>
+              <div style={{fontSize:'12px',color:'#7090B0',lineHeight:1.6,marginBottom:'10px'}}>Free self-employment tax calculator. SE tax 15.3% + federal + all 51 states. DoorDash, Uber, OnlyFans & more.</div>
+              <div style={{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'10px'}}>
+                {['SE Tax 15.3%','All 51 States','100% Free'].map((t:string)=><span key={t} style={{fontSize:'10px',background:'rgba(178,34,52,0.12)',border:'1px solid rgba(178,34,52,0.3)',color:'rgba(255,255,255,0.55)',padding:'2px 7px',borderRadius:'3px'}}>{t}</span>)}
+              </div>
+              <div style={{background:'#B22234',color:'#fff',padding:'9px 0',borderRadius:'6px',fontSize:'12px',fontWeight:700,textAlign:'center'}}>Calculate Gig Taxes →</div>
+            </a>
+            <a href="https://1099deductions.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(184,146,74,0.06)',border:'1px solid rgba(184,146,74,0.2)',borderRadius:'10px',padding:'18px 20px'}}>
+              <div style={{fontSize:'11px',fontWeight:700,color:'rgba(184,146,74,0.7)',letterSpacing:'0.08em',textTransform:'uppercase',marginBottom:'6px'}}>1099 Deductions Hub</div>
+              <div style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:700,color:'#fff',marginBottom:'4px'}}>1099Deductions.com</div>
+              <div style={{fontSize:'12px',color:'#7090B0',lineHeight:1.6,marginBottom:'10px'}}>Free IRS Schedule C write-off checklists. DoorDash, Uber, Airbnb, OnlyFans & more. 17 job types.</div>
+              <div style={{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'10px'}}>
+                {['17 Job Types','Schedule C','100% Free'].map((t:string)=><span key={t} style={{fontSize:'10px',background:'rgba(184,146,74,0.1)',border:'1px solid rgba(184,146,74,0.25)',color:'rgba(255,255,255,0.55)',padding:'2px 7px',borderRadius:'3px'}}>{t}</span>)}
+              </div>
+              <div style={{background:'#B8924A',color:'#07111f',padding:'9px 0',borderRadius:'6px',fontSize:'12px',fontWeight:700,textAlign:'center'}}>View Deductions →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="pp-section pp-section-alt">
         <div className="s-head">
           <div className="s-tag">By State</div>
