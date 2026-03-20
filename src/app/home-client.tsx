@@ -376,6 +376,29 @@ export default function HomeClient() {
             <p className="feat-desc">All math runs in your browser. Zero data sent to any server. No cookies, no tracking, no accounts required — ever.</p>
           </div>
         </div>
+        {/* HIGH INCOME BLOCK */}
+        <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
+          <div style={{fontSize:13,fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:14}}>⚡ High-Income Earners — $200k, $500k, $1M+</div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:14}}>
+            <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
+              <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Social Security Cap</div>
+              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>SS tax (6.2%) stops at <strong style={{color:'#fff'}}>$176,100</strong> in 2026. Above this, you save $10,918/year vs someone earning under the cap.</div>
+            </div>
+            <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
+              <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Additional Medicare Surtax</div>
+              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>Earnings above <strong style={{color:'#fff'}}>$200,000</strong> (single) or $250,000 (married) trigger an extra 0.9% Medicare surtax — not matched by employers.</div>
+            </div>
+            <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
+              <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Top Federal Bracket</div>
+              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>The 37% rate applies above <strong style={{color:'#fff'}}>$626,350</strong> (single). At $1M salary in CA, total effective rate can reach 52%+ including state.</div>
+            </div>
+            <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
+              <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>State Impact at $500k</div>
+              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>CA top rate 13.3%, NY 10.9%, NJ 10.75%. Moving from CA to TX on $500k salary saves <strong style={{color:'#fff'}}>~$66,500/year</strong> in state tax alone.</div>
+            </div>
+          </div>
+        </div>
+
         <p style={{textAlign:'center',fontSize:'12px',color:'#4a6080',marginTop:'24px'}}>
           Sources: <a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS Pub 15-T</a> · <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" style={{color:'#F5C842'}}>SSA Wage Base</a> · State Revenue Departments
         </p>
