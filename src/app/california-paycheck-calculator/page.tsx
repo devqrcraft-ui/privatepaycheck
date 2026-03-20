@@ -14,6 +14,8 @@ export default function Page() {
     ['$75,000','$6,250','$4,375','$3,388'],
     ['$100,000','$8,333','$5,540','$4,158'],
     ['$150,000','$12,500','$7,650','$5,412'],
+    ['$200,000','$16,667','$9,750','$6,917'],
+    ['$500,000','$41,667','$19,750','$13,250'],
   ]
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
