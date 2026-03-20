@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?',
   description: 'California, Alaska, Nevada, and Colorado have stricter overtime rules than federal 40-hour standard. Know your rights. Free 2026 guide.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/overtime-pay-rules-by-state' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state' },
 };
 
 const OT_STATES = [

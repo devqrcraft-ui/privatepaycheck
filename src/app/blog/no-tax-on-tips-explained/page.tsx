@@ -13,7 +13,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'No Tax on Tips Explained: Who Qualifies & How Much You Save (2026)',
   description: 'The No Tax on Tips exemption could save tipped workers $1,500-$4,000/year. Who qualifies, what the $25k cap means, and current status.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/no-tax-on-tips-explained' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/no-tax-on-tips-explained' },
 };
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>

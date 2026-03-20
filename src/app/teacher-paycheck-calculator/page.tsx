@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://privatepaycheck.com/teacher-paycheck-calculator',
+    canonical: 'https://www.privatepaycheck.com/teacher-paycheck-calculator',
   },
 };
 

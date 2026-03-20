@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How to Read Your Pay Stub: Every Line Explained (2026)',
   description: 'Federal tax, FICA, state tax, YTD — decode every deduction on your paycheck with real examples. Free guide from PrivatePaycheck.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/how-to-read-your-pay-stub' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-to-read-your-pay-stub' },
 };
 
 export default function Post() {

@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'One Big Beautiful Bill Tax Calculator 2026 — Overtime, Tips & Senior Savings',
   description: 'Calculate your exact tax savings under the One Big Beautiful Bill 2026. No tax on overtime up to $12,500, no tax on tips up to $25,000, extra $6,000 for seniors 65+.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026' },
   keywords: 'one big beautiful bill calculator, one big beautiful bill 2026 tax savings, no tax overtime tips 2026, OBBB tax calculator',
   openGraph: {
     title: 'One Big Beautiful Bill Tax Calculator 2026',

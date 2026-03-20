@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Terms of Service | PrivatePaycheck',
   description: 'PrivatePaycheck terms of service. Free paycheck calculator for informational purposes.',
-  alternates: { canonical: 'https://privatepaycheck.com/terms' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/terms' },
 };
 
 export default function Terms() {

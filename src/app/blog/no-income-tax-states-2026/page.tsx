@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '9 States With No Income Tax in 2026 — How Much Do You Actually Save?',
   description: 'Texas, Florida, Nevada and 6 more states have zero state income tax. We ran the numbers for $50k, $75k, and $100k salaries to show real savings.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/no-income-tax-states-2026' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/no-income-tax-states-2026' },
 };
 
 const NO_TAX_STATES = [

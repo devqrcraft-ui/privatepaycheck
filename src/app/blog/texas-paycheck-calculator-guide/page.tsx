@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Texas Paycheck Calculator Guide 2026 — No State Income Tax Explained',
   description: 'Texas has no state income tax. Learn exactly what comes out of your Texas paycheck in 2026 — federal taxes, FICA, 401k. Free calculator included.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/texas-paycheck-calculator-guide' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/texas-paycheck-calculator-guide' },
 };
 
 export default function Post() {

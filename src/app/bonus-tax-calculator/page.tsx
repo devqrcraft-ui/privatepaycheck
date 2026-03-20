@@ -4,7 +4,7 @@ import BonusCalculatorClient from './BonusCalculatorClient';
 export const metadata: Metadata = {
   title: 'Bonus Tax Calculator 2026 — 22% Flat Rate or Aggregate? See Your Real Take-Home',
   description: 'Bonus tax calculator 2026: IRS taxes bonuses at 22% flat rate (or aggregate). Enter your bonus to see exact take-home after federal + state taxes. All 50 states, free & private.',
-  alternates: { canonical: 'https://privatepaycheck.com/bonus-tax-calculator' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator' },
   openGraph: {
     title: 'Bonus Tax Calculator 2026 — How Much Do You Keep?',
     description: 'See your bonus after taxes for all 50 US states. IRS 2026 rates. Free & private.',

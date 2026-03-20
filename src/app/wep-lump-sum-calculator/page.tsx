@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://privatepaycheck.com/wep-lump-sum-calculator',
+    canonical: 'https://www.privatepaycheck.com/wep-lump-sum-calculator',
   },
 };
 

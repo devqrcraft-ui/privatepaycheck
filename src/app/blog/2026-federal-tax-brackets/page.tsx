@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '2026 Federal Income Tax Brackets — Complete Guide',
   description: '2026 federal tax brackets for single, married, and head of household filers. Standard deduction $15,000 single. Updated FICA rates and limits.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/2026-federal-tax-brackets' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/2026-federal-tax-brackets' },
 };
 const SINGLE=[[0,11600,'10%'],[11600,47150,'12%'],[47150,100525,'22%'],[100525,191950,'24%'],[191950,243725,'32%'],[243725,609350,'35%'],[609350,Infinity,'37%']];
 const MARRIED=[[0,23200,'10%'],[23200,94300,'12%'],[94300,201050,'22%'],[201050,383900,'24%'],[383900,487450,'32%'],[487450,731200,'35%'],[731200,Infinity,'37%']];

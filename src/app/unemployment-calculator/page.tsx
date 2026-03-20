@@ -5,7 +5,7 @@ import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 export const metadata: Metadata = {
   title: 'Unemployment Calculator by State 2026 — Weekly Benefit Amount Estimator',
   description: 'Free unemployment calculator 2026. Texas pays up to $563/wk, California $450/wk, New York $504/wk. Enter wages to see your exact weekly benefit for all 50 states. Instant & private.',
-  alternates: { canonical: 'https://privatepaycheck.com/unemployment-calculator' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator' },
 };
 
 const MAX_BENEFITS: Record<string, { max: number; weeks: number }> = {

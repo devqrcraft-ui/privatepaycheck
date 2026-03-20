@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: '401(k) Contribution Limits 2026 — Max Out & Save Thousands in Taxes',
   description: 'The 2026 401(k) limit is $23,500 ($31,000 if 50+). See exactly how much you save in taxes at every income level. Free guide.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/401k-contribution-limits-2026' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/401k-contribution-limits-2026' },
 };
 
 const SAVINGS_TABLE = [

@@ -325,7 +325,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.name + ' Tip Tax Calculator 2026 — How Much of Your Tips Do You Keep?',
     description: 'Working for tips in ' + data.name + '? See exactly how much you keep after taxes with the 2026 No Tax on Tips deduction — up to $25,000 excluded. Free & instant.',
-    alternates: { canonical: 'https://privatepaycheck.com/tip-calculator/' + state },
+    alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator/' + state },
   };
 }
 

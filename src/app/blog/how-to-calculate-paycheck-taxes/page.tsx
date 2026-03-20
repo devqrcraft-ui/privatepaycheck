@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'How to Calculate Paycheck Taxes 2026 — Step by Step Guide',
   description: 'Learn exactly how to calculate federal income tax, Social Security, Medicare, and state tax on your paycheck in 2026. Includes examples for every income level.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-to-calculate-paycheck-taxes' },
 };
 
 export default function Post() {

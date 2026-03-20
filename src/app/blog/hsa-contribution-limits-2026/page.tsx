@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'HSA Contribution Limits 2026 — The Most Underrated Tax Shelter',
   description: 'HSA contributions are triple tax-advantaged: pre-tax contributions, tax-free growth, tax-free withdrawals. 2026 limits and strategy guide.',
-  alternates: { canonical: 'https://privatepaycheck.com/blog/hsa-contribution-limits-2026' },
+  alternates: { canonical: 'https://www.privatepaycheck.com/blog/hsa-contribution-limits-2026' },
 };
 
 export default function Post() {
