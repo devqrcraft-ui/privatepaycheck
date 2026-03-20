@@ -54,6 +54,42 @@ export default function Page() {
         <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact Illinois paycheck →</a>
       </div>
     
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Illinois Paycheck Deductions Breakdown</h2>
+      <p style={{ fontSize: 14, color: '#94a3b8', marginBottom: 16 }}>Example: $60,000 salary, single filer, 2026</p>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}><table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+        <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>Deduction</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>Rate</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>Annual Amount</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>Monthly Amount</th>
+        </tr></thead>
+        <tbody>
+          {[
+            ['Federal Income Tax','~14% effective','$8,400/yr','$700/mo'],
+            ['Social Security','6.2%','$3,720/yr','$310/mo'],
+            ['Medicare','1.45%','$870/yr','$72.50/mo'],
+            ['Illinois State Tax','4.95% flat','$2,970/yr','$247.50/mo'],
+            ['Total Withheld','','$15,960/yr','$1,330/mo'],
+            ['Take-Home Pay','','~$44,040/yr','~$3,670/mo'],
+          ].map(([label, rate, annual, monthly]) => (
+            <tr key={label} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', fontWeight: label === 'Take-Home Pay' ? 800 : 400 }}>
+              <td style={{ padding: '10px 14px', color: '#e2e8f0' }}>{label}</td>
+              <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{rate}</td>
+              <td style={{ padding: '10px 14px', color: '#1a56db', fontWeight: 600 }}>{annual}</td>
+              <td style={{ padding: '10px 14px', color: '#c7d2fe', fontWeight: 600 }}>{monthly}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table></div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
+      <div style={{ marginBottom: 32 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#c7d2fe' }}>Is Illinois a high-tax state?</h3>
+        <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: 20 }}>Illinois has a flat 4.95% state income tax — lower than California (up to 13.3%) or New York (up to 10.9%), but higher than the 9 states with no income tax. The simplicity of a flat rate means every dollar of income is taxed at the same rate, regardless of how much you earn.</p>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#c7d2fe' }}>How can I reduce Illinois state tax on my paycheck?</h3>
+        <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>Maximize pre-tax contributions: 401(k) up to $23,500 in 2026, HSA up to $4,300 (self-only). These reduce federal taxable income. Note: Illinois does not allow an HSA deduction on state taxes, but federal savings still apply.</p>
+      </div>
+
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>
