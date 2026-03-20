@@ -313,6 +313,20 @@ const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number;
   }
 };
 
+
+const STATE_NOTES: Record<string, string> = {
+  "connecticut": "Connecticut taxes bonus income at 6.5% — one of the highest rates in the Northeast. Combined with federal 22% withholding and FICA, a Connecticut worker receiving a $10,000 bonus takes home approximately $6,890. Connecticut also imposes a 0.5% surcharge on incomes above $500,000.",
+  "washington": "Washington State has no personal income tax — your bonus is only subject to federal withholding (22%) and FICA. On a $10,000 bonus, a Washington worker keeps approximately $7,820, saving over $600 compared to neighboring Oregon.",
+  "illinois": "Illinois taxes all income including bonuses at a flat 4.95% rate. On a $10,000 bonus, Illinois workers pay roughly $495 in state tax plus federal withholding and FICA, keeping approximately $7,325.",
+  "california": "California taxes bonus income up to 13.3% at the top marginal rate. The state supplemental withholding rate is 10.23%. On a $10,000 bonus, a California worker in the top bracket takes home roughly $6,200 — the lowest of any U.S. state.",
+  "new-york": "New York State taxes bonus income up to 10.9%. NYC residents pay an additional 3.876% city tax. A New York City worker receiving a $10,000 bonus may take home as little as $5,900 after all taxes.",
+  "texas": "Texas has no state income tax — your bonus is only subject to federal withholding (22%) and FICA. On a $10,000 bonus, a Texas worker keeps approximately $7,820.",
+  "florida": "Florida has no state income tax — your bonus is only subject to federal withholding (22%) and FICA. On a $10,000 bonus, a Florida worker keeps approximately $7,820.",
+  "pennsylvania": "Pennsylvania taxes bonus income at a flat 3.07% — one of the lowest flat rates in the U.S. On a $10,000 bonus, Pennsylvania workers pay $307 in state tax, keeping approximately $7,513 after all taxes.",
+  "ohio": "Ohio taxes bonus income on a graduated scale up to 3.99%. On a $10,000 bonus for a median earner, Ohio workers keep approximately $7,421 after federal, state, and FICA taxes.",
+  "massachusetts": "Massachusetts taxes bonus income at a flat 5%. On a $10,000 bonus, Massachusetts workers pay $500 in state tax, keeping approximately $7,270 after all taxes.",
+};
+
 type Props = { params: Promise<{ state: string }> };
 
 export async function generateStaticParams() {
@@ -335,5 +349,16 @@ export default async function Page({ params }: Props) {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) notFound();
-  return <BonusTaxCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+
+  const stateNote = STATE_NOTES[state];
+  const ssrContent = stateNote ? (
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px 32px', fontFamily: 'system-ui,sans-serif' }}>
+      <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#1e293b' }}>
+        Bonus Tax in {data.name}: What You Need to Know
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#475569' }}>{stateNote}</p>
+    </div>
+  ) : null;
+
+  return <><BonusTaxCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />{ssrContent}</>;
 }
