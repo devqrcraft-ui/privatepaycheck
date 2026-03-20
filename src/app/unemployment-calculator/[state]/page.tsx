@@ -9,6 +9,7 @@ function getUnemploymentFaqSchema(stateName: string, maxWeekly: number, maxWeeks
     { '@type': 'Question', name: 'How long can I collect unemployment in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: howLongText } }
   ]};
 }
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import UnemploymentCalculatorState from './UnemploymentCalculatorState';
 
