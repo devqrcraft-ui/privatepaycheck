@@ -325,7 +325,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: data.name + ' Hourly Paycheck Calculator 2026 — Exact Take-Home Pay, No Signup',
     description: 'How much do you take home hourly in ' + data.name + '? Free 2026 calculator — enter rate → see exact pay after federal, state & FICA taxes in seconds. No login, no data stored.',
-    alternates: { canonical: 'https://privatepaycheck.com/hourly-paycheck-calculator/' + state },
+    alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator/' + state },
   };
 }
 
@@ -343,7 +343,7 @@ export default async function Page({ params }: Props) {
           {'@type':'HowToStep',position:5,name:'View take-home pay',text:'See your net pay after federal, state, and FICA taxes instantly.'}
           ]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[{'@type':'Question',name:'How do I calculate my hourly take-home pay?',acceptedAnswer:{'@type':'Answer',text:'Enter your hourly rate, hours per week, pay frequency, and state. The calculator applies 2026 federal and state tax rates plus FICA to show your exact net pay.'}},{'@type':'Question',name:'What taxes are taken out of my hourly paycheck?',acceptedAnswer:{'@type':'Answer',text:'Federal income tax (10-37%), Social Security (6.2%), Medicare (1.45%), and state income tax if applicable. Some states like Texas and Florida have no state income tax.'}},{'@type':'Question',name:'Is the hourly paycheck calculator free?',acceptedAnswer:{'@type':'Answer',text:'Yes, completely free. No signup required. All calculations run locally in your browser using 2026 IRS tax tables.'}}]}) }} />
-      return <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />;
+      <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />
     </>
   );
 }
