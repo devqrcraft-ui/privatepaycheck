@@ -28,5 +28,10 @@ export const metadata: Metadata = {
 };
 
 export default function TeacherPaycheckPage() {
-  return <TeacherPaycheckCalculator />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do teachers take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A teacher earning $55,000 in Texas takes home approximately $43,000/year. The same salary in California yields about $39,000/year after federal, state, and FICA taxes."}},{"@type":"Question","name":"Do teachers pay Social Security in all states?","acceptedAnswer":{"@type":"Answer","text":"No. Teachers in 15 states including California, Texas, Illinois, Ohio, and Massachusetts may not pay into Social Security if covered by a state pension such as TRS."}},{"@type":"Question","name":"What is the average teacher salary after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Average US teacher salary is approximately $68,000/year. After all taxes, take-home is roughly $49,000-$54,000/year depending on state and filing status."}},{"@type":"Question","name":"Are teacher pension contributions pre-tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most TRS pension contributions of 7-10% of salary are pre-tax, reducing taxable income and lowering both federal and state withholding."}}]}) }} />
+      <TeacherPaycheckCalculator />
+    </>
+  );
 }
