@@ -22,7 +22,9 @@ export default function AllStatesPage() {
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <p style={{ fontSize: '16px', lineHeight: 1.7, opacity: 0.75, maxWidth: '680px', margin: '0 auto 32px', textAlign: 'center' }}>
-          Use this free paycheck calculator for all 50 U.S. states plus D.C. Select your state to estimate take-home pay after federal, state, and FICA taxes. Updated for 2026 IRS tax brackets.
+          Use this free paycheck calculator for all 50 U.S. states plus D.C. — the most complete paycheck calculator for all 50 U.S. states in one place.
+          Estimate take-home pay after federal income tax, state income tax, and FICA (Social Security 6.2% + Medicare 1.45%). All calculations run in your browser — no data stored, no signup required.
+          Updated for 2026 IRS tax brackets, standard deductions, and state withholding rates. Enter your salary or hourly wage and get your net pay in seconds.
         </p>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', textTransform: 'uppercase', letterSpacing: '-1px' }}>
@@ -39,6 +41,36 @@ export default function AllStatesPage() {
             ⚡ Calculate My Paycheck →
           </a>
         </div>
+        {/* NO TAX STATES */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
+          <div style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: 10, padding: '20px' }}>
+            <div style={{ fontSize: 13, fontWeight: 800, color: '#34d399', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 10 }}>✅ No State Income Tax</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 12 }}>
+              {['Alaska','Florida','Nevada','New Hampshire','South Dakota','Tennessee','Texas','Washington','Wyoming'].map(s=>(
+                <div key={s} style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', display: 'flex', justifyContent: 'space-between' }}>
+                  <span>{s}</span><span style={{ color: '#34d399', fontWeight: 700 }}>0%</span>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0 }}>
+              Workers in these states keep more of every paycheck — only federal income tax and FICA apply. On a $75k salary, you save $3,000–$7,000/year vs high-tax states.
+            </p>
+          </div>
+          <div style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: 10, padding: '20px' }}>
+            <div style={{ fontSize: 13, fontWeight: 800, color: '#f87171', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 10 }}>⚠️ High-Tax States</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 12 }}>
+              {[['California','up to 13.3%'],['Hawaii','up to 11%'],['New Jersey','up to 10.75%'],['Oregon','up to 9.9%'],['Minnesota','up to 9.85%'],['New York','up to 10.9%'],['Vermont','up to 8.75%'],['Illinois','4.95% flat']].map(([s,r])=>(
+                <div key={s} style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', display: 'flex', justifyContent: 'space-between' }}>
+                  <span>{s}</span><span style={{ color: '#f87171', fontWeight: 700 }}>{r}</span>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, margin: 0 }}>
+              High state taxes significantly reduce net pay. A California resident earning $100k pays ~$9,300 in state tax alone — vs $0 in Texas or Florida.
+            </p>
+          </div>
+        </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(160px,1fr))', gap: '10px' }}>
           {slugs.map(slug => {
             const name = slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
