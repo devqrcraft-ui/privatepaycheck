@@ -1,9 +1,18 @@
-
 function getStateFaqSchema(stateName: string, stateTax: number, noStateTax: boolean) {
   const keep10k = noStateTax ? 7820 : Math.round(10000 * (1 - 0.22 - 0.0765 - stateTax / 100));
   const totalRate = noStateTax ? '29.65%' : (22 + stateTax + 7.65).toFixed(1) + '%';
+  const noTaxText = stateName + ' has no state income tax. Only 22% federal + 7.65% FICA apply.';
+  const hasTaxText = stateName + ' withholds ' + stateTax + '% state tax plus 22% federal + 7.65% FICA.';
+  const stateText = noStateTax ? noTaxText : hasTaxText;
+  const keepText = 'On a $10,000 bonus in ' + stateName + ', you keep approximately $' + keep10k.toLocaleString() + '.';
+  const rateText = 'Total withholding in ' + stateName + ' is approximately ' + totalRate + '.';
+  const reduceText = 'Yes. Contribute to a 401(k) or HSA before year-end. Ask your employer to use the aggregate method in ' + stateName + ' if your effective rate is below 22%.';
   return { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
-    { '@type': 'Question', name: 'How much of my bonus will I keep after taxes in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: (noStateTax ? stateName + ' has no state income tax — only 22% federal + 7.65% FICA apply.' : stateName + ' withholds ' + stateTax + '% state tax in addition to 22% federal + 7.65% FICA.') + ' On a $10,000 bonus in ' + stateName + ', you keep approximately 
+    { '@type': 'Question', name: 'How much of my bonus will I keep after taxes in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: stateText + ' ' + keepText } },
+    { '@type': 'Question', name: 'What is the bonus tax rate in ' + stateName + ' 2026?', acceptedAnswer: { '@type': 'Answer', text: rateText } },
+    { '@type': 'Question', name: 'Can I reduce bonus taxes in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: reduceText } }
+  ]};
+}
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BonusTaxCalculatorState from './BonusTaxCalculatorState';

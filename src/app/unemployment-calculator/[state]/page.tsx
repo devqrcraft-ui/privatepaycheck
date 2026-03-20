@@ -1,7 +1,14 @@
 function getUnemploymentFaqSchema(stateName: string, maxWeekly: number, maxWeeks: number, rate: number) {
   const maxTotal = maxWeekly * maxWeeks;
+  const howMuchText = 'In ' + stateName + ', the maximum unemployment benefit is $' + maxWeekly + ' per week for up to ' + maxWeeks + ' weeks, totaling up to $' + maxTotal.toLocaleString() + '. Your actual benefit depends on prior wages.';
+  const howCalcText = stateName + ' calculates benefits based on your highest-earning base period quarter. The weekly benefit is approximately ' + rate + '% of your average weekly wage, up to $' + maxWeekly + '.';
+  const howLongText = 'Standard unemployment in ' + stateName + ' lasts up to ' + maxWeeks + ' weeks. Extended benefits may be available during high unemployment periods.';
   return { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
-    { '@type': 'Question', name: 'How much unemployment can I get in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: 'In ' + stateName + ', the maximum unemployment benefit is 
+    { '@type': 'Question', name: 'How much unemployment can I get in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: howMuchText } },
+    { '@type': 'Question', name: 'How is unemployment calculated in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: howCalcText } },
+    { '@type': 'Question', name: 'How long can I collect unemployment in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: howLongText } }
+  ]};
+}
 import { notFound } from 'next/navigation';
 import UnemploymentCalculatorState from './UnemploymentCalculatorState';
 
