@@ -59,7 +59,44 @@ export default function Page() {
       <div style={{ background: 'rgba(99,102,241,0.12)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
         <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact New York paycheck →</a>
       </div>
-    
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>New York Paycheck Deductions Breakdown</h2>
+      <p style={{ fontSize: 14, color: '#94a3b8', marginBottom: 16 }}>Example: $75,000 salary, single filer, NYC resident vs NY state only (2026)</p>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}><table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+        <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>Deduction</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>Rate</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>NY State Only</th>
+          <th style={{ padding: '10px 14px', textAlign: 'left' as const }}>NYC Resident</th>
+        </tr></thead>
+        <tbody>
+          {[
+            ['Federal Income Tax','~18% effective','$13,500/yr','$13,500/yr'],
+            ['Social Security','6.2%','$4,650/yr','$4,650/yr'],
+            ['Medicare','1.45%','$1,088/yr','$1,088/yr'],
+            ['NY State Income Tax','up to 10.9%','$5,466/yr','$5,466/yr'],
+            ['NYC Local Tax','3.078%–3.876%','—','$2,700/yr'],
+            ['Total Withheld','','$24,704/yr','$27,404/yr'],
+            ['Take-Home Pay','','~$50,296/yr','~$47,596/yr'],
+          ].map(([label, rate, state, nyc]) => (
+            <tr key={label} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', fontWeight: label === 'Take-Home Pay' ? 800 : 400 }}>
+              <td style={{ padding: '10px 14px', color: '#e2e8f0' }}>{label}</td>
+              <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{rate}</td>
+              <td style={{ padding: '10px 14px', color: '#1a56db', fontWeight: 600 }}>{state}</td>
+              <td style={{ padding: '10px 14px', color: '#f87171', fontWeight: 600 }}>{nyc}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table></div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
+      <div style={{ marginBottom: 32 }}>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#c7d2fe' }}>Is New York the highest-taxed state?</h3>
+        <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: 20 }}>For NYC residents, yes — the combination of NY state tax (up to 10.9%) and NYC local tax (up to 3.876%) makes effective total state+local tax one of the highest in the US. California’s top rate of 13.3% is higher for very high earners, but NYC residents at moderate incomes face a heavier combined burden.</p>
+        <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#c7d2fe' }}>How can I reduce NY state tax on my paycheck?</h3>
+        <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>Maximize pre-tax deductions: 401(k) up to $23,500 in 2026, HSA up to $4,300 (self-only), FSA up to $3,300. These reduce federal and NY state taxable income. NY does conform to HSA deductions, unlike California.</p>
+      </div>
+
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>
