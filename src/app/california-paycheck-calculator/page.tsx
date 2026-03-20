@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'California Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'California paycheck calculator 2026. See exact take-home pay after federal + CA state tax (up to 13.3%), SDI, and FICA. All salary levels. 100% private.',
+  title: 'California Paycheck Calculator 2026 — Exact Take-Home After 13.3% State Tax',
+  description: 'California paycheck calculator 2026. $75k salary = ~$52,650/year take-home after federal tax, CA state tax (1%–13.3%), SDI 0.9%, and FICA. Instant results.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
 }
