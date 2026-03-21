@@ -39,7 +39,7 @@ export default function Page() {
         ))}</tbody>
       </table>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Per Diem Tax Deduction for Truck Drivers 2026</h2>
-      <div style={{ background: '#fff3cd', border: '1px solid #ffc107', borderRadius: 8, padding: '14px 18px', marginBottom: 24 }}>
+      <div style={{ background: '#fff3cd', color: '#1a1a2e', border: '1px solid #ffc107', borderRadius: 8, padding: '14px 18px', marginBottom: 24 }}>
         <strong>2026 per diem rate: $69/day</strong> for CONUS travel. A driver away 250 days/year can deduct $17,250 from taxable income — saving $2,500–$4,000 in taxes.
       </div>
       <div style={{ background: '#1a2550', borderRadius: 8, padding: 20, marginBottom: 32 }}>
