@@ -38,9 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
+                      </head>
       <style>{`
   *{box-sizing:border-box;}
   body{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;}
