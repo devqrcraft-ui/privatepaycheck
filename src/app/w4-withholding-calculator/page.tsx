@@ -51,7 +51,7 @@ export default function W4Calculator(){
       <div style={{maxWidth:'900px',margin:'0 auto',padding:'32px 16px'}}>
         <div style={{textAlign:'center',marginBottom:'28px'}}>
           <h1 style={{fontSize:'clamp(24px,4vw,42px)',fontWeight:900,margin:'0 0 12px',lineHeight:1.2}}>W-4 Withholding Calculator 2026</h1>
-          <p style={{fontSize:'15px',opacity:0.65,maxWidth:'560px',margin:'0 auto',lineHeight:1.7}}>Find the exact numbers to enter on your W-4 so you get the right refund "” not too big, not too small.</p>
+          <p style={{fontSize:'15px',opacity:0.65,maxWidth:'560px',margin:'0 auto',lineHeight:1.7}}>Find the exact numbers to enter on your W-4 so you get the right refund "— not too big, not too small.</p>
         </div>
 
         <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(201,168,76,0.3)',borderRadius:'16px',padding:'28px',marginBottom:'24px'}}>
@@ -72,7 +72,7 @@ export default function W4Calculator(){
           </div>
 
           <div style={{background:'linear-gradient(135deg,rgba(201,168,76,0.12),rgba(129,140,248,0.08))',border:'1px solid rgba(201,168,76,0.25)',borderRadius:'12px',padding:'24px'}}>
-            <h3 style={{fontSize:'16px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}>рџ“ќ Enter These Numbers on Your W-4</h3>
+            <h3 style={{fontSize:'16px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}>📋 Enter These Numbers on Your W-4</h3>
             <div style={{display:'flex',flexDirection:'column',gap:'12px'}}>
               {[
                 {step:'Step 1',field:'Filing Status',value:filing==='married'?'Married Filing Jointly':'Single or Married Filing Separately',note:'Check the appropriate box'},
@@ -98,16 +98,16 @@ export default function W4Calculator(){
             <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Semi-Monthly</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck24)}</div></div>
             <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Weekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck52)}</div></div>
           </div>
-          <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,margin:'10px 0 0'}}>рџ”’ All calculations in your browser "” data never sent anywhere</p>
+          <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,margin:'10px 0 0'}}>🔒 All calculations in your browser "— data never sent anywhere</p>
         </div>
 
         <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'12px',padding:'24px',marginBottom:'24px'}}>
           <h2 style={{fontSize:'18px',fontWeight:800,marginBottom:'14px'}}>W-4 FAQ 2026</h2>
           {[
             {q:'How often should I update my W-4?',a:'Update whenever your life changes: marriage, divorce, new child, second job, side income, buying a home. Also review after filing taxes if you got a surprise bill or large refund.'},
-            {q:'Big refund = good thing?',a:'Not necessarily. A large refund means you overpaid taxes throughout the year "” essentially giving the IRS an interest-free loan. Adjust withholding to get more in each paycheck instead.'},
-            {q:'What if I owe taxes every year?',a:'Increase withholding in Step 4(c) "” add a fixed dollar amount per paycheck. This calculator shows you exactly how much to add based on your situation.'},
-            {q:'Do I need to submit a new W-4 every year?',a:'No "” your W-4 stays in effect until you change it. But it is good practice to review it annually, especially after tax law changes.'},
+            {q:'Big refund = good thing?',a:'Not necessarily. A large refund means you overpaid taxes throughout the year "— essentially giving the IRS an interest-free loan. Adjust withholding to get more in each paycheck instead.'},
+            {q:'What if I owe taxes every year?',a:'Increase withholding in Step 4(c) "— add a fixed dollar amount per paycheck. This calculator shows you exactly how much to add based on your situation.'},
+            {q:'Do I need to submit a new W-4 every year?',a:'No "— your W-4 stays in effect until you change it. But it is good practice to review it annually, especially after tax law changes.'},
           ].map(item=>(
             <div key={item.q} style={{marginBottom:'14px',paddingBottom:'14px',borderBottom:'1px solid rgba(255,255,255,0.06)'}}>
               <h3 style={{fontSize:'14px',fontWeight:700,marginBottom:'5px'}}>{item.q}</h3>
@@ -118,12 +118,12 @@ export default function W4Calculator(){
 
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
           <Link href="/two-jobs-tax-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
-            <div style={{fontSize:'20px',marginBottom:'6px'}}>рџ’ј</div>
+            <div style={{fontSize:'20px',marginBottom:'6px'}}>💼</div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Two Jobs Tax Calculator</div>
             <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>Fix two-job shortfall в†’</div>
           </Link>
           <Link href="/" style={{display:'block',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
-            <div style={{fontSize:'20px',marginBottom:'6px'}}>рџ’°</div>
+            <div style={{fontSize:'20px',marginBottom:'6px'}}>💰</div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Paycheck Calculator</div>
             <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>See take-home pay в†’</div>
           </Link>
