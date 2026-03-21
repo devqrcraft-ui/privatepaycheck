@@ -52,7 +52,7 @@ export default function NoTaxOnTipsCalculator() {
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>рџ”Ґ NEW 2026 "” No Tax on Tips Law</div>
+          <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>NEW 2026 "” No Tax on Tips Law</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Tips Calculator 2026</h1>
           <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much you save under the proposed No Tax on Tips exemption "” up to $25,000 in tip income tax-free per year.</p>
         </div>
