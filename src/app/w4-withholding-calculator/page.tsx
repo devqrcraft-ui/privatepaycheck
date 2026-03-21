@@ -60,7 +60,7 @@ export default function W4Calculator(){
             <div><label style={lbl}>Annual Salary ($)</label><input type="number" value={salary} onChange={e=>setSalary(e.target.value)} style={inp}/></div>
             <div>
               <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...inp, colorScheme:'dark'}}>
+              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...inp, colorScheme:'dark', background:'#1e293b', color:'#fff'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>
