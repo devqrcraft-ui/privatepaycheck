@@ -41,27 +41,6 @@ export default function Footer() {
         </div>
 
         {/* ── Sister Sites ── */}
-        <div style={{marginBottom:24}}>
-          <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>
-            🔧 Our Free Tax Tools
-          </div>
-          <div className="sister-grid">
-            <a href="https://www.gigwisetax.com" target="_blank" rel="noopener" className="sister-card">
-              <span style={{fontSize:22}}>🚗</span>
-              <div>
-                <div style={{fontSize:13,fontWeight:600,color:"#F5DC80",marginBottom:2}}>GigWiseTax.com</div>
-                <div style={{fontSize:11,color:"#8AAAC8",lineHeight:1.4}}>Self-employment tax calculator for DoorDash, Uber, Etsy & all 1099 gigs. Quarterly deadlines included.</div>
-              </div>
-            </a>
-            <a href="https://www.1099deductions.com" target="_blank" rel="noopener" className="sister-card">
-              <span style={{fontSize:22}}>📋</span>
-              <div>
-                <div style={{fontSize:13,fontWeight:600,color:"#F5DC80",marginBottom:2}}>1099Deductions.com</div>
-                <div style={{fontSize:11,color:"#8AAAC8",lineHeight:1.4}}>Free write-off checklists for every gig job. Find every IRS Schedule C deduction you're missing.</div>
-              </div>
-            </a>
-          </div>
-        </div>
 
         <div style={{borderTop:"1px solid rgba(201,168,76,.18)",paddingTop:18,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8,fontSize:12,color:"#8AAAC8"}}>
           <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
