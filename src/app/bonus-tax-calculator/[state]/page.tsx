@@ -366,7 +366,7 @@ export default async function Page({ params }: Props) {
   const stateNote = STATE_NOTES[state];
   const ssrContent = stateNote ? (
     <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px 32px', fontFamily: 'system-ui,sans-serif' }}>
-      <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#1e293b' }}>
+      <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#e8edf8' }}>
         Bonus Tax in {data.name}: What You Need to Know
       </h2>
       <p style={{ fontSize: 15, lineHeight: 1.8, color: '#475569' }}>{stateNote}</p>
