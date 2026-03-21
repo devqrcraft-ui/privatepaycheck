@@ -15,14 +15,14 @@ export default function Page() {
           {"@type":"Question","name":"How much is $50,000 a year monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$50,000/year = $4,167/month gross. After taxes, monthly take-home is roughly $3,360 (Texas) to $3,225 (California) for a single filer in 2026."}}
         ]
       }) }} />
-      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#666' }}>Home</a> › <a href="/blog" style={{ color: '#666' }}>Blog</a> › $50k After Taxes
+      <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
+        <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $50k After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$50,000 a Year After Taxes in 2026</h1>
-      <p style={{ fontSize: 17, color: '#444', marginBottom: 32 }}>$50k/year gross = <strong>$24.04/hour</strong>. After federal taxes and FICA, take-home pay is <strong>$38,700–$40,320/year</strong> depending on your state.</p>
+      <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>$50k/year gross = <strong>$24.04/hour</strong>. After federal taxes and FICA, take-home pay is <strong>$38,700–$40,320/year</strong> depending on your state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$50k Salary — Annual, Monthly, Biweekly, Hourly</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+        <thead><tr style={{ background: '#1a2550' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Period</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Gross</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Net (Texas)</th>
@@ -34,17 +34,17 @@ export default function Page() {
           ['Biweekly', '$1,923', '$1,550', '$1,488'],
           ['Hourly',   '$24.04', '$19.38', '$18.61'],
         ].map(([p,g,t,c]) => (
-          <tr key={p} style={{ borderBottom: '1px solid #eee' }}>
+          <tr key={p} style={{ borderBottom: '1px solid #1e2d5a' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{p}</td>
-            <td style={{ padding: '10px 14px', color: '#555' }}>{g}</td>
+            <td style={{ padding: '10px 14px', color: '#b0b8d1' }}>{g}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{t}</td>
-            <td style={{ padding: '10px 14px', color: '#888' }}>{c}</td>
+            <td style={{ padding: '10px 14px', color: '#8892aa' }}>{c}</td>
           </tr>
         ))}</tbody>
       </table>
-      <p style={{ color: '#555' }}>Get exact $50k take-home for your specific state → <a href="/" style={{ color: '#1a56db' }}>PrivatePaycheck calculator</a></p>
+      <p style={{ color: '#b0b8d1' }}>Get exact $50k take-home for your specific state → <a href="/" style={{ color: '#1a56db' }}>PrivatePaycheck calculator</a></p>
     
-      <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
+      <div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 8, marginBottom: 24 }}>
           {([
@@ -58,7 +58,7 @@ export default function Page() {
             ['$100k a Year After Taxes','100k-a-year-after-taxes'],
             ['Biweekly Paycheck Guide','biweekly-paycheck-after-taxes'],
           ] as [string,string][]).map(([t,s]) => (
-            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
+            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>

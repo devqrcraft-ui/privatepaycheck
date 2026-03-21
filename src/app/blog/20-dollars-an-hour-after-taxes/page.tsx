@@ -24,24 +24,24 @@ export default function Page() {
           {"@type":"Question","name":"Which state gives the most take-home pay at $20 an hour?","acceptedAnswer":{"@type":"Answer","text":"No-income-tax states — Texas, Florida, Washington, Nevada, Wyoming — give the highest take-home at $20/hr: approximately $34,860/year or $16.76/hr effective."}}
         ]
       }) }} />
-      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#666' }}>Home</a> › <a href="/blog" style={{ color: '#666' }}>Blog</a> › $20 an Hour After Taxes
+      <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
+        <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $20 an Hour After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$20 an Hour After Taxes 2026</h1>
-      <p style={{ fontSize: 17, color: '#444', marginBottom: 32 }}>$20 an hour × 2,080 hours = <strong>$41,600/year gross</strong>. After federal + state taxes, your actual take-home ranges from <strong>$31,200 to $34,860</strong> depending on which state you live in.</p>
+      <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>$20 an hour × 2,080 hours = <strong>$41,600/year gross</strong>. After federal + state taxes, your actual take-home ranges from <strong>$31,200 to $34,860</strong> depending on which state you live in.</p>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay by State at $20/Hour</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+        <thead><tr style={{ background: '#1a2550' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>State</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>State Tax</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Annual Take-Home</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Effective Hourly</th>
         </tr></thead>
         <tbody>{rows.map(([s,t,a,h]) => (
-          <tr key={s} style={{ borderBottom: '1px solid #eee' }}>
+          <tr key={s} style={{ borderBottom: '1px solid #1e2d5a' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{s}</td>
-            <td style={{ padding: '10px 14px', color: '#555' }}>{t}</td>
+            <td style={{ padding: '10px 14px', color: '#b0b8d1' }}>{t}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{a}</td>
             <td style={{ padding: '10px 14px' }}>{h}/hr</td>
           </tr>
@@ -50,7 +50,7 @@ export default function Page() {
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$20/Hour Pay Breakdown (Single Filer, Texas)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+        <thead><tr style={{ background: '#1a2550' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Item</th>
           <th style={{ padding: '10px 14px', textAlign: 'right' }}>Amount</th>
         </tr></thead>
@@ -61,21 +61,21 @@ export default function Page() {
           ['Medicare (1.45%)','−$603'],
           ['Standard Deduction','−$15,000'],
           ['Net Take-Home','$34,860'],
-        ].map(([l,v]) => <tr key={l} style={{ borderBottom:'1px solid #eee' }}>
+        ].map(([l,v]) => <tr key={l} style={{ borderBottom:'1px solid #1e2d5a' }}>
           <td style={{ padding:'10px 14px' }}>{l}</td>
           <td style={{ padding:'10px 14px', textAlign:'right', fontWeight: l==='Net Take-Home'?700:400, color: l==='Net Take-Home'?'#1a56db':'inherit' }}>{v}</td>
         </tr>)}</tbody>
       </table>
 
-      <p style={{ color: '#555', marginBottom: 16 }}>Want the exact number for your state and filing status? Use the <a href="/" style={{ color: '#1a56db' }}>free PrivatePaycheck calculator</a> — 100% private, all math in your browser.</p>
+      <p style={{ color: '#b0b8d1', marginBottom: 16 }}>Want the exact number for your state and filing status? Use the <a href="/" style={{ color: '#1a56db' }}>free PrivatePaycheck calculator</a> — 100% private, all math in your browser.</p>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Frequently Asked Questions</h2>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is $20 an hour a good wage in 2026?</h3>
-      <p style={{ color: '#444', lineHeight: 1.7 }}>$20/hr puts you at $41,600/year gross — above the federal poverty line for a single adult, but tight in high cost-of-living states like California or New York where take-home drops to ~$31,000.</p>
+      <p style={{ color: '#c8d0e7', lineHeight: 1.7 }}>$20/hr puts you at $41,600/year gross — above the federal poverty line for a single adult, but tight in high cost-of-living states like California or New York where take-home drops to ~$31,000.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $20 an hour biweekly after taxes?</h3>
-      <p style={{ color: '#444', lineHeight: 1.7 }}>$20 × 80 hours = $1,600 gross per biweek. After taxes in a no-tax state, approximately $1,341 net per paycheck.</p>
+      <p style={{ color: '#c8d0e7', lineHeight: 1.7 }}>$20 × 80 hours = $1,600 gross per biweek. After taxes in a no-tax state, approximately $1,341 net per paycheck.</p>
     
-      <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
+      <div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 8, marginBottom: 24 }}>
           {([
@@ -89,7 +89,7 @@ export default function Page() {
             ['$100k a Year After Taxes','100k-a-year-after-taxes'],
             ['Biweekly Paycheck Guide','biweekly-paycheck-after-taxes'],
           ] as [string,string][]).map(([t,s]) => (
-            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
+            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
