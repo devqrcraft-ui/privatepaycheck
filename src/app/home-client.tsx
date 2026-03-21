@@ -83,7 +83,7 @@ const CSS = `
   .t-l{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:3px;}
   .pp-section{padding:36px 24px;}
   .pp-section-alt{background:linear-gradient(155deg,#08142A 0%,#091A32 100%);}
-  .s-head{text-align:center;margin-bottom:48px;}
+  .s-head{text-align:center;margin-bottom:16px;}
   .s-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#F5C842;border-bottom:2px solid rgba(245,200,66,.40);padding-bottom:5px;margin-bottom:16px;}
   .pp-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.15;}
   .pp-section h2 em{color:#FFD700;font-style:normal;}
