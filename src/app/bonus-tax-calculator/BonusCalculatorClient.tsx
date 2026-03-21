@@ -60,8 +60,8 @@ const NAV_STYLE = { padding: '14px 24px', display: 'flex', alignItems: 'center',
 const BG = { minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' };
 const CARD = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '24px' };
 const LABEL = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' as const, marginBottom: '8px' };
-const INPUT_S = { width: '100%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: 'white', fontSize: '16px', boxSizing: 'border-box' as const, outline: 'none' };
-const SELECT_S = { ...INPUT_S, cursor: 'pointer' };
+const INPUT_S = { width: '100%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: 'white', fontSize: '16px', boxSizing: 'border-box' as const, outline: 'none' , colorScheme: 'dark' as const };
+const SELECT_S = { ...INPUT_S, cursor: 'pointer' , colorScheme: 'dark' as const };
 
 export default function BonusTaxCalculator() {
   const [bonus, setBonus]   = useState(10000);
