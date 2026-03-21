@@ -105,7 +105,7 @@ export default function TipsCalculator() {
 
           <div style={{ marginBottom: '24px' }}>
             <label style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Your Occupation</label>
-            <select value={job} onChange={e => setJob(e.target.value)} style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '14px 16px', color: job ? 'white' : 'rgba(255,255,255,0.4)', fontSize: '15px', outline: 'none', cursor: 'pointer' }}>
+            <select value={job} onChange={e => setJob(e.target.value)} style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '14px 16px', color: job ? 'white' : 'rgba(255,255,255,0.4)', fontSize: '15px', outline: 'none', cursor: 'pointer', colorScheme: 'dark' }}>
               <option value="" style={{ background: '#1a1040' }}>Select your occupation...</option>
               {JOBS.map(j => <option key={j} value={j} style={{ background: '#1a1040' }}>{j}</option>)}
             </select>
