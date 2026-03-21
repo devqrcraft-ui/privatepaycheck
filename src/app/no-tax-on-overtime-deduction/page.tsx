@@ -1,5 +1,5 @@
 'use client';
-﻿'use client';
+'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
@@ -91,18 +91,18 @@ export default function NoTaxOnOvertimePage() {
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
-          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>⚠️ ️ Legislative Status</h3>
+          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>  Legislative Status</h3>
           <p style={{ fontSize: '13px', opacity: 0.8, lineHeight: 1.7, margin: 0 }}>The One Big Beautiful Bill was signed into law in 2025. It allows eligible W-2 employees to deduct up to $12,500 of overtime pay annually from federal taxable income for tax years 2025–2028. The deduction applies to the overtime premium (the extra 0.5× above regular pay). Self-employed and 1099 workers do not qualify.</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-tips-calculator" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}>🍽️</div>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Tips</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate tip savings в†’</div>
           </Link>
           <Link href="/overtime-calculator" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}>⏰</div>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>Overtime Calculator</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Current OT pay в†’</div>
           </Link>

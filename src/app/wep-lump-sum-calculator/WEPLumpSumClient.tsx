@@ -106,7 +106,7 @@ export default function WEPLumpSumCalculator() {
         <Link href="/" style={{ color:'#94a3b8', textDecoration:'none', fontSize:14 }}>← Back to all calculators</Link>
 
         <div style={{ display:'inline-block', background:'rgba(251,191,36,0.1)', border:'1px solid rgba(251,191,36,0.3)', borderRadius:20, padding:'5px 14px', fontSize:12, color:'#fbbf24', marginTop:12, marginBottom:8 }}>
-          ⚡ SS Fairness Act 2025 — WEP/GPO fully repealed
+           SS Fairness Act 2025 — WEP/GPO fully repealed
         </div>
 
         <h1 style={{ fontSize:28, fontWeight:800, margin:'8px 0', lineHeight:1.2 }}>
@@ -205,7 +205,7 @@ export default function WEPLumpSumCalculator() {
         {r.extraTax > 0 && (
           <div style={{ background: r.electionBetter ? 'rgba(34,197,94,0.1)' : 'rgba(255,255,255,0.04)', border:`1px solid ${r.electionBetter ? 'rgba(34,197,94,0.3)' : 'rgba(255,255,255,.1)'}`, borderRadius:16, padding:20, marginBottom:16 }}>
             <div style={{ fontSize:14, fontWeight:700, color: r.electionBetter ? '#4ade80' : '#cbd5e1', marginBottom:8 }}>
-              {r.electionBetter ? '✓ Lump-Sum Election could save you money' : 'Lump-Sum Election — check with your tax preparer'}
+              {r.electionBetter ? ' Lump-Sum Election could save you money' : 'Lump-Sum Election — check with your tax preparer'}
             </div>
             <p style={{ fontSize:13, color:'#94a3b8', margin:'0 0 10px', lineHeight:1.6 }}>
               IRS allows you to use the <strong style={{ color:'#cbd5e1' }}>lump-sum election</strong> on Form 1040 — treating the payment as if received in prior years.
@@ -224,7 +224,7 @@ export default function WEPLumpSumCalculator() {
           <button onClick={()=>setShowIRMAA(!showIRMAA)}
             style={{ background:'none', border:'none', color:'#fbbf24', fontSize:14, fontWeight:700, cursor:'pointer', padding:0, display:'flex', alignItems:'center', gap:8 }}>
             <span>{showIRMAA ? '▼' : '▶'}</span>
-            ⚠️ Hidden risk: Will this raise your 2027 Medicare premiums? (IRMAA)
+             Hidden risk: Will this raise your 2027 Medicare premiums? (IRMAA)
           </button>
           {showIRMAA && (
             <div style={{ marginTop:14 }}>
@@ -252,7 +252,7 @@ export default function WEPLumpSumCalculator() {
               )}
               {!r.irmaaTriggered && (
                 <div style={{ marginTop:12, background:'rgba(34,197,94,0.1)', borderRadius:8, padding:'10px 14px', fontSize:13, color:'#86efac' }}>
-                  ✓ Your lump-sum did not push you into a higher IRMAA bracket. Medicare premiums unaffected.
+                   Your lump-sum did not push you into a higher IRMAA bracket. Medicare premiums unaffected.
                 </div>
               )}
             </div>

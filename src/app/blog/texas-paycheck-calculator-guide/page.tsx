@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -68,7 +68,7 @@ export default function Post() {
               { label:'Federal Income Tax (Single)', value:'− $10,294', color:'#f87171' },
               { label:'Social Security (6.2%)', value:'− $4,650', color:'#f87171' },
               { label:'Medicare (1.45%)', value:'− $1,088', color:'#f87171' },
-              { label:'Texas State Tax', value:'$0 ✅', color:'#4ade80' },
+              { label:'Texas State Tax', value:'$0 ', color:'#4ade80' },
               { label:'Estimated Take-Home', value:'~$58,968/yr', color:'#4ade80' },
             ].map(r => (
               <div key={r.label} style={{ display:'flex', justifyContent:'space-between', padding:'8px 0', borderBottom:'1px solid rgba(255,255,255,0.06)', fontSize:'14px' }}>
@@ -110,7 +110,7 @@ export default function Post() {
 
         {/* CTA */}
         <div style={{ margin:'40px 0', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
-          <div style={{ fontSize:'24px', marginBottom:'8px' }}>💰</div>
+          <div style={{ fontSize:'24px', marginBottom:'8px' }}></div>
           <div style={{ fontWeight:800, fontSize:'18px', marginBottom:'8px' }}>Calculate Your Texas Paycheck</div>
           <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Enter your salary and see exact take-home pay — free, instant, private.</p>
           <Link href="/texas-paycheck-calculator" style={{ display:'inline-block', background:'#4ade80', color:'#0f0c29', fontWeight:800, padding:'12px 28px', borderRadius:'10px', textDecoration:'none', fontSize:'15px' }}>

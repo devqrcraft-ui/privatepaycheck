@@ -82,7 +82,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
               : 'Calculate exactly how much of your bonus you keep in ' + stateName + ' after federal taxes, ' + stateTax + '% state tax, and FICA. No data stored.'}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {['✓ Federal + State Taxes', '✓ All 50 States', '✓ No Registration', '✓ 2026 Tax Rules', '✓ 100% Private'].map(tag => (
+            {[' Federal + State Taxes', ' All 50 States', ' No Registration', ' 2026 Tax Rules', ' 100% Private'].map(tag => (
               <span key={tag} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '5px 14px', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>
                 {tag}
               </span>
@@ -191,9 +191,9 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
         {/* Feature Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '16px', marginBottom: '48px' }}>
           {[
-            { icon: '🔒', title: '100% Private', desc: 'All calculations happen in your browser. We never see your income or results.' },
-            { icon: '🏛️', title: 'IRS Compliant 2026', desc: 'Updated with official 2026 federal tax brackets, FICA rates, and state income tax rates.' },
-            { icon: '⚡', title: 'Instant Results', desc: 'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare.' },
+            { icon: '', title: '100% Private', desc: 'All calculations happen in your browser. We never see your income or results.' },
+            { icon: '', title: 'IRS Compliant 2026', desc: 'Updated with official 2026 federal tax brackets, FICA rates, and state income tax rates.' },
+            { icon: '', title: 'Instant Results', desc: 'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare.' },
           ].map(f => (
             <div key={f.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '14px', padding: '22px' }}>
               <div style={{ fontSize: '28px', marginBottom: '10px' }}>{f.icon}</div>

@@ -92,7 +92,7 @@ export default function BlogIndex() {
       <p style={{ fontSize: 17, color: '#444', marginBottom: 40 }}>Free guides on take-home pay, tax brackets, and paycheck calculators for every state.</p>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>💰 Salary & Hourly Take-Home Pay</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> Salary & Hourly Take-Home Pay</h2>
         <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Exact after-tax income for common wages — every state included.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {salaryPosts.map(p => (
@@ -105,7 +105,7 @@ export default function BlogIndex() {
       </section>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>📋 Tax Guides & Tips</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> Tax Guides & Tips</h2>
         <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Understand your withholding, deductions, and how to keep more.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {taxPosts.map(p => (
@@ -118,7 +118,7 @@ export default function BlogIndex() {
       </section>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>👩‍⚕️ Profession Guides</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>‍ Profession Guides</h2>
         <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Take-home pay breakdowns for specific careers.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {professionPosts.map(p => (
@@ -131,7 +131,7 @@ export default function BlogIndex() {
       </section>
 
       <section style={{ marginBottom: 48 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>🗺️ State Tax Guides</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> State Tax Guides</h2>
         <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>State-specific paycheck and tax guides.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {statePosts.map(p => (
@@ -144,7 +144,7 @@ export default function BlogIndex() {
       </section>
 
       <section>
-        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>🧮 State Paycheck Calculators</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}> State Paycheck Calculators</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: 8 }}>
           {[
             ['Alabama','alabama'],['Alaska','alaska'],['Arizona','arizona'],['Arkansas','arkansas'],

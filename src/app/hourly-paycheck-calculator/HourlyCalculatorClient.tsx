@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
@@ -137,7 +137,7 @@ export default function HourlyPaycheckCalculator() {
         {/* HERO */}
         <div style={{ textAlign:'center', marginBottom:'28px' }}>
           <div style={{ display:'inline-block', background:'rgba(74,222,128,0.1)', border:'1px solid rgba(74,222,128,0.3)', borderRadius:'20px', padding:'6px 16px', fontSize:'13px', marginBottom:'12px', color:'#4ade80' }}>
-            🔒 Your data NEVER leaves your browser
+             Your data NEVER leaves your browser
           </div>
           <h1 style={{ fontSize:'clamp(26px,5vw,52px)', fontWeight:900, margin:'0 0 12px', textTransform:'uppercase', letterSpacing:'-1px', lineHeight:1.15 }}>
             Hourly Paycheck<br/><span style={{ color:'#FFFFFF' }}>Calculator 2026</span>
@@ -246,7 +246,7 @@ export default function HourlyPaycheckCalculator() {
               </div>
             </div>
           </div>
-          <p style={{ textAlign:'center', fontSize:'11px', opacity:0.3, margin:'12px 0 0' }}>🔒 All calculations happen in your browser — your data is never sent anywhere</p>
+          <p style={{ textAlign:'center', fontSize:'11px', opacity:0.3, margin:'12px 0 0' }}> All calculations happen in your browser — your data is never sent anywhere</p>
         </div>
 
         {/* QUICK REFERENCE TABLE */}
@@ -317,22 +317,22 @@ export default function HourlyPaycheckCalculator() {
           <h2 style={{ fontSize:'16px', fontWeight:800, marginBottom:'16px', opacity:0.7 }}>More Free Calculators</h2>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))', gap:'12px' }}>
             <Link href="/" style={{ display:'block', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>💰</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Salary Paycheck Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Annual salary → take-home pay →</div>
             </Link>
             <Link href="/overtime-calculator" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>⏰</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Overtime Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Time-and-a-half & double time →</div>
             </Link>
             <Link href="/unemployment-calculator" style={{ display:'block', background:'rgba(201,168,76,0.08)', border:'1px solid rgba(201,168,76,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>📋</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Unemployment Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Estimate weekly benefits →</div>
             </Link>
             <Link href="/minimum-wage" style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>💵</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Minimum Wage by State</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>2026 rates all 50 states →</div>
             </Link>

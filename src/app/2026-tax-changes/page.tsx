@@ -80,7 +80,7 @@ export default function TaxChanges2026Page() {
         </p>
 
         <div className="law-banner">
-          <div className="law-icon">📜</div>
+          <div className="law-icon"></div>
           <div>
             <div className="law-title">One Big Beautiful Bill — Signed into Law 2025</div>
             <div className="law-desc">
@@ -96,7 +96,7 @@ export default function TaxChanges2026Page() {
 
           <div className="change-card">
             <div className="change-card-head">
-              <div className="change-icon">⏱️</div>
+              <div className="change-icon"></div>
               <div className="change-title">No Tax on Overtime</div>
               <div className="change-save">Save up to $2,750–$4,625/year</div>
               <div className="change-desc">W-2 employees can deduct up to $12,500 of overtime pay annually from federal taxable income.</div>
@@ -113,7 +113,7 @@ export default function TaxChanges2026Page() {
 
           <div className="change-card">
             <div className="change-card-head">
-              <div className="change-icon">💵</div>
+              <div className="change-icon"></div>
               <div className="change-title">No Tax on Tips</div>
               <div className="change-save">Save up to $5,500/year</div>
               <div className="change-desc">Tipped workers in qualifying occupations can deduct up to $25,000 of tip income from federal taxable income.</div>
@@ -130,7 +130,7 @@ export default function TaxChanges2026Page() {
 
           <div className="change-card">
             <div className="change-card-head">
-              <div className="change-icon">👴</div>
+              <div className="change-icon"></div>
               <div className="change-title">Senior $6,000 Deduction</div>
               <div className="change-save">Save up to $1,320/year</div>
               <div className="change-desc">Taxpayers age 65+ receive an additional $6,000 above-the-line deduction on top of the standard deduction.</div>
@@ -147,7 +147,7 @@ export default function TaxChanges2026Page() {
 
           <div className="change-card">
             <div className="change-card-head">
-              <div className="change-icon">👶</div>
+              <div className="change-icon"></div>
               <div className="change-title">Trump Account</div>
               <div className="change-save">$38,000+ projected at age 18</div>
               <div className="change-desc">Government-seeded savings account for children under 8. $1,000 federal seed plus up to $2,500/year employer contributions.</div>
@@ -169,7 +169,7 @@ export default function TaxChanges2026Page() {
           <h2>Real Savings Scenarios by Job</h2>
           <div className="scenario-grid">
             <div className="scenario">
-              <div className="scenario-job">🏭 Factory Worker</div>
+              <div className="scenario-job"> Factory Worker</div>
               <div className="scenario-row"><span className="scenario-row-l">Regular salary</span><span className="scenario-row-v">$52,000</span></div>
               <div className="scenario-row"><span className="scenario-row-l">Annual overtime</span><span className="scenario-row-v">$9,800</span></div>
               <div className="scenario-row"><span className="scenario-row-l">OT deduction</span><span className="scenario-row-v">$9,800</span></div>
@@ -177,7 +177,7 @@ export default function TaxChanges2026Page() {
               <div className="scenario-row"><span className="scenario-row-l">Annual savings</span><span className="scenario-row-v sav">$2,156</span></div>
             </div>
             <div className="scenario">
-              <div className="scenario-job">🍽️ Restaurant Server</div>
+              <div className="scenario-job"> Restaurant Server</div>
               <div className="scenario-row"><span className="scenario-row-l">Base wages</span><span className="scenario-row-v">$28,000</span></div>
               <div className="scenario-row"><span className="scenario-row-l">Annual tips</span><span className="scenario-row-v">$22,000</span></div>
               <div className="scenario-row"><span className="scenario-row-l">Tip deduction</span><span className="scenario-row-v">$22,000</span></div>
@@ -185,7 +185,7 @@ export default function TaxChanges2026Page() {
               <div className="scenario-row"><span className="scenario-row-l">Annual savings</span><span className="scenario-row-v sav">$2,640</span></div>
             </div>
             <div className="scenario">
-              <div className="scenario-job">👴 Retired Worker 65+</div>
+              <div className="scenario-job"> Retired Worker 65+</div>
               <div className="scenario-row"><span className="scenario-row-l">Income</span><span className="scenario-row-v">$58,000</span></div>
               <div className="scenario-row"><span className="scenario-row-l">Age</span><span className="scenario-row-v">67</span></div>
               <div className="scenario-row"><span className="scenario-row-l">Extra deduction</span><span className="scenario-row-v">$6,000</span></div>
@@ -211,29 +211,29 @@ export default function TaxChanges2026Page() {
             <tbody>
               <tr>
                 <td>No Tax on Overtime</td>
-                <td className="td-yes">✓ Yes</td>
-                <td className="td-no">✗ No</td>
+                <td className="td-yes"> Yes</td>
+                <td className="td-no"> No</td>
                 <td>$12,500/yr</td>
                 <td className="td-no">No</td>
               </tr>
               <tr>
                 <td>No Tax on Tips</td>
-                <td className="td-yes">✓ Yes (tipped)</td>
-                <td className="td-yes">✓ Yes (tipped)</td>
+                <td className="td-yes"> Yes (tipped)</td>
+                <td className="td-yes"> Yes (tipped)</td>
                 <td>$25,000/yr</td>
                 <td className="td-no">No</td>
               </tr>
               <tr>
                 <td>Senior Deduction</td>
-                <td className="td-yes">✓ Yes (65+)</td>
-                <td className="td-yes">✓ Yes (65+)</td>
+                <td className="td-yes"> Yes (65+)</td>
+                <td className="td-yes"> Yes (65+)</td>
                 <td>$6,000/yr</td>
                 <td className="td-no">No</td>
               </tr>
               <tr>
                 <td>Trump Account</td>
-                <td className="td-yes">✓ Yes</td>
-                <td className="td-yes">✓ Yes</td>
+                <td className="td-yes"> Yes</td>
+                <td className="td-yes"> Yes</td>
                 <td>$2,500/yr + seed</td>
                 <td className="td-no">N/A</td>
               </tr>
@@ -255,42 +255,42 @@ export default function TaxChanges2026Page() {
         <h2 style={{fontSize:'20px',fontWeight:700,color:'#fff',marginBottom:'16px'}}>Calculate Your 2026 Savings</h2>
         <div className="tools-grid">
           <Link href="/no-tax-on-overtime-deduction" className="tool-card">
-            <div className="tool-emoji">⏱️</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">Overtime Calculator</div>
             <div className="tool-desc">Save up to $2,750+/yr</div>
           </Link>
           <Link href="/no-tax-on-tips-calculator" className="tool-card">
-            <div className="tool-emoji">💵</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">Tips Calculator</div>
             <div className="tool-desc">Save up to $5,500+/yr</div>
           </Link>
           <Link href="/senior-deduction-calculator" className="tool-card">
-            <div className="tool-emoji">👴</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">Senior Deduction</div>
             <div className="tool-desc">Extra $6,000 at 65+</div>
           </Link>
           <Link href="/trump-account-calculator" className="tool-card">
-            <div className="tool-emoji">👶</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">Trump Account</div>
             <div className="tool-desc">$38,000+ at age 18</div>
           </Link>
           <Link href="/" className="tool-card">
-            <div className="tool-emoji">💰</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">Full Paycheck</div>
             <div className="tool-desc">All deductions included</div>
           </Link>
           <Link href="/federal-paycheck-calculator" className="tool-card">
-            <div className="tool-emoji">🏛️</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">Federal Calculator</div>
             <div className="tool-desc">Federal only breakdown</div>
           </Link>
           <Link href="/1099-paycheck-calculator" className="tool-card">
-            <div className="tool-emoji">📋</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">1099 Calculator</div>
             <div className="tool-desc">SE tax + QBI</div>
           </Link>
           <Link href="/how-we-calculate" className="tool-card">
-            <div className="tool-emoji">📖</div>
+            <div className="tool-emoji"></div>
             <div className="tool-name">How We Calculate</div>
             <div className="tool-desc">Full methodology</div>
           </Link>

@@ -68,10 +68,10 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '12px', marginBottom: '16px' }}>
             {[
-              { label: 'Every 2 Weeks', value: fmt(result.biweekly), color: '#818cf8', icon: '📅' },
-              { label: 'Max Duration', value: `${maxWeeks} weeks`, color: '#fbbf24', icon: '⏱️' },
-              { label: `~${result.months} Months`, value: 'of benefits', color: '#f472b6', icon: '📆' },
-              { label: 'Max Total', value: fmt(result.total), color: '#4ade80', icon: '💰' },
+              { label: 'Every 2 Weeks', value: fmt(result.biweekly), color: '#818cf8', icon: '' },
+              { label: 'Max Duration', value: `${maxWeeks} weeks`, color: '#fbbf24', icon: '' },
+              { label: `~${result.months} Months`, value: 'of benefits', color: '#f472b6', icon: '' },
+              { label: 'Max Total', value: fmt(result.total), color: '#4ade80', icon: '' },
             ].map(s => (
               <div key={s.label} style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
                 <div style={{ fontSize: '18px', marginBottom: '4px' }}>{s.icon}</div>
@@ -81,7 +81,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
             ))}
           </div>
           <div style={{ background: 'rgba(0,0,0,0.15)', borderRadius: '10px', padding: '12px 16px' }}>
-            <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '6px' }}>📊 {stateName} Benefit Range</div>
+            <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '6px' }}> {stateName} Benefit Range</div>
             {[
               { label: 'Minimum weekly', value: fmt(minWeekly), color: '#fbbf24' },
               { label: 'Maximum weekly', value: fmt(maxWeekly), color: '#4ade80' },
@@ -99,12 +99,12 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
         </div>
       ) : (
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '24px', textAlign: 'center', color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
-          <div style={{ fontSize: '32px', marginBottom: '8px' }}>📋</div>
+          <div style={{ fontSize: '32px', marginBottom: '8px' }}></div>
           Enter your quarterly earnings above to estimate your weekly benefit
           <div style={{ fontSize: '12px', opacity: 0.5, marginTop: '8px' }}>{stateName} pays up to {fmt(maxWeekly)}/week for {maxWeeks} weeks</div>
         </div>
       )}
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}>🔒 All calculations happen in your browser · No data stored</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}> All calculations happen in your browser · No data stored</p>
     </div>
   );
 }

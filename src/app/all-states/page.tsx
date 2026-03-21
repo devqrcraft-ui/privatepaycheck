@@ -1,6 +1,6 @@
 
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [{ '@type': 'Question', name: "Which state has the highest income tax in 2026?", acceptedAnswer: { '@type': 'Answer', text: "California has the highest state income tax at up to 13.3% for income over $1 million. Hawaii (11%), New Jersey (10.75%), Oregon (9.9%), and Minnesota (9.85%) round out the top five highest state tax rates." } },{ '@type': 'Question', name: "Which states have no income tax in 2026?", acceptedAnswer: { '@type': 'Answer', text: "Nine states have no individual income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Workers in these states only pay federal income tax and FICA." } },{ '@type': 'Question', name: "How do state income taxes affect my paycheck?", acceptedAnswer: { '@type': 'Answer', text: "State income taxes reduce your take-home pay on top of federal taxes. On a $75,000 salary, living in California vs Texas means roughly $6,000-$9,000 less take-home per year due to California state income tax." } }] };
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
@@ -38,13 +38,13 @@ export default function AllStatesPage() {
 
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <a href="/" style={{ display: 'inline-block', padding: '14px 36px', borderRadius: '10px', background: 'linear-gradient(135deg,#6366f1,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '16px', textDecoration: 'none', cursor: 'pointer' }}>
-            ⚡ Calculate My Paycheck →
+             Calculate My Paycheck →
           </a>
         </div>
         {/* NO TAX STATES */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
           <div style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: 10, padding: '20px' }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: '#34d399', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 10 }}>✅ No State Income Tax</div>
+            <div style={{ fontSize: 13, fontWeight: 800, color: '#34d399', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 10 }}> No State Income Tax</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 12 }}>
               {['Alaska','Florida','Nevada','New Hampshire','South Dakota','Tennessee','Texas','Washington','Wyoming'].map(s=>(
                 <div key={s} style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', display: 'flex', justifyContent: 'space-between' }}>
@@ -57,7 +57,7 @@ export default function AllStatesPage() {
             </p>
           </div>
           <div style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: 10, padding: '20px' }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: '#f87171', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 10 }}>⚠️ High-Tax States</div>
+            <div style={{ fontSize: 13, fontWeight: 800, color: '#f87171', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 10 }}> High-Tax States</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 12 }}>
               {[['California','up to 13.3%'],['Hawaii','up to 11%'],['New Jersey','up to 10.75%'],['Oregon','up to 9.9%'],['Minnesota','up to 9.85%'],['New York','up to 10.9%'],['Vermont','up to 8.75%'],['Illinois','4.95% flat']].map(([s,r])=>(
                 <div key={s} style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', display: 'flex', justifyContent: 'space-between' }}>

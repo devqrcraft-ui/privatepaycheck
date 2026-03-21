@@ -1,5 +1,5 @@
 'use client';
-﻿'use client';
+'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
@@ -72,7 +72,7 @@ export default function W4Calculator(){
           </div>
 
           <div style={{background:'linear-gradient(135deg,rgba(201,168,76,0.12),rgba(129,140,248,0.08))',border:'1px solid rgba(201,168,76,0.25)',borderRadius:'12px',padding:'24px'}}>
-            <h3 style={{fontSize:'16px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}>📋 Enter These Numbers on Your W-4</h3>
+            <h3 style={{fontSize:'16px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}> Enter These Numbers on Your W-4</h3>
             <div style={{display:'flex',flexDirection:'column',gap:'12px'}}>
               {[
                 {step:'Step 1',field:'Filing Status',value:filing==='married'?'Married Filing Jointly':'Single or Married Filing Separately',note:'Check the appropriate box'},
@@ -98,7 +98,7 @@ export default function W4Calculator(){
             <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Semi-Monthly</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck24)}</div></div>
             <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Weekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck52)}</div></div>
           </div>
-          <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,margin:'10px 0 0'}}>🔒 All calculations in your browser "— data never sent anywhere</p>
+          <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,margin:'10px 0 0'}}> All calculations in your browser "— data never sent anywhere</p>
         </div>
 
         <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'12px',padding:'24px',marginBottom:'24px'}}>
@@ -118,12 +118,12 @@ export default function W4Calculator(){
 
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
           <Link href="/two-jobs-tax-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
-            <div style={{fontSize:'20px',marginBottom:'6px'}}>💼</div>
+            <div style={{fontSize:'20px',marginBottom:'6px'}}></div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Two Jobs Tax Calculator</div>
             <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>Fix two-job shortfall в†’</div>
           </Link>
           <Link href="/" style={{display:'block',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
-            <div style={{fontSize:'20px',marginBottom:'6px'}}>💰</div>
+            <div style={{fontSize:'20px',marginBottom:'6px'}}></div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Paycheck Calculator</div>
             <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>See take-home pay в†’</div>
           </Link>

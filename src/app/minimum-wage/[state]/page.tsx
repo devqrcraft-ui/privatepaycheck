@@ -144,7 +144,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           {aboveFederal && (
             <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#4ade80' }}>
-              ✅ Above federal minimum wage of ${FEDERAL_MIN_WAGE}
+               Above federal minimum wage of ${FEDERAL_MIN_WAGE}
             </div>
           )}
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px' }}>
@@ -154,7 +154,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
             ${mw.hourly}/hr
           </div>
           {mw.notes && <p style={{ fontSize: '14px', opacity: 0.6, maxWidth: '500px', margin: '12px auto 0', lineHeight: 1.6 }}>{mw.notes}</p>}
-          {mw.scheduled && <p style={{ fontSize: '13px', color: '#fbbf24', marginTop: '8px' }}>📅 {mw.scheduled}</p>}
+          {mw.scheduled && <p style={{ fontSize: '13px', color: '#fbbf24', marginTop: '8px' }}> {mw.scheduled}</p>}
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '14px', marginBottom: '32px' }}>
@@ -174,7 +174,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
 
         {mw.tipped !== mw.hourly && mw.tipped && (
           <div style={{ background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '20px', marginBottom: '24px' }}>
-            <h3 style={{ fontWeight: 700, marginBottom: '8px', color: '#fbbf24' }}>💁 Tipped Minimum Wage: ${mw.tipped}/hour</h3>
+            <h3 style={{ fontWeight: 700, marginBottom: '8px', color: '#fbbf24' }}> Tipped Minimum Wage: ${mw.tipped}/hour</h3>
             <p style={{ fontSize: '13px', opacity: 0.7, lineHeight: 1.6, margin: 0 }}>
               Tipped employees in {st.name} can be paid ${mw.tipped}/hour, but total earnings including tips must reach ${mw.hourly}/hour. If tips don't cover the difference, the employer must make up the gap.
             </p>
@@ -206,17 +206,17 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '12px' }}>
             <Link href={`/${state}-paycheck-calculator`} style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
-              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💰</div>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Paycheck Calculator</div>
               <div style={{ fontSize: '12px', opacity: 0.55 }}>Take-home pay after all taxes →</div>
             </Link>
             <Link href={`/overtime-calculator/${state}`} style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
-              <div style={{ fontSize: '20px', marginBottom: '8px' }}>⏰</div>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Overtime Calculator</div>
               <div style={{ fontSize: '12px', opacity: 0.55 }}>Calculate overtime pay →</div>
             </Link>
             <Link href={`/unemployment-calculator/${state}`} style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
-              <div style={{ fontSize: '20px', marginBottom: '8px' }}>📋</div>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Unemployment Calculator</div>
               <div style={{ fontSize: '12px', opacity: 0.55 }}>Estimate weekly benefits →</div>
             </Link>
@@ -232,11 +232,11 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
       <div style={{ margin:'40px 0 0', padding:'28px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'16px' }}>
         <h3 style={{ margin:'0 0 16px', fontSize:'16px', fontWeight:700, color:'#e2e8f0' }}>Related Calculators</h3>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))', gap:'10px' }}>
-                <a href={`/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>🧮</span><span>Paycheck Calculator</span></a>
-                <a href={`/hourly-paycheck-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>⏱️</span><span>Hourly Paycheck</span></a>
-                <a href={`/overtime-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>💼</span><span>Overtime Pay</span></a>
-                <a href={`/bonus-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>🎁</span><span>Bonus Tax</span></a>
-                <a href={`/unemployment-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span>📋</span><span>Unemployment</span></a>
+                <a href={`/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Paycheck Calculator</span></a>
+                <a href={`/hourly-paycheck-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Hourly Paycheck</span></a>
+                <a href={`/overtime-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Overtime Pay</span></a>
+                <a href={`/bonus-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Bonus Tax</span></a>
+                <a href={`/unemployment-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Unemployment</span></a>
         </div>
       </div>
 </footer>

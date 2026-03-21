@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function Post() {
         <div style={{ display:'flex', flexDirection:'column', gap:'10px', margin:'16px 0 32px' }}>
           {NO_TAX_STATES.map(s => (
             <div key={s.slug} style={{ background:'rgba(74,222,128,0.06)', border:'1px solid rgba(74,222,128,0.15)', borderRadius:'10px', padding:'14px 16px', display:'flex', gap:'12px', alignItems:'flex-start' }}>
-              <span style={{ color:'#4ade80', fontWeight:800, fontSize:'16px', minWidth:'20px' }}>✓</span>
+              <span style={{ color:'#4ade80', fontWeight:800, fontSize:'16px', minWidth:'20px' }}></span>
               <div>
                 <Link href={`/${s.slug}-paycheck-calculator`} style={{ color:'#4ade80', fontWeight:700, textDecoration:'none', fontSize:'15px' }}>{s.name}</Link>
                 <p style={{ fontSize:'13px', opacity:0.65, margin:'4px 0 0', lineHeight:1.6 }}>{s.note}</p>

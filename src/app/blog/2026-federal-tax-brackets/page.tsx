@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: '2026 Federal Income Tax Brackets — Complete Guide',

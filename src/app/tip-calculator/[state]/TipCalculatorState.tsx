@@ -62,7 +62,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
 
         <div style={{ marginBottom: '36px' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(244,114,182,0.08)', border: '1px solid rgba(244,114,182,0.25)', borderRadius: '20px', padding: '5px 14px', fontSize: '12px', marginBottom: '16px', color: '#f472b6' }}>
-            <span>🔥</span><span>NEW 2025 LAW — Up to $25,000 in tips are now federal tax-free</span>
+            <span></span><span>NEW 2025 LAW — Up to $25,000 in tips are now federal tax-free</span>
           </div>
           <h1 style={{ fontSize: 'clamp(26px,4.5vw,46px)', fontWeight: 900, margin: '0 0 14px', lineHeight: 1.1 }}>
             {stateName} Tip Tax
@@ -74,7 +74,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
               : 'In ' + stateName + ', the No Tax on Tips law removes federal tax on up to $25,000 of tips. You also save on ' + stateTax + '% state income tax.'}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {['✓ No Tax on Tips Law', '✓ Federal + State', '✓ 2026 Rules', '✓ 100% Private'].map(tag => (
+            {[' No Tax on Tips Law', ' Federal + State', ' 2026 Rules', ' 100% Private'].map(tag => (
               <span key={tag} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '5px 14px', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>{tag}</span>
             ))}
           </div>
@@ -83,10 +83,10 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
         {/* Law Stats */}
         <div style={{ background: 'rgba(244,114,182,0.06)', border: '1px solid rgba(244,114,182,0.18)', borderRadius: '14px', padding: '20px', marginBottom: '28px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '16px' }}>
           {[
-            { label: 'Max Tip Deduction', value: '$25,000', icon: '💰' },
-            { label: 'Effective From', value: 'Jan 1, 2025', icon: '📅' },
-            { label: 'Income Phase-Out', value: '$150,000', icon: '📊' },
-            { label: 'Your State Tax', value: noStateTax ? '0%' : stateTax + '%', icon: '🏛️' },
+            { label: 'Max Tip Deduction', value: '$25,000', icon: '' },
+            { label: 'Effective From', value: 'Jan 1, 2025', icon: '' },
+            { label: 'Income Phase-Out', value: '$150,000', icon: '' },
+            { label: 'Your State Tax', value: noStateTax ? '0%' : stateTax + '%', icon: '' },
           ].map(s => (
             <div key={s.label} style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '22px', marginBottom: '4px' }}>{s.icon}</div>

@@ -77,7 +77,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
               : 'Calculate your exact hourly take-home pay in ' + stateName + ' after federal taxes, ' + stateTax + '% state tax, and FICA. Your data never leaves your browser.'}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {['✓ Federal + State Taxes', '✓ FICA Included', '✓ All Pay Frequencies', '✓ 100% Private'].map(tag => (
+            {[' Federal + State Taxes', ' FICA Included', ' All Pay Frequencies', ' 100% Private'].map(tag => (
               <span key={tag} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '5px 14px', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>{tag}</span>
             ))}
           </div>

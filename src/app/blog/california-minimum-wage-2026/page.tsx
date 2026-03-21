@@ -8,7 +8,7 @@ const faqSchema = {
     { '@type': 'Question', name: "Does California have a higher minimum wage than federal?", acceptedAnswer: { '@type': 'Answer', text: "Yes. The federal minimum wage is $7.25/hour, while California is $16.50/hour — more than double. California has had a higher state minimum wage than the federal rate since 2008." } }
   ],
 };
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -130,7 +130,7 @@ export default function Post() {
         </div>
 
         <div style={{ margin:'40px 0', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
-          <div style={{ fontSize:'24px', marginBottom:'8px' }}>💵</div>
+          <div style={{ fontSize:'24px', marginBottom:'8px' }}></div>
           <div style={{ fontWeight:800, fontSize:'18px', marginBottom:'8px' }}>Calculate California Take-Home Pay</div>
           <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>See exactly what you take home at any California wage after state + federal taxes.</p>
           <div style={{ display:'flex', gap:'10px', justifyContent:'center', flexWrap:'wrap' }}>

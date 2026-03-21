@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -81,7 +81,7 @@ export default function TipsCalculator() {
 
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#4ade80', marginBottom: '20px' }}>
-          🆕 One Big Beautiful Bill — Signed July 4, 2025
+           One Big Beautiful Bill — Signed July 4, 2025
         </div>
         <h1 style={{ fontSize: 'clamp(28px,5vw,44px)', fontWeight: 900, lineHeight: 1.15, margin: '0 0 16px', letterSpacing: '-1px' }}>
           No Tax on Tips<br /><span style={{ color: '#4ade80' }}>Calculator 2025</span>
@@ -148,11 +148,11 @@ export default function TipsCalculator() {
               </div>
               {result.phaseOut > 0 && (
                 <div style={{ background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '12px 16px', fontSize: '13px', color: '#fbbf24', marginBottom: '12px' }}>
-                  ⚠️ Income exceeds threshold — deduction reduced by {fmt(result.phaseOut)}.
+                   Income exceeds threshold — deduction reduced by {fmt(result.phaseOut)}.
                 </div>
               )}
               <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', margin: 0, lineHeight: 1.6 }}>
-                ✓ Federal income tax only. SS (6.2%) + Medicare (1.45%) still apply. Valid 2025–2028.
+                 Federal income tax only. SS (6.2%) + Medicare (1.45%) still apply. Valid 2025–2028.
               </p>
             </div>
           )}

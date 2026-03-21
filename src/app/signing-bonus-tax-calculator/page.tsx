@@ -80,7 +80,7 @@ export default function SigningBonusCalculator() {
 
         <div style={{ textAlign:'center', marginBottom:'32px' }}>
           <div style={{ display:'inline-block', background:'rgba(74,222,128,0.1)', border:'1px solid rgba(74,222,128,0.3)', borderRadius:'20px', padding:'6px 16px', fontSize:'13px', marginBottom:'12px', color:'#4ade80' }}>
-            🔒 Private calculation — no data sent anywhere
+             Private calculation — no data sent anywhere
           </div>
           <h1 style={{ fontSize:'clamp(24px,5vw,48px)', fontWeight:900, margin:'0 0 12px', lineHeight:1.15 }}>
             Signing Bonus Tax Calculator 2026
@@ -166,7 +166,7 @@ export default function SigningBonusCalculator() {
             </div>
 
             <div style={{ ...CARD, border:'1px solid rgba(251,191,36,0.3)' }}>
-              <div style={{ fontSize:'13px', fontWeight:700, marginBottom:'8px', color:'#fbbf24' }}>⚠️ Clawback Analysis</div>
+              <div style={{ fontSize:'13px', fontWeight:700, marginBottom:'8px', color:'#fbbf24' }}> Clawback Analysis</div>
               <div style={{ fontSize:'13px', opacity:0.65, lineHeight:1.6 }}>
                 If you leave before <strong style={{ color:'#fff' }}>{clawback} months</strong>, you may owe back {fmt(bonus)} gross.<br/><br/>
                 Your net bonus equals <strong style={{ color:'#4ade80' }}>{fmt(monthlyValue)}/month</strong> of "golden handcuffs" — worth it?
@@ -194,10 +194,10 @@ export default function SigningBonusCalculator() {
           <div style={{ fontSize:'14px', opacity:0.5, marginBottom:'12px' }}>Related Calculators</div>
           <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center' }}>
             {[
-              { href:'/bonus-tax-calculator', label:'🎁 Bonus Tax Calculator' },
-              { href:'/raise-calculator', label:'📈 Raise Calculator' },
-              { href:'/overtime-calculator', label:'⏰ Overtime Calculator' },
-              { href:'/', label:'💰 Paycheck Calculator' },
+              { href:'/bonus-tax-calculator', label:' Bonus Tax Calculator' },
+              { href:'/raise-calculator', label:' Raise Calculator' },
+              { href:'/overtime-calculator', label:' Overtime Calculator' },
+              { href:'/', label:' Paycheck Calculator' },
             ].map(l=>(
               <Link key={l.href} href={l.href} style={{ background:'rgba(129,140,248,0.15)', border:'1px solid rgba(129,140,248,0.3)', borderRadius:'20px', padding:'8px 16px', color:'#a5b4fc', textDecoration:'none', fontSize:'13px', fontWeight:600 }}>
                 {l.label}

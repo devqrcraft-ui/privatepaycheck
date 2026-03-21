@@ -90,7 +90,7 @@ export default function BonusTaxCalculator() {
         {/* HERO */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>
-            🔒 Calculated privately in your browser
+             Calculated privately in your browser
           </div>
           <h1 style={{ fontSize: 'clamp(24px,5vw,48px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.15 }}>
             Bonus Tax Calculator 2026
@@ -176,9 +176,9 @@ export default function BonusTaxCalculator() {
         {/* INFO */}
         <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px' }}>
           {[
-            { icon: '🎯', title: 'Marginal Rate Method', body: 'Your bonus is taxed at your marginal (highest) federal bracket — not a flat rate. This calculator uses your full salary to determine the exact bracket.' },
-            { icon: '📍', title: 'State Taxes Vary Wildly', body: 'Texas and Florida take $0 in state tax on your bonus. California takes up to 9.3%. Know your state before negotiating.' },
-            { icon: '💡', title: 'Pro Tip: Defer to 401k', body: 'Contributing your bonus to a 401k reduces taxable income and can push you into a lower bracket. Consider timing.' },
+            { icon: '', title: 'Marginal Rate Method', body: 'Your bonus is taxed at your marginal (highest) federal bracket — not a flat rate. This calculator uses your full salary to determine the exact bracket.' },
+            { icon: '', title: 'State Taxes Vary Wildly', body: 'Texas and Florida take $0 in state tax on your bonus. California takes up to 9.3%. Know your state before negotiating.' },
+            { icon: '', title: 'Pro Tip: Defer to 401k', body: 'Contributing your bonus to a 401k reduces taxable income and can push you into a lower bracket. Consider timing.' },
           ].map(f => (
             <div key={f.title} style={CARD}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
@@ -209,10 +209,10 @@ export default function BonusTaxCalculator() {
           <div style={{ fontSize: '14px', opacity: 0.5, marginBottom: '12px' }}>Related Calculators</div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
             {[
-              { href: '/signing-bonus-tax-calculator', label: '✍️ Signing Bonus Tax' },
-              { href: '/raise-calculator', label: '📈 Raise Calculator' },
-              { href: '/overtime-calculator', label: '⏰ Overtime Calculator' },
-              { href: '/', label: '💰 Paycheck Calculator' },
+              { href: '/signing-bonus-tax-calculator', label: ' Signing Bonus Tax' },
+              { href: '/raise-calculator', label: ' Raise Calculator' },
+              { href: '/overtime-calculator', label: ' Overtime Calculator' },
+              { href: '/', label: ' Paycheck Calculator' },
             ].map(l => (
               <Link key={l.href} href={l.href} style={{ background: 'rgba(129,140,248,0.15)', border: '1px solid rgba(129,140,248,0.3)', borderRadius: '20px', padding: '8px 16px', color: '#a5b4fc', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
                 {l.label}

@@ -121,9 +121,9 @@ export default function HomeClient() {
           <h1>Paycheck Calculator <em>2026</em> —<br/>United States (All 50 States)</h1>
           <div className="hero-desc">
             <div style={{display:'flex',flexDirection:'column',gap:8,marginBottom:16}}>
-              <span>✅ Estimates your net pay after federal, FICA, and state taxes.</span>
-              <span>✅ Updated for 2026 rules, including new overtime, tip and Trump Account changes.</span>
-              <span>✅ Runs in your browser. No accounts, no data stored.</span>
+              <span> Estimates your net pay after federal, FICA, and state taxes.</span>
+              <span> Updated for 2026 rules, including new overtime, tip and Trump Account changes.</span>
+              <span> Runs in your browser. No accounts, no data stored.</span>
             </div>
             <p style={{fontSize:12,color:'rgba(184,208,238,0.5)',lineHeight:1.6,margin:0}}>
               Based on IRS Publication 15‑T (2026) and state tax tables. Not affiliated with the IRS or any government agency.
@@ -146,12 +146,12 @@ export default function HomeClient() {
             <h1>Calculate Your <em>Exact</em> Take-Home Pay</h1>
             <p className="hero-desc">Free, private paycheck calculator for all 50 states. Based on 2026 IRS withholding tables. Your data never leaves your browser — no accounts, no fees, ever.</p>
             <div className="tags">
-              <span className="tag">✓ Federal + State Taxes</span>
-              <span className="tag">✓ All 50 States</span>
-              <span className="tag">✓ No Registration</span>
-              <span className="tag">✓ 2026 Tax Rules</span>
-              <span className="tag">✓ Bonus Calculator</span>
-              <span className="tag">✓ Hourly &amp; Salary</span>
+              <span className="tag"> Federal + State Taxes</span>
+              <span className="tag"> All 50 States</span>
+              <span className="tag"> No Registration</span>
+              <span className="tag"> 2026 Tax Rules</span>
+              <span className="tag"> Bonus Calculator</span>
+              <span className="tag"> Hourly &amp; Salary</span>
             </div>
             <div className="stats">
               <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
@@ -244,10 +244,10 @@ export default function HomeClient() {
             <div className="fs-title">Texas Paycheck Calculator 2026</div>
             <div className="fs-rate">0% State Tax</div>
             <div className="fs-facts">
-              <div className="fs-fact">✓ No state income tax — keep more of every paycheck</div>
-              <div className="fs-fact">✓ Federal tax + 7.65% FICA only</div>
-              <div className="fs-fact">✓ $75,000 salary → ~$58,500 take-home</div>
-              <div className="fs-fact">✓ Updated for 2026 IRS brackets</div>
+              <div className="fs-fact"> No state income tax — keep more of every paycheck</div>
+              <div className="fs-fact"> Federal tax + 7.65% FICA only</div>
+              <div className="fs-fact"> $75,000 salary → ~$58,500 take-home</div>
+              <div className="fs-fact"> Updated for 2026 IRS brackets</div>
             </div>
             <div className="fs-cta">Calculate Texas Paycheck →</div>
           </Link>
@@ -256,10 +256,10 @@ export default function HomeClient() {
             <div className="fs-title">Florida Paycheck Calculator 2026</div>
             <div className="fs-rate">0% State Tax</div>
             <div className="fs-facts">
-              <div className="fs-fact">✓ Florida has no state income tax</div>
-              <div className="fs-fact">✓ Min wage $13.00/hr in 2026 (reaches $15 this year)</div>
-              <div className="fs-fact">✓ $75,000 salary → ~$58,500 take-home</div>
-              <div className="fs-fact">✓ Federal + FICA deductions only</div>
+              <div className="fs-fact"> Florida has no state income tax</div>
+              <div className="fs-fact"> Min wage $13.00/hr in 2026 (reaches $15 this year)</div>
+              <div className="fs-fact"> $75,000 salary → ~$58,500 take-home</div>
+              <div className="fs-fact"> Federal + FICA deductions only</div>
             </div>
             <div className="fs-cta">Calculate Florida Paycheck →</div>
           </Link>
@@ -268,10 +268,10 @@ export default function HomeClient() {
             <div className="fs-title">California Paycheck Calculator 2026</div>
             <div className="fs-rate">Up to 13.3%</div>
             <div className="fs-facts">
-              <div className="fs-fact">✓ Highest state income tax in the US</div>
-              <div className="fs-fact">✓ Min wage $16.50/hr — highest in contiguous US</div>
-              <div className="fs-fact">✓ $75,000 salary → ~$52,000 take-home</div>
-              <div className="fs-fact">✓ SDI + federal + state + FICA included</div>
+              <div className="fs-fact"> Highest state income tax in the US</div>
+              <div className="fs-fact"> Min wage $16.50/hr — highest in contiguous US</div>
+              <div className="fs-fact"> $75,000 salary → ~$52,000 take-home</div>
+              <div className="fs-fact"> SDI + federal + state + FICA included</div>
             </div>
             <div className="fs-cta">Calculate California Paycheck →</div>
           </Link>
@@ -388,7 +388,7 @@ export default function HomeClient() {
         </div>
         {/* HIGH INCOME BLOCK */}
         <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
-          <div style={{fontSize:13,fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:14}}>⚡ High-Income Earners — $200k, $500k, $1M+</div>
+          <div style={{fontSize:13,fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:14}}> High-Income Earners — $200k, $500k, $1M+</div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:14}}>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Social Security Cap</div>

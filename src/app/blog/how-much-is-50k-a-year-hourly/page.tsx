@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: '$50,000 a Year is How Much an Hour? (2026 After-Tax Breakdown)',

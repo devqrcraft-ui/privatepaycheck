@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -67,7 +67,7 @@ export default function OvertimeDeductionCalculator() {
 
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(192,132,252,0.1)', border: '1px solid rgba(192,132,252,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#c084fc', marginBottom: '20px' }}>
-          🆕 OBBBA — Effective January 1, 2025
+           OBBBA — Effective January 1, 2025
         </div>
         <h1 style={{ fontSize: 'clamp(28px,5vw,44px)', fontWeight: 900, lineHeight: 1.15, margin: '0 0 16px', letterSpacing: '-1px' }}>
           No Tax on Overtime<br /><span style={{ color: '#c084fc' }}>Deduction Calculator</span>
@@ -80,7 +80,7 @@ export default function OvertimeDeductionCalculator() {
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px' }}>
           <div style={{ background: 'rgba(192,132,252,0.08)', border: '1px solid rgba(192,132,252,0.2)', borderRadius: '12px', padding: '14px 16px', marginBottom: '24px', fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6 }}>
-            💡 <strong style={{ color: '#c084fc' }}>Only the premium counts.</strong> At $20/hr regular, overtime = $30/hr. Deductible premium = $10/hr (the extra 0.5×). The base $20 does not qualify.
+             <strong style={{ color: '#c084fc' }}>Only the premium counts.</strong> At $20/hr regular, overtime = $30/hr. Deductible premium = $10/hr (the extra 0.5×). The base $20 does not qualify.
           </div>
 
           <div style={{ marginBottom: '24px' }}>
@@ -133,11 +133,11 @@ export default function OvertimeDeductionCalculator() {
               </div>
               {result.phaseOut > 0 && (
                 <div style={{ background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '12px 16px', fontSize: '13px', color: '#fbbf24', marginBottom: '12px' }}>
-                  ⚠️ Income exceeds threshold — deduction reduced by {fmt(result.phaseOut)}.
+                   Income exceeds threshold — deduction reduced by {fmt(result.phaseOut)}.
                 </div>
               )}
               <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', margin: 0, lineHeight: 1.6 }}>
-                ✓ FLSA hourly workers only. Deduction valid 2025–2028. State income taxes may still apply.
+                 FLSA hourly workers only. Deduction valid 2025–2028. State income taxes may still apply.
               </p>
             </div>
           )}

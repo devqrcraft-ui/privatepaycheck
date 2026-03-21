@@ -130,7 +130,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div style={{ textAlign:'center', marginBottom:'40px' }}>
           {noTax && (
             <div style={{ display:'inline-block', background:'rgba(74,222,128,0.1)', border:'1px solid rgba(74,222,128,0.3)', borderRadius:'20px', padding:'6px 16px', fontSize:'13px', marginBottom:'16px', color:'#4ade80' }}>
-              🎉 {st.name} has NO state income tax!
+               {st.name} has NO state income tax!
             </div>
           )}
           <h1 style={{ fontSize:'clamp(24px,4vw,44px)', fontWeight:900, margin:'0 0 12px' }}>
@@ -151,7 +151,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div style={{ marginTop:'40px', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'24px' }}>
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'16px' }}>{st.name} Tax Facts 2026</h2>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'12px', fontSize:'14px' }}>
-            <div><span style={{ opacity:0.6 }}>State Tax: </span><strong>{noTax ? 'None ✅' : rateStr}</strong></div>
+            <div><span style={{ opacity:0.6 }}>State Tax: </span><strong>{noTax ? 'None ' : rateStr}</strong></div>
             <div><span style={{ opacity:0.6 }}>Federal FICA: </span><strong>7.65%</strong></div>
             <div><span style={{ opacity:0.6 }}>SS Wage Cap: </span><strong>$176,100</strong></div>
             <div><span style={{ opacity:0.6 }}>401(k) Limit: </span><strong>$23,500</strong></div>
@@ -211,22 +211,22 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <h2 style={{ fontSize:'16px', fontWeight:800, marginBottom:'16px', opacity:0.7 }}>More {st.name} Calculators</h2>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))', gap:'12px' }}>
             <Link href={`/hourly-paycheck-calculator`} style={{ display:'block', background:'rgba(129,140,248,0.08)', border:'1px solid rgba(129,140,248,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>⏱️</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>{st.name} Hourly Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Hourly rate → take-home pay →</div>
             </Link>
             <Link href={`/overtime-calculator/${slug}`} style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>⏰</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>{st.name} Overtime Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Time-and-a-half & double time →</div>
             </Link>
             <Link href={`/unemployment-calculator/${slug}`} style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>📋</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>{st.name} Unemployment</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Estimate weekly benefits →</div>
             </Link>
             <Link href={`/minimum-wage/${slug}`} style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
-              <div style={{ fontSize:'20px', marginBottom:'8px' }}>💵</div>
+              <div style={{ fontSize:'20px', marginBottom:'8px' }}></div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>{st.name} Minimum Wage</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>2026 hourly rate & breakdown →</div>
             </Link>
@@ -245,12 +245,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '16px', opacity: 0.85 }}>Related Calculators for {st.name}</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
             {[
-              { label: '⏱️ Hourly Paycheck', href: `/hourly-paycheck-calculator/${slug}` },
-              { label: '💼 Overtime Pay', href: `/overtime-calculator/${slug}` },
-              { label: '📋 Unemployment', href: `/unemployment-calculator/${slug}` },
-              { label: '🎁 Bonus Tax', href: `/bonus-calculator/${slug}` },
-              { label: '💡 Tip Tax', href: `/tip-calculator/${slug}` },
-              { label: '📊 Minimum Wage', href: `/minimum-wage/${slug}` },
+              { label: ' Hourly Paycheck', href: `/hourly-paycheck-calculator/${slug}` },
+              { label: ' Overtime Pay', href: `/overtime-calculator/${slug}` },
+              { label: ' Unemployment', href: `/unemployment-calculator/${slug}` },
+              { label: ' Bonus Tax', href: `/bonus-calculator/${slug}` },
+              { label: ' Tip Tax', href: `/tip-calculator/${slug}` },
+              { label: ' Minimum Wage', href: `/minimum-wage/${slug}` },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ display: 'block', padding: '12px 16px', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '10px', color: '#a5b4fc', fontSize: '13px', fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}>
                 {l.label}

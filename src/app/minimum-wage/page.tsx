@@ -77,7 +77,7 @@ export default function MinWageHubPage() {
 
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#6ee7b7' }}>
-            📊 2026 Rates — All 51 States + DC
+             2026 Rates — All 51 States + DC
           </div>
           <h1 style={{ fontSize: 'clamp(28px,5vw,52px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>
             Minimum Wage by State 2026
@@ -121,17 +121,17 @@ export default function MinWageHubPage() {
 
         <div style={{ marginTop: '48px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '12px' }}>
           <Link href="/overtime-calculator" style={{ display: 'block', background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.25)', borderRadius: '12px', padding: '18px', color: 'white', textDecoration: 'none' }}>
-            <div style={{ fontSize: '20px', marginBottom: '8px' }}>⏰</div>
+            <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>Overtime Calculator</div>
             <div style={{ fontSize: '12px', opacity: 0.55 }}>Calculate overtime pay by state →</div>
           </Link>
           <Link href="/unemployment-calculator" style={{ display: 'block', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '12px', padding: '18px', color: 'white', textDecoration: 'none' }}>
-            <div style={{ fontSize: '20px', marginBottom: '8px' }}>📊</div>
+            <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>Unemployment Calculator</div>
             <div style={{ fontSize: '12px', opacity: 0.55 }}>Estimate unemployment benefits →</div>
           </Link>
           <Link href="/" style={{ display: 'block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '12px', padding: '18px', color: 'white', textDecoration: 'none' }}>
-            <div style={{ fontSize: '20px', marginBottom: '8px' }}>💰</div>
+            <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>Paycheck Calculator</div>
             <div style={{ fontSize: '12px', opacity: 0.55 }}>Calculate take-home pay →</div>
           </Link>

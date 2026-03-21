@@ -37,7 +37,7 @@ export default function Page() {
       <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>
         <div style={{ fontSize: '15px', opacity: 0.8 }}>Florida has no state income tax. Use the calculator for your exact federal + FICA take-home.</div>
         <a href="/?state=florida" style={{ display: 'inline-block', padding: '13px 32px', borderRadius: '10px', background: 'linear-gradient(135deg,#f59e0b,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>
-          ⚡ Calculate My Florida Paycheck →
+           Calculate My Florida Paycheck →
         </a>
       </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Florida Take-Home Pay by Salary (Single Filer, 2026)</h2>

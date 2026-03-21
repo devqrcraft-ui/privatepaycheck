@@ -8,7 +8,7 @@ const faqSchema = {
     { '@type': 'Question', name: "Do I still owe state tax on tips in 2026?", acceptedAnswer: { '@type': 'Answer', text: "The no tax on tips deduction is federal only. Most states still tax tip income. Nine states (TX, FL, NV, WA, WY, SD, TN, NH, AK) have no state income tax, so tips are fully exempt from state tax there." } }
   ],
 };
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'No Tax on Tips Explained: Who Qualifies & How Much You Save (2026)',

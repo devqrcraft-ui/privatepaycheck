@@ -38,7 +38,7 @@ export default function Page() {
       <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>
         <div style={{ fontSize: '15px', opacity: 0.8 }}>Texas has no state income tax — you keep significantly more of every paycheck vs CA or NY.</div>
         <a href="/?state=texas" style={{ display: 'inline-block', padding: '13px 32px', borderRadius: '10px', background: 'linear-gradient(135deg,#10b981,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>
-          ⚡ Calculate My Texas Paycheck →
+           Calculate My Texas Paycheck →
         </a>
       </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Texas Take-Home Pay by Salary (Single Filer, 2026)</h2>

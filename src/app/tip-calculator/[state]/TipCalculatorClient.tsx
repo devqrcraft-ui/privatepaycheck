@@ -119,7 +119,7 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
         <div>
           {/* Savings highlight */}
           <div style={{ background:'linear-gradient(135deg,rgba(244,114,182,0.2),rgba(251,191,36,0.1))', border:'1px solid rgba(244,114,182,0.4)', borderRadius:'12px', padding:'20px', textAlign:'center', marginBottom:'16px' }}>
-            <div style={{ fontSize:'13px', opacity:0.7, marginBottom:'4px' }}>🎉 Your Tax Savings — No Tax on Tips Law</div>
+            <div style={{ fontSize:'13px', opacity:0.7, marginBottom:'4px' }}> Your Tax Savings — No Tax on Tips Law</div>
             <div style={{ fontSize:'44px', fontWeight:900, color:'#4ade80' }}>{fmt(result.savings)}</div>
             <div style={{ fontSize:'14px', opacity:0.6 }}>per year in {stateName}</div>
             <div style={{ fontSize:'13px', color:'#f472b6', marginTop:'8px' }}>
@@ -142,7 +142,7 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
                   </div>
                   <div style={{ display:'flex', justifyContent:'space-between' }}>
                     <span style={{ opacity:0.6 }}>{stateName} State</span>
-                    <strong>{noTax ? '$0 ✅' : fmt(col.data.state)}</strong>
+                    <strong>{noTax ? '$0 ' : fmt(col.data.state)}</strong>
                   </div>
                   <div style={{ display:'flex', justifyContent:'space-between', borderTop:'1px solid rgba(255,255,255,0.1)', paddingTop:'6px' }}>
                     <strong>Total Tax</strong>
@@ -158,7 +158,7 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
           Enter your salary and annual tips to see your tax savings
         </div>
       )}
-      <p style={{ textAlign:'center', fontSize:'11px', opacity:0.3, marginTop:'12px' }}>🔒 All calculations happen in your browser · Estimates for planning purposes</p>
+      <p style={{ textAlign:'center', fontSize:'11px', opacity:0.3, marginTop:'12px' }}> All calculations happen in your browser · Estimates for planning purposes</p>
     </div>
   );
 }

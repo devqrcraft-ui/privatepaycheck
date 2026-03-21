@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default function Post() {
         <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 20, 2026 · 4 min read</p>
 
         <div style={{ background:'rgba(52,211,153,0.08)', border:'1px solid rgba(52,211,153,0.2)', borderRadius:'12px', padding:'20px', marginBottom:'28px' }}>
-          <h3 style={{ color:'#34d399', fontWeight:800, margin:'0 0 8px' }}>🏆 Triple Tax Advantage</h3>
+          <h3 style={{ color:'#34d399', fontWeight:800, margin:'0 0 8px' }}> Triple Tax Advantage</h3>
           <p style={{ fontSize:'14px', opacity:0.85, margin:0, lineHeight:1.7 }}>HSAs are the only account with <strong>three</strong> tax benefits: (1) contributions are pre-tax, (2) investment growth is tax-free, (3) withdrawals for medical expenses are tax-free. No other account has all three.</p>
         </div>
 

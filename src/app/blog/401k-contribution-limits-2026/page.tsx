@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -113,7 +113,7 @@ export default function Post() {
         </div>
 
         <div style={{ marginTop:'32px', background:'rgba(251,191,36,0.06)', border:'1px solid rgba(251,191,36,0.15)', borderRadius:'12px', padding:'20px' }}>
-          <h3 style={{ fontWeight:800, marginBottom:'8px', color:'#fbbf24' }}>💡 Pro Tip: Stack 401(k) + HSA</h3>
+          <h3 style={{ fontWeight:800, marginBottom:'8px', color:'#fbbf24' }}> Pro Tip: Stack 401(k) + HSA</h3>
           <p style={{ fontSize:'14px', opacity:0.8, lineHeight:1.7, margin:0 }}>Max out both your 401(k) ($23,500) and HSA ($4,300) for a total of $27,800 in pre-tax deductions. On a $100,000 salary, this alone saves you approximately $6,000–$8,000 per year in federal taxes depending on your bracket. Enter both in our calculator to see your exact savings.</p>
         </div>
 

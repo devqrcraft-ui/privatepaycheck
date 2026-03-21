@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -122,7 +122,7 @@ export default function Post() {
         </div>
 
         <div style={{ margin:'40px 0', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
-          <div style={{ fontSize:'24px', marginBottom:'8px' }}>⚡</div>
+          <div style={{ fontSize:'24px', marginBottom:'8px' }}></div>
           <div style={{ fontWeight:800, fontSize:'18px', marginBottom:'8px' }}>Skip the Math — Use the Calculator</div>
           <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Enter your salary and state. See your exact take-home pay in seconds — free and private.</p>
           <Link href="/" style={{ display:'inline-block', background:'#4ade80', color:'#0f0c29', fontWeight:800, padding:'12px 28px', borderRadius:'10px', textDecoration:'none', fontSize:'15px' }}>

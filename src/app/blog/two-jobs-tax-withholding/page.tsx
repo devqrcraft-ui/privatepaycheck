@@ -8,7 +8,7 @@ const faqSchema = {
     { '@type': 'Question', name: "Do I pay more taxes if I have two jobs?", acceptedAnswer: { '@type': 'Answer', text: "Not necessarily more overall, but your withholding may be insufficient. Your total tax owed is the same whether from one job or two. The issue is that employers withhold based on each job separately, not your combined income." } }
   ],
 };
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Two Jobs and Taxes: Why You Owe More & How to Fix It (2026)',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
 <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є Two Jobs Tax</div>
-<div style={{display:'inline-block',background:'rgba(248,113,113,0.1)',color:'#f87171',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>⚠️ пёЏ TAX TRAP</div>
+<div style={{display:'inline-block',background:'rgba(248,113,113,0.1)',color:'#f87171',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}> пёЏ TAX TRAP</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>Two Jobs and Taxes: Why You Owe More & How to Fix It (2026)</h1>
 <p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
@@ -31,7 +31,7 @@ Job 1 withholds based on $60k в†’ ~$5,180 federal<br/>
 Job 2 withholds based on $25k в†’ ~$1,130 federal<br/>
 Total withheld: $6,310<br/>
 Actual tax on $85k combined: ~$10,294<br/>
-<strong style={{color:'#f87171'}}>Shortfall: $3,984 owed at tax time ⚠️ пёЏ</strong>
+<strong style={{color:'#f87171'}}>Shortfall: $3,984 owed at tax time  пёЏ</strong>
 </div>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>3 Ways to Fix It</h2>
 <p><strong>Option 1 "” Step 2 on W-4 (easiest):</strong> Check the &quot;Multiple Jobs&quot; box on your W-4 for your lower-paying job. This tells the employer to withhold at a higher rate. Simple but not perfectly precise.</p>

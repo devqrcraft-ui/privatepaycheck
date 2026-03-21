@@ -106,7 +106,7 @@ export default function HowWeCalculatePage() {
 
         {/* FEDERAL INCOME TAX */}
         <div className="hwc-section">
-          <h2 className="hwc-h2"><span>🏛️</span> Federal Income Tax</h2>
+          <h2 className="hwc-h2"><span></span> Federal Income Tax</h2>
           <p className="hwc-p">
             We apply the 2026 IRS Publication 15-T percentage method tables for automated payroll systems.
             The standard deduction is subtracted from gross wages before applying progressive tax brackets.
@@ -132,7 +132,7 @@ export default function HowWeCalculatePage() {
 
         {/* FICA */}
         <div className="hwc-section">
-          <h2 className="hwc-h2"><span>💼</span> FICA Tax (Social Security &amp; Medicare)</h2>
+          <h2 className="hwc-h2"><span></span> FICA Tax (Social Security &amp; Medicare)</h2>
           <p className="hwc-p">
             FICA is split into two mandatory federal payroll taxes. Your employer pays a matching amount on top of your contribution.
           </p>
@@ -153,7 +153,7 @@ export default function HowWeCalculatePage() {
 
         {/* STATE TAX */}
         <div className="hwc-section">
-          <h2 className="hwc-h2"><span>🗺️</span> State Income Tax</h2>
+          <h2 className="hwc-h2"><span></span> State Income Tax</h2>
           <p className="hwc-p">
             State tax rates are pulled from each state&apos;s official department of revenue. We update rates each January.
             Nine states have zero income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming.
@@ -169,7 +169,7 @@ export default function HowWeCalculatePage() {
 
         {/* 2026 NEW LAW */}
         <div className="hwc-section">
-          <h2 className="hwc-h2"><span>⚡</span> 2026 New Law Deductions (One Big Beautiful Bill)</h2>
+          <h2 className="hwc-h2"><span></span> 2026 New Law Deductions (One Big Beautiful Bill)</h2>
           <p className="hwc-p">
             The legislation signed in 2025 introduced four new above-the-line deductions for federal income tax. These reduce your federal taxable income — they do not affect FICA or most state taxes.
           </p>
@@ -191,7 +191,7 @@ export default function HowWeCalculatePage() {
 
         {/* PAY FREQUENCY */}
         <div className="hwc-section">
-          <h2 className="hwc-h2"><span>📅</span> Pay Frequency Annualization</h2>
+          <h2 className="hwc-h2"><span></span> Pay Frequency Annualization</h2>
           <p className="hwc-p">
             We annualize your per-period wages to determine the correct bracket, then divide the annual tax by your pay periods.
             This matches the IRS&apos;s own recommended annualization method from Pub 15-T, Worksheet 1.

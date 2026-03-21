@@ -205,7 +205,7 @@ export default function TeacherPaycheckCalculator() {
         {/* HERO */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>
-            🏫 Updated for SS Fairness Act 2025 · All 51 States
+             Updated for SS Fairness Act 2025 · All 51 States
           </div>
           <h1 style={{ fontSize: 'clamp(24px,5vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.15 }}>
             Teacher Paycheck Calculator 2026
@@ -240,7 +240,7 @@ export default function TeacherPaycheckCalculator() {
               </select>
               <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '4px' }}>
                 {pensionInfo.system} · {pct(pensionInfo.rate)} employee contribution
-                {!pensionInfo.ss && <span style={{ color: '#fbbf24', marginLeft: '6px' }}>⚡ Non-SS state</span>}
+                {!pensionInfo.ss && <span style={{ color: '#fbbf24', marginLeft: '6px' }}> Non-SS state</span>}
               </div>
             </div>
 
@@ -258,7 +258,7 @@ export default function TeacherPaycheckCalculator() {
               <input type="number" value={age} onChange={e => setAge(+e.target.value)} min={22} max={75} style={INPUT_S} />
               {age >= 65 && (
                 <div style={{ fontSize: '11px', color: '#4ade80', marginTop: '4px' }}>
-                  ✓ You qualify for the $6,000 OBBB Senior Deduction
+                   You qualify for the $6,000 OBBB Senior Deduction
                 </div>
               )}
             </div>
@@ -270,7 +270,7 @@ export default function TeacherPaycheckCalculator() {
                   onClick={() => setShowSS(!showSS)}
                   style={{ background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '10px 14px', color: '#fbbf24', fontSize: '13px', fontWeight: 600, cursor: 'pointer', width: '100%', textAlign: 'left' }}
                 >
-                  ⚡ {showSS ? '▼' : '▶'} SS Fairness Act 2025 — WEP/GPO repealed for {stateName} teachers
+                   {showSS ? '▼' : '▶'} SS Fairness Act 2025 — WEP/GPO repealed for {stateName} teachers
                 </button>
                 {showSS && (
                   <div style={{ marginTop: '10px', padding: '12px', background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '10px' }}>
@@ -297,7 +297,7 @@ export default function TeacherPaycheckCalculator() {
               </div>
               {res.seniorDeduction > 0 && (
                 <div style={{ marginTop: '10px', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '8px', padding: '6px 10px', fontSize: '12px', color: '#4ade80' }}>
-                  ✓ Includes ${Math.round(res.seniorTaxSaving).toLocaleString()} saved via $6,000 Senior Deduction
+                   Includes ${Math.round(res.seniorTaxSaving).toLocaleString()} saved via $6,000 Senior Deduction
                 </div>
               )}
             </div>
@@ -330,7 +330,7 @@ export default function TeacherPaycheckCalculator() {
             {/* SS Fairness Act result */}
             {res.ssBenefit > 0 && (
               <div style={{ ...CARD, background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.25)' }}>
-                <div style={{ fontSize: '12px', color: '#fbbf24', fontWeight: 700, marginBottom: '6px' }}>⚡ SS Fairness Act 2025 Impact</div>
+                <div style={{ fontSize: '12px', color: '#fbbf24', fontWeight: 700, marginBottom: '6px' }}> SS Fairness Act 2025 Impact</div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: '13px', opacity: 0.7 }}>Estimated new SS benefit</span>
                   <span style={{ color: '#fbbf24', fontWeight: 700, fontSize: '18px' }}>+{fmt(res.ssBenefit)}/yr</span>
@@ -346,9 +346,9 @@ export default function TeacherPaycheckCalculator() {
         {/* INFO CARDS */}
         <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px' }}>
           {[
-            { icon: '🏛️', title: 'Why Your Pension Rate Matters', body: `In Ohio, STRS takes 14% before taxes. In Florida, FRS takes only 3%. That single difference on a $60k salary means $6,600 less take-home before any taxes are calculated. Most salary comparison sites ignore this entirely.` },
-            { icon: '⚡', title: 'SS Fairness Act 2025', body: 'WEP and GPO are fully repealed as of January 2025. Teachers in TX, CA, IL, OH, MA and 11 other states who also worked SS-covered jobs can now claim full SS benefits. File at ssa.gov — retroactive to Jan 2024.' },
-            { icon: '💡', title: 'The $6,000 Senior Bonus', body: 'If you\'re 65+ in 2025-2028, you qualify for an additional $6,000 federal deduction under the One Big Beautiful Bill (Public Law 119-21). It phases out at MAGI over $75k (single) or $150k (married).' },
+            { icon: '', title: 'Why Your Pension Rate Matters', body: `In Ohio, STRS takes 14% before taxes. In Florida, FRS takes only 3%. That single difference on a $60k salary means $6,600 less take-home before any taxes are calculated. Most salary comparison sites ignore this entirely.` },
+            { icon: '', title: 'SS Fairness Act 2025', body: 'WEP and GPO are fully repealed as of January 2025. Teachers in TX, CA, IL, OH, MA and 11 other states who also worked SS-covered jobs can now claim full SS benefits. File at ssa.gov — retroactive to Jan 2024.' },
+            { icon: '', title: 'The $6,000 Senior Bonus', body: 'If you\'re 65+ in 2025-2028, you qualify for an additional $6,000 federal deduction under the One Big Beautiful Bill (Public Law 119-21). It phases out at MAGI over $75k (single) or $150k (married).' },
           ].map(f => (
             <div key={f.title} style={CARD}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
@@ -416,10 +416,10 @@ export default function TeacherPaycheckCalculator() {
           <div style={{ fontSize: '14px', opacity: 0.5, marginBottom: '12px' }}>Related Calculators</div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
             {[
-              { href: '/bonus-tax-calculator', label: '🎁 Bonus Tax Calculator' },
-              { href: '/hourly-paycheck-calculator', label: '⏰ Hourly Paycheck' },
-              { href: '/', label: '💰 Salary Paycheck' },
-              { href: '/blog/one-big-beautiful-bill-tax-calculator-2026', label: '📋 OBBB Tax Guide' },
+              { href: '/bonus-tax-calculator', label: ' Bonus Tax Calculator' },
+              { href: '/hourly-paycheck-calculator', label: ' Hourly Paycheck' },
+              { href: '/', label: ' Salary Paycheck' },
+              { href: '/blog/one-big-beautiful-bill-tax-calculator-2026', label: ' OBBB Tax Guide' },
             ].map(l => (
               <Link key={l.href} href={l.href} style={{ background: 'rgba(129,140,248,0.15)', border: '1px solid rgba(129,140,248,0.3)', borderRadius: '20px', padding: '8px 16px', color: '#a5b4fc', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
                 {l.label}

@@ -93,7 +93,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           {rules.doubleTime && (
             <div style={{ display: 'inline-block', background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#fbbf24' }}>
-              ⚡ {st.name} has DOUBLE TIME rules
+               {st.name} has DOUBLE TIME rules
             </div>
           )}
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px' }}>
@@ -108,10 +108,10 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
 
         <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '16px' }}>
           {[
-            { label: 'Federal OT Rule', value: '40 hrs/week', icon: '⚖️' },
-            { label: 'OT Rate', value: '1.5x regular pay', icon: '💰' },
-            { label: 'Double Time', value: rules.doubleTime ? '✅ Yes' : '❌ N/A', icon: '2️⃣' },
-            { label: 'Daily OT', value: rules.dailyOT ? `After ${rules.dailyOTHours}h/day` : 'Weekly only', icon: '📅' },
+            { label: 'Federal OT Rule', value: '40 hrs/week', icon: '' },
+            { label: 'OT Rate', value: '1.5x regular pay', icon: '' },
+            { label: 'Double Time', value: rules.doubleTime ? ' Yes' : ' N/A', icon: '2⃣' },
+            { label: 'Daily OT', value: rules.dailyOT ? `After ${rules.dailyOTHours}h/day` : 'Weekly only', icon: '' },
           ].map(b => (
             <div key={b.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{b.icon}</div>
@@ -146,17 +146,17 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '12px' }}>
             <Link href={`/${state}-paycheck-calculator`} style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
-              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💰</div>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Paycheck Calculator</div>
               <div style={{ fontSize: '12px', opacity: 0.55 }}>Take-home pay after all taxes →</div>
             </Link>
             <Link href={`/unemployment-calculator/${state}`} style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
-              <div style={{ fontSize: '20px', marginBottom: '8px' }}>📋</div>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Unemployment Calculator</div>
               <div style={{ fontSize: '12px', opacity: 0.55 }}>Estimate weekly benefits →</div>
             </Link>
             <Link href={`/minimum-wage/${state}`} style={{ display: 'block', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)', borderRadius: '12px', padding: '16px', color: 'white', textDecoration: 'none' }}>
-              <div style={{ fontSize: '20px', marginBottom: '8px' }}>💵</div>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}></div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '4px' }}>{st.name} Minimum Wage 2026</div>
               <div style={{ fontSize: '12px', opacity: 0.55 }}>Current hourly rate & breakdown →</div>
             </Link>
@@ -173,11 +173,11 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '16px', opacity: 0.85 }}>Related Calculators for {st.name}</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           {[
-        { label: '🧮 Paycheck Calculator', href: `/${state}` },
-        { label: '⏱️ Hourly Paycheck', href: `/hourly-paycheck-calculator/${state}` },
-        { label: '📋 Unemployment', href: `/unemployment-calculator/${state}` },
-        { label: '🎁 Bonus Tax', href: `/bonus-calculator/${state}` },
-        { label: '📊 Minimum Wage', href: `/minimum-wage/${state}` },
+        { label: ' Paycheck Calculator', href: `/${state}` },
+        { label: ' Hourly Paycheck', href: `/hourly-paycheck-calculator/${state}` },
+        { label: ' Unemployment', href: `/unemployment-calculator/${state}` },
+        { label: ' Bonus Tax', href: `/bonus-calculator/${state}` },
+        { label: ' Minimum Wage', href: `/minimum-wage/${state}` },
           ].map(l => (
             <a key={l.href} href={l.href} style={{ display: 'block', padding: '12px 16px', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '10px', color: '#a5b4fc', fontSize: '13px', fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}>
               {l.label}
@@ -214,12 +214,12 @@ function OvertimeCalculatorWidget({ stateName, hasDoubleTime, hasDailyOT, dailyO
         <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginBottom: '8px' }}>Overtime Premium · {stateName}</div>
         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
           Enter your hours above to calculate overtime pay.<br />
-          {hasDoubleTime && <span style={{ color: '#fbbf24' }}>⚡ {stateName} double-time rules apply after 12 hrs/day</span>}
-          {hasDailyOT && !hasDoubleTime && <span style={{ color: '#fbbf24' }}>⚡ Daily OT applies after {dailyOTHours} hrs/day</span>}
+          {hasDoubleTime && <span style={{ color: '#fbbf24' }}> {stateName} double-time rules apply after 12 hrs/day</span>}
+          {hasDailyOT && !hasDoubleTime && <span style={{ color: '#fbbf24' }}> Daily OT applies after {dailyOTHours} hrs/day</span>}
           {!hasDoubleTime && !hasDailyOT && <span>Federal rule: 1.5x after 40 hrs/week</span>}
         </div>
       </div>
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}>🔒 All calculations happen in your browser</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}> All calculations happen in your browser</p>
     </div>
   );
 }
