@@ -94,7 +94,7 @@ const CSS = `
   .feat-icon{font-size:36px;margin-bottom:16px;}
   .feat-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#F0E090;margin-bottom:10px;} .feat-card{transition:transform 0.2s,box-shadow 0.2s;} .feat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(245,200,66,0.15);cursor:pointer;}
   .feat-desc{font-size:14px;color:#90B4D0;line-height:1.75;}
-  .states-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:9px;max-width:1200px;margin:0 auto;}
+  .states-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;max-width:1200px;margin:0 auto;}
   .s-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.17);border-radius:7px;padding:13px 14px;text-align:center;transition:all .22s ease;display:block;text-decoration:none;}
   .s-card:hover{background:rgba(245,200,66,.10);border-color:#F5C842;transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.40);}
   .s-name{font-size:14px;font-weight:700;color:#DDEEFF;} .state-card{transition:transform 0.15s,background 0.15s;} .state-card:hover{transform:translateY(-2px);background:rgba(245,200,66,.08);}
@@ -284,7 +284,7 @@ export default function HomeClient() {
           <h2>Real Take-Home <em>Pay Examples</em></h2>
           <p className="s-desc">See exactly what common salaries and hourly rates bring home after all taxes — by state.</p>
         </div>
-        <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))',gap:'12px'}}>
+        <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'12px'}}>
           {[
             {salary:'$20/hr in Texas',net:'~$33,200/yr · $1,277/biweekly',note:'No state tax. Federal + FICA only.',href:'/hourly-paycheck-calculator/texas'},
             {salary:'$20/hr in California',net:'~$30,400/yr · $1,169/biweekly',note:'State tax up to 9.3% applies.',href:'/hourly-paycheck-calculator/california'},
@@ -379,7 +379,7 @@ export default function HomeClient() {
         {/* HIGH INCOME BLOCK */}
         <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
           <div style={{fontSize:13,fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:14}}>⚡ High-Income Earners — $200k, $500k, $1M+</div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:14}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:14}}>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Social Security Cap</div>
               <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>SS tax (6.2%) stops at <strong style={{color:'#fff'}}>$176,100</strong> in 2026. Above this, you save $10,918/year vs someone earning under the cap.</div>
