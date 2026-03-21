@@ -126,7 +126,7 @@ export default function BonusTaxCalculator() {
 
             <div style={{ marginBottom: '16px' }}>
               <div style={LABEL}>State</div>
-              <select value={state} onChange={e => setState(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
+              <select value={state} onChange={e => setState(e.target.value)} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e293b'}}>
                 {Object.entries(STATE_NAMES).sort((a,b)=>a[1].localeCompare(b[1])).map(([k,v]) => (
                   <option key={k} value={k}>{v}</option>
                 ))}
@@ -135,7 +135,7 @@ export default function BonusTaxCalculator() {
 
             <div>
               <div style={LABEL}>Filing Status</div>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e293b'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
