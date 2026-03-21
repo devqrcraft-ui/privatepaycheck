@@ -409,7 +409,7 @@ export default function HomeClient() {
           </div>
         </div>
 
-        <p style={{textAlign:'center',fontSize:'12px',color:'#4a6080',marginTop:'24px'}}>
+        <p style={{textAlign:'center',fontSize:'12px',color:'#8ab0d0',marginTop:'24px'}}>
           Sources: <a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS Pub 15-T</a> · <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" style={{color:'#F5C842'}}>SSA Wage Base</a> · State Revenue Departments
         </p>
       </section>

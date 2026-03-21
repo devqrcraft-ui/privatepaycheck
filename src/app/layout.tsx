@@ -59,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       }) }} />
-        {children}
+        <main role="main">{children}</main>
         <Analytics />
         <SpeedInsights />
       <Footer />
