@@ -375,6 +375,16 @@ export default function HomeClient() {
             <div className="feat-title">100% Private</div>
             <p className="feat-desc">All math runs in your browser. Zero data sent to any server. No cookies, no tracking, no accounts required — ever.</p>
           </div>
+          <div className="feat-card">
+            <div className="feat-icon">📅</div>
+            <div className="feat-title">2026 Tax Year</div>
+            <p className="feat-desc">Updated for 2026 IRS inflation adjustments. New standard deductions, bracket thresholds, and FICA wage base included.</p>
+          </div>
+          <div className="feat-card">
+            <div className="feat-icon">⚡</div>
+            <div className="feat-title">Instant & Free</div>
+            <p className="feat-desc">Results in under a second. No signup, no email, no paywall. Works on any device. Completely free forever.</p>
+          </div>
         </div>
         {/* HIGH INCOME BLOCK */}
         <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
