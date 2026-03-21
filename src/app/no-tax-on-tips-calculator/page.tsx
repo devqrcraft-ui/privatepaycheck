@@ -67,6 +67,7 @@ export default function NoTaxOnTipsCalculator() {
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...inp, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
           </div>
