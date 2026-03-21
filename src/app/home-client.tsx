@@ -183,28 +183,28 @@ export default function HomeClient() {
         <div className="obbb-grid">
           <Link href="/no-tax-on-overtime-deduction" className="obbb-card">
             <div className="obbb-badge">New Law</div>
-            <div className="obbb-icon">⏱️</div>
+            <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div className="obbb-title">No Tax on Overtime</div>
             <div className="obbb-save">Save $2,750+</div>
             <div className="obbb-desc">Up to $12,500 overtime deduction. 60M+ eligible workers.</div>
           </Link>
           <Link href="/no-tax-on-tips-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
-            <div className="obbb-icon">💵</div>
+            <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></div>
             <div className="obbb-title">No Tax on Tips</div>
             <div className="obbb-save">Save $5,500+</div>
             <div className="obbb-desc">Up to $25,000 tip deduction. Servers, bartenders, drivers.</div>
           </Link>
           <Link href="/senior-deduction-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
-            <div className="obbb-icon">👴</div>
+            <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M8 21l4-4 4 4"/></svg></div>
             <div className="obbb-title">Senior $6,000 Deduction</div>
             <div className="obbb-save">Save $1,320+</div>
             <div className="obbb-desc">Extra $6,000 deduction for age 65+. Phaseout at $75K.</div>
           </Link>
           <Link href="/trump-account-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
-            <div className="obbb-icon">👶</div>
+            <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M9 11c0 2 1.5 3 3 3s3-1 3-3"/></svg></div>
             <div className="obbb-title">Trump Account</div>
             <div className="obbb-save">$38,000+ at 18</div>
             <div className="obbb-desc">$1,000 gov seed + $2,500/yr employer. See your child total.</div>
