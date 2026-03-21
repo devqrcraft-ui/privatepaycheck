@@ -113,6 +113,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
             <div style={{ background: 'rgba(244,114,182,0.08)', border: '1px solid rgba(244,114,182,0.2)', borderRadius: '10px', padding: '14px', marginTop: '8px' }}>

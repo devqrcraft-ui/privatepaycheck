@@ -38,14 +38,14 @@ export default function TwoJobsClient() {
   const sel=(label:string,val:string,set:(v:string)=>void,opts:[string,string][])=>(
     <div key={label}>
       <label style={{fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase' as const,letterSpacing:'0.06em',marginBottom:'6px',display:'block'}}>{label}</label>
-      <select value={val} onChange={e=>set(e.target.value)} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const, colorScheme:'dark'}}>
+      <select value={val} onChange={e=>set(e.target.value)} style={{width:'100%',background:'#1e293b',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'#fff',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const, colorScheme:'dark'}}>
         {opts.map(([v,l])=><option key={v} value={v}>{l}</option>)}
       </select>
     </div>
   );
 
   return (
-    <main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
+    <main style={{minHeight:'100vh',background:'#091526',color:'#fff',fontFamily:'system-ui,sans-serif'}}>
       <div style={{maxWidth:'860px',margin:'0 auto',padding:'40px 16px'}}>
         <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}>
           <Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link>{' › Two Jobs Tax Calculator'}
@@ -59,14 +59,14 @@ export default function TwoJobsClient() {
             {[['Job 1 Annual Salary ($)',j1,setJ1,'60000'],['Job 2 Annual Salary ($)',j2,setJ2,'25000']].map(([label,val,set,ph])=>(
               <div key={label as string}>
                 <label style={{fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase' as const,letterSpacing:'0.06em',marginBottom:'6px',display:'block'}}>{label as string}</label>
-                <input type="number" value={val as string} onChange={e=>(set as (v:string)=>void)(e.target.value)} placeholder={ph as string} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const}}/>
+                <input type="number" value={val as string} onChange={e=>(set as (v:string)=>void)(e.target.value)} placeholder={ph as string} style={{width:'100%',background:'#1e293b',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'#fff',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const}}/>
               </div>
             ))}
             {sel('Filing Status',filing,setFiling,[['single','Single'],['married','Married']])}
             {sel('Pay Periods / Year',pp,setPp,[['52','Weekly (52)'],['26','Bi-weekly (26)'],['24','Semi-monthly (24)'],['12','Monthly (12)']])}
             <div>
               <label style={{fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase' as const,letterSpacing:'0.06em',marginBottom:'6px',display:'block'}}>State</label>
-              <select value={state} onChange={e=>setState(e.target.value)} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const, colorScheme:'dark'}}>
+              <select value={state} onChange={e=>setState(e.target.value)} style={{width:'100%',background:'#1e293b',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'#fff',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const, colorScheme:'dark'}}>
                 {Object.entries(SN).sort((a,b)=>a[1].localeCompare(b[1])).map(([code,name])=><option key={code} value={code}>{name}</option>)}
               </select>
             </div>
@@ -84,7 +84,7 @@ export default function TwoJobsClient() {
                 </>)}
               </div>
               <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'12px'}}>
-                {[{label:'Combined Income',value:fmt(res.combined),color:'white'},{label:'Total Tax Owed',value:fmt(res.total),color:'#f87171'},{label:'Effective Rate',value:res.rate.toFixed(1)+'%',color:'#fbbf24'},{label:'Extra Per Paycheck',value:res.shortfall>0?fmt(res.extra):'$0',color:res.shortfall>0?'#f87171':'#4ade80'}].map(r=>(
+                {[{label:'Combined Income',value:fmt(res.combined),color:'#fff'},{label:'Total Tax Owed',value:fmt(res.total),color:'#f87171'},{label:'Effective Rate',value:res.rate.toFixed(1)+'%',color:'#fbbf24'},{label:'Extra Per Paycheck',value:res.shortfall>0?fmt(res.extra):'$0',color:res.shortfall>0?'#f87171':'#4ade80'}].map(r=>(
                   <div key={r.label} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}>
                     <div style={{fontSize:'11px',opacity:0.5,marginBottom:'4px',textTransform:'uppercase' as const}}>{r.label}</div>
                     <div style={{fontWeight:800,fontSize:'18px',color:r.color}}>{r.value}</div>
@@ -98,12 +98,12 @@ export default function TwoJobsClient() {
           <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,marginTop:'12px'}}>All calculations happen in your browser</p>
         </div>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
-          <Link href="/w4-withholding-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'16px',color:'white',textDecoration:'none'}}>
+          <Link href="/w4-withholding-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'16px',color:'#fff',textDecoration:'none'}}>
             <div style={{fontSize:'20px',marginBottom:'8px'}}>📋</div>
             <div style={{fontWeight:700,fontSize:'14px',marginBottom:'4px'}}>W-4 Withholding Calculator</div>
             <div style={{fontSize:'12px',opacity:0.55}}>Fill out W-4 correctly</div>
           </Link>
-          <Link href="/" style={{display:'block',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'16px',color:'white',textDecoration:'none'}}>
+          <Link href="/" style={{display:'block',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'16px',color:'#fff',textDecoration:'none'}}>
             <div style={{fontSize:'20px',marginBottom:'8px'}}>💰</div>
             <div style={{fontWeight:700,fontSize:'14px',marginBottom:'4px'}}>Paycheck Calculator</div>
             <div style={{fontSize:'12px',opacity:0.55}}>Take-home pay by state</div>

@@ -65,6 +65,7 @@ export default function SeniorDeductionCalculator() {
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#1e293b', color: 'white', fontSize: 16, boxSizing: 'border-box', colorScheme: 'dark' }}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
           </select>
         </div>
 

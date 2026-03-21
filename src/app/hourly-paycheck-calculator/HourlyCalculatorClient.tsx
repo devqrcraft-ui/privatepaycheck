@@ -98,14 +98,14 @@ export default function HourlyPaycheckCalculator() {
   }, [hourly, hours, weeks, filing, state, k401, hsa]);
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
-  const input: React.CSSProperties = { width:'100%', padding:'10px 14px', background:'#0F2040', border:'1px solid rgba(201,168,76,0.3)', borderRadius:'8px', color:'white', fontSize:'15px', outline:'none', boxSizing:'border-box', fontFamily:'inherit' };
+  const input: React.CSSProperties = { width:'100%', padding:'10px 14px', background:'#0F2040', border:'1px solid rgba(201,168,76,0.3)', borderRadius:'8px', color:'#fff', fontSize:'15px', outline:'none', boxSizing:'border-box', fontFamily:'inherit' };
   const lbl:   React.CSSProperties = { fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' };
   const card:  React.CSSProperties = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'16px' };
   const sel = state;
   const stObj = STATES.find(s => s.code === sel)!;
 
   return (
-    <main style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'white', fontFamily:'system-ui,sans-serif' }}>
+    <main style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'#fff', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebApplication',
         name:'Hourly Paycheck Calculator 2026 — PrivatePaycheck',
@@ -316,22 +316,22 @@ export default function HourlyPaycheckCalculator() {
         <div style={{ marginBottom:'28px' }}>
           <h2 style={{ fontSize:'16px', fontWeight:800, marginBottom:'16px', opacity:0.7 }}>More Free Calculators</h2>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))', gap:'12px' }}>
-            <Link href="/" style={{ display:'block', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
+            <Link href="/" style={{ display:'block', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
               <div style={{ fontSize:'20px', marginBottom:'8px' }}>💰</div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Salary Paycheck Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Annual salary → take-home pay →</div>
             </Link>
-            <Link href="/overtime-calculator" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
+            <Link href="/overtime-calculator" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
               <div style={{ fontSize:'20px', marginBottom:'8px' }}>⏰</div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Overtime Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Time-and-a-half & double time →</div>
             </Link>
-            <Link href="/unemployment-calculator" style={{ display:'block', background:'rgba(201,168,76,0.08)', border:'1px solid rgba(201,168,76,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
+            <Link href="/unemployment-calculator" style={{ display:'block', background:'rgba(201,168,76,0.08)', border:'1px solid rgba(201,168,76,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
               <div style={{ fontSize:'20px', marginBottom:'8px' }}>📋</div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Unemployment Calculator</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>Estimate weekly benefits →</div>
             </Link>
-            <Link href="/minimum-wage" style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'12px', padding:'16px', color:'white', textDecoration:'none' }}>
+            <Link href="/minimum-wage" style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'12px', padding:'16px', color:'#fff', textDecoration:'none' }}>
               <div style={{ fontSize:'20px', marginBottom:'8px' }}>💵</div>
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>Minimum Wage by State</div>
               <div style={{ fontSize:'12px', opacity:0.55 }}>2026 rates all 50 states →</div>

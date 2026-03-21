@@ -41,11 +41,11 @@ function netPay(gross: number, filing: string, state: string): number {
   return gross - fed - ss - medi - stTax;
 }
 
-const BG = { minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' };
+const BG = { minHeight:'100vh', background:'#091526', color:'#fff', fontFamily:'system-ui,sans-serif' };
 const NAV_STYLE = { padding:'14px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.08)', background:'rgba(0,0,0,0.3)', position:'sticky' as const, top:0, zIndex:100 };
 const CARD = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'16px', padding:'24px' };
 const LABEL = { fontSize:'11px', fontWeight:700, letterSpacing:'0.08em', color:'rgba(255,255,255,0.5)', textTransform:'uppercase' as const, marginBottom:'8px' };
-const INPUT_S = { width:'100%', background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'10px', padding:'12px 14px', color:'white', fontSize:'16px', boxSizing:'border-box' as const, outline:'none', colorScheme:'dark' };
+const INPUT_S = { width:'100%', background:'#1e293b', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'10px', padding:'12px 14px', color:'#fff', fontSize:'16px', boxSizing:'border-box' as const, outline:'none', colorScheme:'dark' };
 
 export default function RaiseCalculator() {
   const [salary, setSalary]   = useState(75000);
@@ -114,7 +114,7 @@ export default function RaiseCalculator() {
                     flex:1, padding:'10px', borderRadius:'8px', border:'1px solid',
                     borderColor: raiseType===t ? '#F5C842' : 'rgba(255,255,255,0.15)',
                     background: raiseType===t ? 'rgba(201,168,76,0.15)' : 'rgba(255,255,255,0.04)',
-                    color:'white', fontWeight:700, fontSize:'13px', cursor:'pointer',
+                    color:'#fff', fontWeight:700, fontSize:'13px', cursor:'pointer',
                   }}>{t==='pct' ? 'Percentage %' : 'Fixed Amount $'}</button>
                 ))}
               </div>
@@ -144,6 +144,7 @@ export default function RaiseCalculator() {
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{ ...INPUT_S, cursor:'pointer', colorScheme:'dark', backgroundColor:'#0d1f35' }}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
           </div>

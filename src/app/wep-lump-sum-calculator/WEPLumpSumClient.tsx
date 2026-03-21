@@ -95,12 +95,12 @@ export default function WEPLumpSumCalculator() {
   const fmt  = (n: number) => n.toLocaleString('en-US', { style:'currency', currency:'USD', maximumFractionDigits:0 });
   const fmt2 = (n: number) => n.toLocaleString('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2 });
 
-  const inp: React.CSSProperties = { width:'100%', padding:'10px 14px', borderRadius:8, border:'1px solid rgba(255,255,255,0.15)', background:'rgba(255,255,255,0.08)', color:'white', fontSize:16, boxSizing:'border-box' };
+  const inp: React.CSSProperties = { width:'100%', padding:'10px 14px', borderRadius:8, border:'1px solid rgba(255,255,255,0.15)', background:'rgba(255,255,255,0.08)', color:'#fff', fontSize:16, boxSizing:'border-box' };
   const sel: React.CSSProperties = { ...inp, background:'#1e293b' };
   const lbl: React.CSSProperties = { display:'block', fontSize:13, color:'#94a3b8', marginBottom:6, marginTop:16 };
 
   return (
-    <main style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color:'white', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
+    <main style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
       <div style={{ maxWidth:600, margin:'0 auto' }}>
 
         <Link href="/" style={{ color:'#94a3b8', textDecoration:'none', fontSize:14 }}>← Back to all calculators</Link>
@@ -147,6 +147,7 @@ export default function WEPLumpSumCalculator() {
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...sel, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
             <div>

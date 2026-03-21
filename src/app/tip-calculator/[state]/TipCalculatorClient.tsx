@@ -101,15 +101,16 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
           <div key={f.label}>
             <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>{f.label}</label>
             <input type="number" value={f.value} onChange={e => f.set(e.target.value)} placeholder={f.placeholder}
-              style={{ width:'100%', background:'rgba(255,255,255,0.07)', border:'1.5px solid rgba(255,255,255,0.12)', borderRadius:'10px', padding:'11px 14px', color:'white', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const }} />
+              style={{ width:'100%', background:'#1e293b', border:'1.5px solid rgba(255,255,255,0.12)', borderRadius:'10px', padding:'11px 14px', color:'#fff', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const }} />
           </div>
         ))}
         <div>
           <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>Filing Status</label>
           <select value={filing} onChange={e => setFiling(e.target.value as 'single'|'married')}
-            style={{ width:'100%', background:'rgba(255,255,255,0.07)', border:'1.5px solid rgba(255,255,255,0.12)', borderRadius:'10px', padding:'11px 14px', color:'white', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const, colorScheme:'dark' }}>
+            style={{ width:'100%', background:'#1e293b', border:'1.5px solid rgba(255,255,255,0.2)', borderRadius:'10px', padding:'11px 14px', color:'#fff', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const, colorScheme:'dark' }}>
             <option value="single">Single</option>
-            <option value="married">Married</option>
+            <option value="married">Married Filing Jointly</option>
+            <option value="hoh">Head of Household</option>
           </select>
         </div>
       </div>

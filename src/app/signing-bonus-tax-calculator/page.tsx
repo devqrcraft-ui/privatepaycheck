@@ -40,11 +40,11 @@ function federalTax(income: number, filing: string): number {
   return tax;
 }
 
-const BG = { minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' };
+const BG = { minHeight:'100vh', background:'#091526', color:'#fff', fontFamily:'system-ui,sans-serif' };
 const NAV_STYLE = { padding:'14px 24px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid rgba(255,255,255,0.08)', background:'rgba(0,0,0,0.3)', position:'sticky' as const, top:0, zIndex:100 };
 const CARD = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'16px', padding:'24px' };
 const LABEL = { fontSize:'11px', fontWeight:700, letterSpacing:'0.08em', color:'rgba(255,255,255,0.5)', textTransform:'uppercase' as const, marginBottom:'8px' };
-const INPUT_S = { width:'100%', background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'10px', padding:'12px 14px', color:'white', fontSize:'16px', boxSizing:'border-box' as const, outline:'none' , colorScheme: 'dark' as const };
+const INPUT_S = { width:'100%', background:'#1e293b', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'10px', padding:'12px 14px', color:'#fff', fontSize:'16px', boxSizing:'border-box' as const, outline:'none' , colorScheme: 'dark' as const };
 
 export default function SigningBonusCalculator() {
   const [bonus, setBonus]     = useState(20000);
@@ -126,6 +126,7 @@ export default function SigningBonusCalculator() {
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
 
@@ -167,7 +168,7 @@ export default function SigningBonusCalculator() {
             <div style={{ ...CARD, border:'1px solid rgba(251,191,36,0.3)' }}>
               <div style={{ fontSize:'13px', fontWeight:700, marginBottom:'8px', color:'#fbbf24' }}>⚠️ Clawback Analysis</div>
               <div style={{ fontSize:'13px', opacity:0.65, lineHeight:1.6 }}>
-                If you leave before <strong style={{ color:'white' }}>{clawback} months</strong>, you may owe back {fmt(bonus)} gross.<br/><br/>
+                If you leave before <strong style={{ color:'#fff' }}>{clawback} months</strong>, you may owe back {fmt(bonus)} gross.<br/><br/>
                 Your net bonus equals <strong style={{ color:'#4ade80' }}>{fmt(monthlyValue)}/month</strong> of "golden handcuffs" — worth it?
               </div>
             </div>
