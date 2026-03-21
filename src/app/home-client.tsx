@@ -38,7 +38,7 @@ const FEATURES = [
 const CSS = `
   
   
-  .featured-states{padding:64px 24px;background:linear-gradient(155deg,#071420 0%,#0C1C38 100%);border-top:1px solid rgba(245,200,66,.10);}
+  .featured-states{padding:32px 24px;background:linear-gradient(155deg,#071420 0%,#0C1C38 100%);border-top:1px solid rgba(245,200,66,.10);}
   .fs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
   .fs-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.20);border-radius:14px;padding:28px 24px;text-decoration:none;display:block;transition:all .25s ease;}
   .fs-card:hover{background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.50);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.45);}
@@ -50,7 +50,7 @@ const CSS = `
   .fs-cta{font-size:15px;font-weight:700;color:#F5C842;}
   @media(max-width:768px){.fs-grid{grid-template-columns:1fr;}}
 
-  .obbb-section{padding:64px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
+  .obbb-section{padding:32px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
   .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;}
   .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:24px 20px;text-decoration:none;transition:all .25s ease;display:block;}
   .obbb-card:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.60);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.40);}
@@ -81,7 +81,7 @@ const CSS = `
   .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;}
   .t-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FFD700;}
   .t-l{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:3px;}
-  .pp-section{padding:72px 24px;}
+  .pp-section{padding:36px 24px;}
   .pp-section-alt{background:linear-gradient(155deg,#08142A 0%,#091A32 100%);}
   .s-head{text-align:center;margin-bottom:48px;}
   .s-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;color:#F5C842;border-bottom:2px solid rgba(245,200,66,.40);padding-bottom:5px;margin-bottom:16px;}
@@ -105,7 +105,7 @@ const CSS = `
   body{user-select:none;-webkit-user-select:none;}
   input,textarea,select,.selectable{user-select:text;-webkit-user-select:text;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:24px;}.hero{padding:24px 20px 60px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
-  @media(max-width:540px){.hero{padding:20px 16px 48px;}.hero h1{font-size:32px;}.pp-section{padding:52px 16px;}.feat-grid{grid-template-columns:1fr;}.states-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.hero{padding:20px 16px 48px;}.hero h1{font-size:32px;}.pp-section{padding:28px 16px;}.feat-grid{grid-template-columns:1fr;}.states-grid{grid-template-columns:repeat(2,1fr);}}
 `;
 
 export default function HomeClient() {
@@ -305,7 +305,7 @@ export default function HomeClient() {
       </section>
 
 
-      <section className="pp-section" style={{background:'#050e1a',paddingTop:'40px',paddingBottom:'48px'}}>
+      <section className="pp-section" style={{background:'#050e1a',paddingTop:'24px',paddingBottom:'24px'}}>
         <div style={{maxWidth:'900px',margin:'0 auto',padding:'0 20px'}}>
           <div style={{fontSize:'12px',fontWeight:700,color:'rgba(245,200,66,0.6)',letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:'16px',textAlign:'center'}}>More Free Tax Tools</div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'12px'}}>
