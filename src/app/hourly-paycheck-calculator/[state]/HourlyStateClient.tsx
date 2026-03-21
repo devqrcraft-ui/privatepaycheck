@@ -97,7 +97,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Pay Frequency</label>
-              <select value={freq} onChange={e => setFreq(e.target.value)} style={{ ...INPUT_S, cursor: 'pointer' }}>
+              <select value={freq} onChange={e => setFreq(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="weekly">Weekly (52/yr)</option>
                 <option value="biweekly">Bi-Weekly (26/yr)</option>
                 <option value="semimonthly">Semi-Monthly (24/yr)</option>
@@ -106,7 +106,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{ ...INPUT_S, cursor: 'pointer' }}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>

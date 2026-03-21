@@ -111,7 +111,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
             <div style={{ marginBottom: '18px' }}>
               <label style={LABEL}>Filing Status</label>
               <select value={filing} onChange={e => setFiling(e.target.value)}
-                style={{ ...INPUT_S, cursor: 'pointer' }}>
+                style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>

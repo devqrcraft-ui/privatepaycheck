@@ -110,7 +110,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{ ...INPUT_S, cursor: 'pointer' }}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>

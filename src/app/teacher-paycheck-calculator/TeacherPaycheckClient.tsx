@@ -233,7 +233,7 @@ export default function TeacherPaycheckCalculator() {
 
             <div style={{ marginBottom: '16px' }}>
               <div style={LABEL}>State</div>
-              <select value={state} onChange={e => setState(e.target.value)} style={SELECT_S}>
+              <select value={state} onChange={e => setState(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
                 {Object.entries(STATE_NAMES).sort((a,b) => a[1].localeCompare(b[1])).map(([k,v]) => (
                   <option key={k} value={k}>{v}</option>
                 ))}
@@ -246,7 +246,7 @@ export default function TeacherPaycheckCalculator() {
 
             <div style={{ marginBottom: '16px' }}>
               <div style={LABEL}>Filing Status</div>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={SELECT_S}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>
