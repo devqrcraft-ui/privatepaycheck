@@ -48,7 +48,7 @@ export default function TrumpAccountCalculator() {
 
           <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6, marginTop: 16 }}>Expected Annual Return</label>
           <select value={returnRate} onChange={e => setReturnRate(e.target.value)}
-            style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#1e293b', color: 'white', fontSize: 16, boxSizing: 'border-box' }}>
+            style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#1e293b', color: 'white', fontSize: 16, boxSizing: 'border-box', colorScheme: 'dark' }}>
             <option value="5">5% — Conservative</option>
             <option value="7">7% — Historical S&P Average</option>
             <option value="10">10% — Optimistic</option>

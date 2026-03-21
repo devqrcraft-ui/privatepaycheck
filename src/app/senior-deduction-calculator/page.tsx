@@ -62,7 +62,7 @@ export default function SeniorDeductionCalculator() {
 
           <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6, marginTop: 16 }}>Filing Status</label>
           <select value={filing} onChange={e => setFiling(e.target.value)}
-            style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#1e293b', color: 'white', fontSize: 16, boxSizing: 'border-box' }}>
+            style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#1e293b', color: 'white', fontSize: 16, boxSizing: 'border-box', colorScheme: 'dark' }}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
           </select>
