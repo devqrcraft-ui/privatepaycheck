@@ -27,12 +27,12 @@ const TOP_STATES = [
 ];
 
 const FEATURES = [
-  { icon:'🔒', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.' },
-  { icon:'🏛️', title:'IRS Compliant 2026', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.' },
-  { icon:'⚡', title:'Instant Results',     desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.' },
-  { icon:'📊', title:'Salary & Hourly',     desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.' },
-  { icon:'🎯', title:'Bonus Calculator',    desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.' },
-  { icon:'🗺️', title:'All 50 States',       desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.' },
+  { icon:'', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.' },
+  { icon:'', title:'IRS Compliant 2026', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.' },
+  { icon:'', title:'Instant Results',     desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.' },
+  { icon:'', title:'Salary & Hourly',     desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.' },
+  { icon:'', title:'Bonus Calculator',    desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.' },
+  { icon:'', title:'All 50 States',       desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.' },
 ];
 
 const CSS = `
@@ -130,10 +130,10 @@ export default function HomeClient() {
             </p>
           </div>
           <div className="tags">
-            <span className="tag">💰 Salary & Hourly</span>
-            <span className="tag">🗺️ All 50 States</span>
-            <span className="tag">📅 2026 Brackets</span>
-            <span className="tag">🔒 100% Private</span>
+            <span className="tag">Salary & Hourly</span>
+            <span className="tag">All 50 States</span>
+            <span className="tag">2026 Brackets</span>
+            <span className="tag">100% Private</span>
           </div>
           <div className="stats">
             <div><div className="stat-n">50</div><div className="stat-l">States Covered</div></div>
@@ -356,32 +356,32 @@ export default function HomeClient() {
         </div>
         <div className="feat-grid">
           <div className="feat-card">
-            <div className="feat-icon">🏛️</div>
+            
             <div className="feat-title">Federal Tax</div>
             <p className="feat-desc">2026 IRS Publication 15-T brackets. Standard deduction $14,600 (single) / $29,200 (married). Progressive rates 10%–37%.</p>
           </div>
           <div className="feat-card">
-            <div className="feat-icon">💼</div>
+            
             <div className="feat-title">FICA Tax</div>
             <p className="feat-desc">Social Security 6.2% up to $176,100 wage base. Medicare 1.45% on all wages. Additional 0.9% Medicare above $200,000.</p>
           </div>
           <div className="feat-card">
-            <div className="feat-icon">🗺️</div>
+            
             <div className="feat-title">State Tax</div>
             <p className="feat-desc">Official 2026 rates for all 50 states. 9 states have $0 income tax. Flat rates and progressive brackets both supported.</p>
           </div>
           <div className="feat-card">
-            <div className="feat-icon">🔒</div>
+            
             <div className="feat-title">100% Private</div>
             <p className="feat-desc">All math runs in your browser. Zero data sent to any server. No cookies, no tracking, no accounts required — ever.</p>
           </div>
           <div className="feat-card">
-            <div className="feat-icon">📅</div>
+            
             <div className="feat-title">2026 Tax Year</div>
             <p className="feat-desc">Updated for 2026 IRS inflation adjustments. New standard deductions, bracket thresholds, and FICA wage base included.</p>
           </div>
           <div className="feat-card">
-            <div className="feat-icon">⚡</div>
+            
             <div className="feat-title">Instant & Free</div>
             <p className="feat-desc">Results in under a second. No signup, no email, no paywall. Works on any device. Completely free forever.</p>
           </div>
