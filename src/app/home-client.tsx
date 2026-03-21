@@ -27,12 +27,12 @@ const TOP_STATES = [
 ];
 
 const FEATURES = [
-  { icon:'', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.' },
-  { icon:'', title:'IRS Compliant 2026', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.' },
-  { icon:'', title:'Instant Results',     desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.' },
-  { icon:'', title:'Salary & Hourly',     desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.' },
-  { icon:'', title:'Bonus Calculator',    desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.' },
-  { icon:'', title:'All 50 States',       desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.' },
+  { icon:'', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.', href:'/' },
+  { icon:'', title:'IRS Compliant 2026', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.', href:'/methodology' },
+  { icon:'', title:'Instant Results',     desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.', href:'/' },
+  { icon:'', title:'Salary & Hourly',     desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.', href:'/hourly-paycheck-calculator' },
+  { icon:'', title:'Bonus Calculator',    desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.', href:'/bonus-tax-calculator' },
+  { icon:'', title:'All 50 States',       desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.', href:'/all-states' },
 ];
 
 const CSS = `
@@ -221,11 +221,11 @@ export default function HomeClient() {
         </div>
         <div className="feat-grid">
           {FEATURES.map((f)=>(
-            <div key={f.title} className="feat-card">
+            <Link key={f.title} href={f.href} className="feat-card" style={{textDecoration:'none'}}>
               <div className="feat-icon">{f.icon}</div>
               <div className="feat-title">{f.title}</div>
               <p className="feat-desc">{f.desc}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
