@@ -99,7 +99,7 @@ const CSS = `
   .s-card:hover{background:rgba(245,200,66,.10);border-color:#F5C842;transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.40);}
   .s-name{font-size:14px;font-weight:700;color:#DDEEFF;} .state-card{transition:transform 0.15s,background 0.15s;} .state-card:hover{transform:translateY(-2px);background:rgba(245,200,66,.08);}
   .s-rate{font-size:13px;color:#7A9FBF;margin-top:3px;}
-  .all-link{display:block;text-align:center;margin-top:28px;color:#F5C842;font-size:14px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;text-decoration:none;}
+  .all-link{display:block;text-align:center;margin-top:16px;color:#F5C842;font-size:14px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;text-decoration:none;padding-bottom:16px;border-bottom:1px solid rgba(245,200,66,0.15);}
   .all-link:hover{color:#FFD700;}
   
   body{user-select:none;-webkit-user-select:none;}
