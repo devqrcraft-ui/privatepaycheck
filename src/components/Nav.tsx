@@ -24,7 +24,7 @@ export default function Nav() {
     <>
       <style>{`
         .ticker-outer{background:#8B1A1A;border-bottom:2px solid #F5C842;height:40px;overflow:hidden;display:flex;align-items:center;width:100%;max-width:100vw;position:relative;}
-        .ticker-track{display:flex;white-space:nowrap;animation:tick 70s linear infinite;will-change:transform;}
+        .ticker-track{display:flex;white-space:nowrap;animation:tick 105s linear infinite;will-change:transform;}
         @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
         .ticker-set{display:inline-flex;align-items:center;flex-shrink:0;}
         .t-item{color:#fff;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:0 40px;white-space:nowrap;}
