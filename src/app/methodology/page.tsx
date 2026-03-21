@@ -22,7 +22,7 @@ export default function Page() {
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Federal Tax Brackets 2026 (Single Filer)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+        <thead><tr style={{ background: '#1a2550' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Rate</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Taxable Income Range</th>
         </tr></thead>
@@ -58,7 +58,7 @@ export default function Page() {
       <p style={{ color: '#444', lineHeight: 1.7, marginBottom: 16 }}>Our calculators provide estimates for <strong>single filers taking the standard deduction</strong> unless otherwise specified. Actual withholding may differ based on W-4 elections, pre-tax benefit deductions, supplemental wages, and local taxes not covered in our state tables.</p>
       <p style={{ color: '#444', lineHeight: 1.7, marginBottom: 32 }}>This tool is for educational and planning purposes only and does not constitute tax advice. For precise withholding, consult a tax professional or use the <a href="https://www.irs.gov/individuals/tax-withholding-estimator" target="_blank" rel="noopener" style={{ color: '#1a56db' }}>IRS Tax Withholding Estimator</a>.</p>
 
-      <div style={{ background: '#f0f4ff', borderRadius: 8, padding: 20 }}>
+      <div style={{ background: '#1a2550', borderRadius: 8, padding: 20 }}>
         <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Use the free paycheck calculator →</a>
         {' · '}
         <a href="/blog" style={{ color: '#1a56db', fontWeight: 700 }}>Read tax guides →</a>

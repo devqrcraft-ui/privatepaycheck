@@ -61,7 +61,7 @@ export default function UnemploymentCalculatorState({
         )}
       </p>
 
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 12, padding: '24px 28px', marginBottom: 32 }}>
+      <div style={{ background: '#1a2550', border: '1px solid #2a3a6a', borderRadius: 12, padding: '24px 28px', marginBottom: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#0c4a6e' }}>
           Calculate Your Benefit
         </h2>
@@ -92,7 +92,7 @@ export default function UnemploymentCalculatorState({
               { label: 'Max Total (' + result.weeks + ' wks)', value: '$' + result.maxTotal.toLocaleString(), color: '#166534' },
               { label: 'Est. After-Tax/Week', value: '$' + result.afterTax, color: '#7c3aed' },
             ].map((item) => (
-              <div key={item.label} style={{ background: '#fff', borderRadius: 10, padding: '16px 12px', textAlign: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
+              <div key={item.label} style={{ background: '#0f1a3a', borderRadius: 10, padding: '16px 12px', textAlign: 'center', boxShadow: '0 1px 4px rgba(0,0,0,0.08)' }}>
                 <div style={{ fontSize: 26, fontWeight: 800, color: item.color }}>{item.value}</div>
                 <div style={{ fontSize: 12, color: '#64748b', marginTop: 4 }}>{item.label}</div>
               </div>

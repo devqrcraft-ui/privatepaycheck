@@ -72,7 +72,7 @@ const statePosts = [
 ]
 
 const card: React.CSSProperties = {
-  background: '#fff',
+  background: '#1a2550',
   border: '1px solid #e5e7eb',
   borderRadius: 10,
   padding: '16px 20px',
