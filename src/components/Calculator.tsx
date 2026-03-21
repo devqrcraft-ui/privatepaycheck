@@ -117,7 +117,7 @@ export default function Calculator({ defaultState }: CalcProps) {
         <div className="card-sub">2026 IRS Rules · Instant Results</div>
 
         <label className="fl">Pay Type</label>
-        <select value={payType} onChange={e=>setPayType(e.target.value)}>
+        <select aria-label="Pay type" value={payType} onChange={e=>setPayType(e.target.value)}>
           <option value="salary">Annual Salary</option>
           <option value="hourly">Hourly Wage</option>
         </select>
@@ -126,7 +126,7 @@ export default function Calculator({ defaultState }: CalcProps) {
         <input type="number" value={income} onChange={e=>setIncome(e.target.value)} placeholder={payType==='hourly'?'e.g. 25.00':'e.g. 65000'} min="0"/>
 
         <label className="fl">Pay Frequency</label>
-        <select value={freq} onChange={e=>setFreq(e.target.value)}>
+        <select aria-label="Pay frequency" value={freq} onChange={e=>setFreq(e.target.value)}>
           <option value="26">Bi-Weekly (every 2 weeks)</option>
           <option value="24">Semi-Monthly (twice/month)</option>
           <option value="12">Monthly</option>
@@ -134,12 +134,12 @@ export default function Calculator({ defaultState }: CalcProps) {
         </select>
 
         <label className="fl">State of Residence</label>
-        <select value={stateRate} onChange={e=>setStateRate(e.target.value)}>
+        <select aria-label="State of residence" value={stateRate} onChange={e=>setStateRate(e.target.value)}>
           {STATES.map(s=><option key={s.label} value={s.value}>{s.label}</option>)}
         </select>
 
         <label className="fl">Filing Status</label>
-        <select value={filing} onChange={e=>setFiling(e.target.value)}>
+        <select aria-label="Filing status" value={filing} onChange={e=>setFiling(e.target.value)}>
           <option value="single">Single</option>
           <option value="married">Married Filing Jointly</option>
           <option value="head">Head of Household</option>
