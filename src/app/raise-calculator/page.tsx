@@ -132,7 +132,7 @@ export default function RaiseCalculator() {
 
             <div style={{ marginBottom:'16px' }}>
               <div style={LABEL}>State</div>
-              <select value={state} onChange={e=>setState(e.target.value)} style={{ ...INPUT_S, cursor:'pointer' }}>
+              <select value={state} onChange={e=>setState(e.target.value)} style={{ ...INPUT_S, cursor:'pointer', colorScheme:'dark', backgroundColor:'#0d1f35' }}>
                 {Object.entries(STATE_NAMES).sort((a,b)=>a[1].localeCompare(b[1])).map(([k,v])=>(
                   <option key={k} value={k}>{v}</option>
                 ))}
@@ -141,7 +141,7 @@ export default function RaiseCalculator() {
 
             <div>
               <div style={LABEL}>Filing Status</div>
-              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{ ...INPUT_S, cursor:'pointer' }}>
+              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{ ...INPUT_S, cursor:'pointer', colorScheme:'dark', backgroundColor:'#0d1f35' }}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>
