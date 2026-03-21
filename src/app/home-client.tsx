@@ -39,7 +39,7 @@ const CSS = `
   
   
   .featured-states{padding:32px 24px;background:linear-gradient(155deg,#071420 0%,#0C1C38 100%);border-top:1px solid rgba(245,200,66,.10);}
-  .fs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+  .fs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;} @media(max-width:768px){.fs-grid{grid-template-columns:1fr;}}
   .fs-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.20);border-radius:14px;padding:28px 24px;text-decoration:none;display:block;transition:all .25s ease;}
   .fs-card:hover{background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.50);transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.45);}
   .fs-state{font-size:13px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#F5C842;margin-bottom:10px;}
@@ -51,7 +51,7 @@ const CSS = `
   @media(max-width:768px){.fs-grid{grid-template-columns:1fr;}}
 
   .obbb-section{padding:32px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
-  .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;}
+  .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;} @media(max-width:768px){.obbb-grid{grid-template-columns:repeat(2,1fr);}} @media(max-width:480px){.obbb-grid{grid-template-columns:1fr;}}
   .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:24px 20px;text-decoration:none;transition:all .25s ease;display:block;}
   .obbb-card:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.60);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.40);}
   .obbb-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;background:rgba(99,102,241,.25);color:#a5b4fc;padding:4px 10px;border-radius:3px;margin-bottom:12px;}
@@ -88,7 +88,7 @@ const CSS = `
   .pp-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,38px);font-weight:700;color:#fff;margin-bottom:14px;line-height:1.15;}
   .pp-section h2 em{color:#FFD700;font-style:normal;}
   .s-desc{font-size:15px;color:#90B4D0;max-width:100%;margin:0 auto;line-height:1.78;}
-  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;} @media(max-width:768px){.feat-grid{grid-template-columns:1fr;}}
   .feat-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,200,66,.17);border-radius:10px;padding:28px 24px;transition:all .3s ease;}
   .feat-card:hover{background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.50);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.40);}
   .feat-icon{font-size:36px;margin-bottom:16px;}
@@ -105,7 +105,7 @@ const CSS = `
   body{user-select:none;-webkit-user-select:none;}
   input,textarea,select,.selectable{user-select:text;-webkit-user-select:text;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:24px;}.hero{padding:24px 20px 60px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
-  @media(max-width:540px){.hero{padding:20px 16px 48px;}.hero h1{font-size:32px;}.pp-section{padding:28px 16px;}.feat-grid{grid-template-columns:1fr;}.states-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.hero{padding:20px 16px 48px;}.hero h1{font-size:32px;}.pp-section{padding:28px 16px;}.feat-grid{grid-template-columns:1fr;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}}
 `;
 
 export default function HomeClient() {
@@ -284,7 +284,7 @@ export default function HomeClient() {
           <h2>Real Take-Home <em>Pay Examples</em></h2>
           <p className="s-desc">See exactly what common salaries and hourly rates bring home after all taxes — by state.</p>
         </div>
-        <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'12px'}}>
+        <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'12px'}} className='salary-grid'>
           {[
             {salary:'$20/hr in Texas',net:'~$33,200/yr · $1,277/biweekly',note:'No state tax. Federal + FICA only.',href:'/hourly-paycheck-calculator/texas'},
             {salary:'$20/hr in California',net:'~$30,400/yr · $1,169/biweekly',note:'State tax up to 9.3% applies.',href:'/hourly-paycheck-calculator/california'},
@@ -389,7 +389,7 @@ export default function HomeClient() {
         {/* HIGH INCOME BLOCK */}
         <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
           <div style={{fontSize:13,fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:14}}> High-Income Earners — $200k, $500k, $1M+</div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:14}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:14}} className='high-income-grid'>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Social Security Cap</div>
               <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>SS tax (6.2%) stops at <strong style={{color:'#fff'}}>$176,100</strong> in 2026. Above this, you save $10,918/year vs someone earning under the cap.</div>
