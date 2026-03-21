@@ -13,7 +13,7 @@ export default function Page() {
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Married Filing Jointly Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>Filing as <strong>married filing jointly (MFJ)</strong> gives you a <strong>$30,000 standard deduction</strong> in 2026 — double the single amount. This directly increases your paycheck take-home.</p>
 
-      <div style={{ background: '#d4edda', border: '1px solid #28a745', borderRadius: 8, padding: '14px 18px', marginBottom: 28 }}>
+      <div style={{ background: '#d4edda', color: '#1a1a2e', border: '1px solid #28a745', borderRadius: 8, padding: '14px 18px', marginBottom: 28 }}>
         <strong>Key 2026 MFJ numbers:</strong> Standard deduction $30,000 · Top bracket 37% starts at $731,200 · 22% bracket starts at $96,950 combined
       </div>
 
