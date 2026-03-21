@@ -170,7 +170,7 @@ export default function HourlyPaycheckCalculator() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
               <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{ ...input }}>
+              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...input, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
@@ -178,7 +178,7 @@ export default function HourlyPaycheckCalculator() {
             </div>
             <div>
               <label style={lbl}>State</label>
-              <select value={state} onChange={e=>setState(e.target.value)} style={{ ...input }}>
+              <select value={state} onChange={e=>setState(e.target.value)} style={{...input, colorScheme:'dark'}}>
                 {STATES.map(s => <option key={s.code} value={s.code}>{s.name}{s.rate===0 ? ' (no income tax)' : ''}</option>)}
               </select>
             </div>
