@@ -105,7 +105,7 @@ const CSS = `
   body{user-select:none;-webkit-user-select:none;}
   input,textarea,select,.selectable{user-select:text;-webkit-user-select:text;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:24px;}.hero{padding:24px 20px 60px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
-  @media(max-width:540px){.hero{padding:20px 16px 48px;}.hero h1{font-size:32px;}.pp-section{padding:28px 16px;}.feat-grid{grid-template-columns:1fr;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}}
+  @media(max-width:540px){.hero{padding:20px 16px 48px;}.hero h1{font-size:32px;}.pp-section{padding:28px 16px;}.feat-grid{grid-template-columns:1fr;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}.feat-desc{font-size:16px!important;line-height:1.7!important;}.feat-title{font-size:20px!important;}.s-desc{font-size:16px!important;}.fs-fact{font-size:15px!important;}.fs-title{font-size:20px!important;}.fs-rate{font-size:28px!important;}.s-name{font-size:16px!important;}.s-rate{font-size:15px!important;}.obbb-desc{font-size:15px!important;}.obbb-title{font-size:17px!important;}.stat-n{font-size:28px!important;}.t-n{font-size:26px!important;}}
 `;
 
 export default function HomeClient() {
