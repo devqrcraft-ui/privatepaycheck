@@ -114,6 +114,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
                 style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
             <div style={{ marginBottom: '18px' }}>

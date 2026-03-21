@@ -138,6 +138,7 @@ export default function BonusTaxCalculator() {
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
               </select>
             </div>
           </div>
