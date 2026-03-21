@@ -15,7 +15,7 @@ export default function Page() {
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Wyoming Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#444', marginBottom: 12 }}><strong>No state income tax</strong> in Wyoming — only federal income tax and FICA are withheld. Use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a> for your exact situation.</p>
-      <div style={{ background: '#d4edda', border: '1px solid #28a745', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#155724' }}>No Wyoming state income tax in 2026. Only federal withholding applies.</div>
+      <div style={{ background: '#d4edda', color: '#1a1a2e', border: '1px solid #28a745', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#155724' }}>No Wyoming state income tax in 2026. Only federal withholding applies.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Wyoming Take-Home Pay by Salary (Single Filer, 2026)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead><tr style={{ background: 'rgba(99,102,241,0.2)' }}>
