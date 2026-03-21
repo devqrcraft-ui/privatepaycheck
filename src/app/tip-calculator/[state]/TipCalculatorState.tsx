@@ -10,10 +10,10 @@ interface Props {
   stateSlug: string;
 }
 
-const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' };
+const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: '#fff', fontFamily: 'system-ui,sans-serif' };
 const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '28px' };
 const LABEL: React.CSSProperties = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' };
-const INPUT_S: React.CSSProperties = { width: '100%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: 'white', fontSize: '16px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
+const INPUT_S: React.CSSProperties = { width: '100%', background: '#1e293b', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: '#fff', fontSize: '16px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
 const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 
 export default function TipCalculatorState({ stateName, stateTax, noStateTax, stateSlug }: Props) {
@@ -57,7 +57,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
           <span>/</span>
           <Link href="/tip-calculator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Tip Tax Calculator</Link>
           <span>/</span>
-          <span style={{ color: 'white' }}>{stateName}</span>
+          <span style={{ color: '#fff' }}>{stateName}</span>
         </div>
 
         <div style={{ marginBottom: '36px' }}>
@@ -146,7 +146,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '32px' }}>
           <h2 style={{ fontSize: '22px', fontWeight: 800, margin: '0 0 14px' }}>No Tax on Tips in {stateName} — 2026 Guide</h2>
           <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '16px' }}>
-            The No Tax on Tips law, effective January 1, 2025, allows tipped workers to deduct up to <strong style={{ color: 'white' }}>$25,000 in tip income</strong> from their federal taxable income. This applies to workers in traditional tipping industries — restaurants, hotels, salons, and more.
+            The No Tax on Tips law, effective January 1, 2025, allows tipped workers to deduct up to <strong style={{ color: '#fff' }}>$25,000 in tip income</strong> from their federal taxable income. This applies to workers in traditional tipping industries — restaurants, hotels, salons, and more.
           </p>
           <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }}>
             {noStateTax

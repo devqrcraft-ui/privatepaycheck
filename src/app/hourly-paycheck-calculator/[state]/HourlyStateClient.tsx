@@ -10,10 +10,10 @@ interface Props {
   stateSlug: string;
 }
 
-const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' };
+const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: '#fff', fontFamily: 'system-ui,sans-serif' };
 const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '28px' };
 const LABEL: React.CSSProperties = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' };
-const INPUT_S: React.CSSProperties = { width: '100%', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: 'white', fontSize: '16px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
+const INPUT_S: React.CSSProperties = { width: '100%', background: '#1e293b', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: '#fff', fontSize: '16px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
 const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 
 function fedTax(income: number, filing: string): number {
@@ -60,7 +60,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
           <span>/</span>
           <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Hourly Paycheck Calculator</Link>
           <span>/</span>
-          <span style={{ color: 'white' }}>{stateName}</span>
+          <span style={{ color: '#fff' }}>{stateName}</span>
         </div>
 
         <div style={{ marginBottom: '36px' }}>
@@ -164,7 +164,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
               : 'In ' + stateName + ', hourly workers pay federal income tax, ' + stateTax + '% state income tax, and FICA (Social Security at 6.2% and Medicare at 1.45%). This calculator applies all 2026 IRS rules automatically.'}
           </p>
           <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }}>
-            Federal income tax is withheld using the percentage method based on your annualized income and filing status. The more you earn, the higher your marginal bracket — but your <strong style={{ color: 'white' }}>effective rate</strong> is always lower than your top bracket rate.
+            Federal income tax is withheld using the percentage method based on your annualized income and filing status. The more you earn, the higher your marginal bracket — but your <strong style={{ color: '#fff' }}>effective rate</strong> is always lower than your top bracket rate.
           </p>
           <Link href="/hourly-paycheck-calculator" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '8px', padding: '10px 18px', color: '#F5C842', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }}>
             Back to Hourly Calculator →
