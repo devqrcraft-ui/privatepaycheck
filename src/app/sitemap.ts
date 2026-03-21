@@ -12,7 +12,6 @@ const STATE_SLUGS = [
   'oklahoma','oregon','pennsylvania','rhode-island','south-carolina','south-dakota',
   'tennessee','texas','utah','vermont','virginia','washington','west-virginia',
   'wisconsin','wyoming','washington-dc',
-  'methodology',
 ];
 
 const BLOG_SLUGS = [
