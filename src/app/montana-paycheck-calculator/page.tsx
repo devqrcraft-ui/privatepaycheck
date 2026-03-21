@@ -15,10 +15,10 @@ export default function Page() {
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Montana Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#444', marginBottom: 12 }}>Montana state income tax: <strong>up to 5.9%</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a> for your exact situation.</p>
-      <div style={{ background: '#fff3cd', border: '1px solid #ffc107', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14 }}>Montana state income tax: up to 5.9% in 2026.</div>
+      <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Montana state income tax: up to 5.9% in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Montana Take-Home Pay by Salary (Single Filer, 2026)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: '#f0f4ff' }}>
+        <thead><tr style={{ background: 'rgba(99,102,241,0.2)' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Annual Salary</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Monthly Gross</th>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Monthly Net</th>
@@ -33,7 +33,7 @@ export default function Page() {
           </tr>
         ))}</tbody>
       </table>
-      <div style={{ background: '#f0f4ff', borderRadius: 8, padding: 20, marginBottom: 32 }}>
+      <div style={{ background: 'rgba(99,102,241,0.2)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
         <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact Montana paycheck →</a>
       </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Frequently Asked Questions</h2>
@@ -45,7 +45,7 @@ export default function Page() {
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>
           {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
-            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'8px 12px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{n} Calculator</a>
+            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'8px 12px', background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:6, fontSize:13, fontWeight:600, color:'#818cf8', textDecoration:'none' }}>{n} Calculator</a>
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>

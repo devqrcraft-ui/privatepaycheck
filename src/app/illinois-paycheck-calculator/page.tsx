@@ -31,7 +31,7 @@ export default function Page() {
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>Illinois Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Illinois uses a <strong>flat 4.95% state income tax</strong> — the same rate for every income level. Simple to calculate, and lower than California or New York for high earners.</p>
-      <div style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid #1a56db', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14 }}>
+      <div style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid #1a56db', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         IL flat tax 2026: 4.95% on all income. No brackets. No local income tax except Chicago (none for wages).
       </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Illinois Take-Home Pay by Salary (Single Filer, 2026)</h2>
@@ -94,7 +94,7 @@ export default function Page() {
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>
           {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
-            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'8px 12px', background:'#f8faff', border:'1px solid #e5e7eb', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{n} Calculator</a>
+            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'8px 12px', background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:6, fontSize:13, fontWeight:600, color:'#818cf8', textDecoration:'none' }}>{n} Calculator</a>
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
