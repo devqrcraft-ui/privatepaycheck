@@ -87,7 +87,7 @@ export default function NoTaxOnOvertimePage() {
               ))}
             </div>
           </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}>рџ”’ All calculations in your browser "” data never sent anywhere</p>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}> All calculations in your browser "” data never sent anywhere</p>
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
@@ -107,7 +107,7 @@ export default function NoTaxOnOvertimePage() {
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Current OT pay в†’</div>
           </Link>
           <Link href="/" style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}>рџ’°</div>
+            <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full tax breakdown в†’</div>
           </Link>
