@@ -3,14 +3,18 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const TICKER_ITEMS = [
-  '🏛️ 2026 IRS Tax Tables — Updated',
-  '⚡ Instant Paycheck Calculator',
-  '🔒 100% Private — No Data Stored',
-  '🗺️ All 50 States Covered',
-  '💰 Free Forever — No Signup',
-  '📊 Salary & Hourly Calculator',
-  '🎯 Bonus & Overtime Calculator',
-  '✅ IRS Publication 15-T Compliant',
+  '2026 IRS Tax Tables — Updated',
+  'Federal + State + FICA — All Calculated',
+  '100% Private — No Data Stored',
+  'All 50 States Covered',
+  'Free Forever — No Signup Required',
+  'Salary & Hourly Calculator',
+  'Bonus & Overtime Calculator',
+  'IRS Publication 15-T Compliant',
+  'Standard Deduction $14,600 Single / $29,200 Married',
+  'FICA Wage Base $176,100 for 2026',
+  'No Accounts. No Cookies. No Tracking.',
+  'Results in Under 1 Second',
 ];
 
 export default function Nav() {
