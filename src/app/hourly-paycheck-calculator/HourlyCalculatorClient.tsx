@@ -178,7 +178,7 @@ export default function HourlyPaycheckCalculator() {
             </div>
             <div>
               <label style={lbl}>State</label>
-              <select value={state} onChange={e=>setState(e.target.value)} style={{...input, colorScheme:'dark'}}>
+              <select value={state} onChange={e=>setState(e.target.value)} onFocus={e=>{e.currentTarget.scrollIntoView({behavior:"smooth",block:"center"});}} style={{...input, colorScheme:'dark'}}>
                 {STATES.map(s => <option key={s.code} value={s.code}>{s.name}{s.rate===0 ? ' (no income tax)' : ''}</option>)}
               </select>
             </div>
