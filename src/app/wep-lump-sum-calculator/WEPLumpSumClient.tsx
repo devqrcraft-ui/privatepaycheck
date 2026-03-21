@@ -144,7 +144,7 @@ export default function WEPLumpSumCalculator() {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginTop:16 }}>
             <div>
               <label style={{ ...lbl, marginTop:0 }}>Filing Status</label>
-              <select value={filing} onChange={e=>setFiling(e.target.value)} style={sel}>
+              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...sel, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>

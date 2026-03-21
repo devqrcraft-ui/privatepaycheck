@@ -38,7 +38,7 @@ export default function TwoJobsClient() {
   const sel=(label:string,val:string,set:(v:string)=>void,opts:[string,string][])=>(
     <div key={label}>
       <label style={{fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase' as const,letterSpacing:'0.06em',marginBottom:'6px',display:'block'}}>{label}</label>
-      <select value={val} onChange={e=>set(e.target.value)} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const}}>
+      <select value={val} onChange={e=>set(e.target.value)} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const, colorScheme:'dark'}}>
         {opts.map(([v,l])=><option key={v} value={v}>{l}</option>)}
       </select>
     </div>
@@ -66,7 +66,7 @@ export default function TwoJobsClient() {
             {sel('Pay Periods / Year',pp,setPp,[['52','Weekly (52)'],['26','Bi-weekly (26)'],['24','Semi-monthly (24)'],['12','Monthly (12)']])}
             <div>
               <label style={{fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase' as const,letterSpacing:'0.06em',marginBottom:'6px',display:'block'}}>State</label>
-              <select value={state} onChange={e=>setState(e.target.value)} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const}}>
+              <select value={state} onChange={e=>setState(e.target.value)} style={{width:'100%',background:'rgba(255,255,255,0.07)',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'white',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const, colorScheme:'dark'}}>
                 {Object.entries(SN).sort((a,b)=>a[1].localeCompare(b[1])).map(([code,name])=><option key={code} value={code}>{name}</option>)}
               </select>
             </div>

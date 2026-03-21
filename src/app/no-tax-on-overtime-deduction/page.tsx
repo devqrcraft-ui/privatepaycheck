@@ -60,7 +60,7 @@ export default function NoTaxOnOvertimePage() {
             <div><label style={lbl}>Weeks/Year</label><input type="number" value={weeks} onChange={e => setWeeks(e.target.value)} style={inp} placeholder="52" /></div>
             <div>
               <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={inp}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...inp, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
               </select>
