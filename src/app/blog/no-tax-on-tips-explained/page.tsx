@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> вЂє <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> вЂє No Tax on Tips Explained</div>
+<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є No Tax on Tips Explained</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>рџ”Ґ NEW 2026</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>No Tax on Tips Explained: Who Qualifies & How Much You Save (2026)</h1>
 <p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
@@ -25,7 +25,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <p>The &quot;No Tax on Tips&quot; proposal has been one of the most discussed tax policy ideas of 2025-2026. For the estimated 4 million tipped workers in the US, it could mean keeping an extra $1,500 to $4,000 per year. Here is everything you need to know.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>What Is the No Tax on Tips Proposal?</h2>
 <p>The proposal would exempt tip income from federal income tax, up to $25,000 per year. Tips above $25,000 would still be taxed normally. Workers earning over approximately $160,000 in wages would not qualify for the full exemption.</p>
-<p style={{marginTop:'12px'}}>Some versions also include exemption from FICA taxes (Social Security and Medicare вЂ” currently 7.65%) on tip income, which would add significant additional savings.</p>
+<p style={{marginTop:'12px'}}>Some versions also include exemption from FICA taxes (Social Security and Medicare "” currently 7.65%) on tip income, which would add significant additional savings.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Who Qualifies?</h2>
 <p>The exemption would apply to workers in traditionally tipped occupations, which the IRS typically defines as:</p>
 <ul style={{paddingLeft:'20px'}}>

@@ -86,11 +86,11 @@ export default function NoTaxOnOvertimePage() {
               ))}
             </div>
           </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}>рџ”’ All calculations in your browser вЂ” data never sent anywhere</p>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}>рџ”’ All calculations in your browser "” data never sent anywhere</p>
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
-          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>вљ ️ Legislative Status</h3>
+          <h3 style={{ color: '#fbbf24', fontWeight: 800, margin: '0 0 8px', fontSize: '15px' }}>⚠️ ️ Legislative Status</h3>
           <p style={{ fontSize: '13px', opacity: 0.8, lineHeight: 1.7, margin: 0 }}>The One Big Beautiful Bill was signed into law in 2025. It allows eligible W-2 employees to deduct up to $12,500 of overtime pay annually from federal taxable income for tax years 2025–2028. The deduction applies to the overtime premium (the extra 0.5× above regular pay). Self-employed and 1099 workers do not qualify.</p>
         </div>
 

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 const EXAMPLES=[{from:40000,raise:5000,kept:3350,pct:67},{from:60000,raise:8000,kept:5360,pct:67},{from:80000,raise:10000,kept:6720,pct:67},{from:100000,raise:15000,kept:9180,pct:61},{from:150000,raise:20000,kept:11280,pct:56},{from:200000,raise:25000,kept:13500,pct:54}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> вЂє <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> вЂє How Much of My Raise Do I Keep</div>
+<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є How Much of My Raise Do I Keep</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>How Much of My Raise Do I Actually Keep After Taxes? (2026)</h1>
 <p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 4 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
-<p>You negotiated a $10,000 raise. Congratulations! But after federal taxes, state taxes, and FICA, how much of that actually lands in your bank account? The answer might surprise you вЂ” but it is never as bad as people fear.</p>
+<p>You negotiated a $10,000 raise. Congratulations! But after federal taxes, state taxes, and FICA, how much of that actually lands in your bank account? The answer might surprise you "” but it is never as bad as people fear.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>The Marginal Rate Myth</h2>
-<p>Many people fear that a raise will push them into a higher tax bracket and they will somehow take home less money. <strong>This never happens.</strong> Only the dollars above the bracket threshold get taxed at the higher rate вЂ” not your entire salary.</p>
+<p>Many people fear that a raise will push them into a higher tax bracket and they will somehow take home less money. <strong>This never happens.</strong> Only the dollars above the bracket threshold get taxed at the higher rate "” not your entire salary.</p>
 <p style={{marginTop:'12px'}}>What does happen: as your income grows, a larger portion gets taxed at higher rates, so you keep a slightly smaller percentage of each additional dollar. But you always keep more in total.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>How Much You Keep: By Income Level (Single Filer, Texas)</h2>
 </div>
@@ -31,10 +31,10 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'0 0 12px',color:'white'}}>Rule of Thumb by Bracket</h2>
 <ul style={{paddingLeft:'20px'}}>
 <li style={{marginBottom:'8px'}}><strong>10% bracket (under ~$26.6k):</strong> Keep ~82% of raise after federal + FICA</li>
-<li style={{marginBottom:'8px'}}><strong>12% bracket ($26.6kвЂ“$62k):</strong> Keep ~80% of raise</li>
-<li style={{marginBottom:'8px'}}><strong>22% bracket ($62kвЂ“$115k):</strong> Keep ~71% of raise</li>
-<li style={{marginBottom:'8px'}}><strong>24% bracket ($115kвЂ“$207k):</strong> Keep ~68% of raise</li>
-<li style={{marginBottom:'8px'}}><strong>32% bracket ($207kвЂ“$258k):</strong> Keep ~61% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>12% bracket ($26.6k"“$62k):</strong> Keep ~80% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>22% bracket ($62k"“$115k):</strong> Keep ~71% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>24% bracket ($115k"“$207k):</strong> Keep ~68% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>32% bracket ($207k"“$258k):</strong> Keep ~61% of raise</li>
 </ul>
 <p style={{marginTop:'12px'}}>Add state income tax and you keep a bit less. In California at 9.3%, a $10,000 raise in the 22% bracket nets you about $6,100 instead of $7,100.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>How to Negotiate Using These Numbers</h2>
