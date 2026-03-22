@@ -352,8 +352,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return { title: 'Not Found' };
   const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state income tax';
   return {
-    title: data.name + ' Bonus Tax Calculator 2026 — Exact Take-Home After IRS 22% + State Tax',
-    description: 'Got a bonus in ' + data.name + '? See exactly how much you keep after IRS 22% flat rate + state tax + FICA. Free 2026 calculator — results in seconds, no login.',
+    title: data.name + ' Bonus Tax Calculator 2026 — After-Tax Bonus Pay',
+    description: 'Free 2026 bonus tax calculator for ' + data.name + '. See how much of your bonus you keep after federal tax and FICA (' + taxNote + '). Instant results, no signup.',
     alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/' + state },
   };
 }

@@ -2,8 +2,8 @@ import HomeClient from './home-client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Free Paycheck Calculator 2026 — All 50 States | PrivatePaycheck',
-  description: 'Calculate your exact take-home pay after federal, state, and FICA taxes for all 50 US states. Free, private, no signup. Updated for 2026 tax brackets.',
+  title: 'Paycheck Calculator 2026 — Free & Private for All 50 U.S. States',
+  description: 'Free 2026 paycheck calculator for all 50 U.S. states. See your exact take-home pay after federal, state and FICA taxes. No signup, no tracking — your salary never leaves your browser.',
   alternates: { canonical: 'https://www.privatepaycheck.com' },
   openGraph: {
     title: 'Free Paycheck Calculator 2026 — All 50 States',

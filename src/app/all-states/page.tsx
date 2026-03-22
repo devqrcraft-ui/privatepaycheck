@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Paycheck Calculator — All 50 States 2026 | PrivatePaycheck',
-  description: 'Free paycheck calculator for all 50 US states. Select your state for accurate federal + state tax calculations including FICA, 401k, and HSA.',
+  title: 'Paycheck Calculator — All 50 States 2026 (Federal + State + FICA)',
+  description: 'Choose your state and calculate your 2026 paycheck in seconds. Federal, state and FICA taxes for all 50 states plus D.C., with clear tax breakdown and no registration.',
   alternates: { canonical: 'https://www.privatepaycheck.com/all-states' },
 };
 
