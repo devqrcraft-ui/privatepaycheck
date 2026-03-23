@@ -345,6 +345,6 @@
   input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
 
   // Auto-open after 6s
-  setTimeout(() => { if (!isOpen) openChat(); }, 6000);
+  setTimeout(() => { if (!isOpen) openChat(); }, 20000);
 
 })();
