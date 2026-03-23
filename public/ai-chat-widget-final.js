@@ -147,8 +147,8 @@
     }
     #ai-chat-header-left { display: flex; align-items: center; gap: 8px; }
     #ai-online-dot { width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; flex-shrink: 0; }
-    #ai-chat-name { color: #B8924A; font-weight: 700; font-size: 13px; }
-    #ai-chat-sub { color: #8899AA; font-size: 11px; margin-top: 0; margin-left: 6px; }
+    #ai-chat-name { color: #B8924A; font-weight: 700; font-size: 13px; display: inline; }
+    #ai-chat-sub { color: #8899AA; font-size: 11px; margin-left: 6px; display: inline; }
     #ai-chat-close {
       background: none; border: none; cursor: pointer;
       color: #B8924A; font-size: 24px; padding: 0 4px; line-height: 1;
