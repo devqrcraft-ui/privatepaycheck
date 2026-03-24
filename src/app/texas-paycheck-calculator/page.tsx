@@ -84,17 +84,17 @@ export default function Page() {
     
       
       {/* HOW STATE TAX WORKS */}
-      <div style={{ background: 'rgba(15,22,41,0.8)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
-        <h2 style={{ fontSize: 20, fontWeight: 800, color: '#f1f5f9', marginBottom: 20, letterSpacing: '-0.3px' }}>How Texas Income Tax Works in 2026</h2>
+      <div style={{ background: 'rgba(15,22,41,0.9)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 12, padding: 'clamp(20px,4vw,28px) clamp(16px,4vw,28px)', marginBottom: 32 }}>
+        <h2 style={{ fontSize: 'clamp(18px,4vw,22px)' as unknown as number, fontWeight: 800, color: '#f8fafc', marginBottom: 20, letterSpacing: '-0.3px', lineHeight: 1.3 }}>How Texas Income Tax Works in 2026</h2>
         <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Texas has no state income tax — one of 9 states with $0 state tax</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>You still pay federal income tax (10%–37%) and FICA (7.65%)</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No SDI, no local income tax in Texas</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Higher take-home than most states: a $60,000 salary nets ~$47,000/year</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator applies 2026 IRS federal brackets and FICA rates only</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Texas has no state income tax — one of 9 states with $0 state tax</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>You still pay federal income tax (10%–37%) and FICA (7.65%)</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No SDI, no local income tax in Texas</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Higher take-home than most states: a $60,000 salary nets ~$47,000/year</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator applies 2026 IRS federal brackets and FICA rates only</span></li>
         </ul>
-        <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>How much income tax will I pay in Texas?</h3>
-        <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>Texas residents pay no state income tax, making it one of the most tax-friendly states for workers. Your paycheck deductions are limited to federal income tax and FICA (Social Security + Medicare), giving you significantly more take-home pay than in states like California or New York.</p>
+        <h3 style={{ fontSize: 'clamp(16px,3vw,18px)' as unknown as number, fontWeight: 700, color: '#f8fafc', marginBottom: 10 }}>How much income tax will I pay in Texas?</h3>
+        <p style={{ fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#b0c4de', lineHeight: 1.8, margin: 0 }}>Texas residents pay no state income tax, making it one of the most tax-friendly states for workers. Your paycheck deductions are limited to federal income tax and FICA (Social Security + Medicare), giving you significantly more take-home pay than in states like California or New York.</p>
       </div>
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
