@@ -144,7 +144,7 @@ export default function UnemploymentCalculatorState({
       </ul>
 
       <p style={{ fontSize: 12, color: '#94a3b8', marginTop: 40, paddingTop: 16, borderTop: '1px solid #2a3a6a' }}>
-        Disclaimer: Estimates only. Actual amounts depend on your wage history and {stateName} DOL determination.
+        Disclaimer: This is an estimate only. Actual weekly benefit amounts are determined by your state unemployment agency based on your specific wage history and claim details.
         Data reflects 2026 benefit schedules. Consult the {stateName} Department of Labor for official figures.
       </p>
     </main>
