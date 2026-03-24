@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["$30,000","$2,500","$2,027","$1,871"],["$40,000","$3,333","$2,619","$2,418"],["$50,000","$4,167","$3,161","$2,918"],["$60,000","$5,000","$3,666","$3,384"],["$75,000","$6,250","$4,362","$4,027"],["$100,000","$8,333","$5,554","$5,127"]]
   return (
-    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
+    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', color: '#1a1a2e', background: '#f8fafc', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Massachusetts income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Massachusetts has a flat 5% income tax rate, plus an additional 4% surtax on income over $1 million."}},{"@type":"Question","name":"How much is $60,000 take-home in Massachusetts?","acceptedAnswer":{"@type":"Answer","text":"Approximately $43,992/year ($3,666/month) after federal, FICA, and 5% MA state tax."}},{"@type":"Question","name":"Does Massachusetts have a millionaire tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Income over $1 million is taxed at 9% total (5% + 4% surtax) in Massachusetts."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
         <a href="/" style={{ color: '#666' }}>Home</a> › Massachusetts Paycheck Calculator
@@ -27,7 +27,7 @@ export default function Page() {
         <tbody>{rows.map(([sal,gross,net,bw]) => (
           <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
-            <td style={{ padding: '10px 14px', color: '#555' }}>{gross}</td>
+            <td style={{ padding: '10px 14px', color: '#374151' }}>{gross}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
             <td style={{ padding: '10px 14px' }}>{bw}</td>
           </tr>

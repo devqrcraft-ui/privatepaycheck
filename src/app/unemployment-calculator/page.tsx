@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Unemployment Calculator by State 2026 — Weekly Benefit Amount Estimator',
-  description: 'Free unemployment calculator 2026. Texas pays up to $563/wk, California $450/wk, New York $504/wk. Enter wages to see your exact weekly benefit for all 50 states. Instant & private.',
+  title: 'Unemployment Calculator 2026 — Estimate Weekly Benefits by State | PrivatePaycheck',
+  description: 'Free unemployment calculator for all 50 states 2026. Estimate your weekly benefit amount based on recent wages. TX up to $563/wk, CA $450/wk, NY $504/wk, MA $1,033/wk. Instant & private.',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator' },
 };
 
@@ -170,6 +170,11 @@ export default function UnemploymentHubPage() {
       <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
+    
+      {/* DISCLAIMER */}
+      <div style={{ background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: 8, padding: '14px 18px', marginTop: 24, fontSize: 13, color: '#fde68a', lineHeight: 1.7 }}>
+        <strong>Important:</strong> Actual benefit amounts are determined by your state unemployment agency based on your specific wage history and eligibility. This calculator provides estimates only and is not affiliated with any government agency. Always verify with your state agency.
+      </div>
     </main>
   );
 }
