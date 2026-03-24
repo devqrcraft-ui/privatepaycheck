@@ -72,8 +72,8 @@ const statePosts = [
 ]
 
 const card: React.CSSProperties = {
-  background: '#1a2550',
-  border: '1px solid #e5e7eb',
+  background: '#ffffff',
+  border: '1px solid #d1d5db',
   borderRadius: 10,
   padding: '16px 20px',
   textDecoration: 'none',
@@ -165,7 +165,7 @@ export default function BlogIndex() {
             ['Washington DC','washington-dc'],
           ].map(([name, slug]) => (
             <a key={slug} href={"/" + slug + "-paycheck-calculator"}
-              style={{ display:'block', padding:'10px 14px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:8, fontSize:14, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>
+              style={{ display:'block', padding:'10px 14px', background:'#ffffff', border:'1px solid #d1d5db', borderRadius:8, fontSize:14, fontWeight:600, color:'#1e3a8a', textDecoration:'none' }}>
               {name}
             </a>
           ))}
