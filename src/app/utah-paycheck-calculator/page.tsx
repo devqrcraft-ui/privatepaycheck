@@ -41,6 +41,20 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $50,000 take-home in Utah?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Approximately $38,328/year ($3,194/month) after federal, FICA, and 4.55% UT state tax.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Does Utah have a standard deduction?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Utah offers a non-refundable personal exemption credit rather than a standard deduction, which slightly differs from federal calculations.</p>
     
+      
+      {/* HOW STATE TAX WORKS */}
+      <div style={{ background: 'rgba(15,22,41,0.8)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: '#f1f5f9', marginBottom: 20, letterSpacing: '-0.3px' }}>How Utah Income Tax Works in 2026</h2>
+        <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Utah has a flat state income tax rate of 4.55% on all taxable income</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No local income tax in Utah cities or counties</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>FICA applies: Social Security 6.2% + Medicare 1.45%</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Simple to estimate: flat rate means no bracket calculations needed</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator uses the 2026 Utah flat rate of 4.55%</span></li>
+        </ul>
+        <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>How much income tax will I pay in Utah?</h3>
+        <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>Utah uses a simple flat income tax of 4.55%, making it easy to predict your state tax bill. Combined with federal tax (10–22% for most earners) and FICA (7.65%), total withholding on a $60,000 salary is typically around 24–27%.</p>
+      </div>
       <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>

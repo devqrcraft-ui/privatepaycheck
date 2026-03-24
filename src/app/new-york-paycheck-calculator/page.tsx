@@ -97,6 +97,20 @@ export default function Page() {
         <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>Maximize pre-tax deductions: 401(k) up to $23,500 in 2026, HSA up to $4,300 (self-only), FSA up to $3,300. These reduce federal and NY state taxable income. NY does conform to HSA deductions, unlike California.</p>
       </div>
 
+      
+      {/* HOW STATE TAX WORKS */}
+      <div style={{ background: 'rgba(15,22,41,0.8)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: '#f1f5f9', marginBottom: 20, letterSpacing: '-0.3px' }}>How New York Income Tax Works in 2026</h2>
+        <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Progressive NY state tax: 4% to 10.9% across 9 brackets</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>NYC residents pay an additional local tax: 3.078%–3.876%</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Yonkers residents pay a Yonkers surcharge on top of NY state tax</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>FICA applies: Social Security 6.2% + Medicare 1.45%</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator includes 2026 NY state brackets and NYC local tax if applicable</span></li>
+        </ul>
+        <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>How much income tax will I pay in New York?</h3>
+        <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>New York has one of the highest combined tax burdens in the US. NYC residents face state tax (up to 10.9%) plus a city tax (up to 3.876%), making effective rates among the highest nationally. A $75,000 salary in NYC typically nets around $52,000–54,000 after all taxes.</p>
+      </div>
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>

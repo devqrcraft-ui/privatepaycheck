@@ -41,6 +41,20 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $60,000 take-home in Massachusetts?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Approximately $43,992/year ($3,666/month) after federal, FICA, and 5% MA state tax.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Does Massachusetts have a millionaire tax?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Yes. Income over $1 million is taxed at 9% total (5% + 4% surtax) in Massachusetts.</p>
     
+      
+      {/* HOW STATE TAX WORKS */}
+      <div style={{ background: 'rgba(15,22,41,0.8)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: 12, padding: '28px 32px', marginBottom: 32 }}>
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: '#f1f5f9', marginBottom: 20, letterSpacing: '-0.3px' }}>How Massachusetts Income Tax Works in 2026</h2>
+        <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Flat state income tax rate: 5% on most income in 2026</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Millionaires surtax: additional 4% on income over $1,000,000 (total 9%)</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No local income tax in Massachusetts cities</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>FICA applies: Social Security 6.2% + Medicare 1.45%</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#cbd5e1', lineHeight: 1.6 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator uses 2026 MA DOR withholding tables and the 5% flat rate</span></li>
+        </ul>
+        <h3 style={{ fontSize: 16, fontWeight: 700, color: '#f1f5f9', marginBottom: 8 }}>How much income tax will I pay in Massachusetts?</h3>
+        <p style={{ fontSize: 14, color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>Massachusetts taxes income at a flat 5% rate for most earners, making it straightforward to estimate. High earners above $1 million face an additional 4% surtax. Combined with federal tax and FICA, expect total withholding of 25–30% on a typical salary.</p>
+      </div>
       <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 8, marginBottom: 24 }}>

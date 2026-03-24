@@ -414,6 +414,60 @@ export default function HomeClient() {
         </p>
       </section>
 
+
+      <section className="pp-section" style={{background:'#060f1e'}}>
+        <div style={{maxWidth:'1200px',margin:'0 auto'}}>
+
+          <div style={{marginBottom:40}}>
+            <div style={{textAlign:'center' as const,marginBottom:28}}>
+              <div className="s-tag">What&apos;s New</div>
+              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'clamp(24px,3.5vw,34px)',fontWeight:700,color:'#fff',margin:'8px 0 0',lineHeight:1.2}}>2026 Updates <em style={{color:'#FFD700',fontStyle:'normal'}}>Included</em></h2>
+            </div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:16}}>
+              {[
+                {title:'2026 IRS Tax Brackets',desc:'Updated federal brackets and standard deductions: $15,000 single / $30,000 married filing jointly.'},
+                {title:'FICA & Social Security',desc:'Social Security wage base $176,100. Medicare 1.45% on all wages. Additional 0.9% above $200k.'},
+                {title:'Overtime & Tips',desc:'No-tax-on-overtime rules and no-tax-on-tips deduction up to $25,000 included in calculations.'},
+                {title:'Senior & Trump Account',desc:'Trump Account contributions and $6,000 senior deduction for age 65+ included for 2026.'},
+              ].map(item => (
+                <div key={item.title} style={{background:'rgba(245,200,66,0.06)',border:'1px solid rgba(245,200,66,0.2)',borderRadius:12,padding:'22px 20px',transition:'transform 0.2s,box-shadow 0.2s',cursor:'default'}}
+                  onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.transform='translateY(-3px)';(e.currentTarget as HTMLElement).style.boxShadow='0 8px 24px rgba(245,200,66,0.15)';}}
+                  onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.transform='translateY(0)';(e.currentTarget as HTMLElement).style.boxShadow='none';}}>
+                  <div style={{fontSize:16,fontWeight:800,color:'#FFD700',marginBottom:10}}>{item.title}</div>
+                  <div style={{fontSize:15,color:'#b0c4de',lineHeight:1.75}}>{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:16,padding:'28px 24px'}}>
+            <div style={{textAlign:'center' as const,marginBottom:24}}>
+              <div className="s-tag">Transparency</div>
+              <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'clamp(22px,3vw,30px)',fontWeight:700,color:'#fff',margin:'8px 0 0'}}>How We Calculate <em style={{color:'#FFD700',fontStyle:'normal'}}>Your Paycheck</em></h2>
+            </div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:20,marginBottom:20}}>
+              {[
+                {num:'01',title:'IRS Publication 15-T',desc:'We use official 2026 IRS withholding tables for federal income tax — the same tables your employer uses.'},
+                {num:'02',title:'FICA Rates',desc:'Social Security 6.2% on wages up to $176,100. Medicare 1.45% on all wages. Exact rates, no estimation.'},
+                {num:'03',title:'State Tax Tables',desc:'Official 2026 state income tax rates for all 50 states plus D.C. Updated from each state revenue department.'},
+                {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Zero data stored, ever.'},
+              ].map(item => (
+                <div key={item.num} style={{display:'flex',gap:16,alignItems:'flex-start'}}>
+                  <div style={{fontSize:28,fontWeight:900,color:'rgba(245,200,66,0.25)',flexShrink:0,lineHeight:1,fontFamily:"'Playfair Display',serif",minWidth:32}}>{item.num}</div>
+                  <div>
+                    <div style={{fontSize:16,fontWeight:700,color:'#e8edf8',marginBottom:6}}>{item.title}</div>
+                    <div style={{fontSize:14,color:'#8ab0d0',lineHeight:1.75}}>{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div style={{textAlign:'center' as const,paddingTop:16,borderTop:'1px solid rgba(255,255,255,0.06)'}}>
+              <a href="/methodology" style={{color:'#FFD700',fontSize:14,fontWeight:700,textDecoration:'none'}}>Read full methodology →</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
       <section className="pp-section" style={{background:'#07111f'}}>
         <div className="s-head">
           <div className="s-tag">FAQ</div>
