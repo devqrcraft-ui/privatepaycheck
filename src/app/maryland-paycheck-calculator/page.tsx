@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Maryland Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'Maryland paycheck calculator 2026. See exact take-home pay after federal + Maryland state tax (up to 5.75%) and FICA. All salary levels. 100% private.',
+  title: 'Maryland Paycheck Calculator 2026 — Exact Pay After 5.75% State Tax | Free',
+  description: 'Maryland paycheck calculator 2026. See exact take-home pay after federal + Maryland state tax (up to 5.75%) and FICA. All salary levels. Instant, no signup required.',
   keywords: 'maryland paycheck calculator 2026, maryland take home pay, maryland salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/maryland-paycheck-calculator' },
 }

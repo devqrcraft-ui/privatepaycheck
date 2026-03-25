@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'California Paycheck Calculator 2026 — Exact Take-Home Pay After Taxes',
+  title: 'California Paycheck Calculator 2026 — See Your Exact Take-Home Pay | Free',
   description: 'Free California paycheck calculator for 2026. See your exact take-home pay after federal, state, Social Security and Medicare taxes — for any salary or hourly rate. No signup, 100% private.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
