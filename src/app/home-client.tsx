@@ -403,7 +403,7 @@ export default function HomeClient() {
           </div>
         </div>
         {/* HIGH INCOME BLOCK */}
-        <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
+        <div style={{background:'linear-gradient(135deg,#0d1f35,#1a2d4a)',border:'1px solid rgba(245,200,66,0.75)',borderRadius:12,padding:'24px 28px',marginTop:32,marginBottom:8}}>
           <div style={{fontSize:13,fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase',marginBottom:14}}> High-Income Earners — $200k, $500k, $1M+</div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:14}} className='high-income-grid'>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
