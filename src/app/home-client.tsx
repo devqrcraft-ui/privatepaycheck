@@ -142,8 +142,6 @@ export default function HomeClient() {
           </div>
         </div>
           <div>
-            <div className="hero-badge"><div className="badge-dot"/>Updated January 2026 &nbsp;·&nbsp; IRS Compliant</div>
-            <h1>Calculate Your <em>Exact</em> Take-Home Pay</h1>
             <p className="hero-desc">Free, private paycheck calculator for all 50 states. Based on 2026 IRS withholding tables. Your data never leaves your browser — no accounts, no fees, ever.</p>
             <div className="tags">
               <span className="tag"> Federal + State Taxes</span>
