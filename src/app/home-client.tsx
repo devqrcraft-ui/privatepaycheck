@@ -174,7 +174,7 @@ export default function HomeClient() {
           ))}
         </div>
         <div style={{ paddingTop: 10, paddingBottom: 4, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
-          Based on IRS Publication 15-T (2026). <a href="/methodology" style={{ color: 'rgba(245,200,66,0.7)', textDecoration: 'none' }}>See full methodology →</a>
+          Based on IRS Publication 15-T (2026). <a href="/methodology" style={{ color: '#F5C842', textDecoration: 'underline none' }}>See full methodology →</a>
         </div>
       </div></div>
         </div>
@@ -323,7 +323,7 @@ export default function HomeClient() {
 
       <section className="pp-section" style={{background:'#050e1a',paddingTop:'24px',paddingBottom:'24px'}}>
         <div style={{maxWidth:'900px',margin:'0 auto',padding:'0 20px'}}>
-          <div style={{fontSize:'12px',fontWeight:700,color:'rgba(245,200,66,0.6)',letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:'16px',textAlign:'center'}}>More Free Tax Tools</div>
+          <div style={{fontSize:'12px',fontWeight:700,color:'rgba(245,200,66,0.85)',letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:'16px',textAlign:'center'}}>More Free Tax Tools</div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'12px'}}>
             <a href="https://gigwisetax.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(178,34,52,0.08)',border:'1px solid rgba(178,34,52,0.25)',borderRadius:'10px',padding:'18px 20px'}}>
               <div style={{fontSize:'11px',fontWeight:700,color:'rgba(255,100,100,1)',letterSpacing:'0.08em',textTransform:'uppercase',marginBottom:'6px'}}>1099 Gig Tax Tool</div>
@@ -469,7 +469,7 @@ export default function HomeClient() {
                 {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Zero data stored, ever.'},
               ].map(item => (
                 <div key={item.num} style={{display:'flex',gap:16,alignItems:'flex-start'}}>
-                  <div style={{fontSize:28,fontWeight:900,color:'rgba(245,200,66,0.25)',flexShrink:0,lineHeight:1,fontFamily:"'Playfair Display',serif",minWidth:32}}>{item.num}</div>
+                  <div style={{fontSize:28,fontWeight:900,color:'rgba(245,200,66,0.75)',flexShrink:0,lineHeight:1,fontFamily:"'Playfair Display',serif",minWidth:32}}>{item.num}</div>
                   <div>
                     <div style={{fontSize:16,fontWeight:700,color:'#e8edf8',marginBottom:6}}>{item.title}</div>
                     <div style={{fontSize:14,color:'#8ab0d0',lineHeight:1.75}}>{item.desc}</div>
