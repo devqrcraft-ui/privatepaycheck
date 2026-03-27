@@ -110,8 +110,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             acceptedAnswer: {
               '@type': 'Answer',
               text: noTax
-                ? `Yes. ${st.name} has no state income tax. Uses 2026 federal brackets, standard deduction ($14,600 single / $29,200 married), and current FICA rates (6.2% SS + 1.45% Medicare).`
-                : `Yes. Uses 2026 IRS federal tax brackets, standard deduction ($14,600 single / $29,200 married), current FICA rates, and ${st.name} state tax rate of ${rateStr}.`,
+                ? `Yes. ${st.name} has no state income tax. Uses 2026 federal brackets, standard deduction (single5,000 single / $30,000 married), and current FICA rates (6.2% SS + 1.45% Medicare).`
+                : `Yes. Uses 2026 IRS federal tax brackets, standard deduction (single5,000 single / $30,000 married), current FICA rates, and ${st.name} state tax rate of ${rateStr}.`,
             },
           },
         ],
@@ -194,8 +194,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               },
               { q:`Is this ${st.name} paycheck calculator accurate for 2026?`,
                 a: noTax
-                  ? `${st.name} has no state income tax. Uses 2026 federal brackets, standard deduction ($14,600 single / $29,200 married), and current FICA rates.`
-                  : `Yes. Uses 2026 federal tax brackets, standard deduction ($14,600 single / $29,200 married), current FICA rates, and ${st.name} state tax rate of ${rateStr}.`
+                  ? `${st.name} has no state income tax. Uses 2026 federal brackets, standard deduction (single5,000 single / $30,000 married), and current FICA rates.`
+                  : `Yes. Uses 2026 federal tax brackets, standard deduction (single5,000 single / $30,000 married), current FICA rates, and ${st.name} state tax rate of ${rateStr}.`
               },
             ].map(item => (
               <div key={item.q}>

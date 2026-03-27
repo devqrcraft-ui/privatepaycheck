@@ -273,7 +273,7 @@ export default function HomeClient() {
             <div className="fs-rate">0% State Tax</div>
             <div className="fs-facts">
               <div className="fs-fact"> Florida has no state income tax</div>
-              <div className="fs-fact"> Min wage $13.00/hr in 2026 (reaches $15 this year)</div>
+              <div className="fs-fact"> Min wage $15.00/hr (2026)</div>
               <div className="fs-fact"> $75,000 salary → ~$58,500 take-home</div>
               <div className="fs-fact"> Federal + FICA deductions only</div>
             </div>
