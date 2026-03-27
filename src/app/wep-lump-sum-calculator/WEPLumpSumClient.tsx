@@ -50,7 +50,7 @@ export default function WEPLumpSumCalculator() {
     const lump   = parseFloat(lumpSum)  || 0;
     const ss     = parseFloat(newSS)    || 0;
     const ag     = parseInt(age)        || 0;
-    const stdDed = filing === 'married' ? 30000 : 15000;
+    const stdDed = filing === 'married' ? 32200 : 16100;
 
     // OBBB senior deduction
     const phaseoutStart = filing === 'married' ? 150000 : 75000;

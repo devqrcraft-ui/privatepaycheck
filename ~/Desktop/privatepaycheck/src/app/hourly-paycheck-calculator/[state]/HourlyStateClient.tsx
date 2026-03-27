@@ -61,7 +61,7 @@ const STATES: Record<string, { name: string; rate: number; slug: string }> = {
 };
 
 function calcFederal(taxable: number, filing: string): number {
-  const std = filing === 'married' ? 30000 : 15000;
+  const std = filing === 'married' ? 32200 : 16100;
   const t = Math.max(0, taxable - std);
   const b: [number,number][] = filing === 'married'
     ? [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]]

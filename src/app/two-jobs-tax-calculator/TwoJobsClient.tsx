@@ -7,7 +7,7 @@ const BM = [{min:0,max:23850,rate:0.10},{min:23850,max:96950,rate:0.12},{min:969
 
 function fedTax(income: number, filing: string): number {
   const br = filing === 'married' ? BM : BS;
-  const taxable = Math.max(0, income - (filing === 'married' ? 30000 : 15000));
+  const taxable = Math.max(0, income - (filing === 'married' ? 32200 : 16100));
   let tax = 0;
   for (const b of br) { if (taxable <= b.min) break; tax += (Math.min(taxable, b.max) - b.min) * b.rate; }
   return tax;

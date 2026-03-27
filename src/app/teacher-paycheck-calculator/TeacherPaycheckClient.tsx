@@ -124,7 +124,7 @@ function calcTeacher(
   const pensionDeduction = salary * pensionInfo.rate;
 
   // Taxable income = salary minus pension (pre-tax) minus standard deduction
-  const stdDeduction = filing === 'married' ? 30000 : 15000; // 2026 OBBB increased amounts
+  const stdDeduction = filing === 'married' ? 32200 : 16100; // 2026 OBBB increased amounts
   const federalTaxableIncome = Math.max(0, salary - pensionDeduction - stdDeduction);
   const fedTax = federalTax(federalTaxableIncome, filing);
 

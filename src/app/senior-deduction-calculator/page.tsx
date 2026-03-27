@@ -16,7 +16,7 @@ export default function SeniorDeductionCalculator() {
     const overThreshold = Math.max(0, inc - phaseoutStart);
     const reducedBonus = Math.max(0, seniorBonus - overThreshold);
     const actualBonus = isEligible ? reducedBonus : 0;
-    const stdDed = filing === 'married' ? 30000 : 15000;
+    const stdDed = filing === 'married' ? 32200 : 16100;
 
     function fedTax(taxable: number) {
       const b: [number, number][] = filing === 'married'

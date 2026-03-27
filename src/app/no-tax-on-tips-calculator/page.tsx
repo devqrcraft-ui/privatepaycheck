@@ -19,7 +19,7 @@ export default function NoTaxOnTipsCalculator() {
     const cap = 25000;
     const exemptTips = Math.min(annualTips, cap);
     const taxableTips = Math.max(0, annualTips - cap);
-    const std = filing === 'married' ? 30000 : 15000;
+    const std = filing === 'married' ? 32200 : 16100;
     // Without exemption
     const taxableOld = Math.max(0, annualTotal - std);
     // With exemption

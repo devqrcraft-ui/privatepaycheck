@@ -17,7 +17,7 @@ export default function NoTaxOnOvertimePage() {
     const annualOT = otRate * ot * wk;
     const annualRegular = reg * 40 * wk;
     const annualTotal = annualRegular + annualOT;
-    const std = filing === 'married' ? 30000 : 15000;
+    const std = filing === 'married' ? 32200 : 16100;
 
     function fedTax(income: number, f: string) {
       const b: [number, number][] = f === 'married'
