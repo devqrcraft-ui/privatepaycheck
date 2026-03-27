@@ -374,7 +374,7 @@ export default function HomeClient() {
           <div className="feat-card">
             
             <div className="feat-title">Federal Tax</div>
-            <p className="feat-desc">2026 IRS Publication 15-T brackets. Standard deduction $14,600 (single) / $29,200 (married). Progressive rates 10%–37%.</p>
+            <p className="feat-desc">2026 IRS Publication 15-T brackets. Standard deduction $15,000 (single) / $30,000 (married). Progressive rates 10%–37%.</p>
           </div>
           <div className="feat-card">
             

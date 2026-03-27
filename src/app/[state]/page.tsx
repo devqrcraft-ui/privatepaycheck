@@ -93,7 +93,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               '@type': 'Answer',
               text: noTax
                 ? `${st.name} has no state income tax in 2026. This applies to all residents regardless of income level.`
-                : `The ${st.name} state income tax rate is ${rateStr} for 2026, applied to your taxable income after the standard deduction of $14,600 (single) or $29,200 (married).`,
+                : `The ${st.name} state income tax rate is ${rateStr} for 2026, applied to your taxable income after the standard deduction of $15,000 (single) or $30,000 (married).`,
             },
           },
           {

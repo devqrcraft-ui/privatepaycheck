@@ -73,7 +73,7 @@ const faqSchema = {
       "name": "What is the 2026 standard deduction?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For 2026: $14,600 for Single filers, $29,200 for Married Filing Jointly, and $21,900 for Head of Household. These are built into every federal tax calculation on this site."
+        "text": "For 2026: $15,000 for Single filers, $30,000 for Married Filing Jointly, and $22,500 for Head of Household. These are built into every federal tax calculation on this site."
       }
     },
     {
@@ -126,7 +126,7 @@ export default function HowWeCalculatePage() {
             </tbody>
           </table>
           <div className="hwc-note">
-            Standard deduction: $14,600 (Single) · $29,200 (Married Filing Jointly) · $21,900 (Head of Household)
+            Standard deduction: $15,000 (Single) · $30,000 (Married Filing Jointly) · $21,900 (Head of Household)
           </div>
         </div>
 
@@ -249,7 +249,7 @@ export default function HowWeCalculatePage() {
 
           <div className="hwc-q">
             <div className="hwc-q-title">What is the 2026 standard deduction?</div>
-            <div className="hwc-q-ans">$14,600 for Single · $29,200 for Married Filing Jointly · $21,900 for Head of Household. Applied automatically to every federal calculation.</div>
+            <div className="hwc-q-ans">$15,000 for Single · $30,000 for Married Filing Jointly · $21,900 for Head of Household. Applied automatically to every federal calculation.</div>
           </div>
 
           <div className="hwc-q">

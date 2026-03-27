@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizeCss: true,
+  },
   async redirects() {
     return [
       { source: "/calculator", destination: "/", permanent: true },
