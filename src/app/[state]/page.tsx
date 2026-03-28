@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: `${st.name} Paycheck Calculator 2026 — Exact Take-Home Pay in Seconds`,
     description: `${st.name} paycheck calculator 2026. See take-home pay after ${noTax ? 'federal tax + FICA (no state income tax)' : 'federal tax, '+rateStr+' state tax & FICA'}. Free, instant, private — results in under 5 seconds.`,
-    alternates: { canonical: `https://privatepaycheck.com/${slug}-paycheck-calculator` },
+    alternates: { canonical: `https://www.privatepaycheck.com/${slug}-paycheck-calculator` },
   };
 }
 
