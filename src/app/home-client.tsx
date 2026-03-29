@@ -65,7 +65,7 @@ const CSS = `
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:16px 24px 24px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
   .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:32px;align-items:stretch;position:relative;z-index:1;}
-  .hero-copy{display:flex;flex-direction:column;justify-content:center;}
+  .hero-copy{display:flex;flex-direction:column;justify-content:flex-start;}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
   .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:bdpulse 2s infinite;flex-shrink:0;}
   @keyframes bdpulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -139,7 +139,23 @@ export default function HomeClient() {
             ))}
           </div>
 
-          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:20,marginTop:28}}>
+          <div style={{background:'rgba(99,102,241,0.07)',border:'1px solid rgba(99,102,241,0.2)',borderRadius:10,padding:'14px 16px',marginBottom:16}}>
+              <div style={{fontSize:11,fontWeight:800,color:'#a5b4fc',letterSpacing:'0.16em',textTransform:'uppercase',marginBottom:10}}>2026 Tax Law Updates</div>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+                {[
+                  ['No Tax on Overtime','/no-tax-on-overtime-deduction','Save $2,750+'],
+                  ['No Tax on Tips','/no-tax-on-tips-calculator','Save $5,500+'],
+                  ['Senior $6,000 Deduction','/senior-deduction-calculator','Save $1,320+'],
+                  ['Trump Account','/trump-account-calculator','$38K+ at 18'],
+                ].map(([label, href, save]) => (
+                  <a key={href} href={href} style={{display:'block',background:'rgba(99,102,241,0.08)',border:'1px solid rgba(99,102,241,0.15)',borderRadius:7,padding:'8px 10px',textDecoration:'none'}}>
+                    <div style={{fontSize:12,fontWeight:700,color:'#e0e7ff',lineHeight:1.3,marginBottom:2}}>{label}</div>
+                    <div style={{fontSize:11,color:'#818cf8',fontWeight:600}}>{save}</div>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:16,marginTop:8}}>
             <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
             <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
             <div><div className="stat-n">100%</div><div className="stat-l">Private</div></div>
