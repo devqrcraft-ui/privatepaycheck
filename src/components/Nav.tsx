@@ -12,7 +12,7 @@ const TICKER_ITEMS = [
   'Bonus & Overtime Calculator',
   'IRS Publication 15-T Compliant',
   'Standard Deduction $15,000 Single / $30,000 Married',
-  'FICA Wage Base $176,100 for 2026',
+  'FICA Wage Base $184,500 for 2026',
   'No Accounts. No Cookies. No Tracking.',
   'Results in Under 1 Second',
 ];
