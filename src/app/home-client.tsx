@@ -136,28 +136,12 @@ export default function HomeClient() {
             <span className="tag">100% Private</span>
           </div>
           <div className="stats">
-            <div><div className="stat-n">50</div><div className="stat-l">States Covered</div></div>
-            <div><div className="stat-n">2026</div><div className="stat-l">IRS Rules</div></div>
-            <div><div className="stat-n">0</div><div className="stat-l">Data Stored</div></div>
+            <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
+            <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
+            <div><div className="stat-n">100%</div><div className="stat-l">Free & Private</div></div>
+            <div><div className="stat-n">$0</div><div className="stat-l">Cost Forever</div></div>
           </div>
         </div>
-          <div>
-            <p className="hero-desc">Free, private paycheck calculator for all 50 states. Based on 2026 IRS withholding tables. Your data never leaves your browser — no accounts, no fees, ever.</p>
-            <div className="tags">
-              <span className="tag"> Federal + State Taxes</span>
-              <span className="tag"> All 50 States</span>
-              <span className="tag"> No Registration</span>
-              <span className="tag"> 2026 Tax Rules</span>
-              <span className="tag"> Bonus Calculator</span>
-              <span className="tag"> Hourly &amp; Salary</span>
-            </div>
-            <div className="stats">
-              <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
-              <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
-              <div><div className="stat-n">100%</div><div className="stat-l">Free &amp; Private</div></div>
-              <div><div className="stat-n">$0</div><div className="stat-l">Cost Forever</div></div>
-            </div>
-          </div>
           <div id="calculator"><Calculator />
       {/* HOW WE CALCULATE — under calculator */}
       <div className="how-we-calculate-block" style={{ maxWidth: 860, margin: '0 auto 0', padding: '16px 24px 0' }}>
