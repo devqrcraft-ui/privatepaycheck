@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: `${st.name} Overtime Pay Calculator 2026 — Time-and-a-Half & Double Time Instantly`,
     description: `How much overtime will you earn in ${st.name}? Calculate time-and-a-half & double time instantly — 2026 federal & state rules. Free, no signup.`,
-    alternates: { canonical: `https://privatepaycheck.com/overtime-calculator/${state}` },
+    alternates: { canonical: `https://www.privatepaycheck.com/overtime-calculator/${state}` },
   };
 }
 
@@ -53,7 +53,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: `${st.name} Overtime Calculator 2026`,
-        url: `https://privatepaycheck.com/overtime-calculator/${state}`,
+        url: `https://www.privatepaycheck.com/overtime-calculator/${state}`,
         description: `Free overtime pay calculator for ${st.name}. Calculate time-and-a-half, double time. 2026 rules.`,
         applicationCategory: 'FinanceApplication',
         operatingSystem: 'Any',

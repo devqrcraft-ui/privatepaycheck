@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: `${st.name} Minimum Wage 2026: ${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hr — What Workers Must Be Paid`,
     description: `${st.name} minimum wage is ${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hr in 2026 — see annual, monthly & weekly take-home, tipped worker rates & upcoming increases. Free & instant.`,
-    alternates: { canonical: `https://privatepaycheck.com/minimum-wage/${state}` },
+    alternates: { canonical: `https://www.privatepaycheck.com/minimum-wage/${state}` },
   };
 }
 
@@ -109,7 +109,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: `${st.name} Minimum Wage 2026`,
-        url: `https://privatepaycheck.com/minimum-wage/${state}`,
+        url: `https://www.privatepaycheck.com/minimum-wage/${state}`,
         description: `${st.name} minimum wage 2026: ${mw.hourly}/hr · ${annualFT.toLocaleString()}/year full-time. See monthly, weekly & tipped rates instantly.`,
         mainEntity: {
           '@type': 'FAQPage',
