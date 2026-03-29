@@ -64,7 +64,7 @@ const CSS = `
 
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:16px 24px 24px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
-  .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:32px;align-items:start;position:relative;z-index:1;}
+  .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:32px;align-items:stretch;position:relative;z-index:1;}
   .hero-copy{display:flex;flex-direction:column;justify-content:center;}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
   .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:bdpulse 2s infinite;flex-shrink:0;}
@@ -139,15 +139,27 @@ export default function HomeClient() {
             ))}
           </div>
 
-          <div style={{display:'flex',flexWrap:'wrap',gap:12,marginBottom:28}}>
-            <a href="#calculator" style={{background:'#F5C842',color:'#07111f',padding:'14px 28px',borderRadius:6,fontSize:15,fontWeight:800,textDecoration:'none',letterSpacing:'0.05em'}}>→ CALCULATE PAYCHECK FREE</a>
-          </div>
-
-          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:20}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:20,marginTop:28}}>
             <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
             <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
             <div><div className="stat-n">100%</div><div className="stat-l">Private</div></div>
             <div><div className="stat-n">$0</div><div className="stat-l">Always Free</div></div>
+          </div>
+
+          {/* Quick salary examples */}
+          <div style={{marginTop:28,display:'flex',flexDirection:'column',gap:10}}>
+            <div style={{fontSize:11,fontWeight:800,color:'rgba(245,200,66,0.7)',letterSpacing:'0.18em',textTransform:'uppercase',marginBottom:4}}>Quick Examples</div>
+            {[
+              {label:'$65,000 salary · Texas',net:'~$51,200/yr · $1,969/biweekly',color:'#4ade80'},
+              {label:'$85,000 salary · California',net:'~$60,100/yr · $2,312/biweekly',color:'#4ade80'},
+              {label:'$20/hr · Florida',net:'~$33,400/yr · $1,285/biweekly',color:'#4ade80'},
+              {label:'$120,000 salary · New York',net:'~$79,800/yr · $3,069/biweekly',color:'#4ade80'},
+            ].map((ex,i)=>(
+              <div key={i} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(245,200,66,0.12)',borderRadius:8,padding:'12px 16px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:8}}>
+                <span style={{fontSize:13,fontWeight:600,color:'#c8d8ec'}}>{ex.label}</span>
+                <span style={{fontSize:13,fontWeight:800,color:ex.color,whiteSpace:'nowrap' as const}}>{ex.net}</span>
+              </div>
+            ))}
           </div>
         </div>
           <div id="calculator"><Calculator />
