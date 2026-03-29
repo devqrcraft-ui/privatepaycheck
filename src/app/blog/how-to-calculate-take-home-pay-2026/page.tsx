@@ -76,7 +76,7 @@ export default function Post() {
           <p>On $69,000 taxable income, federal tax is approximately <strong>$9,800</strong> (effective rate ~14.2%).</p>
 
           <h2 style={{ fontSize:22, fontWeight:800, color:'#f1f5f9', margin:'32px 0 12px' }}>Step 4: Subtract FICA Taxes</h2>
-          <p>FICA = Social Security (6.2% on wages up to $176,100) + Medicare (1.45% on all wages) = <strong>7.65% total</strong>. On $75,000 gross: <strong>$5,737.50</strong>.</p>
+          <p>FICA = Social Security (6.2% on wages up to $184,500) + Medicare (1.45% on all wages) = <strong>7.65% total</strong>. On $75,000 gross: <strong>$5,737.50</strong>.</p>
 
           <h2 style={{ fontSize:22, fontWeight:800, color:'#f1f5f9', margin:'32px 0 12px' }}>Step 5: Subtract State Income Tax</h2>
           <p>State tax varies dramatically. The same $75,000 salary yields very different take-home depending on your state:</p>

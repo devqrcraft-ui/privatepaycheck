@@ -184,7 +184,7 @@ export default function HomeClient() {
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 10, padding: '16px 20px', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }} className="hwc-grid">
           {[
             { label: 'Federal income tax', detail: 'Uses 2026 IRS Publication 15-T withholding tables. Standard deduction $15,000 (single) / $30,000 (married). Rates 10%–37%.' },
-            { label: 'FICA taxes', detail: 'Social Security 6.2% on wages up to $176,100. Medicare 1.45% on all wages. Additional 0.9% Medicare surtax above $200,000.' },
+            { label: 'FICA taxes', detail: 'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Additional 0.9% Medicare surtax above $200,000.' },
             { label: 'State income tax', detail: "Includes your state's 2026 income tax rates. From 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year from official state sources." },
           ].map(item => (
             <div key={item.label} style={{ borderLeft: '3px solid rgba(245,200,66,0.5)', paddingLeft: 12 }}>
@@ -399,7 +399,7 @@ export default function HomeClient() {
           <div className="feat-card">
             
             <div className="feat-title">FICA Tax</div>
-            <p className="feat-desc">Social Security 6.2% up to $176,100 wage base. Medicare 1.45% on all wages. Additional 0.9% Medicare above $200,000.</p>
+            <p className="feat-desc">Social Security 6.2% up to $184,500 wage base. Medicare 1.45% on all wages. Additional 0.9% Medicare above $200,000.</p>
           </div>
           <div className="feat-card">
             
@@ -428,7 +428,7 @@ export default function HomeClient() {
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:14}} className='high-income-grid'>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Social Security Cap</div>
-              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>SS tax (6.2%) stops at <strong style={{color:'#fff'}}>$176,100</strong> in 2026. Above this, you save $10,918/year vs someone earning under the cap.</div>
+              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>SS tax (6.2%) stops at <strong style={{color:'#fff'}}>$184,500</strong> in 2026. Above this, you save $11,439/year vs someone earning under the cap.</div>
             </div>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>Additional Medicare Surtax</div>
@@ -462,7 +462,7 @@ export default function HomeClient() {
             <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:16}}>
               {[
                 {title:'2026 IRS Tax Brackets',desc:'Updated federal brackets and standard deductions: $15,000 single / $30,000 married filing jointly.'},
-                {title:'FICA & Social Security',desc:'Social Security wage base $176,100. Medicare 1.45% on all wages. Additional 0.9% above $200k.'},
+                {title:'FICA & Social Security',desc:'Social Security wage base $184,500. Medicare 1.45% on all wages. Additional 0.9% above $200k.'},
                 {title:'Overtime & Tips',desc:'No-tax-on-overtime rules and no-tax-on-tips deduction up to $25,000 included in calculations.'},
                 {title:'Senior & Trump Account',desc:'Trump Account contributions and $6,000 senior deduction for age 65+ included for 2026.'},
               ].map(item => (
@@ -484,7 +484,7 @@ export default function HomeClient() {
             <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:20,marginBottom:20}}>
               {[
                 {num:'01',title:'IRS Publication 15-T',desc:'We use official 2026 IRS withholding tables for federal income tax — the same tables your employer uses.'},
-                {num:'02',title:'FICA Rates',desc:'Social Security 6.2% on wages up to $176,100. Medicare 1.45% on all wages. Exact rates, no estimation.'},
+                {num:'02',title:'FICA Rates',desc:'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Exact rates, no estimation.'},
                 {num:'03',title:'State Tax Tables',desc:'Official 2026 state income tax rates for all 50 states plus D.C. Updated from each state revenue department.'},
                 {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Zero data stored, ever.'},
               ].map(item => (

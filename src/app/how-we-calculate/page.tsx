@@ -49,7 +49,7 @@ const faqSchema = {
       "name": "How accurate is the PrivatePaycheck calculator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our calculator uses the official 2026 IRS Publication 15-T withholding tables for federal tax, the SSA-announced $176,100 Social Security wage base, and official state tax rates from each state's revenue department. Results are accurate for standard W-2 employees. Self-employed workers should use our 1099 calculator."
+        "text": "Our calculator uses the official 2026 IRS Publication 15-T withholding tables for federal tax, the SSA-announced $184,500 Social Security wage base, and official state tax rates from each state's revenue department. Results are accurate for standard W-2 employees. Self-employed workers should use our 1099 calculator."
       }
     },
     {
@@ -81,7 +81,7 @@ const faqSchema = {
       "name": "How is FICA tax calculated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "FICA consists of two parts: Social Security tax at 6.2% on wages up to $176,100 (2026 wage base), and Medicare tax at 1.45% on all wages. High earners above $200,000 pay an additional 0.9% Additional Medicare Tax. Your employer matches the 6.2% and 1.45% portions."
+        "text": "FICA consists of two parts: Social Security tax at 6.2% on wages up to $184,500 (2026 wage base), and Medicare tax at 1.45% on all wages. High earners above $200,000 pay an additional 0.9% Additional Medicare Tax. Your employer matches the 6.2% and 1.45% portions."
       }
     }
   ]
@@ -141,7 +141,7 @@ export default function HowWeCalculatePage() {
               <tr><th>Tax</th><th>Rate</th><th>Wage Limit (2026)</th></tr>
             </thead>
             <tbody>
-              <tr><td>Social Security</td><td>6.2%</td><td>Up to $176,100</td></tr>
+              <tr><td>Social Security</td><td>6.2%</td><td>Up to $184,500</td></tr>
               <tr><td>Medicare</td><td>1.45%</td><td>No limit</td></tr>
               <tr><td>Additional Medicare</td><td>0.9%</td><td>Above $200,000 (single)</td></tr>
             </tbody>
@@ -217,7 +217,7 @@ export default function HowWeCalculatePage() {
               IRS Publication 15-T (2026) — Federal Income Tax Withholding Methods
             </a>
             <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer">
-              SSA.gov — 2026 Social Security Contribution and Benefit Base ($176,100)
+              SSA.gov — 2026 Social Security Contribution and Benefit Base ($184,500)
             </a>
             <a href="https://www.irs.gov/taxtopics/tc751" target="_blank" rel="noopener noreferrer">
               IRS Topic 751 — Social Security and Medicare Withholding Rates
@@ -234,7 +234,7 @@ export default function HowWeCalculatePage() {
 
           <div className="hwc-q">
             <div className="hwc-q-title">How accurate is the PrivatePaycheck calculator?</div>
-            <div className="hwc-q-ans">We use the official 2026 IRS Pub 15-T withholding tables, the $176,100 SSA wage base, and official state rates. Results are accurate for standard W-2 employees. For 1099/self-employed income, use our dedicated 1099 calculator which includes self-employment tax (15.3%).</div>
+            <div className="hwc-q-ans">We use the official 2026 IRS Pub 15-T withholding tables, the $184,500 SSA wage base, and official state rates. Results are accurate for standard W-2 employees. For 1099/self-employed income, use our dedicated 1099 calculator which includes self-employment tax (15.3%).</div>
           </div>
 
           <div className="hwc-q">

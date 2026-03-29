@@ -65,7 +65,7 @@ export default function Page() {
         ))}</tbody>
       </table>
       <div style={{ background: '#fff3cd', color: '#1a1a2e', border:'1px solid #ffc107', borderRadius: 8, padding: '14px 18px', marginBottom: 24, fontSize: 14 }}>
-        <strong>Note:</strong> At $200k, the additional 0.9% Medicare surtax applies to wages over $200,000. Also, FICA Social Security (6.2%) only applies up to the $176,100 wage base.
+        <strong>Note:</strong> At $200k, the additional 0.9% Medicare surtax applies to wages over $200,000. Also, FICA Social Security (6.2%) only applies up to the $184,500 wage base.
       </div>
       <div style={{ background: '#1a2550', borderRadius: 8, padding: 20, marginBottom: 32 }}>
         <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact $200k take-home →</a>

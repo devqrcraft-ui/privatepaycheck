@@ -44,7 +44,7 @@ const STATE_NAMES: Record<string, string> = {
 };
 
 function calcBonus(bonus: number, salary: number, state: string, filing: string) {
-  const fica = Math.min(bonus, Math.max(0, 168600 - salary)) * 0.062 + bonus * 0.0145;
+  const fica = Math.min(bonus, Math.max(0, 184500 - salary)) * 0.062 + bonus * 0.0145;
   const fedWithBonus = federalTax(salary + bonus, filing);
   const fedWithout  = federalTax(salary, filing);
   const fedTax = fedWithBonus - fedWithout;
@@ -195,7 +195,7 @@ export default function BonusTaxCalculator() {
             { q: 'What percentage of my bonus goes to taxes?', a: 'It depends on your salary, state, and filing status. Federal tax alone can be 22%–37% for high earners. Add state taxes (0%–13.3%) and FICA (7.65%) and many people lose 35%–50% of their bonus.' },
             { q: 'Is my bonus taxed differently than my salary?', a: 'Your bonus is subject to the same federal tax brackets as your salary — just added on top. Employers may withhold at a flat 22% supplemental rate, but your actual liability is based on your full income.' },
             { q: 'How can I reduce taxes on my bonus?', a: 'Contribute it to a 401k (up to $23,500 in 2026), fund an HSA, or ask your employer to pay it in January to spread income across two tax years.' },
-            { q: 'Does FICA apply to bonuses?', a: 'Yes. You pay 7.65% FICA on your bonus up to the Social Security wage base ($168,600 in 2026). If your salary already exceeds that, only Medicare (1.45%) applies.' },
+            { q: 'Does FICA apply to bonuses?', a: 'Yes. You pay 7.65% FICA on your bonus up to the Social Security wage base ($184,500 in 2026). If your salary already exceeds that, only Medicare (1.45%) applies.' },
           ].map(({ q, a }) => (
             <div key={q} style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{q}</div>

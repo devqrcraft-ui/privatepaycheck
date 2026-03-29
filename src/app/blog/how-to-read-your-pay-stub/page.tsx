@@ -69,7 +69,7 @@ export default function Post() {
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>FICA: Social Security & Medicare</h2>
           <p>FICA stands for Federal Insurance Contributions Act. It consists of two parts:</p>
           <ul style={{ paddingLeft:'20px', opacity:0.85 }}>
-            <li style={{ marginBottom:'8px' }}><strong>Social Security: 6.2%</strong> of wages up to $176,100 (2026 wage base). Above this cap you pay no more SS tax.</li>
+            <li style={{ marginBottom:'8px' }}><strong>Social Security: 6.2%</strong> of wages up to $184,500 (2026 wage base). Above this cap you pay no more SS tax.</li>
             <li style={{ marginBottom:'8px' }}><strong>Medicare: 1.45%</strong> of all wages with no cap. High earners (over $200k single / $250k married) pay an additional 0.9% surtax.</li>
           </ul>
           <p>Your employer matches your FICA contributions dollar for dollar — so the total FICA cost is actually 15.3%, split 50/50 between you and your employer. Self-employed workers pay the full 15.3%.</p>
@@ -98,7 +98,7 @@ export default function Post() {
           </ul>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>YTD (Year-to-Date)</h2>
-          <p>Most pay stubs show a YTD column next to current period amounts. YTD shows the running total of earnings and deductions since January 1. This is useful for tracking when you will hit the Social Security wage cap ($176,100), confirming your 401(k) contributions for the year, and tax preparation.</p>
+          <p>Most pay stubs show a YTD column next to current period amounts. YTD shows the running total of earnings and deductions since January 1. This is useful for tracking when you will hit the Social Security wage cap ($184,500), confirming your 401(k) contributions for the year, and tax preparation.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Complete Pay Stub Example</h2>
           <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', padding:'20px', margin:'16px 0', fontSize:'14px' }}>

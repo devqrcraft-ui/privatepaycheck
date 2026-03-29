@@ -54,7 +54,7 @@ export default function Post() {
             },
             {
               step:4, title:'Calculate FICA Taxes',
-              content:'FICA is calculated on gross wages (before 401k, but usually after health insurance). Social Security: 6.2% up to $176,100. Medicare: 1.45% on all wages.',
+              content:'FICA is calculated on gross wages (before 401k, but usually after health insurance). Social Security: 6.2% up to $184,500. Medicare: 1.45% on all wages.',
               example:'$75,000 × 6.2% = $4,650 Social Security + $75,000 × 1.45% = $1,088 Medicare = $5,738 total FICA',
             },
             {

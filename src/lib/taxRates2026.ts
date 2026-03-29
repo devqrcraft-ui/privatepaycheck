@@ -35,7 +35,7 @@ export const STANDARD_DEDUCTION = {
 };
 
 export const FICA = {
-  socialSecurity: { rate: 0.062, cap: 176100 },
+  socialSecurity: { rate: 0.062, cap: 184500 },
   medicare: { rate: 0.0145 },
   additionalMedicare: { rate: 0.009, threshold: 200000 },
 };

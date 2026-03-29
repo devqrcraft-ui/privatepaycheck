@@ -87,7 +87,7 @@ export default function HourlyPaycheckCalculator() {
     const hsaV = Math.min(parseFloat(hsa)||0, 4300);
     const preTax = annual - k - hsaV;
     const fed    = calcFederal(preTax, filing);
-    const fica   = Math.min(annual, 176100)*0.062 + annual*0.0145;
+    const fica   = Math.min(annual, 184500)*0.062 + annual*0.0145;
     const st     = STATES.find(s => s.code === state)!;
     const stateTx = st.rate > 0 ? Math.max(0, preTax - 5000) * st.rate : 0;
     const total  = fed + fica + stateTx;
@@ -265,7 +265,7 @@ export default function HourlyPaycheckCalculator() {
                 {[15,17,20,25,30,35,40,50,60,75,100].map(rate => {
                   const ann = rate*40*52;
                   const fed = calcFederal(ann,'single');
-                  const fica = Math.min(ann,176100)*0.062+ann*0.0145;
+                  const fica = Math.min(ann,184500)*0.062+ann*0.0145;
                   const net = ann-fed-fica;
                   return (
                     <tr key={rate} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
@@ -286,7 +286,7 @@ export default function HourlyPaycheckCalculator() {
         <div style={{ ...card, marginBottom:'28px' }}>
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'16px' }}>How to Calculate Hourly Take-Home Pay</h2>
           <p style={{ fontSize:'14px', opacity:0.7, lineHeight:1.8, marginBottom:'12px' }}>
-            To find your annual gross: multiply <strong>hourly rate × hours/week × weeks/year</strong>. For a standard full-time job, that's rate × 40 × 52. From gross pay, subtract pre-tax deductions like 401(k) and HSA, then apply federal income tax brackets, FICA (6.2% Social Security on first $176,100 + 1.45% Medicare on all wages), and your state income tax.
+            To find your annual gross: multiply <strong>hourly rate × hours/week × weeks/year</strong>. For a standard full-time job, that's rate × 40 × 52. From gross pay, subtract pre-tax deductions like 401(k) and HSA, then apply federal income tax brackets, FICA (6.2% Social Security on first $184,500 + 1.45% Medicare on all wages), and your state income tax.
           </p>
           <p style={{ fontSize:'14px', opacity:0.7, lineHeight:1.8 }}>
             The result is your annual net pay. Divide by 26 for biweekly paychecks, by 24 for semi-monthly, or by 12 for monthly. This calculator handles all of that instantly and privately — zero data sent to any server.

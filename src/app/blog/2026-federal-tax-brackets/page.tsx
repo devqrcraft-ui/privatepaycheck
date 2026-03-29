@@ -59,7 +59,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 </div>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'0 0 12px',color:'white'}}>2026 FICA Rates</h2>
-<ul style={{paddingLeft:'20px'}}><li style={{marginBottom:'8px'}}><strong>Social Security: 6.2%</strong> on wages up to $176,100 (wage base)</li><li style={{marginBottom:'8px'}}><strong>Medicare: 1.45%</strong> on all wages, no cap</li><li style={{marginBottom:'8px'}}><strong>Additional Medicare: 0.9%</strong> on wages over $200k (single) / $250k (married)</li></ul>
+<ul style={{paddingLeft:'20px'}}><li style={{marginBottom:'8px'}}><strong>Social Security: 6.2%</strong> on wages up to $184,500 (wage base)</li><li style={{marginBottom:'8px'}}><strong>Medicare: 1.45%</strong> on all wages, no cap</li><li style={{marginBottom:'8px'}}><strong>Additional Medicare: 0.9%</strong> on wages over $200k (single) / $250k (married)</li></ul>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Key 2026 Limits</h2>
 <ul style={{paddingLeft:'20px'}}><li style={{marginBottom:'8px'}}>401(k) employee limit: <strong>$23,500</strong> ($31,000 if age 50+)</li><li style={{marginBottom:'8px'}}>HSA individual: <strong>$4,300</strong> / family: <strong>$8,550</strong></li><li style={{marginBottom:'8px'}}>IRA limit: <strong>$7,000</strong> ($8,000 if 50+)</li><li style={{marginBottom:'8px'}}>FSA health: <strong>$3,300</strong></li></ul>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>How Marginal Tax Rates Work</h2>
