@@ -64,7 +64,7 @@ const CSS = `
 
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:16px 24px 24px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
-  .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,520px);gap:24px;align-items:start;position:relative;z-index:1;}
+  .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:32px;align-items:start;position:relative;z-index:1;}
   .hero-copy{display:flex;flex-direction:column;justify-content:center;}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
   .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:bdpulse 2s infinite;flex-shrink:0;}
@@ -104,7 +104,7 @@ const CSS = `
   
   body{user-select:none;-webkit-user-select:none;}
   input,textarea,select,.selectable{user-select:text;-webkit-user-select:text;}
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:24px;}.hero{padding:24px 20px 60px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:20px;}.hero{padding:20px 16px 32px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
   @media(max-width:540px){.hero{padding:16px 12px 32px;}.hero h1{font-size:28px;}.hero-desc{font-size:15px!important;}.pp-section{padding:24px 12px;}.featured-states{padding:24px 12px;}.obbb-section{padding:24px 12px;}.feat-grid{grid-template-columns:1fr;}.feat-card{padding:20px 16px;}.feat-title{font-size:20px!important;}.feat-desc{font-size:16px!important;line-height:1.75!important;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}.s-desc{font-size:16px!important;line-height:1.7!important;}.pp-section h2{font-size:26px!important;}.fs-fact{font-size:16px!important;line-height:1.7!important;}.fs-title{font-size:20px!important;}.fs-rate{font-size:30px!important;}.fs-card{padding:20px 16px;}.s-name{font-size:16px!important;}.s-rate{font-size:15px!important;}.obbb-desc{font-size:15px!important;}.obbb-title{font-size:17px!important;}.stat-n{font-size:28px!important;}.t-n{font-size:26px!important;}.trust{padding:20px 12px;}}
 `;
 
@@ -117,29 +117,37 @@ export default function HomeClient() {
         <div className="hero-inner">
         {/* ── HERO COPY ── */}
         <div className="hero-copy">
-          <div className="hero-badge"><span className="badge-dot"/><span>Tax Year 2026 · IRS Compliant</span></div>
-          <h1>Paycheck Calculator <em>2026</em> —<br/>United States (All 50 States)</h1>
-          <div className="hero-desc">
-            <div style={{display:'flex',flexDirection:'column',gap:8,marginBottom:16}}>
-              <span> Estimates your net pay after federal, FICA, and state taxes.</span>
-              <span> Updated for 2026 rules, including new overtime, tip and Trump Account changes.</span>
-              <span> Runs in your browser. No accounts, no data stored.</span>
-            </div>
-            <p style={{fontSize:12,color:'rgba(184,208,238,0.5)',lineHeight:1.6,margin:0}}>
-              Based on IRS Publication 15‑T (2026) and state tax tables. Not affiliated with the IRS or any government agency.
-            </p>
+          <div style={{fontSize:11,fontWeight:800,color:'#F5C842',letterSpacing:'0.18em',textTransform:'uppercase',marginBottom:10}}>privatepaycheck.com</div>
+          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:'clamp(28px,3.5vw,42px)',fontWeight:900,lineHeight:1.1,color:'#fff',marginBottom:8}}>
+            Free Paycheck Calculator <em style={{color:'#FFD700',fontStyle:'normal'}}>2026</em>
+          </h1>
+          <div style={{fontSize:13,fontWeight:700,color:'#F5C842',textTransform:'uppercase',letterSpacing:'0.12em',marginBottom:20}}>W-2 Salary · Hourly · Bonus · All 50 States</div>
+
+          <div style={{display:'flex',flexDirection:'column',gap:14,marginBottom:28}}>
+            {[
+              'W-2 Salary · Hourly · Bonus Calculator',
+              'All 50 States + 2026 IRS Tax Brackets',
+              'Federal · State · FICA Full Breakdown',
+              'Zero Data Stored · 100% Private',
+            ].map((item,i) => (
+              <div key={i} style={{display:'flex',alignItems:'center',gap:14}}>
+                <div style={{width:28,height:28,borderRadius:'50%',background:'#16a34a',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <span style={{fontSize:16,fontWeight:600,color:'#e8edf8',lineHeight:1.35}}>{item}</span>
+              </div>
+            ))}
           </div>
-          <div className="tags">
-            <span className="tag">Salary & Hourly</span>
-            <span className="tag">All 50 States</span>
-            <span className="tag">2026 Brackets</span>
-            <span className="tag">100% Private</span>
+
+          <div style={{display:'flex',flexWrap:'wrap',gap:12,marginBottom:28}}>
+            <a href="#calculator" style={{background:'#F5C842',color:'#07111f',padding:'14px 28px',borderRadius:6,fontSize:15,fontWeight:800,textDecoration:'none',letterSpacing:'0.05em'}}>→ CALCULATE PAYCHECK FREE</a>
           </div>
-          <div className="stats">
+
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:20}}>
             <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
             <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
-            <div><div className="stat-n">100%</div><div className="stat-l">Free & Private</div></div>
-            <div><div className="stat-n">$0</div><div className="stat-l">Cost Forever</div></div>
+            <div><div className="stat-n">100%</div><div className="stat-l">Private</div></div>
+            <div><div className="stat-n">$0</div><div className="stat-l">Always Free</div></div>
           </div>
         </div>
           <div id="calculator"><Calculator />
