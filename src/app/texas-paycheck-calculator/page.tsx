@@ -26,8 +26,8 @@ export default function Page() {
           {"@type":"Question","name":"How much of my Texas paycheck goes to taxes?","acceptedAnswer":{"@type":"Answer","text":"In Texas, only federal taxes are withheld: federal income tax (10%–22% for most earners) plus FICA 7.65%. Total effective withholding for a $50,000 salary is roughly 19%–21%."}}
         ]
       }) }} />
-      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#666' }}>Home</a> › Texas Paycheck Calculator
+      <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
+        <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Texas Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>Texas Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Texas has <strong>no state income tax</strong> — you only pay federal income tax and FICA. This means Texans keep significantly more of every paycheck compared to residents of CA, NY, or IL.</p>
@@ -52,7 +52,7 @@ export default function Page() {
           <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
             <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
             <td style={{ padding: '10px 14px' }}>{bw}</td>
           </tr>
         ))}</tbody></table></div>
@@ -72,13 +72,13 @@ export default function Page() {
         ].map(([s,tx,ca,diff]) => (
           <tr key={s} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{s}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{tx}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{tx}</td>
             <td style={{ padding: '10px 14px', color: '#888' }}>{ca}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color: '#28a745' }}>{diff}</td>
           </tr>
         ))}</tbody></table></div>
       <div style={{ background: 'rgba(99,102,241,0.12)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
-        <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact Texas paycheck →</a>
+        <a href="/" style={{ color:'#F5C842', fontWeight: 700 }}>Calculate your exact Texas paycheck →</a>
       </div>
     
       
@@ -103,10 +103,10 @@ export default function Page() {
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color: '#1a56db', fontSize: 14 }}>Free Paycheck Calculator</a>
-          <a href="/blog" style={{ color: '#1a56db', fontSize: 14 }}>Tax & Paycheck Blog</a>
-          <a href="/blog/no-income-tax-states-2026" style={{ color: '#1a56db', fontSize: 14 }}>No Income Tax States</a>
-          <a href="/blog/2026-federal-tax-brackets" style={{ color: '#1a56db', fontSize: 14 }}>2026 Tax Brackets</a>
+          <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
+          <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>Tax & Paycheck Blog</a>
+          <a href="/blog/no-income-tax-states-2026" style={{ color:'#F5C842', fontSize: 14 }}>No Income Tax States</a>
+          <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
         </div>
       </div>
     </main>

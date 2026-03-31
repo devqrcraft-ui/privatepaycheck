@@ -10,11 +10,11 @@ export default function Page() {
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Kansas income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Kansas top income tax rate is 5.7% in 2026."}},{"@type":"Question","name":"How much is $50,000 take-home in Kansas?","acceptedAnswer":{"@type":"Answer","text":"Approximately $37,896/year ($3,158/month) after federal, FICA, and KS state tax."}},{"@type":"Question","name":"Does Kansas tax Social Security?","acceptedAnswer":{"@type":"Answer","text":"Kansas exempts Social Security benefits for filers with adjusted gross income under $75,000."}}]}) }} />
-      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#666' }}>Home</a> › Kansas Paycheck Calculator
+      <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
+        <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Kansas Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Kansas Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 17, color: '#444', marginBottom: 12 }}>Kansas state income tax: <strong>up to 5.7%</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a> for your exact situation.</p>
+      <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}>Kansas state income tax: <strong>up to 5.7%</strong>. See your exact take-home below. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Kansas state income tax: up to 5.7% in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Kansas Take-Home Pay by Salary (Single Filer, 2026)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
@@ -27,19 +27,19 @@ export default function Page() {
         <tbody>{rows.map(([sal,gross,net,bw]) => (
           <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
-            <td style={{ padding: '10px 14px', color: '#555' }}>{gross}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
+            <td style={{ padding: '10px 14px', color:'#c8d4e8' }}>{gross}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
             <td style={{ padding: '10px 14px' }}>{bw}</td>
           </tr>
         ))}</tbody>
       </table>
       <div style={{ background: 'rgba(99,102,241,0.2)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
-        <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact Kansas paycheck →</a>
+        <a href="/" style={{ color:'#F5C842', fontWeight: 700 }}>Calculate your exact Kansas paycheck →</a>
       </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Frequently Asked Questions</h2>
-      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>What is Kansas income tax rate 2026?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Kansas top income tax rate is 5.7% in 2026.</p>
-      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $50,000 take-home in Kansas?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Approximately $37,896/year ($3,158/month) after federal, FICA, and KS state tax.</p>
-      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Does Kansas tax Social Security?</h3><p style={{ color: '#444', lineHeight: 1.7 }}>Kansas exempts Social Security benefits for filers with adjusted gross income under $75,000.</p>
+      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>What is Kansas income tax rate 2026?</h3><p style={{ color:'#c8d4e8', lineHeight: 1.7 }}>Kansas top income tax rate is 5.7% in 2026.</p>
+      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $50,000 take-home in Kansas?</h3><p style={{ color:'#c8d4e8', lineHeight: 1.7 }}>Approximately $37,896/year ($3,158/month) after federal, FICA, and KS state tax.</p>
+      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Does Kansas tax Social Security?</h3><p style={{ color:'#c8d4e8', lineHeight: 1.7 }}>Kansas exempts Social Security benefits for filers with adjusted gross income under $75,000.</p>
     
       <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
@@ -49,10 +49,10 @@ export default function Page() {
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color: '#1a56db', fontSize: 14 }}>Free Paycheck Calculator</a>
-          <a href="/blog" style={{ color: '#1a56db', fontSize: 14 }}>Tax & Paycheck Blog</a>
-          <a href="/blog/no-income-tax-states-2026" style={{ color: '#1a56db', fontSize: 14 }}>No Income Tax States</a>
-          <a href="/blog/2026-federal-tax-brackets" style={{ color: '#1a56db', fontSize: 14 }}>2026 Tax Brackets</a>
+          <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
+          <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>Tax & Paycheck Blog</a>
+          <a href="/blog/no-income-tax-states-2026" style={{ color:'#F5C842', fontSize: 14 }}>No Income Tax States</a>
+          <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
         </div>
       </div>
 

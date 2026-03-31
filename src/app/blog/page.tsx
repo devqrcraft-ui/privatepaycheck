@@ -85,20 +85,20 @@ const card: React.CSSProperties = {
 export default function BlogIndex() {
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
-      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#666' }}>Home</a> › Blog
+      <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
+        <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Blog
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Paycheck & Tax Blog 2026</h1>
-      <p style={{ fontSize: 17, color: '#444', marginBottom: 40 }}>Free guides on take-home pay, tax brackets, and paycheck calculators for every state.</p>
+      <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 40 }}>Free guides on take-home pay, tax brackets, and paycheck calculators for every state.</p>
 
       <section style={{ marginBottom: 48 }}>
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> Salary & Hourly Take-Home Pay</h2>
-        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Exact after-tax income for common wages — every state included.</p>
+        <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Exact after-tax income for common wages — every state included.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {salaryPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
@@ -106,12 +106,12 @@ export default function BlogIndex() {
 
       <section style={{ marginBottom: 48 }}>
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> Tax Guides & Tips</h2>
-        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Understand your withholding, deductions, and how to keep more.</p>
+        <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Understand your withholding, deductions, and how to keep more.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {taxPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
@@ -119,12 +119,12 @@ export default function BlogIndex() {
 
       <section style={{ marginBottom: 48 }}>
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}>‍ Profession Guides</h2>
-        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>Take-home pay breakdowns for specific careers.</p>
+        <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Take-home pay breakdowns for specific careers.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {professionPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
@@ -132,12 +132,12 @@ export default function BlogIndex() {
 
       <section style={{ marginBottom: 48 }}>
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> State Tax Guides</h2>
-        <p style={{ color: '#666', fontSize: 14, marginBottom: 20 }}>State-specific paycheck and tax guides.</p>
+        <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>State-specific paycheck and tax guides.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {statePosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color: '#666' }}>{p.desc}</div>
+              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>

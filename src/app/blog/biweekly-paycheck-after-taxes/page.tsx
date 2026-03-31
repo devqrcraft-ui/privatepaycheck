@@ -40,12 +40,12 @@ export default function Page() {
           <tr key={sal} style={{ borderBottom: '1px solid #1e2d5a' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
             <td style={{ padding: '10px 14px' }}>{gross}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
             <td style={{ padding: '10px 14px', color: '#8892aa' }}>{ca}</td>
           </tr>
         ))}</tbody>
       </table>
-      <p style={{ color: '#b0b8d1' }}>Get exact biweekly pay for your salary and state → <a href="/" style={{ color: '#1a56db' }}>free private calculator</a></p>
+      <p style={{ color: '#b0b8d1' }}>Get exact biweekly pay for your salary and state → <a href="/" style={{ color:'#F5C842' }}>free private calculator</a></p>
     
       <div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
@@ -61,14 +61,14 @@ export default function Page() {
             ['$100k a Year After Taxes','100k-a-year-after-taxes'],
             ['Biweekly Paycheck Guide','biweekly-paycheck-after-taxes'],
           ] as [string,string][]).map(([t,s]) => (
-            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
+            <a key={s} href={"/blog/" + s} style={{ display:'block', padding:'8px 12px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#F5C842', textDecoration:'none' }}>{t}</a>
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color: '#1a56db', fontSize: 14 }}>Free Paycheck Calculator</a>
-          <a href="/blog" style={{ color: '#1a56db', fontSize: 14 }}>All Tax Guides</a>
-          <a href="/california-paycheck-calculator" style={{ color: '#1a56db', fontSize: 14 }}>California Calculator</a>
-          <a href="/texas-paycheck-calculator" style={{ color: '#1a56db', fontSize: 14 }}>Texas Calculator</a>
+          <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
+          <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>All Tax Guides</a>
+          <a href="/california-paycheck-calculator" style={{ color:'#F5C842', fontSize: 14 }}>California Calculator</a>
+          <a href="/texas-paycheck-calculator" style={{ color:'#F5C842', fontSize: 14 }}>Texas Calculator</a>
         </div>
       </div>
     </main>

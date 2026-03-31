@@ -12,7 +12,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a software engineer take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"A SWE earning $150k in Texas takes home approximately $101,004/year. The same salary in California yields $91,344 — a $9,660 annual difference from state tax alone."}},{"@type":"Question","name":"Is it worth moving from California to Texas as a software engineer?","acceptedAnswer":{"@type":"Answer","text":"At $150k salary, moving from CA to TX saves approximately $9,660/year in taxes. At $200k, the savings exceed $13,000/year. Over 5 years, the tax savings can exceed $60,000."}},{"@type":"Question","name":"How much do FAANG engineers take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A Google/Meta/Apple engineer earning $200k base in California takes home approximately $117,204/year after all taxes. With RSUs and bonuses, effective rates are higher."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Software Engineer Take-Home Pay 2026</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Software Engineer Take-Home Pay 2026</h1>
-      <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>Software engineer salaries range from <strong>$100k to $200k+</strong>. The state you work in has a massive impact — a $150k SWE in Texas keeps $17,000 more per year than the same salary in California. Use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a> for your exact situation.</p>
+      <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>Software engineer salaries range from <strong>$100k to $200k+</strong>. The state you work in has a massive impact — a $150k SWE in Texas keeps $17,000 more per year than the same salary in California. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay Breakdown</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead><tr style={{ background: '#1a2550' }}>
@@ -25,7 +25,7 @@ export default function Page() {
           <tr key={s} style={{ borderBottom: '1px solid #1e2d5a' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{s}</td>
             <td style={{ padding: '10px 14px', color: '#b0b8d1' }}>{t}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{a}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{a}</td>
             <td style={{ padding: '10px 14px' }}>{h}</td>
           </tr>
         ))}</tbody>
@@ -35,14 +35,14 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is it worth moving from California to Texas as a software engineer?</h3><p style={{ color: '#c8d0e7', lineHeight: 1.7 }}>At $150k salary, moving from CA to TX saves approximately $9,660/year in taxes. At $200k, the savings exceed $13,000/year. Over 5 years, the tax savings can exceed $60,000.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much do FAANG engineers take home after taxes in 2026?</h3><p style={{ color: '#c8d0e7', lineHeight: 1.7 }}>A Google/Meta/Apple engineer earning $200k base in California takes home approximately $117,204/year after all taxes. With RSUs and bonuses, effective rates are higher.</p>
       <div style={{ background: '#1a2550', borderRadius: 8, padding: 20, margin: '32px 0' }}>
-        <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact take-home pay →</a>
+        <a href="/" style={{ color:'#F5C842', fontWeight: 700 }}>Calculate your exact take-home pay →</a>
       </div>
       
       <div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const, marginBottom: 16 }}>
           {([['$50k After Taxes','/blog/50k-a-year-after-taxes'],['$75k After Taxes','/blog/75k-a-year-after-taxes'],['$100k After Taxes','/blog/100k-a-year-after-taxes'],['Biweekly Pay Guide','/blog/biweekly-paycheck-after-taxes'],['All Tax Guides','/blog'],['Free Calculator','/']] as [string,string][]).map(([t,h]) => (
-            <a key={h} href={h} style={{ padding:'8px 14px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
+            <a key={h} href={h} style={{ padding:'8px 14px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#F5C842', textDecoration:'none' }}>{t}</a>
           ))}
         </div>
       </div>

@@ -12,10 +12,10 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
 const CSS = `
   body{background:#091526;}
   .hub{max-width:940px;margin:0 auto;padding:60px 24px 80px;color:#c8d8e8;font-family:system-ui,sans-serif;}
-  .hub-badge{display:inline-block;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:#F5C842;font-size:12px;font-weight:700;letter-spacing:.08em;padding:5px 16px;border-radius:20px;margin-bottom:20px;}
+  .hub-badge{display:inline-block;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:#F5C842;font-size:13px;font-weight:700;letter-spacing:.08em;padding:5px 16px;border-radius:20px;margin-bottom:20px;}
   .hub-h1{font-size:clamp(28px,5vw,44px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
   .hub-h1 em{color:#F5C842;font-style:normal;}
-  .hub-lead{font-size:16px;color:#7a9fbf;line-height:1.75;margin-bottom:48px;max-width:680px;}
+  .hub-lead{font-size:16px;color:#9dbdd8;line-height:1.75;margin-bottom:48px;max-width:680px;}
   .law-banner{background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.25);border-radius:14px;padding:20px 24px;margin-bottom:48px;display:flex;gap:16px;align-items:flex-start;}
   .law-icon{font-size:28px;flex-shrink:0;}
   .law-title{font-size:15px;font-weight:700;color:#F5C842;margin-bottom:4px;}
@@ -26,7 +26,7 @@ const CSS = `
   .change-icon{font-size:28px;margin-bottom:10px;}
   .change-title{font-size:18px;font-weight:700;color:#fff;margin-bottom:4px;}
   .change-save{font-size:13px;font-weight:700;color:#4ade80;margin-bottom:8px;}
-  .change-desc{font-size:13px;color:#7a9fbf;line-height:1.6;}
+  .change-desc{font-size:13px;color:#9dbdd8;line-height:1.6;}
   .change-card-body{padding:16px 22px;}
   .change-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);}
   .change-row:last-child{border-bottom:none;}
@@ -38,7 +38,7 @@ const CSS = `
   .savings-section h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:24px;}
   .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .scenario{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px;}
-  .scenario-job{font-size:12px;font-weight:700;color:#F5C842;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+  .scenario-job{font-size:13px;font-weight:700;color:#F5C842;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
   .scenario-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;}
   .scenario-row-l{color:#6b7280;}
   .scenario-row-v{color:#c8d8e8;font-weight:500;}
@@ -55,7 +55,7 @@ const CSS = `
   .faq-section h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:20px;}
   .faq-q{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:16px 20px;margin-bottom:10px;}
   .faq-qt{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;}
-  .faq-qa{font-size:13px;color:#7a9fbf;line-height:1.7;}
+  .faq-qa{font-size:13px;color:#9dbdd8;line-height:1.7;}
   .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
   .tool-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;text-decoration:none;text-align:center;transition:border-color .2s;}
   .tool-card:hover{border-color:rgba(245,200,66,.4);}
@@ -86,7 +86,7 @@ export default function TaxChanges2026Page() {
             <div className="law-desc">
               Effective for tax years 2025–2028. Four above-the-line federal income tax deductions added.
               These reduce your federal taxable income — they do not affect FICA (Social Security + Medicare) or most state income taxes.
-              Source: <a href="https://www.irs.gov" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS.gov</a>
+              Source: <a href="https://www.irs.gov" target="_blank" rel="noopener" style={{color:'#F5C842',textDecoration:'underline'}}>IRS.gov</a>
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ a { text-decoration:none; color:inherit; }
 .hero h1 em{color:#FFD700;font-style:normal;}
 .hero-desc{font-size:16px;color:#B8D0EE;line-height:1.78;margin-bottom:32px;max-width:100%;max-width:500px;}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
-.tag{background:rgba(255,255,255,.06);border:1px solid rgba(245,200,66,.28);color:#D8E8FF;font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;}
+.tag{background:rgba(255,255,255,.06);border:1px solid rgba(245,200,66,.28);color:#D8E8FF;font-size:13px;font-weight:600;padding:6px 14px;border-radius:4px;}
 .stats{display:flex;flex-wrap:wrap;gap:32px;}
 .stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#FFD700;line-height:1;}
 .stat-l{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:4px;}

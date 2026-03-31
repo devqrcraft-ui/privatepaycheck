@@ -26,11 +26,11 @@ export default function Page() {
           {"@type":"Question","name":"How much is $75,000 take-home in New York City?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in NYC results in approximately $44,556/year take-home ($3,713/month) for a single filer in 2026 after federal, NY state, and NYC taxes plus FICA."}}
         ]
       }) }} />
-      <nav style={{ fontSize: 13, color: '#666', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#666' }}>Home</a> › New York Paycheck Calculator
+      <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
+        <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › New York Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>New York Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>New York has both <strong>NY state tax (up to 10.9%)</strong> and an extra <strong>NYC tax (up to 3.876%)</strong> for city residents. See your exact take-home below or use the <a href="/" style={{ color: '#1a56db' }}>free calculator</a>.</p>
+      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>New York has both <strong>NY state tax (up to 10.9%)</strong> and an extra <strong>NYC tax (up to 3.876%)</strong> for city residents. See your exact take-home below or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a>.</p>
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         NYC residents pay 3 layers: federal + NY state + NYC local tax. Non-NYC NY residents skip the NYC layer.
       </div>
@@ -52,12 +52,12 @@ export default function Page() {
           <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
             <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{net}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
             <td style={{ padding: '10px 14px', color: '#c00', fontWeight: 600 }}>{nyc}</td>
           </tr>
         ))}</tbody></table></div>
       <div style={{ background: 'rgba(99,102,241,0.12)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
-        <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact New York paycheck →</a>
+        <a href="/" style={{ color:'#F5C842', fontWeight: 700 }}>Calculate your exact New York paycheck →</a>
       </div>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>New York Paycheck Deductions Breakdown</h2>
@@ -82,7 +82,7 @@ export default function Page() {
             <tr key={label} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', fontWeight: label === 'Take-Home Pay' ? 800 : 400 }}>
               <td style={{ padding: '10px 14px', color: '#e2e8f0' }}>{label}</td>
               <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{rate}</td>
-              <td style={{ padding: '10px 14px', color: '#1a56db', fontWeight: 600 }}>{state}</td>
+              <td style={{ padding: '10px 14px', color:'#F5C842', fontWeight: 600 }}>{state}</td>
               <td style={{ padding: '10px 14px', color: '#f87171', fontWeight: 600 }}>{nyc}</td>
             </tr>
           ))}
@@ -119,10 +119,10 @@ export default function Page() {
           ))}
         </div>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color: '#1a56db', fontSize: 14 }}>Free Paycheck Calculator</a>
-          <a href="/blog" style={{ color: '#1a56db', fontSize: 14 }}>Tax & Paycheck Blog</a>
-          <a href="/blog/no-income-tax-states-2026" style={{ color: '#1a56db', fontSize: 14 }}>No Income Tax States</a>
-          <a href="/blog/2026-federal-tax-brackets" style={{ color: '#1a56db', fontSize: 14 }}>2026 Tax Brackets</a>
+          <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
+          <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>Tax & Paycheck Blog</a>
+          <a href="/blog/no-income-tax-states-2026" style={{ color:'#F5C842', fontSize: 14 }}>No Income Tax States</a>
+          <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
         </div>
       </div>
     </main>

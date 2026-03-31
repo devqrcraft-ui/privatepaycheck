@@ -29,21 +29,21 @@ export default function Page() {
         ].map(([s,wa,ca,diff]) => (
           <tr key={s} style={{ borderBottom: '1px solid #1e2d5a' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{s}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color: '#1a56db' }}>{wa}</td>
+            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{wa}</td>
             <td style={{ padding: '10px 14px', color: '#8892aa' }}>{ca}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color: '#28a745' }}>{diff}</td>
           </tr>
         ))}</tbody>
       </table>
       <div style={{ background: '#1a2550', borderRadius: 8, padding: 20, marginBottom: 32 }}>
-        <a href="/" style={{ color: '#1a56db', fontWeight: 700 }}>Calculate your exact WA vs CA take-home →</a>
+        <a href="/" style={{ color:'#F5C842', fontWeight: 700 }}>Calculate your exact WA vs CA take-home →</a>
       </div>
       
       <div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const, marginBottom: 16 }}>
           {([['$75k After Taxes','/blog/75k-a-year-after-taxes'],['$100k After Taxes','/blog/100k-a-year-after-taxes'],['All Guides','/blog'],['Free Calculator','/']] as [string,string][]).map(([t,h]) => (
-            <a key={h} href={h} style={{ padding:'8px 14px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#1a56db', textDecoration:'none' }}>{t}</a>
+            <a key={h} href={h} style={{ padding:'8px 14px', background:'#0f1a3a', border:'1px solid #2a3a6a', borderRadius:6, fontSize:13, fontWeight:600, color:'#F5C842', textDecoration:'none' }}>{t}</a>
           ))}
         </div>
       </div>

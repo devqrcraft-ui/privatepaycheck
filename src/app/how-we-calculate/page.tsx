@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 const CSS = `
   .hwc-wrap{max-width:860px;margin:0 auto;padding:60px 24px 80px;color:#c8d8e8;font-family:'Inter',sans-serif;}
-  .hwc-badge{display:inline-block;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35);color:#a5b4fc;font-size:12px;font-weight:600;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:20px;}
+  .hwc-badge{display:inline-block;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35);color:#a5b4fc;font-size:13px;font-weight:600;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:20px;}
   .hwc-h1{font-size:clamp(28px,5vw,42px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px;}
   .hwc-h1 em{color:#818cf8;font-style:normal;}
-  .hwc-lead{font-size:16px;color:#7a9fbf;line-height:1.7;margin-bottom:48px;max-width:680px;}
+  .hwc-lead{font-size:16px;color:#9dbdd8;line-height:1.7;margin-bottom:48px;max-width:680px;}
   .hwc-section{margin-bottom:52px;}
   .hwc-h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
   .hwc-h2 span{font-size:22px;}

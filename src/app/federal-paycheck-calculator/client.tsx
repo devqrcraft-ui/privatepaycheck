@@ -8,13 +8,13 @@ const browserScript = "\nfunction calcFederal(){\n  var gross = parseFloat(docum
 const CSS = `
   body{background:#0a1628;}
   .fw{max-width:900px;margin:0 auto;padding:60px 24px 80px;color:#c8d8e8;font-family:'Inter',sans-serif;}
-  .f-badge{display:inline-block;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35);color:#a5b4fc;font-size:12px;font-weight:600;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:18px;}
+  .f-badge{display:inline-block;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35);color:#a5b4fc;font-size:13px;font-weight:600;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:18px;}
   .f-h1{font-size:clamp(28px,5vw,42px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px;}
   .f-h1 em{color:#818cf8;font-style:normal;}
-  .f-lead{font-size:16px;color:#7a9fbf;line-height:1.7;margin-bottom:36px;max-width:680px;}
+  .f-lead{font-size:16px;color:#9dbdd8;line-height:1.7;margin-bottom:36px;max-width:680px;}
   .tax-pills{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px;}
   .tax-pill{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 18px;min-width:160px;}
-  .pill-label{font-size:12px;color:#7a9fbf;margin-bottom:4px;}
+  .pill-label{font-size:12px;color:#9dbdd8;margin-bottom:4px;}
   .pill-val{font-size:18px;font-weight:700;color:#fff;}
   .pill-sub{font-size:11px;color:#4a6080;margin-top:2px;}
   .calc-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;margin-bottom:24px;}
@@ -39,7 +39,7 @@ const CSS = `
   .r-total{display:flex;justify-content:space-between;padding:14px 0 4px;font-size:20px;font-weight:700;}
   .r-total .r-label{color:#fff;}
   .r-total .r-val{color:#818cf8;}
-  .r-annual{text-align:center;font-size:13px;color:#7a9fbf;margin-top:10px;}
+  .r-annual{text-align:center;font-size:13px;color:#9dbdd8;margin-top:10px;}
   .r-annual span{color:#a5b4fc;font-weight:600;}
   .note-box{background:rgba(99,102,241,.08);border-left:3px solid #818cf8;padding:14px 18px;border-radius:0 8px 8px 0;font-size:13px;color:#a5b4fc;margin:24px 0;}
   .related{margin-top:48px;}
@@ -48,7 +48,7 @@ const CSS = `
   .rel-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;text-decoration:none;transition:border-color .2s;}
   .rel-card:hover{border-color:rgba(129,140,248,.4);}
   .rel-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;}
-  .rel-desc{font-size:12px;color:#7a9fbf;}
+  .rel-desc{font-size:12px;color:#9dbdd8;}
   .faq{margin-top:48px;}
   .faq h2{font-size:20px;font-weight:700;color:#fff;margin-bottom:20px;}
   .faq-q{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 20px;margin-bottom:10px;}

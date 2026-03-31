@@ -9,10 +9,10 @@ const browserScript = "\nfunction calc1099(){\n  var gross = parseFloat(document
 const CSS = `
   body{background:#0a1628;}
   .c-wrap{max-width:920px;margin:0 auto;padding:60px 24px 80px;color:#c8d8e8;font-family:'Inter',sans-serif;}
-  .c-badge{display:inline-block;background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.3);color:#F5C842;font-size:12px;font-weight:600;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:18px;}
+  .c-badge{display:inline-block;background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.3);color:#F5C842;font-size:13px;font-weight:600;letter-spacing:.08em;padding:4px 14px;border-radius:20px;margin-bottom:18px;}
   .c-h1{font-size:clamp(28px,5vw,42px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px;}
   .c-h1 em{color:#F5C842;font-style:normal;}
-  .c-lead{font-size:16px;color:#7a9fbf;line-height:1.7;margin-bottom:36px;max-width:680px;}
+  .c-lead{font-size:16px;color:#9dbdd8;line-height:1.7;margin-bottom:36px;max-width:680px;}
   .c-diff{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px;}
   .c-diff-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;}
   .c-diff-card.w2{border-color:rgba(99,102,241,.3);}
@@ -51,7 +51,7 @@ const CSS = `
   .rel-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;text-decoration:none;color:#c8d8e8;transition:border-color .2s;}
   .rel-card:hover{border-color:rgba(245,200,66,.4);}
   .rel-card-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px;}
-  .rel-card-desc{font-size:12px;color:#7a9fbf;}
+  .rel-card-desc{font-size:12px;color:#9dbdd8;}
   .faq{margin-top:52px;}
   .faq h2{font-size:20px;font-weight:700;color:#fff;margin-bottom:20px;}
   .faq-q{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 20px;margin-bottom:10px;}
@@ -198,7 +198,7 @@ export default function Calculator1099Page() {
 
         <div className="note-box">
           SE tax is calculated on 92.35% of net income (IRS method). You may deduct 50% of SE tax before federal income tax — both applied above.
-          Source: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS Self-Employment Tax</a>
+          Source: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" target="_blank" rel="noopener" style={{color:'#F5C842',textDecoration:'underline'}}>IRS Self-Employment Tax</a>
         </div>
 
         <div className="related">

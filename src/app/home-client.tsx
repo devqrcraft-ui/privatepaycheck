@@ -66,7 +66,7 @@ const CSS = `
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
   .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:32px;align-items:stretch;position:relative;z-index:1;}
   .hero-copy{display:flex;flex-direction:column;justify-content:flex-start;}
-  .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
+  .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
   .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:bdpulse 2s infinite;flex-shrink:0;}
   @keyframes bdpulse{0%,100%{opacity:1}50%{opacity:.3}}
   .hero h1{font-family:'Playfair Display',serif;font-size:clamp(24px,3.2vw,38px);font-weight:900;line-height:1.1;color:#fff;margin-bottom:10px;text-shadow:2px 4px 12px rgba(0,0,0,0.6),0 2px 4px rgba(0,0,0,0.4);}
@@ -76,11 +76,11 @@ const CSS = `
   .tag{background:rgba(255,255,255,.06);border:1px solid rgba(245,200,66,.28);color:#D8E8FF;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;border:1px solid rgba(245,200,66,.45);}
   .stats{display:flex;flex-wrap:wrap;gap:32px;}
   .stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#FFD700;line-height:1;}
-  .stat-l{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:4px;}
+  .stat-l{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:4px;}
   .trust{background:rgba(245,200,66,.05);border-top:1px solid rgba(245,200,66,.18);border-bottom:1px solid rgba(245,200,66,.18);padding:26px 24px;}
   .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;}
   .t-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FFD700;}
-  .t-l{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:3px;}
+  .t-l{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:3px;}
   .pp-section{padding:36px 24px;}
   .pp-section-alt{background:linear-gradient(155deg,#08142A 0%,#091A32 100%);}
   .s-head{text-align:center;margin-bottom:16px;}
@@ -445,8 +445,8 @@ export default function HomeClient() {
           </div>
         </div>
 
-        <p style={{textAlign:'center',fontSize:'12px',color:'#8ab0d0',marginTop:'24px'}}>
-          Sources: <a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener" style={{color:'#F5C842'}}>IRS Pub 15-T</a> · <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" style={{color:'#F5C842'}}>SSA Wage Base</a> · State Revenue Departments
+        <p style={{textAlign:'center',fontSize:'12px',color:'#a8c8e8',marginTop:'24px'}}>
+          Sources: <a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener" style={{color:'#F5C842',textDecoration:'underline'}}>IRS Pub 15-T</a> · <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener" style={{color:'#F5C842',textDecoration:'underline'}}>SSA Wage Base</a> · State Revenue Departments
         </p>
       </section>
 
@@ -492,7 +492,7 @@ export default function HomeClient() {
                   <div style={{fontSize:28,fontWeight:900,color:'rgba(245,200,66,0.75)',flexShrink:0,lineHeight:1,fontFamily:"'Playfair Display',serif",minWidth:32}}>{item.num}</div>
                   <div>
                     <div style={{fontSize:16,fontWeight:700,color:'#e8edf8',marginBottom:6}}>{item.title}</div>
-                    <div style={{fontSize:14,color:'#8ab0d0',lineHeight:1.75}}>{item.desc}</div>
+                    <div style={{fontSize:14,color:'#a8c8e8',lineHeight:1.75}}>{item.desc}</div>
                   </div>
                 </div>
               ))}
