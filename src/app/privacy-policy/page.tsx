@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
 
           <section>
             <h2 style={{ fontSize:'20px', fontWeight:800, marginBottom:'12px' }}>Contact</h2>
-            <p>Questions about this privacy policy? Contact us at: <span style={{ color:'#818cf8' }}>privacy@privatepaycheck.com</span></p>
+            <p>Questions about this privacy policy? Contact us at: <span style={{ color:'#818cf8' }}>kalkulator018@gmail.com</span></p>
           </section>
 
         </div>
