@@ -71,7 +71,7 @@ export default function Calculator({ defaultState }: CalcProps) {
       fed += chunk * rate; inc -= chunk; prev = lim;
     }
     const fedPer = fed / f;
-    const ss  = Math.min(annual, 168600) * 0.062 / f;
+    const ss  = Math.min(annual, 184500) * 0.062 / f;
     const med = annual * 0.0145 / f;
     const st  = (gross - k401Per) * (sr / 100);
     const totalTax = fedPer + ss + med + st;
