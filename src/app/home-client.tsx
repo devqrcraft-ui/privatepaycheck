@@ -1,7 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Calculator from '@/components/Calculator';
+import dynamic from 'next/dynamic';
+const Calculator = dynamic(() => import('@/components/Calculator'), {
+  ssr: false,
+  loading: () => <div style={{minHeight:'420px',display:'flex',alignItems:'center',justifyContent:'center',color:'rgba(245,200,66,0.6)',fontSize:'15px'}}>Loading calculator...</div>
+});
 
 const TOP_STATES = [
   { slug:'california',    name:'California',     rate:'Up to 13.3%'  },
