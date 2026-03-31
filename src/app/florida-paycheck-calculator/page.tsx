@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 export const metadata: Metadata = {
   title: 'Florida Paycheck Calculator 2026 — No State Tax, See Exact Take-Home Pay',
   description: 'Free Florida paycheck calculator. Find your 2026 take-home pay after federal income tax and FICA (no state tax in Florida). Simple, fast and 100% private — your salary stays in your browser.',
@@ -73,6 +74,7 @@ export default function Page() {
         </ul>
         <h3 style={{ fontSize: 'clamp(16px,3vw,18px)' as unknown as number, fontWeight: 700, color: '#f8fafc', marginBottom: 10 }}>How much income tax will I pay in Florida?</h3>
         <p style={{ fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#b0c4de', lineHeight: 1.8, margin: 0 }}>Florida is one of 9 states with no state income tax. Workers keep more of each paycheck compared to high-tax states. The only deductions from a Florida paycheck are federal income tax and FICA — Social Security (6.2%) and Medicare (1.45%).</p>
+      <FlTxCalcEmbed state="florida" />
       </div>
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>

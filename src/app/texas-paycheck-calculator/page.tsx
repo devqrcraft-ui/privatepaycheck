@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 export const metadata: Metadata = {
   title: 'Texas Paycheck Calculator 2026 — No State Tax, Instant Take-Home Pay',
   description: 'Free Texas paycheck calculator 2026. Texas has no state income tax — see exactly how much you keep after federal tax and FICA. Salary or hourly. Instant, no signup.',
@@ -31,6 +32,8 @@ export default function Page() {
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>Texas Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Texas has <strong>no state income tax</strong> — you only pay federal income tax and FICA. This means Texans keep significantly more of every paycheck compared to residents of CA, NY, or IL.</p>
+
+      <FlTxCalcEmbed state="texas" />
       <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#6ee7b7' }}>
         No Texas state income tax in 2026. Only federal withholding applies. Compare: at $75k salary, Texas take-home is ~$8,700/year MORE than California.
       </div>
