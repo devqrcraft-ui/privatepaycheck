@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
-const CaCalcEmbed = dynamic(() => import('@/components/CaCalcEmbed'), { ssr: false })
+import CaCalcEmbed from '@/components/CaCalcEmbed'
 export const metadata: Metadata = {
   title: 'California Paycheck Calculator 2026 — See Your Exact Take-Home Pay | Free',
   description: 'Free California paycheck calculator for 2026. See your exact take-home pay after federal, state, Social Security and Medicare taxes — for any salary or hourly rate. No signup, 100% private.',
