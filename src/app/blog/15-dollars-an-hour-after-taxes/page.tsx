@@ -47,7 +47,7 @@ export default function Page() {
         <tbody>{[['Gross Annual','$31,200'],['Standard Deduction 2026','−$15,000'],['Taxable Income','$16,200'],['Federal Income Tax (10%)','−$1,620'],['Social Security (6.2%)','−$1,934'],['Medicare (1.45%)','−$452'],['State Tax','$0'],['Net Take-Home','$27,194']].map(([l,v]) => (
           <tr key={l} style={{ borderBottom: '1px solid #1e2d5a' }}>
             <td style={{ padding: '10px 14px' }}>{l}</td>
-            <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: l === 'Net Take-Home' ? 700 : 400, color: l === 'Net Take-Home' ? '#1a56db' : 'inherit' }}>{v}</td>
+            <td style={{ padding: '10px 14px', textAlign: 'right', fontWeight: l === 'Net Take-Home' ? 700 : 400, color: l === 'Net Take-Home' ? '#F5C842' : 'inherit' }}>{v}</td>
           </tr>
         ))}</tbody>
       </table>

@@ -63,7 +63,7 @@ export default function Page() {
           ['Net Take-Home','$34,860'],
         ].map(([l,v]) => <tr key={l} style={{ borderBottom:'1px solid #1e2d5a' }}>
           <td style={{ padding:'10px 14px' }}>{l}</td>
-          <td style={{ padding:'10px 14px', textAlign:'right', fontWeight: l==='Net Take-Home'?700:400, color: l==='Net Take-Home'?'#1a56db':'inherit' }}>{v}</td>
+          <td style={{ padding:'10px 14px', textAlign:'right', fontWeight: l==='Net Take-Home'?700:400, color: l==='Net Take-Home'?'#F5C842':'inherit' }}>{v}</td>
         </tr>)}</tbody>
       </table>
 
