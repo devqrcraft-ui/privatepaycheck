@@ -3,7 +3,12 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "privatepaycheck.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "privatepaycheck.com"
+        }
+      ],
       "destination": "https://www.privatepaycheck.com/$1",
       "permanent": true
     }
@@ -12,7 +17,19 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "index, follow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/ai-chat-widget-final.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     }
   ]
