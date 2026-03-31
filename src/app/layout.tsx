@@ -1,8 +1,8 @@
 import Script from 'next/script'
 import { Playfair_Display, Inter } from 'next/font/google'
 
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['700','900'], display: 'swap', variable: '--font-playfair' })
-const inter = Inter({ subsets: ['latin'], weight: ['400','500','600','700','800'], display: 'swap', variable: '--font-inter' })
+const playfair = Playfair_Display({ subsets: ['latin'], weight: ['700'], display: 'swap', variable: '--font-playfair' })
+const inter = Inter({ subsets: ['latin'], weight: ['400','700'], display: 'swap', variable: '--font-inter' })
 import './globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
