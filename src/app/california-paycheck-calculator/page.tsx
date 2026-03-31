@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
+const CaCalcEmbed = dynamic(() => import('@/components/CaCalcEmbed'), { ssr: false })
 export const metadata: Metadata = {
   title: 'California Paycheck Calculator 2026 — See Your Exact Take-Home Pay | Free',
   description: 'Free California paycheck calculator for 2026. See your exact take-home pay after federal, state, Social Security and Medicare taxes — for any salary or hourly rate. No signup, 100% private.',
@@ -32,6 +34,7 @@ export default function Page() {
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>California Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>California has the highest state income tax in the US — up to <strong>13.3%</strong> — plus SDI. Use the table below to see your exact take-home pay, or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your specific situation.</p>
+      <CaCalcEmbed />
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 0.9% (no cap). CA SDI changed in 2024 — no wage base limit.
       </div>
