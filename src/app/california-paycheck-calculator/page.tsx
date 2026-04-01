@@ -52,7 +52,7 @@ export default function Page() {
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Biweekly Net</th>
         </tr></thead>
         <tbody>{rows.map(([sal,gross,net,bw]) => (
-          <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
+          <tr key={sal} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
             <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
@@ -73,9 +73,9 @@ export default function Page() {
           ['CA State Income Tax','1%–13.3%','9 brackets; most earners pay 6%–9.3%'],
           ['CA SDI','0.9%','No wage base cap since 2024'],
         ].map(([d,r,n]) => (
-          <tr key={d} style={{ borderBottom: '1px solid #eee' }}>
+          <tr key={d} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{d}</td>
-            <td style={{ padding: '10px 14px', color: '#c00', fontWeight: 700 }}>{r}</td>
+            <td style={{ padding: '10px 14px', color: '#f87171', fontWeight: 700 }}>{r}</td>
             <td style={{ padding: '10px 14px', color: '#94a3b8', fontSize: 13 }}>{n}</td>
           </tr>
         ))}</tbody></table></div>
