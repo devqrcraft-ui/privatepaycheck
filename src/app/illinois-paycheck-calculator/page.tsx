@@ -1,3 +1,4 @@
+import StateCalcEmbed from '@/components/StateCalcEmbed';
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Illinois Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
@@ -30,6 +31,8 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Illinois Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>Illinois Paycheck Calculator 2026</h1>
+      <StateCalcEmbed stateName="Illinois" stateTaxRate={4.95} hasSDI={false} sdiRate={0} noStateTax={false} />
+
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Illinois uses a <strong>flat 4.95% state income tax</strong> — the same rate for every income level. Simple to calculate, and lower than California or New York for high earners.</p>
       <div style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid #1a56db', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         IL flat tax 2026: 4.95% on all income. No brackets. No local income tax except Chicago (none for wages).

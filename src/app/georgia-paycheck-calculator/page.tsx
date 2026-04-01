@@ -1,3 +1,4 @@
+import StateCalcEmbed from '@/components/StateCalcEmbed';
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Georgia Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
@@ -14,6 +15,8 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Georgia Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Georgia Paycheck Calculator 2026</h1>
+      <StateCalcEmbed stateName="Georgia" stateTaxRate={5.49} hasSDI={false} sdiRate={0} noStateTax={false} />
+
       <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}>Georgia state income tax: <strong>5.39% flat</strong>. See your exact take-home below. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Georgia state income tax: 5.39% flat in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Georgia Take-Home Pay by Salary (Single Filer, 2026)</h2>

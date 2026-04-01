@@ -1,3 +1,4 @@
+import StateCalcEmbed from '@/components/StateCalcEmbed';
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'New Jersey Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
@@ -14,6 +15,8 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › New Jersey Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>New Jersey Paycheck Calculator 2026</h1>
+      <StateCalcEmbed stateName="New Jersey" stateTaxRate={5.525} hasSDI={true} sdiRate={0.14} noStateTax={false} />
+
       <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}>New Jersey state income tax: <strong>up to 10.75%</strong>. See your exact take-home below. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>New Jersey state income tax: up to 10.75% in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>New Jersey Take-Home Pay by Salary (Single Filer, 2026)</h2>
