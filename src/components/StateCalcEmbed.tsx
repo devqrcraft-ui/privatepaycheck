@@ -98,9 +98,9 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
               ...(!noStateTax ? [[stateName + ' state tax', result.stateTax]] : [['State tax', 0]]),
               ...(hasSDI ? [['SDI', result.sdi]] : []),
             ].map(([label, val]) => (
-              <div key={label} style={{ display:'flex', justifyContent:'space-between', padding:'5px 0', borderBottom:'1px solid #ffffff0a' }}>
+              <div key={String(label)} style={{ display:'flex', justifyContent:'space-between', padding:'5px 0', borderBottom:'1px solid #ffffff0a' }}>
                 <span style={{ color:'#8892b0', fontSize:13 }}>{label}</span>
-                <span style={{ color:'#e8edf8', fontSize:13, fontWeight:700 }}>{fmt(val)}</span>
+                <span style={{ color:'#e8edf8', fontSize:13, fontWeight:700 }}>{fmt(val as number)}</span>
               </div>
             ))}
           </div>
