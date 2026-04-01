@@ -13,7 +13,7 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('annual');
   const [filing, setFiling] = useState('single');
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<Record<string,number|string>|null>(null);
 
   function calculate() {
     let annual = parseFloat(salary.replace(/,/g,'')) || 0;
@@ -40,7 +40,7 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
     setResult({ annual, takeHome, biweekly: takeHome/26, monthly: takeHome/12, fed, ss, medicare, stateTax, sdi, eff: annual>0 ? (total/annual*100).toFixed(1) : '0' });
   }
 
-  const fmt = n => Math.round(n||0).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  const fmt = (n: number) => Math.round(n||0).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
 
   return (
     <div style={{ background:'#1a1040', border:'1px solid #F5C84233', borderRadius:12, padding:24, margin:'24px 0', maxWidth:520 }}>
