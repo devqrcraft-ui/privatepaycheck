@@ -26,9 +26,9 @@ const STATES = [
   { value: '2.0',   label: 'Indiana (3.15%)' },
 ];
 const BRACKETS = {
-  single:  [[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]] as [number,number][],
-  married: [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]] as [number,number][],
-  head:    [[16550,.10],[63100,.12],[100500,.22],[191950,.24],[243700,.32],[609350,.35],[Infinity,.37]] as [number,number][],
+  single:  [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]] as [number,number][],
+  married: [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]] as [number,number][],
+  head:    [[17700,.10],[67450,.12],[105700,.22],[201750,.24],[256200,.32],[640600,.35],[Infinity,.37]] as [number,number][],
 };
 
 function fmt(n: number) {
@@ -197,7 +197,7 @@ export default function Calculator({ defaultState }: CalcProps) {
             </div>
             <div className="r-row">
               <span>Social Security (6.2%) <span className="hint">ⓘ</span>
-                <span className="tooltip">Applied up to $168,600 annual wage base (2026)</span>
+                <span className="tooltip">Applied up to $184,500 annual wage base (2026)</span>
               </span>
               <span>−{fmt(results.ss)}</span>
             </div>

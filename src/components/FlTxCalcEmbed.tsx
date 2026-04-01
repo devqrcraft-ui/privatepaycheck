@@ -2,12 +2,12 @@
 import { useState } from 'react';
 
 const FED_BRACKETS: [number,number][] = [
-  [11600,.10],[47150,.12],[100525,.22],[191950,.24],
-  [243725,.32],[609350,.35],[Infinity,.37]
+  [12400,.10],[50400,.12],[105700,.22],[201775,.24],
+  [256225,.32],[640600,.35],[Infinity,.37]
 ];
 const FED_BRACKETS_MFJ: [number,number][] = [
-  [23200,.10],[94300,.12],[201050,.22],[383900,.24],
-  [487450,.32],[731200,.35],[Infinity,.37]
+  [24800,.10],[100800,.12],[211400,.22],[403550,.24],
+  [512450,.32],[768700,.35],[Infinity,.37]
 ];
 
 function calcTax(brackets: [number,number][], income: number): number {
@@ -35,7 +35,7 @@ export default function FlTxCalcEmbed({ state, accent = '#F5C842' }: Props) {
     const annual = parseFloat(salary.replace(/[^0-9.]/g,''));
     if (!annual || annual <= 0) return;
     const f = parseInt(period);
-    const stdDed = filing === 'married' ? 30000 : 15000;
+    const stdDed = filing === 'married' ? 32200 : 16100;
     const brackets = filing === 'married' ? FED_BRACKETS_MFJ : FED_BRACKETS;
     const fedTaxable = Math.max(0, annual - stdDed);
     const fed = calcTax(brackets, fedTaxable);

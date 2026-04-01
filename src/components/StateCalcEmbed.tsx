@@ -24,15 +24,15 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
     else if (period === 'monthly') annual = annual * 12;
     else if (period === 'biweekly') annual = annual * 26;
 
-    const stdDeduct = filing === 'married' ? 30000 : 15000;
+    const stdDeduct = filing === 'married' ? 32200 : 16100;
     const taxable = Math.max(0, annual - stdDeduct);
     const brackets = filing === 'married'
-      ? [[0,23850,0.10],[23850,96950,0.12],[96950,206700,0.22],[206700,394600,0.24]]
-      : [[0,11925,0.10],[11925,48475,0.12],[48475,103350,0.22],[103350,197300,0.24]];
+      ? [[0,24800,0.10],[24800,100800,0.12],[100800,211400,0.22],[211400,403550,0.24],[403550,512450,0.32],[512450,768700,0.35],[768700,Infinity,0.37]]
+      : [[0,12400,0.10],[12400,50400,0.12],[50400,105700,0.22],[105700,201775,0.24],[201775,256225,0.32],[256225,640600,0.35],[640600,Infinity,0.37]];
     let fed = 0;
     for (const [lo,hi,r] of brackets) if (taxable > lo) fed += (Math.min(taxable,hi)-lo)*r;
 
-    const ssBase = Math.min(annual, 176100);
+    const ssBase = Math.min(annual, 184500);
     const ss = ssBase * 0.062;
     const medicare = annual * 0.0145 + (annual > 200000 ? (annual-200000)*0.009 : 0);
     const stateTax = noStateTax ? 0 : annual * (stateTaxRate/100);
