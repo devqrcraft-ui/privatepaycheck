@@ -13,7 +13,10 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('annual');
   const [filing, setFiling] = useState('single');
-  const [result, setResult] = useState<Record<string,number|string>|null>(null);
+  const [result, setResult] = useState<{
+    annual:number; takeHome:number; biweekly:number; monthly:number;
+    fed:number; ss:number; medicare:number; stateTax:number; sdi:number; eff:string;
+  }|null>(null);
 
   function calculate() {
     let annual = parseFloat(salary.replace(/,/g,'')) || 0;
