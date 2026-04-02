@@ -12,6 +12,11 @@ function fedTax(income: number, filing: string): number {
   return tax;
 }
 
+
+export const metadata = {
+  alternates: { canonical: 'https://www.privatepaycheck.com/w4-withholding-calculator' },
+};
+
 export default function W4Calculator(){
   const[salary,setSalary]=useState('75000');
   const[filing,setFiling]=useState('single');

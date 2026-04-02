@@ -46,6 +46,11 @@ const CARD = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,2
 const LABEL = { fontSize:'11px', fontWeight:700, letterSpacing:'0.08em', color:'rgba(255,255,255,0.5)', textTransform:'uppercase' as const, marginBottom:'8px' };
 const INPUT_S = { width:'100%', background:'#1e293b', border:'1px solid rgba(255,255,255,0.15)', borderRadius:'10px', padding:'12px 14px', color:'#fff', fontSize:'16px', boxSizing:'border-box' as const, outline:'none' , colorScheme: 'dark' as const };
 
+
+export const metadata = {
+  alternates: { canonical: 'https://www.privatepaycheck.com/signing-bonus-tax-calculator' },
+};
+
 export default function SigningBonusCalculator() {
   const [bonus, setBonus]     = useState(20000);
   const [salary, setSalary]   = useState(120000);

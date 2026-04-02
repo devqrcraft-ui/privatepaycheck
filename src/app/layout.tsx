@@ -12,7 +12,6 @@ import Nav from '@/components/Nav';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  alternates: { canonical: 'https://www.privatepaycheck.com' },
   robots: { index: true, follow: true },
   keywords: 'paycheck calculator, salary calculator, tax calculator 2026, US paycheck, take home pay, FICA calculator, 401k calculator',
   metadataBase: new URL('https://www.privatepaycheck.com'),
