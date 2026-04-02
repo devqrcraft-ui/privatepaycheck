@@ -78,8 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL,                                      lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE_URL}/all-states`,                      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/hourly-paycheck-calculator`,      lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/overtime-calculator`,             lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE_URL}/unemployment-calculator`,         lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/minimum-wage`,                    lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/bonus-tax-calculator`,            lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/tip-calculator`,                  lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
