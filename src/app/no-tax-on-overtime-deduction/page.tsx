@@ -2,12 +2,6 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.privatepaycheck.com/no-tax-on-overtime-deduction' },
-};
-
 export default function NoTaxOnOvertimePage() {
   const [regular, setRegular] = useState('25');
   const [otHours, setOtHours] = useState('10');

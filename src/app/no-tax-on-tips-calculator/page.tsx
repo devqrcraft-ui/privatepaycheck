@@ -2,12 +2,6 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.privatepaycheck.com/no-tax-on-tips-calculator' },
-};
-
 export default function NoTaxOnTipsCalculator() {
   const [tips, setTips] = useState('800');
   const [wages, setWages] = useState('600');

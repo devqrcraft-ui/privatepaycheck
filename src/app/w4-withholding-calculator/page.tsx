@@ -11,12 +11,6 @@ function fedTax(income: number, filing: string): number {
   for(const[lim,rate] of b){if(income<=prev)break;tax+=(Math.min(income,lim)-prev)*rate;prev=lim;}
   return tax;
 }
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.privatepaycheck.com/w4-withholding-calculator' },
-};
-
 export default function W4Calculator(){
   const[salary,setSalary]=useState('75000');
   const[filing,setFiling]=useState('single');

@@ -556,6 +556,38 @@ export default function HomeClient() {
           ))}
         </div>
       </section>
+      {/* Popular Articles — internal linking for SEO */}
+      <section style={{maxWidth:'1200px',margin:'0 auto',padding:'48px 16px 64px',boxSizing:'border-box'}}>
+        <div style={{display:'flex',alignItems:'center',gap:'10px',marginBottom:'8px'}}>
+          <div style={{width:'3px',height:'20px',background:'#F5C842',borderRadius:'2px'}}></div>
+          <span style={{fontSize:'11px',fontWeight:800,color:'#F5C842',letterSpacing:'1.5px',textTransform:'uppercase'}}>Paycheck Guides</span>
+        </div>
+        <h2 style={{fontSize:'22px',fontWeight:900,color:'#e8edf8',marginBottom:'6px',marginLeft:'13px'}}>Popular Paycheck Calculators & Guides</h2>
+        <p style={{fontSize:'13px',color:'rgba(232,237,248,0.5)',marginBottom:'24px',marginLeft:'13px'}}>Step-by-step guides for every salary, state, and situation.</p>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:'12px'}}>
+          {[
+            {href:'/blog/100k-a-year-after-taxes',title:'$100k a Year After Taxes',desc:'See your exact take-home pay on a $100,000 salary in every state.'},
+            {href:'/blog/california-paycheck-calculator-guide',title:'California Paycheck Calculator Guide',desc:'How California state taxes affect your paycheck — 2026 rates.'},
+            {href:'/blog/texas-paycheck-calculator-guide',title:'Texas Paycheck Calculator Guide',desc:'No state income tax in Texas — see what you actually keep.'},
+            {href:'/blog/nurse-paycheck-calculator',title:'Nurse Paycheck Calculator',desc:'Take-home pay for RNs, LPNs and travel nurses after taxes.'},
+            {href:'/blog/200k-a-year-after-taxes',title:'$200k a Year After Taxes',desc:'What $200,000 looks like after federal, state and FICA taxes.'},
+            {href:'/blog/2026-federal-tax-brackets',title:'2026 Federal Tax Brackets',desc:'Full IRS bracket table and how to calculate your marginal rate.'},
+            {href:'/blog/texas-vs-california-salary',title:'Texas vs California Salary',desc:'Side-by-side take-home pay comparison for the two biggest states.'},
+            {href:'/blog/software-engineer-take-home-pay',title:'Software Engineer Take-Home Pay',desc:'What $120k–$300k engineering salaries net out to after taxes.'},
+            {href:'/blog/how-to-calculate-take-home-pay-2026',title:'How to Calculate Take-Home Pay',desc:'Step-by-step guide: federal, FICA, state and local tax math.'},
+            {href:'/blog/what-is-fica-tax',title:'What is FICA Tax?',desc:'Social Security and Medicare explained — rates, limits, examples.'},
+            {href:'/blog/married-filing-jointly-paycheck-2026',title:'Married Filing Jointly Paycheck',desc:'How marriage changes your withholding and take-home pay.'},
+            {href:'/blog/no-income-tax-states-2026',title:'States With No Income Tax 2026',desc:'9 states with zero income tax — and what that means for your pay.'},
+          ].map(({href,title,desc})=>(
+            <a key={href} href={href} style={{textDecoration:'none',display:'block',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.12)',borderRadius:'8px',padding:'16px',transition:'border-color .15s'}}
+              onMouseEnter={e=>(e.currentTarget.style.borderColor='rgba(245,200,66,0.4)')}
+              onMouseLeave={e=>(e.currentTarget.style.borderColor='rgba(245,200,66,0.12)')}>
+              <div style={{fontSize:'15px',fontWeight:700,color:'#e8edf8',marginBottom:'6px',lineHeight:'1.3'}}>{title}</div>
+              <div style={{fontSize:'12px',color:'rgba(232,237,248,0.55)',lineHeight:'1.6'}}>{desc}</div>
+            </a>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

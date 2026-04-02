@@ -1,12 +1,6 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.privatepaycheck.com/senior-deduction-calculator' },
-};
-
 export default function SeniorDeductionCalculator() {
   const [income, setIncome] = useState('55000');
   const [filing, setFiling] = useState('single');
