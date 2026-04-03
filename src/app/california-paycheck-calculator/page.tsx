@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import CaCalcEmbed from '@/components/CaCalcEmbed'
 export const metadata: Metadata = {
   title: 'California Paycheck Calculator 2026 — See Your Take-Home Pay — See Your Exact Take-Home Pay | Free',
-  description: 'Free California paycheck calculator 2026 — hourly & salary. Federal + CA state tax (up to 13.3%) + SDI 0.9%. See your exact take-home pay instantly. No signup.',
+  description: 'Free California paycheck calculator 2026 — hourly & salary. Federal + CA state tax (up to 13.3%) + SDI 1.3%. See your exact take-home pay instantly. No signup.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
 }
@@ -22,10 +22,10 @@ export default function Page() {
     <main style={{ maxWidth: 860, margin: '0 auto', padding: 'clamp(24px,4vw,48px) clamp(16px,4vw,24px)', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-          {"@type":"Question","name":"How much is taken out of a paycheck in California 2026?","acceptedAnswer":{"@type":"Answer","text":"California withholds federal income tax, Social Security (6.2%), Medicare (1.45%), California state income tax (1%–13.3%), and SDI (0.9%). On a $60,000 salary, total withholding is roughly 27%–31% depending on filing status."}},
+          {"@type":"Question","name":"How much is taken out of a paycheck in California 2026?","acceptedAnswer":{"@type":"Answer","text":"California withholds federal income tax, Social Security (6.2%), Medicare (1.45%), California state income tax (1%–13.3%), and SDI (1.3%). On a $60,000 salary, total withholding is roughly 27%–31% depending on filing status."}},
           {"@type":"Question","name":"What is California state income tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"California has 9 tax brackets in 2026 ranging from 1% to 13.3%. The 13.3% rate applies only to income over $1 million. Most middle-income earners fall in the 6%–9.3% range."}},
-          {"@type":"Question","name":"Does California have SDI tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. California SDI (State Disability Insurance) is 0.9% of gross wages in 2026 with no wage base cap. It is withheld from every paycheck automatically."}},
-          {"@type":"Question","name":"How much is $75,000 salary take-home in California?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in California results in approximately $52,650/year take-home ($4,375/month) for a single filer after federal tax, FICA, CA state tax, and SDI."}}
+          {"@type":"Question","name":"Does California have SDI tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. California SDI (State Disability Insurance) is 1.3% of gross wages in 2026 with no wage base cap. It is withheld from every paycheck automatically."}},
+          {"@type":"Question","name":"How much is $75,000 salary take-home in California?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in California results in approximately $52,650/year take-home ($4,375/month) for a single filer after federal tax, FICA, CA state tax, and SDI (1.3%)."}}
         ]
       }) }} />
       <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
@@ -35,7 +35,7 @@ export default function Page() {
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Free California paycheck calculator 2026 for <strong>hourly & salary</strong> workers. Federal + state income tax + SDI. California has the highest state tax in the US — up to <strong>13.3%</strong>. See your exact take-home pay instantly. <span style={{fontSize:12,color:'#94a3b8',display:'block',marginTop:6}}>Updated April 2026 — 2026 CA tax brackets, FICA & SDI rates.</span></p>
       <CaCalcEmbed />
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
-        CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 0.9% (no cap). CA SDI changed in 2024 — no wage base limit.
+        CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 1.3% (no cap). CA SDI changed in 2024 — no wage base limit.
       </div>
       <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>
         <div style={{ fontSize: '15px', opacity: 0.8 }}>California has the highest state income tax — up to 13.3%. Use the calculator below for your exact take-home.</div>
@@ -71,7 +71,7 @@ export default function Page() {
           ['Social Security','6.2%','On wages up to $184,500'],
           ['Medicare','1.45%','No wage cap; +0.9% over $200k'],
           ['CA State Income Tax','1%–13.3%','9 brackets; most earners pay 6%–9.3%'],
-          ['CA SDI','0.9%','No wage base cap since 2024'],
+          ['CA SDI','1.3%','No wage base cap since 2024'],
         ].map(([d,r,n]) => (
           <tr key={d} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{d}</td>
@@ -96,7 +96,7 @@ export default function Page() {
         <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Progressive tax: 9 brackets from 1% to 13.3% (13.3% only above $1 million)</span></li>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Most earners ($40k–$100k) pay an effective CA state rate of 4%–7%</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>SDI (State Disability Insurance): 0.9% on all wages, no cap since 2024</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>SDI (State Disability Insurance): 1.3% on all wages, no cap since 2024</span></li>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No local income tax in most CA cities (exception: some counties have small surcharges)</span></li>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator uses 2026 CA FTB withholding tables and SDI rate</span></li>
         </ul>
