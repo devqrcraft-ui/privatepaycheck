@@ -82,6 +82,8 @@ const CSS = `
   .stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#FFD700;line-height:1;}
   .stat-l{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:4px;}
   .trust{background:rgba(245,200,66,.05);border-top:1px solid rgba(245,200,66,.18);border-bottom:1px solid rgba(245,200,66,.18);padding:26px 24px;}
+  .testimonial-bar{background:rgba(15,12,41,0.8);padding:10px 20px;text-align:center;font-size:13px;color:rgba(255,255,255,0.65);border-bottom:1px solid rgba(245,200,66,0.1);}
+  .testimonial-bar strong{color:#F5C842;}
   .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;}
   .t-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#FFD700;}
   .t-l{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#7A9FBF;margin-top:3px;}
