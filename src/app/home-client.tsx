@@ -294,7 +294,7 @@ export default function HomeClient() {
               <div className="fs-fact"> $75,000 salary → ~$58,500 take-home</div>
               <div className="fs-fact"> Updated for 2026 IRS brackets</div>
             </div>
-            <div className="fs-cta">Calculate Texas Paycheck →</div>
+            <div className="fs-cta">Calculate Texas Paycheck <span className="arr">→</span></div>
           </Link>
           <Link href="/florida-paycheck-calculator" className="fs-card">
             <div className="fs-state">Florida</div>
@@ -306,7 +306,7 @@ export default function HomeClient() {
               <div className="fs-fact"> $75,000 salary → ~$58,500 take-home</div>
               <div className="fs-fact"> Federal + FICA deductions only</div>
             </div>
-            <div className="fs-cta">Calculate Florida Paycheck →</div>
+            <div className="fs-cta">Calculate Florida Paycheck <span className="arr">→</span></div>
           </Link>
           <Link href="/california-paycheck-calculator" className="fs-card">
             <div className="fs-state">California</div>
@@ -318,7 +318,7 @@ export default function HomeClient() {
               <div className="fs-fact"> $75,000 salary → ~$52,000 take-home</div>
               <div className="fs-fact"> SDI + federal + state + FICA included</div>
             </div>
-            <div className="fs-cta">Calculate California Paycheck →</div>
+            <div className="fs-cta">Calculate California Paycheck <span className="arr">→</span></div>
           </Link>
         </div>
       </section>
