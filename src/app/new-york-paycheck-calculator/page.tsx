@@ -1,8 +1,8 @@
 import StateCalcEmbed from '@/components/StateCalcEmbed';
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'New York Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'New York paycheck calculator 2026. See exact take-home after federal, NY state (4%–10.9%), NYC tax (3.078%–3.876%), and FICA. All salary levels.',
+  title: 'New York Paycheck Calculator 2026 — Take Home Pay After NY & NYC Tax',
+  description: 'Free New York paycheck calculator 2026. Calculate take-home pay after federal, NY state tax (up to 10.9%) & NYC tax. Hourly & salary. Updated April 2026.',
   keywords: 'new york paycheck calculator 2026, ny take home pay, new york salary after taxes, nyc paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/new-york-paycheck-calculator' },
 }

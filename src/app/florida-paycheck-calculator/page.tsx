@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 export const metadata: Metadata = {
-  title: 'Florida Paycheck Calculator 2026 — No State Tax, See Exact Take-Home Pay',
-  description: 'Free Florida paycheck calculator. Find your 2026 take-home pay after federal income tax and FICA (no state tax in Florida). Simple, fast and 100% private — your salary stays in your browser.',
+  title: 'Florida Paycheck Calculator 2026 — Take Home Pay, No State Tax',
+  description: 'Free Florida paycheck calculator 2026. No state income tax in FL — calculate exact net pay after federal tax & FICA. Hourly & salary. 100% private, no signup.',
   keywords: 'florida paycheck calculator 2026, florida take home pay, florida salary after taxes, fl paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/florida-paycheck-calculator' },
 }
