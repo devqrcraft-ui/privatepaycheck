@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import CaCalcEmbed from '@/components/CaCalcEmbed'
 export const metadata: Metadata = {
-  title: 'California Paycheck Calculator 2026 — See Your Exact Take-Home Pay | Free',
-  description: '$75,000 salary → ~$2,201 bi-weekly take-home in CA after taxes. Free California paycheck calculator 2026. Federal + state + SDI. No signup, instant results.',
+  title: 'California Paycheck Calculator 2026 — See Your Take-Home Pay — See Your Exact Take-Home Pay | Free',
+  description: 'Free California paycheck calculator 2026 — hourly & salary. Federal + CA state tax (up to 13.3%) + SDI 0.9%. See your exact take-home pay instantly. No signup.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
 }
@@ -19,7 +19,7 @@ export default function Page() {
     ['$500,000','$41,667','$19,750','$13,250'],
   ]
   return (
-    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
+    <main style={{ maxWidth: 860, margin: '0 auto', padding: 'clamp(24px,4vw,48px) clamp(16px,4vw,24px)', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
           {"@type":"Question","name":"How much is taken out of a paycheck in California 2026?","acceptedAnswer":{"@type":"Answer","text":"California withholds federal income tax, Social Security (6.2%), Medicare (1.45%), California state income tax (1%–13.3%), and SDI (0.9%). On a $60,000 salary, total withholding is roughly 27%–31% depending on filing status."}},
@@ -32,7 +32,7 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › California Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>California Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>California has the highest state income tax in the US — up to <strong>13.3%</strong> — plus SDI. Use the table below to see your exact take-home pay, or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your specific situation.</p>
+      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Free California paycheck calculator 2026 for <strong>hourly & salary</strong> workers. Federal + state income tax + SDI. California has the highest state tax in the US — up to <strong>13.3%</strong>. See your exact take-home pay instantly. <span style={{fontSize:12,color:'#94a3b8',display:'block',marginTop:6}}>Updated April 2026 — 2026 CA tax brackets, FICA & SDI rates.</span></p>
       <CaCalcEmbed />
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 0.9% (no cap). CA SDI changed in 2024 — no wage base limit.
