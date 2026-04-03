@@ -63,3 +63,15 @@ a.cta-link:hover::after,button.cta-btn:hover::after{opacity:1;transform:translat
 .nav-arrow-link{transition:all 0.15s ease;}
 .nav-arrow-link:hover{padding-right:8px;}
 .nav-arrow-link:hover::after{content:' →';font-size:12px;}
+
+/* Arrow animation — desktop hover only, mobile always visible */
+.btn-arrow{display:inline-flex;align-items:center;gap:8px;transition:gap 0.2s ease;}
+.btn-arrow .arr{display:inline-block;transition:transform 0.2s ease;font-style:normal;}
+@media(hover:hover){
+  .btn-arrow:hover .arr{transform:translateX(5px);}
+  .btn-arrow:hover{gap:12px;}
+}
+@media(hover:none){
+  .btn-arrow .arr{transform:none;}
+}
+.gwt-footer-link .arr,.foot-link .arr{font-size:11px;opacity:0.7;}
