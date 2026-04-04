@@ -112,6 +112,111 @@ export default function Page() {
           <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
         </div>
       </div>
-    </main>
+    
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas: No State Income Tax Explained</h2>
+      <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>Texas has <strong style={{color:'#e2e8f0'}}>no state income tax</strong> — one of only 9 states. On a $75,000 salary, Texas workers take home ~$57,200/year vs ~$52,650 in California. The difference compounds: over 10 years that's <strong style={{color:'#4ade80'}}>$45,000+ more</strong> in your pocket. You still owe federal income tax and FICA.</p>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Take-Home Pay by Salary (2026)</h2>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 400 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Annual Salary</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Monthly Gross</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Take-Home/Year</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Biweekly Net</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['$30,000','$2,500','$25,100','$965'],
+              ['$40,000','$3,333','$32,700','$1,258'],
+              ['$50,000','$4,167','$40,100','$1,542'],
+              ['$60,000','$5,000','$47,100','$1,812'],
+              ['$75,000','$6,250','$57,200','$2,200'],
+              ['$100,000','$8,333','$73,200','$2,815'],
+              ['$150,000','$12,500','$102,400','$3,938'],
+              ['$200,000','$16,667','$130,100','$5,004'],
+            ].map(([sal,mo,net,bw],i) => (
+              <tr key={sal} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{sal}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{mo}</td>
+                <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
+                <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Hourly Wage After Taxes (2026)</h2>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 360 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Hourly Rate</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Annual Gross</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Take-Home/Year</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Biweekly Net</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['$7.25 (fed min)','$15,080','$13,200','$508'],
+              ['$15/hr','$31,200','$25,800','$992'],
+              ['$20/hr','$41,600','$33,500','$1,288'],
+              ['$25/hr','$52,000','$41,000','$1,577'],
+              ['$30/hr','$62,400','$48,300','$1,858'],
+              ['$50/hr','$104,000','$76,800','$2,954'],
+            ].map(([rate,gross,net,bw],i) => (
+              <tr key={rate} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{rate}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
+                <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
+                <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Cities: Average Salary & Take-Home</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: 12, marginBottom: 32 }}>
+        {[
+          { city:'Houston', avg:'$68,000', net:'~$52,100/yr', note:'Energy & healthcare hub' },
+          { city:'Dallas', avg:'$72,000', net:'~$54,800/yr', note:'Finance & tech center' },
+          { city:'Austin', avg:'$85,000', net:'~$63,200/yr', note:'Tech boom city' },
+          { city:'San Antonio', avg:'$55,000', net:'~$43,500/yr', note:'Military & healthcare' },
+        ].map(c2 => (
+          <div key={c2.city} style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, padding: '14px 16px' }}>
+            <div style={{ fontWeight: 800, color: '#f1f5f9', marginBottom: 4 }}>{c2.city}</div>
+            <div style={{ fontSize: 13, color: '#94a3b8' }}>Avg salary: {c2.avg}</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', margin: '6px 0' }}>{c2.net}</div>
+            <div style={{ fontSize: 12, color: '#64748b' }}>{c2.note}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: 10, padding: '20px 24px', marginBottom: 32 }}>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#fde68a', marginBottom: 8 }}>💡 Texas Paycheck Tips 2026</div>
+        <ul style={{ color: '#94a3b8', lineHeight: 2, margin: 0, paddingLeft: 20 }}>
+          <li>No state income tax — but <strong style={{color:'#e2e8f0'}}>property taxes are among the highest</strong> in the US (avg 1.6%)</li>
+          <li>Federal minimum wage applies: <strong style={{color:'#e2e8f0'}}>$7.25/hr</strong> — no state increase</li>
+          <li>No TX disability insurance deduction — more take-home vs CA/NJ</li>
+          <li>Maximize 401(k) to $23,500 and HSA to $4,300 to cut federal tax</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#f1f5f9', marginBottom: 16 }}>Related Calculators</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 10 }}>
+          {[
+            ['/florida-paycheck-calculator','Florida Paycheck Calculator'],
+            ['/california-paycheck-calculator','California Paycheck Calculator'],
+            ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
+            ['/hourly-paycheck-calculator/texas','Texas Hourly Calculator'],
+            ['/bonus-tax-calculator/texas','Texas Bonus Tax Calculator'],
+          ].map(([href,label]) => (
+            <a key={href} href={href} style={{ padding:'8px 16px', borderRadius:8, background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.1)', color:'#b8c8dc', textDecoration:'none', fontSize:14, fontWeight:600 }}>{label}</a>
+          ))}
+        </div>
+      </div>
+</main>
   )
 }

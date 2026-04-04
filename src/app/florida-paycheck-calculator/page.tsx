@@ -90,6 +90,111 @@ export default function Page() {
           <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
         </div>
       </div>
-    </main>
+    
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Why Florida Has Higher Take-Home Pay</h2>
+      <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>Florida is one of 9 states with <strong style={{color:'#e2e8f0'}}>no state income tax</strong>. That means a $75,000 salary in Florida takes home ~$57,200/year vs ~$52,650 in California — a difference of over <strong style={{color:'#4ade80'}}>$4,500/year</strong>. You still pay federal income tax and FICA (Social Security + Medicare).</p>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Florida Take-Home Pay by Salary (2026)</h2>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 400 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Annual Salary</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Monthly Gross</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Take-Home/Year</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Biweekly Net</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['$30,000','$2,500','$25,100','$965'],
+              ['$40,000','$3,333','$32,700','$1,258'],
+              ['$50,000','$4,167','$40,100','$1,542'],
+              ['$60,000','$5,000','$47,100','$1,812'],
+              ['$75,000','$6,250','$57,200','$2,200'],
+              ['$100,000','$8,333','$73,200','$2,815'],
+              ['$150,000','$12,500','$102,400','$3,938'],
+              ['$200,000','$16,667','$130,100','$5,004'],
+            ].map(([sal,mo,net,bw],i) => (
+              <tr key={sal} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{sal}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{mo}</td>
+                <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
+                <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Florida Hourly Wage After Taxes (2026)</h2>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 360 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Hourly Rate</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Annual Gross</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Take-Home/Year</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Biweekly Net</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['$13 (min wage)','$27,040','$22,700','$873'],
+              ['$15/hr','$31,200','$25,800','$992'],
+              ['$20/hr','$41,600','$33,500','$1,288'],
+              ['$25/hr','$52,000','$41,000','$1,577'],
+              ['$30/hr','$62,400','$48,300','$1,858'],
+              ['$50/hr','$104,000','$76,800','$2,954'],
+            ].map(([rate,gross,net,bw],i) => (
+              <tr key={rate} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{rate}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
+                <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
+                <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Florida Cities: Average Salary & Take-Home</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: 12, marginBottom: 32 }}>
+        {[
+          { city:'Miami', avg:'$62,000', net:'~$48,600/yr', note:'Min wage $13/hr' },
+          { city:'Orlando', avg:'$55,000', net:'~$43,500/yr', note:'Tourism hub' },
+          { city:'Tampa', avg:'$58,000', net:'~$45,700/yr', note:'Growing tech scene' },
+          { city:'Jacksonville', avg:'$52,000', net:'~$41,400/yr', note:'Finance & logistics' },
+        ].map(c2 => (
+          <div key={c2.city} style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, padding: '14px 16px' }}>
+            <div style={{ fontWeight: 800, color: '#f1f5f9', marginBottom: 4 }}>{c2.city}</div>
+            <div style={{ fontSize: 13, color: '#94a3b8' }}>Avg salary: {c2.avg}</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', margin: '6px 0' }}>{c2.net}</div>
+            <div style={{ fontSize: 12, color: '#64748b' }}>{c2.note}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: 10, padding: '20px 24px', marginBottom: 32 }}>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#fde68a', marginBottom: 8 }}>💡 Florida Paycheck Tips 2026</div>
+        <ul style={{ color: '#94a3b8', lineHeight: 2, margin: 0, paddingLeft: 20 }}>
+          <li>No state income tax — but you still owe <strong style={{color:'#e2e8f0'}}>federal tax + FICA</strong></li>
+          <li>Florida minimum wage is <strong style={{color:'#e2e8f0'}}>$13.00/hr</strong> in 2026 (rising $1/yr toward $15)</li>
+          <li>No FL disability insurance (unlike CA SDI) — more take-home</li>
+          <li>Maximize 401(k) to $23,500 to reduce federal taxable income</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#f1f5f9', marginBottom: 16 }}>Related Calculators</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 10 }}>
+          {[
+            ['/texas-paycheck-calculator','Texas Paycheck Calculator'],
+            ['/california-paycheck-calculator','California Paycheck Calculator'],
+            ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
+            ['/hourly-paycheck-calculator/florida','Florida Hourly Calculator'],
+            ['/bonus-tax-calculator/florida','Florida Bonus Tax Calculator'],
+          ].map(([href,label]) => (
+            <a key={href} href={href} style={{ padding:'8px 16px', borderRadius:8, background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.1)', color:'#b8c8dc', textDecoration:'none', fontSize:14, fontWeight:600 }}>{label}</a>
+          ))}
+        </div>
+      </div>
+</main>
   )
 }
