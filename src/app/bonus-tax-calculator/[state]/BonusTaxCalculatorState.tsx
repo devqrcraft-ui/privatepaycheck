@@ -46,7 +46,6 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
 
   return (
     <div style={BG}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'WebApplication',
         'name': stateName + ' Bonus Tax Calculator 2026',
         'url': 'https://www.privatepaycheck.com/bonus-tax-calculator/' + stateSlug,

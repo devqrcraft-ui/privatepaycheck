@@ -117,7 +117,6 @@ const CSS = `
 export default function HomeClient() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: CSS}} />
 
       <div className="testimonial-bar">
         ⭐ <strong>"Exact take-home in seconds"</strong> — Sarah K., Texas &nbsp;|&nbsp; 🔒 Zero data stored &nbsp;|&nbsp; ✓ 2026 IRS rates

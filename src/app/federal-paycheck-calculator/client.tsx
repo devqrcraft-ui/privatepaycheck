@@ -69,9 +69,6 @@ function toggleAdv(){
 export default function FederalPaycheckPage() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: CSS}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
-      <script dangerouslySetInnerHTML={{__html: browserScript + advToggle}} />
 
       <div className="fw">
         <div className="f-badge">Federal Only — All 50 States</div>

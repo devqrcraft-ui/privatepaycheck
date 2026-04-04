@@ -63,9 +63,6 @@ const CSS = `
 export default function Calculator1099Page() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: CSS}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
-      <script dangerouslySetInnerHTML={{__html: browserScript}} />
 
       <div className="c-wrap">
         <div className="c-badge">1099 / Self-Employed / Contractor</div>

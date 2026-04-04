@@ -1,5 +1,4 @@
 'use client';
-'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 export default function NoTaxOnTipsCalculator() {
@@ -47,7 +46,6 @@ export default function NoTaxOnTipsCalculator() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'No Tax on Tips Calculator 2026', url: 'https://www.privatepaycheck.com/no-tax-on-tips-calculator', description: 'Calculate your federal tax savings under the No Tax on Tips exemption. Up to $25,000 in tips tax-free.', applicationCategory: 'FinanceApplication', operatingSystem: 'Any' }) }} />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
