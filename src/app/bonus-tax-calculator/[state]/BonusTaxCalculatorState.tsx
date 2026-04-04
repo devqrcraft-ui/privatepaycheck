@@ -46,13 +46,6 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
 
   return (
     <div style={BG}>
-        '@context': 'https://schema.org', '@type': 'WebApplication',
-        'name': stateName + ' Bonus Tax Calculator 2026',
-        'url': 'https://www.privatepaycheck.com/bonus-tax-calculator/' + stateSlug,
-        'description': 'Calculate how much of your bonus you keep in ' + stateName + ' after federal, state, and FICA taxes. Free, private, no signup.',
-        'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any',
-        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
-      }) }} />
 
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
 
