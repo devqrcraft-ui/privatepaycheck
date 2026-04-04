@@ -63,21 +63,8 @@ export default function TipsCalculator() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'WebApplication',
-        'name': 'No Tax on Tips Calculator 2025',
-        'url': 'https://www.privatepaycheck.com/no-tax-on-tips-calculator',
-        'description': 'Calculate federal tax savings on tips under the One Big Beautiful Bill Act 2025.',
-        'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any',
-        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
-          { '@type': 'Question', 'name': 'Who qualifies for the No Tax on Tips deduction?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Workers in customary tipping occupations earning under $150,000/year (single) or $300,000 (joint). Covers servers, bartenders, hair stylists, rideshare drivers, hotel staff, casino dealers, and 60+ other occupations.' } },
-          { '@type': 'Question', 'name': 'How much can I deduct for tips?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Up to $25,000 of qualified tips per year. Phases out above $150,000 income (single) or $300,000 (joint).' } },
-          { '@type': 'Question', 'name': 'Do I still pay Social Security and Medicare on tips?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes. Only federal income tax is removed. FICA (6.2% SS + 1.45% Medicare) still applies to all tip income.' } },
-        ],
-      })}} />
+      
+      
 
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#4ade80', marginBottom: '20px' }}>

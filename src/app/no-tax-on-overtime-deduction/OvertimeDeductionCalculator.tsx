@@ -57,13 +57,7 @@ export default function OvertimeDeductionCalculator() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
-          { '@type': 'Question', 'name': 'What is the overtime premium deduction?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'FLSA-covered hourly workers can deduct the overtime premium — the extra 0.5x above their regular rate. For a $20/hr worker, overtime is $30/hr; the deductible premium is $10/hr.' } },
-          { '@type': 'Question', 'name': 'How much overtime pay can I deduct?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Up to $12,500/year for single filers, or $25,000 for married filing jointly. Only the premium portion (0.5x) qualifies.' } },
-          { '@type': 'Question', 'name': 'Do salaried workers qualify?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Generally no. Only FLSA-eligible hourly workers qualify. Most salaried exempt employees cannot claim this deduction.' } },
-        ],
-      })}} />
+      
       <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(192,132,252,0.1)', border: '1px solid rgba(192,132,252,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#c084fc', marginBottom: '20px' }}>

@@ -106,24 +106,8 @@ export default function HourlyPaycheckCalculator() {
 
   return (
     <div style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'#fff', fontFamily:'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org','@type':'WebApplication',
-        name:'Hourly Paycheck Calculator 2026 — PrivatePaycheck',
-        url:'https://www.privatepaycheck.com/hourly-paycheck-calculator',
-        description:'Free hourly paycheck calculator. Enter your hourly rate and hours per week to see exact take-home pay after federal, state, FICA taxes, 401k and HSA. All 50 states.',
-        applicationCategory:'FinanceApplication', operatingSystem:'Any',
-        offers:{'@type':'Offer', price:'0', priceCurrency:'USD'},
-        featureList:['Hourly to annual salary conversion','Federal income tax','State income tax all 50 states','FICA Social Security Medicare','401k HSA deductions'],
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org','@type':'FAQPage',
-        mainEntity:[
-          { '@type':'Question', name:'How do I calculate take-home pay from hourly wage?', acceptedAnswer:{ '@type':'Answer', text:'Multiply your hourly rate by hours per week and weeks per year (usually 52) to get annual gross pay. Then subtract federal income tax, state income tax, Social Security (6.2%), Medicare (1.45%), 401k, and HSA contributions.' }},
-          { '@type':'Question', name:'How much is $25 an hour annually?', acceptedAnswer:{ '@type':'Answer', text:'$25/hour × 40 hours/week × 52 weeks = $52,000 per year gross. After taxes (federal + FICA), take-home pay is approximately $40,000-$43,000 depending on your state and deductions.' }},
-          { '@type':'Question', name:'What is the difference between gross and net pay?', acceptedAnswer:{ '@type':'Answer', text:'Gross pay is your total earnings before any deductions. Net pay (take-home pay) is what you actually receive after federal taxes, state taxes, Social Security, Medicare, 401k, HSA, and other deductions.' }},
-          { '@type':'Question', name:'How accurate is this hourly paycheck calculator?', acceptedAnswer:{ '@type':'Answer', text:'This calculator uses 2026 federal tax brackets, current FICA rates (6.2% SS + 1.45% Medicare), and up-to-date state tax rates for all 50 states. It is highly accurate for W-2 employees with standard deductions.' }},
-        ],
-      })}} />
+      
+      
 
       {/* NAV */}
 
