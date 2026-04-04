@@ -64,7 +64,7 @@ const CSS = `
   .obbb-save{font-size:22px;font-weight:900;color:#818cf8;margin-bottom:6px;}
   .obbb-desc{font-size:14px;color:#6b7280;line-height:1.6;}
   @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:480px){.obbb-grid{grid-template-columns:1fr 1fr;gap:12px;}.obbb-card{padding:16px 14px;}.obbb-save{font-size:18px;}.obbb-title{font-size:14px;}}
+  @media(max-width:480px){.obbb-grid{grid-template-columns:1fr;gap:10px;}.obbb-card{padding:16px 14px;}.obbb-save{font-size:18px;}.obbb-title{font-size:14px;}}
 
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:16px 24px 24px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
