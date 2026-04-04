@@ -13,7 +13,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'HSA Contribution Limits 2026 — The Most Underrated Tax Shelter',
-        url:'https://privatepaycheck.com/blog/hsa-contribution-limits-2026',
+        url:'https://www.privatepaycheck.com/blog/hsa-contribution-limits-2026',
         datePublished:'2026-02-20', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

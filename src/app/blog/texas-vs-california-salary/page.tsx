@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/texas-vs-california-salary' },
 };
 const ROWS=[{inc:50000,tx:41239,ca:38200},{inc:75000,tx:60284,ca:54844},{inc:100000,tx:78684,ca:70909},{inc:150000,tx:114284,ca:99259},{inc:200000,tx:146284,ca:125209}];
-export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'Texas vs California Salary 2026',url:'https://privatepaycheck.com/blog/texas-vs-california-salary',datePublished:'2026-02-22',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'Texas vs California Salary 2026',url:'https://www.privatepaycheck.com/blog/texas-vs-california-salary',datePublished:'2026-02-22',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

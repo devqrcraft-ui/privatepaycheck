@@ -13,7 +13,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'How to Calculate Paycheck Taxes 2026 — Step by Step Guide',
-        url:'https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes',
+        url:'https://www.privatepaycheck.com/blog/how-to-calculate-paycheck-taxes',
         datePublished:'2026-02-24', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

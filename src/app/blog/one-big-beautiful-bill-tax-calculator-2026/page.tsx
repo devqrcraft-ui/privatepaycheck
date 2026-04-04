@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'One Big Beautiful Bill Tax Calculator 2026',
     description: 'Calculate your savings: no tax on overtime, tips, $6,000 senior deduction. Signed into law.',
-    url: 'https://privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026',
+    url: 'https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026',
     type: 'article',
   },
 };

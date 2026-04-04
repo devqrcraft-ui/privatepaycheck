@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 const SINGLE=[[0,11600,'10%'],[11600,47150,'12%'],[47150,100525,'22%'],[100525,191950,'24%'],[191950,243725,'32%'],[243725,609350,'35%'],[609350,Infinity,'37%']];
 const MARRIED=[[0,23200,'10%'],[23200,94300,'12%'],[94300,201050,'22%'],[201050,383900,'24%'],[383900,487450,'32%'],[487450,731200,'35%'],[731200,Infinity,'37%']];
-export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'2026 Federal Income Tax Brackets — Complete Guide',url:'https://privatepaycheck.com/blog/2026-federal-tax-brackets',datePublished:'2026-01-10',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
+export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:'2026 Federal Income Tax Brackets — Complete Guide',url:'https://www.privatepaycheck.com/blog/2026-federal-tax-brackets',datePublished:'2026-01-10',author:{'@type':'Organization',name:'PrivatePaycheck'}})}}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

@@ -19,7 +19,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'California Paycheck 2026: Why Your Take-Home Is Lower Than Expected',
-        url:'https://privatepaycheck.com/blog/california-paycheck-calculator-guide',
+        url:'https://www.privatepaycheck.com/blog/california-paycheck-calculator-guide',
         datePublished:'2026-02-08', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

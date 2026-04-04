@@ -21,7 +21,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'401(k) Contribution Limits 2026 — Max Out & Save Thousands in Taxes',
-        url:'https://privatepaycheck.com/blog/401k-contribution-limits-2026',
+        url:'https://www.privatepaycheck.com/blog/401k-contribution-limits-2026',
         datePublished:'2026-02-01', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -13,10 +13,10 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'How to Calculate Your Take-Home Pay in the US (2026)',
-        url:'https://privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
+        url:'https://www.privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
         datePublished:'2026-03-20',
         author:{'@type':'Organization','name':'PrivatePaycheck'},
-        mainEntityOfPage:'https://privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
+        mainEntityOfPage:'https://www.privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',

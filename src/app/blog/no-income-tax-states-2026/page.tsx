@@ -31,7 +31,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'9 States With No Income Tax in 2026 — How Much Do You Actually Save?',
-        url:'https://privatepaycheck.com/blog/no-income-tax-states-2026',
+        url:'https://www.privatepaycheck.com/blog/no-income-tax-states-2026',
         datePublished:'2026-01-22', dateModified:'2026-01-22',
         author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />

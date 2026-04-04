@@ -21,7 +21,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?',
-        url:'https://privatepaycheck.com/blog/overtime-pay-rules-by-state',
+        url:'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state',
         datePublished:'2026-02-14', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -13,7 +13,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Florida Unemployment Benefits 2026 — How Much Will You Get?',
-        url:'https://privatepaycheck.com/blog/florida-unemployment-benefits-2026',
+        url:'https://www.privatepaycheck.com/blog/florida-unemployment-benefits-2026',
         datePublished:'2026-02-21', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -39,7 +39,7 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'California Minimum Wage 2026 — History, Changes & What Workers Need to Know',
-        url:'https://privatepaycheck.com/blog/california-minimum-wage-2026',
+        url:'https://www.privatepaycheck.com/blog/california-minimum-wage-2026',
         datePublished:'2026-02-23', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
 
