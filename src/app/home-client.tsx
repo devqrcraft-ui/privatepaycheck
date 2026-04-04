@@ -150,7 +150,7 @@ export default function HomeClient() {
 
           <div style={{background:'rgba(99,102,241,0.07)',border:'1px solid rgba(99,102,241,0.2)',borderRadius:10,padding:'14px 16px',marginBottom:16}}>
               <div style={{fontSize:11,fontWeight:800,color:'#a5b4fc',letterSpacing:'0.16em',textTransform:'uppercase',marginBottom:10}}>2026 Tax Law Updates</div>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+              <div style={{display:'grid',gridTemplateColumns:'1fr',gap:8}}>
                 {[
                   ['No Tax on Overtime','/no-tax-on-overtime-deduction','Save $2,750+'],
                   ['No Tax on Tips','/no-tax-on-tips-calculator','Save $5,500+'],
