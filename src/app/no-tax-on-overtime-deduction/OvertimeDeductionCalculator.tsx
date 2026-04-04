@@ -58,7 +58,7 @@ export default function OvertimeDeductionCalculator() {
   return (
     <>
       
-      <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+      <div suppressHydrationWarning style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(192,132,252,0.1)', border: '1px solid rgba(192,132,252,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#c084fc', marginBottom: '20px' }}>
            OBBBA — Effective January 1, 2025
