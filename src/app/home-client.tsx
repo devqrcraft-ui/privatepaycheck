@@ -157,9 +157,9 @@ export default function HomeClient() {
                   ['Senior $6,000 Deduction','/senior-deduction-calculator','Save $1,320+'],
                   ['Trump Account','/trump-account-calculator','$38K+ at 18'],
                 ].map(([label, href, save]) => (
-                  <a key={href} href={href} style={{display:'block',background:'rgba(99,102,241,0.08)',border:'1px solid rgba(99,102,241,0.15)',borderRadius:7,padding:'8px 10px',textDecoration:'none'}}>
-                    <div style={{fontSize:12,fontWeight:700,color:'#e0e7ff',lineHeight:1.3,marginBottom:2}}>{label}</div>
-                    <div style={{fontSize:11,color:'#818cf8',fontWeight:600}}>{save}</div>
+                  <a key={href} href={href} style={{display:'block',background:'rgba(99,102,241,0.10)',border:'1px solid rgba(99,102,241,0.25)',borderRadius:10,padding:'12px 16px',textDecoration:'none',textAlign:'center'}}>
+                    <div style={{fontSize:15,fontWeight:700,color:'#e0e7ff',lineHeight:1.3,marginBottom:4}}>{label}</div>
+                    <div style={{fontSize:13,color:'#818cf8',fontWeight:700}}>{save}</div>
                   </a>
                 ))}
               </div>
