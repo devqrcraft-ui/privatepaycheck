@@ -15,9 +15,9 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>How Much of My Raise Do I Actually Keep After Taxes? (2026)</h1>
 <p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 4 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
-<p>You negotiated a $10,000 raise. Congratulations! But after federal taxes, state taxes, and FICA, how much of that actually lands in your bank account? The answer might surprise you "” but it is never as bad as people fear.</p>
+<p>You negotiated a $10,000 raise. Congratulations! But after federal taxes, state taxes, and FICA, how much of that actually lands in your bank account? The answer might surprise you "" but it is never as bad as people fear.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>The Marginal Rate Myth</h2>
-<p>Many people fear that a raise will push them into a higher tax bracket and they will somehow take home less money. <strong>This never happens.</strong> Only the dollars above the bracket threshold get taxed at the higher rate "” not your entire salary.</p>
+<p>Many people fear that a raise will push them into a higher tax bracket and they will somehow take home less money. <strong>This never happens.</strong> Only the dollars above the bracket threshold get taxed at the higher rate "" not your entire salary.</p>
 <p style={{marginTop:'12px'}}>What does happen: as your income grows, a larger portion gets taxed at higher rates, so you keep a slightly smaller percentage of each additional dollar. But you always keep more in total.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>How Much You Keep: By Income Level (Single Filer, Texas)</h2>
 </div>
@@ -31,10 +31,10 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'0 0 12px',color:'white'}}>Rule of Thumb by Bracket</h2>
 <ul style={{paddingLeft:'20px'}}>
 <li style={{marginBottom:'8px'}}><strong>10% bracket (under ~$26.6k):</strong> Keep ~82% of raise after federal + FICA</li>
-<li style={{marginBottom:'8px'}}><strong>12% bracket ($26.6k"“$62k):</strong> Keep ~80% of raise</li>
-<li style={{marginBottom:'8px'}}><strong>22% bracket ($62k"“$115k):</strong> Keep ~71% of raise</li>
-<li style={{marginBottom:'8px'}}><strong>24% bracket ($115k"“$207k):</strong> Keep ~68% of raise</li>
-<li style={{marginBottom:'8px'}}><strong>32% bracket ($207k"“$258k):</strong> Keep ~61% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>12% bracket ($26.6k""$62k):</strong> Keep ~80% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>22% bracket ($62k""$115k):</strong> Keep ~71% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>24% bracket ($115k""$207k):</strong> Keep ~68% of raise</li>
+<li style={{marginBottom:'8px'}}><strong>32% bracket ($207k""$258k):</strong> Keep ~61% of raise</li>
 </ul>
 <p style={{marginTop:'12px'}}>Add state income tax and you keep a bit less. In California at 9.3%, a $10,000 raise in the 22% bracket nets you about $6,100 instead of $7,100.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>How to Negotiate Using These Numbers</h2>
@@ -43,7 +43,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{marginTop:'32px',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'14px',padding:'24px',textAlign:'center'}}>
 <h3 style={{fontWeight:800,marginBottom:'8px'}}>Calculate Your Raise After Taxes</h3>
 <p style={{opacity:0.65,fontSize:'14px',marginBottom:'16px'}}>Enter your current and new salary to see exact take-home difference.</p>
-<Link href="/raise-calculator" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Raise Calculator в†’</Link>
+<Link href="/raise-calculator" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Raise Calculator в†'</Link>
 </div>
 </div>
 <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>

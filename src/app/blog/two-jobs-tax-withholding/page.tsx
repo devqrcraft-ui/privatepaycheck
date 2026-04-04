@@ -22,21 +22,21 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>Two Jobs and Taxes: Why You Owe More & How to Fix It (2026)</h1>
 <p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
-<p>Working two jobs is one of the most common reasons people get an unexpected tax bill in April. It is not that you did anything wrong "” it is a built-in flaw in how withholding works. Here is why it happens and exactly how to fix it.</p>
+<p>Working two jobs is one of the most common reasons people get an unexpected tax bill in April. It is not that you did anything wrong "" it is a built-in flaw in how withholding works. Here is why it happens and exactly how to fix it.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Why Two Jobs = Tax Surprise</h2>
-<p>Every employer withholds taxes as if their job is your <strong>only income</strong>. They give you the full standard deduction ($15,000 in 2026) and withhold starting from the lowest 10% bracket. This works fine with one job. With two jobs, both employers do this simultaneously "” but you only get one standard deduction when you file.</p>
+<p>Every employer withholds taxes as if their job is your <strong>only income</strong>. They give you the full standard deduction ($15,000 in 2026) and withhold starting from the lowest 10% bracket. This works fine with one job. With two jobs, both employers do this simultaneously "" but you only get one standard deduction when you file.</p>
 <div style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'16px',margin:'16px 0',fontFamily:'monospace',fontSize:'13px'}}>
 Example: $60k Job 1 + $25k Job 2 = $85k combined<br/>
-Job 1 withholds based on $60k в†’ ~$5,180 federal<br/>
-Job 2 withholds based on $25k в†’ ~$1,130 federal<br/>
+Job 1 withholds based on $60k в†' ~$5,180 federal<br/>
+Job 2 withholds based on $25k в†' ~$1,130 federal<br/>
 Total withheld: $6,310<br/>
 Actual tax on $85k combined: ~$10,294<br/>
 <strong style={{color:'#f87171'}}>Shortfall: $3,984 owed at tax time  пёЏ</strong>
 </div>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>3 Ways to Fix It</h2>
-<p><strong>Option 1 "” Step 2 on W-4 (easiest):</strong> Check the &quot;Multiple Jobs&quot; box on your W-4 for your lower-paying job. This tells the employer to withhold at a higher rate. Simple but not perfectly precise.</p>
-<p style={{marginTop:'12px'}}><strong>Option 2 "” Step 4(c) extra withholding:</strong> Calculate your shortfall and divide by remaining paychecks. Add that amount as extra withholding per paycheck on your lower-paying job&apos;s W-4. Our calculator does this math for you.</p>
-<p style={{marginTop:'12px'}}><strong>Option 3 "” Estimated quarterly payments:</strong> Pay the IRS directly each quarter (Form 1040-ES). Useful if neither employer is flexible with W-4 changes, or if you are self-employed for Job 2.</p>
+<p><strong>Option 1 "" Step 2 on W-4 (easiest):</strong> Check the &quot;Multiple Jobs&quot; box on your W-4 for your lower-paying job. This tells the employer to withhold at a higher rate. Simple but not perfectly precise.</p>
+<p style={{marginTop:'12px'}}><strong>Option 2 "" Step 4(c) extra withholding:</strong> Calculate your shortfall and divide by remaining paychecks. Add that amount as extra withholding per paycheck on your lower-paying job&apos;s W-4. Our calculator does this math for you.</p>
+<p style={{marginTop:'12px'}}><strong>Option 3 "" Estimated quarterly payments:</strong> Pay the IRS directly each quarter (Form 1040-ES). Useful if neither employer is flexible with W-4 changes, or if you are self-employed for Job 2.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Common Two-Job Scenarios</h2>
 <ul style={{paddingLeft:'20px'}}>
 <li style={{marginBottom:'10px'}}><strong>Full-time + part-time retail:</strong> Very common. Add extra withholding on the part-time W-4.</li>
@@ -48,7 +48,7 @@ Actual tax on $85k combined: ~$10,294<br/>
 <div style={{marginTop:'32px',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(129,140,248,0.2)',borderRadius:'14px',padding:'24px',textAlign:'center'}}>
 <h3 style={{fontWeight:800,marginBottom:'8px'}}>Calculate Your Two-Job Shortfall</h3>
 <p style={{opacity:0.65,fontSize:'14px',marginBottom:'16px'}}>Enter both salaries and see exactly how much extra to withhold per paycheck.</p>
-<Link href="/two-jobs-tax-calculator" style={{display:'inline-block',background:'linear-gradient(135deg,#818cf8,#6366f1)',color:'white',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Two Jobs Calculator в†’</Link>
+<Link href="/two-jobs-tax-calculator" style={{display:'inline-block',background:'linear-gradient(135deg,#818cf8,#6366f1)',color:'white',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Two Jobs Calculator в†'</Link>
 </div>
 </div>
 <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>

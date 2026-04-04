@@ -95,7 +95,7 @@ export default function Page() {
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
       <div style={{ marginBottom: 32 }}>
         <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#c7d2fe' }}>Is New York the highest-taxed state?</h3>
-        <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: 20 }}>For NYC residents, yes — the combination of NY state tax (up to 10.9%) and NYC local tax (up to 3.876%) makes effective total state+local tax one of the highest in the US. California’s top rate of 13.3% is higher for very high earners, but NYC residents at moderate incomes face a heavier combined burden.</p>
+        <p style={{ color: '#94a3b8', lineHeight: 1.7, marginBottom: 20 }}>For NYC residents, yes — the combination of NY state tax (up to 10.9%) and NYC local tax (up to 3.876%) makes effective total state+local tax one of the highest in the US. California's top rate of 13.3% is higher for very high earners, but NYC residents at moderate incomes face a heavier combined burden.</p>
         <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: '#c7d2fe' }}>How can I reduce NY state tax on my paycheck?</h3>
         <p style={{ color: '#94a3b8', lineHeight: 1.7 }}>Maximize pre-tax deductions: 401(k) up to $23,500 in 2026, HSA up to $4,300 (self-only), FSA up to $3,300. These reduce federal and NY state taxable income. NY does conform to HSA deductions, unlike California.</p>
       </div>

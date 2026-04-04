@@ -119,12 +119,12 @@ export default function W4Calculator(){
           <Link href="/two-jobs-tax-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
             <div style={{fontSize:'20px',marginBottom:'6px'}}></div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Two Jobs Tax Calculator</div>
-            <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>Fix two-job shortfall в†’</div>
+            <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>Fix two-job shortfall в†'</div>
           </Link>
           <Link href="/" style={{display:'block',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
             <div style={{fontSize:'20px',marginBottom:'6px'}}></div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Paycheck Calculator</div>
-            <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>See take-home pay в†’</div>
+            <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>See take-home pay в†'</div>
           </Link>
         </div>
       </div>
