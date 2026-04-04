@@ -55,7 +55,7 @@ export default function NoTaxOnTipsCalculator() {
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>NEW 2026 — No Tax on Tips Law</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Tips Calculator 2026</h1>
-          <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much you save under the proposed No Tax on Tips exemption "" up to $25,000 in tip income tax-free per year.</p>
+          <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much you save under the proposed No Tax on Tips exemption — up to $25,000 in tip income tax-free per year.</p>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '24px' }}>
@@ -97,7 +97,7 @@ export default function NoTaxOnTipsCalculator() {
               <div style={{ opacity: 0.7 }}>Tax WITH exemption: <strong style={{ color: '#4ade80' }}>{fmt(r.fedNew)}</strong></div>
             </div>
           </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}> All calculations in your browser "" data never sent anywhere</p>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}> All calculations in your browser — data never sent anywhere</p>
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
@@ -106,12 +106,12 @@ export default function NoTaxOnTipsCalculator() {
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '24px' }}>
-          <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '16px' }}>No Tax on Tips "" FAQ</h2>
+          <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '16px' }}>No Tax on Tips — FAQ</h2>
           {[
-            { q: 'Who qualifies for No Tax on Tips?', a: 'Under the proposed legislation, workers in traditionally tipped occupations qualify "" servers, bartenders, hotel staff, hair stylists, valets, and similar roles. Salaried workers and those who receive tips incidentally would not qualify.' },
+            { q: 'Who qualifies for No Tax on Tips?', a: 'Under the proposed legislation, workers in traditionally tipped occupations qualify — servers, bartenders, hotel staff, hair stylists, valets, and similar roles. Salaried workers and those who receive tips incidentally would not qualify.' },
             { q: 'Is there a cap on tax-free tip income?', a: 'The most commonly discussed version caps the exemption at $25,000 per year in tip income. Tips above $25,000 would still be taxed normally. Workers earning under $160,000 in wages would qualify.' },
             { q: 'Does it eliminate FICA on tips too?', a: 'Some versions of the proposal include FICA (Social Security and Medicare) exemption on tips, which would be an additional 7.65% savings. This calculator includes FICA savings in the total.' },
-            { q: 'Do I still need to report tips?', a: 'Yes "" all tips must still be reported to your employer and on your tax return. The exemption means they would not be taxed, but they still count as income for certain purposes like Social Security credits.' },
+            { q: 'Do I still need to report tips?', a: 'Yes — all tips must still be reported to your employer and on your tax return. The exemption means they would not be taxed, but they still count as income for certain purposes like Social Security credits.' },
           ].map(item => (
             <div key={item.q} style={{ marginBottom: '14px', paddingBottom: '14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
               <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '5px' }}>{item.q}</h3>
