@@ -2,7 +2,6 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
-const FAQ_SCHEMA = `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are tips tax-free in 2026?","acceptedAnswer":{"@type":"Answer","text":"The No Tax on Tips provision allows workers to deduct up to $25,000 in tip income from their federal taxable income for 2025-2028."}},{"@type":"Question","name":"How much can I save?","acceptedAnswer":{"@type":"Answer","text":"At 22% bracket, a server earning $25,000 in tips saves up to $5,500/year. At 12%, savings are $3,000."}},{"@type":"Question","name":"Who qualifies?","acceptedAnswer":{"@type":"Answer","text":"Servers, bartenders, hotel staff, taxi drivers, salon workers, delivery drivers. Tips must be voluntary customer payments."}}]}`;
 
 export default function NoTaxOnTipsCalculator() {
   const [tips, setTips] = useState('800');
@@ -49,7 +48,6 @@ export default function NoTaxOnTipsCalculator() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }} />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>

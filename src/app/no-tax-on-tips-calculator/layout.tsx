@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   },
 };
 
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Are tips tax-free in 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The No Tax on Tips provision allows workers to deduct up to $25,000 in tip income from their federal taxable income for 2025-2028.\"}},{\"@type\":\"Question\",\"name\":\"How much can I save?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"At 22% bracket, a server earning $25,000 in tips saves up to $5,500/year. At 12%, savings are $3,000.\"}},{\"@type\":\"Question\",\"name\":\"Who qualifies?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Servers, bartenders, hotel staff, taxi drivers, salon workers, delivery drivers. Tips must be voluntary customer payments.\"}}]}";
+
 export default function Layout({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }}
+      />
+      {children}
+    </>
+  );
 }
