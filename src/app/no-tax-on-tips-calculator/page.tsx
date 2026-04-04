@@ -48,12 +48,12 @@ export default function NoTaxOnTipsCalculator() {
   const lbl: React.CSSProperties = { fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' };
 
   return (
-    <div suppressHydrationWarning style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }} />
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>NEW 2026 "" No Tax on Tips Law</div>
+          <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>NEW 2026 — No Tax on Tips Law</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Tips Calculator 2026</h1>
           <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much you save under the proposed No Tax on Tips exemption "" up to $25,000 in tip income tax-free per year.</p>
         </div>
@@ -123,11 +123,11 @@ export default function NoTaxOnTipsCalculator() {
         <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-overtime-deduction" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
                         <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Overtime</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate OT savings в†'</div>
+            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate OT savings →</div>
           </Link>
           <Link href="/" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
                         <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full breakdown в†'</div>
+            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full breakdown →</div>
           </Link>
         </div>
       </div>
