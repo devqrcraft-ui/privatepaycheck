@@ -143,9 +143,9 @@ export default function OvertimeDeductionCalculator() {
           )}
         </div>
 
-        <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+        <div style={{ marginTop: '16px', marginBottom: '24px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '16px' }}>Related Calculators</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px' }}>
             {[
               { href: '/no-tax-on-tips-calculator',    label: 'No Tax on Tips',   color: '#4ade80' },
               { href: '/overtime-calculator',           label: 'Overtime Pay',     color: '#fbbf24' },
