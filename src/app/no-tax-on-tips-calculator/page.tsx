@@ -118,18 +118,16 @@ export default function NoTaxOnTipsCalculator() {
 
         <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-overtime-deduction" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
-            <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Overtime</div>
+                        <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Overtime</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate OT savings в†'</div>
           </Link>
           <Link href="/" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
-            <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
-            <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
+                        <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
             <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full breakdown в†'</div>
           </Link>
         </div>
       </div>
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '8px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </div>
