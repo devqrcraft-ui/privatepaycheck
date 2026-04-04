@@ -148,5 +148,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
+    ...BLOG_SLUGS.map(slug => ({
+      url: `${BASE_URL}/blog/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ];
 }
