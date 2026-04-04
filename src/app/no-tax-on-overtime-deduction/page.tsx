@@ -97,22 +97,22 @@ export default function NoTaxOnOvertimePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-tips-calculator" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
             <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
-            <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Tips</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate tip savings в†’</div>
+            <div style={{ fontWeight: 700, fontSize: '16px' }}>No Tax on Tips</div>
+            <div style={{ fontSize: '13px', opacity: 0.6, marginTop: '4px' }}>Calculate tip savings в†’</div>
           </Link>
           <Link href="/overtime-calculator" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
             <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
-            <div style={{ fontWeight: 700, fontSize: '13px' }}>Overtime Calculator</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Current OT pay в†’</div>
+            <div style={{ fontWeight: 700, fontSize: '16px' }}>Overtime Calculator</div>
+            <div style={{ fontSize: '13px', opacity: 0.6, marginTop: '4px' }}>Current OT pay в†’</div>
           </Link>
           <Link href="/" style={{ display: 'block', background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
             <div style={{ fontSize: '20px', marginBottom: '6px' }}></div>
-            <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full tax breakdown в†’</div>
+            <div style={{ fontWeight: 700, fontSize: '16px' }}>Paycheck Calculator</div>
+            <div style={{ fontSize: '13px', opacity: 0.6, marginTop: '4px' }}>Full tax breakdown в†’</div>
           </Link>
         </div>
       </div>
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '8px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </main>
