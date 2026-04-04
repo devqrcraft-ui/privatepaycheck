@@ -194,7 +194,7 @@ export default function TeacherPaycheckCalculator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"WebApplication",
         "name":"Teacher Paycheck Calculator 2026 — Take-Home Pay After Pension & Taxes",
-        "url":"https://privatepaycheck.com/teacher-paycheck-calculator",
+        "url":"https://www.privatepaycheck.com/teacher-paycheck-calculator",
         "description":"Calculate your real teacher take-home pay after TRS/STRS/PSERS pension contributions, federal tax, state tax, and FICA. All 51 states. Updated for SS Fairness Act 2025.",
         "applicationCategory":"FinanceApplication","operatingSystem":"Any",
         "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},

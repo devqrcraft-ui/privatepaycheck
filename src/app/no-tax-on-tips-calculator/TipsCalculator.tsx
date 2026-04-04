@@ -66,7 +66,7 @@ export default function TipsCalculator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'WebApplication',
         'name': 'No Tax on Tips Calculator 2025',
-        'url': 'https://privatepaycheck.com/no-tax-on-tips-calculator',
+        'url': 'https://www.privatepaycheck.com/no-tax-on-tips-calculator',
         'description': 'Calculate federal tax savings on tips under the One Big Beautiful Bill Act 2025.',
         'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Any',
         'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },

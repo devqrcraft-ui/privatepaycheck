@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hourly Paycheck Calculator 2026 — Free & Private',
     description: 'Calculate take-home pay from your hourly wage. All 50 states. Federal + state taxes, FICA, 401k, HSA.',
-    url: 'https://privatepaycheck.com/hourly-paycheck-calculator',
+    url: 'https://www.privatepaycheck.com/hourly-paycheck-calculator',
   },
 };
 export default function HourlyPaycheckPage() {
@@ -17,7 +17,7 @@ export default function HourlyPaycheckPage() {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     'name': 'Hourly Paycheck Calculator 2026',
-    'url': 'https://privatepaycheck.com/hourly-paycheck-calculator',
+    'url': 'https://www.privatepaycheck.com/hourly-paycheck-calculator',
     'description': 'Free hourly paycheck calculator. Federal + state taxes, FICA for all 50 states.',
     'applicationCategory': 'FinanceApplication',
     'operatingSystem': 'Web',

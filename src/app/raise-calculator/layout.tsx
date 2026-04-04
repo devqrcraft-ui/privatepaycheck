@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Raise Calculator 2026 — How Much Will You Actually Take Home?',
     description: 'A 10% raise does not mean 10% more net pay. See the real number after taxes for all 50 states.',
-    url: 'https://privatepaycheck.com/raise-calculator',
+    url: 'https://www.privatepaycheck.com/raise-calculator',
     type: 'website',
   },
 }

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bonus Tax Calculator 2026 — How Much Do You Keep?',
     description: 'See your bonus after taxes for all 50 US states. IRS 2026 rates. Free & private.',
-    url: 'https://privatepaycheck.com/bonus-tax-calculator',
+    url: 'https://www.privatepaycheck.com/bonus-tax-calculator',
     siteName: 'PrivatePaycheck',
     type: 'website',
   },
@@ -19,7 +19,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Bonus Tax Calculator 2026',
-  url: 'https://privatepaycheck.com/bonus-tax-calculator',
+  url: 'https://www.privatepaycheck.com/bonus-tax-calculator',
   description: 'Calculate exact take-home pay on your bonus after federal 22% flat rate or aggregate method, plus state taxes for all 50 states.',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',

@@ -57,7 +57,7 @@ export default function OvertimeHubPage() {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Overtime Pay Calculator by State 2026",
-        "url": "https://privatepaycheck.com/overtime-calculator",
+        "url": "https://www.privatepaycheck.com/overtime-calculator",
         "description": "Free overtime pay calculator for all 50 US states. Covers federal FLSA rules and state-specific overtime laws.",
       })}} />
 

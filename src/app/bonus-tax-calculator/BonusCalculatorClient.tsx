@@ -78,7 +78,7 @@ export default function BonusTaxCalculator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"WebApplication",
         "name":"Bonus Tax Calculator 2026 — Free & Private",
-        "url":"https://privatepaycheck.com/bonus-tax-calculator",
+        "url":"https://www.privatepaycheck.com/bonus-tax-calculator",
         "description":"Calculate exactly how much of your bonus you'll keep after federal, state, and FICA taxes. Free, private, no signup.",
         "applicationCategory":"FinanceApplication","operatingSystem":"Any",
         "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},

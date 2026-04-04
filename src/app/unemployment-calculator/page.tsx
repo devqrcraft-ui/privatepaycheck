@@ -78,7 +78,7 @@ export default function UnemploymentHubPage() {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Unemployment Benefits Calculator by State 2026",
-        "url": "https://privatepaycheck.com/unemployment-calculator",
+        "url": "https://www.privatepaycheck.com/unemployment-calculator",
         "description": "Free unemployment benefits calculator for all 50 US states.",
       })}} />
 

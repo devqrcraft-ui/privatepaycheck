@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     'name': 'Two Jobs Tax Calculator 2026',
-    'url': 'https://privatepaycheck.com/two-jobs-tax-calculator',
+    'url': 'https://www.privatepaycheck.com/two-jobs-tax-calculator',
     'description': 'Free two jobs tax calculator. See combined federal + state tax for all 50 states.',
     'applicationCategory': 'FinanceApplication',
     'operatingSystem': 'Web',

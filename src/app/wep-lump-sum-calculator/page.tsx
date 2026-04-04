@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'WEP Lump-Sum Tax Impact Calculator 2026',
     description: 'How much extra tax do you owe on your SS Fairness Act retroactive payment? Free calculator.',
-    url: 'https://privatepaycheck.com/wep-lump-sum-calculator',
+    url: 'https://www.privatepaycheck.com/wep-lump-sum-calculator',
     siteName: 'PrivatePaycheck',
     type: 'website',
   },

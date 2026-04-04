@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Minimum Wage by State 2026 — All 51 States',
     description: 'Find your state minimum wage for 2026. Updated rates, tipped worker rules, and take-home pay calculator.',
-    url: 'https://privatepaycheck.com/minimum-wage',
+    url: 'https://www.privatepaycheck.com/minimum-wage',
   },
 };
 
@@ -64,7 +64,7 @@ export default function MinWageHubPage() {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
         name: 'Minimum Wage by State 2026',
-        url: 'https://privatepaycheck.com/minimum-wage',
+        url: 'https://www.privatepaycheck.com/minimum-wage',
         description: 'Current 2026 minimum wage rates for all 51 US states and DC.',
       })}} />
 

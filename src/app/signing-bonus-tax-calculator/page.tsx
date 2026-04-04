@@ -68,7 +68,7 @@ export default function SigningBonusCalculator() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"WebApplication",
         "name":"Signing Bonus Tax Calculator 2026",
-        "url":"https://privatepaycheck.com/signing-bonus-tax-calculator",
+        "url":"https://www.privatepaycheck.com/signing-bonus-tax-calculator",
         "description":"Calculate your signing bonus after taxes. See exactly how much you'll take home. Includes federal, state, FICA, and clawback analysis.",
         "applicationCategory":"FinanceApplication","operatingSystem":"Any",
         "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},

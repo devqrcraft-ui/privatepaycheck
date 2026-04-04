@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     'name': 'Tip & Tax Calculator 2026',
-    'url': 'https://privatepaycheck.com/tip-calculator',
+    'url': 'https://www.privatepaycheck.com/tip-calculator',
     'description': 'Free tip and tax calculator for tipped workers. All 50 US states.',
     'applicationCategory': 'FinanceApplication',
     'operatingSystem': 'Web',

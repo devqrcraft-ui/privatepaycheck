@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Teacher Paycheck Calculator 2026',
     description: 'Real teacher take-home pay after TRS/STRS pension, taxes. All 51 states. Includes SS Fairness Act 2025.',
-    url: 'https://privatepaycheck.com/teacher-paycheck-calculator',
+    url: 'https://www.privatepaycheck.com/teacher-paycheck-calculator',
     siteName: 'PrivatePaycheck',
     type: 'website',
   },

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private — your salary never leaves your browser.',
   openGraph: {
     locale: 'en_US',
-    url: 'https://privatepaycheck.com',
+    url: 'https://www.privatepaycheck.com',
     siteName: 'PrivatePaycheck',
     type: 'website',
     images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck — Free Paycheck Calculator 2026' }],
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
         name: 'PrivatePaycheck — Paycheck Calculator 2026',
-        url: 'https://privatepaycheck.com',
+        url: 'https://www.privatepaycheck.com',
         applicationCategory: 'FinanceApplication',
         operatingSystem: 'All',
         description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private.',

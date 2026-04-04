@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'No Tax on Tips Calculator 2026 — Save Up to $5,500/Year | PrivatePaycheck',
     description: 'Calculate your tip income tax savings under the 2026 No Tax on Tips law. Up to $25,000 tip deduction for servers, bartenders, drivers. See exact savings free.',
-    url: 'https://privatepaycheck.com/no-tax-on-tips-calculator',
+    url: 'https://www.privatepaycheck.com/no-tax-on-tips-calculator',
     type: 'website',
   },
 };
