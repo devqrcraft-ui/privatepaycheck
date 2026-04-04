@@ -48,7 +48,7 @@ export default function UnemploymentCalculatorState({
   };
 
   return (
-    <main style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 24px', fontFamily: 'system-ui,sans-serif' }}>
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 24px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <h1 style={{ fontSize: 28, fontWeight: 800, color: '#e8edf8', marginBottom: 8 }}>
         {stateName} Unemployment Calculator 2026
       </h1>
@@ -147,6 +147,6 @@ export default function UnemploymentCalculatorState({
         Disclaimer: This is an estimate only. Actual weekly benefit amounts are determined by your state unemployment agency based on your specific wage history and claim details.
         Data reflects 2026 benefit schedules. Consult the {stateName} Department of Labor for official figures.
       </p>
-    </main>
+    </div>
   );
 }

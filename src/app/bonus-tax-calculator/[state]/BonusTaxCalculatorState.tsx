@@ -45,7 +45,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
   const pct = (n: number) => bonus > 0 ? (n / bonus * 100).toFixed(1) + '%' : '0%';
 
   return (
-    <main style={BG}>
+    <div style={BG}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'WebApplication',
         'name': stateName + ' Bonus Tax Calculator 2026',
@@ -228,6 +228,6 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

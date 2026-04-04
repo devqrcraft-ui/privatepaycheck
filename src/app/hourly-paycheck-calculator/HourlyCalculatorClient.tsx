@@ -105,7 +105,7 @@ export default function HourlyPaycheckCalculator() {
   const stObj = STATES.find(s => s.code === sel)!;
 
   return (
-    <main style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'#fff', fontFamily:'system-ui,sans-serif' }}>
+    <div style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'#fff', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'WebApplication',
         name:'Hourly Paycheck Calculator 2026 — PrivatePaycheck',
@@ -359,6 +359,6 @@ export default function HourlyPaycheckCalculator() {
         <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
-    </main>
+    </div>
   );
 }

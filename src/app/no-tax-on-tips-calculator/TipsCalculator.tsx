@@ -62,7 +62,7 @@ export default function TipsCalculator() {
   }
 
   return (
-    <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'WebApplication',
         'name': 'No Tax on Tips Calculator 2025',
@@ -158,9 +158,9 @@ export default function TipsCalculator() {
           )}
         </div>
 
-        <div style={{ marginTop: '40px', marginBottom: '40px' }}>
+        <div style={{ marginTop: '16px', marginBottom: '16px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '16px' }}>Related Calculators</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px' }}>
             {[
               { href: '/no-tax-on-overtime-deduction', label: 'No Tax on Overtime', color: '#c084fc' },
               { href: '/raise-calculator',             label: 'Raise Calculator',   color: '#4ade80' },
@@ -195,6 +195,6 @@ export default function TipsCalculator() {
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
-    </main>
+    </div>
   )
 }

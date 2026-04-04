@@ -49,7 +49,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
 
   return (
-    <main style={BG}>
+    <div style={BG}>
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
 
         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -158,6 +158,6 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -100,7 +100,7 @@ export default function WEPLumpSumCalculator() {
   const lbl: React.CSSProperties = { display:'block', fontSize:13, color:'#94a3b8', marginBottom:6, marginTop:16 };
 
   return (
-    <main style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
+    <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
       <div style={{ maxWidth:600, margin:'0 auto' }}>
 
         <Link href="/" style={{ color:'#94a3b8', textDecoration:'none', fontSize:14 }}>← Back to all calculators</Link>
@@ -275,6 +275,6 @@ export default function WEPLumpSumCalculator() {
         </div>
 
       </div>
-    </main>
+    </div>
   );
 }

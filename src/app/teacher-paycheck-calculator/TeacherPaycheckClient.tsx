@@ -190,7 +190,7 @@ export default function TeacherPaycheckCalculator() {
   const pensionInfo = PENSION_RATE[state] ?? { rate: 0.07, system: 'State TRS', ss: true };
 
   return (
-    <main style={BG}>
+    <div style={BG}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"WebApplication",
         "name":"Teacher Paycheck Calculator 2026 — Take-Home Pay After Pension & Taxes",
@@ -433,6 +433,6 @@ export default function TeacherPaycheckCalculator() {
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
         <br /><span style={{ fontSize: '11px', marginTop: '6px', display: 'block' }}>Pension rates sourced from official state TRS/STRS/PSERS websites. For informational purposes only — not tax advice.</span>
       </footer>
-    </main>
+    </div>
   );
 }

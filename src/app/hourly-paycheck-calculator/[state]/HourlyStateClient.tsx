@@ -53,7 +53,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
   const fmt2 = (n: number) => '$' + n.toFixed(2);
 
   return (
-    <main style={BG}>
+    <div style={BG}>
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Link href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Home</Link>
@@ -171,6 +171,6 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

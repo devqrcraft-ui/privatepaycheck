@@ -45,7 +45,7 @@ export default function TwoJobsClient() {
   );
 
   return (
-    <main style={{minHeight:'100vh',background:'#091526',color:'#fff',fontFamily:'system-ui,sans-serif'}}>
+    <div style={{minHeight:'100vh',background:'#091526',color:'#fff',fontFamily:'system-ui,sans-serif'}}>
       <div style={{maxWidth:'860px',margin:'0 auto',padding:'40px 16px'}}>
         <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}>
           <Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link>{' › Two Jobs Tax Calculator'}
@@ -113,6 +113,6 @@ export default function TwoJobsClient() {
       <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
         2026 PrivatePaycheck.com
       </footer>
-    </main>
+    </div>
   );
 }

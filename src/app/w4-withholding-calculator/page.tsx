@@ -46,7 +46,7 @@ export default function W4Calculator(){
   const lbl:React.CSSProperties={fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'6px',display:'block'};
 
   return(
-    <main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
+    <div style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
       <div style={{maxWidth:'900px',margin:'0 auto',padding:'32px 16px'}}>
         <div style={{textAlign:'center',marginBottom:'28px'}}>
           <h1 style={{fontSize:'clamp(24px,4vw,42px)',fontWeight:900,margin:'0 0 12px',lineHeight:1.2}}>W-4 Withholding Calculator 2026</h1>
@@ -131,6 +131,6 @@ export default function W4Calculator(){
       <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link>
       </footer>
-    </main>
+    </div>
   );
 }

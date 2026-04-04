@@ -64,7 +64,7 @@ export default function SigningBonusCalculator() {
   const pct = (n: number) => (n * 100).toFixed(1) + '%';
 
   return (
-    <main style={BG}>
+    <div style={BG}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"WebApplication",
         "name":"Signing Bonus Tax Calculator 2026",
@@ -209,6 +209,6 @@ export default function SigningBonusCalculator() {
       <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
-    </main>
+    </div>
   );
 }
