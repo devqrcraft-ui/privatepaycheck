@@ -25,7 +25,11 @@ export default function Page() {
           {"@type":"Question","name":"How much is taken out of a paycheck in California 2026?","acceptedAnswer":{"@type":"Answer","text":"California withholds federal income tax, Social Security (6.2%), Medicare (1.45%), California state income tax (1%–13.3%), and SDI (1.3%). On a $60,000 salary, total withholding is roughly 27%–31% depending on filing status."}},
           {"@type":"Question","name":"What is California state income tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"California has 9 tax brackets in 2026 ranging from 1% to 13.3%. The 13.3% rate applies only to income over $1 million. Most middle-income earners fall in the 6%–9.3% range."}},
           {"@type":"Question","name":"Does California have SDI tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. California SDI (State Disability Insurance) is 1.3% of gross wages in 2026 with no wage base cap. It is withheld from every paycheck automatically."}},
-          {"@type":"Question","name":"How much is $75,000 salary take-home in California?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in California results in approximately $52,650/year take-home ($4,375/month) for a single filer after federal tax, FICA, CA state tax, and SDI (1.3%)."}}
+          {"@type":"Question","name":"How much is $75,000 salary take-home in California?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in California results in approximately $52,650/year take-home ($4,375/month) for a single filer after federal tax, FICA, CA state tax, and SDI (1.3%)."}},
+          {"@type":"Question","name":"What are California paycheck deductions in 2026?","acceptedAnswer":{"@type":"Answer","text":"California paycheck deductions include: federal income tax (10%–37%), Social Security (6.2% up to $176,100), Medicare (1.45%+), California state income tax (1%–13.3%), and SDI (1.3% with no wage cap in 2026)."}},
+          {"@type":"Question","name":"How much is taken out of a $50,000 salary in California?","acceptedAnswer":{"@type":"Answer","text":"On a $50,000 salary in California, a single filer takes home approximately $37,400/year ($3,117/month). Deductions include ~$4,500 federal tax, ~$3,825 FICA, and ~$1,750 CA state tax plus $650 SDI."}},
+          {"@type":"Question","name":"Does California tax Social Security income?","acceptedAnswer":{"@type":"Answer","text":"No. California does not tax Social Security benefits, making it relatively favorable for retirees despite high income tax rates on wages."}},
+          {"@type":"Question","name":"How much is $20/hour after taxes in California?","acceptedAnswer":{"@type":"Answer","text":"At $20/hour (about $41,600/year) in California, a single filer takes home approximately $31,200/year or $1,200 biweekly after federal tax, CA state tax, FICA, and SDI."}}
         ]
       }) }} />
       <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
@@ -117,6 +121,138 @@ export default function Page() {
           <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
         </div>
       </div>
-    </main>
+    
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>California Income Tax Brackets 2026</h2>
+      <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>California uses a progressive income tax system with 9 brackets. Unlike federal taxes, California has no standard deduction for most filers — but does offer a personal exemption credit of $144 (single) or $288 (married).</p>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 400 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Tax Rate</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Single Filer Income</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Married Filing Jointly</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['1%','$0 – $10,756','$0 – $21,512'],
+              ['2%','$10,757 – $25,499','$21,513 – $50,998'],
+              ['4%','$25,500 – $40,245','$50,999 – $80,490'],
+              ['6%','$40,246 – $55,866','$80,491 – $111,732'],
+              ['8%','$55,867 – $70,606','$111,733 – $141,212'],
+              ['9.3%','$70,607 – $360,659','$141,213 – $721,318'],
+              ['10.3%','$360,660 – $432,787','$721,319 – $865,574'],
+              ['11.3%','$432,788 – $721,314','$865,575 – $1,000,000'],
+              ['12.3%','$721,315 – $1,000,000','$1,000,001+'],
+              ['13.3%','Over $1,000,000','Over $1,000,000'],
+            ].map(([rate, single, married], i) => (
+              <tr key={rate} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? 'rgba(255,255,255,0.02)' : 'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#818cf8' }}>{rate}</td>
+                <td style={{ padding: '10px 14px', color: '#e2e8f0' }}>{single}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{married}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>California Paycheck by City (2026)</h2>
+      <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>State taxes are the same across California, but minimum wage and local rules vary. Los Angeles and San Francisco have higher minimum wages ($17.28/hr+).</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 12, marginBottom: 32 }}>
+        {[
+          { city: 'Los Angeles', salary: '$65,000', takehome: '~$46,800/yr', note: 'Min wage $17.28/hr' },
+          { city: 'San Francisco', salary: '$95,000', takehome: '~$65,200/yr', note: 'Min wage $18.67/hr' },
+          { city: 'San Diego', salary: '$70,000', takehome: '~$50,100/yr', note: 'Min wage $16.85/hr' },
+          { city: 'Sacramento', salary: '$60,000', takehome: '~$43,500/yr', note: 'State min wage $16.50/hr' },
+        ].map(c2 => (
+          <div key={c2.city} style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, padding: '14px 16px' }}>
+            <div style={{ fontWeight: 800, color: '#f1f5f9', marginBottom: 4 }}>{c2.city}</div>
+            <div style={{ fontSize: 13, color: '#94a3b8' }}>Avg salary: {c2.salary}</div>
+            <div style={{ fontSize: 15, fontWeight: 700, color: '#818cf8', margin: '6px 0' }}>{c2.takehome}</div>
+            <div style={{ fontSize: 12, color: '#64748b' }}>{c2.note}</div>
+          </div>
+        ))}
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Hourly Wage Take-Home in California (2026)</h2>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 400 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Hourly Rate</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Annual Gross</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Take-Home/Year</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Biweekly Net</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['$16.50 (min wage)','$34,320','$27,100','$1,042'],
+              ['$20/hr','$41,600','$32,100','$1,235'],
+              ['$25/hr','$52,000','$38,800','$1,492'],
+              ['$30/hr','$62,400','$45,200','$1,738'],
+              ['$40/hr','$83,200','$57,900','$2,227'],
+              ['$50/hr','$104,000','$69,800','$2,685'],
+            ].map(([rate,gross,net,bw],i) => (
+              <tr key={rate} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{rate}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
+                <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
+                <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>California vs Other States: Take-Home Comparison</h2>
+      <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>On a $75,000 salary, here's how California compares to other states for a single filer in 2026:</p>
+      <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 360 }}>
+          <thead><tr style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>State</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>State Tax Rate</th>
+            <th style={{ padding: '10px 14px', textAlign: 'left' as const, color: '#e2e8f0' }}>Take-Home ($75k)</th>
+          </tr></thead>
+          <tbody>
+            {[
+              ['Texas','0%','~$57,200'],
+              ['Florida','0%','~$57,200'],
+              ['Nevada','0%','~$57,200'],
+              ['California','Up to 9.3%','~$52,650'],
+              ['New York','Up to 6.85%','~$53,400'],
+              ['Oregon','Up to 9.9%','~$51,800'],
+            ].map(([state,rate,th],i) => (
+              <tr key={state} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: state==='California'?'rgba(99,102,241,0.1)':i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
+                <td style={{ padding: '10px 14px', fontWeight: state==='California'?800:400, color: state==='California'?'#818cf8':'#e2e8f0' }}>{state}{state==='California'?' ★':''}</td>
+                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{rate}</td>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#4ade80' }}>{th}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: 10, padding: '20px 24px', marginBottom: 32, marginTop: 40 }}>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#fde68a', marginBottom: 8 }}>💡 How to Reduce Your California Taxes in 2026</div>
+        <ul style={{ color: '#94a3b8', lineHeight: 2, margin: 0, paddingLeft: 20 }}>
+          <li>Maximize 401(k): up to <strong style={{color:'#e2e8f0'}}>$23,500</strong> pre-tax (reduces federal + CA state taxable income)</li>
+          <li>HSA contributions: up to <strong style={{color:'#e2e8f0'}}>$4,300</strong> (self-only) — federal deduction only, CA does not conform</li>
+          <li>Claim all deductions: mortgage interest, charitable donations, medical expenses over 7.5% AGI</li>
+          <li>Consider S-Corp if self-employed and earning over $80,000/year in CA</li>
+        </ul>
+      </div>
+
+      <div style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#f1f5f9', marginBottom: 16 }}>Related Calculators</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 10 }}>
+          {[
+            ['/florida-paycheck-calculator','Florida Paycheck Calculator'],
+            ['/texas-paycheck-calculator','Texas Paycheck Calculator'],
+            ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
+            ['/hourly-paycheck-calculator/california','California Hourly Calculator'],
+            ['/bonus-tax-calculator/california','California Bonus Tax Calculator'],
+          ].map(([href,label]) => (
+            <a key={href} href={href} style={{ padding: '8px 16px', borderRadius: 8, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#b8c8dc', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>{label}</a>
+          ))}
+        </div>
+      </div>
+</main>
   )
 }
