@@ -126,7 +126,7 @@
     history.push({ role: 'user', content: text });
     var typing = showTyping();
     try {
-      var res = await fetch('https://api.anthropic.com/v1/messages', {
+      var res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
