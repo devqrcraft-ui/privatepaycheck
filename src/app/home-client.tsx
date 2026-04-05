@@ -4,7 +4,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Calculator = dynamic(() => import('@/components/Calculator'), {
   ssr: false,
-  loading: () => <div style={{minHeight:'420px',display:'flex',alignItems:'center',justifyContent:'center',color:'rgba(245,200,66,0.6)',fontSize:'15px'}}>Loading calculator...</div>
+  loading: () => <div style={{minHeight:'20px',display:'flex',alignItems:'center',justifyContent:'center',color:'rgba(245,200,66,0.6)',fontSize:'15px'}}>Loading calculator...</div>
 });
 
 const TOP_STATES = [
@@ -69,7 +69,7 @@ const CSS = `
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:0 24px 16px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
   .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:20px;align-items:start;position:relative;z-index:1;}
-  .hero-copy{display:flex;flex-direction:column;justify-content:flex-start;}
+  .hero-copy{display:flex;flex-direction:column;justify-content:flex-start;align-self:start;}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
   .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:bdpulse 2s infinite;flex-shrink:0;}
   @keyframes bdpulse{0%,100%{opacity:1}50%{opacity:.3}}
