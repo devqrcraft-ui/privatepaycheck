@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import BonusCalculatorClient from './BonusCalculatorClient';
 
 export const metadata: Metadata = {
-  title: 'Bonus Tax Calculator 2026 — 22% Flat Rate or Aggregate? See Your Real Take-Home',
-  description: 'Bonus tax calculator 2026: IRS taxes bonuses at 22% flat rate (or aggregate). Enter your bonus to see exact take-home after federal + state taxes. All 50 states, free & private.',
+  title: 'Bonus Tax Calculator 2026 — How Much of Your Bonus Do You Keep?',
+  description: '$5,000 bonus? You keep ~$3,500 after 22% federal withholding + state tax. Free bonus tax calculator 2026 — all 50 states, instant results, 100% private.',
   alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator' },
   openGraph: {
     title: 'Bonus Tax Calculator 2026 — How Much Do You Keep?',

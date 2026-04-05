@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Montana Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'Montana paycheck calculator 2026. See exact take-home pay after federal + Montana state tax (up to 5.9%) and FICA. All salary levels. 100% private.',
+  title: 'Montana Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
+  description: '$60,000 salary in MT = ~$4,200/month take-home. Free Montana paycheck calculator 2026 — federal + MT state tax (up to 5.9%) & FICA. Instant results.',
   keywords: 'montana paycheck calculator 2026, montana take home pay, montana salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/montana-paycheck-calculator' },
 }
