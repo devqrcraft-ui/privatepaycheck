@@ -36,7 +36,7 @@
     '@keyframes ppbounce{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-6px);}}',
     '.pp-form{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(245,200,66,0.15);}',
     '.pp-form input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(245,200,66,0.25);',
-    'border-radius:8px;padding:9px 12px;color:#e8edf8;font-size:13px;outline:none;}',
+    'border-radius:8px;padding:9px 12px;color:#e8edf8;font-size:16px;outline:none;}',
     '.pp-form input:focus{border-color:rgba(245,200,66,0.55);}',
     '.pp-form button{width:36px;height:36px;border-radius:8px;border:none;',
     'background:#F5C842;cursor:pointer;display:flex;align-items:center;justify-content:center;}',
@@ -148,9 +148,6 @@
     }
   });
 
-  setTimeout(function() {
-    addMsg('Your take-home pay depends on your state — CA takes up to 13.3%, TX takes 0%. What state are you in?', 'pp-bot');
-    badge.classList.add('on');
-  }, 20000);
+  // auto-open removed
 
 })();
