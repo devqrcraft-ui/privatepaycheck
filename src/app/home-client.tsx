@@ -66,9 +66,9 @@ const CSS = `
   @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:480px){.obbb-grid{grid-template-columns:1fr;gap:10px;}.obbb-card{padding:16px 14px;}.obbb-save{font-size:18px;}.obbb-title{font-size:14px;}}
 
-  .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:16px 24px 24px;position:relative;overflow:hidden;}
+  .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:8px 24px 16px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
-  .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:32px;align-items:stretch;position:relative;z-index:1;}
+  .hero-inner{max-width:100%;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr minmax(0,480px);gap:20px;align-items:start;position:relative;z-index:1;}
   .hero-copy{display:flex;flex-direction:column;justify-content:flex-start;}
   .hero-badge{display:inline-flex;align-items:center;gap:9px;background:rgba(245,200,66,.11);border:1px solid rgba(245,200,66,.40);color:#F5C842;font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:12px;}
   .badge-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:bdpulse 2s infinite;flex-shrink:0;}
@@ -110,8 +110,8 @@ const CSS = `
   
   body{user-select:none;-webkit-user-select:none;}
   input,textarea,select,.selectable{user-select:text;-webkit-user-select:text;}
-@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:20px;}.hero{padding:20px 16px 32px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
-  @media(max-width:540px){.hero{padding:16px 12px 32px;}.hero h1{font-size:28px;}.hero-desc{font-size:15px!important;}.pp-section{padding:16px 12px;}.featured-states{padding:16px 12px;}.obbb-section{padding:16px 12px;}.feat-grid{grid-template-columns:1fr;}.feat-card{padding:20px 16px;}.feat-title{font-size:20px!important;}.feat-desc{font-size:16px!important;line-height:1.75!important;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}.s-desc{font-size:16px!important;line-height:1.7!important;}.pp-section h2{font-size:26px!important;}.fs-fact{font-size:16px!important;line-height:1.7!important;}.fs-title{font-size:20px!important;}.fs-rate{font-size:30px!important;}.fs-card{padding:20px 16px;}.hwc-grid{grid-template-columns:1fr!important;}.s-name{font-size:16px!important;}.s-rate{font-size:15px!important;}.obbb-desc{font-size:15px!important;}.obbb-title{font-size:17px!important;}.stat-n{font-size:28px!important;}.t-n{font-size:26px!important;}.trust{padding:16px 12px;}.pp-section h2{margin-bottom:8px!important;}.feat-card{margin-bottom:0!important;}.obbb-grid{gap:10px!important;}.feat-grid{gap:12px!important;}.fs-grid{gap:12px!important;}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:20px;}.hero{padding:8px 16px 20px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
+  @media(max-width:540px){.hero{padding:6px 12px 16px;}.hero h1{font-size:28px;}.hero-desc{font-size:15px!important;}.pp-section{padding:16px 12px;}.featured-states{padding:16px 12px;}.obbb-section{padding:16px 12px;}.feat-grid{grid-template-columns:1fr;}.feat-card{padding:20px 16px;}.feat-title{font-size:20px!important;}.feat-desc{font-size:16px!important;line-height:1.75!important;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}.s-desc{font-size:16px!important;line-height:1.7!important;}.pp-section h2{font-size:26px!important;}.fs-fact{font-size:16px!important;line-height:1.7!important;}.fs-title{font-size:20px!important;}.fs-rate{font-size:30px!important;}.fs-card{padding:20px 16px;}.hwc-grid{grid-template-columns:1fr!important;}.s-name{font-size:16px!important;}.s-rate{font-size:15px!important;}.obbb-desc{font-size:15px!important;}.obbb-title{font-size:17px!important;}.stat-n{font-size:28px!important;}.t-n{font-size:26px!important;}.trust{padding:16px 12px;}.pp-section h2{margin-bottom:8px!important;}.feat-card{margin-bottom:0!important;}.obbb-grid{gap:10px!important;}.feat-grid{gap:12px!important;}.fs-grid{gap:12px!important;}}
 `;
 
 export default function HomeClient() {
@@ -129,9 +129,9 @@ export default function HomeClient() {
           <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:'clamp(28px,3.5vw,42px)',fontWeight:900,lineHeight:1.1,color:'#fff',marginBottom:8}}>
             Free Paycheck Calculator <em style={{color:'#FFD700',fontStyle:'normal'}}>2026</em>
           </h1>
-          <div style={{fontSize:13,fontWeight:700,color:'#F5C842',textTransform:'uppercase',letterSpacing:'0.12em',marginBottom:20}}>W-2 Salary · Hourly · Bonus · All 50 States</div>
+          <div style={{fontSize:13,fontWeight:700,color:'#F5C842',textTransform:'uppercase',letterSpacing:'0.12em',marginBottom:10}}>W-2 Salary · Hourly · Bonus · All 50 States</div>
 
-          <div style={{display:'flex',flexDirection:'column',gap:14,marginBottom:28}}>
+          <div style={{display:'flex',flexDirection:'column',gap:10,marginBottom:12}}>
             {[
               'W-2 Salary · Hourly · Bonus Calculator',
               'All 50 States + 2026 IRS Tax Brackets',
