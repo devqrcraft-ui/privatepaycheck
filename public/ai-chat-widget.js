@@ -56,7 +56,7 @@
 
   var badge = document.createElement('div');
   badge.className = 'pp-badge';
-  fab.style.position = 'relative';
+  // fab position handled by CSS
   fab.appendChild(badge);
 
   var win = document.createElement('div');
