@@ -187,7 +187,7 @@ export default function HomeClient() {
           </div>
         </div>
           {/* ── CALCULATOR COLUMN ── */}
-          <div id="calculator" style={{display:'flex',flexDirection:'column',gap:12}}>
+          <div id="calculator" style={{display:'flex',flexDirection:'column',gap:12,paddingTop:16}}>
             <Calculator />
             {/* HOW WE CALCULATE — under calculator */}
             <div className="how-we-calculate-block" style={{ padding: '0' }}>
