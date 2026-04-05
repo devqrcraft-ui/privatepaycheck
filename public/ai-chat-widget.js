@@ -9,7 +9,7 @@
     'display:flex;align-items:center;justify-content:center;transition:transform 0.2s;}',
     '.pp-fab:hover{transform:scale(1.08);}',
     '.pp-fab svg{width:26px;height:26px;fill:#0f0c29;transition:opacity 0.2s;}',
-    '.pp-win{position:fixed;bottom:20px;right:20px;width:320px;height:420px;',
+    '.pp-win{position:fixed;bottom:20px;right:20px;width:320px;height:320px;',
     'background:#0f1629;border:1.5px solid rgba(245,200,66,0.35);border-radius:16px;',
     'box-shadow:0 8px 32px rgba(0,0,0,0.6);z-index:9999;display:flex;',
     'flex-direction:column;overflow:hidden;opacity:0;pointer-events:none;',
@@ -24,7 +24,7 @@
     'flex-direction:column;gap:10px;scroll-behavior:smooth;}',
     '.pp-msgs::-webkit-scrollbar{width:4px;}',
     '.pp-msgs::-webkit-scrollbar-thumb{background:rgba(245,200,66,0.3);border-radius:2px;}',
-    '.pp-msg{max-width:85%;padding:9px 13px;border-radius:12px;font-size:13.5px;line-height:1.5;}',
+    '.pp-msg{max-width:85%;padding:9px 13px;border-radius:12px;font-size:16px;line-height:1.5;}',
     '.pp-bot{background:rgba(245,200,66,0.1);color:#e8edf8;border-bottom-left-radius:4px;align-self:flex-start;}',
     '.pp-user{background:rgba(245,200,66,0.22);color:#f1f5f9;border-bottom-right-radius:4px;align-self:flex-end;}',
     '.pp-typing{display:flex;gap:5px;align-items:center;padding:10px 14px;',
@@ -44,7 +44,7 @@
     '.pp-badge{position:absolute;top:-3px;right:-3px;width:13px;height:13px;',
     'background:#ef4444;border-radius:50%;border:2px solid #0f0c29;',
     'display:none;}.pp-badge.on{display:block;}',
-    '@media(max-width:380px){.pp-win{width:calc(100vw - 24px);right:12px;bottom:12px;}',
+    '@media(max-width:380px){.pp-win{width:calc(100vw - 24px);right:12px;bottom:12px;height:300px;}',
     '.pp-fab{bottom:12px;right:12px;}}'
   ].join('');
   document.head.appendChild(style);
@@ -112,7 +112,7 @@
     'IMPORTANT: Detect the language of the user message and always reply in that SAME language. ' +
     'If the user writes in Ukrainian — reply in Ukrainian. If English — reply in English. ' +
     'For off-topic questions say in the users language: I only help with paycheck and tax questions. ' +
-    'Keep answers under 2 sentences. End with one short follow-up question. ' +
+    'Reply in MAX 1 sentence. Then ask ONE short follow-up question. Be direct and specific. ' +
     'Never give exact tax numbers — direct to the free calculator at privatepaycheck.com.';
 
   var history = [];
