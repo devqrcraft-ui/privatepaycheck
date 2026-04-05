@@ -82,7 +82,7 @@ export default function Calculator({ defaultState }: CalcProps) {
   }
 
   const css = `
-    .calc-card{background:linear-gradient(145deg,#0F2040,#0C1A35);border:1px solid rgba(245,200,66,0.4);border-radius:14px;padding:28px 24px;width:100%;max-width:440px;}
+    .calc-card{background:linear-gradient(145deg,#0F2040,#0C1A35);border:1px solid rgba(245,200,66,0.4);border-radius:14px;padding:28px 24px;width:100%;}
     .card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#F5C842;margin-bottom:4px;}
     .card-sub{font-size:12px;color:#7A9FBF;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
     .fl{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A9FBF;margin-bottom:6px;margin-top:14px;}
