@@ -186,25 +186,28 @@ export default function HomeClient() {
             ))}
           </div>
         </div>
-          <div id="calculator"><Calculator />
-      {/* HOW WE CALCULATE — under calculator */}
-      <div className="how-we-calculate-block" style={{ maxWidth: 860, margin: '0 auto 0', padding: '16px 24px 0' }}>
-        <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 10, padding: '16px 20px', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }} className="hwc-grid">
-          {[
-            { label: 'Federal income tax', detail: 'Uses 2026 IRS Publication 15-T withholding tables. Standard deduction $15,000 (single) / $30,000 (married). Rates 10%–37%.' },
-            { label: 'FICA taxes', detail: 'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Additional 0.9% Medicare surtax above $200,000.' },
-            { label: 'State income tax', detail: "Includes your state's 2026 income tax rates. From 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year from official state sources." },
-          ].map(item => (
-            <div key={item.label} style={{ borderLeft: '3px solid rgba(245,200,66,0.5)', paddingLeft: 12 }}>
-              <div style={{ fontSize: 13, fontWeight: 800, color: '#F5C842', marginBottom: 4 }}>{item.label}</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{item.detail}</div>
+          {/* ── CALCULATOR COLUMN ── */}
+          <div id="calculator" style={{display:'flex',flexDirection:'column',gap:12}}>
+            <Calculator />
+            {/* HOW WE CALCULATE — under calculator */}
+            <div className="how-we-calculate-block" style={{ padding: '0' }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 10, padding: '14px 16px', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }} className="hwc-grid">
+                {[
+                  { label: 'Federal income tax', detail: 'Uses 2026 IRS Publication 15-T withholding tables. Standard deduction $15,000 (single) / $30,000 (married). Rates 10%–37%.' },
+                  { label: 'FICA taxes', detail: 'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Additional 0.9% Medicare surtax above $200,000.' },
+                  { label: 'State income tax', detail: "Includes your state's 2026 income tax rates. From 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year from official state sources." },
+                ].map(item => (
+                  <div key={item.label} style={{ borderLeft: '3px solid rgba(245,200,66,0.5)', paddingLeft: 10 }}>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: '#F5C842', marginBottom: 3 }}>{item.label}</div>
+                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>{item.detail}</div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ paddingTop: 8, fontSize: 11, color: 'rgba(255,255,255,0.3)' }}>
+                Based on IRS Publication 15-T (2026). <a href="/methodology" style={{ color: '#F5C842', textDecoration: 'underline none' }}>See full methodology →</a>
+              </div>
             </div>
-          ))}
-        </div>
-        <div style={{ paddingTop: 10, paddingBottom: 4, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
-          Based on IRS Publication 15-T (2026). <a href="/methodology" style={{ color: '#F5C842', textDecoration: 'underline none' }}>See full methodology →</a>
-        </div>
-      </div></div>
+          </div>
         </div>
       </section>
 
