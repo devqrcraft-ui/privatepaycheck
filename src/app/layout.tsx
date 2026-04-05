@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <main role="main">{children}</main>
         <Analytics />
         <SpeedInsights />
-        <Script src="/ai-chat-widget.js?v=1" strategy="lazyOnload" />
+        <Script src="/ai-chat-widget.js?v=2" strategy="lazyOnload" />
       <Footer />
     
         {/* Google Analytics */}
