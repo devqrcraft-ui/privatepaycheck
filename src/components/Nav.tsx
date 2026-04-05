@@ -29,7 +29,7 @@ export default function Nav() {
         .ticker-set{display:inline-flex;align-items:center;flex-shrink:0;}
         .t-item{color:#fff;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:0 40px;white-space:nowrap;}
         .t-sep{color:#FFD700;font-size:14px;padding:0 2px;flex-shrink:0;}
-        .navbar{background:#0F2040;border-bottom:3px solid #F5C842;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.5);width:100%;max-width:100vw;overflow:hidden;}
+        .navbar{background:#0F2040;border-bottom:3px solid #F5C842;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,.5);width:100%;max-width:100vw;}
         .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;}
         .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;text-decoration:none;}
         .bname{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:#F5C842;line-height:1.1;}
@@ -39,9 +39,9 @@ export default function Nav() {
         .nav-link:hover{color:#F5C842;background:rgba(245,200,66,.08);}
         .nav-cta{background:linear-gradient(135deg,#F5C842,#FFD700);color:#091526!important;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:9px 18px;border-radius:7px;text-decoration:none;transition:box-shadow .2s,transform .2s;}
         .nav-cta:hover{box-shadow:0 4px 16px rgba(255,215,0,.4);transform:translateY(-1px);}
-        .hamburger{display:none;background:none;border:1px solid rgba(245,200,66,.3);border-radius:6px;padding:8px;cursor:pointer;color:#F5C842;flex-direction:column;gap:4px;}
-        .hamburger span{display:block;width:20px;height:2px;background:#F5C842;border-radius:2px;}
-        .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#0F2040;border-bottom:3px solid #F5C842;padding:16px 24px;flex-direction:column;gap:4px;z-index:999;}
+        .hamburger{display:none;background:rgba(245,200,66,0.12);border:2px solid rgba(245,200,66,0.7);border-radius:8px;padding:10px 12px;cursor:pointer;color:#F5C842;flex-direction:column;gap:5px;transition:background .2s;}
+        .hamburger span{display:block;width:22px;height:2.5px;background:#F5C842;border-radius:2px;}.hamburger:hover{background:rgba(245,200,66,0.25);}
+        .mobile-menu{display:none;position:fixed;top:108px;left:0;right:0;background:#0F2040;border-bottom:3px solid #F5C842;border-top:1px solid rgba(245,200,66,0.2);padding:16px 24px;flex-direction:column;gap:4px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.6);}
         .mobile-menu.open{display:flex;}
         .mobile-link{color:#E0ECFF;font-size:15px;font-weight:600;padding:12px 16px;border-radius:8px;text-decoration:none;}
         .mobile-link:hover{color:#F5C842;background:rgba(245,200,66,.08);}
