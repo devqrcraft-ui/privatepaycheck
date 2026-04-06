@@ -139,8 +139,8 @@ export default function HomeClient() {
               'Zero Data Stored · 100% Private',
             ].map((item,i) => (
               <div key={i} style={{display:'flex',alignItems:'center',gap:14}}>
-                <div style={{width:28,height:28,borderRadius:'50%',background:'#16a34a',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <div style={{width:30,height:30,borderRadius:'7px',background:'linear-gradient(135deg,#F5C842 0%,#d4a017 100%)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,boxShadow:'0 2px 8px rgba(245,200,66,0.4)'}}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#1a0e00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
                 <span style={{fontSize:16,fontWeight:600,color:'#e8edf8',lineHeight:1.35}}>{item}</span>
               </div>
