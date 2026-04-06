@@ -147,6 +147,12 @@ export default function HomeClient() {
             ))}
           </div>
 
+          <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:16,marginTop:8}}>
+            <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
+            <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
+            <div><div className="stat-n">100%</div><div className="stat-l">Private</div></div>
+            <div><div className="stat-n">$0</div><div className="stat-l">Always Free</div></div>
+          </div>
           <div style={{background:'rgba(99,102,241,0.07)',border:'1px solid rgba(99,102,241,0.2)',borderRadius:10,padding:'14px 16px',marginBottom:16}}>
               <div style={{fontSize:11,fontWeight:800,color:'#a5b4fc',letterSpacing:'0.16em',textTransform:'uppercase',marginBottom:10}}>2026 Tax Law Updates</div>
               <div style={{display:'grid',gridTemplateColumns:'1fr',gap:8}}>
@@ -163,14 +169,7 @@ export default function HomeClient() {
                 ))}
               </div>
             </div>
-            <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:16,marginTop:8}}>
-            <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
-            <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
-            <div><div className="stat-n">100%</div><div className="stat-l">Private</div></div>
-            <div><div className="stat-n">$0</div><div className="stat-l">Always Free</div></div>
-          </div>
-
-          {/* Quick salary examples */}
+            {/* Quick salary examples */}
           <div style={{marginTop:28,display:'flex',flexDirection:'column',gap:10}}>
             <div style={{fontSize:11,fontWeight:800,color:'rgba(245,200,66,0.7)',letterSpacing:'0.18em',textTransform:'uppercase',marginBottom:4}}>Quick Examples</div>
             {[
