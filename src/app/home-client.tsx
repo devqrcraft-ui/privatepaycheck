@@ -116,7 +116,7 @@ const CSS = `
 
 export default function HomeClient() {
   return (
-    <>
+    <div>
       <style dangerouslySetInnerHTML={{__html:CSS}}/>
 
       <div className="testimonial-bar">
@@ -595,6 +595,6 @@ export default function HomeClient() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }
