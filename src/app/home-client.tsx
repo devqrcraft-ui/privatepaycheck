@@ -55,8 +55,8 @@ const CSS = `
   @media(max-width:768px){.fs-grid{grid-template-columns:1fr;}}
 
   .obbb-section{padding:32px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
-  .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;} @media(max-width:768px){.obbb-grid{grid-template-columns:repeat(2,1fr);}} @media(max-width:480px){.obbb-grid{grid-template-columns:1fr;}}
-  .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:24px 20px;text-decoration:none;transition:all .25s ease;display:flex;flex-direction:column;gap:4px;}
+  .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box;} @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);gap:12px;}} @media(max-width:540px){.obbb-grid{grid-template-columns:repeat(2,1fr);gap:10px;}} @media(max-width:380px){.obbb-grid{grid-template-columns:1fr;}}
+  .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:20px 16px;text-decoration:none;transition:all .25s ease;display:flex;flex-direction:column;gap:4px;box-sizing:border-box;min-width:0;overflow:hidden;}
   .obbb-card:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.60);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.40);}
   .obbb-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;background:rgba(99,102,241,.25);color:#a5b4fc;padding:4px 10px;border-radius:3px;margin-bottom:12px;}
   .obbb-icon{font-size:28px;margin-bottom:10px;}
@@ -64,7 +64,7 @@ const CSS = `
   .obbb-save{font-size:22px;font-weight:900;color:#818cf8;margin-bottom:6px;}
   .obbb-desc{font-size:14px;color:#6b7280;line-height:1.6;}
   @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:480px){.obbb-grid{grid-template-columns:1fr;gap:10px;}.obbb-card{padding:16px 14px;flex-direction:row;align-items:center;gap:14px;}.obbb-icon{margin-bottom:0;flex-shrink:0;}.obbb-save{font-size:18px;}.obbb-title{font-size:15px;}.obbb-badge{margin-bottom:4px;}}
+  @media(max-width:540px){.obbb-card{padding:14px 12px;}.obbb-title{font-size:13px!important;}.obbb-save{font-size:16px!important;}.obbb-desc{font-size:12px!important;}.obbb-icon{font-size:22px;margin-bottom:6px;}}
 
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:0 24px 16px;position:relative;overflow:hidden;}
   .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(245,200,66,.07) 0%,transparent 65%);pointer-events:none;}
