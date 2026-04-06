@@ -54,7 +54,7 @@ const CSS = `
   .fs-cta{font-size:15px;font-weight:700;color:#F5C842;}
   @media(max-width:768px){.fs-grid{grid-template-columns:1fr;}}
 
-  .obbb-section{padding:32px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);}
+  .obbb-section{padding:32px 24px;background:linear-gradient(155deg,#07111F 0%,#0D1E35 100%);border-top:1px solid rgba(245,200,66,.12);overflow:hidden;}
   .obbb-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1200px;margin:0 auto;width:100%;box-sizing:border-box;} @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);gap:12px;}} @media(max-width:540px){.obbb-grid{grid-template-columns:repeat(2,1fr);gap:10px;}} @media(max-width:380px){.obbb-grid{grid-template-columns:1fr;}}
   .obbb-card{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:12px;padding:20px 16px;text-decoration:none;transition:all .25s ease;display:flex;flex-direction:column;gap:4px;box-sizing:border-box;min-width:0;overflow:hidden;}
   .obbb-card:hover{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.60);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.40);}
@@ -63,7 +63,7 @@ const CSS = `
   .obbb-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#e0e7ff;margin-bottom:8px;line-height:1.3;}
   .obbb-save{font-size:22px;font-weight:900;color:#818cf8;margin-bottom:6px;}
   .obbb-desc{font-size:14px;color:#6b7280;line-height:1.6;}
-  @media(max-width:900px){.obbb-grid{grid-template-columns:repeat(2,1fr);}}
+  
   @media(max-width:540px){.obbb-card{padding:14px 12px;}.obbb-title{font-size:13px!important;}.obbb-save{font-size:16px!important;}.obbb-desc{font-size:12px!important;}.obbb-icon{font-size:22px;margin-bottom:6px;}}
 
   .hero{background:linear-gradient(150deg,#091526 0%,#102040 55%,#0A1A30 100%);padding:0 24px 16px;position:relative;overflow:hidden;}
@@ -117,6 +117,7 @@ const CSS = `
 export default function HomeClient() {
   return (
     <>
+      <style dangerouslySetInnerHTML={{__html:CSS}}/>
 
       <div className="testimonial-bar">
         ⭐ <strong>"Exact take-home in seconds"</strong> — Sarah K., Texas &nbsp;|&nbsp; 🔒 Zero data stored &nbsp;|&nbsp; ✓ 2026 IRS rates
