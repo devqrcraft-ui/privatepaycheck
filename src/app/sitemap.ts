@@ -90,6 +90,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/w4-withholding-calculator`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/senior-deduction-calculator`,     lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/trump-account-calculator`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+
+    { url: `${BASE_URL}/federal-paycheck-calculator`,          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${BASE_URL}/1099-paycheck-calculator`,             lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
+    { url: `${BASE_URL}/2026-tax-changes`,                     lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/how-we-calculate`,                     lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.5 },
+    { url: `${BASE_URL}/methodology`,                          lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.5 },
+    { url: `${BASE_URL}/wep-lump-sum-calculator`,              lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/teacher-paycheck-calculator`,          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/nurse-paycheck-calculator`,            lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/software-engineer-paycheck-calculator`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/privacy-policy`,                  lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE_URL}/terms`,                           lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
 
@@ -140,6 +150,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
+    })),
+
+
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/nurse-paycheck-calculator/${slug}`,
+      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7,
+    })),
+
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/software-engineer-paycheck-calculator/${slug}`,
+      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7,
     })),
 
     ...BLOG_SLUGS.map(slug => ({
