@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 `}</style>
       </head>
       
-<body style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
+<body suppressHydrationWarning style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
         <Nav />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
