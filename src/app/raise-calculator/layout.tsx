@@ -62,12 +62,12 @@ const faqSchema = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {children}
-    </>
+    </div>
   );
 }

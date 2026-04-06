@@ -17,12 +17,12 @@ const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <>
+    <div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }}
       />
       {children}
-    </>
+    </div>
   );
 }
