@@ -53,7 +53,7 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
       <div style={{ display:'grid', gap:12 }}>
         <div>
           <label style={{ color:'#e8edf8', fontSize:13, display:'block', marginBottom:4 }}>Salary or hourly wage</label>
-          <input type="number" placeholder="e.g. 75000" value={salary} onChange={e=>setSalary(e.target.value)}
+          <input type="number" placeholder="e.g. 75000" value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value).toString())} min={0}
             style={{ width:'100%', padding:'12px 14px', borderRadius:8, border:'1px solid #F5C84244',
               background:'#0f0c29', color:'#e8edf8', fontSize:15, boxSizing:'border-box' }} />
         </div>

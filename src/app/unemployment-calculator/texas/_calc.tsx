@@ -26,7 +26,7 @@ export default function UnemployCalc({ maxWBA, minWBA, stateName }: { maxWBA: nu
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, marginBottom:12 }}>
         <div>
           <label style={{ color:'#e8edf8', fontSize:13, display:'block', marginBottom:4 }}>Your wage</label>
-          <input type="number" placeholder="e.g. 1000" value={wage} onChange={e => setWage(e.target.value)}
+          <input type="number" placeholder="e.g. 1000" value={wage} onChange={e => setWage(Math.max(0, +e.target.value).toString())} min={0}
             style={{ width:'100%', padding:'11px 14px', borderRadius:8, border:'1px solid #F5C84244', background:'#0f0c29', color:'#e8edf8', fontSize:15, boxSizing:'border-box' as const }} />
         </div>
         <div>

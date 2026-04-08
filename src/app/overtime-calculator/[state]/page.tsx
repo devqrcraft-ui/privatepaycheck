@@ -206,7 +206,7 @@ function OvertimeCalculatorWidget({ stateName, hasDoubleTime, hasDailyOT, dailyO
         ].map(f => (
           <div key={f.id}>
             <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
-            <input id={f.id} type="number" placeholder={f.placeholder} style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }} />
+            <input id={f.id} type="number" placeholder={f.placeholder} min={0} style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }} />
           </div>
         ))}
       </div>

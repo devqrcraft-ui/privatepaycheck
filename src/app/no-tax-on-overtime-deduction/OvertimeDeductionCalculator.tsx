@@ -99,7 +99,7 @@ export default function OvertimeDeductionCalculator() {
                 <label style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>{label}</label>
                 <div style={{ position: 'relative' }}>
                   {pre && <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.4)' }}>{pre}</span>}
-                  <input type="number" value={val} onChange={e => set(e.target.value)} placeholder={ph}
+                  <input type="number" value={val} onChange={e => set(Math.max(0,+e.target.value).toString())} min={0} placeholder={ph}
                     style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: `14px 16px 14px ${pre ? '28px' : '16px'}`, color: 'white', fontSize: '15px', outline: 'none', boxSizing: 'border-box' }} />
                 </div>
               </div>

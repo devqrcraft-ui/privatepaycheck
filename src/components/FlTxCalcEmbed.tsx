@@ -78,7 +78,7 @@ export default function FlTxCalcEmbed({ state, accent = '#F5C842' }: Props) {
         <div>
           <label style={lbl}>Annual Salary ($)</label>
           <input style={inp} type="number" placeholder="e.g. 75000"
-            value={salary} onChange={e=>setSalary(e.target.value)}
+            value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value).toString())} min={0}
             onKeyDown={e=>e.key==='Enter'&&calculate()}
             aria-label="Annual salary in dollars" />
         </div>

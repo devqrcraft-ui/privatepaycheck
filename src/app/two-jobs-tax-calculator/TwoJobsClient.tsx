@@ -59,7 +59,7 @@ export default function TwoJobsClient() {
             {[['Job 1 Annual Salary ($)',j1,setJ1,'60000'],['Job 2 Annual Salary ($)',j2,setJ2,'25000']].map(([label,val,set,ph])=>(
               <div key={label as string}>
                 <label style={{fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase' as const,letterSpacing:'0.06em',marginBottom:'6px',display:'block'}}>{label as string}</label>
-                <input type="number" value={val as string} onChange={e=>(set as (v:string)=>void)(e.target.value)} placeholder={ph as string} style={{width:'100%',background:'#1e293b',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'#fff',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const}}/>
+                <input type="number" value={val as string} onChange={e=>(set as (v:string)=>void)(Math.max(0,+e.target.value).toString())} min={0} placeholder={ph as string} style={{width:'100%',background:'#1e293b',border:'1.5px solid rgba(255,255,255,0.12)',borderRadius:'10px',padding:'11px 14px',color:'#fff',fontSize:'15px',fontFamily:'inherit',outline:'none',boxSizing:'border-box' as const}}/>
               </div>
             ))}
             {sel('Filing Status',filing,setFiling,[['single','Single'],['married','Married']])}

@@ -51,14 +51,14 @@ export default function IlUnemployCalcEmbed() {
         <div>
           <label style={lbl}>Highest Quarter Earnings ($)</label>
           <input style={inp} type="number" placeholder="e.g. 15000"
-            value={q1} onChange={e=>setQ1(e.target.value)}
+            value={q1} onChange={e=>setQ1(Math.max(0,+e.target.value).toString())} min={0}
             onKeyDown={e=>e.key==='Enter'&&calculate()}
             aria-label="Highest quarter earnings" />
         </div>
         <div>
           <label style={lbl}>2nd Highest Quarter ($)</label>
           <input style={inp} type="number" placeholder="e.g. 13000"
-            value={q2} onChange={e=>setQ2(e.target.value)}
+            value={q2} onChange={e=>setQ2(Math.max(0,+e.target.value).toString())} min={0}
             onKeyDown={e=>e.key==='Enter'&&calculate()}
             aria-label="Second highest quarter earnings" />
         </div>

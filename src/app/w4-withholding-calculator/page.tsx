@@ -56,7 +56,7 @@ export default function W4Calculator(){
         <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(201,168,76,0.3)',borderRadius:'16px',padding:'28px',marginBottom:'24px'}}>
           <h2 style={{fontSize:'15px',fontWeight:800,marginBottom:'16px',color:'#F5C842'}}>Your Tax Situation</h2>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(170px,1fr))',gap:'16px',marginBottom:'16px'}}>
-            <div><label style={lbl}>Annual Salary ($)</label><input type="number" value={salary} onChange={e=>setSalary(e.target.value)} style={inp}/></div>
+            <div><label style={lbl}>Annual Salary ($)</label><input type="number" value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value).toString())} min={1} style={inp}/></div>
             <div>
               <label style={lbl}>Filing Status</label>
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...inp, colorScheme:'dark', background:'#1e293b', color:'#fff'}}>
@@ -64,10 +64,10 @@ export default function W4Calculator(){
                 <option value="married">Married Filing Jointly</option>
               </select>
             </div>
-            <div><label style={lbl}>401(k) Contribution/yr</label><input type="number" value={k401} onChange={e=>setK401(e.target.value)} style={inp} placeholder="0"/></div>
-            <div><label style={lbl}>Other Income/yr (freelance, etc)</label><input type="number" value={otherIncome} onChange={e=>setOtherIncome(e.target.value)} style={inp} placeholder="0"/></div>
-            <div><label style={lbl}>Itemized Deductions/yr</label><input type="number" value={deductions} onChange={e=>setDeductions(e.target.value)} style={inp} placeholder="0"/></div>
-            <div><label style={lbl}>Tax Credits/yr (child, etc)</label><input type="number" value={credits} onChange={e=>setCredits(e.target.value)} style={inp} placeholder="0"/></div>
+            <div><label style={lbl}>401(k) Contribution/yr</label><input type="number" value={k401} onChange={e=>setK401(Math.max(0,+e.target.value).toString())} min={0} style={inp} placeholder="0"/></div>
+            <div><label style={lbl}>Other Income/yr (freelance, etc)</label><input type="number" value={otherIncome} onChange={e=>setOtherIncome(Math.max(0,+e.target.value).toString())} min={0} style={inp} placeholder="0"/></div>
+            <div><label style={lbl}>Itemized Deductions/yr</label><input type="number" value={deductions} onChange={e=>setDeductions(Math.max(0,+e.target.value).toString())} min={0} style={inp} placeholder="0"/></div>
+            <div><label style={lbl}>Tax Credits/yr (child, etc)</label><input type="number" value={credits} onChange={e=>setCredits(Math.max(0,+e.target.value).toString())} min={0} style={inp} placeholder="0"/></div>
           </div>
 
           <div style={{background:'linear-gradient(135deg,rgba(201,168,76,0.12),rgba(129,140,248,0.08))',border:'1px solid rgba(201,168,76,0.25)',borderRadius:'12px',padding:'24px'}}>

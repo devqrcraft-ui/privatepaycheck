@@ -100,7 +100,7 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
         ].map(f => (
           <div key={f.label}>
             <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>{f.label}</label>
-            <input type="number" value={f.value} onChange={e => f.set(e.target.value)} placeholder={f.placeholder}
+            <input type="number" value={f.value} onChange={e => f.set(Math.max(0,+e.target.value).toString())} min={0} placeholder={f.placeholder}
               style={{ width:'100%', background:'#1e293b', border:'1.5px solid rgba(255,255,255,0.12)', borderRadius:'10px', padding:'11px 14px', color:'#fff', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const }} />
           </div>
         ))}

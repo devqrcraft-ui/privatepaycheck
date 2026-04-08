@@ -97,12 +97,12 @@ export default function Calculator1099Page() {
 
           <div className="f-row">
             <label className="f-label" htmlFor="g1099">Annual gross income (1099 / contract income)</label>
-            <input className="f-input" id="g1099" type="number" placeholder="75000" defaultValue="75000" />
+            <input className="f-input" id="g1099" type="number" placeholder="75000" defaultValue="75000" min={0} />
           </div>
 
           <div className="f-row">
             <label className="f-label" htmlFor="exp1099">Business expenses (deductible)</label>
-            <input className="f-input" id="exp1099" type="number" placeholder="0" defaultValue="0" />
+            <input className="f-input" id="exp1099" type="number" placeholder="0" defaultValue="0" min={0} />
           </div>
 
           <div className="f-row-2">

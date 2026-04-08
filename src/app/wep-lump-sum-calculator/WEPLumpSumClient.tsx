@@ -124,20 +124,20 @@ export default function WEPLumpSumCalculator() {
           <label style={lbl}>Annual Pension / TRS Income</label>
           <div style={{ position:'relative' }}>
             <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
-            <input type="number" value={pension} onChange={e=>setPension(e.target.value)} style={{ ...inp, paddingLeft:28 }} />
+            <input type="number" value={pension} onChange={e=>setPension(Math.max(0,+e.target.value).toString())} min={0} style={{ ...inp, paddingLeft:28 }} />
           </div>
 
           <label style={lbl}>WEP Lump-Sum Payment Received in 2025</label>
           <div style={{ position:'relative' }}>
             <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#fbbf24', fontWeight:700 }}>$</span>
-            <input type="number" value={lumpSum} onChange={e=>setLumpSum(e.target.value)} style={{ ...inp, paddingLeft:28 }} />
+            <input type="number" value={lumpSum} onChange={e=>setLumpSum(Math.max(0,+e.target.value).toString())} min={0} style={{ ...inp, paddingLeft:28 }} />
           </div>
           <div style={{ fontSize:11, color:'rgba(255,255,255,.35)', marginTop:4 }}>Average retroactive payment was $6,710. Check your SSA-1099.</div>
 
           <label style={lbl}>New Annual SS Benefit (after WEP repeal)</label>
           <div style={{ position:'relative' }}>
             <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
-            <input type="number" value={newSS} onChange={e=>setNewSS(e.target.value)} style={{ ...inp, paddingLeft:28 }} />
+            <input type="number" value={newSS} onChange={e=>setNewSS(Math.max(0,+e.target.value).toString())} min={0} style={{ ...inp, paddingLeft:28 }} />
           </div>
           <div style={{ fontSize:11, color:'rgba(255,255,255,.35)', marginTop:4 }}>Find on your SSA award letter or ssa.gov account.</div>
 

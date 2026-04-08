@@ -72,7 +72,7 @@ export default function UnemploymentCalculatorState({
           <input
             type="number"
             value={weeklyWage}
-            onChange={(e) => setWeeklyWage(e.target.value)}
+            onChange={(e) => setWeeklyWage(Math.max(0, +e.target.value).toString())} min={0}
             onKeyDown={(e) => e.key === 'Enter' && calculate()}
             placeholder="e.g. 1000"
             style={{ border: '1px solid #cbd5e1', borderRadius: 8, padding: '10px 14px', fontSize: 16, width: 160 }}

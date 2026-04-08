@@ -107,7 +107,7 @@ export default function FederalPaycheckPage() {
           <div className="f-grid">
             <div>
               <label className="f-lbl" htmlFor="fed-gross">Gross pay per period</label>
-              <input className="f-inp" id="fed-gross" type="number" placeholder="2885" defaultValue="2885" />
+              <input className="f-inp" id="fed-gross" type="number" placeholder="2885" defaultValue="2885" min={0} />
             </div>
             <div>
               <label className="f-lbl" htmlFor="fed-freq">Pay frequency</label>
@@ -138,11 +138,11 @@ export default function FederalPaycheckPage() {
               <div className="f-grid">
                 <div>
                   <label className="f-lbl" htmlFor="fed-overtime">Overtime pay this period</label>
-                  <input className="f-inp" id="fed-overtime" type="number" placeholder="0" defaultValue="0" />
+                  <input className="f-inp" id="fed-overtime" type="number" placeholder="0" defaultValue="0" min={0} />
                 </div>
                 <div>
                   <label className="f-lbl" htmlFor="fed-tips">Tips this period</label>
-                  <input className="f-inp" id="fed-tips" type="number" placeholder="0" defaultValue="0" />
+                  <input className="f-inp" id="fed-tips" type="number" placeholder="0" defaultValue="0" min={0} />
                 </div>
               </div>
               <p style={{fontSize:'12px',color:'#4a6080',marginTop:'-8px',marginBottom:'16px'}}>

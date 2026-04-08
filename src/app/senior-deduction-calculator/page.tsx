@@ -52,7 +52,7 @@ export default function SeniorDeductionCalculator() {
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 24, marginBottom: 20 }}>
           <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Annual Income</label>
-          <input type="number" value={income} onChange={e => setIncome(e.target.value)}
+          <input type="number" value={income} onChange={e => setIncome(Math.max(0,+e.target.value).toString())} min={0}
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.08)', color: 'white', fontSize: 16, boxSizing: 'border-box' }} />
 
           <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6, marginTop: 16 }}>Your Age</label>
