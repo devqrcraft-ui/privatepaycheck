@@ -72,7 +72,7 @@ const statePosts = [
 ]
 
 const card: React.CSSProperties = {
-  background: '#ffffff',
+  background: '#0d1b3e',
   border: '1px solid #d1d5db',
   borderRadius: 10,
   padding: '16px 20px',
@@ -97,7 +97,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {salaryPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -110,7 +110,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {taxPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -123,7 +123,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {professionPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -136,7 +136,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {statePosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#111' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -165,7 +165,7 @@ export default function BlogIndex() {
             ['Washington DC','washington-dc'],
           ].map(([name, slug]) => (
             <a key={slug} href={"/" + slug + "-paycheck-calculator"}
-              style={{ display:'block', padding:'10px 14px', background:'#ffffff', border:'1px solid #d1d5db', borderRadius:8, fontSize:14, fontWeight:600, color:'#1e3a8a', textDecoration:'none' }}>
+              style={{ display:'block', padding:'10px 14px', background:'#1a2d5a', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, fontSize:14, fontWeight:600, color:'#F5C842', textDecoration:'none' }}>
               {name}
             </a>
           ))}
