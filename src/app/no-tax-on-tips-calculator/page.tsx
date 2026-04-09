@@ -125,9 +125,7 @@ export default function NoTaxOnTipsCalculator() {
           </Link>
         </div>
       </div>
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '8px' }}>
-        &copy; 2026 PrivatePaycheck.com &middot; <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> &middot; <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
-      </footer>
+
     </div>
   );
 }

@@ -61,6 +61,7 @@ const STATE_DATA: Record<string, { name: string; maxWeekly: number; maxWeeks: nu
   "vermont": { name: "Vermont", maxWeekly: 583, maxWeeks: 26, rate: 50, waitWeek: false, stateIncomeTax: 8.75 },
   "virginia": { name: "Virginia", maxWeekly: 378, maxWeeks: 12, rate: 50, waitWeek: false, stateIncomeTax: 5.75 },
   "washington": { name: "Washington", maxWeekly: 1019, maxWeeks: 26, rate: 60, waitWeek: false, stateIncomeTax: 0 },
+  "washington-dc": { name: "Washington DC", maxWeekly: 444, maxWeeks: 26, rate: 50, waitWeek: false, stateIncomeTax: 4.0 },
   "west-virginia": { name: "West Virginia", maxWeekly: 424, maxWeeks: 26, rate: 55, waitWeek: false, stateIncomeTax: 6.5 },
   "wisconsin": { name: "Wisconsin", maxWeekly: 370, maxWeeks: 26, rate: 40, waitWeek: false, stateIncomeTax: 5.3 },
   "wyoming": { name: "Wyoming", maxWeekly: 508, maxWeeks: 26, rate: 40, waitWeek: false, stateIncomeTax: 0 },
