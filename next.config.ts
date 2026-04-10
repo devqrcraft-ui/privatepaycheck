@@ -4,15 +4,15 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   poweredByHeader: false,
   compress: true,
-  experimental: {
-    optimizeCss: true,
-  },
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
   },
   async redirects() {
     return [
+      // Force www — fixes Google canonical issue
+      { source: '/:path*', has: [{ type: 'host', value: 'privatepaycheck.com' }], destination: 'https://www.privatepaycheck.com/:path*', permanent: true },
+
       
       // Short state slugs → full paycheck calculator pages
       { source: "/alabama", destination: "/alabama-paycheck-calculator", permanent: true },
