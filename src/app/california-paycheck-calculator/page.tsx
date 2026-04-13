@@ -43,7 +43,7 @@ export default function Page() {
       </div>
       <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>
         <div style={{ fontSize: '15px', opacity: 0.8 }}>California has the highest state income tax — up to 13.3%. Use the calculator below for your exact take-home.</div>
-        <a href="/?state=california" style={{ display: 'inline-block', padding: '13px 32px', borderRadius: '10px', background: 'linear-gradient(135deg,#3b82f6,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '15px', textDecoration: 'none', cursor: 'pointer' }}>
+        <a href="/?state=california" style={{ display: 'inline-block', padding: '13px 32px', borderRadius: '10px', background: 'linear-gradient(135deg,#3b82f6,#8b5cf6)', color: 'white', fontWeight: 800, fontSize: '15px', textDecoration: 'none', cursor: 'pointer', minHeight: '48px', transition: 'transform 0.15s ease, box-shadow 0.15s ease' }} onMouseEnter={e=>{(e.currentTarget as HTMLAnchorElement).style.transform='scale(1.03)';(e.currentTarget as HTMLAnchorElement).style.boxShadow='0 0 20px rgba(99,102,241,0.5)';}} onMouseLeave={e=>{(e.currentTarget as HTMLAnchorElement).style.transform='scale(1)';(e.currentTarget as HTMLAnchorElement).style.boxShadow='none';}}>
            Calculate My California Paycheck →
         </a>
       </div>
