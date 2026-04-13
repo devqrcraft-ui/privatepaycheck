@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import IlUnemployCalcEmbed from '@/components/IlUnemployCalcEmbed'
 
 export const metadata: Metadata = {
-  title: 'Illinois Unemployment Calculator 2026 — Estimate Your Weekly Benefits',
-  description: 'Free Illinois unemployment calculator 2026. Estimate your weekly benefit amount (WBA) based on your earnings. Illinois pays up to $693/week. Instant, no signup.',
+  title: 'Illinois Unemployment Calculator 2026 — Estimate Your Weekly Benefits | PrivatePaycheck',
+  description: 'Free Illinois unemployment calculator 2026. Estimate your weekly benefit amount (WBA) based on your earnings. Illinois pays up to $628/week for individuals. Instant, no signup.',
   keywords: 'illinois unemployment calculator, illinois unemployment benefits 2026, illinois WBA calculator, illinois unemployment weekly benefit',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/illinois' },
 }
@@ -22,9 +22,9 @@ export default function Page() {
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', color:'#e2e8f0', background:'#0f1629', minHeight:'100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-          {"@type":"Question","name":"How much is Illinois unemployment in 2026?","acceptedAnswer":{"@type":"Answer","text":"Illinois unemployment benefits (WBA) in 2026 are calculated as 47% of your average weekly wage in your two highest-earning quarters, up to a maximum of $693 per week. Benefits last up to 26 weeks."}},
+          {"@type":"Question","name":"How much is Illinois unemployment in 2026?","acceptedAnswer":{"@type":"Answer","text":"Illinois unemployment benefits (WBA) in 2026 are calculated as 47% of your average weekly wage in your two highest-earning quarters, up to a maximum of $628 per week for individuals (or $748 with a non-working spouse). Benefits last up to 26 weeks."}},
           {"@type":"Question","name":"How long do Illinois unemployment benefits last?","acceptedAnswer":{"@type":"Answer","text":"Illinois unemployment benefits last up to 26 weeks (6 months). Extended benefits may be available during periods of high unemployment."}},
-          {"@type":"Question","name":"How do I calculate my Illinois unemployment benefit?","acceptedAnswer":{"@type":"Answer","text":"Illinois pays 47% of your average weekly wage from your two highest-earning base period quarters. The minimum is $51/week and the maximum is $693/week in 2026."}},
+          {"@type":"Question","name":"How do I calculate my Illinois unemployment benefit?","acceptedAnswer":{"@type":"Answer","text":"Illinois pays 47% of your average weekly wage from your two highest-earning base period quarters. The minimum is $51/week and the maximum is $628/week for individuals in 2026."}},
           {"@type":"Question","name":"Is Illinois unemployment taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes. Illinois unemployment benefits are subject to federal income tax. Illinois does not tax unemployment benefits at the state level. You can elect to withhold 10% federal tax from your payments."}},
         ]
       }) }} />
@@ -38,14 +38,14 @@ export default function Page() {
       </h1>
       <p style={{ fontSize:17, color:'#94a3b8', marginBottom:20, lineHeight:1.7 }}>
         Estimate your Illinois weekly unemployment benefit (WBA) for 2026.
-        Illinois pays <strong style={{ color:'#F5C842' }}>up to $693/week</strong> for up to 26 weeks.
+        Illinois pays <strong style={{ color:'#F5C842' }}>up to $628/week</strong> for up to 26 weeks.
         Benefits = 47% of your average weekly wage in your two highest quarters.
       </p>
 
       <IlUnemployCalcEmbed />
 
       <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, padding:'12px 16px', marginBottom:28, fontSize:14, color:'#fde68a' }}>
-        Illinois max WBA 2026: <strong>$693/week</strong> · Minimum: $51/week · Duration: up to 26 weeks · No state tax on UI benefits.
+        Illinois max WBA 2026: <strong>$628/week</strong> (individual) · Minimum: $51/week · Duration: up to 26 weeks · No state tax on UI benefits.
       </div>
 
       <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Illinois Weekly Benefit by Wage (2026)</h2>
@@ -70,7 +70,7 @@ export default function Page() {
 
       <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Frequently Asked Questions</h2>
       <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>How much is Illinois unemployment in 2026?</h3>
-      <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Illinois WBA = 47% of your average weekly wage in your two highest base-period quarters, capped at $693/week. The base period is the first four of the last five completed calendar quarters before you file.</p>
+      <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Illinois WBA = 47% of your average weekly wage in your two highest base-period quarters, capped at $628/week for individuals ($748 with non-working spouse). The base period is the first four of the last five completed calendar quarters before you file.</p>
       <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>Is Illinois unemployment taxable?</h3>
       <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Federal income tax applies to Illinois unemployment benefits — you can elect 10% withholding. Illinois state income tax does NOT apply to unemployment benefits, which is a significant advantage over many other states.</p>
       <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>How long do benefits last in Illinois?</h3>
