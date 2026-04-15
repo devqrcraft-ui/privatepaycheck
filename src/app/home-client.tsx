@@ -140,8 +140,8 @@ export default function HomeClient() {
               'Zero Data Stored · 100% Private',
             ].map((item,i) => (
               <div key={i} style={{display:'flex',alignItems:'center',gap:14}}>
-                <div style={{width:30,height:30,borderRadius:'7px',background:'linear-gradient(135deg,#22c55e 0%,#16a34a 100%)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,boxShadow:'0 2px 8px rgba(34,197,94,0.4)'}}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polyline points="2,7 6,11 12,3" stroke="#1a0e00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <div style={{width:32,height:32,borderRadius:'6px',border:'3px solid #22c55e',background:'transparent',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,boxShadow:'0 2px 8px rgba(34,197,94,0.25)'}}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="2,8 7,13 14,3" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
                 <span style={{fontSize:16,fontWeight:600,color:'#e8edf8',lineHeight:1.35}}>{item}</span>
               </div>
