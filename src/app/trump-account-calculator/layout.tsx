@@ -12,39 +12,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is a Trump Account (MAGA Account)?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Trump Accounts are new tax-advantaged savings accounts for children created by the One Big Beautiful Bill. The government seeds each account with $1,000 at birth. Parents and employers can contribute up to $2,500/year. Funds grow tax-free and can be used at age 18.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much will a Trump Account be worth at age 18?',
-      acceptedAnswer: { '@type': 'Answer', text: 'With the $1,000 government seed and $2,500/year contributions at a 7% annual return, the account reaches approximately $38,000 by age 18. With employer matching, this can exceed $75,000.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'Who qualifies for a Trump Account?',
-      acceptedAnswer: { '@type': 'Answer', text: 'All US citizen children born after December 31, 2024 qualify for the $1,000 government seed contribution. Parents can open accounts for existing children as well and contribute up to $2,500/year.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What can Trump Account funds be used for?',
-      acceptedAnswer: { '@type': 'Answer', text: 'At age 18, funds can be used for education, a first home purchase, or starting a business. Qualified withdrawals are tax-free. Non-qualified withdrawals are subject to income tax and a 10% penalty.' },
-    }
-  ],
-};
-
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      {children}
-    </div>
+    <>{children}</>
   );
 }
