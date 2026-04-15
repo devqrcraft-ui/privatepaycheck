@@ -56,3 +56,5 @@ div[style*="cursor"]:hover,div[style*="pointer"]:hover{transform:translateY(-4px
 }
 a.cta-link,button.cta-btn{transition:all 0.2s ease;}
 .nav-arrow-link{transition:all 0.15s ease;}
+.ca-calc-btn{display:inline-block;padding:13px 32px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:white;font-weight:800;font-size:15px;text-decoration:none;cursor:pointer;min-height:48px;transition:transform 0.15s ease,box-shadow 0.15s ease;}
+.ca-calc-btn:hover{transform:scale(1.03);box-shadow:0 0 20px rgba(99,102,241,0.5);}
