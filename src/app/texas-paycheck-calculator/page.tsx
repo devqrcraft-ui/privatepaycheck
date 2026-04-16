@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 export const metadata: Metadata = {
-  title: 'Texas Paycheck Calculator 2026 — Take Home Pay, No State Tax',
-  description: 'Free Texas paycheck calculator 2026. Texas has zero state income tax — see your exact take-home pay after federal tax & FICA. Hourly & salary. Instant & private.',
+  title: 'Texas Paycheck Calculator 2026 — No State Tax, See Your Net Pay',
+  description: 'Texas has zero state income tax — see exactly how much you take home after federal tax & FICA. Free, instant results. No signup, no data stored.',
   keywords: 'texas paycheck calculator 2026, texas take home pay, texas salary after taxes, tx paycheck no state tax',
   alternates: { canonical: 'https://www.privatepaycheck.com/texas-paycheck-calculator' },
 }
