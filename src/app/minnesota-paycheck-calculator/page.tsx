@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Minnesota Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'Minnesota paycheck calculator 2026. See exact take-home pay after federal + Minnesota state tax (up to 9.85%) and FICA. All salary levels. 100% private.',
+  title: 'Minnesota Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
+  description: 'See your exact Minnesota take-home pay after state tax up to 9.85%, federal tax & FICA. Free, instant results. No signup, no data stored.',
   keywords: 'minnesota paycheck calculator 2026, minnesota take home pay, minnesota salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/minnesota-paycheck-calculator' },
 }

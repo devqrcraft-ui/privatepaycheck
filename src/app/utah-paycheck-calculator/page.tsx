@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Utah Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
-  description: '$60,000 salary in UT = ~$4,280/month take-home. Free Utah paycheck calculator 2026 — federal + UT flat tax (4.55%) & FICA. Instant results.',
+  description: 'See your exact Utah take-home pay after 4.55% flat state tax, federal tax & FICA. Free, instant results. No signup, no data stored.',
   keywords: 'utah paycheck calculator 2026, utah take home pay, utah salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/utah-paycheck-calculator' },
 }
