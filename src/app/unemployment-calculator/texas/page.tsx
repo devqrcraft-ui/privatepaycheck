@@ -3,7 +3,7 @@ import UnemployCalc from './_calc'
 
 export const metadata: Metadata = {
   title: 'Texas Unemployment Calculator 2026 — Estimate Your Weekly Benefits',
-  description: 'Free Texas unemployment calculator 2026. Estimate your weekly benefit amount (WBA). Texas pays up to $648/week for up to 26 weeks. Instant, no signup.',
+  description: 'How much will Texas unemployment pay you? Estimate your weekly benefit up to $648/week for 26 weeks. Enter your wages — get instant results. No signup.',
   keywords: 'texas unemployment calculator, texas unemployment benefits 2026, texas WBA calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/texas' },
 }

@@ -1,8 +1,8 @@
 import StateCalcEmbed from '@/components/StateCalcEmbed';
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Massachusetts Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'Massachusetts paycheck calculator 2026. See exact take-home pay after federal + Massachusetts state tax (5% (9% over $1M)) and FICA. All salary levels. 100% private.',
+  title: 'Massachusetts Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
+  description: 'See your exact Massachusetts take-home pay after 5% state tax, federal tax & FICA. Free, instant results. No signup, no data stored.',
   keywords: 'massachusetts paycheck calculator 2026, massachusetts take home pay, massachusetts salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/massachusetts-paycheck-calculator' },
 }
