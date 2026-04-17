@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CaCalcEmbed from '@/components/CaCalcEmbed'
+import FreshnessBar from '@/components/FreshnessBar'
 export const metadata: Metadata = {
   title: 'California Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
   description: 'See your exact California take-home pay in seconds. Calculates CA state tax up to 13.3%, federal tax, FICA & SDI. Free, instant, no signup required.',
