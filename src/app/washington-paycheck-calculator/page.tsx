@@ -16,8 +16,8 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Washington Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Washington Paycheck Calculator 2026</h1>
-      <StateCalcEmbed
-      <FreshnessBar state="Washington" items={["WA has no state income tax in 2026","WA Cares Fund (LTC): 0.58% on all wages","Federal SS wage base: $184,500 for 2026","WA minimum wage: $16.66/hr (Jan 2026)"]} /> stateName="Washington" stateTaxRate={0} hasSDI={true} sdiRate={0.58} noStateTax={true} />
+      <StateCalcEmbed stateName="Washington" stateTaxRate={0} hasSDI={true} sdiRate={0.58} noStateTax={true} />
+      <FreshnessBar state="Washington" items={["WA has no state income tax in 2026","WA Cares Fund (LTC): 0.58% on all wages","Federal SS wage base: $184,500 for 2026","WA minimum wage: $16.66/hr (Jan 2026)"]} />
 
       <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}><strong>No state income tax</strong> in Washington — only federal income tax and FICA are withheld. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <div style={{ background: '#d4edda', color: '#1a1a2e', border: '1px solid #28a745', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14 }}>No Washington state income tax in 2026. Only federal withholding applies.</div>
