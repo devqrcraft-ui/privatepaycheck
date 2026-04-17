@@ -100,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/teacher-paycheck-calculator`,          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/nurse-paycheck-calculator`,            lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/software-engineer-paycheck-calculator`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/compare-states-paycheck`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${BASE_URL}/privacy-policy`,                  lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE_URL}/terms`,                           lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
 
