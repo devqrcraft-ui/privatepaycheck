@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const CA_BRACKETS_SINGLE: [number,number][] = [
   [10412,.01],[24684,.02],[38959,.04],[54081,.06],[68350,.08],
@@ -28,22 +28,24 @@ export default function CaCalcEmbed() {
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('26');
   const [filing, setFiling] = useState('single');
+  const [copied, setCopied] = useState(false);
+  const didInit = useRef(false);
   const [result, setResult] = useState<null|{
     gross:number; fed:number; ss:number; med:number;
     caState:number; caSDI:number; net:number; netYear:number; pct:number;
   }>(null);
 
-  function calculate() {
-    const annual = parseFloat(salary.replace(/[^0-9.]/g,''));
+  function calculateWithValues(sal: string, per: string, fil: string) {
+    const annual = parseFloat(sal.replace(/[^0-9.]/g,''));
     if (!annual || annual <= 0) return;
-    const f = parseInt(period);
-    const stdDed = filing === 'married' ? 32200 : 16100;
+    const f = parseInt(per);
+    const stdDed = fil === 'married' ? 32200 : 16100;
     const fedTaxable = Math.max(0, annual - stdDed);
     const fed = calcTax(FED_BRACKETS_SINGLE, fedTaxable);
     const ss  = Math.min(annual, 184500) * 0.062;
     const med = annual * 0.0145;
     const caSDI = annual * 0.009;
-    const caStdDed = filing === 'married' ? 11412 : 5706;
+    const caStdDed = fil === 'married' ? 11412 : 5706;
     const caTaxable = Math.max(0, annual - caStdDed);
     const caState = calcTax(CA_BRACKETS_SINGLE, caTaxable);
     const totalTax = fed + ss + med + caState + caSDI;
@@ -53,6 +55,39 @@ export default function CaCalcEmbed() {
     const pct = (totalTax / annual) * 100;
     setResult({ gross, fed:fed/f, ss:ss/f, med:med/f,
       caState:caState/f, caSDI:caSDI/f, net, netYear, pct });
+    try {
+      const params = new URLSearchParams({ salary: sal, period: per, filing: fil });
+      window.history.replaceState(null, '', '?' + params.toString());
+    } catch(e) {}
+  }
+
+  function calculate() {
+    calculateWithValues(salary, period, filing);
+  }
+
+  useEffect(() => {
+    if (didInit.current) return;
+    didInit.current = true;
+    try {
+      const p = new URLSearchParams(window.location.search);
+      const s = p.get('salary');
+      const per = p.get('period');
+      const fil = p.get('filing');
+      if (s && parseFloat(s) > 0) {
+        const resolvedPer = per || '26';
+        const resolvedFil = fil || 'single';
+        setSalary(s);
+        if (per) setPeriod(per);
+        if (fil) setFiling(fil);
+        calculateWithValues(s, resolvedPer, resolvedFil);
+      }
+    } catch(e) {}
+  }, []);
+
+  function handleShare() {
+    navigator.clipboard.writeText(window.location.href).catch(function() {});
+    setCopied(true);
+    setTimeout(function() { setCopied(false); }, 2000);
   }
 
   const inp: React.CSSProperties = {
@@ -71,7 +106,7 @@ export default function CaCalcEmbed() {
       borderRadius:14, padding:'24px 20px', marginBottom:32, marginTop:8
     }}>
       <div style={{ fontSize:16, fontWeight:800, color:'#F5C842', marginBottom:16 }}>
-        🧮 Calculate Your California Take-Home
+        Calculate Your California Take-Home
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:12 }}>
         <div>
@@ -85,10 +120,7 @@ export default function CaCalcEmbed() {
         </div>
         <div>
           <label style={lbl}>Pay Period</label>
-          <select
-            style={inp} value={period} onChange={e=>setPeriod(e.target.value)}
-            aria-label="Pay period frequency"
-          >
+          <select style={inp} value={period} onChange={e=>setPeriod(e.target.value)} aria-label="Pay period frequency">
             <option value="52">Weekly (52/yr)</option>
             <option value="26">Bi-weekly (26/yr)</option>
             <option value="24">Semi-monthly (24/yr)</option>
@@ -116,7 +148,7 @@ export default function CaCalcEmbed() {
         background:'linear-gradient(135deg,#F5C842,#e0a800)',
         color:'#0f0c29', fontWeight:900, fontSize:16, cursor:'pointer', marginBottom:16
       }}>
-        Calculate My California Paycheck →
+        Calculate My California Paycheck
       </button>
 
       {result && (
@@ -133,12 +165,12 @@ export default function CaCalcEmbed() {
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap:7 }}>
             {[
-              ['Gross Pay',       fmt(result.gross),    '#e8edf8'],
-              ['Federal Tax',     '-'+fmt(result.fed),  '#f87171'],
-              ['Social Security', '-'+fmt(result.ss),   '#fb923c'],
-              ['Medicare',        '-'+fmt(result.med),  '#fb923c'],
+              ['Gross Pay',       fmt(result.gross),      '#e8edf8'],
+              ['Federal Tax',     '-'+fmt(result.fed),    '#f87171'],
+              ['Social Security', '-'+fmt(result.ss),     '#fb923c'],
+              ['Medicare',        '-'+fmt(result.med),    '#fb923c'],
               ['CA State Tax',    '-'+fmt(result.caState),'#c084fc'],
-              ['CA SDI (0.9%)',   '-'+fmt(result.caSDI),'#c084fc'],
+              ['CA SDI (0.9%)',   '-'+fmt(result.caSDI),  '#c084fc'],
             ].map(([label,val,col])=>(
               <div key={label} style={{ display:'flex', justifyContent:'space-between', fontSize:14 }}>
                 <span style={{ color:'#94a3b8' }}>{label}</span>
@@ -153,16 +185,18 @@ export default function CaCalcEmbed() {
             <span style={{ color:'#64748b' }}>Annual take-home</span>
             <span style={{ color:'#F5C842', fontWeight:700 }}>{fmt(result.netYear)}/yr · {result.pct.toFixed(1)}% total tax</span>
           </div>
+          <button onClick={handleShare} style={{
+            marginTop:12, width:'100%', padding:'10px 0', borderRadius:8,
+            border:'1px solid rgba(245,200,66,0.4)',
+            background: copied ? 'rgba(74,222,128,0.1)' : 'rgba(245,200,66,0.08)',
+            color: copied ? '#4ade80' : '#F5C842',
+            fontWeight:700, fontSize:13, cursor:'pointer'
+          }}>
+            {copied ? 'Link copied!' : 'Share my result'}
+          </button>
         </div>
       )}
-
-      <style>{`
-        @media(max-width:540px){
-          .ca-grid { grid-template-columns: 1fr !important; }
-        }
-        input[type=number]::-webkit-outer-spin-button,
-        input[type=number]::-webkit-inner-spin-button { -webkit-appearance:none; }
-      `}</style>
+      <style dangerouslySetInnerHTML={{ __html: 'input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}' }} />
     </div>
   );
 }

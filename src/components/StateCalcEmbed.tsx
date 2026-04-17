@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface Props {
   stateName: string;
@@ -13,20 +13,23 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('annual');
   const [filing, setFiling] = useState('single');
+  const [copied, setCopied] = useState(false);
+  const didInit = useRef(false);
   const [result, setResult] = useState<{
     annual:number; takeHome:number; biweekly:number; monthly:number;
     fed:number; ss:number; medicare:number; stateTax:number; sdi:number; eff:string;
   }|null>(null);
 
-  function calculate() {
-    let annual = parseFloat(salary.replace(/,/g,'')) || 0;
-    if (period === 'hourly') annual = annual * 40 * 52;
-    else if (period === 'monthly') annual = annual * 12;
-    else if (period === 'biweekly') annual = annual * 26;
+  function calculateWithValues(sal: string, per: string, fil: string) {
+    let annual = parseFloat(sal.replace(/,/g,'')) || 0;
+    if (annual <= 0) return;
+    if (per === 'hourly') annual = annual * 40 * 52;
+    else if (per === 'monthly') annual = annual * 12;
+    else if (per === 'biweekly') annual = annual * 26;
 
-    const stdDeduct = filing === 'married' ? 32200 : 16100;
+    const stdDeduct = fil === 'married' ? 32200 : 16100;
     const taxable = Math.max(0, annual - stdDeduct);
-    const brackets = filing === 'married'
+    const brackets = fil === 'married'
       ? [[0,24800,0.10],[24800,100800,0.12],[100800,211400,0.22],[211400,403550,0.24],[403550,512450,0.32],[512450,768700,0.35],[768700,Infinity,0.37]]
       : [[0,12400,0.10],[12400,50400,0.12],[50400,105700,0.22],[105700,201775,0.24],[201775,256225,0.32],[256225,640600,0.35],[640600,Infinity,0.37]];
     let fed = 0;
@@ -37,10 +40,42 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
     const medicare = annual * 0.0145 + (annual > 200000 ? (annual-200000)*0.009 : 0);
     const stateTax = noStateTax ? 0 : annual * (stateTaxRate/100);
     const sdi = hasSDI ? Math.min(annual, 153164) * (sdiRate/100) : 0;
-
     const total = fed + ss + medicare + stateTax + sdi;
     const takeHome = annual - total;
     setResult({ annual, takeHome, biweekly: takeHome/26, monthly: takeHome/12, fed, ss, medicare, stateTax, sdi, eff: annual>0 ? (total/annual*100).toFixed(1) : '0' });
+    try {
+      const params = new URLSearchParams({ salary: sal, period: per, filing: fil });
+      window.history.replaceState(null, '', '?' + params.toString());
+    } catch(e) {}
+  }
+
+  function calculate() {
+    calculateWithValues(salary, period, filing);
+  }
+
+  useEffect(() => {
+    if (didInit.current) return;
+    didInit.current = true;
+    try {
+      const p = new URLSearchParams(window.location.search);
+      const s = p.get('salary');
+      const per = p.get('period');
+      const fil = p.get('filing');
+      if (s && parseFloat(s) > 0) {
+        const resolvedPer = per || 'annual';
+        const resolvedFil = fil || 'single';
+        setSalary(s);
+        if (per) setPeriod(per);
+        if (fil) setFiling(fil);
+        calculateWithValues(s, resolvedPer, resolvedFil);
+      }
+    } catch(e) {}
+  }, []);
+
+  function handleShare() {
+    navigator.clipboard.writeText(window.location.href).catch(function() {});
+    setCopied(true);
+    setTimeout(function() { setCopied(false); }, 2000);
   }
 
   const fmt = (n: number) => Math.round(n||0).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
@@ -104,7 +139,16 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
               </div>
             ))}
           </div>
-          <p style={{ color:'#8892b0', fontSize:11, margin:'14px 0 0' }}>Estimate only. Actual taxes vary by deductions and filing details.</p>
+          <p style={{ color:'#8892b0', fontSize:11, margin:'14px 0 8px' }}>Estimate only. Actual taxes vary by deductions and filing details.</p>
+          <button onClick={handleShare} style={{
+            width:'100%', padding:'10px 0', borderRadius:8,
+            border:'1px solid rgba(245,200,66,0.4)',
+            background: copied ? 'rgba(74,222,128,0.1)' : 'rgba(245,200,66,0.08)',
+            color: copied ? '#4ade80' : '#F5C842',
+            fontWeight:700, fontSize:13, cursor:'pointer'
+          }}>
+            {copied ? 'Link copied!' : 'Share my result'}
+          </button>
         </div>
       )}
     </div>
