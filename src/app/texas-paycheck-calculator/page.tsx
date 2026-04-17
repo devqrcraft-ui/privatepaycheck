@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import FreshnessBar from '@/components/FreshnessBar'
 import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 export const metadata: Metadata = {
   title: 'Texas Paycheck Calculator 2026 — No State Tax, See Your Net Pay',
@@ -34,7 +35,8 @@ export default function Page() {
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Texas has <strong>no state income tax</strong> — you only pay federal income tax and FICA. This means Texans keep significantly more of every paycheck compared to residents of CA, NY, or IL.</p>
 
       <FlTxCalcEmbed state="texas" />
-      <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#6ee7b7' }}>
+
+      <FreshnessBar state="Texas" items={["Texas has no state income tax in 2026","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married","TX minimum wage: $7.25/hr (federal minimum)"]} />      <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#6ee7b7' }}>
         No Texas state income tax in 2026. Only federal withholding applies. Compare: at $75k salary, Texas take-home is ~$8,700/year MORE than California.
       </div>
       <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>

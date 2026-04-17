@@ -1,4 +1,5 @@
 import StateCalcEmbed from '@/components/StateCalcEmbed';
+import FreshnessBar from '@/components/FreshnessBar'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Ohio Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
@@ -17,6 +18,7 @@ export default function Page() {
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Ohio Paycheck Calculator 2026</h1>
       <StateCalcEmbed stateName="Ohio" stateTaxRate={3.5} hasSDI={false} sdiRate={0} noStateTax={false} />
 
+      <FreshnessBar state="Ohio" items={["OH income tax: 0%–3.5% (2026 — top bracket reduced)","No OH tax on income under $26,050 (2026)","Federal SS wage base: $184,500 for 2026","OH minimum wage: $10.45/hr (Jan 2026)"]} />
       <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}>Ohio state income tax: <strong>up to 3.99%</strong>. See your exact take-home below. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Ohio state income tax: up to 3.99% in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Ohio Take-Home Pay by Salary (Single Filer, 2026)</h2>

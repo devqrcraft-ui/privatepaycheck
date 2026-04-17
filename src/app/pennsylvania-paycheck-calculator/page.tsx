@@ -1,4 +1,5 @@
 import StateCalcEmbed from '@/components/StateCalcEmbed';
+import FreshnessBar from '@/components/FreshnessBar'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Pennsylvania Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
@@ -17,6 +18,7 @@ export default function Page() {
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Pennsylvania Paycheck Calculator 2026</h1>
       <StateCalcEmbed stateName="Pennsylvania" stateTaxRate={3.07} hasSDI={false} sdiRate={0} noStateTax={false} />
 
+      <FreshnessBar state="Pennsylvania" items={["PA flat income tax: 3.07% (unchanged 2026)","PA SUI employee: 0.07% (2026)","Federal SS wage base: $184,500 for 2026","PA minimum wage: $7.25/hr (federal minimum)"]} />
       <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}>Pennsylvania state income tax: <strong>3.07% flat</strong>. See your exact take-home below. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Pennsylvania state income tax: 3.07% flat in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Pennsylvania Take-Home Pay by Salary (Single Filer, 2026)</h2>

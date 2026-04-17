@@ -38,6 +38,7 @@ export default function Page() {
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>California Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Free California paycheck calculator 2026 for <strong>hourly & salary</strong> workers. Federal + state income tax + SDI. California has the highest state tax in the US — up to <strong>13.3%</strong>. See your exact take-home pay instantly. <span style={{fontSize:12,color:'#94a3b8',display:'block',marginTop:6}}>Updated April 2026 — 2026 CA tax brackets, FICA & SDI rates.</span></p>
       <CaCalcEmbed />
+      <FreshnessBar state="California" items={["SDI rate: 1.3% with no wage base cap (since Jan 2024)","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married","CA minimum wage: $17/hr statewide"]} />
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 1.3% (no cap). CA SDI changed in 2024 — no wage base limit.
       </div>

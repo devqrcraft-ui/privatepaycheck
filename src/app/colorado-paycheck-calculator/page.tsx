@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import FreshnessBar from '@/components/FreshnessBar'
 export const metadata: Metadata = {
   title: 'Colorado Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
   description: 'See your exact Colorado take-home pay after 4.4% flat state tax, federal tax & FICA. Free, instant results. No signup, no data stored.',

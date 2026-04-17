@@ -1,4 +1,5 @@
 import StateCalcEmbed from '@/components/StateCalcEmbed';
+import FreshnessBar from '@/components/FreshnessBar'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'New York Paycheck Calculator 2026 — Take Home Pay After NY & NYC Tax',
@@ -31,7 +32,8 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › New York Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>New York Paycheck Calculator 2026</h1>
-      <StateCalcEmbed stateName="New York" stateTaxRate={6.33} hasSDI={true} sdiRate={0.5} noStateTax={false} />
+      <StateCalcEmbed
+      <FreshnessBar state="New York" items={["NY state tax: 4%–10.9% (2026 brackets)","NYC residents pay additional 3.078%–3.876%","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married"]} /> stateName="New York" stateTaxRate={6.33} hasSDI={true} sdiRate={0.5} noStateTax={false} />
 
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>New York has both <strong>NY state tax (up to 10.9%)</strong> and an extra <strong>NYC tax (up to 3.876%)</strong> for city residents. See your exact take-home below or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a>.</p>
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>

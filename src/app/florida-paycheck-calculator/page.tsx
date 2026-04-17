@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import FreshnessBar from '@/components/FreshnessBar'
 import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 export const metadata: Metadata = {
   title: 'Florida Paycheck Calculator 2026 — No State Tax, See Your Net Pay',

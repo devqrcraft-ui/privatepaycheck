@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import FreshnessBar from '@/components/FreshnessBar'
 export const metadata: Metadata = {
   title: 'Oregon Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
   description: 'Oregon paycheck calculator 2026. See exact take-home pay after federal + Oregon state tax (up to 9.9%) and FICA. All salary levels. 100% private.',
