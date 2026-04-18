@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Nurse Paycheck Calculator 2026 — RN Take-Home Pay by State',
   description: 'Calculate your real nurse take-home pay after taxes in all 51 states. See biweekly and monthly net pay for RNs in 2026. Free, no signup, instant results.',
   alternates: { canonical: 'https://www.privatepaycheck.com/nurse-paycheck-calculator' },
+  robots: 'noindex',
 };
 
 const STATES = [

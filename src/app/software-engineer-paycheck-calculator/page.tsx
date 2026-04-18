@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Software Engineer Paycheck Calculator 2026 — Take-Home Pay by State',
   description: 'Calculate your real software engineer take-home pay after federal tax, FICA, and state tax. All 51 states. Includes RSU and bonus tax guidance. Free, no signup.',
   alternates: { canonical: 'https://www.privatepaycheck.com/software-engineer-paycheck-calculator' },
+  robots: 'noindex',
 };
 
 const STATES = [

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Tip Tax Calculator 2026 — No Tax on Tips Law, By State',
   description: 'New 2025 law: up to $25,000 in tips are now tax-free. Calculate your tip tax savings by state. Free & instant.',
   alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator' },
+  robots: 'noindex',
 };
 
 
