@@ -117,6 +117,7 @@ const nextConfig: NextConfig = {
       { source: "/wi", destination: "/wisconsin-paycheck-calculator", permanent: true },
       { source: "/wy", destination: "/wyoming-paycheck-calculator", permanent: true },
       { source: "/calculator", destination: "/", permanent: true },
+      { source: "/hr", destination: "/hourly-paycheck-calculator", permanent: true },
       { source: "/hr/week/hourly-paycheck-calculator", destination: "/hourly-paycheck-calculator", permanent: true },
       { source: "/bonus-calculator", destination: "/bonus-tax-calculator", permanent: true },
       { source: "/bonus-calculator/:state", destination: "/bonus-tax-calculator/:state", permanent: true },
