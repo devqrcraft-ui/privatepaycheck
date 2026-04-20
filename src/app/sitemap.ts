@@ -118,19 +118,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     })),
 
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/unemployment-calculator/${slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    })),
 
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/minimum-wage/${slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    })),
 
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/bonus-tax-calculator/${slug}`,
@@ -139,30 +127,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     })),
 
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/hourly-paycheck-calculator/${slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    })),
-
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/tip-calculator/${slug}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.75,
-    })),
 
 
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/nurse-paycheck-calculator/${slug}`,
-      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7,
-    })),
 
-    ...STATE_SLUGS.map(slug => ({
-      url: `${BASE_URL}/software-engineer-paycheck-calculator/${slug}`,
-      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7,
-    })),
+
 
     ...BLOG_SLUGS.map(slug => ({
       url: `${BASE_URL}/blog/${slug}`,
