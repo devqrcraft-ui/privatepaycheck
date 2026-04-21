@@ -1,0 +1,66 @@
+# PrivatePaycheck
+> Free paycheck calculators for US employees — all 50 states + DC, instant results, no signup required. Updated for 2026 tax brackets.
+
+## What this site does
+PrivatePaycheck helps US employees estimate their take-home pay after federal, state, and local taxes. Calculators are free, instant, and cover salary, hourly, bonus, and specialty paycheck scenarios for all 51 US jurisdictions. All calculations run in the browser — no data is stored or sent to any server.
+
+## Key tool pages
+- /california-paycheck-calculator — California paycheck calculator 2026
+- /texas-paycheck-calculator — Texas paycheck calculator 2026
+- /new-york-paycheck-calculator — New York paycheck calculator 2026
+- /florida-paycheck-calculator — Florida paycheck calculator 2026
+- /illinois-paycheck-calculator — Illinois paycheck calculator 2026
+- /washington-paycheck-calculator — Washington state paycheck calculator 2026
+- /hourly-paycheck-calculator — Hourly paycheck calculator all states
+- /federal-paycheck-calculator — Federal paycheck calculator 2026
+- /bonus-tax-calculator — Bonus tax calculator 2026
+- /overtime-calculator — Overtime pay calculator 2026
+- /w4-withholding-calculator — W-4 withholding calculator 2026
+- /compare-states-paycheck — Compare take-home pay across 3 states
+- /no-tax-on-tips-calculator — No Tax on Tips calculator 2026 (OBBBA)
+- /no-tax-on-overtime-deduction — No Tax on Overtime calculator 2026
+- /two-jobs-tax-calculator — Two jobs tax withholding calculator
+- /raise-calculator — Raise after-tax calculator
+- /signing-bonus-tax-calculator — Signing bonus tax calculator
+- /1099-paycheck-calculator — 1099 vs W-2 paycheck calculator
+- /all-states — All 50 states paycheck calculators directory
+
+## All 50 states + DC
+Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming, Washington DC.
+## Key blog posts
+- /blog/california-paycheck-calculator-guide — California paycheck explained 2026
+- /blog/how-to-read-your-pay-stub — How to read every line of your pay stub
+- /blog/2026-federal-tax-brackets — 2026 federal income tax brackets
+- /blog/no-tax-on-tips-explained — No Tax on Tips: OBBBA 2026 guide
+- /blog/one-big-beautiful-bill-tax-calculator-2026 — OBBBA tax changes 2026
+- /blog/401k-contribution-limits-2026 — 401k limits 2026
+- /blog/how-to-increase-take-home-pay — How to increase take-home pay
+- /blog/married-filing-jointly-paycheck-2026 — Married filing jointly paycheck impact
+- /blog/no-income-tax-states-2026 — States with no income tax 2026
+- /blog/how-to-calculate-paycheck-taxes — How paycheck taxes are calculated
+- /blog/what-is-fica-tax — What is FICA tax explained
+- /blog/hsa-contribution-limits-2026 — HSA limits 2026
+- /blog/two-jobs-tax-withholding — Two jobs withholding explained
+- /blog/overtime-pay-rules-by-state — Overtime pay rules by state 2026
+
+## Tax data included (2026)
+- Federal brackets: 10%, 12%, 22%, 24%, 32%, 35%, 37%
+- Standard deduction: 15,000 single / 30,000 married filing jointly
+- FICA: Social Security 6.2% up to 176,100 wage base, Medicare 1.45%
+- No Tax on Tips: up to 25,000 federal deduction (OBBBA 2026)
+- No Tax on Overtime: federal deduction for hourly workers (OBBBA 2026)
+- 401k limit: 23,500 employee contribution
+- HSA limit: 4,300 individual / 8,550 family
+- All 50 state income tax rates updated for 2026
+
+## Who this is for
+US employees (W-2), hourly workers, salaried employees, gig workers with W-2 income, anyone comparing states for salary decisions.
+
+## What this site does NOT cover
+Self-employment tax (SE tax), business deductions, Schedule C. For 1099 contractors see 1099deductions.com.
+
+## Privacy
+All calculations run client-side in the browser. No paycheck data is stored, logged, or transmitted.
+
+## Sitemap
+https://www.privatepaycheck.com/sitemap.xml
