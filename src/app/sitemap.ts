@@ -127,6 +127,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     })),
 
+    ...stateSlugs.map(slug => ({
+      url: `${BASE_URL}/minimum-wage/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+
 
 
 
