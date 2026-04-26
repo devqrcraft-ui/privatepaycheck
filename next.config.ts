@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Force www — fixes Google canonical issue
+      { source: '/', has: [{ type: 'query', key: 'state' }], destination: '/', permanent: false },
       { source: '/:path*', has: [{ type: 'host', value: 'privatepaycheck.com' }], destination: 'https://www.privatepaycheck.com/:path*', permanent: true },
 
       
@@ -189,6 +190,7 @@ const nextConfig: NextConfig = {
       source: "/_next/static/(.*)",
       headers: [
         { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        { key: "X-Robots-Tag", value: "noindex" },
       ],
     },
     {
