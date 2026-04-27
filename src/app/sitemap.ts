@@ -102,7 +102,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/software-engineer-paycheck-calculator`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/overtime-calculator`,      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/compare-states-paycheck`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
-    { url: `${BASE_URL}/privacy-policy`,                  lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${BASE_URL}/how-we-calculate`,                    lastModified: now, changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${BASE_URL}/methodology`,                          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${BASE_URL}/senior-deduction-calculator`,          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/trump-account-calculator`,             lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/w4-withholding-calculator`,            lastModified: now, changeFrequency: 'monthly' as const, priority: 0.85 },
+    { url: `${BASE_URL}/wep-lump-sum-calculator`,              lastModified: now, changeFrequency: 'monthly' as const, priority: 0.75 },
+        { url: `${BASE_URL}/privacy-policy`,                  lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE_URL}/terms`,                           lastModified: now, changeFrequency: 'yearly',  priority: 0.3 },
 
     ...stateSlugs.map(slug => ({
