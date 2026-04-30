@@ -125,8 +125,6 @@ const nextConfig: NextConfig = {
       { source: "/hourly-paycheck-calculator/methodology", destination: "/methodology", permanent: true },
       { source: "/bonus-calculator", destination: "/bonus-tax-calculator", permanent: true },
       { source: "/bonus-calculator/:state", destination: "/bonus-tax-calculator/:state", permanent: true },
-      { source: "/unemployment-calculator", destination: "/unemployment-calculator/california", permanent: false },
-      { source: "/overtime-calculator", destination: "/overtime-calculator/california", permanent: false },
       { source: "/blog/alabama-paycheck-calculator", destination: "/alabama-paycheck-calculator", permanent: true },
       { source: "/blog/alaska-paycheck-calculator", destination: "/alaska-paycheck-calculator", permanent: true },
       { source: "/blog/arizona-paycheck-calculator", destination: "/arizona-paycheck-calculator", permanent: true },
