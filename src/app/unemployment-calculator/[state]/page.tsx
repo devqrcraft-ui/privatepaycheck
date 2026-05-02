@@ -92,8 +92,49 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
+  const titleOverrides: Record<string, string> = {
+    'pennsylvania': 'Pennsylvania Unemployment Weekly Benefit Amount 2026 — Calculator',
+    'illinois': 'Illinois Unemployment Calculator 2026 — Weekly Benefit Amount & Estimator',
+  };
   return {
-    title: data.name + ' Unemployment Calculator 2026 — Max $' + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
+    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 — Max 
+    description: 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages — no login required.',
+    alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
+  };
+}
+
+export default async function Page({ params }: Props) {
+  const { state } = await params;
+  const data = STATE_DATA[state];
+  if (!data) notFound();
+
+  const stateNote = STATE_NOTES[state];
+  const ssrContent = stateNote ? (
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px 32px', fontFamily: 'system-ui,sans-serif' }}>
+      <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#e8edf8' }}>
+        {data.name} Unemployment Benefits 2026: Key Facts
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#475569' }}>{stateNote}</p>
+    </div>
+  ) : null;
+
+  const faqSchema = getUnemploymentFaqSchema(data.name, data.maxWeekly, data.maxWeeks, data.rate);
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <UnemploymentCalculatorState
+        stateName={data.name}
+        stateSlug={state}
+        maxWeekly={data.maxWeekly}
+        maxWeeks={data.maxWeeks}
+        rate={data.rate}
+        waitWeek={data.waitWeek}
+        stateIncomeTax={data.stateIncomeTax}
+      />
+      {ssrContent}
+    </>
+  );
+} + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
     description: 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages — no login required.',
     alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
   };
