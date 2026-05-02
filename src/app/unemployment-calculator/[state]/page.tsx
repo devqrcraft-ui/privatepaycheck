@@ -64,20 +64,20 @@ const STATE_DATA: Record<string, { name: string; maxWeekly: number; maxWeeks: nu
 };
 
 const STATE_NOTES: Record<string, string> = {
-  "illinois": "Illinois unemployment benefits max out at $742/week for up to 26 weeks — among the more generous in the Midwest. The state taxes UI benefits at a flat 4.95%. Note the 1-week waiting period: your first week of unemployment is unpaid. A laid-off worker earning $1,500/week would receive approximately $705/week (47% rate), with about $636 after state tax and optional 10% federal withholding.",
-  "maine": "Maine pays up to $531/week for up to 26 weeks, calculated at 42% of your prior average weekly wage. Maine taxes UI benefits at 7.15% — one of the higher state rates in New England. There is no waiting week in Maine, so benefits begin immediately. A worker earning $1,200/week would receive roughly $504/week, or about $431 after all taxes.",
-  "new-hampshire": "New Hampshire offers up to $427/week for 26 weeks. With no state income tax, your full benefit amount is only subject to the optional 10% federal withholding. A worker earning $900/week would receive $427 (capped), keeping approximately $384/week after federal withholding — better take-home than neighboring Maine or Vermont.",
+  "illinois": "Illinois unemployment benefits max out at $742/week for up to 26 weeks -- among the more generous in the Midwest. The state taxes UI benefits at a flat 4.95%. Note the 1-week waiting period: your first week of unemployment is unpaid. A laid-off worker earning $1,500/week would receive approximately $705/week (47% rate), with about $636 after state tax and optional 10% federal withholding.",
+  "maine": "Maine pays up to $531/week for up to 26 weeks, calculated at 42% of your prior average weekly wage. Maine taxes UI benefits at 7.15% -- one of the higher state rates in New England. There is no waiting week in Maine, so benefits begin immediately. A worker earning $1,200/week would receive roughly $504/week, or about $431 after all taxes.",
+  "new-hampshire": "New Hampshire offers up to $427/week for 26 weeks. With no state income tax, your full benefit amount is only subject to the optional 10% federal withholding. A worker earning $900/week would receive $427 (capped), keeping approximately $384/week after federal withholding -- better take-home than neighboring Maine or Vermont.",
   "texas": "Texas pays up to $563/week for up to 26 weeks at approximately 47% of prior wages. With no state income tax, Texas claimants keep more of their benefits than in most states. A worker earning $1,200/week would receive $563 (capped), keeping about $507 after optional 10% federal withholding.",
   "california": "California unemployment benefits are calculated at roughly 60-70% of your weekly wages up to $450/week. Benefits are taxable at the state marginal rate plus federal. California also offers State Disability Insurance (SDI) which may provide higher short-term payments than regular UI.",
-  "pennsylvania": "Pennsylvania pays up to $572/week for 26 weeks. At just 3.07% state income tax, Pennsylvania claimants keep most of their benefit. A worker earning $1,150/week would receive $572 (capped), keeping about $495 after taxes — one of the better net values in the Northeast.",
+  "pennsylvania": "Pennsylvania pays up to $572/week for 26 weeks. At just 3.07% state income tax, Pennsylvania claimants keep most of their benefit. A worker earning $1,150/week would receive $572 (capped), keeping about $495 after taxes -- one of the better net values in the Northeast.",
   "washington": "Washington State offers the highest UI maximum in the country at $1,019/week for up to 26 weeks. With no state income tax, claimants keep significantly more than in other states. A laid-off worker earning $2,000/week would receive $1,019, keeping approximately $917 after optional 10% federal withholding.",
   "new-jersey": "New Jersey pays up to $854/week for 26 weeks, calculated at 60% of prior wages. UI benefits are taxable at your marginal rate. Combined state and federal taxes can reach 16% or more for higher earners. New Jersey also has one of the most worker-friendly eligibility systems in the US.",
-  "massachusetts": "Massachusetts has the longest duration in the Northeast at 30 weeks and a maximum of $1,033/week. Benefits are taxable at the flat 5% state rate. A worker earning $2,100/week would receive $1,033 (capped), keeping about $879 after all taxes — excellent value given the duration.",
+  "massachusetts": "Massachusetts has the longest duration in the Northeast at 30 weeks and a maximum of $1,033/week. Benefits are taxable at the flat 5% state rate. A worker earning $2,100/week would receive $1,033 (capped), keeping about $879 after all taxes -- excellent value given the duration.",
   "alabama": "Alabama has one of the lowest UI maximums in the South at $265/week for only 20 weeks. The 1-week waiting period further reduces total benefits. A worker earning $600/week would receive $265 (capped), keeping about $220 after the 5% state tax and federal withholding.",
   "west-virginia": "West Virginia pays up to $424/week for 26 weeks at 55% of prior wages. The 6.5% state tax on benefits is among the highest in the region. A worker earning $770/week would receive $424 (capped), keeping approximately $350 after all taxes.",
-  "louisiana": "Louisiana has the lowest UI maximum in the South at $247/week for up to 26 weeks. Benefits are taxable at 4.25% state rate. A worker earning $600/week would receive $247 (capped) — one of the smallest safety nets in the country.",
+  "louisiana": "Louisiana has the lowest UI maximum in the South at $247/week for up to 26 weeks. Benefits are taxable at 4.25% state rate. A worker earning $600/week would receive $247 (capped) -- one of the smallest safety nets in the country.",
   "montana": "Montana is unusually generous with up to 28 weeks of benefits (longest in the Mountain West) and a $693/week maximum. The 6.75% state tax is the highest in the region. A worker earning $1,400/week would receive $693 (capped), keeping about $579 after taxes.",
-  "florida": "Florida pays only up to $275/week for a maximum of 12 weeks — one of the most restrictive programs in the US. With no state income tax, claimants keep the full after-federal amount, but the short duration and low cap make it a minimal safety net.",
+  "florida": "Florida pays only up to $275/week for a maximum of 12 weeks -- one of the most restrictive programs in the US. With no state income tax, claimants keep the full after-federal amount, but the short duration and low cap make it a minimal safety net.",
   "ohio": "Ohio pays up to $647/week for 26 weeks. At 3.5% state income tax, Ohio claimants retain most of their benefit. A worker earning $1,300/week would receive $647 (capped), keeping approximately $552 after taxes.",
   "new-mexico": "New Mexico pays up to $511/week for 26 weeks at 53.5% of prior wages. The 4.9% state tax is moderate. A worker earning $960/week would receive $511 (capped), keeping about $434 after all taxes.",
 };
@@ -93,12 +93,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
   const titleOverrides: Record<string, string> = {
-    'pennsylvania': 'Pennsylvania Unemployment Weekly Benefit Amount 2026 — Calculator',
-    'illinois': 'Illinois Unemployment Calculator 2026 — Weekly Benefit Amount & Estimator',
+    'pennsylvania': 'Pennsylvania Unemployment Weekly Benefit Amount 2026 -- Calculator',
+    'illinois': 'Illinois Unemployment Calculator 2026 -- Weekly Benefit Amount & Estimator',
   };
   return {
-    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 — Max $' + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
-    description: 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages — no login required.',
+    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 -- Max $' + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
+    description: 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages -- no login required.',
     alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
   };
 }
@@ -135,7 +135,7 @@ export default async function Page({ params }: Props) {
     </>
   );
 } + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
-    description: 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages — no login required.',
+    description: 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages -- no login required.',
     alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
   };
 }
