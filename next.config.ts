@@ -12,7 +12,6 @@ const nextConfig: NextConfig = {
     return [
       // Force www — fixes Google canonical issue
       { source: '/', has: [{ type: 'query', key: 'state' }], destination: '/', permanent: false },
-      { source: '/:path*', has: [{ type: 'host', value: 'privatepaycheck.com' }], destination: 'https://www.privatepaycheck.com/:path*', permanent: true },
 
       
       // Short state slugs → full paycheck calculator pages
