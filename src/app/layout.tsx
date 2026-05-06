@@ -9,7 +9,6 @@ import type { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   robots: { index: true, follow: true },
@@ -68,7 +67,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       }) }} />
         <main role="main">{children}</main>
         <Analytics />
-        <SpeedInsights />
         <Script src="/ai-chat-widget.js?v=4" strategy="lazyOnload" />
       <Footer />
     
