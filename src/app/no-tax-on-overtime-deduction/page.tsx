@@ -84,7 +84,7 @@ export default function NoTaxOnOvertimePage() {
               ))}
             </div>
           </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 margin: '10px 0 0' }}> All calculations in your browser "" data never sent anywhere</p>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, margin: '10px 0 0' }}> All calculations in your browser "" data never sent anywhere</p>
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
@@ -110,7 +110,7 @@ export default function NoTaxOnOvertimePage() {
           </Link>
         </div>
       </div>
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '8px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '8px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </div>

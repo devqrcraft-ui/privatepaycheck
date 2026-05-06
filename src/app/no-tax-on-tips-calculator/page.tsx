@@ -91,7 +91,7 @@ export default function NoTaxOnTipsCalculator() {
               <div style={{ opacity: 0.7 }}>Tax WITH exemption: <strong style={{ color: '#4ade80' }}>{fmt(r.fedNew)}</strong></div>
             </div>
           </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 margin: '10px 0 0' }}>All calculations in your browser &mdash; data never sent anywhere</p>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, margin: '10px 0 0' }}>All calculations in your browser &mdash; data never sent anywhere</p>
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>

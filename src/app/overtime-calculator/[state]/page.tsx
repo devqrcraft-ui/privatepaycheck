@@ -164,7 +164,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
@@ -219,7 +219,7 @@ function OvertimeCalculatorWidget({ stateName, hasDoubleTime, hasDailyOT, dailyO
           {!hasDoubleTime && !hasDailyOT && <span>Federal rule: 1.5x after 40 hrs/week</span>}
         </div>
       </div>
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 marginTop: '12px' }}> All calculations happen in your browser</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, marginTop: '12px' }}> All calculations happen in your browser</p>
     </div>
   );
 }

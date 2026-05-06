@@ -55,7 +55,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
               placeholder={f.placeholder}
               style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }}
             />
-            <div style={{ fontSize: '11px', opacity: 0.8 marginTop: '4px' }}>{f.hint}</div>
+            <div style={{ fontSize: '11px', opacity: 0.8, marginTop: '4px' }}>{f.hint}</div>
           </div>
         ))}
       </div>
@@ -104,7 +104,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
           <div style={{ fontSize: '12px', opacity: 0.8, marginTop: '8px' }}>{stateName} pays up to {fmt(maxWeekly)}/week for {maxWeeks} weeks</div>
         </div>
       )}
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 marginTop: '12px' }}> All calculations happen in your browser · No data stored</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, marginTop: '12px' }}> All calculations happen in your browser · No data stored</p>
     </div>
   );
 }

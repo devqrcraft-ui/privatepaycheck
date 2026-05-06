@@ -422,7 +422,7 @@ export default function TeacherPaycheckCalculator() {
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
         <br /><span style={{ fontSize: '11px', marginTop: '6px', display: 'block' }}>Pension rates sourced from official state TRS/STRS/PSERS websites. For informational purposes only — not tax advice.</span>
       </footer>
