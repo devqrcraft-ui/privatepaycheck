@@ -97,7 +97,7 @@ export default function W4Calculator(){
             <div><div style={{opacity: 0.8,fontSize:'11px',marginBottom:'3px'}}>Per Semi-Monthly</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck24)}</div></div>
             <div><div style={{opacity: 0.8,fontSize:'11px',marginBottom:'3px'}}>Per Weekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck52)}</div></div>
           </div>
-          <p style={{textAlign:'center',fontSize:'11px',opacity:0.8margin:'10px 0 0'}}> All calculations in your browser "— data never sent anywhere</p>
+          <p style={{textAlign:'center',fontSize:'11px',opacity: 0.8, margin:'10px 0 0'}}> All calculations in your browser "— data never sent anywhere</p>
         </div>
 
         <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'12px',padding:'24px',marginBottom:'24px'}}>
@@ -128,7 +128,7 @@ export default function W4Calculator(){
           </Link>
         </div>
       </div>
-      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
+      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link>
       </footer>
     </div>

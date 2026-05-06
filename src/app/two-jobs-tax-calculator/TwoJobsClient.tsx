@@ -95,7 +95,7 @@ export default function TwoJobsClient() {
           ) : (
             <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'12px',padding:'20px',textAlign:'center',color:'rgba(255,255,255,0.5)',fontSize:'14px'}}>Enter both salaries above to calculate</div>
           )}
-          <p style={{textAlign:'center',fontSize:'11px',opacity:0.8marginTop:'12px'}}>All calculations happen in your browser</p>
+          <p style={{textAlign:'center',fontSize:'11px',opacity: 0.8, marginTop:'12px'}}>All calculations happen in your browser</p>
         </div>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
           <Link href="/w4-withholding-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'16px',color:'#fff',textDecoration:'none'}}>
@@ -110,7 +110,7 @@ export default function TwoJobsClient() {
           </Link>
         </div>
       </div>
-      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
+      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
         2026 PrivatePaycheck.com
       </footer>
     </div>

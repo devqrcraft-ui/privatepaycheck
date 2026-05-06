@@ -33,7 +33,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>What is FICA Tax? Social Security & Medicare Explained (2026)</h1>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>January 28, 2026 · 4 min read</p>
 <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'12px',marginBottom:'28px'}}>
-{[{l:'Social Security',v:'6.2%',sub:'On first $176,100',c:'#818cf8'},{l:'Medicare',v:'1.45%',sub:'No wage cap',c:'#4ade80'},{l:'Total FICA',v:'7.65%',sub:'Employee share',c:'#fbbf24'},{l:'Employer Match',v:'7.65%',sub:'They pay same',c:'#f97316'}].map(b=>(<div key={b.l} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}><div style={{fontSize:'11px',opacity: 0.8,marginBottom:'6px'}}>{b.l}</div><div style={{fontSize:'22px',fontWeight:900,color:b.c}}>{b.v}</div><div style={{fontSize:'11px',opacity:0.8marginTop:'4px'}}>{b.sub}</div></div>))}
+{[{l:'Social Security',v:'6.2%',sub:'On first $176,100',c:'#818cf8'},{l:'Medicare',v:'1.45%',sub:'No wage cap',c:'#4ade80'},{l:'Total FICA',v:'7.65%',sub:'Employee share',c:'#fbbf24'},{l:'Employer Match',v:'7.65%',sub:'They pay same',c:'#f97316'}].map(b=>(<div key={b.l} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}><div style={{fontSize:'11px',opacity: 0.8,marginBottom:'6px'}}>{b.l}</div><div style={{fontSize:'22px',fontWeight:900,color:b.c}}>{b.v}</div><div style={{fontSize:'11px',opacity: 0.8, marginTop:'4px'}}>{b.sub}</div></div>))}
 </div>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>FICA stands for the Federal Insurance Contributions Act. It funds two programs: <strong>Social Security</strong> (retirement, disability, survivors benefits) and <strong>Medicare</strong> (health insurance for people 65+). Unlike federal income tax, FICA is flat — the same percentage regardless of income.</p>
@@ -59,5 +59,5 @@ Medicare: $75,000 × 1.45% = $1,087.50/year<br/>
 <Link href="/" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Paycheck Calculator →</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}

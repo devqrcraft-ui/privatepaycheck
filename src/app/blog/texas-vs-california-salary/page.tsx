@@ -55,5 +55,5 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <Link href="/california-paycheck-calculator" style={{display:'inline-block',background:'rgba(249,115,22,0.1)',border:'1px solid rgba(249,115,22,0.25)',color:'#f97316',fontWeight:700,padding:'10px 18px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>CA Paycheck Calculator →</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}
