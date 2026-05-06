@@ -29,10 +29,10 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
         ],
       })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › Increase Take-Home Pay</div>
+<div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › Increase Take-Home Pay</div>
 <div style={{display:'inline-block',background:'rgba(52,211,153,0.1)',color:'#34d399',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>STRATEGY</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>7 Ways to Increase Your Take-Home Pay in 2026 (Without a Raise)</h1>
-<p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>February 25, 2026 · 5 min read</p>
+<p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>February 25, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}><p>You do not need a raise to take home more money. By optimizing your pre-tax deductions, filing status, and benefits elections, most workers can increase their net pay by $2,000–$10,000 per year. Here are the seven most effective strategies.</p></div>
 <div style={{display:'flex',flexDirection:'column',gap:'16px',margin:'24px 0'}}>
 {TIPS.map((t,i)=>(<div key={t.n} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'12px',padding:'18px',display:'flex',gap:'14px',alignItems:'flex-start'}}>
@@ -58,5 +58,5 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <Link href="/" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Paycheck Calculator →</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}

@@ -40,12 +40,12 @@ export default function Post() {
       })}} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › Texas Paycheck Guide
         </div>
         <div style={{ display:'inline-block', background:'rgba(74,222,128,0.1)', color:'#4ade80', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>PAYCHECK</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>Texas Paycheck Calculator Guide 2026 — No State Income Tax Explained</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 20, 2026 · 6 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 20, 2026 · 6 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>Texas is one of nine states with no state income tax — meaning every dollar you earn is only taxed at the federal level. For workers, this translates to significantly more take-home pay compared to states like California or New York. Here's exactly what comes out of a Texas paycheck in 2026.</p>
@@ -77,7 +77,7 @@ export default function Post() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize:'13px', opacity:0.5 }}>* Estimate for single filer, standard deduction. Use the calculator below for exact results.</p>
+          <p style={{ fontSize:'13px', opacity: 0.8 }}>* Estimate for single filer, standard deduction. Use the calculator below for exact results.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Texas vs California: The Difference is Real</h2>
           <p>On a $75,000 salary, a California resident pays roughly $4,500/year in state income tax on top of federal taxes. A Texas resident pays $0. Over 10 years, that's $45,000+ difference — before factoring in investment growth.</p>
@@ -101,7 +101,7 @@ export default function Post() {
               { label:'401(k) Limit 2026', value:'$23,500' },
             ].map(f => (
               <div key={f.label} style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'8px', padding:'14px' }}>
-                <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'4px' }}>{f.label}</div>
+                <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'4px' }}>{f.label}</div>
                 <div style={{ fontWeight:700, color:'#4ade80' }}>{f.value}</div>
               </div>
             ))}
@@ -124,21 +124,21 @@ export default function Post() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px' }}>
             <Link href="/overtime-calculator/texas" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Texas Overtime Calculator</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>1.5x after 40 hrs/week →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>1.5x after 40 hrs/week →</div>
             </Link>
             <Link href="/unemployment-calculator/texas" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Texas Unemployment</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>Up to $563/week →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $563/week →</div>
             </Link>
             <Link href="/minimum-wage/texas" style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Texas Minimum Wage</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>$7.25/hour federal →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>$7.25/hour federal →</div>
             </Link>
           </div>
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

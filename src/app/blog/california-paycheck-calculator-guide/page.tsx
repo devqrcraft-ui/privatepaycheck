@@ -44,12 +44,12 @@ export default function Post() {
         ],
       })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › California Paycheck Guide
         </div>
         <div style={{ display:'inline-block', background:'rgba(249,115,22,0.1)', color:'#f97316', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>CALIFORNIA</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>California Paycheck 2026: Why Your Take-Home Is Lower Than Expected</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 8, 2026 · 7 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 8, 2026 · 7 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>California has the highest state income tax rate in the US — up to 13.3% on income over $1 million. But even at average salaries, CA workers pay significantly more than residents of most other states. Here is the full breakdown.</p>
@@ -109,14 +109,14 @@ export default function Post() {
               { slug:'overtime-pay-rules-by-state', title:'Overtime Rules by State 2026', tag:'Overtime' },
             ].map(p => (
               <Link key={p.slug} href={`/blog/${p.slug}`} style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
-                <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'6px' }}>{p.tag}</div>
+                <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'6px' }}>{p.tag}</div>
                 <div style={{ fontSize:'13px', fontWeight:700, lineHeight:1.4 }}>{p.title}</div>
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

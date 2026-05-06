@@ -90,7 +90,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
           ].map(s => (
             <div key={s.label} style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '22px', marginBottom: '4px' }}>{s.icon}</div>
-              <div style={{ fontSize: '11px', opacity: 0.5, marginBottom: '2px' }}>{s.label}</div>
+              <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '2px' }}>{s.label}</div>
               <div style={{ fontWeight: 800, fontSize: '18px', color: '#f472b6' }}>{s.value}</div>
             </div>
           ))}

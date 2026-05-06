@@ -135,7 +135,7 @@ export default function SigningBonusCalculator() {
             <div style={{ ...CARD, background:'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(201,168,76,0.15))', border:'1px solid rgba(74,222,128,0.3)', textAlign:'center', padding:'28px' }}>
               <div style={{ fontSize:'13px', opacity:0.65, marginBottom:'6px' }}>You'll Take Home</div>
               <div style={{ fontSize:'48px', fontWeight:900, color:'#4ade80' }}>{fmt(takeHome)}</div>
-              <div style={{ fontSize:'13px', opacity:0.5, marginTop:'6px' }}>from {fmt(bonus)} signing bonus</div>
+              <div style={{ fontSize:'13px', opacity: 0.8, marginTop:'6px' }}>from {fmt(bonus)} signing bonus</div>
             </div>
 
             <div style={CARD}>
@@ -152,7 +152,7 @@ export default function SigningBonusCalculator() {
                 </div>
               ))}
               <div style={{ marginTop:'12px', textAlign:'center' }}>
-                <span style={{ fontSize:'13px', opacity:0.5 }}>Effective Rate: </span>
+                <span style={{ fontSize:'13px', opacity: 0.8 }}>Effective Rate: </span>
                 <span style={{ color:'#e879f9', fontWeight:700 }}>{pct(effectiveRate)}</span>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function SigningBonusCalculator() {
         </div>
 
         <div style={{ marginTop:'32px', textAlign:'center' }}>
-          <div style={{ fontSize:'14px', opacity:0.5, marginBottom:'12px' }}>Related Calculators</div>
+          <div style={{ fontSize:'14px', opacity: 0.8, marginBottom:'12px' }}>Related Calculators</div>
           <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center' }}>
             {[
               { href:'/bonus-tax-calculator', label:' Bonus Tax Calculator' },
@@ -199,7 +199,7 @@ export default function SigningBonusCalculator() {
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'16px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </div>

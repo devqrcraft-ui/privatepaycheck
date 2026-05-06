@@ -25,12 +25,12 @@ export default function Post() {
       })}} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › Florida Unemployment 2026
         </div>
         <div style={{ display:'inline-block', background:'rgba(99,102,241,0.1)', color:'#a5b4fc', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>UNEMPLOYMENT</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>Florida Unemployment Benefits 2026 — How Much Will You Get?</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 21, 2026 · 5 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 21, 2026 · 5 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>Florida has one of the most restrictive unemployment systems in the US — the maximum benefit is $275/week for just 12 weeks. If you've recently lost your job in Florida, here's exactly what you can expect and how to calculate your benefit.</p>
@@ -44,7 +44,7 @@ export default function Post() {
               { label:'Max Total Benefit', value:'$3,300', color:'#f87171' },
             ].map(s => (
               <div key={s.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', textAlign:'center' }}>
-                <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'4px' }}>{s.label}</div>
+                <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'4px' }}>{s.label}</div>
                 <div style={{ fontWeight:800, fontSize:'18px', color:s.color }}>{s.value}</div>
               </div>
             ))}
@@ -111,21 +111,21 @@ export default function Post() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px' }}>
             <Link href="/florida-paycheck-calculator" style={{ display:'block', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Florida Paycheck Calculator</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>No state income tax →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>No state income tax →</div>
             </Link>
             <Link href="/overtime-calculator/florida" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Florida Overtime Calculator</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>Federal 1.5x rules →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Federal 1.5x rules →</div>
             </Link>
             <Link href="/minimum-wage/florida" style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Florida Minimum Wage</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>$13.00/hour in 2026 →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>$13.00/hour in 2026 →</div>
             </Link>
           </div>
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

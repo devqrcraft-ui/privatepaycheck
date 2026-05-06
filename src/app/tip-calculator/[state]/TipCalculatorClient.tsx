@@ -158,7 +158,7 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
           Enter your salary and annual tips to see your tax savings
         </div>
       )}
-      <p style={{ textAlign:'center', fontSize:'11px', opacity:0.3, marginTop:'12px' }}> All calculations happen in your browser · Estimates for planning purposes</p>
+      <p style={{ textAlign:'center', fontSize:'11px', opacity:0.8 marginTop:'12px' }}> All calculations happen in your browser · Estimates for planning purposes</p>
     </div>
   );
 }

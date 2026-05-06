@@ -82,7 +82,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 16px' }}>
         {/* Breadcrumb */}
-        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+        <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '24px' }}>
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
           {' › '}
           <Link href="/overtime-calculator" style={{ color: 'inherit', textDecoration: 'none' }}>Overtime Calculator</Link>
@@ -115,7 +115,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           ].map(b => (
             <div key={b.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{b.icon}</div>
-              <div style={{ fontSize: '11px', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>{b.label}</div>
+              <div style={{ fontSize: '11px', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>{b.label}</div>
               <div style={{ fontWeight: 700, fontSize: '15px' }}>{b.value}</div>
             </div>
           ))}
@@ -164,7 +164,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
@@ -219,7 +219,7 @@ function OvertimeCalculatorWidget({ stateName, hasDoubleTime, hasDailyOT, dailyO
           {!hasDoubleTime && !hasDailyOT && <span>Federal rule: 1.5x after 40 hrs/week</span>}
         </div>
       </div>
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}> All calculations happen in your browser</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 marginTop: '12px' }}> All calculations happen in your browser</p>
     </div>
   );
 }

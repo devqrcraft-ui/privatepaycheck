@@ -46,12 +46,12 @@ export default function Post() {
         ],
       })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › 401(k) Limits 2026
         </div>
         <div style={{ display:'inline-block', background:'rgba(251,191,36,0.1)', color:'#fbbf24', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>401(K)</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>401(k) Contribution Limits 2026 — Max Out & Save Thousands in Taxes</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 1, 2026 · 4 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 1, 2026 · 4 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>Contributing to your 401(k) is the most powerful tax move available to most W-2 employees. Every dollar you contribute reduces your taxable income dollar-for-dollar — meaning you pay less in federal tax, state tax, and sometimes even FICA.</p>
@@ -67,9 +67,9 @@ export default function Post() {
             { label:'Total (with match)', value:'$70,000', sub:'Employee + employer', color:'#a5b4fc' },
           ].map(b => (
             <div key={b.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'16px', textAlign:'center' }}>
-              <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'6px', textTransform:'uppercase', letterSpacing:'0.05em' }}>{b.label}</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'6px', textTransform:'uppercase', letterSpacing:'0.05em' }}>{b.label}</div>
               <div style={{ fontSize:'22px', fontWeight:900, color:b.color }}>{b.value}</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>{b.sub}</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>{b.sub}</div>
             </div>
           ))}
         </div>
@@ -132,14 +132,14 @@ export default function Post() {
               { slug:'no-income-tax-states-2026', title:'9 States With No Income Tax — Real Savings Breakdown', tag:'State Taxes' },
             ].map(p => (
               <Link key={p.slug} href={`/blog/${p.slug}`} style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
-                <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'6px' }}>{p.tag}</div>
+                <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'6px' }}>{p.tag}</div>
                 <div style={{ fontSize:'13px', fontWeight:700, lineHeight:1.4 }}>{p.title}</div>
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

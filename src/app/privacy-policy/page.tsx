@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <h1 style={{ fontSize:'clamp(24px,4vw,40px)', fontWeight:900, margin:'0 0 8px' }}>Privacy Policy</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'40px' }}>Last updated: February 27, 2026</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'40px' }}>Last updated: February 27, 2026</p>
 
         <div style={{ display:'flex', flexDirection:'column', gap:'32px', fontSize:'15px', lineHeight:1.8, opacity:0.85 }}>
 
@@ -79,7 +79,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>

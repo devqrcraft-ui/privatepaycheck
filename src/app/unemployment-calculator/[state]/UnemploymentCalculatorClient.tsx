@@ -55,7 +55,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
               placeholder={f.placeholder}
               style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }}
             />
-            <div style={{ fontSize: '11px', opacity: 0.4, marginTop: '4px' }}>{f.hint}</div>
+            <div style={{ fontSize: '11px', opacity: 0.8 marginTop: '4px' }}>{f.hint}</div>
           </div>
         ))}
       </div>
@@ -76,7 +76,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
               <div key={s.label} style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
                 <div style={{ fontSize: '18px', marginBottom: '4px' }}>{s.icon}</div>
                 <div style={{ fontWeight: 800, fontSize: '16px', color: s.color }}>{s.value}</div>
-                <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '2px' }}>{s.label}</div>
+                <div style={{ fontSize: '11px', opacity: 0.8, marginTop: '2px' }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -101,10 +101,10 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '24px', textAlign: 'center', color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
           <div style={{ fontSize: '32px', marginBottom: '8px' }}></div>
           Enter your quarterly earnings above to estimate your weekly benefit
-          <div style={{ fontSize: '12px', opacity: 0.5, marginTop: '8px' }}>{stateName} pays up to {fmt(maxWeekly)}/week for {maxWeeks} weeks</div>
+          <div style={{ fontSize: '12px', opacity: 0.8, marginTop: '8px' }}>{stateName} pays up to {fmt(maxWeekly)}/week for {maxWeeks} weeks</div>
         </div>
       )}
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, marginTop: '12px' }}> All calculations happen in your browser · No data stored</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 marginTop: '12px' }}> All calculations happen in your browser · No data stored</p>
     </div>
   );
 }

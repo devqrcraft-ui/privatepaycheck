@@ -29,7 +29,7 @@ export default function Post() {
       })}} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> ›{' '}
           <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › How to Calculate Take-Home Pay 2026
         </div>
@@ -37,7 +37,7 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(24px,4vw,40px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.2 }}>
           How to Calculate Your Take-Home Pay in the US (2026)
         </h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>March 20, 2026 · 10 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>March 20, 2026 · 10 min read</p>
 
         <div style={{ background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:10, padding:'16px 20px', marginBottom:32 }}>
           <div style={{ fontSize:14, opacity:0.9, marginBottom:10 }}>Want the instant answer? Skip the guide and use our free calculator:</div>
@@ -125,7 +125,7 @@ export default function Post() {
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

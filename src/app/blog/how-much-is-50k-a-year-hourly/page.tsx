@@ -29,12 +29,12 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
         ],
       })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › $50k a Year Hourly</div>
+<div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › $50k a Year Hourly</div>
 <div style={{display:'inline-block',background:'rgba(129,140,248,0.1)',color:'#818cf8',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY MATH</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>$50,000 a Year is How Much an Hour? (2026 After-Tax Breakdown)</h1>
-<p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>February 20, 2026 · 4 min read</p>
+<p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>February 20, 2026 · 4 min read</p>
 <div style={{background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'20px',marginBottom:'28px',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:'16px',textAlign:'center'}}>
-{[{l:'Hourly (gross)',v:'$24.04'},{l:'Daily (8h)',v:'$192.31'},{l:'Weekly',v:'$961.54'},{l:'Monthly',v:'$4,166.67'}].map(b=>(<div key={b.l}><div style={{fontSize:'11px',opacity:0.5,marginBottom:'4px',textTransform:'uppercase'}}>{b.l}</div><div style={{fontSize:'22px',fontWeight:900,color:'#4ade80'}}>{b.v}</div></div>))}
+{[{l:'Hourly (gross)',v:'$24.04'},{l:'Daily (8h)',v:'$192.31'},{l:'Weekly',v:'$961.54'},{l:'Monthly',v:'$4,166.67'}].map(b=>(<div key={b.l}><div style={{fontSize:'11px',opacity: 0.8,marginBottom:'4px',textTransform:'uppercase'}}>{b.l}</div><div style={{fontSize:'22px',fontWeight:900,color:'#4ade80'}}>{b.v}</div></div>))}
 </div>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>Dividing $50,000 by 52 weeks and 40 hours gives you <strong>$24.04/hour gross</strong>. But what actually lands in your bank account after taxes? That depends heavily on your state.</p>
@@ -60,5 +60,5 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <Link href="/" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Paycheck Calculator →</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 const EXAMPLES=[{from:40000,raise:5000,kept:3350,pct:67},{from:60000,raise:8000,kept:5360,pct:67},{from:80000,raise:10000,kept:6720,pct:67},{from:100000,raise:15000,kept:9180,pct:61},{from:150000,raise:20000,kept:11280,pct:56},{from:200000,raise:25000,kept:13500,pct:54}];
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є How Much of My Raise Do I Keep</div>
+<div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є How Much of My Raise Do I Keep</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>How Much of My Raise Do I Actually Keep After Taxes? (2026)</h1>
-<p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 4 min read</p>
+<p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 4 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>You negotiated a $10,000 raise. Congratulations! But after federal taxes, state taxes, and FICA, how much of that actually lands in your bank account? The answer might surprise you "" but it is never as bad as people fear.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>The Marginal Rate Myth</h2>
@@ -46,5 +46,5 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <Link href="/raise-calculator" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Raise Calculator в†'</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}

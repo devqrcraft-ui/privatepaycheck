@@ -84,7 +84,7 @@ export default function W4Calculator(){
                   <div style={{background:'rgba(201,168,76,0.15)',color:'#F5C842',padding:'4px 10px',borderRadius:'6px',fontSize:'11px',fontWeight:700,whiteSpace:'nowrap'}}>{row.step}</div>
                   <div style={{flex:1}}>
                     <div style={{fontWeight:700,fontSize:'13px',marginBottom:'2px'}}>{row.field}: <span style={{color:'#4ade80'}}>{row.value}</span></div>
-                    <div style={{fontSize:'11px',opacity:0.5}}>{row.note}</div>
+                    <div style={{fontSize:'11px',opacity: 0.8}}>{row.note}</div>
                   </div>
                 </div>
               ))}
@@ -92,12 +92,12 @@ export default function W4Calculator(){
           </div>
 
           <div style={{marginTop:'16px',background:'rgba(255,255,255,0.03)',borderRadius:'10px',padding:'16px',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:'10px',textAlign:'center',fontSize:'13px'}}>
-            <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Annual Fed Tax</div><div style={{fontWeight:800,color:'#f87171'}}>{fmt(r.fedOwed)}</div></div>
-            <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Biweekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck26)}</div></div>
-            <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Semi-Monthly</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck24)}</div></div>
-            <div><div style={{opacity:0.5,fontSize:'11px',marginBottom:'3px'}}>Per Weekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck52)}</div></div>
+            <div><div style={{opacity: 0.8,fontSize:'11px',marginBottom:'3px'}}>Annual Fed Tax</div><div style={{fontWeight:800,color:'#f87171'}}>{fmt(r.fedOwed)}</div></div>
+            <div><div style={{opacity: 0.8,fontSize:'11px',marginBottom:'3px'}}>Per Biweekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck26)}</div></div>
+            <div><div style={{opacity: 0.8,fontSize:'11px',marginBottom:'3px'}}>Per Semi-Monthly</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck24)}</div></div>
+            <div><div style={{opacity: 0.8,fontSize:'11px',marginBottom:'3px'}}>Per Weekly Check</div><div style={{fontWeight:800}}>{fmtD(r.perPaycheck52)}</div></div>
           </div>
-          <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,margin:'10px 0 0'}}> All calculations in your browser "— data never sent anywhere</p>
+          <p style={{textAlign:'center',fontSize:'11px',opacity:0.8margin:'10px 0 0'}}> All calculations in your browser "— data never sent anywhere</p>
         </div>
 
         <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'12px',padding:'24px',marginBottom:'24px'}}>
@@ -119,16 +119,16 @@ export default function W4Calculator(){
           <Link href="/two-jobs-tax-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
             <div style={{fontSize:'20px',marginBottom:'6px'}}></div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Two Jobs Tax Calculator</div>
-            <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>Fix two-job shortfall в†'</div>
+            <div style={{fontSize:'11px',opacity: 0.8,marginTop:'3px'}}>Fix two-job shortfall в†'</div>
           </Link>
           <Link href="/" style={{display:'block',background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'14px',color:'white',textDecoration:'none',textAlign:'center'}}>
             <div style={{fontSize:'20px',marginBottom:'6px'}}></div>
             <div style={{fontWeight:700,fontSize:'13px'}}>Paycheck Calculator</div>
-            <div style={{fontSize:'11px',opacity:0.5,marginTop:'3px'}}>See take-home pay в†'</div>
+            <div style={{fontSize:'11px',opacity: 0.8,marginTop:'3px'}}>See take-home pay в†'</div>
           </Link>
         </div>
       </div>
-      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
+      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link>
       </footer>
     </div>

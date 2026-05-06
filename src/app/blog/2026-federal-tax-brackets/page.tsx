@@ -30,15 +30,15 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
         ],
       })}} />
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › 2026 Tax Brackets</div>
+<div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › 2026 Tax Brackets</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>TAX BASICS</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>2026 Federal Income Tax Brackets — Complete Guide</h1>
-<p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>January 10, 2026 · 5 min read</p>
+<p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>January 10, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>The IRS adjusts tax brackets annually for inflation. Here are the official 2026 federal income tax brackets for all filing statuses, plus the standard deduction, FICA rates, and key limits.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>2026 Standard Deduction</h2>
 <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'12px',marginBottom:'28px'}}>
-{[{l:'Single',v:'$15,000'},{l:'Married Filing Jointly',v:'$30,000'},{l:'Head of Household',v:'$22,500'},{l:'Married Filing Separately',v:'$15,000'}].map(b=>(<div key={b.l} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}><div style={{fontSize:'11px',opacity:0.5,marginBottom:'6px'}}>{b.l}</div><div style={{fontSize:'20px',fontWeight:900,color:'#4ade80'}}>{b.v}</div></div>))}
+{[{l:'Single',v:'$15,000'},{l:'Married Filing Jointly',v:'$30,000'},{l:'Head of Household',v:'$22,500'},{l:'Married Filing Separately',v:'$15,000'}].map(b=>(<div key={b.l} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}><div style={{fontSize:'11px',opacity: 0.8,marginBottom:'6px'}}>{b.l}</div><div style={{fontSize:'20px',fontWeight:900,color:'#4ade80'}}>{b.v}</div></div>))}
 </div>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'0 0 12px',color:'white'}}>2026 Tax Brackets — Single Filers</h2>
 </div>
@@ -71,5 +71,5 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <Link href="/" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open Paycheck Calculator →</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}

@@ -71,7 +71,7 @@ export default function NoTaxOnTipsCalculator() {
             <div style={{ textAlign: 'center', marginBottom: '20px' }}>
               <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '4px' }}>Your Annual Tax Savings</div>
               <div style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 900, color: '#4ade80', lineHeight: 1 }}>{fmt(r.totalSavings)}</div>
-              <div style={{ fontSize: '13px', opacity: 0.5, marginTop: '6px' }}>Federal income tax + FICA savings</div>
+              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>Federal income tax + FICA savings</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '10px', marginBottom: '16px' }}>
               {[
@@ -81,7 +81,7 @@ export default function NoTaxOnTipsCalculator() {
                 { l: 'FICA Saved', v: fmt(r.ficaSavings), c: '#4ade80' },
               ].map(b => (
                 <div key={b.l} style={{ background: 'rgba(0,0,0,0.25)', borderRadius: '8px', padding: '10px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '11px', opacity: 0.5, marginBottom: '3px' }}>{b.l}</div>
+                  <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '3px' }}>{b.l}</div>
                   <div style={{ fontWeight: 800, fontSize: '16px', color: b.c || 'white' }}>{b.v}</div>
                 </div>
               ))}
@@ -91,7 +91,7 @@ export default function NoTaxOnTipsCalculator() {
               <div style={{ opacity: 0.7 }}>Tax WITH exemption: <strong style={{ color: '#4ade80' }}>{fmt(r.fedNew)}</strong></div>
             </div>
           </div>
-          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.3, margin: '10px 0 0' }}>All calculations in your browser &mdash; data never sent anywhere</p>
+          <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8 margin: '10px 0 0' }}>All calculations in your browser &mdash; data never sent anywhere</p>
         </div>
 
         <div style={{ background: 'rgba(251,191,36,0.06)', border: '1px solid rgba(251,191,36,0.15)', borderRadius: '12px', padding: '18px', marginBottom: '24px' }}>
@@ -117,11 +117,11 @@ export default function NoTaxOnTipsCalculator() {
         <div style={{ marginTop: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
           <Link href="/no-tax-on-overtime-deduction" style={{ display: 'block', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>No Tax on Overtime</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Calculate OT savings &rarr;</div>
+            <div style={{ fontSize: '11px', opacity: 0.8, marginTop: '3px' }}>Calculate OT savings &rarr;</div>
           </Link>
           <Link href="/" style={{ display: 'block', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '14px', color: 'white', textDecoration: 'none', textAlign: 'center' }}>
             <div style={{ fontWeight: 700, fontSize: '13px' }}>Paycheck Calculator</div>
-            <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '3px' }}>Full breakdown &rarr;</div>
+            <div style={{ fontSize: '11px', opacity: 0.8, marginTop: '3px' }}>Full breakdown &rarr;</div>
           </Link>
         </div>
       </div>

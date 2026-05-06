@@ -57,12 +57,12 @@ export default function Post() {
         ],
       })}} />
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › No Income Tax States 2026
         </div>
         <div style={{ display:'inline-block', background:'rgba(129,140,248,0.1)', color:'#818cf8', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>STATE TAXES</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>9 States With No Income Tax in 2026 — How Much Do You Actually Save?</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>January 22, 2026 · 5 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>January 22, 2026 · 5 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>Moving to a no-income-tax state sounds like a financial win — and it often is. But the savings depend heavily on your income, and some states make up the difference with higher property taxes, sales taxes, or cost of living. Here is what the numbers actually look like.</p>
@@ -141,14 +141,14 @@ export default function Post() {
               { slug:'california-paycheck-calculator-guide', title:'Why Your California Paycheck Is Lower Than Expected', tag:'California' },
             ].map(p => (
               <Link key={p.slug} href={`/blog/${p.slug}`} style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
-                <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'6px' }}>{p.tag}</div>
+                <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'6px' }}>{p.tag}</div>
                 <div style={{ fontSize:'13px', fontWeight:700, lineHeight:1.4 }}>{p.title}</div>
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

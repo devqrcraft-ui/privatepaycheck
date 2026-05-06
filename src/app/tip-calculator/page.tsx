@@ -82,7 +82,7 @@ export default function TipHub() {
           ].map(s => (
             <div key={s.label} style={{ textAlign:'center' }}>
               <div style={{ fontSize:'22px', marginBottom:'4px' }}>{s.icon}</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginBottom:'2px' }}>{s.label}</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'2px' }}>{s.label}</div>
               <div style={{ fontWeight:800, fontSize:'18px', color:'#f472b6' }}>{s.value}</div>
             </div>
           ))}
@@ -94,13 +94,13 @@ export default function TipHub() {
               <div style={{ fontWeight:700, fontSize:'14px', marginBottom:'4px' }}>{s.name}</div>
               {s.noTax
                 ? <div style={{ fontSize:'11px', color:'#4ade80' }}>No state tax </div>
-                : <div style={{ fontSize:'11px', opacity:0.5 }}>Tip tax calculator →</div>
+                : <div style={{ fontSize:'11px', opacity: 0.8 }}>Tip tax calculator →</div>
               }
             </Link>
           ))}
         </div>
       </div>
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

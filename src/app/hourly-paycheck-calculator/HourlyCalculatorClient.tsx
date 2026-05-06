@@ -114,7 +114,7 @@ export default function HourlyPaycheckCalculator() {
       <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'32px 16px' }}>
 
         {/* BREADCRUMB */}
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'20px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'20px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › Hourly Paycheck Calculator
         </div>
 
@@ -185,7 +185,7 @@ export default function HourlyPaycheckCalculator() {
             <div style={{ textAlign:'center', marginBottom:'20px' }}>
               <div style={{ fontSize:'13px', opacity:0.6, marginBottom:'4px' }}>Annual Gross → Take-Home</div>
               <div style={{ fontSize:'clamp(28px,5vw,48px)', fontWeight:900, color:'#4ade80', lineHeight:1 }}>{fmt(r.net)}</div>
-              <div style={{ fontSize:'13px', opacity:0.5, marginTop:'4px' }}>per year · {stObj.name}</div>
+              <div style={{ fontSize:'13px', opacity: 0.8, marginTop:'4px' }}>per year · {stObj.name}</div>
             </div>
             <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))', gap:'12px', marginBottom:'20px' }}>
               {[
@@ -230,7 +230,7 @@ export default function HourlyPaycheckCalculator() {
               </div>
             </div>
           </div>
-          <p style={{ textAlign:'center', fontSize:'11px', opacity:0.3, margin:'12px 0 0' }}> All calculations happen in your browser — your data is never sent anywhere</p>
+          <p style={{ textAlign:'center', fontSize:'11px', opacity:0.8 margin:'12px 0 0' }}> All calculations happen in your browser — your data is never sent anywhere</p>
         </div>
 
         {/* QUICK REFERENCE TABLE */}
@@ -326,7 +326,7 @@ export default function HourlyPaycheckCalculator() {
         {/* STATE GRID */}
         <div>
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'8px', textAlign:'center' }}>Hourly Calculator by State</h2>
-          <p style={{ textAlign:'center', opacity:0.5, fontSize:'13px', marginBottom:'20px' }}>State tax rates automatically applied when you select your state above</p>
+          <p style={{ textAlign:'center', opacity: 0.8, fontSize:'13px', marginBottom:'20px' }}>State tax rates automatically applied when you select your state above</p>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(160px,1fr))', gap:'8px' }}>
             {STATES.map(s => (
               <div key={s.code} onClick={() => setState(s.code)} style={{ background: state===s.code ? 'rgba(129,140,248,0.15)' : 'rgba(255,255,255,0.03)', border: state===s.code ? '1px solid rgba(129,140,248,0.4)' : '1px solid rgba(255,255,255,0.06)', borderRadius:'8px', padding:'10px 12px', cursor:'pointer', transition:'all .15s' }}>
@@ -338,7 +338,7 @@ export default function HourlyPaycheckCalculator() {
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>

@@ -44,12 +44,12 @@ export default function Post() {
       })}} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › California Minimum Wage 2026
         </div>
         <div style={{ display:'inline-block', background:'rgba(16,185,129,0.1)', color:'#6ee7b7', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>MINIMUM WAGE</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>California Minimum Wage 2026 — History, Changes & What Workers Need to Know</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 23, 2026 · 6 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 23, 2026 · 6 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>California's minimum wage has more than doubled since 2016, rising from $10/hour to $16.50/hour in 2026. The state has no separate tipped minimum wage — all workers receive the full rate regardless of tips. Here's everything workers and employers need to know.</p>
@@ -67,7 +67,7 @@ export default function Post() {
                 { label:'Per Year', value:'$34,320' },
               ].map(s => (
                 <div key={s.label} style={{ background:'rgba(255,255,255,0.06)', borderRadius:'8px', padding:'10px 6px' }}>
-                  <div style={{ fontSize:'10px', opacity:0.5, marginBottom:'2px' }}>{s.label}</div>
+                  <div style={{ fontSize:'10px', opacity: 0.8, marginBottom:'2px' }}>{s.label}</div>
                   <div style={{ fontWeight:700, fontSize:'14px' }}>{s.value}</div>
                 </div>
               ))}
@@ -148,21 +148,21 @@ export default function Post() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px' }}>
             <Link href="/overtime-calculator/california" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>CA Overtime Calculator</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>Double-time rules →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Double-time rules →</div>
             </Link>
             <Link href="/unemployment-calculator/california" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>CA Unemployment</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>Up to $450/week →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $450/week →</div>
             </Link>
             <Link href="/blog/overtime-pay-rules-by-state" style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Overtime Rules by State</div>
-              <div style={{ fontSize:'11px', opacity:0.5, marginTop:'4px' }}>CA has strictest rules →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>CA has strictest rules →</div>
             </Link>
           </div>
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

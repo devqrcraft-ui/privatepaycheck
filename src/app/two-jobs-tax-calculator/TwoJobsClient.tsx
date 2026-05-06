@@ -47,7 +47,7 @@ export default function TwoJobsClient() {
   return (
     <div style={{minHeight:'100vh',background:'#091526',color:'#fff',fontFamily:'system-ui,sans-serif'}}>
       <div style={{maxWidth:'860px',margin:'0 auto',padding:'40px 16px'}}>
-        <div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}>
+        <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}>
           <Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link>{' › Two Jobs Tax Calculator'}
         </div>
         <div style={{textAlign:'center',marginBottom:'36px'}}>
@@ -86,7 +86,7 @@ export default function TwoJobsClient() {
               <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'12px'}}>
                 {[{label:'Combined Income',value:fmt(res.combined),color:'#fff'},{label:'Total Tax Owed',value:fmt(res.total),color:'#f87171'},{label:'Effective Rate',value:res.rate.toFixed(1)+'%',color:'#fbbf24'},{label:'Extra Per Paycheck',value:res.shortfall>0?fmt(res.extra):'$0',color:res.shortfall>0?'#f87171':'#4ade80'}].map(r=>(
                   <div key={r.label} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}>
-                    <div style={{fontSize:'11px',opacity:0.5,marginBottom:'4px',textTransform:'uppercase' as const}}>{r.label}</div>
+                    <div style={{fontSize:'11px',opacity: 0.8,marginBottom:'4px',textTransform:'uppercase' as const}}>{r.label}</div>
                     <div style={{fontWeight:800,fontSize:'18px',color:r.color}}>{r.value}</div>
                   </div>
                 ))}
@@ -95,7 +95,7 @@ export default function TwoJobsClient() {
           ) : (
             <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:'12px',padding:'20px',textAlign:'center',color:'rgba(255,255,255,0.5)',fontSize:'14px'}}>Enter both salaries above to calculate</div>
           )}
-          <p style={{textAlign:'center',fontSize:'11px',opacity:0.3,marginTop:'12px'}}>All calculations happen in your browser</p>
+          <p style={{textAlign:'center',fontSize:'11px',opacity:0.8marginTop:'12px'}}>All calculations happen in your browser</p>
         </div>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:'12px'}}>
           <Link href="/w4-withholding-calculator" style={{display:'block',background:'rgba(129,140,248,0.08)',border:'1px solid rgba(201,168,76,0.15)',borderRadius:'12px',padding:'16px',color:'#fff',textDecoration:'none'}}>
@@ -110,7 +110,7 @@ export default function TwoJobsClient() {
           </Link>
         </div>
       </div>
-      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
+      <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>
         2026 PrivatePaycheck.com
       </footer>
     </div>

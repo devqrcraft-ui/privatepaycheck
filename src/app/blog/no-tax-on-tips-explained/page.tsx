@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 };
 export default function Post(){return(<main style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>
 <div style={{maxWidth:'740px',margin:'0 auto',padding:'40px 16px'}}>
-<div style={{fontSize:'13px',opacity:0.5,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є No Tax on Tips Explained</div>
+<div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є No Tax on Tips Explained</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>рџ"Ґ NEW 2026</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>No Tax on Tips Explained: Who Qualifies & How Much You Save (2026)</h1>
-<p style={{opacity:0.5,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
+<p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>The &quot;No Tax on Tips&quot; proposal has been one of the most discussed tax policy ideas of 2025-2026. For the estimated 4 million tipped workers in the US, it could mean keeping an extra $1,500 to $4,000 per year. Here is everything you need to know.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>What Is the No Tax on Tips Proposal?</h2>
@@ -56,5 +56,5 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <Link href="/no-tax-on-tips-calculator" style={{display:'inline-block',background:'linear-gradient(135deg,#4ade80,#22c55e)',color:'#052e16',fontWeight:800,padding:'11px 24px',borderRadius:'9px',textDecoration:'none',fontSize:'14px'}}>Open No Tax on Tips Calculator в†'</Link>
 </div>
 </div>
-<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.4,borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
+<footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity:0.8borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
 </main>);}

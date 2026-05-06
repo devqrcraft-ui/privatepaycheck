@@ -80,7 +80,7 @@ export default function NursePaycheckHub() {
 
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '40px 16px' }}>
 
-        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+        <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '24px' }}>
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
           {' > '}
           <span>Nurse Paycheck Calculator</span>
@@ -150,7 +150,7 @@ export default function NursePaycheckHub() {
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
                 {['State', 'Median RN Salary', 'State Tax', 'Est. Annual Net'].map(h => (
-                  <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.5, fontWeight: 700 }}>{h}</th>
+                  <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8, fontWeight: 700 }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -217,7 +217,7 @@ export default function NursePaycheckHub() {
         </p>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '20px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '20px' }}>
         © 2026 PrivatePaycheck.com
         {' · '}
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link>

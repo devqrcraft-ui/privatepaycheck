@@ -133,7 +133,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
 
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 16px' }}>
         {/* Breadcrumb */}
-        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+        <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '24px' }}>
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
           {' › '}
           <Link href="/minimum-wage" style={{ color: 'inherit', textDecoration: 'none' }}>Minimum Wage</Link>
@@ -166,7 +166,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
             { label: 'Per Year (FT)', value: `${annualFT.toLocaleString()}`, color: '#f87171' },
           ].map(s => (
             <div key={s.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
-              <div style={{ fontSize: '11px', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>{s.label}</div>
+              <div style={{ fontSize: '11px', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>{s.label}</div>
               <div style={{ fontWeight: 800, fontSize: '18px', color: s.color }}>{s.value}</div>
             </div>
           ))}
@@ -224,7 +224,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '40px' }}>
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>

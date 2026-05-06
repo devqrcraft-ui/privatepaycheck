@@ -63,7 +63,7 @@ export default function OvertimeHubPage() {
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '40px 16px' }}>
         {/* Breadcrumb */}
-        <div style={{ fontSize: '13px', opacity: 0.5, marginBottom: '24px' }}>
+        <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '24px' }}>
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
           {' › '}
           <span>Overtime Calculator</span>
@@ -112,7 +112,7 @@ export default function OvertimeHubPage() {
                 borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none',
               }}>
                 <div style={{ fontWeight: 700, fontSize: '14px' }}>{name}</div>
-                <div style={{ fontSize: '11px', opacity: 0.5, marginTop: '4px' }}>
+                <div style={{ fontSize: '11px', opacity: 0.8, marginTop: '4px' }}>
                   {hasNote ? hasNote : 'Federal 1.5x rules'}
                 </div>
               </Link>
@@ -140,7 +140,7 @@ export default function OvertimeHubPage() {
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
       </footer>
     </main>

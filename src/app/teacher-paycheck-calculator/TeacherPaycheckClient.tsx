@@ -285,7 +285,7 @@ export default function TeacherPaycheckCalculator() {
             <div style={{ ...CARD, background: 'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(201,168,76,0.15))', border: '1px solid rgba(74,222,128,0.3)', textAlign: 'center', padding: '28px' }}>
               <div style={{ fontSize: '13px', opacity: 0.65, marginBottom: '4px' }}>Monthly Take-Home</div>
               <div style={{ fontSize: '48px', fontWeight: 900, color: '#4ade80' }}>{fmt(res.monthlyTakeHome)}</div>
-              <div style={{ fontSize: '13px', opacity: 0.5, marginTop: '4px' }}>
+              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '4px' }}>
                 {fmt(res.takeHome)}/year · {pct(1 - res.effectiveRate)} of gross
               </div>
               {res.seniorDeduction > 0 && (
@@ -315,7 +315,7 @@ export default function TeacherPaycheckCalculator() {
                 </div>
               ))}
               <div style={{ marginTop: '10px', textAlign: 'center' }}>
-                <span style={{ fontSize: '13px', opacity: 0.5 }}>Effective Total Rate: </span>
+                <span style={{ fontSize: '13px', opacity: 0.8 }}>Effective Total Rate: </span>
                 <span style={{ color: '#e879f9', fontWeight: 700 }}>{pct(res.effectiveRate)}</span>
               </div>
             </div>
@@ -364,7 +364,7 @@ export default function TeacherPaycheckCalculator() {
               <thead>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   {['State', 'Pension System', 'Rate', '$60k Take-Home/mo', 'SS Covered?'].map(h => (
-                    <th key={h} style={{ textAlign: 'left', padding: '8px 10px', opacity: 0.5, fontWeight: 600, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{h}</th>
+                    <th key={h} style={{ textAlign: 'left', padding: '8px 10px', opacity: 0.8, fontWeight: 600, fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -406,7 +406,7 @@ export default function TeacherPaycheckCalculator() {
 
         {/* RELATED */}
         <div style={{ marginTop: '32px', textAlign: 'center' }}>
-          <div style={{ fontSize: '14px', opacity: 0.5, marginBottom: '12px' }}>Related Calculators</div>
+          <div style={{ fontSize: '14px', opacity: 0.8, marginBottom: '12px' }}>Related Calculators</div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
             {[
               { href: '/bonus-tax-calculator', label: ' Bonus Tax Calculator' },
@@ -422,7 +422,7 @@ export default function TeacherPaycheckCalculator() {
         </div>
       </div>
 
-      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.4, borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
+      <footer style={{ textAlign: 'center', padding: '24px', fontSize: '12px', opacity: 0.8 borderTop: '1px solid rgba(255,255,255,0.06)', marginTop: '16px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
         <br /><span style={{ fontSize: '11px', marginTop: '6px', display: 'block' }}>Pension rates sourced from official state TRS/STRS/PSERS websites. For informational purposes only — not tax advice.</span>
       </footer>

@@ -25,12 +25,12 @@ export default function Post() {
       })}} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
-        <div style={{ fontSize:'13px', opacity:0.5, marginBottom:'24px' }}>
+        <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link> › <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link> › How to Calculate Paycheck Taxes
         </div>
         <div style={{ display:'inline-block', background:'rgba(251,191,36,0.1)', color:'#fbbf24', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>TAXES</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>How to Calculate Paycheck Taxes 2026 — Step by Step Guide</h1>
-        <p style={{ opacity:0.5, fontSize:'13px', marginBottom:'32px' }}>February 24, 2026 · 8 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 24, 2026 · 8 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <p>Understanding your paycheck taxes helps you budget better, spot errors, and find ways to legally reduce what you owe. Here's the exact process used to calculate every deduction on your pay stub — with a real $75,000 salary example throughout.</p>
@@ -94,7 +94,7 @@ export default function Post() {
               <div key={b.bracket} style={{ display:'grid', gridTemplateColumns:'60px 1fr 1fr', gap:'8px', padding:'10px 16px', borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.05)' : 'none', fontSize:'13px' }}>
                 <strong style={{ color:'#fbbf24' }}>{b.bracket}</strong>
                 <span style={{ opacity:0.7 }}>{b.from} – {b.to}</span>
-                <span style={{ opacity:0.5 }}>{b.on}</span>
+                <span style={{ opacity: 0.8 }}>{b.on}</span>
               </div>
             ))}
           </div>
@@ -146,7 +146,7 @@ export default function Post() {
         </div>
       </div>
 
-      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.4, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity:0.8 borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>

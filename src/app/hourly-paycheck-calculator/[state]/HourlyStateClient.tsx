@@ -130,14 +130,14 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>PAY BREAKDOWN</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>{stateName.toUpperCase()} · PER PAYCHECK</div>
             <div style={ROW}><span style={{ opacity: 0.7 }}>Gross Pay (per period)</span><span style={{ fontWeight: 700 }}>{fmt(perPeriodGross)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.4 }}>Aggregate method</div></div><span style={{ color: '#f87171' }}>-{fmt(federal / periodsPerYear)}</span></div>
+            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.8}}>Aggregate method</div></div><span style={{ color: '#f87171' }}>-{fmt(federal / periodsPerYear)}</span></div>
             <div style={ROW}>
               <div><div style={{ opacity: 0.7 }}>{stateName} State Tax</div>
-              <div style={{ fontSize: '11px', opacity: 0.4 }}>{noStateTax ? 'No state tax' : stateTax + '%'}</div></div>
+              <div style={{ fontSize: '11px', opacity: 0.8}}>{noStateTax ? 'No state tax' : stateTax + '%'}</div></div>
               <span style={noStateTax ? { color: '#4ade80' } : { color: '#f87171' }}>{noStateTax ? '$0' : '-' + fmt(state / periodsPerYear)}</span>
             </div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Social Security</div><div style={{ fontSize: '11px', opacity: 0.4 }}>6.2%</div></div><span style={{ color: '#f87171' }}>-{fmt(ss / periodsPerYear)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Medicare</div><div style={{ fontSize: '11px', opacity: 0.4 }}>1.45%</div></div><span style={{ color: '#f87171' }}>-{fmt(medicare / periodsPerYear)}</span></div>
+            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Social Security</div><div style={{ fontSize: '11px', opacity: 0.8}}>6.2%</div></div><span style={{ color: '#f87171' }}>-{fmt(ss / periodsPerYear)}</span></div>
+            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Medicare</div><div style={{ fontSize: '11px', opacity: 0.8}}>1.45%</div></div><span style={{ color: '#f87171' }}>-{fmt(medicare / periodsPerYear)}</span></div>
             <div style={{ ...ROW, borderBottom: 'none' }}><span style={{ opacity: 0.7 }}>Total Taxes</span><span style={{ color: '#f87171', fontWeight: 700 }}>-{fmt(totalTax / periodsPerYear)}</span></div>
             <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '12px', padding: '16px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontWeight: 700 }}>Take-Home Pay</span>
@@ -145,11 +145,11 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
             </div>
             <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
               <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
-                <div style={{ fontSize: '11px', opacity: 0.5, marginBottom: '4px' }}>ANNUAL GROSS</div>
+                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>ANNUAL GROSS</div>
                 <div style={{ fontWeight: 700, color: '#F5C842' }}>{fmt(annualGross)}</div>
               </div>
               <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
-                <div style={{ fontSize: '11px', opacity: 0.5, marginBottom: '4px' }}>ANNUAL NET</div>
+                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>ANNUAL NET</div>
                 <div style={{ fontWeight: 700, color: '#4ade80' }}>{fmt(annualNet)}</div>
               </div>
             </div>
