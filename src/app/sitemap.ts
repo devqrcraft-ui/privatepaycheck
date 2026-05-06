@@ -42,6 +42,7 @@ const BLOG_SLUGS = [
   'biweekly-paycheck-after-taxes',
   'california-minimum-wage-2026',
   'california-paycheck-calculator-guide',
+  'california-paycheck-deductions-explained',
   'electrician-salary-after-taxes',
   'florida-unemployment-benefits-2026',
   'florida-vs-new-york-salary',
