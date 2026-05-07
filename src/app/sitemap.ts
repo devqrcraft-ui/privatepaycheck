@@ -137,6 +137,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 
 
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/hourly-paycheck-calculator/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+
+    ...STATE_SLUGS.map(slug => ({
+      url: `${BASE_URL}/tip-calculator/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
+
     ...BLOG_SLUGS.map(slug => ({
       url: `${BASE_URL}/blog/${slug}`,
       lastModified: now,
