@@ -29,9 +29,9 @@ export const FEDERAL_BRACKETS_HOH = [
 ];
 
 export const STANDARD_DEDUCTION = {
-  single: 14600,
-  married: 29200,
-  hoh: 21900,
+  single: 16100,
+  married: 32200,
+  hoh: 24150,
 };
 
 export const FICA = {
