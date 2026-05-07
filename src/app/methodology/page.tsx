@@ -15,7 +15,7 @@ export default function Page() {
       <ul style={{ color:'#c8d4e8', lineHeight: 2, paddingLeft: 20, marginBottom: 32 }}>
         <li><strong>Federal tax brackets:</strong> IRS Rev. Proc. 2025-xx (2026 inflation adjustments)</li>
         <li><strong>Standard deduction 2026:</strong> $15,000 single / $30,000 married filing jointly</li>
-        <li><strong>FICA rates:</strong> Social Security 6.2% (wage base $176,100) + Medicare 1.45%</li>
+        <li><strong>FICA rates:</strong> Social Security 6.2% (wage base $184,500) + Medicare 1.45%</li>
         <li><strong>State income tax rates:</strong> Each state Department of Revenue official rate schedules</li>
         <li><strong>State SDI/SUI:</strong> State workforce agency publications</li>
       </ul>
@@ -48,7 +48,7 @@ export default function Page() {
         <li>Subtract <strong>pre-tax deductions</strong> (401k, HSA, health insurance premiums)</li>
         <li>Subtract <strong>standard deduction</strong> ($15,000 single / $30,000 MFJ) to get taxable income</li>
         <li>Apply <strong>federal tax brackets</strong> progressively</li>
-        <li>Calculate <strong>FICA</strong>: Social Security 6.2% on first $176,100 + Medicare 1.45% on all wages</li>
+        <li>Calculate <strong>FICA</strong>: Social Security 6.2% on first $184,500 + Medicare 1.45% on all wages</li>
         <li>Apply <strong>state income tax</strong> using each state official rate schedule</li>
         <li>Apply any <strong>state-specific payroll taxes</strong> (CA SDI, NJ UI, NY SDI, etc.)</li>
         <li>Result = <strong>net take-home pay</strong></li>

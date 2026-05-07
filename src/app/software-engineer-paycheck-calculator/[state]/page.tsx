@@ -94,7 +94,7 @@ function calcNet(gross: number, stateTaxRate: number): { annual: number; monthly
     if (taxable <= b.min) break;
     federal += (Math.min(taxable, b.max) - b.min) * b.rate;
   }
-  const fica = Math.min(gross, 176100) * 0.062 + gross * 0.0145;
+  const fica = Math.min(gross, 184500) * 0.062 + gross * 0.0145;
   const state = gross * stateTaxRate;
   const annual = Math.round(gross - federal - fica - state);
   return { annual, monthly: Math.round(annual / 12), biweekly: Math.round(annual / 26) };

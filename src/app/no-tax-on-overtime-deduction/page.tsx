@@ -31,7 +31,7 @@ export default function NoTaxOnOvertimePage() {
     const fedOld = fedTax(taxableOld, filing);
     const fedNew = fedTax(taxableNew, filing);
     const savings = fedOld - fedNew;
-    const ficaSavings = Math.min(annualOT, Math.max(0, 176100 - annualRegular)) * 0.0765;
+    const ficaSavings = Math.min(annualOT, Math.max(0, 184500 - annualRegular)) * 0.0765;
 
     return { annualOT, annualRegular, annualTotal, fedOld, fedNew, savings, ficaSavings, totalSavings: savings + ficaSavings, otRate };
   }, [regular, otHours, weeks, filing]);

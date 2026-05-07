@@ -129,7 +129,7 @@ function calcTeacher(
   const fedTax = federalTax(federalTaxableIncome, filing);
 
   // FICA: only if SS-covered state, else only Medicare
-  const ficaSS = pensionInfo.ss ? Math.min(salary, 176100) * 0.062 : 0;
+  const ficaSS = pensionInfo.ss ? Math.min(salary, 184500) * 0.062 : 0;
   const ficaMedicare = salary * 0.0145;
   const fica = ficaSS + ficaMedicare;
 

@@ -84,7 +84,7 @@ export default function HourlyStateCalculator({ stateSlug }: { stateSlug: string
     const h=parseFloat(hourly)||0, hw=parseFloat(hours)||0, w=parseFloat(weeks)||52;
     const annual=h*hw*w, k=Math.min(parseFloat(k401)||0,23500), hsaV=Math.min(parseFloat(hsa)||0,4300);
     const preTax=annual-k-hsaV, fed=calcFederal(preTax,filing);
-    const fica=Math.min(annual,176100)*0.062+annual*0.0145;
+    const fica=Math.min(annual,184500)*0.062+annual*0.0145;
     const stateTx=st&&st.rate>0?Math.max(0,preTax-5000)*st.rate:0;
     const total=fed+fica+stateTx, net=annual-total-k-hsaV;
     return { annual, fed, fica, stateTx, total, net, k, hsaV, perPaycheck:net/26, weekly:w>0?net/w:0, effectiveRate:annual>0?(total/annual)*100:0 };

@@ -54,7 +54,7 @@ export default function Post() {
           <p>Since Texas has no state income tax, your deductions are limited to:</p>
           <ul style={{ paddingLeft:'20px', margin:'12px 0' }}>
             <li style={{ marginBottom:'8px' }}><strong>Federal income tax</strong> — 10% to 37% depending on income and filing status</li>
-            <li style={{ marginBottom:'8px' }}><strong>Social Security</strong> — 6.2% on wages up to $176,100</li>
+            <li style={{ marginBottom:'8px' }}><strong>Social Security</strong> — 6.2% on wages up to $184,500</li>
             <li style={{ marginBottom:'8px' }}><strong>Medicare</strong> — 1.45% on all wages (plus 0.9% on earnings over $200,000)</li>
             <li style={{ marginBottom:'8px' }}><strong>401(k) contributions</strong> — up to $23,500 pre-tax in 2026</li>
             <li style={{ marginBottom:'8px' }}><strong>Health insurance premiums</strong> — if paid pre-tax through employer</li>
