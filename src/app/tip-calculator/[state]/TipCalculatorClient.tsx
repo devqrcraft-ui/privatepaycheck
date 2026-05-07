@@ -22,7 +22,7 @@ const FEDERAL_BRACKETS_MARRIED = [
 
 function calcFedTax(income: number, married: boolean): number {
   const brackets = married ? FEDERAL_BRACKETS_MARRIED : FEDERAL_BRACKETS_SINGLE;
-  const stdDed = married ? 30000 : 15000;
+  const stdDed = married ? 32200 : 16100;
   const taxable = Math.max(0, income - stdDed);
   let tax = 0;
   for (const b of brackets) {
