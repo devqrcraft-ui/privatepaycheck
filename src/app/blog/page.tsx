@@ -97,7 +97,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {salaryPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -110,7 +110,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {taxPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -123,7 +123,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {professionPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -136,7 +136,7 @@ export default function BlogIndex() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {statePosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
-              <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
+              <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
@@ -165,7 +165,7 @@ export default function BlogIndex() {
             ['Washington DC','washington-dc'],
           ].map(([name, slug]) => (
             <a key={slug} href={"/" + slug + "-paycheck-calculator"}
-              style={{ display:'block', padding:'12px 14px', background:'#1a2d5a', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, fontSize:15, fontWeight:700, color:'#F5C842', textDecoration:'none', textAlign:'center' }}>
+              style={{ display:'block', padding:'12px 14px', background:'#1e3a7a', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, fontSize:16, fontWeight:700, color:'#F5C842', textDecoration:'none', textAlign:'center' }}>
               {name}
             </a>
           ))}
