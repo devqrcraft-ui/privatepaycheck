@@ -114,7 +114,7 @@ export default async function Page({ params }: Props) {
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#e8edf8' }}>
         {data.name} Unemployment Benefits 2026: Key Facts
       </h2>
-      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#475569' }}>{stateNote}</p>
+      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#e2e8f0' }}>{stateNote}</p>
     </div>
   ) : null;
 

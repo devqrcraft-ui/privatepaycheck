@@ -41,7 +41,7 @@ export default function SeniorDeductionCalculator() {
   const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
   return (
-    <div suppressHydrationWarning style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
+    <div suppressHydrationWarning style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#e2e8f0 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
       <div style={{ maxWidth: 560, margin: '0 auto' }}>
         <Link href="/" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: 14 }}>Back to all calculators</Link>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginTop: 16, marginBottom: 8 }}>Senior Tax Deduction Calculator 2026</h1>
@@ -61,7 +61,7 @@ export default function SeniorDeductionCalculator() {
 
           <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6, marginTop: 16 }}>Filing Status</label>
           <select value={filing} onChange={e => setFiling(e.target.value)}
-            style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#1e293b', color: 'white', fontSize: 16, boxSizing: 'border-box', colorScheme: 'dark' }}>
+            style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: '#e2e8f0', color: 'white', fontSize: 16, boxSizing: 'border-box', colorScheme: 'dark' }}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
@@ -100,7 +100,7 @@ export default function SeniorDeductionCalculator() {
           <p style={{ margin: 0 }}>Applies to tax years 2025 through 2028.</p>
         </div>
 
-        <div style={{ marginTop: 20, textAlign: 'center', fontSize: 13, color: '#64748b' }}>
+        <div style={{ marginTop: 20, textAlign: 'center', fontSize: 13, color: '#e2e8f0' }}>
           <Link href="/no-tax-on-overtime-deduction" style={{ color: '#818cf8', marginRight: 16 }}>Overtime Calculator</Link>
           <Link href="/no-tax-on-tips-calculator" style={{ color: '#818cf8', marginRight: 16 }}>Tips Calculator</Link>
           <Link href="/trump-account-calculator" style={{ color: '#818cf8' }}>Trump Account</Link>

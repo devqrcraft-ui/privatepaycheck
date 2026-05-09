@@ -169,7 +169,7 @@ export default function Page() {
             <div style={{ fontWeight: 800, color: '#f1f5f9', marginBottom: 4 }}>{c2.city}</div>
             <div style={{ fontSize: 13, color: '#94a3b8' }}>Avg salary: {c2.salary}</div>
             <div style={{ fontSize: 15, fontWeight: 700, color: '#818cf8', margin: '6px 0' }}>{c2.takehome}</div>
-            <div style={{ fontSize: 12, color: '#64748b' }}>{c2.note}</div>
+            <div style={{ fontSize: 12, color: '#e2e8f0' }}>{c2.note}</div>
           </div>
         ))}
       </div>

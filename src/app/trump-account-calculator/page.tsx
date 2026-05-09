@@ -26,8 +26,8 @@ export default function Page() {
           {"@type":"Question","name":"When will Trump Accounts be available?","acceptedAnswer":{"@type":"Answer","text":"As of March 2026, Trump Accounts are a legislative proposal. The program has not been signed into law. Check IRS.gov and Congress.gov for official updates on eligibility and enrollment dates."}}
         ]
       }) }} />
-      <nav style={{ fontSize: 13, color: '#64748b', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#64748b', textDecoration: 'none' }}>Home</a>
+      <nav style={{ fontSize: 13, color: '#e2e8f0', marginBottom: 24 }}>
+        <a href="/" style={{ color: '#e2e8f0', textDecoration: 'none' }}>Home</a>
         <span style={{ margin: '0 8px' }}>›</span>
         <span>Trump Account Calculator</span>
       </nav>
@@ -69,9 +69,9 @@ export default function Page() {
             { label: 'Status', value: 'Proposed', sub: 'Not yet signed into law', color: '#f87171' },
           ].map(item => (
             <div key={item.label} style={{ background: '#0f1629', borderRadius: 6, padding: '14px 16px', borderLeft: `4px solid ${item.color}` }}>
-              <div style={{ fontSize: 11, color: '#64748b', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 4 }}>{item.label}</div>
+              <div style={{ fontSize: 11, color: '#e2e8f0', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 4 }}>{item.label}</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: item.color }}>{item.value}</div>
-              <div style={{ fontSize: 11, color: '#64748b', marginTop: 2 }}>{item.sub}</div>
+              <div style={{ fontSize: 11, color: '#e2e8f0', marginTop: 2 }}>{item.sub}</div>
             </div>
           ))}
         </div>
@@ -84,7 +84,7 @@ export default function Page() {
       <div style={{ overflowX: 'auto', marginBottom: 32 }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
           <thead>
-            <tr style={{ background: '#1e293b' }}>
+            <tr style={{ background: '#e2e8f0' }}>
               {['Scenario', 'Deposit', 'Est. Value', 'Notes'].map(h => (
                 <th key={h} style={{ padding: '12px 14px', textAlign: 'left', color: '#94a3b8', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', borderBottom: '1px solid #334155' }}>{h}</th>
               ))}
@@ -92,11 +92,11 @@ export default function Page() {
           </thead>
           <tbody>
             {rows.map(([scenario, deposit, value, note], i) => (
-              <tr key={i} style={{ borderBottom: '1px solid #1e293b', background: i % 2 === 0 ? '#0f1629' : '#111827' }}>
+              <tr key={i} style={{ borderBottom: '1px solid #e2e8f0', background: i % 2 === 0 ? '#0f1629' : '#111827' }}>
                 <td style={{ padding: '12px 14px', fontWeight: 600, color: '#e2e8f0' }}>{scenario}</td>
                 <td style={{ padding: '12px 14px', color: '#f5c842', fontWeight: 700 }}>{deposit}</td>
                 <td style={{ padding: '12px 14px', color: '#34d399', fontWeight: 800, fontSize: 15 }}>{value}</td>
-                <td style={{ padding: '12px 14px', color: '#64748b', fontSize: 13 }}>{note}</td>
+                <td style={{ padding: '12px 14px', color: '#e2e8f0', fontSize: 13 }}>{note}</td>
               </tr>
             ))}
           </tbody>
@@ -112,7 +112,7 @@ export default function Page() {
         { q: 'Is the Trump Account the same as a DOGE dividend?', a: 'They are related but separate proposals. The Trump Account is a child savings deposit. The DOGE dividend refers to returning government efficiency savings to taxpayers as direct payments. Both are proposals as of 2026.' },
         { q: 'When will Trump Accounts be available?', a: 'As of March 2026, Trump Accounts remain a legislative proposal and have not been signed into law. Monitor IRS.gov and Congress.gov for official enrollment dates and eligibility rules.' },
       ].map((item, i) => (
-        <div key={i} style={{ borderBottom: '1px solid #1e293b', paddingBottom: 16, marginBottom: 16 }}>
+        <div key={i} style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: 16, marginBottom: 16 }}>
           <div style={{ fontWeight: 700, color: '#fff', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
           <div style={{ fontSize: 13, color: '#94a3b8', lineHeight: 1.7 }}>{item.a}</div>
         </div>
@@ -120,7 +120,7 @@ export default function Page() {
 
       {/* CROSS-LINKS */}
       <div style={{ background: '#1a2235', borderRadius: 8, padding: '18px 20px', marginTop: 32 }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>Related Calculators</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: '#e2e8f0', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>Related Calculators</div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
           {[
             { href: '/bonus-tax-calculator', label: 'Bonus Tax Calculator' },
@@ -135,8 +135,8 @@ export default function Page() {
         </div>
       </div>
 
-      <div style={{ marginTop: 32, padding: '14px 18px', background: '#0f1629', border: '1px solid #1e293b', borderRadius: 6, fontSize: 12, color: '#475569', lineHeight: 1.7 }}>
-        <strong style={{ color: '#64748b' }}>Disclaimer:</strong> This calculator provides estimates based on the proposed Trump Account program as of March 2026.
+      <div style={{ marginTop: 32, padding: '14px 18px', background: '#0f1629', border: '1px solid #e2e8f0', borderRadius: 6, fontSize: 12, color: '#e2e8f0', lineHeight: 1.7 }}>
+        <strong style={{ color: '#e2e8f0' }}>Disclaimer:</strong> This calculator provides estimates based on the proposed Trump Account program as of March 2026.
         The program has not been signed into law. Figures are for educational purposes only.
         Consult a financial advisor or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa' }}>IRS.gov</a> for official information.
         PrivatePaycheck.com is not affiliated with the U.S. government, IRS, or any political entity.

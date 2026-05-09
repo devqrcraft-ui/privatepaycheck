@@ -171,7 +171,7 @@ function calcTeacher(
 const BG = { minHeight: '100vh', background: '#091526', color: '#fff', fontFamily: 'system-ui,sans-serif' };
 const CARD = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '24px' };
 const LABEL = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' as const, marginBottom: '8px' };
-const INPUT_S = { width: '100%', background: '#1e293b', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: '#fff', fontSize: '16px', boxSizing: 'border-box' as const, outline: 'none' , colorScheme: 'dark' as const };
+const INPUT_S = { width: '100%', background: '#e2e8f0', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: '#fff', fontSize: '16px', boxSizing: 'border-box' as const, outline: 'none' , colorScheme: 'dark' as const };
 const SELECT_S = { ...INPUT_S, cursor: 'pointer' , colorScheme: 'dark' as const };
 
 // ─── Component ───────────────────────────────────────────────────────────────

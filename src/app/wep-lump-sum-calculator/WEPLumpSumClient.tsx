@@ -96,11 +96,11 @@ export default function WEPLumpSumCalculator() {
   const fmt2 = (n: number) => n.toLocaleString('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2 });
 
   const inp: React.CSSProperties = { width:'100%', padding:'10px 14px', borderRadius:8, border:'1px solid rgba(255,255,255,0.15)', background:'rgba(255,255,255,0.08)', color:'#fff', fontSize:16, boxSizing:'border-box' };
-  const sel: React.CSSProperties = { ...inp, background:'#1e293b' };
+  const sel: React.CSSProperties = { ...inp, background:'#e2e8f0' };
   const lbl: React.CSSProperties = { display:'block', fontSize:13, color:'#94a3b8', marginBottom:6, marginTop:16 };
 
   return (
-    <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
+    <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#e2e8f0 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
       <div style={{ maxWidth:600, margin:'0 auto' }}>
 
         <Link href="/" style={{ color:'#94a3b8', textDecoration:'none', fontSize:14 }}>← Back to all calculators</Link>
@@ -236,12 +236,12 @@ export default function WEPLumpSumCalculator() {
                 <div style={{ background:'rgba(255,255,255,0.05)', borderRadius:10, padding:'12px 16px' }}>
                   <div style={{ fontSize:12, color:'#94a3b8', marginBottom:4 }}>Without lump-sum (2027)</div>
                   <div style={{ fontSize:18, fontWeight:700 }}>{fmt2(r.irmaaNow.partB)}/mo</div>
-                  <div style={{ fontSize:11, color:'#64748b', marginTop:2 }}>{r.irmaaNow.tier}</div>
+                  <div style={{ fontSize:11, color:'#e2e8f0', marginTop:2 }}>{r.irmaaNow.tier}</div>
                 </div>
                 <div style={{ background: r.irmaaTriggered ? 'rgba(239,68,68,0.1)' : 'rgba(255,255,255,0.05)', border: r.irmaaTriggered ? '1px solid rgba(239,68,68,0.3)' : 'none', borderRadius:10, padding:'12px 16px' }}>
                   <div style={{ fontSize:12, color: r.irmaaTriggered ? '#fca5a5' : '#94a3b8', marginBottom:4 }}>With lump-sum (2027)</div>
                   <div style={{ fontSize:18, fontWeight:700, color: r.irmaaTriggered ? '#f87171' : 'white' }}>{fmt2(r.irmaaWithLump.partB)}/mo</div>
-                  <div style={{ fontSize:11, color:'#64748b', marginTop:2 }}>{r.irmaaWithLump.tier}</div>
+                  <div style={{ fontSize:11, color:'#e2e8f0', marginTop:2 }}>{r.irmaaWithLump.tier}</div>
                 </div>
               </div>
               {r.irmaaTriggered && (
@@ -268,7 +268,7 @@ export default function WEPLumpSumCalculator() {
         </div>
 
         {/* Related */}
-        <div style={{ textAlign:'center', fontSize:13, color:'#64748b' }}>
+        <div style={{ textAlign:'center', fontSize:13, color:'#e2e8f0' }}>
           <Link href="/senior-deduction-calculator" style={{ color:'#818cf8', marginRight:16 }}>$6,000 Senior Deduction</Link>
           <Link href="/teacher-paycheck-calculator" style={{ color:'#818cf8', marginRight:16 }}>Teacher Paycheck</Link>
           <Link href="/" style={{ color:'#818cf8' }}>Salary Calculator</Link>

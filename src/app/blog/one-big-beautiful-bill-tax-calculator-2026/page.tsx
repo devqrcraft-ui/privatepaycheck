@@ -28,14 +28,14 @@ const schemaData = {
 
 export default function OBBBBlogPage() {
   return (
-    <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#1e293b 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
+    <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#e2e8f0 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <Link href="/blog" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: 14 }}>All articles</Link>
         <h1 style={{ fontSize: 32, fontWeight: 900, marginTop: 16, marginBottom: 8, lineHeight: 1.2 }}>
           One Big Beautiful Bill Tax Calculator 2026 — What You Actually Save
         </h1>
-        <p style={{ color: '#64748b', fontSize: 14, marginBottom: 32 }}>Updated March 12, 2026 · 5 min read</p>
+        <p style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 32 }}>Updated March 12, 2026 · 5 min read</p>
 
         <div style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 16, padding: 24, marginBottom: 32 }}>
           <p style={{ margin: '0 0 14px', fontSize: 15, fontWeight: 700, color: '#a5b4fc' }}>Calculate your savings now:</p>
@@ -82,7 +82,7 @@ export default function OBBBBlogPage() {
         </p>
         <p style={{ marginBottom: 32 }}><Link href="/trump-account-calculator" style={{ color: '#818cf8' }}>Calculate your child Trump Account balance</Link></p>
 
-        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 20, fontSize: 13, color: '#64748b' }}>
+        <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 20, fontSize: 13, color: '#e2e8f0' }}>
           For informational purposes only. Tax laws may change. Consult a qualified tax professional for advice specific to your situation.
         </div>
       </div>
