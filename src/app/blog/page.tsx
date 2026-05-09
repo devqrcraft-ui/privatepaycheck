@@ -165,7 +165,7 @@ export default function BlogIndex() {
             ['Washington DC','washington-dc'],
           ].map(([name, slug]) => (
             <a key={slug} href={"/" + slug + "-paycheck-calculator"}
-              style={{ display:'block', padding:'10px 14px', background:'#1a2d5a', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, fontSize:14, fontWeight:600, color:'#F5C842', textDecoration:'none' }}>
+              style={{ display:'block', padding:'12px 14px', background:'#1a2d5a', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, fontSize:15, fontWeight:700, color:'#F5C842', textDecoration:'none', textAlign:'center' }}>
               {name}
             </a>
           ))}
