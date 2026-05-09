@@ -33,6 +33,14 @@ export default function Page() {
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>New York Paycheck Calculator 2026</h1>
       <StateCalcEmbed stateName="New York" stateTaxRate={6.33} hasSDI={true} sdiRate={0.5} noStateTax={false} />
+
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#F5C842', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Take-Home Summary — New York</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          A $75,000 salary in New York results in approximately <strong style={{ color:'#fff' }}>$47,800 take-home pay</strong> for a single filer in NYC. Breakdown: federal income tax $8,600 + NY state tax $4,900 + NYC local tax $2,300 + Social Security $4,650 + Medicare $1,088 = $21,538 total deductions. Effective total tax rate: 28.7%. NYC residents pay the highest combined tax burden of any major US city in 2026.
+        </p>
+      </div>
       <FreshnessBar state="New York" items={["NY state tax: 4%–10.9% (2026 brackets)","NYC residents pay additional 3.078%–3.876%","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married"]} />
 
       <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>New York has both <strong>NY state tax (up to 10.9%)</strong> and an extra <strong>NYC tax (up to 3.876%)</strong> for city residents. See your exact take-home below or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a>.</p>

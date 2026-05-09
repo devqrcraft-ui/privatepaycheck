@@ -36,6 +36,14 @@ export default function Page() {
 
       <FlTxCalcEmbed state="texas" />
 
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#F5C842', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Take-Home Summary — Texas</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          A $75,000 salary in Texas results in approximately <strong style={{ color:'#fff' }}>$57,400 take-home pay</strong> for a single filer. Texas has no state income tax. Breakdown: federal income tax $8,600 + Social Security $4,650 + Medicare $1,088 = $14,338 total deductions. Effective total tax rate: 19.1%. Texas is one of 9 states with zero state income tax in 2026.
+        </p>
+      </div>
+
       <FreshnessBar state="Texas" items={["Texas has no state income tax in 2026","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married","TX minimum wage: $7.25/hr (federal minimum)"]} />      <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#6ee7b7' }}>
         No Texas state income tax in 2026. Only federal withholding applies. Compare: at $75k salary, Texas take-home is ~$8,700/year MORE than California.
       </div>

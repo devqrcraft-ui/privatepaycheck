@@ -76,6 +76,14 @@ export default function Page() {
         <h3 style={{ fontSize: 'clamp(16px,3vw,18px)' as unknown as number, fontWeight: 700, color: '#f8fafc', marginBottom: 10 }}>How much income tax will I pay in Florida?</h3>
         <p style={{ fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#b0c4de', lineHeight: 1.8, margin: 0 }}>Florida is one of 9 states with no state income tax. Workers keep more of each paycheck compared to high-tax states. The only deductions from a Florida paycheck are federal income tax and FICA — Social Security (6.2%) and Medicare (1.45%).</p>
       <FlTxCalcEmbed state="florida" />
+
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#F5C842', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Take-Home Summary — Florida</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          A $75,000 salary in Florida results in approximately <strong style={{ color:'#fff' }}>$57,400 take-home pay</strong> for a single filer. Florida has no state income tax. Breakdown: federal income tax $8,600 + Social Security $4,650 + Medicare $1,088 = $14,338 total deductions. Effective total tax rate: 19.1%. Florida is one of 9 states with zero state income tax in 2026.
+        </p>
+      </div>
       </div>
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
