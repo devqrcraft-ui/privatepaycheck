@@ -73,7 +73,7 @@ const statePosts = [
 
 const card: React.CSSProperties = {
   background: '#0d1b3e',
-  border: '1px solid #d1d5db',
+  border: '1px solid rgba(245,200,66,0.25)',
   borderRadius: 10,
   padding: '16px 20px',
   textDecoration: 'none',
@@ -85,7 +85,7 @@ const card: React.CSSProperties = {
 export default function BlogIndex() {
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
-      <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
+      <nav style={{ fontSize: 14, color:'#b8c8dc', marginBottom: 24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Blog
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Paycheck & Tax Blog 2026</h1>
@@ -98,7 +98,7 @@ export default function BlogIndex() {
           {salaryPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
+              <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
@@ -111,7 +111,7 @@ export default function BlogIndex() {
           {taxPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
+              <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
@@ -124,7 +124,7 @@ export default function BlogIndex() {
           {professionPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
+              <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
@@ -137,7 +137,7 @@ export default function BlogIndex() {
           {statePosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
-              <div style={{ fontSize: 13, color:'#b8c8dc' }}>{p.desc}</div>
+              <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
           ))}
         </div>
