@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import CaCalcEmbed from '@/components/CaCalcEmbed'
 import FreshnessBar from '@/components/FreshnessBar'
 export const metadata: Metadata = {
-  title: 'California Paycheck Calculator 2026 — See Your Exact Take-Home Pay',
-  description: 'See your exact California take-home pay in seconds. Calculates CA state tax up to 13.3%, federal tax, FICA & SDI. Free, instant, no signup required.',
+  title: 'California Paycheck Calculator 2026 — $75K Salary = $52,200 Take-Home',
+  description: 'Free California paycheck calculator 2026. $75K salary = ~$52,200 take-home after CA state tax (13.3%), federal tax, FICA & SDI 1.3%. Instant, no signup.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
 }
