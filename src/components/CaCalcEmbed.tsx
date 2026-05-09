@@ -196,6 +196,12 @@ export default function CaCalcEmbed() {
           </button>
         </div>
       )}
+
+          <div style={{ marginTop:16, padding:'14px 16px', background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10 }}>
+            <div style={{ fontSize:12, color:'#8892b0', marginBottom:6 }}>Self-employed or gig worker?</div>
+            <div style={{ fontSize:14, fontWeight:700, color:'#e8edf8', marginBottom:10 }}>Estimate your 1099 self-employment tax free</div>
+            <a href="https://gigwisetax.com" target="_blank" rel="noopener noreferrer" style={{ display:'inline-block', background:'#F5C842', color:'#0f0c29', fontWeight:800, fontSize:13, padding:'8px 16px', borderRadius:7, textDecoration:'none' }}>Try GigWiseTax →</a>
+          </div>
       <style dangerouslySetInnerHTML={{ __html: 'input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}' }} />
     </div>
   );
