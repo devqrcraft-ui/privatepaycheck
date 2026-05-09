@@ -74,7 +74,7 @@ export default function FlTxCalcEmbed({ state, accent = '#F5C842' }: Props) {
       <div style={{ fontSize:13, color:'#64748b', marginBottom:16 }}>
         {stateName} has no state income tax — federal + FICA only
       </div>
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:12 }}>
+      <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:12, marginBottom:12 }}>
         <div>
           <label style={lbl}>Annual Salary ($)</label>
           <input style={inp} type="number" placeholder="e.g. 75000"

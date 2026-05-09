@@ -108,7 +108,7 @@ export default function CaCalcEmbed() {
       <div style={{ fontSize:16, fontWeight:800, color:'#F5C842', marginBottom:16 }}>
         Calculate Your California Take-Home
       </div>
-      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:12 }}>
+      <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:12, marginBottom:12 }}>
         <div>
           <label style={lbl}>Annual Salary ($)</label>
           <input
