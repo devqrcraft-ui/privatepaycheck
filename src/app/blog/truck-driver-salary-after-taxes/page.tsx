@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Truck Driver Salary After Taxes 2026 — Take-Home Pay | PrivatePaycheck',
   description: 'How much do truck drivers take home after taxes in 2026? OTR average $70,000. See net pay by state, per diem deductions, and owner-operator taxes.',
@@ -55,5 +56,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

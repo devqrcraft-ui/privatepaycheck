@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Biweekly Paycheck After Taxes 2026 — Calculator & Tables | PrivatePaycheck',
   description: 'How much is your biweekly paycheck after taxes? See take-home pay tables for $30k, $40k, $50k, $60k, $75k, $100k salaries. All 50 states covered.',
@@ -72,5 +73,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

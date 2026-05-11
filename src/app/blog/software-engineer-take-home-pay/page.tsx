@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Software Engineer Take-Home Pay 2026 — After Taxes by State | PrivatePaycheck',
   description: 'How much do software engineers take home after taxes in 2026? See net pay for $100k, $130k, $150k, $200k salaries in TX, CA, NY, WA.',
@@ -47,5 +48,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

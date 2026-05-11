@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Nurse Paycheck Calculator 2026 — RN Take-Home Pay After Taxes | PrivatePaycheck',
   description: 'How much do nurses take home after taxes in 2026? RN average salary $77,600. See take-home pay by state, shift differentials, and OT impact.',
@@ -47,5 +48,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

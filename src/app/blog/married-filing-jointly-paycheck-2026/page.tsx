@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Married Filing Jointly Paycheck Calculator 2026 | PrivatePaycheck',
   description: 'How does married filing jointly affect your paycheck in 2026? See take-home pay for dual-income households. Standard deduction $30,000 for MFJ.',
@@ -63,5 +64,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

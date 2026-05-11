@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Electrician Salary After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
   description: 'How much do electricians take home after taxes in 2026? Average electrician salary $65,000. See net pay for all states.',
@@ -50,5 +51,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

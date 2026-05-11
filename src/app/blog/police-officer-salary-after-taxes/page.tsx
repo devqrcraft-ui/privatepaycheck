@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Police Officer Salary After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
   description: 'How much do police officers take home after taxes in 2026? Average police salary $67,600. See net pay by state with pension deductions.',
@@ -50,5 +51,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

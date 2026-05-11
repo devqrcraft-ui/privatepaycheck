@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Nevada vs California Salary 2026 — Take-Home Pay Comparison | PrivatePaycheck',
   description: 'Nevada vs California salary after taxes 2026. No Nevada state income tax. See how much more you keep in Las Vegas vs Los Angeles.',
@@ -47,5 +48,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

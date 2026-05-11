@@ -9,6 +9,7 @@ const faqSchema = {
   ],
 };
 import type { Metadata } from 'next';
+import AuthorBox from '@/app/components/AuthorBox'
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'No Tax on Tips Explained: Who Qualifies & How Much You Save (2026)',
@@ -57,4 +58,4 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 </div>
 </div>
 <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
-</main>);}
+</main><AuthorBox />);}

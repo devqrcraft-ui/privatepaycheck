@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: '$35 an Hour After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
   description: 'How much is $35 an hour after taxes in 2026? $35/hr = $72,800/year gross. See exact take-home for every state.',
@@ -65,5 +66,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AuthorBox from '@/app/components/AuthorBox'
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -129,5 +130,6 @@ export default function Post() {
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>
+<AuthorBox />
   );
 }

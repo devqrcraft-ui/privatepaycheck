@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Florida vs New York Salary Comparison 2026 — Take-Home Pay Difference | PrivatePaycheck',
   description: 'Florida vs New York salary after taxes in 2026. At $75k, FL residents keep $9,300 more per year than NYC residents. See full comparison.',
@@ -49,5 +50,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }

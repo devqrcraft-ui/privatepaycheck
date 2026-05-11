@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AuthorBox from '@/app/components/AuthorBox'
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'What is FICA Tax? Social Security & Medicare Explained (2026)',
@@ -60,4 +61,4 @@ Medicare: $75,000 × 1.45% = $1,087.50/year<br/>
 </div>
 </div>
 <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
-</main>);}
+</main><AuthorBox />);}

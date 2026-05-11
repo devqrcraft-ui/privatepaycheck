@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Teacher Salary After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
   description: 'How much do teachers take home after taxes in 2026? Average teacher salary $68,000. See net pay for every state including pension deductions.',
@@ -47,5 +48,6 @@ export default function Page() {
         </div>
       </div>
     </main>
+<AuthorBox />
   )
 }
