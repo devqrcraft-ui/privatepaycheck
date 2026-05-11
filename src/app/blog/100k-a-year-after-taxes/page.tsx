@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$71,496","$34.37"],["Florida","None","$71,496","$34.37"],["California","9.30%","$66,480","$31.96"],["New York (state)","6.85%","$62,604","$30.10"],["NYC","10.75%","$55,224","$26.55"],["Illinois","4.95%","$67,404","$32.41"],["Washington","None","$71,496","$34.37"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $100,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$100k gross. In Texas: ~$71,496/year ($5,958/month). In California: ~$66,480/year. In NYC: ~$55,224/year after city, state, and federal taxes."}},{"@type":"Question","name":"How much is $100k per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$100,000 ÷ 2,080 = $48.08/hr gross. After taxes in Texas: ~$34.37/hr. In California: ~$31.96/hr."}},{"@type":"Question","name":"Is $100,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"Six figures puts you in roughly the top 30% of US earners. After taxes in Texas you keep ~$71,500 — comfortable anywhere. In NYC or SF, take-home is closer to $55k which is tight."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
@@ -66,6 +67,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

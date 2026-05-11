@@ -17,6 +17,7 @@ export default function Page() {
     ['Nevada','None','$27,612','$13.27'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $15 an hour after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$15/hr x 2,080 hours = $31,200/year gross. In Texas (no state tax), take-home is approximately $27,612/year or $13.27/hr effective. In California, take-home drops to about $24,948/year."}},{"@type":"Question","name":"Is $15 an hour enough to live on in 2026?","acceptedAnswer":{"@type":"Answer","text":"$15/hr = $31,200/year gross, $27,600 take-home in no-tax states. This is above the federal poverty line for a single adult but tight in high cost-of-living cities. It works in lower-cost states like Texas, Tennessee, or Ohio."}},{"@type":"Question","name":"What is $15 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$15/hr monthly gross = $2,600. After taxes in Texas: approximately $2,301/month. In California: approximately $2,079/month."}},{"@type":"Question","name":"What states have $15 minimum wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"California, New York, Washington, Connecticut, Massachusetts, New Jersey, and several other states have minimum wages at or above $15/hr in 2026."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $15 an Hour After Taxes</nav>
@@ -62,6 +63,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

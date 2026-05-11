@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $120,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$120k gross. In Texas: approximately $82,704/year ($6,892/month). In California: approximately $77,916/year ($6,493/month). In NYC: approximately $66,696/year ($5,558/month)."}},{"@type":"Question","name":"How much is $120k per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$120,000 / 2,080 hours = $57.69/hr gross. After taxes in Texas: approximately $39.76/hr. In California: approximately $37.46/hr."}},{"@type":"Question","name":"Is $120,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$120k puts you in approximately the top 20% of US earners. After taxes in Texas you keep $82,704 — very comfortable. In NYC after taxes you keep $66,696 which is solid but not lavish given local costs."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $120k After Taxes</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

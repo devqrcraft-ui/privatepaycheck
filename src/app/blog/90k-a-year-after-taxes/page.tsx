@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $90,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$90k gross. In Texas: approximately $68,004/year ($5,667/month). In California: approximately $62,604/year ($5,217/month)."}},{"@type":"Question","name":"How much is $90k a year per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$90,000 / 2,080 hours = $43.27/hr gross. After taxes in Texas: approximately $32.69/hr. In California: approximately $30.10/hr."}},{"@type":"Question","name":"Is $90,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$90k is in the top 25% of US earners. It provides a comfortable lifestyle in most cities. In expensive metros like NYC or SF, it is solidly middle class."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $90k After Taxes</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

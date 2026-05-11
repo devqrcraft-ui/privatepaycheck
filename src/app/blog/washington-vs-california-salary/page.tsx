@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much more do you keep in Washington vs California?","acceptedAnswer":{"@type":"Answer","text":"At $100,000 salary, a Washington state resident takes home $71,496/year vs $66,480 in California — a $5,016 annual difference. At $150k the gap grows to $9,660/year."}},{"@type":"Question","name":"Does Washington state have income tax?","acceptedAnswer":{"@type":"Answer","text":"No. Washington state has no income tax on wages. California has income tax up to 13.3%. This makes Washington significantly better for take-home pay despite similar cost of living in major metros."}},{"@type":"Question","name":"Is Seattle or San Francisco better for tech salaries after taxes?","acceptedAnswer":{"@type":"Answer","text":"Seattle (Washington) wins on take-home pay — no state income tax. A $200k tech salary in Seattle yields approximately $130,404 take-home vs $117,204 in San Francisco — a $13,200/year difference from state taxes alone."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Washington vs California Salary</nav>
@@ -49,6 +50,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

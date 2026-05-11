@@ -16,6 +16,7 @@ export default function Page() {
     ['Washington','None','$51,720','$24.87'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do police officers take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"A police officer earning the national average of $67,600 takes home approximately $51,720 in Texas, $49,344 in Illinois, and $46,212 in California after federal, FICA, and state taxes."}},{"@type":"Question","name":"Do police officers pay into pensions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most police pension plans require 8%–12% employee contributions deducted from gross pay. This reduces take-home but also lowers current taxable income slightly."}},{"@type":"Question","name":"What is the average police officer salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national average police officer salary is approximately $67,600/year in 2026. Ranges vary significantly: NYPD officers can earn $100,000+ while rural departments average $45,000–$55,000."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Police Officer Salary After Taxes</nav>
@@ -51,6 +52,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

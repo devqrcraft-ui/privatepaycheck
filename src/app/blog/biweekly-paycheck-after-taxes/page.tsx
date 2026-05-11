@@ -16,6 +16,7 @@ export default function Page() {
     ['$100,000','$3,846', '$2,837','$2,520'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui, sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -73,6 +74,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$53,040","$25.50"],["Florida","None","$53,040","$25.50"],["California","9.30%","$47,400","$22.79"],["New York","6.85%","$49,200","$23.65"],["Illinois","4.95%","$50,580","$24.32"],["Washington","None","$53,040","$25.50"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $30 an hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$30/hr = $62,400/year gross. In a no-tax state like Texas, take-home is approximately $53,040/year ($25.50/hr effective). In California, about $47,400/year."}},{"@type":"Question","name":"Is $30 an hour a good wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"$30/hr = $62,400/year, which is above the US median individual income. It provides a comfortable living in most states outside high cost-of-living metros."}},{"@type":"Question","name":"How much is $30 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"In Texas, $30/hr = $4,420/month take-home. In California, approximately $3,950/month after state and federal taxes."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
@@ -66,6 +67,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

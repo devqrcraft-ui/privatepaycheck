@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $200,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$200k gross. In Texas: approximately $130,404/year ($10,867/month). In California: approximately $117,204/year ($9,767/month). In NYC: approximately $105,204/year ($8,767/month)."}},{"@type":"Question","name":"What tax bracket is $200k in 2026?","acceptedAnswer":{"@type":"Answer","text":"At $200k, you are in the 32% federal marginal bracket in 2026 (income between $197,301–$250,525). Your effective federal rate is approximately 27%–28% after the standard deduction."}},{"@type":"Question","name":"How much is $200k per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$200,000 / 2,080 hours = $96.15/hr gross. After taxes in Texas: approximately $62.69/hr. In California: approximately $56.35/hr."}},{"@type":"Question","name":"Does $200k qualify for the 0.9% Medicare surtax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Wages over $200,000 are subject to an additional 0.9% Medicare tax withheld by employers. This applies to the amount over $200,000, not the entire salary."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $200k After Taxes</nav>
@@ -81,6 +82,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

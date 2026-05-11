@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$59,040","$28.38"],["Florida","None","$59,040","$28.38"],["California","9.30%","$52,500","$25.24"],["New York","6.85%","$54,840","$26.37"],["Illinois","4.95%","$56,160","$27.00"],["Washington","None","$59,040","$28.38"],["Pennsylvania","3.07%","$57,504","$27.65"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do nurses take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"An RN earning $77,600/year takes home approximately $59,040 in Texas, $56,160 in Illinois, and $52,500 in California after all taxes."}},{"@type":"Question","name":"Do nurses pay more taxes due to overtime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Overtime pay is taxed at your marginal rate. An RN in the 22% federal bracket will pay 22% federal + state tax on all overtime hours, reducing the net benefit."}},{"@type":"Question","name":"What is the average RN salary after taxes in California?","acceptedAnswer":{"@type":"Answer","text":"A California RN earning the state average of ~$130,000 takes home approximately $91,344/year after 9.3% state tax, federal taxes, and FICA."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Nurse Paycheck Calculator 2026</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

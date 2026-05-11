@@ -29,6 +29,7 @@ const schemaData = {
 
 export default function OBBBBlogPage() {
   return (
+    <>
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#e2e8f0 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
@@ -88,6 +89,7 @@ export default function OBBBBlogPage() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   );
 }

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much more do you keep in Nevada vs California?","acceptedAnswer":{"@type":"Answer","text":"At $100,000 salary, a Nevada resident takes home $71,496/year vs $66,480 in California — a $5,016 annual difference. Nevada has no state income tax."}},{"@type":"Question","name":"Is moving from California to Nevada worth it for taxes?","acceptedAnswer":{"@type":"Answer","text":"At $100k salary, moving from CA to NV saves $5,016/year. At $150k, savings are $9,660/year. Over 10 years at $100k, the tax savings exceed $50,000."}},{"@type":"Question","name":"Does Nevada have income tax?","acceptedAnswer":{"@type":"Answer","text":"No. Nevada has no state income tax, no corporate income tax, and no franchise tax. It is one of the most tax-friendly states in the US."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Nevada vs California Salary</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

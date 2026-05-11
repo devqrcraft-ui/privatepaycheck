@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["$100k — Texas","None","$71,496","$34.37"],["$100k — California","9.30%","$66,480","$31.96"],["$150k — Texas","None","$101,004","$48.56"],["$150k — California","9.3%+","$91,344","$43.92"],["$150k — Washington","None","$101,004","$48.56"],["$150k — NYC","10.75%","$84,804","$40.77"],["$200k — Texas","None","$130,404","$62.69"],["$200k — California","13.3%","$117,204","$56.35"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a software engineer take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"A SWE earning $150k in Texas takes home approximately $101,004/year. The same salary in California yields $91,344 — a $9,660 annual difference from state tax alone."}},{"@type":"Question","name":"Is it worth moving from California to Texas as a software engineer?","acceptedAnswer":{"@type":"Answer","text":"At $150k salary, moving from CA to TX saves approximately $9,660/year in taxes. At $200k, the savings exceed $13,000/year. Over 5 years, the tax savings can exceed $60,000."}},{"@type":"Question","name":"How much do FAANG engineers take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A Google/Meta/Apple engineer earning $200k base in California takes home approximately $117,204/year after all taxes. With RSUs and bonuses, effective rates are higher."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Software Engineer Take-Home Pay 2026</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

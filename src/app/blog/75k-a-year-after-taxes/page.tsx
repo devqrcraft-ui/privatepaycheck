@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$56,124","$26.98"],["Florida","None","$56,124","$26.98"],["California","9.30%","$52,500","$25.24"],["New York","6.85%","$49,716","$23.90"],["Illinois","4.95%","$52,872","$25.42"],["Washington","None","$56,124","$26.98"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $75,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$75k gross. In Texas: ~$56,124/year ($4,677/month). In California: ~$52,500/year ($4,375/month). In New York: ~$49,716/year."}},{"@type":"Question","name":"How much is $75k a year per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$75,000 ÷ 2,080 hours = $36.06/hr gross. After taxes in Texas: ~$26.98/hr effective. In California: ~$25.24/hr."}},{"@type":"Question","name":"Is $75,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$75k is above the US median household income and provides a comfortable lifestyle in most states. In high cost-of-living cities like NYC or San Francisco, it is lower-middle class."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
@@ -66,6 +67,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

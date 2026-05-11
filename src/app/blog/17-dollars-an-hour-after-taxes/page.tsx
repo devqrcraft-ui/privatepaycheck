@@ -16,6 +16,7 @@ export default function Page() {
     ['Washington','None','$30,648','$14.73'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $17 an hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$17/hr x 2,080 hours = $35,360/year gross. In Texas, take-home is approximately $30,648/year ($14.73/hr). In California, approximately $27,504/year."}},{"@type":"Question","name":"Is $17 an hour good pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"$17/hr = $35,360/year. This is above minimum wage in most states and provides a livable income in lower cost-of-living areas. It is tight but manageable in mid-size cities."}},{"@type":"Question","name":"How much is $17 an hour biweekly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$17 x 80 hours = $1,360 gross biweekly. After taxes in Texas: approximately $1,177 net per paycheck."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $17 an Hour After Taxes</nav>
@@ -51,6 +52,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

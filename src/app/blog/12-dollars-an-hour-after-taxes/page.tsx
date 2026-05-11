@@ -16,6 +16,7 @@ export default function Page() {
     ['Washington','None','$22,848','$10.98'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $12 an hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$12/hr x 2,080 hours = $24,960/year gross. In Texas, take-home is approximately $22,848/year ($10.98/hr). In California, approximately $20,736/year after all taxes."}},{"@type":"Question","name":"How much is $12 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$12/hr = $2,080/month gross. After taxes in Texas: approximately $1,904/month. In California: approximately $1,728/month."}},{"@type":"Question","name":"Can you live on $12 an hour in 2026?","acceptedAnswer":{"@type":"Answer","text":"$12/hr = $22,848 take-home in Texas. This is very tight in most cities but possible in low cost-of-living areas with roommates or subsidized housing."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $12 an Hour After Taxes</nav>
@@ -51,6 +52,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

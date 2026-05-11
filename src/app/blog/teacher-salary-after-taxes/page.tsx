@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$52,032","$25.02"],["Florida","None","$52,032","$25.02"],["California","9.30%","$46,476","$22.34"],["New York","6.85%","$48,504","$23.32"],["Illinois","4.95%","$49,644","$23.87"],["Washington","None","$52,032","$25.02"],["Pennsylvania","3.07%","$50,820","$24.43"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do teachers take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"A teacher earning $68,000/year takes home approximately $52,032 in Texas and Florida, $49,644 in Illinois, and $46,476 in California — before pension deductions."}},{"@type":"Question","name":"Do teacher pensions affect take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most teacher pension plans require 7%–10% of salary as employee contributions, withheld pre-tax. This reduces take-home pay but also reduces your current taxable income."}},{"@type":"Question","name":"Which state pays teachers the most after taxes?","acceptedAnswer":{"@type":"Answer","text":"Washington state — no income tax and high average teacher salaries (~$85,000). Teachers keep approximately $65,000/year. California pays more gross but takes more in taxes."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Teacher Salary After Taxes 2026</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

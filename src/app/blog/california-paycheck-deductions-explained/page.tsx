@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 
 export default function Post() {
   return (
+    <>
     <main style={{ minHeight:'100vh', background:'#0f0c29', color:'#e8edf8', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
@@ -281,6 +282,7 @@ export default function Post() {
 
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   );
 }

@@ -17,6 +17,7 @@ export default function Page() {
     ['New Jersey','6.37%','$70,668','$33.98'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $45 an hour after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$45/hr x 2,080 hours = $93,600/year gross. In Texas, take-home is approximately $75,816/year ($36.45/hr). In California, approximately $67,644/year after all taxes."}},{"@type":"Question","name":"Is $45 an hour a good salary?","acceptedAnswer":{"@type":"Answer","text":"Yes. $45/hr = $93,600/year is well above the US median household income. It provides a comfortable lifestyle in most US cities, including moderately expensive metros."}},{"@type":"Question","name":"How much is $45 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$45/hr = $7,800/month gross. After taxes in Texas: approximately $6,318/month. In California: approximately $5,637/month."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $45 an Hour After Taxes</nav>
@@ -52,6 +53,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

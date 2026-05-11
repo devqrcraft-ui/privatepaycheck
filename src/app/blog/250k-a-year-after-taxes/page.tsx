@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $250,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$250k gross. In Texas: approximately $158,604/year ($13,217/month). In California: approximately $141,804/year ($11,817/month). In NYC: approximately $125,004/year ($10,417/month)."}},{"@type":"Question","name":"What tax bracket is $250k in 2026?","acceptedAnswer":{"@type":"Answer","text":"At $250k, you are in the 32%–35% federal marginal bracket. The 35% bracket starts at $250,526. Your effective federal rate is approximately 29%–31%."}},{"@type":"Question","name":"Is $250k considered rich in 2026?","acceptedAnswer":{"@type":"Answer","text":"$250k puts you in approximately the top 5% of US earners. After taxes in Texas you keep $158,604 — wealthy in most cities. In NYC after taxes you keep $125,004 which is upper-middle class given local costs."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $250k After Taxes</nav>
@@ -48,6 +49,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

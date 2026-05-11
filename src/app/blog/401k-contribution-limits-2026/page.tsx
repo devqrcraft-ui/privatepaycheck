@@ -18,6 +18,7 @@ const SAVINGS_TABLE = [
 
 export default function Post() {
   return (
+    <>
     <main style={{ minHeight:'100vh', background:'#091526', color:'white', fontFamily:'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'BlogPosting',
@@ -144,6 +145,7 @@ export default function Post() {
         © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
       </footer>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   );
 }

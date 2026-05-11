@@ -17,6 +17,7 @@ export default function Page() {
     ['Ohio','3.99%','$51,864','$24.93'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do truck drivers take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"An OTR truck driver earning $70,000/year takes home approximately $53,424 in Texas, $51,264 in Illinois, and $47,736 in California after all taxes."}},{"@type":"Question","name":"Can truck drivers deduct per diem?","acceptedAnswer":{"@type":"Answer","text":"Company drivers can deduct unreimbursed per diem at $69/day (2026 rate) for overnight trips away from home. Owner-operators deduct business expenses on Schedule C including per diem, fuel, repairs, and depreciation."}},{"@type":"Question","name":"Do owner-operator truck drivers pay more taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Owner-operators pay self-employment tax (15.3%) on net profit plus income tax. However, they can deduct truck depreciation, fuel, maintenance, insurance, and per diem — often reducing taxable income significantly."}},{"@type":"Question","name":"What is the average truck driver salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"OTR (over-the-road) drivers average $70,000–$85,000 in 2026. Local drivers earn $55,000–$65,000. Owner-operators gross $150,000–$200,000 but have high expenses."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Truck Driver Salary After Taxes</nav>
@@ -56,6 +57,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

@@ -20,6 +20,7 @@ export default function Page() {
     ['Oregon','9.9%','$90,600','$43.56'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $150,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$150k gross. In Texas: approximately $101,004/year ($8,417/month). In California: approximately $91,344/year ($7,612/month). In NYC: approximately $84,804/year ($7,067/month) after city, state, and federal taxes."}},{"@type":"Question","name":"How much is $150k per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$150,000 / 2,080 hours = $72.12/hr gross. After taxes in Texas: approximately $48.56/hr effective. In California: approximately $43.92/hr."}},{"@type":"Question","name":"Is $150k a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$150k puts you in approximately the top 10% of US earners. After taxes in Texas you keep $101k — comfortable anywhere. In NYC or SF, $84k-$91k take-home is upper-middle class given high costs."}},{"@type":"Question","name":"How much is $150,000 a year monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$150k/year = $12,500/month gross. After taxes: Texas $8,417/month, California $7,612/month, NYC $7,067/month."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $150k After Taxes</nav>
@@ -55,6 +56,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

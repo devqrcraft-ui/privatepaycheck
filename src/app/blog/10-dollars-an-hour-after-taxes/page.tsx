@@ -16,6 +16,7 @@ export default function Page() {
     ['Washington','None','$19,344','$9.30'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $10 an hour after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$10/hr x 2,080 hours = $20,800/year gross. In Texas, take-home is approximately $19,344/year ($9.30/hr). In California, approximately $18,528/year after all taxes."}},{"@type":"Question","name":"Is $10 an hour above minimum wage?","acceptedAnswer":{"@type":"Answer","text":"The federal minimum wage is $7.25/hr. $10/hr is above federal minimum but below state minimums in California ($16/hr+), New York ($16/hr+), and Washington ($16.28/hr)."}},{"@type":"Question","name":"How much is $10 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$10/hr = $1,733/month gross. After taxes in Texas: approximately $1,612/month. In California: approximately $1,544/month."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $10 an Hour After Taxes</nav>
@@ -50,6 +51,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

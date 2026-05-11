@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much more do you keep in Florida vs New York?","acceptedAnswer":{"@type":"Answer","text":"At $75,000 salary, a Florida resident takes home $56,124/year vs $49,716 in NYC — a $6,408 annual difference. At $100,000, the gap is $8,292/year in favor of Florida."}},{"@type":"Question","name":"Is it worth moving from New York to Florida for taxes?","acceptedAnswer":{"@type":"Answer","text":"At $100k salary, moving from NYC to Florida saves $8,292/year in taxes alone. Over 10 years, that is $82,920 before investment returns. Combined with lower cost of living in most FL cities, the financial case is strong."}},{"@type":"Question","name":"Does Florida have state income tax?","acceptedAnswer":{"@type":"Answer","text":"No. Florida has no state income tax. New York has state tax up to 10.9% plus NYC residents pay an additional 3.078%–3.876% city tax."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Florida vs New York Salary</nav>
@@ -50,6 +51,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

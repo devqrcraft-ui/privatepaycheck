@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $60,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$60k gross. In Texas: approximately $46,944/year ($3,912/month). In California: approximately $43,800/year ($3,650/month). In New York: approximately $41,844/year."}},{"@type":"Question","name":"How much is $60k a year per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$60,000 / 2,080 hours = $28.85/hr gross. After taxes in Texas: approximately $22.57/hr. In California: approximately $21.06/hr."}},{"@type":"Question","name":"Is $60,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$60k is above the US median individual income. It provides a comfortable lifestyle in most mid-cost states. In high cost-of-living cities like NYC or SF, it is lower-middle class."}},{"@type":"Question","name":"How much is $60,000 a year monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$60,000/year = $5,000/month gross. After taxes: Texas $3,912/month, California $3,650/month, New York $3,487/month, Illinois $3,700/month."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $60k After Taxes</nav>
@@ -78,6 +79,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$67,716","$32.55"],["Florida","None","$67,716","$32.55"],["California","9.30%","$60,480","$29.08"],["New York","6.85%","$62,880","$30.23"],["Illinois","4.95%","$64,800","$31.15"],["Washington","None","$67,716","$32.55"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $40 an hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$40/hr = $83,200/year gross. Take-home in Texas: ~$67,716/year ($32.55/hr). In California: ~$60,480/year after all taxes."}},{"@type":"Question","name":"Is $40 an hour a good salary?","acceptedAnswer":{"@type":"Answer","text":"$40/hr = $83,200/year — this is above the US median household income. It provides a solid middle-class lifestyle in most US cities."}},{"@type":"Question","name":"How much is $40 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"In Texas: ~$5,643/month take-home. In California: ~$5,040/month after federal and state taxes."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
@@ -66,6 +67,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

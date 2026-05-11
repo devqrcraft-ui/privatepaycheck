@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   const rows: string[][] = [["Texas","None","$60,516","$29.09"],["Florida","None","$60,516","$29.09"],["California","9.30%","$54,132","$26.02"],["New York","6.85%","$56,340","$27.09"],["Illinois","4.95%","$57,960","$27.87"],["Washington","None","$60,516","$29.09"]]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $35 an hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$35/hr = $72,800/year gross. Take-home in Texas: ~$60,516/year ($29.09/hr). In California: ~$54,132/year."}},{"@type":"Question","name":"Is $35 an hour middle class?","acceptedAnswer":{"@type":"Answer","text":"Yes. $72,800/year is solidly middle class nationwide and above median in most states. It covers a comfortable lifestyle outside major metros."}},{"@type":"Question","name":"How much is $35/hr biweekly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$35 × 80 hours = $2,800 gross biweekly. After taxes in Texas: approximately $2,328 net per paycheck."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
@@ -66,6 +67,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }

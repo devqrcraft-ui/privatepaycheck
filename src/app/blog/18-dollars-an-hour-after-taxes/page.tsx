@@ -16,6 +16,7 @@ export default function Page() {
     ['Washington','None','$32,148','$15.46'],
   ]
   return (
+    <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $18 an hour after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$18/hr x 2,080 hours = $37,440/year gross. In Texas, take-home is approximately $32,148/year ($15.46/hr). In California, approximately $28,872/year after state and federal taxes."}},{"@type":"Question","name":"How much is $18 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$18/hr = $3,120/month gross. After taxes in Texas: approximately $2,679/month. In California: approximately $2,406/month."}},{"@type":"Question","name":"Is $18 an hour a good wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"$18/hr = $37,440/year is above federal minimum wage and covers basic expenses in most mid-cost states. It is tight in expensive cities like NYC or San Francisco."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $18 an Hour After Taxes</nav>
@@ -51,6 +52,7 @@ export default function Page() {
         </div>
       </div>
     </main>
-<AuthorBox />
+      <AuthorBox />
+    </>
   )
 }
