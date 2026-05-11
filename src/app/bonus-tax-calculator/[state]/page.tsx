@@ -380,6 +380,7 @@ export default async function Page({ params }: Props) {
     </div>
   ) : null;
 
+  const answerFirst = state === 'washington' ? (<div style={{ maxWidth: 860, margin: '0 auto', padding: '24px 24px 8px', fontFamily: 'system-ui,sans-serif' }}><p style={{ fontSize: 16, lineHeight: 1.8, color: '#e2e8f0', background: 'rgba(245,200,66,0.07)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 8, padding: '16px 20px', margin: 0 }}><strong style={{ color: '#F5C842' }}>Washington has no state income tax</strong> — your bonus is taxed federally only. On a <strong>$10,000 bonus</strong>: $2,200 federal (22%) + $620 Social Security (6.2%) + $145 Medicare (1.45%) = <strong>$2,965 total withholding</strong>. You keep <strong>$7,035</strong>.</p></div>) : null;
   const faqSchema = getStateFaqSchema(data.name, data.stateTax, data.noStateTax);
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /><BonusTaxCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />{ssrContent}</>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />{answerFirst}<BonusTaxCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />{ssrContent}</>;
 }
