@@ -33,6 +33,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › $50k a Year Hourly</div>
 <div style={{display:'inline-block',background:'rgba(129,140,248,0.1)',color:'#818cf8',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY MATH</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>$50,000 a Year is How Much an Hour? (2026 After-Tax Breakdown)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $50,000 a year = <strong style={{color:"#fff"}}>$24.04/hour</strong> (52 weeks × 40 hours). After federal taxes and FICA, take-home is ~$38,700–$40,320/year or <strong style={{color:"#fff"}}>$18.60–$19.38/hour net</strong>. In Texas you keep ~$1,800 more/year than California.
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>February 20, 2026 · 4 min read</p>
 <div style={{background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'20px',marginBottom:'28px',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:'16px',textAlign:'center'}}>
 {[{l:'Hourly (gross)',v:'$24.04'},{l:'Daily (8h)',v:'$192.31'},{l:'Weekly',v:'$961.54'},{l:'Monthly',v:'$4,166.67'}].map(b=>(<div key={b.l}><div style={{fontSize:'11px',opacity: 0.8,marginBottom:'4px',textTransform:'uppercase'}}>{b.l}</div><div style={{fontSize:'22px',fontWeight:900,color:'#4ade80'}}>{b.v}</div></div>))}

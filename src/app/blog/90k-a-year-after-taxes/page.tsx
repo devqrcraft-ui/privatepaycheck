@@ -13,6 +13,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $90,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$90k gross. In Texas: approximately $68,004/year ($5,667/month). In California: approximately $62,604/year ($5,217/month)."}},{"@type":"Question","name":"How much is $90k a year per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$90,000 / 2,080 hours = $43.27/hr gross. After taxes in Texas: approximately $32.69/hr. In California: approximately $30.10/hr."}},{"@type":"Question","name":"Is $90,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$90k is in the top 25% of US earners. It provides a comfortable lifestyle in most cities. In expensive metros like NYC or SF, it is solidly middle class."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $90k After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$90,000 a Year After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $90,000/year after taxes = <strong style={{color:"#fff"}}>$66,000–$70,500/year</strong> take-home ($5,500–$5,875/month). Federal effective rate ~18–21%, FICA 7.65%.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$90k/year gross = $43.27/hour.</strong> Take-home ranges from <strong>$62,604 to $68,004</strong> by state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$90k Salary Breakdown</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

@@ -13,6 +13,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $80,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$80k gross. In Texas: approximately $61,500/year ($5,125/month). In California: approximately $57,396/year ($4,783/month)."}},{"@type":"Question","name":"How much is $80k a year per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$80,000 / 2,080 hours = $38.46/hr gross. After taxes in Texas: approximately $29.57/hr. In California: approximately $27.59/hr."}},{"@type":"Question","name":"Is $80,000 a good salary?","acceptedAnswer":{"@type":"Answer","text":"$80k is well above the US median household income and provides a comfortable lifestyle in most US cities outside of the highest cost-of-living areas like NYC or SF."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $80k After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$80,000 a Year After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $80,000/year after taxes = <strong style={{color:"#fff"}}>$59,500–$63,500/year</strong> take-home ($4,958–$5,292/month). Federal effective rate ~17–20%, FICA 7.65%.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$80k/year gross = $38.46/hour.</strong> Take-home ranges from <strong>$57,396 to $61,500</strong> depending on state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$80k Salary — Annual, Monthly, Biweekly, Hourly</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

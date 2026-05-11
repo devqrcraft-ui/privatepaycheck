@@ -30,6 +30,11 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $20 an Hour After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$20 an Hour After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $20/hour after taxes = <strong style={{color:"#fff"}}>~$31,200–$34,800/year</strong> take-home ($2,600–$2,900/month). Gross: $41,600/year. FICA takes 7.65%, federal income tax ~10–12% at this income level.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>$20 an hour × 2,080 hours = <strong>$41,600/year gross</strong>. After federal + state taxes, your actual take-home ranges from <strong>$31,200 to $34,860</strong> depending on which state you live in.</p>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay by State at $20/Hour</h2>

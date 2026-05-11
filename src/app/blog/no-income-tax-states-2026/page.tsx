@@ -64,6 +64,11 @@ export default function Post() {
         </div>
         <div style={{ display:'inline-block', background:'rgba(129,140,248,0.1)', color:'#818cf8', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>STATE TAXES</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>9 States With No Income Tax in 2026 — How Much Do You Actually Save?</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> States with no income tax in 2026: <strong style={{color:"#fff"}}>Alaska, Florida, Nevada, New Hampshire (wages only), South Dakota, Tennessee, Texas, Washington, Wyoming</strong>. Moving from California to Texas on $80,000/year saves ~$4,500/year in state income tax.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>January 22, 2026 · 5 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>

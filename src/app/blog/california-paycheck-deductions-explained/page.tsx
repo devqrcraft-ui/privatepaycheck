@@ -50,6 +50,11 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(24px,4vw,40px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.2, color:'#fff' }}>
           California Paycheck Deductions Explained 2026
         </h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> California paycheck deductions include: federal income tax, FICA (7.65%), CA state income tax (1–13.3% progressive), and CA SDI (1.3% in 2026). On a $6,250/month gross paycheck, total deductions average <strong style={{color:"#fff"}}>$1,800–$2,100/month</strong> depending on filing status.
+        </p>
+      </div>
         <p style={{ opacity:0.7, fontSize:'13px', marginBottom:'32px' }}>May 6, 2026 · 9 min read</p>
 
         <p style={{ fontSize:'16px', lineHeight:1.85, marginBottom:'24px' }}>

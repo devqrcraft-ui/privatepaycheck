@@ -33,6 +33,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › Texas vs California</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>COMPARISON</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>Texas vs California Salary: How Much More Do You Keep in Texas? (2026)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Texas vs California salary: on $80,000/year, Texas residents take home <strong style={{color:"#fff"}}>~$62,000</strong> vs California ~$56,500. No Texas state income tax saves $4,500–$5,500/year. At $120,000/year the gap widens to $8,000–$10,000/year.
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>February 22, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}><p>Texas has zero state income tax. California taxes income at up to 13.3% — the highest in the US. On a $100,000 salary, a Texas resident takes home <strong>$7,775 more per year</strong> than someone doing the same job in California. Here is the full breakdown.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Take-Home Pay: Texas vs California (2026, Single Filer)</h2></div>

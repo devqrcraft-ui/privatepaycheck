@@ -21,6 +21,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є No Tax on Tips Explained</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>рџ"Ґ NEW 2026</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>No Tax on Tips Explained: Who Qualifies & How Much You Save (2026)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Under OBBBA 2026, eligible workers can deduct up to <strong style={{color:"#fff"}}>$25,000 in tips</strong> from federal taxable income. Applies to workers in traditionally tipped industries (food service, hospitality). If you earned $15,000 in tips, that entire amount is excluded — saving ~$1,800–$3,300 in federal tax.
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>The &quot;No Tax on Tips&quot; proposal has been one of the most discussed tax policy ideas of 2025-2026. For the estimated 4 million tipped workers in the US, it could mean keeping an extra $1,500 to $4,000 per year. Here is everything you need to know.</p>

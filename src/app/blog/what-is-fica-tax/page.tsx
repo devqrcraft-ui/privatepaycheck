@@ -32,6 +32,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › What is FICA Tax</div>
 <div style={{display:'inline-block',background:'rgba(74,222,128,0.1)',color:'#4ade80',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>BASICS</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>What is FICA Tax? Social Security & Medicare Explained (2026)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> FICA tax in 2026 = <strong style={{color:"#fff"}}>7.65% of gross wages</strong>: 6.2% Social Security (on first $184,500) + 1.45% Medicare (no limit). On $60,000 gross, you pay $4,590 FICA/year. Your employer matches this amount. Self-employed pay 15.3% (both halves).
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>January 28, 2026 · 4 min read</p>
 <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:'12px',marginBottom:'28px'}}>
 {[{l:'Social Security',v:'6.2%',sub:'On first $184,500',c:'#818cf8'},{l:'Medicare',v:'1.45%',sub:'No wage cap',c:'#4ade80'},{l:'Total FICA',v:'7.65%',sub:'Employee share',c:'#fbbf24'},{l:'Employer Match',v:'7.65%',sub:'They pay same',c:'#f97316'}].map(b=>(<div key={b.l} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'14px',textAlign:'center'}}><div style={{fontSize:'11px',opacity: 0.8,marginBottom:'6px'}}>{b.l}</div><div style={{fontSize:'22px',fontWeight:900,color:b.c}}>{b.v}</div><div style={{fontSize:'11px',opacity: 0.8, marginTop:'4px'}}>{b.sub}</div></div>))}

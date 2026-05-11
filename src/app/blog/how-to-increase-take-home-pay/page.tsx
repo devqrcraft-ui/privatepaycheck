@@ -33,6 +33,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › Increase Take-Home Pay</div>
 <div style={{display:'inline-block',background:'rgba(52,211,153,0.1)',color:'#34d399',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>STRATEGY</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>7 Ways to Increase Your Take-Home Pay in 2026 (Without a Raise)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Top ways to increase take-home pay in 2026: max your 401(k) ($23,500 limit reduces taxable income), contribute to HSA ($4,300 limit), claim all W-4 allowances correctly, move to a no-income-tax state. These steps can add <strong style={{color:"#fff"}}>$3,000–$8,000/year</strong> to your net pay.
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>February 25, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}><p>You do not need a raise to take home more money. By optimizing your pre-tax deductions, filing status, and benefits elections, most workers can increase their net pay by $2,000–$10,000 per year. Here are the seven most effective strategies.</p></div>
 <div style={{display:'flex',flexDirection:'column',gap:'16px',margin:'24px 0'}}>

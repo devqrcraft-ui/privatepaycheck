@@ -32,6 +32,11 @@ export default function Post() {
         </div>
         <div style={{ display:'inline-block', background:'rgba(251,191,36,0.1)', color:'#fbbf24', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>TAXES</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>How to Calculate Paycheck Taxes 2026 — Step by Step Guide</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> To calculate paycheck taxes: 1) Subtract pre-tax deductions (401k, HSA). 2) Apply federal tax brackets. 3) Deduct FICA: 6.2% Social Security + 1.45% Medicare. 4) Subtract state income tax. On $5,000 gross/month, federal + FICA alone = <strong style={{color:"#fff"}}>~$1,050–$1,200</strong> deducted.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 24, 2026 · 8 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>

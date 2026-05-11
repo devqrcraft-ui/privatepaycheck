@@ -21,6 +21,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є Two Jobs Tax</div>
 <div style={{display:'inline-block',background:'rgba(248,113,113,0.1)',color:'#f87171',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}> пёЏ TAX TRAP</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>Two Jobs and Taxes: Why You Owe More & How to Fix It (2026)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Working two jobs increases your effective tax rate because combined income pushes you into higher brackets. On Job 1 ($40,000) + Job 2 ($20,000) = $60,000 total, the extra $20,000 is taxed at <strong style={{color:"#fff"}}>22% federal</strong>. Check box on W-4 Step 2 to withhold extra and avoid a tax bill.
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 5 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>Working two jobs is one of the most common reasons people get an unexpected tax bill in April. It is not that you did anything wrong "" it is a built-in flaw in how withholding works. Here is why it happens and exactly how to fix it.</p>

@@ -32,6 +32,11 @@ export default function Post() {
         </div>
         <div style={{ display:'inline-block', background:'rgba(99,102,241,0.1)', color:'#a5b4fc', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>UNEMPLOYMENT</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>Florida Unemployment Benefits 2026 — How Much Will You Get?</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Florida unemployment benefits in 2026: maximum weekly benefit is <strong style={{color:"#fff"}}>$275/week</strong> for up to 12 weeks. Benefits = 1/26 of your highest-earning quarter wages. Florida has the lowest max weekly benefit of any state — federal income tax still applies.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 21, 2026 · 5 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>

@@ -16,6 +16,11 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $100,000 a Year After Taxes 2026
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$100,000 a Year After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $100,000/year after taxes = <strong style={{color:"#fff"}}>$72,000–$78,000/year</strong> take-home depending on state. Federal effective rate ~18%, FICA 7.65%. California takes an extra ~9.3% state tax. Texas/Florida = no state income tax.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$100,000/year gross</strong>. Take-home varies by state — see exact numbers below or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a>.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay by State</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

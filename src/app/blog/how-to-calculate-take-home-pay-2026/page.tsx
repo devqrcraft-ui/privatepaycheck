@@ -39,6 +39,11 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(24px,4vw,40px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.2 }}>
           How to Calculate Your Take-Home Pay in the US (2026)
         </h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Take-home pay 2026 formula: Gross pay − federal income tax − FICA (7.65%) − state tax − local tax − pre-tax deductions. On $70,000/year gross: federal tax ~$8,200 + FICA ~$5,355 + state tax (varies) = take-home of <strong style={{color:"#fff"}}>$52,500–$56,000</strong>.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>March 20, 2026 · 10 min read</p>
 
         <div style={{ background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:10, padding:'16px 20px', marginBottom:32 }}>

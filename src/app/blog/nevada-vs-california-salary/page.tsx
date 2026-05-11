@@ -13,6 +13,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much more do you keep in Nevada vs California?","acceptedAnswer":{"@type":"Answer","text":"At $100,000 salary, a Nevada resident takes home $71,496/year vs $66,480 in California — a $5,016 annual difference. Nevada has no state income tax."}},{"@type":"Question","name":"Is moving from California to Nevada worth it for taxes?","acceptedAnswer":{"@type":"Answer","text":"At $100k salary, moving from CA to NV saves $5,016/year. At $150k, savings are $9,660/year. Over 10 years at $100k, the tax savings exceed $50,000."}},{"@type":"Question","name":"Does Nevada have income tax?","acceptedAnswer":{"@type":"Answer","text":"No. Nevada has no state income tax, no corporate income tax, and no franchise tax. It is one of the most tax-friendly states in the US."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Nevada vs California Salary</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Nevada vs California Salary 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Nevada vs California salary: on $80,000/year, Nevada residents take home <strong style={{color:"#fff"}}>~$62,000</strong> vs California ~$57,000. Nevada has no state income tax — you keep $4,000–$5,000 more/year than in California.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>Nevada has <strong>no state income tax.</strong> California has up to <strong>13.3%.</strong> Here is the exact take-home difference at every income level.</p>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead><tr style={{ background: '#1a2550' }}>

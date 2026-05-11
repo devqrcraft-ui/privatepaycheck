@@ -37,6 +37,11 @@ export default function OBBBBlogPage() {
         <h1 style={{ fontSize: 32, fontWeight: 900, marginTop: 16, marginBottom: 8, lineHeight: 1.2 }}>
           One Big Beautiful Bill Tax Calculator 2026 — What You Actually Save
         </h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> The One Big Beautiful Bill (OBBBA) 2026 key changes: standard deduction raised to <strong style={{color:"#fff"}}>$16,100 single / $32,200 MFJ</strong>, tips deduction up to $25,000, overtime deduction up to $12,500, QBI deduction made permanent. Use the calculator above to see your exact 2026 tax savings.
+        </p>
+      </div>
         <p style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 32 }}>Updated March 12, 2026 · 5 min read</p>
 
         <div style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 16, padding: 24, marginBottom: 32 }}>

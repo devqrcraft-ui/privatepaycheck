@@ -13,6 +13,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $70,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$70k gross. In Texas: approximately $55,128/year ($4,594/month). In California: approximately $49,716/year ($4,143/month)."}},{"@type":"Question","name":"How much is $70k a year per hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$70,000 / 2,080 hours = $33.65/hr gross. After taxes in Texas: approximately $26.50/hr. In California: approximately $23.90/hr."}},{"@type":"Question","name":"Is $70,000 a good salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"$70k is above the US median household income of approximately $60,000. It provides a comfortable lifestyle in most mid-cost cities and is considered solidly middle class."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $70k After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$70,000 a Year After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $70,000/year after taxes = <strong style={{color:"#fff"}}>$52,500–$56,000/year</strong> take-home ($4,375–$4,667/month). Federal effective rate ~16–18%, FICA 7.65%.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$70k/year gross = $33.65/hour.</strong> Take-home ranges from <strong>$49,716 to $55,128</strong> by state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$70k Salary Breakdown</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

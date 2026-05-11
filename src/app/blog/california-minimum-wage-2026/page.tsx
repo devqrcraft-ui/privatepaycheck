@@ -51,6 +51,11 @@ export default function Post() {
         </div>
         <div style={{ display:'inline-block', background:'rgba(16,185,129,0.1)', color:'#6ee7b7', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>MINIMUM WAGE</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>California Minimum Wage 2026 — History, Changes & What Workers Need to Know</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> California minimum wage in 2026 is <strong style={{color:"#fff"}}>$16.50/hour</strong> statewide (fast food workers: $20/hour). At 40hrs/week that's $34,320/year gross. After CA state tax + federal tax + FICA, take-home is approximately <strong style={{color:"#fff"}}>$25,800–$27,200/year</strong>.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 23, 2026 · 6 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>

@@ -13,6 +13,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $250,000 a year after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$250k gross. In Texas: approximately $158,604/year ($13,217/month). In California: approximately $141,804/year ($11,817/month). In NYC: approximately $125,004/year ($10,417/month)."}},{"@type":"Question","name":"What tax bracket is $250k in 2026?","acceptedAnswer":{"@type":"Answer","text":"At $250k, you are in the 32%–35% federal marginal bracket. The 35% bracket starts at $250,526. Your effective federal rate is approximately 29%–31%."}},{"@type":"Question","name":"Is $250k considered rich in 2026?","acceptedAnswer":{"@type":"Answer","text":"$250k puts you in approximately the top 5% of US earners. After taxes in Texas you keep $158,604 — wealthy in most cities. In NYC after taxes you keep $125,004 which is upper-middle class given local costs."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $250k After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$250,000 a Year After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $250,000/year after taxes = <strong style={{color:"#fff"}}>$155,000–$172,000/year</strong> take-home. Federal effective rate ~28–30%. At $250k FICA applies only to first $184,500. California state tax adds another ~10.3%.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$250k/year gross = $120.19/hour.</strong> Take-home ranges from <strong>$125,004 (NYC) to $158,604 (Texas)</strong> — a $33,600 gap.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$250k Salary Breakdown</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

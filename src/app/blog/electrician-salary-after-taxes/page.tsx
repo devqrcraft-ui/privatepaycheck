@@ -22,6 +22,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do electricians take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"An electrician earning $65,000/year takes home approximately $49,716 in Texas, $47,484 in Illinois, and $44,460 in California after all taxes."}},{"@type":"Question","name":"What is the average electrician salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national average electrician salary is $65,000–$75,000 in 2026. Journeyman electricians in union markets like New York or California can earn $90,000–$120,000 including benefits."}},{"@type":"Question","name":"Do electricians pay more taxes as self-employed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-employed electricians pay 15.3% SE tax on net profit plus income tax. However, they can deduct tools, vehicle mileage, home office, and other business expenses."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Electrician Salary After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Electrician Salary After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Electrician salary after taxes in 2026: median gross ~$61,000/year. Take-home = <strong style={{color:"#fff"}}>$46,400–$49,200/year</strong> ($3,867–$4,100/month). Journeyman electricians in TX keep ~$3,200 more/year than CA due to no state income tax.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>The average electrician earns <strong>$65,000/year</strong> in 2026. After taxes, take-home is <strong>$44,460–$49,716</strong> by state.</p>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead><tr style={{ background: '#1a2550' }}>

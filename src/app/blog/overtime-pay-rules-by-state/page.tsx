@@ -53,6 +53,11 @@ export default function Post() {
         </div>
         <div style={{ display:'inline-block', background:'rgba(251,191,36,0.1)', color:'#fbbf24', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>OVERTIME</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Federal overtime rule: 1.5× regular rate for hours over 40/week. Under OBBBA 2026, overtime pay has a new <strong style={{color:"#fff"}}>$12,500 federal tax deduction</strong> ($25,000 MFJ). Some states (CA, CO, AK) have daily overtime rules. California requires OT after 8 hours/day.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 14, 2026 · 5 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>

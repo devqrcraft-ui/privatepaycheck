@@ -51,6 +51,11 @@ export default function Post() {
         </div>
         <div style={{ display:'inline-block', background:'rgba(249,115,22,0.1)', color:'#f97316', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px' }}>CALIFORNIA</div>
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>California Paycheck 2026: Why Your Take-Home Is Lower Than Expected</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> California paychecks have 5 deductions: federal income tax, Social Security (6.2%), Medicare (1.45%), CA state income tax (1–13.3%), and CA SDI (1.3%). On $75,000/year gross, CA residents take home approximately <strong style={{color:"#fff"}}>$54,000–$56,500/year</strong> vs $62,000+ in Texas.
+        </p>
+      </div>
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 8, 2026 · 7 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>

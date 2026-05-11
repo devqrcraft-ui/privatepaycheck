@@ -16,6 +16,11 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $35 an Hour After Taxes 2026
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$35 an Hour After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $35/hour after taxes = <strong style={{color:"#fff"}}>~$54,600–$60,900/year</strong> take-home ($4,550–$5,075/month). Gross: $72,800/year. Federal effective rate ~15–18%, FICA 7.65%.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$72,800/year gross</strong>. Take-home varies by state — see exact numbers below or use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a>.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay by State</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

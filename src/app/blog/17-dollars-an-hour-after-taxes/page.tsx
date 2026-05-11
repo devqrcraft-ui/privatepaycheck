@@ -21,6 +21,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $17 an hour after taxes?","acceptedAnswer":{"@type":"Answer","text":"$17/hr x 2,080 hours = $35,360/year gross. In Texas, take-home is approximately $30,648/year ($14.73/hr). In California, approximately $27,504/year."}},{"@type":"Question","name":"Is $17 an hour good pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"$17/hr = $35,360/year. This is above minimum wage in most states and provides a livable income in lower cost-of-living areas. It is tight but manageable in mid-size cities."}},{"@type":"Question","name":"How much is $17 an hour biweekly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$17 x 80 hours = $1,360 gross biweekly. After taxes in Texas: approximately $1,177 net per paycheck."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $17 an Hour After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$17 an Hour After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $17/hour after taxes = <strong style={{color:"#fff"}}>~$26,500–$29,600/year</strong> take-home. Gross: $35,360/year. After FICA (7.65%) and federal tax, effective take-home rate is 75–84% depending on state.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$17/hr x 2,080 hours = $35,360/year gross.</strong> Take-home ranges from <strong>$27,504 to $30,648</strong> by state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay at $17/Hour by State</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

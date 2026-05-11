@@ -14,6 +14,11 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> "є <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> "є How Much of My Raise Do I Keep</div>
 <div style={{display:'inline-block',background:'rgba(251,191,36,0.1)',color:'#fbbf24',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>How Much of My Raise Do I Actually Keep After Taxes? (2026)</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> How much of a raise you keep depends on your marginal tax rate. At $60,000 income a $5,000 raise is taxed at 22% federal + 7.65% FICA = ~30% total. You keep approximately <strong style={{color:"#fff"}}>$3,500 of a $5,000 raise</strong> — more in no-income-tax states.
+        </p>
+      </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>March 1, 2026 · 4 min read</p>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>You negotiated a $10,000 raise. Congratulations! But after federal taxes, state taxes, and FICA, how much of that actually lands in your bank account? The answer might surprise you "" but it is never as bad as people fear.</p>

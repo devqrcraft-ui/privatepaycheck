@@ -21,6 +21,11 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is $18 an hour after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"$18/hr x 2,080 hours = $37,440/year gross. In Texas, take-home is approximately $32,148/year ($15.46/hr). In California, approximately $28,872/year after state and federal taxes."}},{"@type":"Question","name":"How much is $18 an hour monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$18/hr = $3,120/month gross. After taxes in Texas: approximately $2,679/month. In California: approximately $2,406/month."}},{"@type":"Question","name":"Is $18 an hour a good wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"$18/hr = $37,440/year is above federal minimum wage and covers basic expenses in most mid-cost states. It is tight in expensive cities like NYC or San Francisco."}}]}) }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $18 an Hour After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$18 an Hour After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $18/hour after taxes = <strong style={{color:"#fff"}}>~$28,100–$31,400/year</strong> take-home ($2,342–$2,617/month). Gross: $37,440/year. No-income-tax states like Texas and Florida give you the highest net.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$18/hr × 2,080 hours = $37,440/year gross.</strong> Take-home ranges from <strong>$28,872 to $32,148</strong> depending on state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay at $18/Hour by State</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

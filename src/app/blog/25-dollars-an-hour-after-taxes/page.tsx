@@ -28,6 +28,11 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $25 an Hour After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$25 an Hour After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $25/hour after taxes = <strong style={{color:"#fff"}}>~$39,000–$43,500/year</strong> take-home ($3,250–$3,625/month). Gross: $52,000/year. After FICA (7.65%) and federal income tax (~12%), effective take-home is 75–84% depending on state.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>$25/hr × 2,080 hours = <strong>$52,000/year gross</strong>. Your actual take-home pay ranges from <strong>$38,800 to $43,576</strong> depending on your state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Take-Home Pay by State at $25/Hour</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>

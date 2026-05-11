@@ -29,6 +29,11 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Biweekly Paycheck After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Biweekly Paycheck After Taxes 2026</h1>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> A biweekly paycheck after taxes = gross pay minus federal income tax, FICA (7.65%), state tax, and any pre-tax deductions. On $60,000/year you get <strong style={{color:"#fff"}}>26 paychecks of ~$1,754–$1,862</strong> biweekly depending on state. No-income-tax states give you ~$135 more per check.
+        </p>
+      </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>There are <strong>26 biweekly pay periods</strong> in 2026. Here are exact take-home amounts after federal taxes, FICA, and state taxes for common salaries.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Biweekly Take-Home by Salary (Single Filer)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
