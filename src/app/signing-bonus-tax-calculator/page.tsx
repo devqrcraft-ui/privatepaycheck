@@ -63,8 +63,9 @@ export default function SigningBonusCalculator() {
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
   const pct = (n: number) => (n * 100).toFixed(1) + '%';
 
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a signing bonus taxed differently than regular salary?","acceptedAnswer":{"@type":"Answer","text":"Not in terms of your final liability. Employers withhold at 22% supplemental rate. If your actual rate is higher, you may owe more at tax time."}},{"@type":"Question","name":"What happens if I leave before the clawback period?","acceptedAnswer":{"@type":"Answer","text":"You typically owe back the gross amount before taxes. Since you already paid taxes on it, you can claim a deduction or credit on next years return."}},{"@type":"Question","name":"Should I negotiate a higher signing bonus or higher salary?","acceptedAnswer":{"@type":"Answer","text":"Higher base salary is almost always better long-term: it compounds into raises, bonuses, 401k matches, and severance."}},{"@type":"Question","name":"Can I reduce taxes on my signing bonus?","acceptedAnswer":{"@type":"Answer","text":"Yes — ask your employer to defer part into your 401k directly, or time it into a year where your other income is lower."}}]};
   return (
-    <div style={BG}>
+    <div style={BG}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
 
 
