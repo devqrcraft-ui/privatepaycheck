@@ -18,6 +18,7 @@ export default function Page() {
         ]
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"$50,000 a Year After Taxes 2026 — How Much Per Month & Hourly","item":"https://privatepaycheck.com/blog/50k-a-year-after-taxes"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"$50,000 a Year After Taxes 2026 — How Much Per Month & Hourly","description":"How much is $50k a year after taxes in 2026? Monthly: $3,350–$3,870. Hourly: $16.11–$18.60. See exact numbers for all 50 states.","url":"https://privatepaycheck.com/blog/50k-a-year-after-taxes","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://privatepaycheck.com"}}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $50k After Taxes
       </nav>
