@@ -24,6 +24,7 @@ export default function Page() {
           {"@type":"Question","name":"Is $25 an hour middle class in 2026?","acceptedAnswer":{"@type":"Answer","text":"$25/hr = $52,000/year. This is near the US median individual income. It qualifies as lower-middle class in high cost states like California, and comfortably middle class in states like Texas or Ohio."}}
         ]
       }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"$25 an Hour After Taxes 2026 — Take-Home Pay by State","item":"https://privatepaycheck.com/blog/25-dollars-an-hour-after-taxes"}]}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $25 an Hour After Taxes
       </nav>

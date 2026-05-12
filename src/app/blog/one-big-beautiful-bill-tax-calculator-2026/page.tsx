@@ -32,6 +32,7 @@ export default function OBBBBlogPage() {
     <>
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#e2e8f0 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"One Big Beautiful Bill Tax Calculator 2026 — Overtime, Tips & Senior Savings","item":"https://privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026"}]}' }} />
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <Link href="/blog" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: 14 }}>All articles</Link>
         <h1 style={{ fontSize: 32, fontWeight: 900, marginTop: 16, marginBottom: 8, lineHeight: 1.2 }}>

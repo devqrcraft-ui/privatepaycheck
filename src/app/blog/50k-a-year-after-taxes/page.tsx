@@ -17,6 +17,7 @@ export default function Page() {
           {"@type":"Question","name":"How much is $50,000 a year monthly after taxes?","acceptedAnswer":{"@type":"Answer","text":"$50,000/year = $4,167/month gross. After taxes, monthly take-home is roughly $3,360 (Texas) to $3,225 (California) for a single filer in 2026."}}
         ]
       }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"$50,000 a Year After Taxes 2026 — How Much Per Month & Hourly","item":"https://privatepaycheck.com/blog/50k-a-year-after-taxes"}]}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $50k After Taxes
       </nav>

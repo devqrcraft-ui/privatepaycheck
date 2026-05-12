@@ -44,6 +44,7 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/california-minimum-wage-2026',
         datePublished:'2026-02-23', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Minimum Wage 2026 — History, Changes & What Workers Need to Know","item":"https://privatepaycheck.com/blog/california-minimum-wage-2026"}]}' }} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>

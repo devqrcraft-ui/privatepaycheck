@@ -25,6 +25,7 @@ export default function Page() {
           {"@type":"Question","name":"How many biweekly paychecks in 2026?","acceptedAnswer":{"@type":"Answer","text":"There are 26 biweekly pay periods in 2026. Some employees may receive 27 paychecks depending on when their pay cycle started."}}
         ]
       }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Biweekly Paycheck After Taxes 2026 — Calculator & Tables","item":"https://privatepaycheck.com/blog/biweekly-paycheck-after-taxes"}]}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Biweekly Paycheck After Taxes
       </nav>

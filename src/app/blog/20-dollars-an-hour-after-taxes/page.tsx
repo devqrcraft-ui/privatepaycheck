@@ -26,6 +26,7 @@ export default function Page() {
           {"@type":"Question","name":"Which state gives the most take-home pay at $20 an hour?","acceptedAnswer":{"@type":"Answer","text":"No-income-tax states — Texas, Florida, Washington, Nevada, Wyoming — give the highest take-home at $20/hr: approximately $34,860/year or $16.76/hr effective."}}
         ]
       }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"$20 an Hour After Taxes 2026 — Exact Take-Home Pay by State","item":"https://privatepaycheck.com/blog/20-dollars-an-hour-after-taxes"}]}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}>
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $20 an Hour After Taxes
       </nav>

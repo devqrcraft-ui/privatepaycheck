@@ -20,6 +20,7 @@ export default function Post() {
         author:{'@type':'Organization','name':'PrivatePaycheck'},
         mainEntityOfPage:'https://www.privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Your Take-Home Pay in the US (2026)","item":"https://privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',
         mainEntity:[

@@ -24,6 +24,7 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/california-paycheck-calculator-guide',
         datePublished:'2026-02-08', author:{'@type':'Organization', name:'PrivatePaycheck'},
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Paycheck 2026: Why Your Take-Home Is Lower Than Expected","item":"https://privatepaycheck.com/blog/california-paycheck-calculator-guide"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
