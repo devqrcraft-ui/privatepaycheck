@@ -60,6 +60,7 @@ const BLOG_SLUGS = [
   'nurse-paycheck-calculator',
   'one-big-beautiful-bill-tax-calculator-2026',
   'overtime-pay-rules-by-state',
+  'overtime-tax-calculator-2026',
   'police-officer-salary-after-taxes',
   'software-engineer-take-home-pay',
   'teacher-salary-after-taxes',
