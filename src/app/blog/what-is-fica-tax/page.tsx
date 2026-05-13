@@ -67,4 +67,16 @@ Medicare: $75,000 × 1.45% = $1,087.50/year<br/>
 </div>
 </div>
 <footer style={{textAlign:'center',padding:'24px',fontSize:'12px',opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)',marginTop:'40px'}}>© 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{color:'inherit'}}>Privacy Policy</Link> · <Link href="/terms" style={{color:'inherit'}}>Terms</Link></footer>
-<AuthorBox /></main>);}
+<AuthorBox />
+      <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)', marginTop:32, paddingTop:24 }}>
+        <p style={{ fontSize:14, fontWeight:700, color:'#F5C842', marginBottom:12 }}>Calculate your exact take-home pay by state:</p>
+        <div style={{ display:'flex', flexWrap:'wrap', gap:10 }}>
+          <a href="/california-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>California Calculator</a>
+          <a href="/texas-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>Texas Calculator</a>
+          <a href="/florida-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>Florida Calculator</a>
+          <a href="/new-york-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>New York Calculator</a>
+          <a href="/washington-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>Washington Calculator</a>
+          <a href="/washington-dc-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>Washington DC Calculator</a>
+        </div>
+      </div>
+    </main>);}
