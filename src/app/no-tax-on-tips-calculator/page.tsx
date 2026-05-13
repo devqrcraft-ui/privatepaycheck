@@ -1,6 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export default function NoTaxOnTipsCalculator() {
   const [tips, setTips] = useState('800');
@@ -126,6 +127,7 @@ export default function NoTaxOnTipsCalculator() {
         </div>
       </div>
 
+      <AuthorBox />
     </div>
   );
 }
