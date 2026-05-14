@@ -12,6 +12,7 @@ export default function Page() {
   const rows: string[][] = [["$30,000","$2,500","$2,020","$1,864"],["$40,000","$3,333","$2,605","$2,403"],["$50,000","$4,167","$3,148","$2,904"],["$60,000","$5,000","$3,656","$3,373"],["$75,000","$6,250","$4,357","$4,019"],["$100,000","$8,333","$5,540","$5,114"]]
   const thS = 'padding:10px 14px;background:rgba(255,255,255,0.06);color:#b8c8dc;font-size:13px;text-align:left;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.08)'
   const tdS = 'padding:10px 14px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05)'
+  const faqs: [string,string][] = [["What is Ohio income tax rate 2026?","Ohio has graduated state income tax rates from 2.75% to 3.5% in 2026. The top 3.5% rate applies to income over $115,300."],["How much is $50,000 take-home in Ohio?","Approximately $37,776/year ($3,148/month) after federal, FICA, and OH state tax."],["Does Ohio have local income taxes?","Yes. Many Ohio cities have local income taxes ranging from 1%–3%. Columbus is 2.5%, Cleveland is 2.5%. This calculator shows state tax only."];
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', background: '#0f0c29', minHeight: '100vh', color: 'white' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Ohio income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Ohio has graduated state income tax rates from 2.75% to 3.5% in 2026. The top 3.5% rate applies to income over $115,300."}},{"@type":"Question","name":"How much is $50,000 take-home in Ohio?","acceptedAnswer":{"@type":"Answer","text":"Approximately $37,776/year ($3,148/month) after federal, FICA, and OH state tax."}},{"@type":"Question","name":"Does Ohio have local income taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many Ohio cities have local income taxes ranging from 1%–3%. Columbus is 2.5%, Cleveland is 2.5%. This calculator shows state tax only."}}]}' }} />
@@ -44,7 +45,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is Ohio income tax rate 2026?","Ohio has graduated state income tax rates from 2.75% to 3.5% in 2026. The top 3.5% rate applies to income over $115,300."],["How much is $50,000 take-home in Ohio?","Approximately $37,776/year ($3,148/month) after federal, FICA, and OH state tax."],["Does Ohio have local income taxes?","Yes. Many Ohio cities have local income taxes ranging from 1%–3%. Columbus is 2.5%, Cleveland is 2.5%. This calculator shows state tax only."] as [string,string][]).map(([q,a]) => (
+      {faqs.map(([q,a]:[string,string]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>

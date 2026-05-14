@@ -12,6 +12,7 @@ export default function Page() {
   const rows: string[][] = [["$30,000","$2,500","$2,011","$1,856"],["$40,000","$3,333","$2,597","$2,396"],["$50,000","$4,167","$3,142","$2,900"],["$60,000","$5,000","$3,651","$3,369"],["$75,000","$6,250","$4,349","$4,014"],["$100,000","$8,333","$5,528","$5,103"]]
   const thS = 'padding:10px 14px;background:rgba(255,255,255,0.06);color:#b8c8dc;font-size:13px;text-align:left;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.08)'
   const tdS = 'padding:10px 14px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05)'
+  const faqs: [string,string][] = [["What is Michigan income tax rate 2026?","Michigan has a flat 4.25% state income tax rate in 2026."],["How much is $50,000 take-home in Michigan?","Approximately $37,704/year ($3,142/month) after federal, FICA, and MI state tax (4.25% flat)."],["Does Michigan have local income taxes?","Yes. Detroit has a 2.4% city income tax for residents. Several other cities have 1%–2% local taxes. This calculator shows state tax only."];
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', background: '#0f0c29', minHeight: '100vh', color: 'white' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Michigan income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Michigan has a flat 4.25% state income tax rate in 2026."}},{"@type":"Question","name":"How much is $50,000 take-home in Michigan?","acceptedAnswer":{"@type":"Answer","text":"Approximately $37,704/year ($3,142/month) after federal, FICA, and MI state tax (4.25% flat)."}},{"@type":"Question","name":"Does Michigan have local income taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Detroit has a 2.4% city income tax for residents. Several other cities have 1%–2% local taxes. This calculator shows state tax only."}}]}' }} />
@@ -44,7 +45,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is Michigan income tax rate 2026?","Michigan has a flat 4.25% state income tax rate in 2026."],["How much is $50,000 take-home in Michigan?","Approximately $37,704/year ($3,142/month) after federal, FICA, and MI state tax (4.25% flat)."],["Does Michigan have local income taxes?","Yes. Detroit has a 2.4% city income tax for residents. Several other cities have 1%–2% local taxes. This calculator shows state tax only."] as [string,string][]).map(([q,a]) => (
+      {faqs.map(([q,a]:[string,string]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>

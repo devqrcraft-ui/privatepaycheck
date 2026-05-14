@@ -12,6 +12,7 @@ export default function Page() {
   const rows: string[][] = [["$30,000","$2,500","$1,982","$1,829"],["$40,000","$3,333","$2,562","$2,363"],["$50,000","$4,167","$3,096","$2,856"],["$60,000","$5,000","$3,596","$3,317"],["$75,000","$6,250","$4,284","$3,953"],["$100,000","$8,333","$5,450","$5,030"]]
   const thS = 'padding:10px 14px;background:rgba(255,255,255,0.06);color:#b8c8dc;font-size:13px;text-align:left;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.08)'
   const tdS = 'padding:10px 14px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05)'
+  const faqs: [string,string][] = [["What is Illinois income tax rate 2026?","Illinois has a flat 4.95% state income tax rate that applies to all income levels equally."],["How much is $50,000 take-home in Illinois?","Approximately $37,152/year ($3,096/month) after federal, FICA, and IL state tax (4.95% flat)."],["Does Illinois tax retirement income?","Illinois does not tax most retirement income including Social Security, pensions, and 401(k) distributions."];
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', background: '#0f0c29', minHeight: '100vh', color: 'white' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Illinois income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Illinois has a flat 4.95% state income tax rate that applies to all income levels equally."}},{"@type":"Question","name":"How much is $50,000 take-home in Illinois?","acceptedAnswer":{"@type":"Answer","text":"Approximately $37,152/year ($3,096/month) after federal, FICA, and IL state tax (4.95% flat)."}},{"@type":"Question","name":"Does Illinois tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Illinois does not tax most retirement income including Social Security, pensions, and 401(k) distributions."}}]}' }} />
@@ -44,7 +45,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is Illinois income tax rate 2026?","Illinois has a flat 4.95% state income tax rate that applies to all income levels equally."],["How much is $50,000 take-home in Illinois?","Approximately $37,152/year ($3,096/month) after federal, FICA, and IL state tax (4.95% flat)."],["Does Illinois tax retirement income?","Illinois does not tax most retirement income including Social Security, pensions, and 401(k) distributions."] as [string,string][]).map(([q,a]) => (
+      {faqs.map(([q,a]:[string,string]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>
