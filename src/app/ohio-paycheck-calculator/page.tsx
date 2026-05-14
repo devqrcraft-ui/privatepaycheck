@@ -44,7 +44,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is Ohio income tax rate 2026?","Ohio has graduated state income tax rates from 2.75% to 3.5% in 2026. The top 3.5% rate applies to income over $115,300."],["How much is $50,000 take-home in Ohio?","Approximately $37,776/year ($3,148/month) after federal, FICA, and OH state tax."],["Does Ohio have local income taxes?","Yes. Many Ohio cities have local income taxes ranging from 1%–3%. Columbus is 2.5%, Cleveland is 2.5%. This calculator shows state tax only."]].map(([q, a]: [string, string]) => (
+      {[["What is Ohio income tax rate 2026?","Ohio has graduated state income tax rates from 2.75% to 3.5% in 2026. The top 3.5% rate applies to income over $115,300."],["How much is $50,000 take-home in Ohio?","Approximately $37,776/year ($3,148/month) after federal, FICA, and OH state tax."],["Does Ohio have local income taxes?","Yes. Many Ohio cities have local income taxes ranging from 1%–3%. Columbus is 2.5%, Cleveland is 2.5%. This calculator shows state tax only."] as [string,string][]).map(([q,a]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>

@@ -44,7 +44,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is Michigan income tax rate 2026?","Michigan has a flat 4.25% state income tax rate in 2026."],["How much is $50,000 take-home in Michigan?","Approximately $37,704/year ($3,142/month) after federal, FICA, and MI state tax (4.25% flat)."],["Does Michigan have local income taxes?","Yes. Detroit has a 2.4% city income tax for residents. Several other cities have 1%–2% local taxes. This calculator shows state tax only."]].map(([q, a]: [string, string]) => (
+      {[["What is Michigan income tax rate 2026?","Michigan has a flat 4.25% state income tax rate in 2026."],["How much is $50,000 take-home in Michigan?","Approximately $37,704/year ($3,142/month) after federal, FICA, and MI state tax (4.25% flat)."],["Does Michigan have local income taxes?","Yes. Detroit has a 2.4% city income tax for residents. Several other cities have 1%–2% local taxes. This calculator shows state tax only."] as [string,string][]).map(([q,a]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>

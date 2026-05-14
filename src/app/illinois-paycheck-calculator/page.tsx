@@ -44,7 +44,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is Illinois income tax rate 2026?","Illinois has a flat 4.95% state income tax rate that applies to all income levels equally."],["How much is $50,000 take-home in Illinois?","Approximately $37,152/year ($3,096/month) after federal, FICA, and IL state tax (4.95% flat)."],["Does Illinois tax retirement income?","Illinois does not tax most retirement income including Social Security, pensions, and 401(k) distributions."]].map(([q, a]: [string, string]) => (
+      {[["What is Illinois income tax rate 2026?","Illinois has a flat 4.95% state income tax rate that applies to all income levels equally."],["How much is $50,000 take-home in Illinois?","Approximately $37,152/year ($3,096/month) after federal, FICA, and IL state tax (4.95% flat)."],["Does Illinois tax retirement income?","Illinois does not tax most retirement income including Social Security, pensions, and 401(k) distributions."] as [string,string][]).map(([q,a]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>

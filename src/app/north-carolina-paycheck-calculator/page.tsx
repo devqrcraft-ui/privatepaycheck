@@ -44,7 +44,7 @@ export default function Page() {
         </tbody>
       </table>
       <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {[["What is North Carolina income tax rate 2026?","North Carolina has a flat 4.5% state income tax rate in 2026, continuing its scheduled reductions from 5.25% in 2022."],["How much is $50,000 take-home in North Carolina?","Approximately $37,512/year ($3,126/month) after federal, FICA, and NC state tax (4.5% flat)."],["Does North Carolina tax Social Security?","No. North Carolina does not tax Social Security benefits. Military retirement pay is also exempt."]].map(([q, a]: [string, string]) => (
+      {[["What is North Carolina income tax rate 2026?","North Carolina has a flat 4.5% state income tax rate in 2026, continuing its scheduled reductions from 5.25% in 2022."],["How much is $50,000 take-home in North Carolina?","Approximately $37,512/year ($3,126/month) after federal, FICA, and NC state tax (4.5% flat)."],["Does North Carolina tax Social Security?","No. North Carolina does not tax Social Security benefits. Military retirement pay is also exempt."] as [string,string][]).map(([q,a]) => (
         <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
           <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>
