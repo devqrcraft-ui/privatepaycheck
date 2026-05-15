@@ -23,6 +23,16 @@ export default function Page() {
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Michigan Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 16, color: '#c8d4e8', marginBottom: 12 }}>Michigan state income tax: <strong>4.25% flat</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#F5C842' }}>free paycheck calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Michigan has a flat 4.25% state income tax rate in 2026.</div>
+      <div style={{background:'rgba(245,200,66,0.08)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+        <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li>Michigan flat income tax rate is <strong>4.25%</strong> in 2026</li>
+          <li>At $50,000 salary, take-home is approximately <strong>$3,120/month</strong> after federal, FICA, and MI state tax</li>
+          <li>Detroit residents pay an additional <strong>2.4%</strong> city income tax (1.2% for non-residents)</li>
+          <li>Michigan personal exemption is <strong>$5,600</strong> per person for 2026</li>
+          <li>Social Security income is <strong>partially taxed</strong> in Michigan depending on birth year</li>
+        </ul>
+      </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Michigan Take-Home Pay by Salary (Single Filer, 2026)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead>

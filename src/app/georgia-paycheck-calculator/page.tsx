@@ -23,6 +23,16 @@ export default function Page() {
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Georgia Paycheck Calculator 2026</h1>
       <p style={{ fontSize: 16, color: '#c8d4e8', marginBottom: 12 }}>Georgia state income tax: <strong>5.39% flat</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#F5C842' }}>free paycheck calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Georgia moved to a flat 5.39% income tax rate in 2024, reducing to 4.99% by 2029.</div>
+      <div style={{background:'rgba(245,200,66,0.08)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+        <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li>Georgia flat income tax rate is <strong>5.39%</strong> in 2026 — one of the lowest in the Southeast</li>
+          <li>At $50,000 salary, take-home is <strong>$3,070/month</strong> after federal, FICA, and GA state tax</li>
+          <li>Rate drops to <strong>4.99%</strong> by 2029 under Georgia's phased reduction plan</li>
+          <li>Social Security income is <strong>not taxed</strong> in Georgia — residents 65+ get $65,000 retirement exclusion</li>
+          <li>No local income tax in Georgia — only state + federal applies</li>
+        </ul>
+      </div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Georgia Take-Home Pay by Salary (Single Filer, 2026)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead>
