@@ -51,6 +51,17 @@ export default function NoTaxOnTipsCalculator() {
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>NEW 2026 &mdash; No Tax on Tips Law</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Tips Calculator 2026</h1>
           <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much you save under the No Tax on Tips exemption &mdash; up to $25,000 in tip income tax-free per year.</p>
+          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginTop: 8 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
+        </div>
+        <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
+          <div style={{ fontWeight: 800, color: '#F5C842', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>
+          <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
+            <li>Up to <strong>$25,000</strong> in tip income is exempt from federal income tax in 2026</li>
+            <li>Workers must earn <strong>$160,000 or less</strong> in wages to qualify</li>
+            <li>FICA taxes (Social Security 6.2% + Medicare 1.45%) still apply to all tips</li>
+            <li>Tips must still be <strong>reported</strong> on your tax return — exemption removes income tax only</li>
+            <li>A server earning $25,000 in tips saves roughly <strong>$2,500–$5,500</strong> in federal tax</li>
+          </ul>
         </div>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '24px' }}>

@@ -21,7 +21,18 @@ export default function Page() {
         <a href="/" style={{ color: '#b8c8dc' }}>Home</a> › Ohio Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Ohio Paycheck Calculator 2026</h1>
+      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 12 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
       <p style={{ fontSize: 16, color: '#c8d4e8', marginBottom: 12 }}>Ohio state income tax: <strong>2.75%–3.5%</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#F5C842' }}>free paycheck calculator</a> for your exact situation.</p>
+      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
+        <div style={{ fontWeight: 800, color: '#F5C842', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>
+        <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
+          <li>Ohio state income tax ranges from <strong>0% to 3.5%</strong> across 4 brackets in 2026</li>
+          <li>A $50,000 salary nets roughly <strong>$3,100+/month</strong> after federal, state, and FICA taxes</li>
+          <li>Ohio has a relatively <strong>low state tax burden</strong> compared to Midwest neighbors like Minnesota</li>
+          <li>FICA (Social Security 6.2% + Medicare 1.45%) applies to all Ohio workers</li>
+          <li>Some Ohio municipalities charge a local income tax of <strong>1%–3%</strong> — check your city</li>
+        </ul>
+      </div>
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>Ohio has graduated rates from 2.75% to 3.5% in 2026.</div>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Ohio Take-Home Pay by Salary (Single Filer, 2026)</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
