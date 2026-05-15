@@ -88,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog`,                            lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
     { url: `${BASE_URL}/no-tax-on-overtime-deduction`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/no-tax-on-tips-calculator`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/tips-tax-calculator-2026`,         lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/raise-calculator`,                lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/signing-bonus-tax-calculator`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/two-jobs-tax-calculator`,         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
