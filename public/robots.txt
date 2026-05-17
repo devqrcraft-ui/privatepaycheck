@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://www.privatepaycheck.com/sitemap.xml
