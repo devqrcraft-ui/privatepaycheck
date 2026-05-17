@@ -16,7 +16,7 @@ export default function Post() {
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Florida Unemployment Benefits 2026 — How Much Will You Get?',
         url:'https://www.privatepaycheck.com/blog/florida-unemployment-benefits-2026',
-        datePublished:'2026-02-21', author:{'@type':'Organization', name:'PrivatePaycheck'},
+        datePublished:'2026-02-21', author:{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'reviewedBy':{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Florida Unemployment Benefits 2026 — How Much Will You Get?","item":"https://privatepaycheck.com/blog/florida-unemployment-benefits-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

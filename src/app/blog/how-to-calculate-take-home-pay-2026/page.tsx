@@ -17,7 +17,7 @@ export default function Post() {
         headline:'How to Calculate Your Take-Home Pay in the US (2026)',
         url:'https://www.privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
         datePublished:'2026-03-20',
-        author:{'@type':'Organization','name':'PrivatePaycheck'},
+        author:{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'reviewedBy':{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
         mainEntityOfPage:'https://www.privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026',
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Your Take-Home Pay in the US (2026)","item":"https://privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026"}]}' }} />

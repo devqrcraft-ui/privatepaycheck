@@ -35,7 +35,7 @@ export default function Post() {
         headline:'9 States With No Income Tax in 2026 — How Much Do You Actually Save?',
         url:'https://www.privatepaycheck.com/blog/no-income-tax-states-2026',
         datePublished:'2026-01-22', dateModified:'2026-01-22',
-        author:{'@type':'Organization', name:'PrivatePaycheck'},
+        author:{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'reviewedBy':{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"9 States With No Income Tax in 2026 — How Much Do You Actually Save?","item":"https://privatepaycheck.com/blog/no-income-tax-states-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

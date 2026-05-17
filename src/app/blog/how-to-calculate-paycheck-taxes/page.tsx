@@ -16,7 +16,7 @@ export default function Post() {
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'How to Calculate Paycheck Taxes 2026 — Step by Step Guide',
         url:'https://www.privatepaycheck.com/blog/how-to-calculate-paycheck-taxes',
-        datePublished:'2026-02-24', author:{'@type':'Organization', name:'PrivatePaycheck'},
+        datePublished:'2026-02-24', author:{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'reviewedBy':{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Paycheck Taxes 2026 — Step by Step Guide","item":"https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
