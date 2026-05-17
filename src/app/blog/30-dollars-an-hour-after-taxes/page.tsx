@@ -49,7 +49,13 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is $30 an hour a good wage in 2026?</h3><p style={{ color: '#c8d0e7', lineHeight: 1.7 }}>$30/hr = $62,400/year, which is above the US median individual income. It provides a comfortable living in most states outside high cost-of-living metros.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $30 an hour monthly after taxes?</h3><p style={{ color: '#c8d0e7', lineHeight: 1.7 }}>In Texas, $30/hr = $4,420/month take-home. In California, approximately $3,950/month after state and federal taxes.</p>
     
-      <div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
+            <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+        {'The Internal Revenue Service requires self-employed individuals and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+        <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+          {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>IRS.gov — Self-Employed Tax Center</a>
+        </cite>
+      </blockquote>
+<div style={{ borderTop: '2px solid #2a3a6a', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Related Guides</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 8, marginBottom: 24 }}>
           {([

@@ -89,7 +89,13 @@ export default function Post() {
           </table>
         </div>
         <h2 style={h2}>FAQ</h2>
-        <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)' }}>
+              <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+        {'The Internal Revenue Service requires self-employed individuals and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+        <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+          {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>IRS.gov — Self-Employed Tax Center</a>
+        </cite>
+      </blockquote>
+      <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)' }}>
           {[
             { q:'How much tax do you pay on overtime in 2026?', a:'With the OBBBA deduction, you save up to $2,750 (single) or $5,500 (joint) in federal income tax on overtime pay. Without the deduction, OT is taxed at your marginal rate — typically 22-24% for most workers.' },
             { q:'Does overtime get taxed more than regular pay?', a:'No. Overtime is taxed at your regular marginal rate, not a higher rate. The OBBBA deduction further reduces the tax impact of overtime for 2026.' },
