@@ -19,7 +19,6 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/how-to-read-your-pay-stub',
         datePublished:'2026-01-15', dateModified:'2026-01-15',
         author:{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'reviewedBy':{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
-        publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://www.privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"How to Read Your Pay Stub: Every Line Explained (2026)","item":"https://privatepaycheck.com/blog/how-to-read-your-pay-stub"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
