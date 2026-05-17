@@ -23,7 +23,6 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/california-paycheck-deductions-explained',
         datePublished:'2026-05-06',
         author:{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'reviewedBy':{'@type':'Person','name':'Ethan Blake','jobTitle':'Tax Compliance Specialist','sameAs':['https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center']},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
-        publisher:{'@type':'Organization', name:'PrivatePaycheck', url:'https://www.privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Paycheck Deductions Explained 2026 — Complete Guide","item":"https://privatepaycheck.com/blog/california-paycheck-deductions-explained"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
