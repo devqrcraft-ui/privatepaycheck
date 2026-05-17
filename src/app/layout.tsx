@@ -65,7 +65,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       }) }} />
-        <main role="main">{children}</main>
+        <main role="main">{children}        <div style={{background:'rgba(245,200,66,0.06)',borderTop:'1px solid rgba(245,200,66,0.15)',borderBottom:'1px solid rgba(245,200,66,0.15)',padding:'8px 20px',textAlign:'center'}}>
+          <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.45)',lineHeight:1.6}}>
+            <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not financial advice — consult a licensed professional for your situation.
+          </p>
+        </div>
+</main>
         <Analytics />
         <Script src="/ai-chat-widget.js?v=4" strategy="lazyOnload" />
       <Footer />
