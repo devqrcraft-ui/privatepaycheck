@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import AuthorBox from '@/components/AuthorBox'
+import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Trump Account Calculator 2026: Child Tax Benefit = $1,000/Year',
