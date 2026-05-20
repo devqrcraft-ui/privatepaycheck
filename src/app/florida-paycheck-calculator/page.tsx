@@ -32,8 +32,8 @@ export default function Page() {
       <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Florida Paycheck Calculator
       </nav>
-      <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>Florida Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 12 }}>Florida has <strong>no state income tax</strong>. Your paycheck deductions are federal income tax and FICA only — making Florida one of the best states for take-home pay.</p>
+      <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#e8edf8' }}>Florida Paycheck Calculator 2026</h1>
+      <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.65)', marginBottom: 12 }}>Florida has <strong>no state income tax</strong>. Your paycheck deductions are federal income tax and FICA only — making Florida one of the best states for take-home pay.</p>
       <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#6ee7b7' }}>
         No Florida state income tax in 2026. Same take-home as Texas, Nevada, and Washington.
       </div>
@@ -54,7 +54,7 @@ export default function Page() {
         <tbody>{rows.map(([sal,gross,net,bw]) => (
           <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
-            <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
+            <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.65)' }}>{gross}</td>
             <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
             <td style={{ padding: '10px 14px' }}>{bw}</td>
           </tr>
@@ -79,6 +79,19 @@ export default function Page() {
       <FlTxCalcEmbed state="florida" />
 
       {/* ANSWER-FIRST GEO BLOCK */}
+
+        {/* Key Takeaways */}
+        <div style={{background:'rgba(245,200,66,0.08)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24,marginTop:16}}>
+          <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>{'Florida has no state income tax — one of only 9 states with zero state tax in 2026'}</li>
+            <li>{'On a $75K salary in Florida, take-home is ~$59,100/year — $6,900 more than California'}</li>
+            <li>{'FICA tax is 7.65% on every paycheck — Social Security 6.2% + Medicare 1.45%'}</li>
+            <li>{'401k contribution up to $23,500 reduces federal taxable income in 2026'}</li>
+            <li>{'Standard deduction 2026: $16,100 single / $32,200 married filing jointly'}</li>
+          </ul>
+        </div>
+
       <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#F5C842', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Take-Home Summary — Florida</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
@@ -102,7 +115,7 @@ export default function Page() {
       </div>
     
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Why Florida Has Higher Take-Home Pay</h2>
-      <p style={{ color: '#94a3b8', marginBottom: 16, lineHeight: 1.7 }}>Florida is one of 9 states with <strong style={{color:'#e2e8f0'}}>no state income tax</strong>. That means a $75,000 salary in Florida takes home ~$57,200/year vs ~$52,650 in California — a difference of over <strong style={{color:'#4ade80'}}>$4,500/year</strong>. You still pay federal income tax and FICA (Social Security + Medicare).</p>
+      <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 16, lineHeight: 1.7 }}>Florida is one of 9 states with <strong style={{color:'#e2e8f0'}}>no state income tax</strong>. That means a $75,000 salary in Florida takes home ~$57,200/year vs ~$52,650 in California — a difference of over <strong style={{color:'#4ade80'}}>$4,500/year</strong>. You still pay federal income tax and FICA (Social Security + Medicare).</p>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Florida Take-Home Pay by Salary (2026)</h2>
       <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
@@ -125,8 +138,8 @@ export default function Page() {
               ['$200,000','$16,667','$130,100','$5,004'],
             ].map(([sal,mo,net,bw],i) => (
               <tr key={sal} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
-                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{sal}</td>
-                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{mo}</td>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8edf8' }}>{sal}</td>
+                <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.65)' }}>{mo}</td>
                 <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
                 <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
               </tr>
@@ -154,8 +167,8 @@ export default function Page() {
               ['$50/hr','$104,000','$76,800','$2,954'],
             ].map(([rate,gross,net,bw],i) => (
               <tr key={rate} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
-                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#f1f5f9' }}>{rate}</td>
-                <td style={{ padding: '10px 14px', color: '#94a3b8' }}>{gross}</td>
+                <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8edf8' }}>{rate}</td>
+                <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.65)' }}>{gross}</td>
                 <td style={{ padding: '10px 14px', color: '#4ade80', fontWeight: 700 }}>{net}</td>
                 <td style={{ padding: '10px 14px', color: '#818cf8' }}>{bw}</td>
               </tr>
@@ -173,8 +186,8 @@ export default function Page() {
           { city:'Jacksonville', avg:'$52,000', net:'~$41,400/yr', note:'Finance & logistics' },
         ].map(c2 => (
           <div key={c2.city} style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, padding: '14px 16px' }}>
-            <div style={{ fontWeight: 800, color: '#f1f5f9', marginBottom: 4 }}>{c2.city}</div>
-            <div style={{ fontSize: 13, color: '#94a3b8' }}>Avg salary: {c2.avg}</div>
+            <div style={{ fontWeight: 800, color: '#e8edf8', marginBottom: 4 }}>{c2.city}</div>
+            <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>Avg salary: {c2.avg}</div>
             <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', margin: '6px 0' }}>{c2.net}</div>
             <div style={{ fontSize: 12, color: '#e2e8f0' }}>{c2.note}</div>
           </div>
@@ -183,7 +196,7 @@ export default function Page() {
 
       <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: 10, padding: '20px 24px', marginBottom: 32 }}>
         <div style={{ fontWeight: 800, fontSize: 16, color: '#fde68a', marginBottom: 8 }}>💡 Florida Paycheck Tips 2026</div>
-        <ul style={{ color: '#94a3b8', lineHeight: 2, margin: 0, paddingLeft: 20 }}>
+        <ul style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 2, margin: 0, paddingLeft: 20 }}>
           <li>No state income tax — but you still owe <strong style={{color:'#e2e8f0'}}>federal tax + FICA</strong></li>
           <li>Florida minimum wage is <strong style={{color:'#e2e8f0'}}>$13.00/hr</strong> in 2026 (rising $1/yr toward $15)</li>
           <li>No FL disability insurance (unlike CA SDI) — more take-home</li>
@@ -192,7 +205,7 @@ export default function Page() {
       </div>
 
       <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ fontWeight: 800, fontSize: 16, color: '#f1f5f9', marginBottom: 16 }}>Related Calculators</div>
+        <div style={{ fontWeight: 800, fontSize: 16, color: '#e8edf8', marginBottom: 16 }}>Related Calculators</div>
         <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 10 }}>
           {[
             ['/texas-paycheck-calculator','Texas Paycheck Calculator'],
