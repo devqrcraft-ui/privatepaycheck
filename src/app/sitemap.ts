@@ -57,6 +57,7 @@ const BLOG_SLUGS = [
   'nevada-vs-california-salary',
   'no-income-tax-states-2026',
   'no-tax-on-tips-explained',
+  'trump-account-calculator',
   'nurse-paycheck-calculator',
   'michigan-paycheck-calculator',
   'north-carolina-paycheck-calculator',
