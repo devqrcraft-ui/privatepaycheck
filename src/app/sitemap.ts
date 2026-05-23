@@ -70,6 +70,7 @@ const BLOG_SLUGS = [
   'police-officer-salary-after-taxes',
   'software-engineer-take-home-pay',
   'teacher-salary-after-taxes',
+  'firefighter-salary-after-taxes',
   'texas-paycheck-calculator-guide',
   'texas-vs-california-salary',
   'truck-driver-salary-after-taxes',
