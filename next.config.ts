@@ -11,7 +11,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Force www — fixes Google canonical issue
-      { source: '/', has: [{ type: 'query', key: 'state' }], destination: '/', permanent: false },
 
       
       // Short state slugs → full paycheck calculator pages
