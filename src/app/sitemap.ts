@@ -69,6 +69,7 @@ const BLOG_SLUGS = [
   'overtime-tax-calculator-2026',
   'police-officer-salary-after-taxes',
   'software-engineer-take-home-pay',
+  'software-engineer-salary-after-taxes',
   'teacher-salary-after-taxes',
   'firefighter-salary-after-taxes',
   'texas-paycheck-calculator-guide',
