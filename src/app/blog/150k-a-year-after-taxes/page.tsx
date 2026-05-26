@@ -27,10 +27,21 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"$150,000 a Year After Taxes 2026 — Take-Home Pay by State","description":"How much is $150k a year after taxes in 2026? Monthly: $6,400–$8,417. See exact take-home for all 50 states including CA, TX, NY.","url":"https://privatepaycheck.com/blog/150k-a-year-after-taxes","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://privatepaycheck.com"}}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $150k After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$150,000 a Year After Taxes 2026</h1>
-      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+      <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
           <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $150,000/year after taxes = <strong style={{color:"#fff"}}>$99,000–$108,000/year</strong> take-home. Federal effective rate ~22%, FICA 7.65% on first $184,500. High-tax states like CA or NY reduce take-home by an additional $12,000–$15,000/year.
         </p>
+      </div>
+      <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
+        <p style={{ fontSize: 14, fontWeight: 800, color: '#F5C842', marginBottom: 12, marginTop: 0 }}>Key Takeaways</p>
+        <ul style={{ margin: 0, paddingLeft: 20, color: '#c8d0e7', fontSize: 14, lineHeight: 1.85 }}>
+          <li>Federal effective tax rate depends on your total gross income and filing status</li>
+          <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
+          <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
+          <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>Use the free calculator above for your exact state + filing status breakdown</li>
+        </ul>
       </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$150k/year gross = $72.12/hour.</strong> After federal taxes and FICA, take-home ranges from <strong>$84,804 (NYC) to $101,004 (Texas)</strong> — a $16,200 difference purely from state taxes.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$150k Take-Home by State (Single Filer, 2026)</h2>

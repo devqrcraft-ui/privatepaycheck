@@ -34,10 +34,21 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 <div style={{fontSize:'13px',opacity: 0.8,marginBottom:'24px'}}><Link href="/" style={{color:'inherit',textDecoration:'none'}}>Home</Link> › <Link href="/blog" style={{color:'inherit',textDecoration:'none'}}>Blog</Link> › $50k a Year Hourly</div>
 <div style={{display:'inline-block',background:'rgba(129,140,248,0.1)',color:'#818cf8',padding:'4px 12px',borderRadius:'20px',fontSize:'11px',fontWeight:700,marginBottom:'16px'}}>SALARY MATH</div>
 <h1 style={{fontSize:'clamp(22px,4vw,38px)',fontWeight:900,margin:'0 0 16px',lineHeight:1.25}}>$50,000 a Year is How Much an Hour? (2026 After-Tax Breakdown)</h1>
-      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+      <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
           <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $50,000 a year = <strong style={{color:"#fff"}}>$24.04/hour</strong> (52 weeks × 40 hours). After federal taxes and FICA, take-home is ~$38,700–$40,320/year or <strong style={{color:"#fff"}}>$18.60–$19.38/hour net</strong>. In Texas you keep ~$1,800 more/year than California.
         </p>
+      </div>
+      <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
+        <p style={{ fontSize: 14, fontWeight: 800, color: '#F5C842', marginBottom: 12, marginTop: 0 }}>Key Takeaways</p>
+        <ul style={{ margin: 0, paddingLeft: 20, color: '#c8d0e7', fontSize: 14, lineHeight: 1.85 }}>
+          <li>Federal effective tax rate depends on your total gross income and filing status</li>
+          <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
+          <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
+          <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>Use the free calculator above for your exact state + filing status breakdown</li>
+        </ul>
       </div>
 <p style={{opacity: 0.8,fontSize:'13px',marginBottom:'32px'}}>February 20, 2026 · 4 min read</p>
 <div style={{background:'rgba(74,222,128,0.08)',border:'1px solid rgba(74,222,128,0.2)',borderRadius:'12px',padding:'20px',marginBottom:'28px',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:'16px',textAlign:'center'}}>

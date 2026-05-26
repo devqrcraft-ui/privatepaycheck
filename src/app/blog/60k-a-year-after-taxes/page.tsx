@@ -15,10 +15,21 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"$60,000 a Year After Taxes 2026 — Monthly & Hourly Take-Home","description":"How much is $60k a year after taxes in 2026? Monthly: $3,163–$3,912. Hourly: $15.21–$18.81. See exact numbers for all 50 states.","url":"https://privatepaycheck.com/blog/60k-a-year-after-taxes","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://privatepaycheck.com"}}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $60k After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$60,000 a Year After Taxes 2026</h1>
-      <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
+      <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
           <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $60,000/year after taxes = <strong style={{color:"#fff"}}>$45,600–$48,400/year</strong> take-home ($3,800–$4,033/month). Federal effective rate ~14–17%, FICA 7.65%. Texas/Florida save you $2,000–$3,500/year vs California.
         </p>
+      </div>
+      <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
+        <p style={{ fontSize: 14, fontWeight: 800, color: '#F5C842', marginBottom: 12, marginTop: 0 }}>Key Takeaways</p>
+        <ul style={{ margin: 0, paddingLeft: 20, color: '#c8d0e7', fontSize: 14, lineHeight: 1.85 }}>
+          <li>Federal effective tax rate depends on your total gross income and filing status</li>
+          <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
+          <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
+          <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>Use the free calculator above for your exact state + filing status breakdown</li>
+        </ul>
       </div>
       <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}><strong>$60k/year gross = $28.85/hour.</strong> After federal taxes and FICA, take-home ranges from <strong>$41,844 to $46,944</strong> by state.</p>
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>$60k Salary — Annual, Monthly, Biweekly, Hourly</h2>
