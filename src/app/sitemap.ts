@@ -71,6 +71,7 @@ const BLOG_SLUGS = [
   'software-engineer-take-home-pay',
   'software-engineer-salary-after-taxes',
   'teacher-salary-after-taxes',
+  'nurse-salary-after-taxes',
   'firefighter-salary-after-taxes',
   'texas-paycheck-calculator-guide',
   'texas-vs-california-salary',
