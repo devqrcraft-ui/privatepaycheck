@@ -42,7 +42,7 @@ export default function NoTaxOnTipsCalculator() {
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
   const inp: React.CSSProperties = { width: '100%', padding: '10px 14px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: 'white', fontSize: '15px', outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit' };
-  const lbl: React.CSSProperties = { fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' };
+  const lbl: React.CSSProperties = { fontSize: '11px', color: 'rgba(255,255,255,0.65)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' };
 
   return (
     <div style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
@@ -51,7 +51,7 @@ export default function NoTaxOnTipsCalculator() {
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>NEW 2026 &mdash; No Tax on Tips Law</div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.2 }}>No Tax on Tips Calculator 2026</h1>
           <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>See how much you save under the No Tax on Tips exemption &mdash; up to $25,000 in tip income tax-free per year.</p>
-          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginTop: 8 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
+          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.65)', marginTop: 8 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
         </div>
         <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
           <div style={{ fontWeight: 800, color: '#F5C842', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>

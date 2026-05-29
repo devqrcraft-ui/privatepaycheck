@@ -46,7 +46,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
           { label: '2nd Highest Quarter ($)', value: q2, set: setQ2, placeholder: '13000', hint: 'Second best 3-month earnings' },
         ] as const).map(f => (
           <div key={f.label}>
-            <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
+            <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.65)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
             <input
               type="number"
               min="0"

@@ -99,13 +99,13 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
           { label:'Annual Tips ($)', value:tips, set:setTips, placeholder:'18000' },
         ].map(f => (
           <div key={f.label}>
-            <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>{f.label}</label>
+            <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.65)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>{f.label}</label>
             <input type="number" value={f.value} onChange={e => f.set(Math.max(0,+e.target.value).toString())} min={0} placeholder={f.placeholder}
               style={{ width:'100%', background:'#e2e8f0', border:'1.5px solid rgba(255,255,255,0.12)', borderRadius:'10px', padding:'11px 14px', color:'#fff', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const }} />
           </div>
         ))}
         <div>
-          <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.45)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>Filing Status</label>
+          <label style={{ fontSize:'11px', color:'rgba(255,255,255,0.65)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' }}>Filing Status</label>
           <select value={filing} onChange={e => setFiling(e.target.value as 'single'|'married')}
             style={{ width:'100%', background:'#e2e8f0', border:'1.5px solid rgba(255,255,255,0.2)', borderRadius:'10px', padding:'11px 14px', color:'#fff', fontSize:'15px', fontFamily:'inherit', outline:'none', boxSizing:'border-box' as const, colorScheme:'dark' }}>
             <option value="single">Single</option>

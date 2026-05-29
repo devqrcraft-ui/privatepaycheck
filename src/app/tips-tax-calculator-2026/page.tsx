@@ -60,7 +60,7 @@ export default function TipsTaxCalculator2026() {
     outline: 'none', boxSizing: 'border-box', fontFamily: 'inherit',
   };
   const lbl: React.CSSProperties = {
-    fontSize: '11px', color: 'rgba(255,255,255,0.45)', fontWeight: 600,
+    fontSize: '11px', color: 'rgba(255,255,255,0.65)', fontWeight: 600,
     textTransform: 'uppercase', letterSpacing: '0.06em',
     marginBottom: '6px', display: 'block',
   };
@@ -91,7 +91,7 @@ export default function TipsTaxCalculator2026() {
           <div style={{ textAlign: 'center', marginBottom: '8px' }}>
             <div style={{ display: 'inline-block', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#F5C842' }}>2026 — No Tax on Tips Law</div>
             <h1 style={{ fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, margin: '0 0 8px', lineHeight: 1.2 }}>Tips Tax Calculator 2026</h1>
-            <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)', marginBottom: '12px' }}>
+            <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.65)', marginBottom: '12px' }}>
               Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
             </div>
             <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>

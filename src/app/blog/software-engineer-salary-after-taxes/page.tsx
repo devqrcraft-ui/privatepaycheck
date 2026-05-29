@@ -33,10 +33,10 @@ export default function Page() {
         }}
       >
         <header>
-          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
-            <a href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Home</a>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
+            <a href="/" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Home</a>
             {' › '}
-            <a href="/blog" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Blog</a>
+            <a href="/blog" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Blog</a>
             {' › '}
             <span style={{ color: '#C8D8EC' }}>1099 vs W-2 Taxes 2026</span>
           </nav>
@@ -54,7 +54,7 @@ export default function Page() {
             1099 vs W-2 Taxes 2026: Which Costs You More?
           </h1>
 
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span>
             <span>·</span>
             <span>By Ethan Blake · Tax Compliance Specialist</span>
@@ -148,7 +148,7 @@ export default function Page() {
             <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
               {'The IRS states: "If you are self-employed, you are responsible for paying the full 15.3% self-employment tax. However, you can deduct one-half of the self-employment tax as an adjustment to income."'}
             </p>
-            <p style={{ margin: '8px 0 0', fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>
+            <p style={{ margin: '8px 0 0', fontSize: 12, color: 'rgba(255,255,255,0.65)' }}>
               — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{ color: '#e8b84b', textDecoration: 'none' }}>IRS Self-Employed Tax Center</a>
             </p>
           </blockquote>

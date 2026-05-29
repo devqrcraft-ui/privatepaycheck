@@ -43,7 +43,7 @@ export default function W4Calculator(){
   const fmt=(n:number)=>'$'+Math.round(n).toLocaleString();
   const fmtD=(n:number)=>'$'+(n).toFixed(2);
   const inp:React.CSSProperties={width:'100%',padding:'10px 14px',background:'rgba(255,255,255,0.08)',border:'1px solid rgba(255,255,255,0.15)',borderRadius:'8px',color:'white',fontSize:'15px',outline:'none',boxSizing:'border-box',fontFamily:'inherit'};
-  const lbl:React.CSSProperties={fontSize:'11px',color:'rgba(255,255,255,0.45)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'6px',display:'block'};
+  const lbl:React.CSSProperties={fontSize:'11px',color:'rgba(255,255,255,0.65)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.06em',marginBottom:'6px',display:'block'};
 
   return(
     <div style={{minHeight:'100vh',background:'#091526',color:'white',fontFamily:'system-ui,sans-serif'}}>

@@ -120,7 +120,7 @@ export default function OvertimeDeductionCalculator() {
                   { label: 'Phase-Out Reduction',   value: fmt(result.phaseOut),  big: false, color: result.phaseOut > 0 ? '#f87171' : 'rgba(255,255,255,0.3)' },
                 ].map(({ label, value, big, color }) => (
                   <div key={label} style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: `1px solid ${big ? 'rgba(192,132,252,0.3)' : 'rgba(255,255,255,0.07)'}` }}>
-                    <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{label}</div>
+                    <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{label}</div>
                     <div style={{ fontSize: big ? '30px' : '22px', fontWeight: 800, color }}>{value}</div>
                   </div>
                 ))}

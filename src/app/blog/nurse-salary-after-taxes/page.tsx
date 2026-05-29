@@ -31,10 +31,10 @@ export default function Page() {
         style={{maxWidth:780, margin:'0 auto', padding:'clamp(14px,4vw,28px)', background:'#0f0c29', color:'#e8edf8', minHeight:'100vh'}}
       >
         <header>
-          <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16}}>
-            <a href="/" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Home</a>
+          <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.65)', marginBottom:16}}>
+            <a href="/" style={{color:'rgba(255,255,255,0.65)', textDecoration:'none'}}>Home</a>
             {' › '}
-            <a href="/blog" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Blog</a>
+            <a href="/blog" style={{color:'rgba(255,255,255,0.65)', textDecoration:'none'}}>Blog</a>
             {' › '}
             <span style={{color:'rgba(255,255,255,0.65)'}}>Nurse Salary After Taxes 2026</span>
           </nav>
@@ -43,7 +43,7 @@ export default function Page() {
             Nurse Salary After Taxes 2026: How Much Do RNs Actually Take Home?
           </h1>
 
-          <div style={{fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap' as const}}>
+          <div style={{fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap' as const}}>
             <span>Last updated: May 2026</span>
             <span>·</span>
             <span>By Ethan Blake · Tax Compliance Specialist</span>

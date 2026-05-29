@@ -21,7 +21,7 @@ export default function Page() {
         <a href="/" style={{ color: '#b8c8dc' }}>Home</a> › Illinois Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Illinois Paycheck Calculator 2026</h1>
-      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 12 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
+      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: 12 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
       <p style={{ fontSize: 16, color: '#c8d4e8', marginBottom: 12 }}>Illinois state income tax: <strong>4.95% flat</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#F5C842' }}>free paycheck calculator</a> for your exact situation.</p>
       <div style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
         <div style={{ fontWeight: 800, color: '#F5C842', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>

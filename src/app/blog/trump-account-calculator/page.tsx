@@ -116,7 +116,7 @@ export default function TrumpAccountCalculator() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
 
-        <nav style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
+        <nav style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
           <a href="/" style={{ color: '#F5C842', textDecoration: 'none' }}>Home</a>
           {' › '}
           <a href="/blog" style={{ color: '#F5C842', textDecoration: 'none' }}>Blog</a>
@@ -128,7 +128,7 @@ export default function TrumpAccountCalculator() {
           Trump Account Calculator 2026: What Is It Worth at Age 18?
         </h1>
 
-        <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
+        <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
           {'Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist'}
         </div>
 
@@ -283,7 +283,7 @@ export default function TrumpAccountCalculator() {
 
         <blockquote style={{ borderLeft: '3px solid rgba(245,200,66,0.4)', paddingLeft: 16, margin: '20px 0', fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', fontSize: 14, lineHeight: 1.8 }}>
           {'The Internal Revenue Service requires employees and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
-          <cite style={{ display: 'block', marginTop: 8, fontSize: 12, color: 'rgba(255,255,255,0.45)', fontStyle: 'normal' }}>
+          <cite style={{ display: 'block', marginTop: 8, fontSize: 12, color: 'rgba(255,255,255,0.65)', fontStyle: 'normal' }}>
             {'— '}<a href="https://www.irs.gov/taxtopics/tc751" rel="nofollow" target="_blank" style={{ color: '#F5C842' }}>IRS.gov — Topic 751</a>
           </cite>
         </blockquote>

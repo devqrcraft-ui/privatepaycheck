@@ -20,7 +20,7 @@ export default function Page() {
       </nav>
 
       <h1 style={{ fontSize:34, fontWeight:900, marginBottom:8 }}>Wisconsin Paycheck Calculator 2026</h1>
-      <div style={{ fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:16 }}>
+      <div style={{ fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:16 }}>
         Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
       </div>
 
@@ -96,7 +96,7 @@ export default function Page() {
 
       <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'14px 18px', marginBottom:32, fontSize:14 }}>
         <a href="/" style={{ color:'#F5C842', fontWeight:700 }}>Calculate your exact Wisconsin paycheck →</a>
-        <span style={{ fontSize:12, color:'rgba(255,255,255,0.45)', marginLeft:12 }}>Enter your salary for a precise number</span>
+        <span style={{ fontSize:12, color:'rgba(255,255,255,0.65)', marginLeft:12 }}>Enter your salary for a precise number</span>
       </div>
 
       {/* How it works */}
