@@ -37,6 +37,7 @@ export default function Post() {
             <span style={{ background:'rgba(255,255,255,0.07)', color:'rgba(255,255,255,.55)', fontSize:12, padding:'3px 10px', borderRadius:20 }}>Updated May 2026</span>
           </div>
           <h1 style={{ fontSize:'clamp(24px,4vw,36px)', fontWeight:900, color:'#fff', lineHeight:1.25, marginBottom:14 }}>Overtime Tax Calculator 2026: How Much Tax Do You Pay on OT?</h1>
+          <p style={{fontSize:13,color:'#9aa3bc',marginBottom:12}}>By Ethan Blake · Updated May 2026 · ~6 min read</p>
           <p style={{ fontSize:16, color:'rgba(255,255,255,0.65)', lineHeight:1.7 }}>OBBBA 2026 created a new federal deduction for overtime pay — up to $12,500 for single filers and $25,000 for married couples. Here is exactly how it works and how to calculate your overtime tax bill.</p>
         </div>
       </div>
