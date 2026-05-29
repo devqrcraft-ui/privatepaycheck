@@ -71,7 +71,7 @@ export default function NoTaxOnTipsCalculator() {
             <div><label style={lbl}>Weeks Worked/Year</label><input type="number" value={weeks} onChange={e => setWeeks(Math.max(1,+e.target.value).toString())} min={1} style={inp} placeholder="52" /></div>
             <div>
               <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...inp, colorScheme:'dark', color:'#fff', background:'#e2e8f0'}}>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...inp, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>

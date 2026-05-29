@@ -96,11 +96,11 @@ export default function WEPLumpSumCalculator() {
   const fmt2 = (n: number) => n.toLocaleString('en-US', { style:'currency', currency:'USD', minimumFractionDigits:2, maximumFractionDigits:2 });
 
   const inp: React.CSSProperties = { width:'100%', padding:'10px 14px', borderRadius:8, border:'1px solid rgba(255,255,255,0.15)', background:'rgba(255,255,255,0.08)', color:'#fff', fontSize:16, boxSizing:'border-box' };
-  const sel: React.CSSProperties = { ...inp, background:'#e2e8f0' };
+  const sel: React.CSSProperties = { ...inp, background:'#1e2a4a' };
   const lbl: React.CSSProperties = { display:'block', fontSize:13, color:'#94a3b8', marginBottom:6, marginTop:16 };
 
   return (
-    <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#e2e8f0 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
+    <div style={{ minHeight:'100vh', background:'linear-gradient(135deg,#0f172a 0%,#1e2a4a 100%)', color:'#fff', fontFamily:'Inter,sans-serif', padding:'40px 20px' }}>
       <div style={{ maxWidth:600, margin:'0 auto' }}>
 
         <Link href="/" style={{ color:'#94a3b8', textDecoration:'none', fontSize:14 }}>← Back to all calculators</Link>

@@ -84,7 +84,7 @@ export default function Page() {
       <div style={{ overflowX: 'auto', marginBottom: 32 }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
           <thead>
-            <tr style={{ background: '#e2e8f0' }}>
+            <tr style={{ background:'#1e2a4a' }}>
               {['Scenario', 'Deposit', 'Est. Value', 'Notes'].map(h => (
                 <th key={h} style={{ padding: '12px 14px', textAlign: 'left', color: '#94a3b8', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', borderBottom: '1px solid #334155' }}>{h}</th>
               ))}
