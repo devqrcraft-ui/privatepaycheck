@@ -124,6 +124,7 @@ export default function TrumpAccountCalculator() {
         </nav>
 
         <h1 style={{ fontSize: 'clamp(22px,4vw,26px)', fontWeight: 900, color: '#e8edf8', marginBottom: 8, lineHeight: 1.3 }}>
+          <p style={{fontSize:13,color:'#9aa3bc',marginBottom:16}}>By Ethan Blake · Updated May 2026 · ~7 min read</p>
           Trump Account Calculator 2026: What Is It Worth at Age 18?
         </h1>
 

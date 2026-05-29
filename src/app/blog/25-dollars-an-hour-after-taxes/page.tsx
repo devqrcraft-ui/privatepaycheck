@@ -30,6 +30,7 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $25 an Hour After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$25 an Hour After Taxes 2026</h1>
+      <p style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 20 }}>By <span itemProp="author">Ethan Blake</span> · Updated May 2026 · ~5 min read</p>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
           <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $25/hour after taxes = <strong style={{color:"#fff"}}>~$39,000–$43,500/year</strong> take-home ($3,250–$3,625/month). Gross: $52,000/year. After FICA (7.65%) and federal income tax (~12%), effective take-home is 75–84% depending on state.

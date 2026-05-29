@@ -23,6 +23,7 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $50k After Taxes
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$50,000 a Year After Taxes in 2026</h1>
+      <p style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 20 }}>By <span itemProp="author">Ethan Blake</span> · Updated May 2026 · ~5 min read</p>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
           <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $50,000/year after taxes = <strong style={{color:"#fff"}}>$38,700–$40,320/year</strong> take-home ($3,225–$3,360/month). Gross hourly: $24.04. Federal effective rate ~12–15%, FICA 7.65%. No state income tax in TX/FL adds ~$1,500–$2,500/year.

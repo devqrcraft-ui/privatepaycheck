@@ -18,6 +18,7 @@ export default function Page() {
         <a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › $40 an Hour After Taxes 2026
       </nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>$40 an Hour After Taxes 2026</h1>
+      <p style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 20 }}>By <span itemProp="author">Ethan Blake</span> · Updated May 2026 · ~5 min read</p>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
           <strong style={{ color: '#F5C842' }}>Quick answer:</strong> $40/hour after taxes = <strong style={{color:"#fff"}}>~$62,400–$69,600/year</strong> take-home ($5,200–$5,800/month). Gross: $83,200/year. Federal effective rate ~17–20%, FICA 7.65%.
