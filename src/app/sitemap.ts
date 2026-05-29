@@ -59,6 +59,7 @@ const BLOG_SLUGS = [
   'no-tax-on-tips-explained',
   'trump-account-calculator',
   'nurse-paycheck-calculator',
+  'nurse-salary-after-taxes',
   'one-big-beautiful-bill-tax-calculator-2026',
   'overtime-pay-rules-by-state',
   'overtime-tax-calculator-2026',
