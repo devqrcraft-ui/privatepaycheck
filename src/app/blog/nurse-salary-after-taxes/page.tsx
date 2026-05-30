@@ -16,7 +16,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Nurse Salary After Taxes 2026","item":"https://www.privatepaycheck.com/blog/nurse-salary-after-taxes"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nurse Salary After Taxes 2026: $75K = $57,200 Take-Home","datePublished":"2026-05-28","dateModified":"2026-05-28","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/blog/nurse-salary-after-taxes"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nurse Salary After Taxes 2026: $75K = $57,200 Take-Home","datePublished":"2026-05-28","dateModified":"2026-05-30","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/blog/nurse-salary-after-taxes"}}'
 
 export default function Page() {
   return (
@@ -48,7 +48,7 @@ export default function Page() {
             <span>·</span>
             <span>By Ethan Blake · Tax Compliance Specialist</span>
             <span>·</span>
-            <span>{'~8 min read · 2,100 words'}</span>
+            <span>{'~11 min read · 3,400 words'}</span>
           </div>
         </header>
 
@@ -83,6 +83,8 @@ export default function Page() {
                 {label:'Full Tax Breakdown on $75K Salary', id:'breakdown'},
                 {label:'How Overtime Affects Nurse Take-Home Pay', id:'overtime'},
                 {label:'Nurse Salary After Taxes by Pay Frequency', id:'pay-frequency'},
+                {label:'Nurse Take-Home Pay by Specialty', id:'specialty'},
+                {label:'Travel Nurse Take-Home Pay', id:'travel-nurses'},
                 {label:'Highest and Lowest Paying States for Nurses', id:'states'},
                 {label:'How to Increase Nurse Take-Home Pay', id:'increase'},
                 {label:'Frequently Asked Questions', id:'faq'},
@@ -114,8 +116,14 @@ export default function Page() {
                   ['Texas','None','$59,400','$4,950'],
                   ['Florida','None','$59,400','$4,950'],
                   ['Washington','None','$59,400','$4,950'],
-                  ['New York','6.85%','$55,800','$4,650'],
+                  ['Nevada','None','$59,400','$4,950'],
+                  ['Pennsylvania','3.07%','$58,100','$4,842'],
+                  ['Ohio','3.99%','$57,500','$4,792'],
+                  ['Georgia','5.49%','$56,500','$4,708'],
                   ['Illinois','4.95%','$56,900','$4,742'],
+                  ['New York','6.85%','$55,800','$4,650'],
+                  ['New Jersey','6.37%','$56,100','$4,675'],
+                  ['Oregon','8.75%','$54,400','$4,533'],
                   ['California','9.30%','$53,800','$4,483'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
@@ -225,6 +233,74 @@ export default function Page() {
           </div>
         </section>
 
+        <section id="specialty">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
+            Nurse Take-Home Pay by Specialty in 2026
+          </h2>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            Nursing salary varies significantly by specialty and credential. A CRNA earns nearly three times more than a CNA — and the after-tax gap is even wider due to higher marginal rates. Here is how the major nursing roles compare in Texas (no state income tax) for 2026.
+          </p>
+          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}}>
+            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}}>
+              <thead>
+                <tr>
+                  {['Nursing Role','Avg Salary (2026)','Federal Tax','FICA','Take-Home (TX)'].map(h => (
+                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['CNA (Certified Nursing Assistant)','$38,000','$2,904','$2,907','$32,189'],
+                  ['LPN / LVN','$58,000','$7,124','$4,437','$46,439'],
+                  ['RN (Registered Nurse)','$85,000','$12,424','$6,503','$66,073'],
+                  ['NP (Nurse Practitioner)','$124,000','$22,824','$9,486','$91,690'],
+                  ['CRNA (Nurse Anesthetist)','$214,000','$52,024','$12,924','$149,052'],
+                ].map((row, i, arr) => (
+                  <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                    {row.map((cell, j) => (
+                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.5)', margin:'24px 0', padding:'12px 20px', background:'rgba(245,200,66,0.04)', borderRadius:'0 6px 6px 0'}}>
+            <p style={{margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7}}>
+              {'Registered nurses earned a median annual wage of $86,070 in May 2023. Employment is projected to grow 6 percent from 2023 to 2033.'} — <a href="https://www.bls.gov/ooh/healthcare/registered-nurses.htm" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>Bureau of Labor Statistics, Occupational Outlook Handbook</a>
+            </p>
+          </blockquote>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            The jump from RN to NP adds roughly $39,000 in gross pay — but after taxes, the net gain is approximately $25,600 per year in Texas. Advanced credentials have a strong ROI even after higher marginal tax rates.
+          </p>
+        </section>
+
+        <section id="travel-nurses">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
+            How Much Do Travel Nurses Take Home After Taxes in 2026?
+          </h2>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            Travel nurses earn significantly more than staff nurses — typically $100,000 to $130,000 per year — but their tax situation is more complex. A portion of travel nurse pay comes as non-taxable stipends (housing, meals, incidentals), which can dramatically increase take-home pay.
+          </p>
+          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
+            <li><strong style={{color:'#e8edf8'}}>Taxable base pay</strong> — typically $25–$35/hour, subject to federal and state income tax and FICA</li>
+            <li><strong style={{color:'#e8edf8'}}>Housing stipend</strong> — non-taxable if you maintain a tax home; typically $1,200–$2,500/month</li>
+            <li><strong style={{color:'#e8edf8'}}>Meals and incidentals</strong> — non-taxable per diem up to GSA rates; typically $50–$80/day</li>
+            <li><strong style={{color:'#e8edf8'}}>Total package $120K</strong> — effective take-home often exceeds $95,000 due to stipend structure</li>
+            <li><strong style={{color:'#e8edf8'}}>Tax home requirement</strong> — you must maintain a permanent residence to qualify for non-taxable stipends</li>
+          </ul>
+          <ol style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
+            <li>Verify your tax home status with a tax professional before your first assignment</li>
+            <li>Track all stipend payments separately from taxable wages on your pay stub</li>
+            <li>Keep records of your permanent residence expenses to substantiate tax home</li>
+            <li>File in each state where you work for more than the state threshold</li>
+          </ol>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            A travel nurse earning $120,000 total ($40K taxable + $80K stipends) may take home over $110,000 — compared to $88,500 for a staff RN earning the same gross. The stipend advantage is one reason travel nursing remains highly competitive. Use our <a href="/" style={{color:'#F5C842', textDecoration:'none'}}>paycheck calculator</a> to model your exact travel nurse take-home.
+          </p>
+        </section>
+
         <section id="states">
           <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             Highest and Lowest Paying States for Nurses After Taxes
@@ -282,7 +358,8 @@ export default function Page() {
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))', gap:12}}>
             {[
               ['/blog/teacher-salary-after-taxes', 'Teacher Salary After Taxes 2026', 'GUIDE'],
-              ['/blog/electrician-salary-after-taxes', 'Electrician Salary After Taxes 2026', 'GUIDE'],
+              ['/blog/pharmacist-salary-after-taxes', 'Pharmacist Salary After Taxes 2026', 'GUIDE'],
+              ['/blog/software-engineer-salary-after-taxes', 'Software Engineer Salary After Taxes 2026', 'GUIDE'],
               ['/blog/75k-a-year-after-taxes', '$75K After Taxes 2026', 'CALCULATOR'],
               ['/blog/how-to-increase-take-home-pay', 'Increase Take-Home Pay', 'GUIDE'],
             ].map(([href, title, tag]) => (
