@@ -3,78 +3,167 @@ import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'North Carolina Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'North Carolina paycheck calculator 2026. See exact take-home pay after federal + North Carolina state tax (4.5% flat) and FICA. All salary levels. 100% private.',
+  description: 'North Carolina paycheck calculator 2026. See exact take-home pay after federal + North Carolina state tax (4.5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'north carolina paycheck calculator 2026, nc take home pay, north carolina salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/north-carolina-paycheck-calculator' },
 }
 
 export default function Page() {
-  const rows: string[][] = [["$30,000","$2,500","$2,001","$1,846"],["$40,000","$3,333","$2,584","$2,384"],["$50,000","$4,167","$3,126","$2,884"],["$60,000","$5,000","$3,634","$3,353"],["$75,000","$6,250","$4,326","$3,993"],["$100,000","$8,333","$5,501","$5,078"]]
-  const thS = 'padding:10px 14px;background:rgba(255,255,255,0.06);color:#b8c8dc;font-size:13px;text-align:left;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.08)'
-  const tdS = 'padding:10px 14px;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.05)'
-  const faqs: [string,string][] = [["What is North Carolina income tax rate 2026?","North Carolina has a flat 4.5% state income tax rate in 2026, continuing its scheduled reductions from 5.25% in 2022."],["How much is $50,000 take-home in North Carolina?","Approximately $37,512/year ($3,126/month) after federal, FICA, and NC state tax (4.5% flat)."],["Does North Carolina tax Social Security?","No. North Carolina does not tax Social Security benefits. Military retirement pay is also exempt."]];
   return (
-    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', background: '#0f0c29', minHeight: '100vh', color: 'white' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is North Carolina income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"North Carolina has a flat 4.5% state income tax rate in 2026, continuing its scheduled reductions from 5.25% in 2022."}},{"@type":"Question","name":"How much is $50,000 take-home in North Carolina?","acceptedAnswer":{"@type":"Answer","text":"Approximately $37,512/year ($3,126/month) after federal, FICA, and NC state tax (4.5% flat)."}},{"@type":"Question","name":"Does North Carolina tax Social Security?","acceptedAnswer":{"@type":"Answer","text":"No. North Carolina does not tax Social Security benefits. Military retirement pay is also exempt."}}]}' }} />
+    <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', background:'#0f0c29', minHeight:'100vh', color:'white' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is North Carolina income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"North Carolina top income tax rate is 4.5% in 2026 (4.5% flat rate)."}},{"@type":"Question","name":"How much is $50,000 take-home in North Carolina?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,139/month after federal, FICA, and NC state tax."}},{"@type":"Question","name":"Does North Carolina tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"North Carolina exempts Social Security benefits from state income tax."}},{"@type":"Question","name":"How is North Carolina paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your North Carolina paycheck is reduced by federal income tax (10%–37%), FICA (7.65%), and North Carolina state income tax (4.5% flat rate). Use the free calculator for your exact number."}},{"@type":"Question","name":"Is North Carolina a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"North Carolina has a 4.5% income tax rate. Compare with neighboring states using the links below."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"North Carolina Paycheck Calculator","item":"https://www.privatepaycheck.com/north-carolina-paycheck-calculator"}]}' }} />
-      <nav style={{ fontSize: 13, color: '#b8c8dc', marginBottom: 24 }}>
-        <a href="/" style={{ color: '#b8c8dc' }}>Home</a> › North Carolina Paycheck Calculator
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"North Carolina Paycheck Calculator 2026","datePublished":"2026-05-15","dateModified":"2026-06-01","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/north-carolina-paycheck-calculator"}' }} />
+
+      <nav style={{ fontSize:13, color:'#b8c8dc', marginBottom:24 }}>
+        <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › North Carolina Paycheck Calculator
       </nav>
-      <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>North Carolina Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 16, color: '#c8d4e8', marginBottom: 12 }}>North Carolina state income tax: <strong>4.5% flat</strong>. See your exact take-home below. Use the <a href="/" style={{ color: '#F5C842' }}>free paycheck calculator</a> for your exact situation.</p>
-      <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>North Carolina has a flat 4.5% income tax rate in 2026, reduced from 4.75% in 2024.</div>
-      <div style={{background:'rgba(245,200,66,0.08)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
-        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>North Carolina flat income tax rate is <strong>4.5%</strong> in 2026 — dropping to 3.99% by 2027</li>
-          <li>At $50,000 salary, take-home is approximately <strong>$3,100/month</strong> after all taxes</li>
-          <li>Standard deduction for single filers is <strong>$10,750</strong> for NC state tax purposes</li>
-          <li>Social Security income is <strong>not taxed</strong> in North Carolina</li>
-          <li>No county or local income tax in NC — state flat rate is the only state-level tax</li>
+
+      <h1 style={{ fontSize:34, fontWeight:900, marginBottom:8 }}>North Carolina Paycheck Calculator 2026</h1>
+      <div style={{ fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:16 }}>
+        Last updated: June 2026 · By Ethan Blake · Tax Compliance Specialist · 4 min read
+      </div>
+
+      <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>
+        <div style={{ fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13 }}>QUICK ANSWER</div>
+        <p style={{ fontSize:14, lineHeight:1.8, margin:0, color:'rgba(255,255,255,0.85)' }}>
+          North Carolina state income tax is 4.5% (4.5% flat rate) in 2026. A worker earning $50,000 takes home about $3,139/month after federal, FICA, and NC state tax.
+        </p>
+      </div>
+
+      <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28 }}>
+        <div style={{ fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13 }}>KEY TAKEAWAYS</div>
+        <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)' }}>
+          <li>North Carolina state income tax: <strong>4.5% flat rate</strong></li>
+          <li>A $50,000 salary nets roughly <strong>$3,139/month</strong> after all taxes</li>
+          <li>FICA (Social Security 6.2% + Medicare 1.45%) applies to all North Carolina workers</li>
+          <li>North Carolina exempts Social Security benefits from state income tax.</li>
+          <li>SS wage base: <strong>$184,500</strong> | Standard deduction: <strong>$16,100</strong> (single, 2026)</li>
         </ul>
       </div>
-      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>North Carolina Take-Home Pay by Salary (Single Filer, 2026)</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead>
-          <tr>
-            <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Annual Salary</th>
-            <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Monthly Gross</th>
-            <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Monthly Take-Home</th>
-            <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Biweekly Take-Home</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map(([sal, mo, takeMo, takeBi]) => (
-            <tr key={sal}>
-              <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>{sal}</td>
-              <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>{mo}</td>
-              <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>{takeMo}</td>
-              <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>{takeBi}</td>
+
+      <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>How much is take-home pay in North Carolina in 2026?</h2>
+      <div style={{ overflowX:'auto', marginBottom:32, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)' }}>
+        <table style={{ width:'100%', borderCollapse:'collapse' }}>
+          <thead>
+            <tr>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Annual Salary</th>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Monthly Gross</th>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Monthly Take-Home</th>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Biweekly Take-Home</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Frequently Asked Questions</h2>
-      {faqs.map(([q,a]:[string,string]) => (
-        <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
-          <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{q}</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75 }}>{a}</div>
+          </thead>
+          <tbody>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$30,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$2,500</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$1,995</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,842</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$40,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$3,333</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,591</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,392</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$50,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$4,167</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,139</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,898</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$60,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$5,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,647</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,367</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$75,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$6,250</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,347</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$4,012</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$100,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$8,333</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,540</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$5,114</td>
+          </tr>
+            <tr>
+              <td colSpan={4} style={{ padding:'10px 14px', fontSize:13, background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)', color:'#F5C842', fontWeight:700 }}>
+                Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact North Carolina take-home pay
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ background:'rgba(15,22,41,0.9)', border:'1px solid rgba(245,200,66,0.15)', borderRadius:12, padding:'20px 24px', marginBottom:32 }}>
+        <h2 style={{ fontSize:20, fontWeight:800, color:'#f8fafc', marginBottom:12 }}>How North Carolina Income Tax Works in 2026</h2>
+        <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, color:'rgba(255,255,255,0.80)', lineHeight:1.8 }}>
+          <li>Progressive tax: 4.5% flat rate — higher income = higher bracket</li>
+          <li>FICA: Social Security 6.2% (up to $184,500 wage base) + Medicare 1.45%</li>
+          <li>2026 standard deduction: $16,100 (single) / $32,200 (married filing jointly)</li>
+          <li>This calculator uses 2026 IRS Publication 15-T tables and North Carolina 2026 withholding rates</li>
+        </ul>
+        <div style={{ marginTop:12, padding:'10px 14px', background:'rgba(245,200,66,0.06)', borderRadius:8, fontSize:13, color:'#fde68a' }}>
+          North Carolina state income tax: <strong>4.5% flat</strong> · FICA: 7.65% · SS wage base: $184,500
         </div>
-      ))}
-      <div style={{ marginTop: 28, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 12 }}>
-        <a href="/california-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
-          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>California Paycheck Calculator</div>
-          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Highest tax state 2026 →</div>
+      </div>
+
+      <p style={{ fontSize:13, color:'rgba(255,255,255,0.65)', marginBottom:24, lineHeight:1.7 }}>
+        Source: <a href="https://www.irs.gov/pub/irs-pdf/p15t.pdf" rel="nofollow" target="_blank" style={{ color:'#F5C842' }}>IRS Publication 15-T (2026)</a> · Federal brackets, FICA rates, and North Carolina state withholding tables
+      </p>
+
+      <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.07)', borderRadius:12, padding:'24px', marginBottom:24 }}>
+        <h2 style={{ fontSize:18, fontWeight:800, marginBottom:16 }}>North Carolina Paycheck FAQ</h2>
+        
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>What is North Carolina income tax rate 2026?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>North Carolina top income tax rate is 4.5% in 2026 (4.5% flat rate).</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How much is $50,000 take-home in North Carolina?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>Approximately $3,139/month after federal, FICA, and NC state tax.</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Does North Carolina tax retirement income?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>North Carolina exempts Social Security benefits from state income tax.</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How is North Carolina paycheck calculated?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>Your North Carolina paycheck is reduced by federal income tax (10%–37%), FICA (7.65%), and North Carolina state income tax (4.5% flat rate). Use the free calculator for your exact number.</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: 'none' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Is North Carolina a tax-friendly state?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>North Carolina has a 4.5% income tax rate. Compare with neighboring states using the links below.</p>
+          </div>
+      </div>
+
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:32 }}>
+        <a href="/all-states" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>All States Calculator</div>
+          <div style={{ fontSize:11, color:'rgba(255,255,255,0.65)', marginTop:4 }}>Compare all 50 states →</div>
         </a>
-        <a href="/texas-paycheck-calculator-guide" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
-          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Texas Paycheck Calculator</div>
-          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>No state income tax →</div>
+        <a href="/south-carolina-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>South Carolina Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>South Carolina take-home 2026 →</div>
         </a>
-        <a href="/federal-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
-          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Federal Paycheck Calculator</div>
-          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>All 50 states →</div>
+        <a href="/virginia-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Virginia Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Virginia take-home 2026 →</div>
+        </a>
+        <a href="/georgia-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Georgia Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Georgia take-home 2026 →</div>
+        </a>
+        <a href="/tennessee-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Tennessee Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Tennessee take-home 2026 →</div>
         </a>
       </div>
+
       <AuthorBox />
     </main>
   )

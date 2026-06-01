@@ -1,73 +1,170 @@
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
+
 export const metadata: Metadata = {
   title: 'West Virginia Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'West Virginia paycheck calculator 2026. See exact take-home pay after federal + West Virginia state tax (up to 5.12%) and FICA. All salary levels. 100% private.',
-  keywords: 'west virginia paycheck calculator 2026, west virginia take home pay, west virginia salary after taxes',
+  description: 'West Virginia paycheck calculator 2026. See exact take-home pay after federal + West Virginia state tax (up to 6.5%) and FICA. All salary levels. Free & private.',
+  keywords: 'west virginia paycheck calculator 2026, wv take home pay, west virginia salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/west-virginia-paycheck-calculator' },
 }
+
 export default function Page() {
-  const rows: string[][] = [["$30,000","$2,500","$2,033","$1,876"],["$40,000","$3,333","$2,626","$2,424"],["$50,000","$4,167","$3,170","$2,926"],["$60,000","$5,000","$3,678","$3,395"],["$75,000","$6,250","$4,380","$4,044"],["$100,000","$8,333","$5,576","$5,147"]]
   return (
-    <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is West Virginia income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"West Virginia top rate is 5.12% in 2026, reduced from 6.5%."}},{"@type":"Question","name":"How much is $50,000 take-home in West Virginia?","acceptedAnswer":{"@type":"Answer","text":"Approximately $38,040/year ($3,170/month) after federal, FICA, and WV state tax."}},{"@type":"Question","name":"Is West Virginia reducing income taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. WV is aggressively cutting rates and aims to eliminate income tax entirely over the next decade."}}]}) }} />
-      <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
+    <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', background:'#0f0c29', minHeight:'100vh', color:'white' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is West Virginia income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"West Virginia top income tax rate is 6.5% in 2026 (2.36%–5.12% (5 brackets))."}},{"@type":"Question","name":"How much is $50,000 take-home in West Virginia?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,065/month after federal, FICA, and WV state tax."}},{"@type":"Question","name":"Does West Virginia tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"West Virginia is phasing out taxation of Social Security benefits, with a 35% exemption in 2024 growing to 100% by 2026."}},{"@type":"Question","name":"How is West Virginia paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your West Virginia paycheck is reduced by federal income tax (10%–37%), FICA (7.65%), and West Virginia state income tax (2.36%–5.12% (5 brackets)). Use the free calculator for your exact number."}},{"@type":"Question","name":"Is West Virginia a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"West Virginia has a 6.5% income tax rate. Compare with neighboring states using the links below."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"West Virginia Paycheck Calculator","item":"https://www.privatepaycheck.com/west-virginia-paycheck-calculator"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"West Virginia Paycheck Calculator 2026","datePublished":"2026-05-15","dateModified":"2026-06-01","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/west-virginia-paycheck-calculator"}' }} />
+
+      <nav style={{ fontSize:13, color:'#b8c8dc', marginBottom:24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › West Virginia Paycheck Calculator
       </nav>
-      <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>West Virginia Paycheck Calculator 2026</h1>
-      <p style={{ fontSize: 17, color:'#c8d4e8', marginBottom: 12 }}>West Virginia state income tax: <strong>up to 5.12%</strong>. See your exact take-home below. Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact situation.</p>
-      <div style={{ background: 'rgba(251,191,36,0.15)', border: '1px solid rgba(251,191,36,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>West Virginia state income tax: up to 5.12% in 2026.</div>
-      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>West Virginia Take-Home Pay by Salary (Single Filer, 2026)</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead><tr style={{ background: 'rgba(99,102,241,0.2)' }}>
-          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Annual Salary</th>
-          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Monthly Gross</th>
-          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Monthly Net</th>
-          <th style={{ padding: '10px 14px', textAlign: 'left' }}>Biweekly Net</th>
-        </tr></thead>
-        <tbody>{rows.map(([sal,gross,net,bw]) => (
-          <tr key={sal} style={{ borderBottom: '1px solid #eee' }}>
-            <td style={{ padding: '10px 14px', fontWeight: 600 }}>{sal}</td>
-            <td style={{ padding: '10px 14px', color:'#c8d4e8' }}>{gross}</td>
-            <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{net}</td>
-            <td style={{ padding: '10px 14px' }}>{bw}</td>
-          </tr>
-        ))}</tbody>
-      </table>
-      <div style={{ background: 'rgba(99,102,241,0.2)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
-        <a href="/" style={{ color:'#F5C842', fontWeight: 700 }}>Calculate your exact West Virginia paycheck →</a>
+
+      <h1 style={{ fontSize:34, fontWeight:900, marginBottom:8 }}>West Virginia Paycheck Calculator 2026</h1>
+      <div style={{ fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:16 }}>
+        Last updated: June 2026 · By Ethan Blake · Tax Compliance Specialist · 4 min read
       </div>
-      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Frequently Asked Questions</h2>
-      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>What is West Virginia income tax rate 2026?</h3><p style={{ color:'#c8d4e8', lineHeight: 1.7 }}>West Virginia top rate is 5.12% in 2026, reduced from 6.5%.</p>
-      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $50,000 take-home in West Virginia?</h3><p style={{ color:'#c8d4e8', lineHeight: 1.7 }}>Approximately $38,040/year ($3,170/month) after federal, FICA, and WV state tax.</p>
-      <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Is West Virginia reducing income taxes?</h3><p style={{ color:'#c8d4e8', lineHeight: 1.7 }}>Yes. WV is aggressively cutting rates and aims to eliminate income tax entirely over the next decade.</p>
-    
-      <div style={{ borderTop: '2px solid #e5e7eb', marginTop: 40, paddingTop: 32 }}>
-        <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))', gap: 10, marginBottom: 24 }}>
-          {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
-            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'12px 16px', background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:8, fontSize:15, fontWeight:700, color:'#818cf8', textDecoration:'none', textAlign:'center' }}>{n} Calculator</a>
-          ))}
-        </div>
-        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
-          <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>Tax & Paycheck Blog</a>
-          <a href="/blog/no-income-tax-states-2026" style={{ color:'#F5C842', fontSize: 14 }}>No Income Tax States</a>
-          <a href="/blog/2026-federal-tax-brackets" style={{ color:'#F5C842', fontSize: 14 }}>2026 Tax Brackets</a>
+
+      <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>
+        <div style={{ fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13 }}>QUICK ANSWER</div>
+        <p style={{ fontSize:14, lineHeight:1.8, margin:0, color:'rgba(255,255,255,0.85)' }}>
+          West Virginia state income tax is 6.5% (2.36%–5.12% (5 brackets)) in 2026. A worker earning $50,000 takes home about $3,065/month after federal, FICA, and WV state tax.
+        </p>
+      </div>
+
+      <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28 }}>
+        <div style={{ fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13 }}>KEY TAKEAWAYS</div>
+        <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)' }}>
+          <li>West Virginia state income tax: <strong>2.36%–5.12% (5 brackets)</strong></li>
+          <li>A $50,000 salary nets roughly <strong>$3,065/month</strong> after all taxes</li>
+          <li>FICA (Social Security 6.2% + Medicare 1.45%) applies to all West Virginia workers</li>
+          <li>West Virginia is phasing out taxation of Social Security benefits, with a 35% exemption in 2024 growing to 100% by 2026.</li>
+          <li>SS wage base: <strong>$184,500</strong> | Standard deduction: <strong>$16,100</strong> (single, 2026)</li>
+        </ul>
+      </div>
+
+      <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>How much is take-home pay in West Virginia in 2026?</h2>
+      <div style={{ overflowX:'auto', marginBottom:32, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)' }}>
+        <table style={{ width:'100%', borderCollapse:'collapse' }}>
+          <thead>
+            <tr>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Annual Salary</th>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Monthly Gross</th>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Monthly Take-Home</th>
+              <th style={{ padding:'10px 14px', background:'rgba(255,255,255,0.06)', color:'#b8c8dc', fontSize:13, textAlign:'left', fontWeight:600, borderBottom:'1px solid rgba(255,255,255,0.08)' }}>Biweekly Take-Home</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$30,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$2,500</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$1,951</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,801</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$40,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$3,333</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,533</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,339</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$50,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$4,167</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,065</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,829</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$60,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$5,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,554</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,281</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$75,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$6,250</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,227</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,902</td>
+          </tr>
+          <tr>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$100,000</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$8,333</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,375</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$4,963</td>
+          </tr>
+            <tr>
+              <td colSpan={4} style={{ padding:'10px 14px', fontSize:13, background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)', color:'#F5C842', fontWeight:700 }}>
+                Use the <a href="/" style={{ color:'#F5C842' }}>free calculator</a> for your exact West Virginia take-home pay
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ background:'rgba(15,22,41,0.9)', border:'1px solid rgba(245,200,66,0.15)', borderRadius:12, padding:'20px 24px', marginBottom:32 }}>
+        <h2 style={{ fontSize:20, fontWeight:800, color:'#f8fafc', marginBottom:12 }}>How West Virginia Income Tax Works in 2026</h2>
+        <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, color:'rgba(255,255,255,0.80)', lineHeight:1.8 }}>
+          <li>Progressive tax: 2.36%–5.12% (5 brackets) — higher income = higher bracket</li>
+          <li>FICA: Social Security 6.2% (up to $184,500 wage base) + Medicare 1.45%</li>
+          <li>2026 standard deduction: $16,100 (single) / $32,200 (married filing jointly)</li>
+          <li>This calculator uses 2026 IRS Publication 15-T tables and West Virginia 2026 withholding rates</li>
+        </ul>
+        <div style={{ marginTop:12, padding:'10px 14px', background:'rgba(245,200,66,0.06)', borderRadius:8, fontSize:13, color:'#fde68a' }}>
+          West Virginia state income tax: <strong>up to 6.5%</strong> · FICA: 7.65% · SS wage base: $184,500
         </div>
       </div>
 
-      {/* HOW STATE TAX WORKS */}
-      <div style={{ background: 'rgba(15,22,41,0.9)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 12, padding: 'clamp(20px,4vw,28px) clamp(16px,4vw,28px)', marginBottom: 32 }}>
-        <h2 style={{ fontSize: 'clamp(18px,4vw,22px)' as unknown as number, fontWeight: 800, color: '#f8fafc', marginBottom: 20, letterSpacing: '-0.3px', lineHeight: 1.3 }}>How West Virginia Income Tax Works in 2026</h2>
-        <ul style={{ margin: 0, paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Progressive tax: 2.36%–5.12% (5 brackets) — higher income = higher bracket</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No local income tax</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>FICA: Social Security 6.2% (up to $184,500 wage base) + Medicare 1.45% — applies in all states</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator uses 2026 IRS Publication 15-T tables and West Virginia 2026 withholding rates</span></li>
-        </ul>
-        <h3 style={{ fontSize: 'clamp(16px,3vw,18px)' as unknown as number, fontWeight: 700, color: '#f8fafc', marginBottom: 10 }}>How much income tax will I pay in West Virginia?</h3>
-        <p style={{ fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#b0c4de', lineHeight: 1.8, margin: 0 }}>West Virginia uses a progressive income tax (2.36%–5.12% (5 brackets)). For most middle-income earners ($40k–$100k), the effective state rate is typically 3%–6%. Combined with federal tax and FICA, a $60,000 salary results in about 24%–30% total withholding.</p>
+      <p style={{ fontSize:13, color:'rgba(255,255,255,0.65)', marginBottom:24, lineHeight:1.7 }}>
+        Source: <a href="https://www.irs.gov/pub/irs-pdf/p15t.pdf" rel="nofollow" target="_blank" style={{ color:'#F5C842' }}>IRS Publication 15-T (2026)</a> · Federal brackets, FICA rates, and West Virginia state withholding tables
+      </p>
+
+      <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.07)', borderRadius:12, padding:'24px', marginBottom:24 }}>
+        <h2 style={{ fontSize:18, fontWeight:800, marginBottom:16 }}>West Virginia Paycheck FAQ</h2>
+        
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>What is West Virginia income tax rate 2026?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>West Virginia top income tax rate is 6.5% in 2026 (2.36%–5.12% (5 brackets)).</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How much is $50,000 take-home in West Virginia?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>Approximately $3,065/month after federal, FICA, and WV state tax.</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Does West Virginia tax retirement income?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>West Virginia is phasing out taxation of Social Security benefits, with a 35% exemption in 2024 growing to 100% by 2026.</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How is West Virginia paycheck calculated?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>Your West Virginia paycheck is reduced by federal income tax (10%–37%), FICA (7.65%), and West Virginia state income tax (2.36%–5.12% (5 brackets)). Use the free calculator for your exact number.</p>
+          </div>
+          <div style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: 'none' }}>
+            <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Is West Virginia a tax-friendly state?</h3>
+            <p style={{ fontSize:'13px', color:'rgba(255,255,255,0.75)', lineHeight:1.7, margin:0 }}>West Virginia has a 6.5% income tax rate. Compare with neighboring states using the links below.</p>
+          </div>
       </div>
+
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:32 }}>
+        <a href="/all-states" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>All States Calculator</div>
+          <div style={{ fontSize:11, color:'rgba(255,255,255,0.65)', marginTop:4 }}>Compare all 50 states →</div>
+        </a>
+        <a href="/virginia-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Virginia Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Virginia take-home 2026 →</div>
+        </a>
+        <a href="/kentucky-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Kentucky Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Kentucky take-home 2026 →</div>
+        </a>
+        <a href="/ohio-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Ohio Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Ohio take-home 2026 →</div>
+        </a>
+        <a href="/maryland-paycheck-calculator" style={{ display:'block', background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'14px 16px', color:'white', textDecoration:'none' }}>
+          <div style={{ fontWeight:700, fontSize:13, color:'#F5C842' }}>Maryland Paycheck Calculator</div>
+          <div style={{ fontSize:11, opacity:0.7, marginTop:4 }}>Maryland take-home 2026 →</div>
+        </a>
+      </div>
+
+      <AuthorBox />
     </main>
   )
 }
