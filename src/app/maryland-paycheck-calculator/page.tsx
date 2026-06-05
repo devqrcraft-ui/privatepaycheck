@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Maryland Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Maryland Paycheck Calculator 2026 — $75K = $52,800 Take-Home (4.75% Tax)',
   description: 'Maryland paycheck calculator 2026. See exact take-home pay after federal + Maryland state tax (up to 5.75%) and FICA. All salary levels. Free & private.',
   keywords: 'maryland paycheck calculator 2026, md take home pay, maryland salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/maryland-paycheck-calculator' },
