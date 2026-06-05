@@ -100,7 +100,7 @@ export default function Post() {
               <tbody>
                 {EXAMPLES.map((ex, i) => (
                   <tr key={i} style={i === EXAMPLES.length - 1 ? { background: 'rgba(245,200,66,0.08)', borderTop: '1px solid rgba(245,200,66,0.3)' } : {}}>
-                    <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#C8D8EC' }}>{`${${(ex.from/1000).toFixed(0)}k → ${(ex.to/1000).toFixed(0)}k`}</td>
+                    <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#C8D8EC' }}>{`${(ex.from/1000).toFixed(0)}k → ${(ex.to/1000).toFixed(0)}k`}</td>
                     <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#C8D8EC' }}>+${ex.raise.toLocaleString()}</td>
                     <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#f87171' }}>-${ex.addFed.toLocaleString()}</td>
                     <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#f87171' }}>-${ex.addFica.toLocaleString()}</td>
