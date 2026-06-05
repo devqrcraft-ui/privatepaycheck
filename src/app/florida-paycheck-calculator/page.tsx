@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Free Florida paycheck calculator 2026. No state income tax — $75K salary = ~$57,400 take-home after federal tax and FICA only. Instant results, no signup.',
   alternates: { canonical: 'https://www.privatepaycheck.com/florida-paycheck-calculator' },
   openGraph: {
-    title: 'Florida Paycheck Calculator 2026 — No State Tax Take-Home',
+    title: 'Florida Paycheck Calculator 2026 — $75K = $57,400 Take-Home (No State Tax)',
     description: 'Calculate your Florida take-home pay after federal tax and FICA. No state income tax in 2026.',
     type: 'article',
   },
