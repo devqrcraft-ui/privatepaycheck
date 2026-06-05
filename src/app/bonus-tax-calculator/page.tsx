@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import BonusCalculatorClient from './BonusCalculatorClient';
 
 export const metadata: Metadata = {
-  title: 'Bonus Tax Calculator 2026 — See Exactly What You Keep After Tax',
+  title: 'Bonus Tax Calculator 2026 — $10K Bonus = $6,220 After Tax',
   description: 'Getting a bonus? See exactly how much lands in your pocket. Calculates 22% federal flat rate + your state tax. All 50 states. Instant, free, no signup.',
   alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator' },
   openGraph: {
-    title: 'Bonus Tax Calculator 2026 — How Much Do You Keep?',
+    title: 'Bonus Tax Calculator 2026 — $10K Bonus = $6,220 After Tax',
     description: 'See your bonus after taxes for all 50 US states. IRS 2026 rates. Free & private.',
     url: 'https://www.privatepaycheck.com/bonus-tax-calculator',
     siteName: 'PrivatePaycheck',
