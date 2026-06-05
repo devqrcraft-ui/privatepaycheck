@@ -1,0 +1,1 @@
+import{readFileSync,writeFileSync}from"fs";const f="C:/Users/RUSLAN/Desktop/privatepaycheck/src/app/blog/pay-increase-calculator/page.tsx";let c=readFileSync(f,"utf8");c=c.replace(/\>\{`\$\{\$\{/g,">{\`\${");writeFileSync(f,c,"utf8");console.log("done",c.includes(">\{`\$\{\$\{"));

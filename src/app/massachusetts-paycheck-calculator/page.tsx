@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Massachusetts Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Massachusetts Paycheck Calculator 2026 — $75K = $51,200 Take-Home',
   description: 'Massachusetts paycheck calculator 2026. See exact take-home pay after federal + Massachusetts state tax (5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'massachusetts paycheck calculator 2026, ma take home pay, massachusetts salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/massachusetts-paycheck-calculator' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'New Jersey Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'New Jersey Paycheck Calculator 2026 — $75K = $54,100 Take-Home (No Sales Tax)',
   description: 'New Jersey paycheck calculator 2026. See exact take-home pay after federal + New Jersey state tax (up to 5.53%) and FICA. All salary levels. Free & private.',
   keywords: 'new jersey paycheck calculator 2026, nj take home pay, new jersey salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/new-jersey-paycheck-calculator' },

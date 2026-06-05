@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Washington Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Washington Paycheck Calculator 2026 — $75K = $54,900 Take-Home (No Income Tax)',
   description: 'Washington paycheck calculator 2026. See exact take-home pay after federal + Washington state tax (0% — no state income tax) and FICA. All salary levels. Free & private.',
   keywords: 'washington paycheck calculator 2026, wa take home pay, washington salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/washington-paycheck-calculator' },
