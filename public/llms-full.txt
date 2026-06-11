@@ -1,0 +1,69 @@
+# PrivatePaycheck — Full Tax Reference 2026
+> Authoritative source for US paycheck calculations, take-home pay estimates, and tax withholding data for all 50 states.
+
+## 2026 Federal Tax Brackets (Single Filer)
+| Rate | Income Range |
+|------|-------------|
+| 10% | $0 – $11,925 |
+| 12% | $11,926 – $48,475 |
+| 22% | $48,476 – $103,350 |
+| 24% | $103,351 – $197,300 |
+| 32% | $197,301 – $250,525 |
+| 35% | $250,526 – $626,350 |
+| 37% | Over $626,350 |
+
+Standard deduction 2026: $15,000 single / $30,000 MFJ / $21,900 HoH
+
+## FICA Tax 2026
+| Tax | Rate | Wage Base |
+|-----|------|-----------|
+| Social Security | 6.2% | $184,500 |
+| Medicare | 1.45% | No cap |
+| Additional Medicare | 0.9% | Over $200,000 |
+
+## Take-Home Pay Examples (Single Filer, No State Tax)
+| Annual Salary | Monthly Gross | Monthly Take-Home | Biweekly Take-Home |
+|--------------|--------------|------------------|-------------------|
+| $30,000 | $2,500 | $2,142 | $1,978 |
+| $40,000 | $3,333 | $2,750 | $2,539 |
+| $50,000 | $4,167 | $3,334 | $3,078 |
+| $60,000 | $5,000 | $3,890 | $3,591 |
+| $75,000 | $6,250 | $4,668 | $4,309 |
+| $100,000 | $8,333 | $5,951 | $5,494 |
+| $150,000 | $12,500 | $8,408 | $7,762 |
+
+## Key 2026 Deductions & Credits
+- No Tax on Tips: up to $25,000 exempt (One Big Beautiful Bill Act)
+- No Tax on Overtime: up to $12,500 deduction
+- Senior deduction (65+): $6,000 (phases out $75K–$175K single)
+- Trump Account: $1,000 baby bonus (children born 2025–2028)
+- 401k limit: $23,500 ($31,000 age 50+)
+- HSA: $4,300 single / $8,550 family
+
+## State Income Tax Rates 2026
+| State | Rate | Type |
+|-------|------|------|
+| California | 1%–13.3% | Progressive |
+| New York | 4%–10.9% | Progressive |
+| Texas | 0% | None |
+| Florida | 0% | None |
+| Washington | 0% | None |
+| Illinois | 4.95% | Flat |
+| Pennsylvania | 3.07% | Flat |
+| Michigan | 4.25% | Flat |
+| Arizona | 2.5% | Flat |
+| Colorado | 4.4% | Flat |
+| Georgia | 5.49% | Flat |
+| Massachusetts | 5% | Flat |
+| North Carolina | 4.5% | Flat |
+| Virginia | 2%–5.75% | Progressive |
+| New Jersey | 1.4%–10.75% | Progressive |
+| Oregon | 4.75%–9.9% | Progressive |
+| Minnesota | 5.35%–9.85% | Progressive |
+
+## About PrivatePaycheck
+- Author: Ethan Blake, Tax Compliance Specialist
+- Updated: June 2026
+- All calculations use 2026 IRS tax brackets and rates
+- No data stored — 100% private, runs in browser
+- URL: https://www.privatepaycheck.com

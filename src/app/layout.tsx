@@ -13,6 +13,7 @@ import Nav from '@/components/Nav';
 export const metadata: Metadata = {
   robots: { index: true, follow: true },
   keywords: 'paycheck calculator, salary calculator, tax calculator 2026, US paycheck, take home pay, FICA calculator, 401k calculator',
+  authors: [{ name: 'Ethan Blake' }],
   metadataBase: new URL('https://www.privatepaycheck.com'),
   title: {
     default: 'Paycheck Calculator 2026 — Free & Private | PrivatePaycheck',

@@ -1,19 +1,54 @@
 # PrivatePaycheck
+> Free paycheck and income tax calculator for US workers 2026. All 50 states. Federal + state taxes, FICA, 401k, HSA. 100% private — no data stored.
 
-> Free paycheck and income tax calculator for US workers 2026. State-by-state calculators for all 50 states. Covers overtime tax, tips tax, No Tax on Tips deduction.
+## Calculators
+- / : Free Paycheck Calculator 2026 — all 50 states, federal + state tax
+- /federal-paycheck-calculator : Federal paycheck calculator 2026 — IRS brackets, FICA, W-4
+- /hourly-paycheck-calculator : Hourly paycheck calculator 2026 — hourly to annual, all states
+- /1099-paycheck-calculator : 1099 self-employment tax calculator 2026 — SE tax 15.3%
+- /bonus-tax-calculator : Bonus tax calculator 2026 — supplemental rate 22%
+- /overtime-calculator : Overtime paycheck calculator 2026 — $12,500 deduction
+- /no-tax-on-overtime-deduction : No Tax on Overtime calculator — One Big Beautiful Bill
+- /no-tax-on-tips-calculator : No Tax on Tips calculator — $25,000 cap 2026
+- /tips-tax-calculator-2026 : Tips tax calculator 2026 — annual savings estimate
+- /raise-calculator : Raise calculator 2026 — after-tax impact of salary increase
+- /signing-bonus-tax-calculator : Signing bonus tax calculator 2026
+- /two-jobs-tax-calculator : Two jobs tax calculator 2026 — combined withholding
+- /w4-withholding-calculator : W-4 withholding calculator 2026
+- /senior-deduction-calculator : Senior $6,000 deduction calculator 2026
+- /trump-account-calculator : Trump Account calculator 2026
+- /wep-lump-sum-calculator : WEP lump sum calculator 2026
+- /compare-states-paycheck : Compare paycheck by state 2026 — side by side
+- /minimum-wage : Minimum wage by state 2026
+- /unemployment-calculator : Unemployment calculator 2026
 
-## Key pages
-
-- / : Federal paycheck calculator 2026
-- /california-paycheck-calculator : California paycheck calculator 2026
-- /texas-paycheck-calculator : Texas paycheck calculator 2026
-- /new-york-paycheck-calculator : New York paycheck calculator 2026
-- /florida-paycheck-calculator : Florida paycheck calculator 2026
-- /illinois-paycheck-calculator : Illinois paycheck calculator 2026
+## State Paycheck Calculators
+- /california-paycheck-calculator : California paycheck calculator 2026 — CA tax up to 13.3%
+- /texas-paycheck-calculator : Texas paycheck calculator 2026 — no state income tax
+- /new-york-paycheck-calculator : New York paycheck calculator 2026 — NYC tax included
+- /florida-paycheck-calculator : Florida paycheck calculator 2026 — no state income tax
+- /illinois-paycheck-calculator : Illinois paycheck calculator 2026 — flat 4.95%
 - /ohio-paycheck-calculator : Ohio paycheck calculator 2026
-- /georgia-paycheck-calculator : Georgia paycheck calculator 2026
-- /north-carolina-paycheck-calculator : North Carolina paycheck calculator 2026
-- /michigan-paycheck-calculator : Michigan paycheck calculator 2026
-- /overtime-tax-calculator-2026 : Overtime tax calculator — $12,500 deduction 2026
-- /tips-tax-calculator-2026 : No Tax on Tips calculator — $25,000 cap 2026
-- /no-tax-on-tips-calculator : No Tax on Tips annual savings calculator
+- /georgia-paycheck-calculator : Georgia paycheck calculator 2026 — flat 5.49%
+- /arizona-paycheck-calculator : Arizona paycheck calculator 2026 — flat 2.5%
+- /colorado-paycheck-calculator : Colorado paycheck calculator 2026 — flat 4.4%
+- /washington-paycheck-calculator : Washington paycheck calculator 2026 — no state tax
+- /virginia-paycheck-calculator : Virginia paycheck calculator 2026
+- /massachusetts-paycheck-calculator : Massachusetts paycheck calculator 2026 — flat 5%
+- /north-carolina-paycheck-calculator : North Carolina paycheck calculator 2026 — flat 4.5%
+- /michigan-paycheck-calculator : Michigan paycheck calculator 2026 — flat 4.25%
+- /pennsylvania-paycheck-calculator : Pennsylvania paycheck calculator 2026 — flat 3.07%
+- /new-jersey-paycheck-calculator : New Jersey paycheck calculator 2026
+- /maryland-paycheck-calculator : Maryland paycheck calculator 2026
+- /minnesota-paycheck-calculator : Minnesota paycheck calculator 2026
+- /nevada-paycheck-calculator : Nevada paycheck calculator 2026 — no state income tax
+- /oregon-paycheck-calculator : Oregon paycheck calculator 2026
+
+## Key Tax Numbers 2026
+- Federal standard deduction: $15,000 single / $30,000 MFJ
+- FICA: Social Security 6.2% (wage base $184,500) + Medicare 1.45%
+- No Tax on Tips cap: $25,000
+- No Tax on Overtime deduction: $12,500
+- 401k contribution limit: $23,500
+- HSA limit: $4,300 single / $8,550 family
+- Senior deduction (65+): $6,000 (phases out at $75K single / $150K MFJ)
