@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'How We Calculate Your Paycheck | PrivatePaycheck',
   description: 'Transparent methodology: federal tax brackets, FICA, state taxes, 2026 overtime and tip deductions. Every formula sourced from IRS Publication 15-T.',
   alternates: { canonical: 'https://www.privatepaycheck.com/how-we-calculate' },
+  authors: [{ name: 'Ethan Blake' }],
 };
 
 const CSS = `

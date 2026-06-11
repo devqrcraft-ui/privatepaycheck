@@ -2,6 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Software Engineer Paycheck Calculator 2026 — After Tax by State',
+  description: 'Calculate software engineer take-home pay after taxes. Average SWE salary $150K. See net pay in all 50 states including CA, WA, NY, TX.',
+  alternates: { canonical: 'https://www.privatepaycheck.com/software-engineer-paycheck-calculator' },
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+};
+
+
 
 export const dynamicParams = false;
 

@@ -1,6 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Overtime Calculator 2026 — Time and a Half After Tax',
+  description: 'Calculate overtime pay after taxes for all 50 states. Time and a half = 1.5x hourly rate. See exact take-home on OT pay in 2026.',
+  alternates: { canonical: 'https://www.privatepaycheck.com/overtime-calculator' },
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+};
+
+
 
 export const dynamicParams = false;
 

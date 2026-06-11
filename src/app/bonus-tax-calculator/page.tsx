@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Bonus Tax Calculator 2026 — $10K Bonus = $6,220 After Tax',
   description: 'Getting a bonus? See exactly how much lands in your pocket. Calculates 22% federal flat rate + your state tax. All 50 states. Instant, free, no signup.',
   alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator' },
+  authors: [{ name: 'Ethan Blake' }],
   openGraph: {
     title: 'Bonus Tax Calculator 2026 — $10K Bonus = $6,220 After Tax',
     description: 'See your bonus after taxes for all 50 US states. IRS 2026 rates. Free & private.',

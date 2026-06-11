@@ -2,6 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+  title: 'Nurse Paycheck Calculator 2026 — RN Take-Home Pay by State',
+  description: 'Calculate nurse take-home pay after federal + state taxes. Average RN salary $82,750. All 50 states. Free paycheck calculator for nurses.',
+  alternates: { canonical: 'https://www.privatepaycheck.com/nurse-paycheck-calculator' },
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
+};
+
+
 
 export const dynamicParams = false;
 

@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.privatepaycheck.com/teacher-paycheck-calculator',
   },
+  authors: [{ name: 'Ethan Blake' }],
 };
 
 export default function TeacherPaycheckPage() {

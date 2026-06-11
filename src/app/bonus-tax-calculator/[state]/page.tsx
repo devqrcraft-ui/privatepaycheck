@@ -356,6 +356,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: 'Washington State Bonus Tax Calculator 2026 — Payroll Tax Rates on Bonus Pay',
       description: 'Washington state has no income tax on bonus pay. See exact take-home after IRS 22% federal withholding and FICA only. Free calculator, instant results.',
       alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/washington' },
+  authors: [{ name: 'Ethan Blake' }],
     };
   }
   return {

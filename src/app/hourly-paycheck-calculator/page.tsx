@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Hourly Paycheck Calculator 2026 — $25/hr = $3,180/Month After Tax',
   description: 'Free hourly paycheck calculator for all 50 US states. Enter your hourly rate and hours worked to see exact take-home pay after federal, state, FICA taxes, 401k and HSA. Your data never leaves your browser.',
   alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator' },
+  authors: [{ name: 'Ethan Blake' }],
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Hourly Paycheck Calculator 2026 — $25/hr = $3,180/Month After Tax',
