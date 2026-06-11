@@ -234,6 +234,15 @@ export default function FederalPaycheckPage() {
         </div>
 
       </div>
+      {/* AuthorBox */}
+      <div itemScope itemType="https://schema.org/Person" style={{ display:'flex', alignItems:'center', gap:14, background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:10, padding:'14px 18px', margin:'32px 0 16px' }}>
+        <div style={{ width:44, height:44, borderRadius:'50%', background:'rgba(245,200,66,0.15)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20, flexShrink:0 }}>✍️</div>
+        <div>
+          <div style={{ fontSize:13, fontWeight:700, color:'#e8edf8' }} itemProp="name">Ethan Blake</div>
+          <div style={{ fontSize:12, color:'rgba(255,255,255,0.55)' }} itemProp="jobTitle">Tax Compliance Specialist</div>
+          <div style={{ fontSize:11, color:'rgba(255,255,255,0.4)', marginTop:2 }}>Updated June 2026 · <a href="https://medium.com/@dev.qrcraft" rel="nofollow" style={{ color:'rgba(255,255,255,0.4)' }} itemProp="url">Profile</a></div>
+        </div>
+      </div>
     </>
   );
 }
