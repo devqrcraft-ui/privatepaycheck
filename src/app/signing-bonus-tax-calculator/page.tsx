@@ -1,3 +1,4 @@
+'use client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,7 +8,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Ethan Blake' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 };
-'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';

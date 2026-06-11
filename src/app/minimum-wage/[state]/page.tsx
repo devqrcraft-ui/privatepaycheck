@@ -2,14 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 import type { Metadata } from 'next';
-export const metadata: Metadata = {
-  title: 'Minimum Wage Calculator 2026 — State by State',
-  description: 'Look up minimum wage by state for 2026. Federal minimum $7.25/hr. See after-tax take-home on minimum wage in all 50 states.',
-  alternates: { canonical: 'https://www.privatepaycheck.com/minimum-wage' },
-  authors: [{ name: 'Ethan Blake' }],
-  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
-};
-
 
 
 export const dynamicParams = false;
