@@ -174,6 +174,9 @@ const nextConfig: NextConfig = {
       { source: "/blog/wisconsin-paycheck-calculator", destination: "/wisconsin-paycheck-calculator", permanent: true },
       { source: "/blog/wyoming-paycheck-calculator", destination: "/wyoming-paycheck-calculator", permanent: true },
       { source: "/minimum-wage/methodology", destination: "/", permanent: true },
+      { source: "/tip-calculator/methodology", destination: "/methodology", permanent: true },
+      { source: "/unemployment-calculator/methodology", destination: "/methodology", permanent: true },
+      { source: "/bonus-tax-calculator/methodology", destination: "/bonus-tax-calculator", permanent: true },
     ];
   },
   headers: async () => [
