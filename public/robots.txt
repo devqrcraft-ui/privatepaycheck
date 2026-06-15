@@ -1,15 +1,35 @@
 User-agent: *
 Allow: /
-Disallow:
-Sitemap: https://www.privatepaycheck.com/sitemap.xml
 
+# Block Next.js internal assets — Google must never index these
+Disallow: /_next/static/
+Disallow: /_next/image/
+Disallow: /api/
+
+# Block versioned JS/CSS files (ai-chat-widget.js?v=X causes redirect loop on each deploy)
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.woff2$
+
+# Block utility/internal short routes
+Disallow: /hr
+Disallow: /week
+
+# Block methodology pages (thin content, noindex anyway)
+Disallow: /tip-calculator/methodology
+Disallow: /unemployment-calculator/methodology
+Disallow: /bonus-tax-calculator/methodology
+Disallow: /hourly-paycheck-calculator/methodology
+Disallow: /minimum-wage/methodology
+
+# Block sitemap from indexing (it should be submitted, not indexed)
+Disallow: /sitemap.xml
+
+# AI bots — allow all
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
@@ -33,5 +53,10 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
 User-agent: YouBot
 Allow: /
+
+Sitemap: https://www.privatepaycheck.com/sitemap.xml

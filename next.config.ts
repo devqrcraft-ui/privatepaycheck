@@ -1,207 +1,133 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
+
+// All US states for bonus-tax-calculator → bonus-tax-calculator redirect
+const BONUS_TAX_STATES = [
+  'iowa','new-hampshire','west-virginia','alaska','georgia','alabama',
+  'south-dakota','wyoming','hawaii','wisconsin','montana','kansas',
+  'pennsylvania','delaware','louisiana','ohio','arizona','north-carolina',
+  'utah','indiana','illinois','minnesota','nevada','tennessee','idaho',
+  'virginia','maine','massachusetts','michigan','new-york','oregon',
+  'new-jersey','north-dakota','rhode-island','missouri','nebraska',
+  'oklahoma','arkansas','colorado','connecticut','florida','kentucky',
+  'maryland','texas','california','new-mexico','south-carolina',
+  'mississippi','vermont','washington','washington-dc',
+]
+
+// Old flat URL pattern → /blog/ equivalent (duplicate URL issue)
+const OLD_STATE_BLOG_PAGES = [
+  'alabama','alaska','arizona','arkansas','california','colorado',
+  'connecticut','delaware','florida','georgia','hawaii','idaho',
+  'illinois','indiana','iowa','kansas','kentucky','louisiana',
+  'maine','maryland','massachusetts','michigan','minnesota',
+  'mississippi','missouri','montana','nebraska','nevada',
+  'new-hampshire','new-jersey','new-mexico','new-york',
+  'north-carolina','north-dakota','ohio','oklahoma','oregon',
+  'pennsylvania','rhode-island','south-carolina','south-dakota',
+  'tennessee','texas','utah','vermont','virginia',
+  'washington','west-virginia','wisconsin','wyoming',
+]
 
 const nextConfig: NextConfig = {
-  devIndicators: false,
-  poweredByHeader: false,
-  compress: true,
-  images: {
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 31536000,
-  },
   async redirects() {
     return [
-      // Force www — fixes Google canonical issue
+      // ─────────────────────────────────────────────────────────────────
+      // 1. /bonus-tax-calculator/STATE → /bonus-tax-calculator
+      //    Fixes 35+ 404s from old indexed URLs
+      // ─────────────────────────────────────────────────────────────────
+      ...BONUS_TAX_STATES.map((state) => ({
+        source: `/bonus-tax-calculator/${state}`,
+        destination: '/bonus-tax-calculator',
+        permanent: true,
+      })),
 
-      
-      // Short state slugs → full paycheck calculator pages
-      { source: "/alabama", destination: "/alabama-paycheck-calculator", permanent: true },
-      { source: "/alaska", destination: "/alaska-paycheck-calculator", permanent: true },
-      { source: "/arizona", destination: "/arizona-paycheck-calculator", permanent: true },
-      { source: "/arkansas", destination: "/arkansas-paycheck-calculator", permanent: true },
-      { source: "/california", destination: "/california-paycheck-calculator", permanent: true },
-      { source: "/colorado", destination: "/colorado-paycheck-calculator", permanent: true },
-      { source: "/connecticut", destination: "/connecticut-paycheck-calculator", permanent: true },
-      { source: "/delaware", destination: "/delaware-paycheck-calculator", permanent: true },
-      { source: "/florida", destination: "/florida-paycheck-calculator", permanent: true },
-      { source: "/georgia", destination: "/georgia-paycheck-calculator", permanent: true },
-      { source: "/hawaii", destination: "/hawaii-paycheck-calculator", permanent: true },
-      { source: "/idaho", destination: "/idaho-paycheck-calculator", permanent: true },
-      { source: "/illinois", destination: "/illinois-paycheck-calculator", permanent: true },
-      { source: "/indiana", destination: "/indiana-paycheck-calculator", permanent: true },
-      { source: "/iowa", destination: "/iowa-paycheck-calculator", permanent: true },
-      { source: "/kansas", destination: "/kansas-paycheck-calculator", permanent: true },
-      { source: "/kentucky", destination: "/kentucky-paycheck-calculator", permanent: true },
-      { source: "/louisiana", destination: "/louisiana-paycheck-calculator", permanent: true },
-      { source: "/maine", destination: "/maine-paycheck-calculator", permanent: true },
-      { source: "/maryland", destination: "/maryland-paycheck-calculator", permanent: true },
-      { source: "/massachusetts", destination: "/massachusetts-paycheck-calculator", permanent: true },
-      { source: "/michigan", destination: "/michigan-paycheck-calculator", permanent: true },
-      { source: "/minnesota", destination: "/minnesota-paycheck-calculator", permanent: true },
-      { source: "/mississippi", destination: "/mississippi-paycheck-calculator", permanent: true },
-      { source: "/missouri", destination: "/missouri-paycheck-calculator", permanent: true },
-      { source: "/montana", destination: "/montana-paycheck-calculator", permanent: true },
-      { source: "/nebraska", destination: "/nebraska-paycheck-calculator", permanent: true },
-      { source: "/nevada", destination: "/nevada-paycheck-calculator", permanent: true },
-      { source: "/new-hampshire", destination: "/new-hampshire-paycheck-calculator", permanent: true },
-      { source: "/new-jersey", destination: "/new-jersey-paycheck-calculator", permanent: true },
-      { source: "/new-mexico", destination: "/new-mexico-paycheck-calculator", permanent: true },
-      { source: "/new-york", destination: "/new-york-paycheck-calculator", permanent: true },
-      { source: "/north-carolina", destination: "/north-carolina-paycheck-calculator", permanent: true },
-      { source: "/north-dakota", destination: "/north-dakota-paycheck-calculator", permanent: true },
-      { source: "/ohio", destination: "/ohio-paycheck-calculator", permanent: true },
-      { source: "/oklahoma", destination: "/oklahoma-paycheck-calculator", permanent: true },
-      { source: "/oregon", destination: "/oregon-paycheck-calculator", permanent: true },
-      { source: "/pennsylvania", destination: "/pennsylvania-paycheck-calculator", permanent: true },
-      { source: "/rhode-island", destination: "/rhode-island-paycheck-calculator", permanent: true },
-      { source: "/south-carolina", destination: "/south-carolina-paycheck-calculator", permanent: true },
-      { source: "/south-dakota", destination: "/south-dakota-paycheck-calculator", permanent: true },
-      { source: "/tennessee", destination: "/tennessee-paycheck-calculator", permanent: true },
-      { source: "/texas", destination: "/texas-paycheck-calculator", permanent: true },
-      { source: "/utah", destination: "/utah-paycheck-calculator", permanent: true },
-      { source: "/vermont", destination: "/vermont-paycheck-calculator", permanent: true },
-      { source: "/virginia", destination: "/virginia-paycheck-calculator", permanent: true },
-      { source: "/washington", destination: "/washington-paycheck-calculator", permanent: true },
-      { source: "/west-virginia", destination: "/west-virginia-paycheck-calculator", permanent: true },
-      { source: "/wisconsin", destination: "/wisconsin-paycheck-calculator", permanent: true },
-      { source: "/wyoming", destination: "/wyoming-paycheck-calculator", permanent: true },
-      // 2-letter state abbreviations
-      { source: "/al", destination: "/alabama-paycheck-calculator", permanent: true },
-      { source: "/ak", destination: "/alaska-paycheck-calculator", permanent: true },
-      { source: "/az", destination: "/arizona-paycheck-calculator", permanent: true },
-      { source: "/ar", destination: "/arkansas-paycheck-calculator", permanent: true },
-      { source: "/ca", destination: "/california-paycheck-calculator", permanent: true },
-      { source: "/co", destination: "/colorado-paycheck-calculator", permanent: true },
-      { source: "/ct", destination: "/connecticut-paycheck-calculator", permanent: true },
-      { source: "/de", destination: "/delaware-paycheck-calculator", permanent: true },
-      { source: "/fl", destination: "/florida-paycheck-calculator", permanent: true },
-      { source: "/ga", destination: "/georgia-paycheck-calculator", permanent: true },
-      { source: "/hi", destination: "/hawaii-paycheck-calculator", permanent: true },
-      { source: "/id", destination: "/idaho-paycheck-calculator", permanent: true },
-      { source: "/il", destination: "/illinois-paycheck-calculator", permanent: true },
-      { source: "/in", destination: "/indiana-paycheck-calculator", permanent: true },
-      { source: "/ia", destination: "/iowa-paycheck-calculator", permanent: true },
-      { source: "/ks", destination: "/kansas-paycheck-calculator", permanent: true },
-      { source: "/ky", destination: "/kentucky-paycheck-calculator", permanent: true },
-      { source: "/la", destination: "/louisiana-paycheck-calculator", permanent: true },
-      { source: "/me", destination: "/maine-paycheck-calculator", permanent: true },
-      { source: "/md", destination: "/maryland-paycheck-calculator", permanent: true },
-      { source: "/ma", destination: "/massachusetts-paycheck-calculator", permanent: true },
-      { source: "/mi", destination: "/michigan-paycheck-calculator", permanent: true },
-      { source: "/mn", destination: "/minnesota-paycheck-calculator", permanent: true },
-      { source: "/ms", destination: "/mississippi-paycheck-calculator", permanent: true },
-      { source: "/mo", destination: "/missouri-paycheck-calculator", permanent: true },
-      { source: "/mt", destination: "/montana-paycheck-calculator", permanent: true },
-      { source: "/ne", destination: "/nebraska-paycheck-calculator", permanent: true },
-      { source: "/nv", destination: "/nevada-paycheck-calculator", permanent: true },
-      { source: "/nh", destination: "/new-hampshire-paycheck-calculator", permanent: true },
-      { source: "/nj", destination: "/new-jersey-paycheck-calculator", permanent: true },
-      { source: "/nm", destination: "/new-mexico-paycheck-calculator", permanent: true },
-      { source: "/ny", destination: "/new-york-paycheck-calculator", permanent: true },
-      { source: "/nc", destination: "/north-carolina-paycheck-calculator", permanent: true },
-      { source: "/nd", destination: "/north-dakota-paycheck-calculator", permanent: true },
-      { source: "/oh", destination: "/ohio-paycheck-calculator", permanent: true },
-      { source: "/ok", destination: "/oklahoma-paycheck-calculator", permanent: true },
-      { source: "/or", destination: "/oregon-paycheck-calculator", permanent: true },
-      { source: "/pa", destination: "/pennsylvania-paycheck-calculator", permanent: true },
-      { source: "/ri", destination: "/rhode-island-paycheck-calculator", permanent: true },
-      { source: "/sc", destination: "/south-carolina-paycheck-calculator", permanent: true },
-      { source: "/sd", destination: "/south-dakota-paycheck-calculator", permanent: true },
-      { source: "/tn", destination: "/tennessee-paycheck-calculator", permanent: true },
-      { source: "/tx", destination: "/texas-paycheck-calculator", permanent: true },
-      { source: "/ut", destination: "/utah-paycheck-calculator", permanent: true },
-      { source: "/vt", destination: "/vermont-paycheck-calculator", permanent: true },
-      { source: "/va", destination: "/virginia-paycheck-calculator", permanent: true },
-      { source: "/wa", destination: "/washington-paycheck-calculator", permanent: true },
-      { source: "/wv", destination: "/west-virginia-paycheck-calculator", permanent: true },
-      { source: "/wi", destination: "/wisconsin-paycheck-calculator", permanent: true },
-      { source: "/wy", destination: "/wyoming-paycheck-calculator", permanent: true },
-      { source: "/calculator", destination: "/", permanent: true },
-      { source: "/hr", destination: "/hourly-paycheck-calculator", permanent: true },
-      { source: "/hr/week/hourly-paycheck-calculator", destination: "/hourly-paycheck-calculator", permanent: true },
-      { source: "/week", destination: "/hourly-paycheck-calculator", permanent: true },
-      { source: "/overtime-calculator/methodology", destination: "/methodology", permanent: true },
-      { source: "/hourly-paycheck-calculator/methodology", destination: "/methodology", permanent: true },
-      { source: "/bonus-calculator", destination: "/bonus-tax-calculator", permanent: true },
-      { source: "/bonus-calculator/:state", destination: "/bonus-tax-calculator/:state", permanent: true },
-      { source: "/blog/alabama-paycheck-calculator", destination: "/alabama-paycheck-calculator", permanent: true },
-      { source: "/blog/alaska-paycheck-calculator", destination: "/alaska-paycheck-calculator", permanent: true },
-      { source: "/blog/arizona-paycheck-calculator", destination: "/arizona-paycheck-calculator", permanent: true },
-      { source: "/blog/arkansas-paycheck-calculator", destination: "/arkansas-paycheck-calculator", permanent: true },
-      { source: "/blog/california-paycheck-calculator", destination: "/california-paycheck-calculator", permanent: true },
-      { source: "/blog/colorado-paycheck-calculator", destination: "/colorado-paycheck-calculator", permanent: true },
-      { source: "/blog/connecticut-paycheck-calculator", destination: "/connecticut-paycheck-calculator", permanent: true },
-      { source: "/blog/delaware-paycheck-calculator", destination: "/delaware-paycheck-calculator", permanent: true },
-      { source: "/blog/florida-paycheck-calculator", destination: "/florida-paycheck-calculator", permanent: true },
-      { source: "/blog/georgia-paycheck-calculator", destination: "/georgia-paycheck-calculator", permanent: true },
-      { source: "/blog/hawaii-paycheck-calculator", destination: "/hawaii-paycheck-calculator", permanent: true },
-      { source: "/blog/idaho-paycheck-calculator", destination: "/idaho-paycheck-calculator", permanent: true },
-      { source: "/blog/illinois-paycheck-calculator", destination: "/illinois-paycheck-calculator", permanent: true },
-      { source: "/blog/indiana-paycheck-calculator", destination: "/indiana-paycheck-calculator", permanent: true },
-      { source: "/blog/iowa-paycheck-calculator", destination: "/iowa-paycheck-calculator", permanent: true },
-      { source: "/blog/kansas-paycheck-calculator", destination: "/kansas-paycheck-calculator", permanent: true },
-      { source: "/blog/kentucky-paycheck-calculator", destination: "/kentucky-paycheck-calculator", permanent: true },
-      { source: "/blog/louisiana-paycheck-calculator", destination: "/louisiana-paycheck-calculator", permanent: true },
-      { source: "/blog/maine-paycheck-calculator", destination: "/maine-paycheck-calculator", permanent: true },
-      { source: "/blog/maryland-paycheck-calculator", destination: "/maryland-paycheck-calculator", permanent: true },
-      { source: "/blog/massachusetts-paycheck-calculator", destination: "/massachusetts-paycheck-calculator", permanent: true },
-      { source: "/blog/michigan-paycheck-calculator", destination: "/michigan-paycheck-calculator", permanent: true },
-      { source: "/blog/minnesota-paycheck-calculator", destination: "/minnesota-paycheck-calculator", permanent: true },
-      { source: "/blog/mississippi-paycheck-calculator", destination: "/mississippi-paycheck-calculator", permanent: true },
-      { source: "/blog/missouri-paycheck-calculator", destination: "/missouri-paycheck-calculator", permanent: true },
-      { source: "/blog/montana-paycheck-calculator", destination: "/montana-paycheck-calculator", permanent: true },
-      { source: "/blog/nebraska-paycheck-calculator", destination: "/nebraska-paycheck-calculator", permanent: true },
-      { source: "/blog/nevada-paycheck-calculator", destination: "/nevada-paycheck-calculator", permanent: true },
-      { source: "/blog/new-hampshire-paycheck-calculator", destination: "/new-hampshire-paycheck-calculator", permanent: true },
-      { source: "/blog/new-jersey-paycheck-calculator", destination: "/new-jersey-paycheck-calculator", permanent: true },
-      { source: "/blog/new-mexico-paycheck-calculator", destination: "/new-mexico-paycheck-calculator", permanent: true },
-      { source: "/blog/new-york-paycheck-calculator", destination: "/new-york-paycheck-calculator", permanent: true },
-      { source: "/blog/north-carolina-paycheck-calculator", destination: "/north-carolina-paycheck-calculator", permanent: true },
-      { source: "/blog/north-dakota-paycheck-calculator", destination: "/north-dakota-paycheck-calculator", permanent: true },
-      { source: "/blog/ohio-paycheck-calculator", destination: "/ohio-paycheck-calculator", permanent: true },
-      { source: "/blog/oklahoma-paycheck-calculator", destination: "/oklahoma-paycheck-calculator", permanent: true },
-      { source: "/blog/oregon-paycheck-calculator", destination: "/oregon-paycheck-calculator", permanent: true },
-      { source: "/blog/pennsylvania-paycheck-calculator", destination: "/pennsylvania-paycheck-calculator", permanent: true },
-      { source: "/blog/rhode-island-paycheck-calculator", destination: "/rhode-island-paycheck-calculator", permanent: true },
-      { source: "/blog/south-carolina-paycheck-calculator", destination: "/south-carolina-paycheck-calculator", permanent: true },
-      { source: "/blog/south-dakota-paycheck-calculator", destination: "/south-dakota-paycheck-calculator", permanent: true },
-      { source: "/blog/tennessee-paycheck-calculator", destination: "/tennessee-paycheck-calculator", permanent: true },
-      { source: "/blog/texas-paycheck-calculator", destination: "/texas-paycheck-calculator", permanent: true },
-      { source: "/blog/utah-paycheck-calculator", destination: "/utah-paycheck-calculator", permanent: true },
-      { source: "/blog/vermont-paycheck-calculator", destination: "/vermont-paycheck-calculator", permanent: true },
-      { source: "/blog/virginia-paycheck-calculator", destination: "/virginia-paycheck-calculator", permanent: true },
-      { source: "/blog/washington-paycheck-calculator", destination: "/washington-paycheck-calculator", permanent: true },
-      { source: "/blog/west-virginia-paycheck-calculator", destination: "/west-virginia-paycheck-calculator", permanent: true },
-      { source: "/blog/wisconsin-paycheck-calculator", destination: "/wisconsin-paycheck-calculator", permanent: true },
-      { source: "/blog/wyoming-paycheck-calculator", destination: "/wyoming-paycheck-calculator", permanent: true },
-      { source: "/minimum-wage/methodology", destination: "/", permanent: true },
-      { source: "/tip-calculator/methodology", destination: "/methodology", permanent: true },
-      { source: "/unemployment-calculator/methodology", destination: "/methodology", permanent: true },
-      { source: "/bonus-tax-calculator/methodology", destination: "/bonus-tax-calculator", permanent: true },
-    ];
+      // ─────────────────────────────────────────────────────────────────
+      // 2. Old flat /STATE-paycheck-calculator → /blog/STATE-paycheck-calculator
+      //    Fixes duplicate URL issue (both patterns were indexed)
+      // ─────────────────────────────────────────────────────────────────
+      ...OLD_STATE_BLOG_PAGES.map((state) => ({
+        source: `/${state}-paycheck-calculator`,
+        destination: `/blog/${state}-paycheck-calculator`,
+        permanent: true,
+      })),
+
+      // ─────────────────────────────────────────────────────────────────
+      // 3. Methodology pages → parent calculator
+      //    (already done in sha ba1e65b — keeping for safety)
+      // ─────────────────────────────────────────────────────────────────
+      {
+        source: '/tip-calculator/methodology',
+        destination: '/methodology',
+        permanent: true,
+      },
+      {
+        source: '/unemployment-calculator/methodology',
+        destination: '/methodology',
+        permanent: true,
+      },
+      {
+        source: '/bonus-tax-calculator/methodology',
+        destination: '/bonus-tax-calculator',
+        permanent: true,
+      },
+      {
+        source: '/hourly-paycheck-calculator/methodology',
+        destination: '/hourly-paycheck-calculator',
+        permanent: true,
+      },
+      {
+        source: '/minimum-wage/methodology',
+        destination: '/minimum-wage',
+        permanent: true,
+      },
+
+      // ─────────────────────────────────────────────────────────────────
+      // 4. Short utility routes that were indexed as 404
+      // ─────────────────────────────────────────────────────────────────
+      {
+        source: '/hr',
+        destination: '/hourly-paycheck-calculator',
+        permanent: true,
+      },
+      {
+        source: '/week',
+        destination: '/hourly-paycheck-calculator',
+        permanent: true,
+      },
+
+      // ─────────────────────────────────────────────────────────────────
+      // 5. /blog/washington-dc-paycheck-calculator — canonical fix
+      // ─────────────────────────────────────────────────────────────────
+      {
+        source: '/washington-dc-paycheck-calculator',
+        destination: '/blog/washington-dc-paycheck-calculator',
+        permanent: true,
+      },
+
+      // ─────────────────────────────────────────────────────────────────
+      // 6. texas-paycheck-calculator-guide (5xx in GSC)
+      // ─────────────────────────────────────────────────────────────────
+      {
+        source: '/texas-paycheck-calculator-guide',
+        destination: '/blog/texas-paycheck-calculator',
+        permanent: true,
+      },
+    ]
   },
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: [
-        { key: "Cache-Control", value: "public, s-maxage=31536000, stale-while-revalidate=86400" },
-        { key: "X-Content-Type-Options", value: "nosniff" },
-        { key: "X-Frame-Options", value: "DENY" },
-      ],
-    },
-    {
-      source: "/_next/static/(.*)",
-      headers: [
-        { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-        { key: "X-Robots-Tag", value: "noindex" },
-      ],
-    },
-    {
-      source: "/ai-chat-widget.js",
-      headers: [
-        { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
-      ],
-    },
-  ],
-};
 
-export default nextConfig;
+  async headers() {
+    return [
+      {
+        // Block Google from caching versioned JS/CSS with query params
+        source: '/_next/static/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
+        ],
+      },
+    ]
+  },
+}
+
+export default nextConfig
