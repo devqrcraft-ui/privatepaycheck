@@ -151,12 +151,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     </>
   );
 }
- + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
-    description: descriptionOverrides[state] || 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: 
-    alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
-  authors: [{ name: 'Ethan Blake' }],
-  };
-}
 
 export default async function Page({ params }: Props) {
   const { state } = await params;
