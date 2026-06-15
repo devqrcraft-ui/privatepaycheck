@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
-export const metadata: Metadata = {
-  title: 'Oregon Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Oregon Paycheck Calculator 2026 — $75K Salary = $50,400 Take-Home',
+  description: 'Free Oregon paycheck calculator 2026. $75K salary = ~$50,400 take-home after Oregon state tax (9.9% flat), federal tax & FICA. Instant, no signup.',
   description: 'Oregon paycheck calculator 2026. See exact take-home pay after federal + Oregon state tax (up to 9.9%) and FICA. All salary levels. Free & private.',
   keywords: 'oregon paycheck calculator 2026, or take home pay, oregon salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/oregon-paycheck-calculator' },
