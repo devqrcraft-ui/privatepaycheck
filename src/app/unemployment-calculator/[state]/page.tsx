@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
   const titleOverrides: Record<string, string> = {
-    'pennsylvania': 'Pennsylvania Unemployment Calculator 2026 -- $572/week, 26 Weeks Max',
+    'pennsylvania': 'Pennsylvania Unemployment Calculator 2026 -- Max Weekly Benefit $572, 26 Weeks',
     'illinois':     'Illinois Unemployment Calculator 2026 -- $742/week, 26 Weeks Max',
     'texas':        'Texas Unemployment Calculator 2026 -- $563/week, 26 Weeks | No State Tax',
     'california':   'California Unemployment Calculator 2026 -- Up to $450/week, 26 Weeks',
@@ -105,7 +105,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'oregon':       'Oregon Unemployment Calculator 2026 -- $783/week, 26 Weeks Max',
   };
   const descriptionOverrides: Record<string, string> = {
-    'pennsylvania': 'Pennsylvania unemployment benefits 2026: max $572/week for 26 weeks. State tax only 3.07%. Calculate your exact weekly benefit instantly.',
+    'pennsylvania': 'Pennsylvania unemployment maximum weekly benefit amount 2026: $572/week for up to 26 weeks. State tax only 3.07%. Calculate your exact benefit instantly.',
     'illinois':     'Illinois unemployment calculator 2026: max $742/week for 26 weeks. 1-week waiting period. State tax 4.95%. Estimate your weekly benefit.',
     'texas':        'Texas unemployment calculator 2026: max $563/week for 26 weeks. No state income tax. Instant estimate, no login required.',
     'california':   'California unemployment calculator 2026: up to $450/week for 26 weeks. Calculate your exact weekly benefit amount instantly.',
