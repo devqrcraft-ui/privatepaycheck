@@ -120,6 +120,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   authors: [{ name: 'Ethan Blake' }],
   };
 }
+
+export default async function Page({ params }: Props) {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) notFound();
@@ -152,10 +154,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   );
 }
 
-export default async function Page({ params }: Props) {
-  const { state } = await params;
-  const data = STATE_DATA[state];
-  if (!data) notFound();
 
   const stateNote = STATE_NOTES[state];
   const ssrContent = stateNote ? (
