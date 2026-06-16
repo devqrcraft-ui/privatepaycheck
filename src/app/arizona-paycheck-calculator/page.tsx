@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Arizona Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'Arizona paycheck calculator 2026. See exact take-home pay after federal + Arizona state tax (2.5%) and FICA. All salary levels. Free & private.',
+  title: 'Arizona Paycheck Calculator 2026 — $75K Salary = $56,800 Take-Home',
+  description: 'Arizona paycheck calculator 2026. $75K salary = ~$56,800 take-home after 2.5% flat state tax, federal tax & FICA. Instant results, no signup.',
   keywords: 'arizona paycheck calculator 2026, az take home pay, arizona salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/arizona-paycheck-calculator' },
 }

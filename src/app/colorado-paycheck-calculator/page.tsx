@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Colorado Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
-  description: 'Colorado paycheck calculator 2026. See exact take-home pay after federal + Colorado state tax (4.25%) and FICA. All salary levels. Free & private.',
+  title: 'Colorado Paycheck Calculator 2026 — $75K Salary = $55,200 Take-Home',
+  description: 'Colorado paycheck calculator 2026. $75K salary = ~$55,200 take-home after 4.25% flat state tax, federal tax & FICA. Instant results, no signup.',
   keywords: 'colorado paycheck calculator 2026, co take home pay, colorado salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/colorado-paycheck-calculator' },
 }
