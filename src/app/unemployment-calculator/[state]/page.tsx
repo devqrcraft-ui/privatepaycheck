@@ -114,7 +114,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'washington':   'Washington unemployment calculator 2026: max $1,019/week for 26 weeks. No state income tax. Instant estimate based on prior wages.',
   };
   return {
-    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 — Up to 
+    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 — Up to $' + data.maxWeekly + '/Week',
     description: descriptionOverrides[state] || 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages -- no login required.',
     alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
     authors: [{ name: 'Ethan Blake' }],
