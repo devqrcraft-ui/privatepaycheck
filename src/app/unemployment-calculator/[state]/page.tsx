@@ -93,16 +93,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
   const titleOverrides: Record<string, string> = {
-    'pennsylvania': 'Pennsylvania Unemployment Calculator 2026 -- Max Weekly Benefit $572, 26 Weeks',
-    'illinois':     'Illinois Unemployment Calculator 2026 -- $742/week, 26 Weeks Max',
-    'texas':        'Texas Unemployment Calculator 2026 -- $563/week, 26 Weeks | No State Tax',
-    'california':   'California Unemployment Calculator 2026 -- Up to $450/week, 26 Weeks',
-    'new-york':     'New York Unemployment Calculator 2026 -- $504/week, 26 Weeks Max',
-    'florida':      'Florida Unemployment Calculator 2026 -- $275/week, 12 Weeks Max',
-    'washington':   'Washington Unemployment Calculator 2026 -- $1,019/week, 26 Weeks',
-    'new-jersey':   'New Jersey Unemployment Calculator 2026 -- $854/week, 26 Weeks Max',
-    'massachusetts':'Massachusetts Unemployment Calculator 2026 -- $1,033/week, 30 Weeks',
-    'oregon':       'Oregon Unemployment Calculator 2026 -- $783/week, 26 Weeks Max',
+    'pennsylvania': 'Pennsylvania Unemployment Calculator 2026 — Up to $572/Week, 26 Weeks',
+    'illinois':     'Illinois Unemployment Calculator 2026 — Up to $742/Week, 26 Weeks',
+    'texas':        'Texas Unemployment Calculator 2026 — Up to $563/Week, No State Tax',
+    'california':   'California Unemployment Calculator 2026 — Up to $450/Week, 26 Weeks',
+    'new-york':     'New York Unemployment Calculator 2026 — Up to $504/Week, 26 Weeks',
+    'florida':      'Florida Unemployment Calculator 2026 — Up to $275/Week, 12 Weeks',
+    'washington':   'Washington Unemployment Calculator 2026 — Up to $1,019/Week, 26 Weeks',
+    'new-jersey':   'New Jersey Unemployment Calculator 2026 — Up to $854/Week, 26 Weeks',
+    'massachusetts':'Massachusetts Unemployment Calculator 2026 — Up to $1,033/Week, 30 Weeks',
+    'oregon':       'Oregon Unemployment Calculator 2026 — Up to $783/Week, 26 Weeks',
   };
   const descriptionOverrides: Record<string, string> = {
     'pennsylvania': 'Pennsylvania unemployment maximum weekly benefit amount 2026: $572/week for up to 26 weeks. State tax only 3.07%. Calculate your exact benefit instantly.',
@@ -114,7 +114,46 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     'washington':   'Washington unemployment calculator 2026: max $1,019/week for 26 weeks. No state income tax. Instant estimate based on prior wages.',
   };
   return {
-    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 -- Max $' + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
+    title: titleOverrides[state] || data.name + ' Unemployment Calculator 2026 — Up to 
+    description: descriptionOverrides[state] || 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages -- no login required.',
+    alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
+    authors: [{ name: 'Ethan Blake' }],
+  };
+}
+
+export default async function Page({ params }: Props) {
+  const { state } = await params;
+  const data = STATE_DATA[state];
+  if (!data) notFound();
+
+  const stateNote = STATE_NOTES[state];
+  const ssrContent = stateNote ? (
+    <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px 32px', fontFamily: 'system-ui,sans-serif' }}>
+      <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#e8edf8' }}>
+        {data.name} Unemployment Benefits 2026: Key Facts
+      </h2>
+      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#e2e8f0' }}>{stateNote}</p>
+    </div>
+  ) : null;
+
+  const faqSchema = getUnemploymentFaqSchema(data.name, data.maxWeekly, data.maxWeeks, data.rate);
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <UnemploymentCalculatorState
+        stateName={data.name}
+        stateSlug={state}
+        maxWeekly={data.maxWeekly}
+        maxWeeks={data.maxWeeks}
+        rate={data.rate}
+        waitWeek={data.waitWeek}
+        stateIncomeTax={data.stateIncomeTax}
+      />
+      {ssrContent}
+    </>
+  );
+}
+ + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
     description: descriptionOverrides[state] || 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages -- no login required.',
     alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
     authors: [{ name: 'Ethan Blake' }],
