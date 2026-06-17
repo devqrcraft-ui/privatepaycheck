@@ -153,12 +153,6 @@ export default async function Page({ params }: Props) {
     </>
   );
 }
- + data.maxWeekly + '/week, ' + data.maxWeeks + ' Weeks',
-    description: descriptionOverrides[state] || 'Calculate your ' + data.name + ' unemployment benefits in 2026. Maximum benefit: $' + data.maxWeekly + '/week for up to ' + data.maxWeeks + ' weeks. Instant estimate based on your prior wages -- no login required.',
-    alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/' + state },
-    authors: [{ name: 'Ethan Blake' }],
-  };
-}
 
 export default async function Page({ params }: Props) {
   const { state } = await params;
