@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import UnemployCalc from './_calc'
 
 export const metadata: Metadata = {
-  title: 'Texas Unemployment Calculator 2026 — Estimate Your Weekly Benefits',
-  description: 'How much will Texas unemployment pay you? Estimate your weekly benefit up to $648/week for 26 weeks. Enter your wages — get instant results. No signup.',
+  title: 'Texas Unemployment Calculator 2026 — Up to $648/Week, 26 Weeks',
+  description: 'Texas unemployment benefits 2026: up to $648/week for up to 26 weeks. No state income tax on benefits. Free calculator — instant estimate based on your prior wages.',
   keywords: 'texas unemployment calculator, texas unemployment benefits 2026, texas WBA calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/texas' },
 }

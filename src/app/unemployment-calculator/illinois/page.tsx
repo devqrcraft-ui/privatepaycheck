@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import IlUnemployCalcEmbed from '@/components/IlUnemployCalcEmbed'
 
 export const metadata: Metadata = {
-  title: 'Illinois Unemployment Calculator 2026 — Estimate Your Weekly Benefits | PrivatePaycheck',
-  description: 'Free Illinois unemployment calculator 2026. Estimate your weekly benefit amount (WBA) based on your earnings. Illinois pays up to $628/week for individuals. Instant, no signup.',
+  title: 'Illinois Unemployment Calculator 2026 — Up to $628/Week, 26 Weeks',
+  description: 'Illinois unemployment benefits 2026: up to $628/week for individuals, $1,072 with dependants, up to 26 weeks. Free calculator — instant estimate based on your wages.',
   keywords: 'illinois unemployment calculator, illinois unemployment benefits 2026, illinois WBA calculator, illinois unemployment weekly benefit',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/illinois' },
 }

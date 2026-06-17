@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import UnemployCalc from './_calc'
 
 export const metadata: Metadata = {
-  title: 'New Hampshire Unemployment Calculator 2026 — Estimate Your Weekly Benefits',
-  description: 'Free New Hampshire unemployment calculator 2026. Estimate your weekly benefit amount (WBA). New Hampshire pays up to $427/week for up to 26 weeks. Instant, no signup.',
+  title: 'New Hampshire Unemployment Calculator 2026 — Up to $427/Week, 26 Weeks',
+  description: 'New Hampshire unemployment benefits 2026: up to $427/week for up to 26 weeks. No state income tax on benefits. Free calculator — instant estimate based on your prior wages.',
   keywords: 'new-hampshire unemployment calculator, new-hampshire unemployment benefits 2026, new-hampshire WBA calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/new-hampshire' },
 }
