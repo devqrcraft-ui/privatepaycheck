@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'South Carolina Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'South Carolina Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'South Carolina paycheck calculator 2026. See exact take-home pay after federal + South Carolina state tax (up to 6.4%) and FICA. All salary levels. Free & private.',
   keywords: 'south carolina paycheck calculator 2026, sc take home pay, south carolina salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/south-carolina-paycheck-calculator' },

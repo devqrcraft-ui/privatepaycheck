@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Oklahoma Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Oklahoma Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Oklahoma paycheck calculator 2026. See exact take-home pay after federal + Oklahoma state tax (up to 4.75%) and FICA. All salary levels. Free & private.',
   keywords: 'oklahoma paycheck calculator 2026, ok take home pay, oklahoma salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/oklahoma-paycheck-calculator' },

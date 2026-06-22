@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'How We Calculate Your Paycheck | PrivatePaycheck',
+  title: 'How We Calculate Your Paycheck',
   description: 'Transparent methodology: federal tax brackets, FICA, state taxes, 2026 overtime and tip deductions. Every formula sourced from IRS Publication 15-T.',
   alternates: { canonical: 'https://www.privatepaycheck.com/how-we-calculate' },
   authors: [{ name: 'Ethan Blake' }],

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Arkansas Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Arkansas Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Arkansas paycheck calculator 2026. See exact take-home pay after federal + Arkansas state tax (up to 4.7%) and FICA. All salary levels. Free & private.',
   keywords: 'arkansas paycheck calculator 2026, ar take home pay, arkansas salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/arkansas-paycheck-calculator' },

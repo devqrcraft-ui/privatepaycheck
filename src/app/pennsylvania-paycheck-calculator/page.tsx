@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Pennsylvania Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Pennsylvania Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Pennsylvania paycheck calculator 2026. See exact take-home pay after federal + Pennsylvania state tax (3.07% flat) and FICA. All salary levels. Free & private.',
   keywords: 'pennsylvania paycheck calculator 2026, pa take home pay, pennsylvania salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/pennsylvania-paycheck-calculator' },

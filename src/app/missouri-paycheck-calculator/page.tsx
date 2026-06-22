@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Missouri Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Missouri Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Missouri paycheck calculator 2026. See exact take-home pay after federal + Missouri state tax (up to 4.95%) and FICA. All salary levels. Free & private.',
   keywords: 'missouri paycheck calculator 2026, mo take home pay, missouri salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/missouri-paycheck-calculator' },

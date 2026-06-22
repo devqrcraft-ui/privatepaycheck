@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Rhode Island Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Rhode Island Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Rhode Island paycheck calculator 2026. See exact take-home pay after federal + Rhode Island state tax (up to 5.99%) and FICA. All salary levels. Free & private.',
   keywords: 'rhode island paycheck calculator 2026, ri take home pay, rhode island salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/rhode-island-paycheck-calculator' },

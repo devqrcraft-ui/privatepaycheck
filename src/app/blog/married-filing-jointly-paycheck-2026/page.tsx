@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Married Filing Jointly Paycheck Calculator 2026 | PrivatePaycheck',
+  title: 'Married Filing Jointly Paycheck Calculator 2026',
   description: 'How does married filing jointly affect your paycheck in 2026? See take-home pay for dual-income households. Standard deduction $30,000 for MFJ.',
   keywords: 'married filing jointly paycheck 2026, married take home pay calculator, MFJ standard deduction 2026, married couple paycheck after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/married-filing-jointly-paycheck-2026' },

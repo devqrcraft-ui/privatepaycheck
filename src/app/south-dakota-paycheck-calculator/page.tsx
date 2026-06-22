@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'South Dakota Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'South Dakota Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'South Dakota paycheck calculator 2026. See exact take-home pay after federal + South Dakota state tax (0% — no state income tax) and FICA. All salary levels. Free & private.',
   keywords: 'south dakota paycheck calculator 2026, sd take home pay, south dakota salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/south-dakota-paycheck-calculator' },

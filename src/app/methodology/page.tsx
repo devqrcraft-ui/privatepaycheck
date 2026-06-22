@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Paycheck Calculator Methodology 2026 — How We Calculate | PrivatePaycheck',
+  title: 'Paycheck Calculator Methodology 2026 — How We Calculate',
   description: 'How PrivatePaycheck calculates take-home pay. All formulas use 2026 IRS tax brackets, standard deductions, FICA rates, and state tax tables sourced directly from official government publications.',
   alternates: { canonical: 'https://www.privatepaycheck.com/methodology' },
 }

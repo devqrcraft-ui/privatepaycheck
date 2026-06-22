@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Iowa Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Iowa Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Iowa paycheck calculator 2026. See exact take-home pay after federal + Iowa state tax (up to 6%) and FICA. All salary levels. Free & private.',
   keywords: 'iowa paycheck calculator 2026, ia take home pay, iowa salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/iowa-paycheck-calculator' },

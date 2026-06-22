@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Truck Driver Salary After Taxes 2026 — Take-Home Pay | PrivatePaycheck',
+  title: 'Truck Driver Salary After Taxes 2026 — Take-Home Pay',
   description: 'How much do truck drivers take home after taxes in 2026? OTR average $70,000. See net pay by state, per diem deductions, and owner-operator taxes.',
   keywords: 'truck driver salary after taxes 2026, trucker take home pay, cdl driver paycheck, owner operator taxes 2026',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/truck-driver-salary-after-taxes' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Tennessee Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Tennessee Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Tennessee paycheck calculator 2026. See exact take-home pay after federal + Tennessee state tax (0% — no state income tax on wages) and FICA. All salary levels. Free & private.',
   keywords: 'tennessee paycheck calculator 2026, tn take home pay, tennessee salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/tennessee-paycheck-calculator' },

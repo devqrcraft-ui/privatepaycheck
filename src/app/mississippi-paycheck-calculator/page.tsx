@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Mississippi Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Mississippi Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Mississippi paycheck calculator 2026. See exact take-home pay after federal + Mississippi state tax (up to 5%) and FICA. All salary levels. Free & private.',
   keywords: 'mississippi paycheck calculator 2026, ms take home pay, mississippi salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/mississippi-paycheck-calculator' },

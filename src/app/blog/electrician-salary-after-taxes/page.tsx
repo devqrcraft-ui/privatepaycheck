@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Electrician Salary After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
+  title: 'Electrician Salary After Taxes 2026 — Take-Home Pay by State',
   description: 'How much do electricians take home after taxes in 2026? Average electrician salary $65,000. See net pay for all states.',
   keywords: 'electrician salary after taxes 2026, electrician take home pay, electrician paycheck calculator, journeyman electrician salary net',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/electrician-salary-after-taxes' },

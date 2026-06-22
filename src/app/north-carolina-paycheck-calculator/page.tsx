@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'North Carolina Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'North Carolina Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'North Carolina paycheck calculator 2026. See exact take-home pay after federal + North Carolina state tax (4.5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'north carolina paycheck calculator 2026, nc take home pay, north carolina salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/north-carolina-paycheck-calculator' },

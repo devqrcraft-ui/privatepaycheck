@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Unemployment Calculator 2026 — Estimate Weekly Benefits by State | PrivatePaycheck',
+  title: 'Unemployment Calculator 2026 — Estimate Weekly Benefits by State',
   description: 'Free unemployment calculator for all 50 states 2026. Estimate your weekly benefit amount based on recent wages. TX up to $563/wk, CA $450/wk, NY $504/wk, MA $1,033/wk. Instant & private.',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator' },
   robots: 'index, follow',

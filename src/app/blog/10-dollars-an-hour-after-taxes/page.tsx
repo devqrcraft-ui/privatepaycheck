@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: '$10 an Hour After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
+  title: '$10 an Hour After Taxes 2026 — Take-Home Pay by State',
   description: 'How much is $10 an hour after taxes in 2026? $10/hr = $20,800/year gross. Take-home: $18,200–$19,700 by state.',
   keywords: '10 dollars an hour after taxes, 10 an hour take home 2026, 20800 salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/10-dollars-an-hour-after-taxes' },

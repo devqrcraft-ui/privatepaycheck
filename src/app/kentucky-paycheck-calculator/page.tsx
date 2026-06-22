@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Kentucky Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Kentucky Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Kentucky paycheck calculator 2026. See exact take-home pay after federal + Kentucky state tax (4.5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'kentucky paycheck calculator 2026, ky take home pay, kentucky salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/kentucky-paycheck-calculator' },

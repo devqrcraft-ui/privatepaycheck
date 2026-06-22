@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: '$150,000 a Year After Taxes 2026 — Take-Home Pay by State | PrivatePaycheck',
+  title: '$150,000 a Year After Taxes 2026 — Take-Home Pay by State',
   description: 'How much is $150k a year after taxes in 2026? Monthly: $6,400–$8,417. See exact take-home for all 50 states including CA, TX, NY.',
   keywords: '150k a year after taxes, 150000 salary after taxes 2026, 150k take home pay, six figures after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/150k-a-year-after-taxes' },

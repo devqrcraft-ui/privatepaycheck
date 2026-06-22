@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Maine Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Maine Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Maine paycheck calculator 2026. See exact take-home pay after federal + Maine state tax (up to 7.15%) and FICA. All salary levels. Free & private.',
   keywords: 'maine paycheck calculator 2026, me take home pay, maine salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/maine-paycheck-calculator' },

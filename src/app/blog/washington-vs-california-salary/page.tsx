@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Washington vs California Salary 2026 — Take-Home Pay Comparison | PrivatePaycheck',
+  title: 'Washington vs California Salary 2026 — Take-Home Pay Comparison',
   description: 'Washington state vs California salary after taxes 2026. At $100k, WA residents keep $5,016 more per year. See full comparison at every salary level.',
   keywords: 'washington vs california salary, washington state vs california taxes, move from california to washington, wa vs ca take home pay',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/washington-vs-california-salary' },

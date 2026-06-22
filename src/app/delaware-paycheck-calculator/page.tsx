@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Delaware Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Delaware Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Delaware paycheck calculator 2026. See exact take-home pay after federal + Delaware state tax (up to 6.6%) and FICA. All salary levels. Free & private.',
   keywords: 'delaware paycheck calculator 2026, de take home pay, delaware salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/delaware-paycheck-calculator' },

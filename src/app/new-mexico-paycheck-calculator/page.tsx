@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'New Mexico Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'New Mexico Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'New Mexico paycheck calculator 2026. See exact take-home pay after federal + New Mexico state tax (up to 5.9%) and FICA. All salary levels. Free & private.',
   keywords: 'new mexico paycheck calculator 2026, nm take home pay, new mexico salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/new-mexico-paycheck-calculator' },

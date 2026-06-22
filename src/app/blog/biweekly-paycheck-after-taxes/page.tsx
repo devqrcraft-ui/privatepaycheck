@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Biweekly Paycheck After Taxes 2026 — Calculator & Tables | PrivatePaycheck',
+  title: 'Biweekly Paycheck After Taxes 2026 — Calculator & Tables',
   description: 'How much is your biweekly paycheck after taxes? See take-home pay tables for $30k, $40k, $50k, $60k, $75k, $100k salaries. All 50 states covered.',
   keywords: 'biweekly paycheck after taxes 2026, biweekly take home pay, biweekly pay after taxes calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/biweekly-paycheck-after-taxes' },

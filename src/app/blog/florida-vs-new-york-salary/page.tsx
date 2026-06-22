@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Florida vs New York Salary Comparison 2026 — Take-Home Pay Difference | PrivatePaycheck',
+  title: 'Florida vs New York Salary Comparison 2026 — Take-Home Pay Difference',
   description: 'Florida vs New York salary after taxes in 2026. At $75k, FL residents keep $9,300 more per year than NYC residents. See full comparison.',
   keywords: 'florida vs new york salary, florida vs new york taxes, move from ny to florida salary, florida take home vs new york',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/florida-vs-new-york-salary' },

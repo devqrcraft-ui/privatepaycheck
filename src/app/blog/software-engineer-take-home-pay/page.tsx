@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Software Engineer Take-Home Pay 2026 — After Taxes by State | PrivatePaycheck',
+  title: 'Software Engineer Take-Home Pay 2026 — After Taxes by State',
   description: 'How much do software engineers take home after taxes in 2026? See net pay for $100k, $130k, $150k, $200k salaries in TX, CA, NY, WA.',
   keywords: 'software engineer take home pay 2026, software engineer salary after taxes, swe net pay calculator, engineer paycheck after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/software-engineer-take-home-pay' },

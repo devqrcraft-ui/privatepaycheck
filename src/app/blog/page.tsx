@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Paycheck & Tax Blog 2026 — Guides, Calculators & Tips | PrivatePaycheck',
+  title: 'Paycheck & Tax Blog 2026 — Guides, Calculators & Tips',
   description: 'Free paycheck and tax guides for 2026. How much is your salary after taxes? State-by-state take-home pay tables, hourly wage calculators, and tax tips.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog' },
 }

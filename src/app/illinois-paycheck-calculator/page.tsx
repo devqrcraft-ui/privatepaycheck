@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Illinois Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Illinois Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Illinois paycheck calculator 2026. See exact take-home pay after federal + Illinois state tax (4.95% flat) and FICA. All salary levels. Free & private.',
   keywords: 'illinois paycheck calculator 2026, il take home pay, illinois salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/illinois-paycheck-calculator' },

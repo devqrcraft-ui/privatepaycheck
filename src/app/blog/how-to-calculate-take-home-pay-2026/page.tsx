@@ -3,7 +3,7 @@ import AuthorBox from '@/app/components/AuthorBox'
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'How to Calculate Your Take-Home Pay in the US (2026) | PrivatePaycheck',
+  title: 'How to Calculate Your Take-Home Pay in the US (2026)',
   description: 'Step-by-step guide to calculating take-home pay in 2026. Federal tax, FICA, state tax explained with real examples for CA, NY, TX, FL, IL. Free calculator included.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/how-to-calculate-take-home-pay-2026' },
 };

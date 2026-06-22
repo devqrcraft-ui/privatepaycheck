@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'New Hampshire Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'New Hampshire Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'New Hampshire paycheck calculator 2026. See exact take-home pay after federal + New Hampshire state tax (0% on wages — no income tax on earned income) and FICA. All salary levels. Free & private.',
   keywords: 'new hampshire paycheck calculator 2026, nh take home pay, new hampshire salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/new-hampshire-paycheck-calculator' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Indiana Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Indiana Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Indiana paycheck calculator 2026. See exact take-home pay after federal + Indiana state tax (3.05% flat) and FICA. All salary levels. Free & private.',
   keywords: 'indiana paycheck calculator 2026, in take home pay, indiana salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/indiana-paycheck-calculator' },

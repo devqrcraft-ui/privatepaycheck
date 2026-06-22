@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '2026 Tax Changes — Complete Guide to New Deductions | PrivatePaycheck',
+  title: '2026 Tax Changes — Complete Guide to New Deductions',
   description: 'Full guide to 2026 tax law changes: no tax on overtime ($12,500), no tax on tips ($25,000), senior $6,000 deduction, Trump Account. Calculate your exact savings.',
   alternates: { canonical: 'https://www.privatepaycheck.com/2026-tax-changes' },
   authors: [{ name: 'Ethan Blake' }],

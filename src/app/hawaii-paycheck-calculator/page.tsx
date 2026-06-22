@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Hawaii Paycheck Calculator 2026 — Take-Home Pay After Taxes | PrivatePaycheck',
+  title: 'Hawaii Paycheck Calculator 2026 — Take-Home Pay After Taxes',
   description: 'Hawaii paycheck calculator 2026. See exact take-home pay after federal + Hawaii state tax (up to 11%) and FICA. All salary levels. Free & private.',
   keywords: 'hawaii paycheck calculator 2026, hi take home pay, hawaii salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/hawaii-paycheck-calculator' },

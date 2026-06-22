@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
-  title: 'Nevada vs California Salary 2026 — Take-Home Pay Comparison | PrivatePaycheck',
+  title: 'Nevada vs California Salary 2026 — Take-Home Pay Comparison',
   description: 'Nevada vs California salary after taxes 2026. No Nevada state income tax. See how much more you keep in Las Vegas vs Los Angeles.',
   keywords: 'nevada vs california salary, nevada vs california taxes, move from california to nevada, las vegas vs los angeles salary',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/nevada-vs-california-salary' },
