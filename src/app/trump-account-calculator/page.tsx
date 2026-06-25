@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Trump Account Calculator 2026 — DOGE Dividend & Savings Estimator | Free',
+  title: 'Trump Account Calculator 2026 — How Much Will Your Child Get?',
   description: 'Calculate your estimated Trump Account (DOGE dividend) payment for 2026. See how much you or your child may receive based on the proposed savings account program. Free, instant.',
   keywords: 'trump account calculator, trump account 2026, doge dividend calculator, trump savings account kids, trump account for children 2026',
   alternates: { canonical: 'https://www.privatepaycheck.com/trump-account-calculator' },

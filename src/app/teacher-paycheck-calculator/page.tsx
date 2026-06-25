@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import TeacherPaycheckCalculator from './TeacherPaycheckClient';
 
 export const metadata: Metadata = {
-  title: 'Teacher Paycheck Calculator 2026 — Real Take-Home After TRS Pension & Taxes',
+  title: 'Teacher Paycheck Calculator 2026 — See Take-Home Pay After Taxes & Pension',
   description:
     'Calculate your actual teacher take-home pay after TRS/STRS/PSERS pension contributions, federal tax, and state tax. All 51 states. Updated for SS Fairness Act 2025 (WEP/GPO repealed) and $6,000 OBBB Senior Deduction.',
   keywords: [
