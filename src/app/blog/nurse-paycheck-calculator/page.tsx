@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Nurse Paycheck Calculator 2026: $77K Salary = $57,400 Take-Home',
+  title: 'Nurse Tax Calculator 2026 — $77K = $57,400 Take-Home',
   description: 'A registered nurse earning $77,600 in 2026 takes home $57,400-$61,200 after taxes. State-by-state breakdown, shift differentials, and free paycheck calculator.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/nurse-paycheck-calculator' },
   openGraph: {
-    title: 'Nurse Paycheck Calculator 2026: $77K Salary = $57,400 Take-Home',
+    title: 'Nurse Tax Calculator 2026 — $77K = $57,400 Take-Home',
     description: 'See your real nurse take-home pay after federal, state, and FICA deductions. All 50 states.',
     type: 'article',
   },
