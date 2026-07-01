@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     
         {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-XRMYZKZN69" strategy="lazyOnload" />
-        <script dangerouslySetInnerHTML={{ __html: `
+        <Script strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
