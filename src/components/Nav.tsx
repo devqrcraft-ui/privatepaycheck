@@ -5,7 +5,7 @@ import { useState } from 'react';
 const TICKER_ITEMS = [
   '2026 IRS Tax Tables — Updated',
   'Federal + State + FICA — All Calculated',
-  '100% Private — No Data Stored',
+  '100% Private — Browser-Only',
   'All 50 States Covered',
   'Free Forever — No Signup Required',
   'Salary & Hourly Calculator',

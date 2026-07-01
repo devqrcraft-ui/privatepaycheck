@@ -93,7 +93,7 @@ export default function NursePaycheckHub() {
           Nurse Paycheck Calculator 2026
         </h1>
         <p style={{ fontSize: '16px', lineHeight: 1.75, opacity: 0.75, maxWidth: '680px', marginBottom: '12px' }}>
-          See your real RN take-home pay after federal tax, FICA, and state income tax — for all 51 states.
+          See your real RN take-home pay after federal tax, FICA, and state income tax — for all 50 states + DC.
           Select your state below to get an instant breakdown with biweekly and monthly net pay.
         </p>
         <p style={{ fontSize: '14px', lineHeight: 1.7, opacity: 0.55, maxWidth: '680px', marginBottom: '36px' }}>

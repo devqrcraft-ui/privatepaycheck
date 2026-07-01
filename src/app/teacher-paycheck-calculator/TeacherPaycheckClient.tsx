@@ -198,7 +198,7 @@ export default function TeacherPaycheckCalculator() {
         {/* HERO */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#4ade80' }}>
-             Updated for SS Fairness Act 2025 · All 51 States
+             Updated for SS Fairness Act 2025 · All 50 States + DC
           </div>
           <h1 style={{ fontSize: 'clamp(24px,5vw,44px)', fontWeight: 900, margin: '0 0 12px', lineHeight: 1.15 }}>
             Teacher Paycheck Calculator 2026

@@ -34,7 +34,7 @@ export default function AllStatesPage() {
           <span style={{ color: '#818cf8' }}>All 50 States — 2026</span>
         </h1>
         <p style={{ fontSize: 'clamp(15px,2.5vw,17px)', lineHeight: 1.8, color: '#b0c4de', maxWidth: '680px', margin: '0 0 28px' }}>
-          Calculate your exact take-home pay after federal income tax, state income tax, and FICA for any of the 50 U.S. states plus D.C. Updated for 2026 IRS brackets and all state withholding rates. All calculations run in your browser — no data stored, no signup required.
+          Calculate your exact take-home pay after federal income tax, state income tax, and FICA for any of the 50 U.S. states plus D.C. Updated for 2026 IRS brackets and all state withholding rates. All calculations run in your browser — calculations stay in your browser, no signup required.
         </p>
 
         <div style={{ marginBottom: '32px' }}>

@@ -104,7 +104,7 @@ export default function UnemploymentCalculatorClient({ stateName, maxWeekly, min
           <div style={{ fontSize: '12px', opacity: 0.8, marginTop: '8px' }}>{stateName} pays up to {fmt(maxWeekly)}/week for {maxWeeks} weeks</div>
         </div>
       )}
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, marginTop: '12px' }}> All calculations happen in your browser · No data stored</p>
+      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, marginTop: '12px' }}> All calculations happen in your browser · Calculations stay in your browser</p>
     </div>
   );
 }

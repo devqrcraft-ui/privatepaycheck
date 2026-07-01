@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Minimum Wage by State 2026 — All 51 States + DC',
+  title: 'Minimum Wage by State 2026 — All 50 States + DC',
   description: 'Current minimum wage rates for all 50 US states and DC in 2026. See hourly, weekly, monthly and annual earnings. DC leads at $17.50/hr. Federal minimum: $7.25/hr.',
   alternates: { canonical: 'https://www.privatepaycheck.com/minimum-wage' },
   robots: { index: true, follow: true },
@@ -81,7 +81,7 @@ export default function MinWageHubPage() {
 
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div style={{ display: 'inline-block', background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '16px', color: '#6ee7b7' }}>
-             2026 Rates — All 51 States + DC
+             2026 Rates — All 50 States + DC
           </div>
           <h1 style={{ fontSize: 'clamp(28px,5vw,52px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.15 }}>
             Minimum Wage by State 2026
@@ -101,7 +101,7 @@ export default function MinWageHubPage() {
           </div>
         </div>
 
-        <h2 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '20px' }}>All 51 States — 2026 Minimum Wage</h2>
+        <h2 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '20px' }}>All 50 States — 2026 Minimum Wage</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: '10px' }}>
           {slugs.map(slug => {
             const st = STATE_TAXES[slug];

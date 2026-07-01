@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand-col">
             <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#FFD700",fontWeight:700,marginBottom:10}}>PrivatePaycheck.com</div>
-            <p style={{fontSize:13,color:"#A8C4E0",lineHeight:1.7,maxWidth:360}}>Free, private paycheck calculator for US workers. All calculations happen in your browser. No data stored. No accounts required. Updated for 2026.</p>
+            <p style={{fontSize:13,color:"#A8C4E0",lineHeight:1.7,maxWidth:360}}>Free, private paycheck calculator for US workers. All calculations happen in your browser. Calculations stay in your browser. No accounts required. Updated for 2026.</p>
           </div>
           <div>
             <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Calculators</div>
@@ -44,7 +44,7 @@ export default function Footer() {
 
         <div style={{borderTop:"1px solid rgba(201,168,76,.18)",paddingTop:18,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8,fontSize:12,color:"#8AAAC8"}}>
           <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
-          <span>Free · Private · No Data Stored</span>
+          <span>Free · Private · Browser-Only</span>
         </div>
       </div>
     </footer>

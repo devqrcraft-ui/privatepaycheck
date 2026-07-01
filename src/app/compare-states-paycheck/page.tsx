@@ -44,7 +44,7 @@ export default function Page() {
       </nav>
 
       <h1 style={{ fontSize: 'clamp(24px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>Compare Paycheck by State — 2026</h1>
-      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 28, maxWidth: 680 }}>Pick any 3 states and see your exact take-home pay side by side. Federal tax, state tax, FICA, and SDI — all calculated using 2026 brackets. No signup, no data stored.</p>
+      <p style={{ fontSize: 17, color: '#94a3b8', marginBottom: 28, maxWidth: 680 }}>Pick any 3 states and see your exact take-home pay side by side. Federal tax, state tax, FICA, and SDI — all calculated using 2026 brackets. No signup, calculations stay in your browser.</p>
 
       <div style={{ background: 'rgba(245,200,66,0.07)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 12, padding: '20px 20px 24px', marginBottom: 40 }}>
         <CompareClient />

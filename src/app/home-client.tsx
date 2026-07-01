@@ -120,7 +120,7 @@ export default function HomeClient() {
       <style dangerouslySetInnerHTML={{__html:CSS}}/>
 
       <div className="testimonial-bar">
-        ⭐ <strong>"Exact take-home in seconds"</strong> — Sarah K., Texas &nbsp;|&nbsp; 🔒 Zero data stored &nbsp;|&nbsp; ✓ 2026 IRS rates
+        ⭐ <strong>"Exact take-home in seconds"</strong> — Sarah K., Texas &nbsp;|&nbsp; 🔒 Calculations stay in your browser &nbsp;|&nbsp; ✓ 2026 IRS rates
       </div>
       <section className="hero">
         <div className="hero-inner">
@@ -137,7 +137,7 @@ export default function HomeClient() {
               'W-2 Salary · Hourly · Bonus Calculator',
               'All 50 States + 2026 IRS Tax Brackets',
               'Federal · State · FICA Full Breakdown',
-              'Zero Data Stored · 100% Private',
+              'Calculations stay in your browser · 100% Private',
             ].map((item,i) => (
               <div key={i} style={{display:'flex',alignItems:'center',gap:14}}>
                 <div style={{width:32,height:32,borderRadius:'6px',border:'3px solid #22c55e',background:'transparent',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,boxShadow:'0 2px 8px rgba(34,197,94,0.25)'}}>
@@ -359,9 +359,9 @@ export default function HomeClient() {
             <a href="https://gigwisetax.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(178,34,52,0.08)',border:'1px solid rgba(178,34,52,0.25)',borderRadius:'10px',padding:'18px 20px'}}>
               <div style={{fontSize:'11px',fontWeight:700,color:'rgba(255,100,100,1)',letterSpacing:'0.08em',textTransform:'uppercase',marginBottom:'6px'}}>1099 Gig Tax Tool</div>
               <div style={{fontFamily:"'Playfair Display',serif",fontSize:'17px',fontWeight:700,color:'#fff',marginBottom:'4px'}}>GigWiseTax.com</div>
-              <div style={{fontSize:'12px',color:'#7090B0',lineHeight:1.6,marginBottom:'10px'}}>Free self-employment tax calculator. SE tax 15.3% + federal + all 51 states. DoorDash, Uber, OnlyFans & more.</div>
+              <div style={{fontSize:'12px',color:'#7090B0',lineHeight:1.6,marginBottom:'10px'}}>Free self-employment tax calculator. SE tax 15.3% + federal + all 50 states + DC. DoorDash, Uber, OnlyFans & more.</div>
               <div style={{display:'flex',gap:'6px',flexWrap:'wrap',marginBottom:'10px'}}>
-                {['SE Tax 15.3%','All 51 States','100% Free'].map((t:string)=><span key={t} style={{fontSize:'10px',background:'rgba(178,34,52,0.12)',border:'1px solid rgba(178,34,52,0.3)',color:'rgba(255,255,255,0.85)',padding:'2px 7px',borderRadius:'3px'}}>{t}</span>)}
+                {['SE Tax 15.3%','All 50 States + DC','100% Free'].map((t:string)=><span key={t} style={{fontSize:'10px',background:'rgba(178,34,52,0.12)',border:'1px solid rgba(178,34,52,0.3)',color:'rgba(255,255,255,0.85)',padding:'2px 7px',borderRadius:'3px'}}>{t}</span>)}
               </div>
               <div style={{background:'#B22234',color:'#fff',padding:'9px 0',borderRadius:'6px',fontSize:'12px',fontWeight:700,textAlign:'center'}}>Calculate Gig Taxes →</div>
             </a>
@@ -497,7 +497,7 @@ export default function HomeClient() {
                 {num:'01',title:'IRS Publication 15-T',desc:'We use official 2026 IRS withholding tables for federal income tax — the same tables your employer uses.'},
                 {num:'02',title:'FICA Rates',desc:'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Exact rates, no estimation.'},
                 {num:'03',title:'State Tax Tables',desc:'Official 2026 state income tax rates for all 50 states plus D.C. Updated from each state revenue department.'},
-                {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Zero data stored, ever.'},
+                {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Calculations stay in your browser, ever.'},
               ].map(item => (
                 <div key={item.num} style={{display:'flex',gap:16,alignItems:'flex-start'}}>
                   <div style={{fontSize:28,fontWeight:900,color:'rgba(245,200,66,0.75)',flexShrink:0,lineHeight:1,fontFamily:"'Playfair Display',serif",minWidth:32}}>{item.num}</div>

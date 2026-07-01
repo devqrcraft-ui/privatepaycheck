@@ -136,7 +136,7 @@ export default function Post() {
 
           <div style={{ background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:10, padding:'20px', marginTop:32 }}>
             <div style={{ fontSize:16, fontWeight:800, color:'#fff', marginBottom:8 }}>Skip the math — use our free calculator</div>
-            <p style={{ fontSize:14, opacity:0.75, marginBottom:16 }}>Enter your salary, state, and pay frequency. Get your exact take-home pay in seconds. No data stored.</p>
+            <p style={{ fontSize:14, opacity:0.75, marginBottom:16 }}>Enter your salary, state, and pay frequency. Get your exact take-home pay in seconds. Calculations stay in your browser.</p>
             <Link href="/" style={{ display:'inline-block', background:'linear-gradient(135deg,#6366f1,#8b5cf6)', color:'white', padding:'12px 28px', borderRadius:8, fontWeight:800, fontSize:14, textDecoration:'none' }}>
                Calculate My Paycheck →
             </Link>
