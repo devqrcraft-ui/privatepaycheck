@@ -142,7 +142,7 @@ export default function BonusTaxCalculator() {
             <div style={{ ...CARD, background: 'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(201,168,76,0.15))', border: '1px solid rgba(74,222,128,0.3)', textAlign: 'center', padding: '28px' }}>
               <div style={{ fontSize: '13px', opacity: 0.65, marginBottom: '6px' }}>You'll Take Home</div>
               <div style={{ fontSize: '48px', fontWeight: 900, color: '#4ade80' }}>{fmt(res.takeHome)}</div>
-              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>out of {fmt(bonus)} bonus</div>
+              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>out of {fmt(Number(bonus))} bonus</div>
             </div>
 
             <div style={CARD}>
