@@ -64,12 +64,12 @@ const INPUT_S = { width: '100%', background: 'rgba(255,255,255,0.07)', border: '
 const SELECT_S = { ...INPUT_S, cursor: 'pointer' , colorScheme: 'dark' as const };
 
 export default function BonusTaxCalculator() {
-  const [bonus, setBonus]   = useState(10000);
-  const [salary, setSalary] = useState(75000);
+  const [bonus, setBonus]   = useState('10000');
+  const [salary, setSalary] = useState('75000');
   const [state, setState]   = useState('CA');
   const [filing, setFiling] = useState('single');
 
-  const res = calcBonus(bonus, salary, state, filing);
+  const res = calcBonus(Math.max(0,+(bonus||0)), Math.max(1,+(salary||1)), state, filing);
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
   const pct = (n: number) => (n * 100).toFixed(1) + '%';
 
@@ -104,7 +104,7 @@ export default function BonusTaxCalculator() {
               <div style={LABEL}>Bonus Amount</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
-                <input type="number" value={bonus} onChange={e => setBonus(Math.max(0,+e.target.value))} min={0} style={{ ...INPUT_S, paddingLeft: '28px' }} />
+                <input type="number" value={bonus} onChange={e => setBonus(e.target.value)} min={0} style={{ ...INPUT_S, paddingLeft: '28px' }} />
               </div>
             </div>
 
@@ -112,7 +112,7 @@ export default function BonusTaxCalculator() {
               <div style={LABEL}>Annual Salary (before bonus)</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
-                <input type="number" value={salary} onChange={e => setSalary(Math.max(1,+e.target.value))} min={1} style={{ ...INPUT_S, paddingLeft: '28px' }} />
+                <input type="number" value={salary} onChange={e => setSalary(e.target.value)} min={1} style={{ ...INPUT_S, paddingLeft: '28px' }} />
               </div>
               <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '4px' }}>Used to determine your marginal tax bracket</div>
             </div>
