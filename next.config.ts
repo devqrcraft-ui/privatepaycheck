@@ -29,6 +29,31 @@ const nextConfig: NextConfig = {
 
 
       // ─────────────────────────────────────────────────────────────────
+      // 2. Phantom /blog/STATE-paycheck-calculator -> root calculator
+      //    Never existed in src/app; old sitemap artifact still crawled by GSC
+      ...[
+        'michigan','washington','oregon','minnesota','north-carolina',
+        'arizona','ohio','georgia','washington-dc','wisconsin','idaho',
+        'montana','south-dakota','wyoming','illinois','nevada','colorado',
+        'mississippi','new-york','virginia','connecticut','massachusetts',
+        'tennessee','new-hampshire',
+      ].map((state) => ({
+        source: '/blog/' + state + '-paycheck-calculator',
+        destination: '/' + state + '-paycheck-calculator',
+        permanent: true,
+      })),
+
+      {
+        source: '/blog/texas-paycheck-calculator',
+        destination: '/blog/texas-paycheck-calculator-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/california-paycheck-calculator',
+        destination: '/blog/california-paycheck-calculator-guide',
+        permanent: true,
+      },
+
       // 3. Methodology pages → parent calculator
       //    (already done in sha ba1e65b — keeping for safety)
       // ─────────────────────────────────────────────────────────────────
