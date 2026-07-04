@@ -323,8 +323,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!data) return { title: 'Not Found' };
   const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state tax';
   return {
-    title: data.name + ' Hourly Paycheck Calculator 2026 — Exact Take-Home Pay, No Signup',
-    description: 'How much do you take home hourly in ' + data.name + '? Free 2026 calculator — enter rate → see exact pay after federal, state & FICA taxes in seconds. No login, no data stored.',
+    title: data.noStateTax ? data.name + ' Hourly Paycheck Calculator — No State Tax' : data.name + ' Hourly Paycheck Calculator — After ' + data.stateTax + '% Tax',
+    description: data.noStateTax ? 'How much do you take home hourly in ' + data.name + '? No state tax — free 2026 calculator, see exact pay after federal & FICA taxes. No login, no data stored.' : 'How much do you take home hourly in ' + data.name + '? Free 2026 calculator — see exact pay after federal, ' + data.stateTax + '% state & FICA taxes. No login, no data stored.',
     alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator/' + state },
   authors: [{ name: 'Ethan Blake' }],
   };
