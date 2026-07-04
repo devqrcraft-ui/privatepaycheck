@@ -17,15 +17,6 @@ const BONUS_TAX_STATES = [
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // ─────────────────────────────────────────────────────────────────
-      // 1. /bonus-tax-calculator/STATE → /bonus-tax-calculator
-      //    Fixes 35+ 404s from old indexed URLs
-      // ─────────────────────────────────────────────────────────────────
-      ...BONUS_TAX_STATES.map((state) => ({
-        source: `/bonus-tax-calculator/${state}`,
-        destination: '/bonus-tax-calculator',
-        permanent: true,
-      })),
 
 
       // ─────────────────────────────────────────────────────────────────
