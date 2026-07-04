@@ -29,15 +29,10 @@ const nextConfig: NextConfig = {
 
 
       // ─────────────────────────────────────────────────────────────────
-      // 2. Phantom /blog/STATE-paycheck-calculator -> root calculator
-      //    Never existed in src/app; old sitemap artifact still crawled by GSC
-      ...[
-        'michigan','washington','oregon','minnesota','north-carolina',
-        'arizona','ohio','georgia','washington-dc','wisconsin','idaho',
-        'montana','south-dakota','wyoming','illinois','nevada','colorado',
-        'mississippi','new-york','virginia','connecticut','massachusetts',
-        'tennessee','new-hampshire',
-      ].map((state) => ({
+      // 2a. Phantom /blog/STATE-paycheck-calculator -> root calculator
+      //     Never existed in src/app; sitemap artifact, found across multiple GSC batches.
+      //     Uses full BONUS_TAX_STATES list (51) minus TX/CA which have real blog guides.
+      ...BONUS_TAX_STATES.filter((s) => s !== 'texas' && s !== 'california').map((state) => ({
         source: '/blog/' + state + '-paycheck-calculator',
         destination: '/' + state + '-paycheck-calculator',
         permanent: true,
@@ -53,6 +48,22 @@ const nextConfig: NextConfig = {
         destination: '/blog/california-paycheck-calculator-guide',
         permanent: true,
       },
+
+      // 2b. /bonus-calculator/STATE -> /bonus-tax-calculator
+      //     Prior commit 6483e66 only redirected bare /bonus-calculator, missed /STATE subpaths
+      ...BONUS_TAX_STATES.map((state) => ({
+        source: '/bonus-calculator/' + state,
+        destination: '/bonus-tax-calculator',
+        permanent: true,
+      })),
+
+      // 2c. Short state slug -> full paycheck calculator page
+      //     GSC saw these as redirects on 2026-06-08/09, now 404 (rule likely lost in refactor)
+      ...BONUS_TAX_STATES.map((state) => ({
+        source: '/' + state,
+        destination: '/' + state + '-paycheck-calculator',
+        permanent: true,
+      })),
 
       // 3. Methodology pages → parent calculator
       //    (already done in sha ba1e65b — keeping for safety)
