@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
       //     Prior commit 6483e66 only redirected bare /bonus-calculator, missed /STATE subpaths
       ...BONUS_TAX_STATES.map((state) => ({
         source: '/bonus-calculator/' + state,
-        destination: '/bonus-tax-calculator',
+        destination: '/bonus-tax-calculator/' + state,
         permanent: true,
       })),
 
