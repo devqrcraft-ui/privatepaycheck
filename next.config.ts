@@ -107,6 +107,11 @@ const nextConfig: NextConfig = {
         destination: '/texas-paycheck-calculator',
         permanent: true,
       },
+      {
+        source: '/blog/software-engineer-salary-after-taxes',
+        destination: '/blog/software-engineer-take-home-pay',
+        permanent: true,
+      },
     ]
   },
 
