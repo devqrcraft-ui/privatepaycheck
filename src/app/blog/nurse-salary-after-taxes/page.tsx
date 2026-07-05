@@ -359,7 +359,7 @@ export default function Page() {
             {[
               ['/blog/teacher-salary-after-taxes', 'Teacher Salary After Taxes 2026', 'GUIDE'],
               ['/blog/pharmacist-salary-after-taxes', 'Pharmacist Salary After Taxes 2026', 'GUIDE'],
-              ['/blog/software-engineer-salary-after-taxes', 'Software Engineer Salary After Taxes 2026', 'GUIDE'],
+              ['/blog/software-engineer-take-home-pay', 'Software Engineer Take-Home Pay 2026', 'GUIDE'],
               ['/blog/75k-a-year-after-taxes', '$75K After Taxes 2026', 'CALCULATOR'],
               ['/blog/how-to-increase-take-home-pay', 'Increase Take-Home Pay', 'GUIDE'],
             ].map(([href, title, tag]) => (
