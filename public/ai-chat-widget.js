@@ -8,6 +8,7 @@
     'box-shadow:0 4px 16px rgba(245,200,66,0.45);z-index:9998;',
     'display:flex;align-items:center;justify-content:center;transition:transform 0.2s;}',
     '.pp-fab:hover{transform:scale(1.08);}',
+    '@media(max-width:768px){.pp-fab{display:none!important;}}',
     '.pp-fab svg{width:26px;height:26px;fill:#0f0c29;transition:opacity 0.2s;}',
     '.pp-win{position:fixed;bottom:20px;right:20px;width:320px;height:320px;',
     'background:#0f1629;border:1.5px solid rgba(245,200,66,0.35);border-radius:16px;',
