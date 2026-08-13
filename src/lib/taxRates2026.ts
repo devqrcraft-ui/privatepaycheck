@@ -118,7 +118,7 @@ export const STATE_MIN_WAGE: Record<string, { hourly: number; tipped?: number; n
   ak: { hourly: 11.73, tipped: 11.73, notes: 'Alaska has no tipped minimum wage — all workers get the same rate.' },
   az: { hourly: 14.35, tipped: 11.35, notes: 'Arizona increases annually with inflation.' },
   ar: { hourly: 11.00, tipped: 2.63 },
-  ca: { hourly: 16.50, tipped: 16.50, notes: 'California has no tipped minimum wage.', scheduled: 'Increasing to $17.00 in 2025.' },
+  ca: { hourly: 16.90, tipped: 16.90, notes: 'California has no tipped minimum wage.', scheduled: 'Increasing to $17.40 in 2027.' },
   co: { hourly: 14.42, tipped: 11.40 },
   ct: { hourly: 16.35, tipped: 8.23, notes: 'Connecticut ties min wage to federal median wage.' },
   de: { hourly: 15.00, tipped: 2.23 },

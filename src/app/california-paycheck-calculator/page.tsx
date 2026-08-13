@@ -64,7 +64,7 @@ export default function Page() {
           </ul>
         </div>
 
-      <FreshnessBar state="California" items={["SDI rate: 1.3% with no wage base cap (since Jan 2024)","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married","CA minimum wage: $17/hr statewide"]} />
+      <FreshnessBar state="California" items={["SDI rate: 1.3% with no wage base cap (since Jan 2024)","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married","CA minimum wage: $16.90/hr statewide"]} />
       <div style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#fde68a' }}>
         CA state tax rates 2026: 1% – 9.3% for most earners. SDI: 1.3% (no cap). CA SDI changed in 2024 — no wage base limit.
       </div>
