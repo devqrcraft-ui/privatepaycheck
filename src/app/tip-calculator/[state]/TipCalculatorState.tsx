@@ -8,15 +8,16 @@ interface Props {
   stateTax: number;
   noStateTax: boolean;
   stateSlug: string;
+  minWage: number;
 }
 
 const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: '#fff', fontFamily: 'system-ui,sans-serif' };
-const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '28px' };
+const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' };
 const LABEL: React.CSSProperties = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' };
-const INPUT_S: React.CSSProperties = { width: '100%', background:'#1e2a4a', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: '#fff', fontSize: '16px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
+const INPUT_S: React.CSSProperties = { width: '100%', background:'#1e2a4a', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '14px 16px', color: '#fff', fontSize: '18px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
 const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 
-export default function TipCalculatorState({ stateName, stateTax, noStateTax, stateSlug }: Props) {
+export default function TipCalculatorState({ stateName, stateTax, noStateTax, stateSlug, minWage }: Props) {
   const [tips, setTips] = useState(15000);
   const [salary, setSalary] = useState(40000);
   const [filing, setFiling] = useState('single');
@@ -70,8 +71,8 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', maxWidth: '580px', lineHeight: 1.75, margin: '0 0 20px' }}>
             {noStateTax
-              ? 'In ' + stateName + ', tipped workers pay NO state income tax on tips. Plus, the federal No Tax on Tips law lets you deduct up to $25,000 — saving you thousands.'
-              : 'In ' + stateName + ', the No Tax on Tips law removes federal tax on up to $25,000 of tips. You also save on ' + stateTax + '% state income tax.'}
+              ? 'In ' + stateName + ', tipped workers pay NO state income tax on tips. Plus, the federal No Tax on Tips law lets you deduct up to $25,000 — saving you thousands. The state minimum wage is $' + minWage + '/hr in 2026.'
+              : 'In ' + stateName + ', the No Tax on Tips law removes federal tax on up to $25,000 of tips. You also save on ' + stateTax + '% state income tax. The state minimum wage is $' + minWage + '/hr in 2026.'}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[' No Tax on Tips Law', ' Federal + State', ' 2026 Rules', ' 100% Private'].map(tag => (
@@ -102,11 +103,11 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 NO TAX ON TIPS LAW</div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Annual Tips Earned ($)</label>
-              <input type="number" value={tips} onChange={e => setTips(Number(e.target.value))} style={INPUT_S} min={0} />
+              <input type="number" value={tips} onChange={e => setTips(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} />
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Annual Salary (non-tip, $)</label>
-              <input type="number" value={salary} onChange={e => setSalary(Number(e.target.value))} style={INPUT_S} min={0} />
+              <input type="number" value={salary} onChange={e => setSalary(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} />
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Filing Status</label>

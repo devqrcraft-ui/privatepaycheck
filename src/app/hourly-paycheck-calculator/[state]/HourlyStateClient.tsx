@@ -8,12 +8,13 @@ interface Props {
   stateTax: number;
   noStateTax: boolean;
   stateSlug: string;
+  minWage: number;
 }
 
 const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: '#fff', fontFamily: 'system-ui,sans-serif' };
-const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '28px' };
+const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' };
 const LABEL: React.CSSProperties = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' };
-const INPUT_S: React.CSSProperties = { width: '100%', background:'#1e2a4a', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '10px', padding: '12px 14px', color: '#fff', fontSize: '16px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
+const INPUT_S: React.CSSProperties = { width: '100%', background:'#1e2a4a', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '14px 16px', color: '#fff', fontSize: '18px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
 const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 
 function fedTax(income: number, filing: string): number {
@@ -31,7 +32,7 @@ function fedTax(income: number, filing: string): number {
 
 const FREQ: Record<string, number> = { weekly: 52, biweekly: 26, semimonthly: 24, monthly: 12 };
 
-export default function HourlyStateClient({ stateName, stateTax, noStateTax, stateSlug }: Props) {
+export default function HourlyStateClient({ stateName, stateTax, noStateTax, stateSlug, minWage }: Props) {
   const [hourly, setHourly] = useState(25);
   const [hours, setHours] = useState(40);
   const [freq, setFreq] = useState('biweekly');
@@ -73,8 +74,8 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', maxWidth: '580px', lineHeight: 1.75, margin: '0 0 20px' }}>
             {noStateTax
-              ? 'Calculate your exact take-home pay in ' + stateName + '. No state income tax — only federal taxes and FICA apply. Free, private, no signup.'
-              : 'Calculate your exact hourly take-home pay in ' + stateName + ' after federal taxes, ' + stateTax + '% state tax, and FICA. Your data never leaves your browser.'}
+              ? 'Calculate your exact take-home pay in ' + stateName + '. No state income tax — only federal taxes and FICA apply. The state minimum wage is $' + minWage + '/hr in 2026. Free, private, no signup.'
+              : 'Calculate your exact hourly take-home pay in ' + stateName + ' after federal taxes, ' + stateTax + '% state tax, and FICA. The state minimum wage is $' + minWage + '/hr in 2026. Your data never leaves your browser.'}
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[' Federal + State Taxes', ' FICA Included', ' All Pay Frequencies', ' 100% Private'].map(tag => (
@@ -89,11 +90,11 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 IRS RULES · INSTANT RESULTS</div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Hourly Rate ($)</label>
-              <input type="number" value={hourly} onChange={e => setHourly(Number(e.target.value))} style={INPUT_S} min={0} step={0.25} />
+              <input type="number" value={hourly} onChange={e => setHourly(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} step={0.25} />
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Hours Per Week</label>
-              <input type="number" value={hours} onChange={e => setHours(Number(e.target.value))} style={INPUT_S} min={1} max={80} />
+              <input type="number" value={hours} onChange={e => setHours(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={1} max={80} />
             </div>
             <div style={{ marginBottom: '16px' }}>
               <label style={LABEL}>Pay Frequency</label>

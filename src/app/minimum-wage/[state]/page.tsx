@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import { STATE_TAXES, STATE_SLUG_MAP, STATE_MIN_WAGE } from '@/lib/taxRates2026';
 
 
 export const dynamicParams = false;
@@ -23,59 +23,6 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
 
 const FEDERAL_MIN_WAGE = 7.25;
 
-const STATE_MIN_WAGE: Record<string, { hourly: number; tipped?: number; notes?: string; scheduled?: string }> = {
-  al: { hourly: 7.25, notes: 'Alabama follows federal minimum wage.' },
-  ak: { hourly: 11.73, tipped: 11.73, notes: 'Alaska has no tipped minimum wage — all workers get the same rate.' },
-  az: { hourly: 14.35, tipped: 11.35, notes: 'Arizona increases annually with inflation.' },
-  ar: { hourly: 11.00, tipped: 2.63 },
-  ca: { hourly: 16.50, tipped: 16.50, notes: 'California has no tipped minimum wage.', scheduled: 'Increasing to $17.00 in 2025.' },
-  co: { hourly: 14.42, tipped: 11.40 },
-  ct: { hourly: 16.35, tipped: 8.23, notes: 'Connecticut ties min wage to federal median wage.' },
-  de: { hourly: 15.00, tipped: 2.23 },
-  fl: { hourly: 13.00, tipped: 9.98, notes: 'Florida is increasing $1/year until reaching $15.', scheduled: 'Reaches $15 in 2026.' },
-  ga: { hourly: 7.25, tipped: 2.13, notes: 'Georgia follows federal minimum wage.' },
-  hi: { hourly: 14.00, tipped: 12.75, scheduled: 'Scheduled to reach $18.00 by 2028.' },
-  id: { hourly: 7.25, tipped: 3.35, notes: 'Idaho follows federal minimum wage.' },
-  il: { hourly: 15.00, tipped: 9.00 },
-  in: { hourly: 7.25, tipped: 2.13, notes: 'Indiana follows federal minimum wage.' },
-  ia: { hourly: 7.25, tipped: 4.35, notes: 'Iowa follows federal minimum wage.' },
-  ks: { hourly: 7.25, tipped: 2.13, notes: 'Kansas follows federal minimum wage.' },
-  ky: { hourly: 7.25, tipped: 2.13, notes: 'Kentucky follows federal minimum wage.' },
-  la: { hourly: 7.25, tipped: 2.13, notes: 'Louisiana follows federal minimum wage.' },
-  me: { hourly: 14.65, tipped: 7.33 },
-  md: { hourly: 15.00, tipped: 3.63 },
-  ma: { hourly: 15.00, tipped: 6.75 },
-  mi: { hourly: 10.56, tipped: 4.01, scheduled: 'Increasing to $12.48 by 2028.' },
-  mn: { hourly: 10.85, tipped: 10.85, notes: 'Minnesota has no tipped minimum wage.' },
-  ms: { hourly: 7.25, tipped: 2.13, notes: 'Mississippi follows federal minimum wage.' },
-  mo: { hourly: 13.75, tipped: 6.88 },
-  mt: { hourly: 10.55, tipped: 10.55, notes: 'Montana has no tipped minimum wage.' },
-  ne: { hourly: 13.50, tipped: 2.13 },
-  nv: { hourly: 12.00, tipped: 12.00, notes: 'Nevada has no tipped minimum wage.' },
-  nh: { hourly: 7.25, tipped: 3.26, notes: 'New Hampshire follows federal minimum wage.' },
-  nj: { hourly: 15.49, tipped: 5.26 },
-  nm: { hourly: 12.00, tipped: 3.00 },
-  ny: { hourly: 16.00, tipped: 10.65, notes: 'New York City may have higher rates.' },
-  nc: { hourly: 7.25, tipped: 2.13, notes: 'North Carolina follows federal minimum wage.' },
-  nd: { hourly: 7.25, tipped: 4.86, notes: 'North Dakota follows federal minimum wage.' },
-  oh: { hourly: 10.45, tipped: 5.25 },
-  ok: { hourly: 7.25, tipped: 2.13, notes: 'Oklahoma follows federal minimum wage.' },
-  or: { hourly: 14.70, tipped: 14.70, notes: 'Oregon has no tipped minimum wage.', scheduled: 'Portland metro area: $15.45.' },
-  pa: { hourly: 7.25, tipped: 2.83, notes: 'Pennsylvania follows federal minimum wage.' },
-  ri: { hourly: 14.00, tipped: 3.89 },
-  sc: { hourly: 7.25, tipped: 2.13, notes: 'South Carolina follows federal minimum wage.' },
-  sd: { hourly: 11.50, tipped: 5.75 },
-  tn: { hourly: 7.25, tipped: 2.13, notes: 'Tennessee follows federal minimum wage.' },
-  tx: { hourly: 7.25, tipped: 2.13, notes: 'Texas follows federal minimum wage.' },
-  ut: { hourly: 7.25, tipped: 2.13, notes: 'Utah follows federal minimum wage.' },
-  vt: { hourly: 14.01, tipped: 7.01 },
-  va: { hourly: 12.41, tipped: 2.13 },
-  wa: { hourly: 16.28, tipped: 16.28, notes: 'Washington has no tipped minimum wage.' },
-  wv: { hourly: 8.75, tipped: 2.62 },
-  wi: { hourly: 7.25, tipped: 2.33, notes: 'Wisconsin follows federal minimum wage.' },
-  wy: { hourly: 7.25, tipped: 2.13, notes: 'Wyoming follows federal minimum wage.' },
-  dc: { hourly: 17.50, tipped: 10.00, notes: 'DC has the highest minimum wage in the US.' },
-};
 
 export default async function MinWagePage({ params }: { params: Promise<{ state: string }> }) {
   const { state } = await params;
