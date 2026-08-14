@@ -38,7 +38,20 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
     const ssBase = Math.min(annual, 184500);
     const ss = ssBase * 0.062;
     const medicare = annual * 0.0145 + (annual > 200000 ? (annual-200000)*0.009 : 0);
-    const stateTax = noStateTax ? 0 : annual * (stateTaxRate/100);
+    const nyStdDed = fil === 'married' ? 16050 : 8000;
+    const nyTaxable = Math.max(0, annual - nyStdDed);
+    const nyBrackets: [number,number][] = fil === 'married'
+      ? [[17150,.039],[23600,.044],[27900,.0515],[161550,.054],[323200,.059],[2155350,.0685],[5000000,.0965],[25000000,.103],[Infinity,.109]]
+      : [[8500,.039],[11700,.044],[13900,.0515],[80650,.054],[215400,.059],[1077550,.0685],[5000000,.0965],[25000000,.103],[Infinity,.109]];
+    let stateTax = 0;
+    if (!noStateTax) {
+      let prevLim = 0;
+      for (const [lim, rate] of nyBrackets) {
+        if (nyTaxable <= prevLim) break;
+        stateTax += (Math.min(nyTaxable, lim) - prevLim) * rate;
+        prevLim = lim;
+      }
+    }
     const sdi = hasSDI ? Math.min(annual, 153164) * (sdiRate/100) : 0;
     const total = fed + ss + medicare + stateTax + sdi;
     const takeHome = annual - total;
