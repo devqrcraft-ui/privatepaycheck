@@ -40,6 +40,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // 2b-pre. /bonus-calculator -> /bonus-tax-calculator (restoring lost commit 6483e66)
+      {
+        source: '/bonus-calculator',
+        destination: '/bonus-tax-calculator',
+        permanent: true,
+      },
       // 2b. /bonus-calculator/STATE -> /bonus-tax-calculator
       //     Prior commit 6483e66 only redirected bare /bonus-calculator, missed /STATE subpaths
       ...BONUS_TAX_STATES.map((state) => ({
@@ -82,6 +88,11 @@ const nextConfig: NextConfig = {
       {
         source: '/minimum-wage/methodology',
         destination: '/minimum-wage',
+        permanent: true,
+      },
+      {
+        source: '/overtime-calculator/methodology',
+        destination: '/overtime-calculator',
         permanent: true,
       },
 
