@@ -7,6 +7,7 @@ interface Props {
   stateAbbr: string;
   stateTax: number;
   noStateTax: boolean;
+  noTipCredit?: boolean | null;
   stateSlug: string;
   minWage: number;
 }
@@ -17,7 +18,7 @@ const LABEL: React.CSSProperties = { fontSize: '11px', fontWeight: 700, letterSp
 const INPUT_S: React.CSSProperties = { width: '100%', background:'#1e2a4a', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '14px 16px', color: '#fff', fontSize: '18px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
 const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' };
 
-export default function TipCalculatorState({ stateName, stateTax, noStateTax, stateSlug, minWage }: Props) {
+export default function TipCalculatorState({ stateName, stateTax, noStateTax, noTipCredit, stateSlug, minWage }: Props) {
   const [tips, setTips] = useState(15000);
   const [salary, setSalary] = useState(40000);
   const [filing, setFiling] = useState('single');
@@ -154,6 +155,13 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, st
               ? stateName + ' workers get a double benefit: no federal tax on tips (up to $25,000) AND no state income tax — making ' + stateName + ' one of the best states for tipped workers.'
               : 'In ' + stateName + ', the federal deduction reduces your ' + stateTax + '% state tax burden too — since many state tax calculations start from federal adjusted gross income.'}
           </p>
+          {noTipCredit !== null && noTipCredit !== undefined && (
+            <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }}>
+              {noTipCredit
+                ? stateName + ' is one of 7 states that ban the tip credit entirely (with Alaska, Minnesota, Montana, Nevada, Oregon, and Washington). Employers must pay the full state minimum wage of $' + minWage + '/hr in cash before tips — tips cannot offset base pay.'
+                : stateName + ' follows the federal tip credit rule: employers may pay tipped workers a cash wage as low as $2.13/hr, using up to $5.12/hr in tips to reach the $7.25/hr federal floor. If tips fall short in any week, the employer must make up the difference.'}
+            </p>
+          )}
           <Link href="/tip-calculator" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(244,114,182,0.1)', border: '1px solid rgba(244,114,182,0.3)', borderRadius: '8px', padding: '10px 18px', color: '#f472b6', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }}>
             Compare tip taxes across all 50 states →
           </Link>

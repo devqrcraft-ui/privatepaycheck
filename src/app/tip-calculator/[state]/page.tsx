@@ -3,7 +3,7 @@ import { STATE_MIN_WAGE, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 import { notFound } from 'next/navigation';
 import TipCalculatorState from './TipCalculatorState';
 
-const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number; noStateTax: boolean }> = {
+const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number; noStateTax: boolean; noTipCredit?: boolean }> = {
   "alabama": {
     "abbr": "AL",
     "name": "Alabama",
@@ -32,7 +32,8 @@ const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number;
     "abbr": "CA",
     "name": "California",
     "stateTax": 9.3,
-    "noStateTax": false
+    "noStateTax": false,
+    "noTipCredit": true
   },
   "colorado": {
     "abbr": "CO",
@@ -56,7 +57,8 @@ const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number;
     "abbr": "FL",
     "name": "Florida",
     "stateTax": 0,
-    "noStateTax": true
+    "noStateTax": true,
+    "noTipCredit": false
   },
   "georgia": {
     "abbr": "GA",
@@ -260,7 +262,8 @@ const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number;
     "abbr": "TX",
     "name": "Texas",
     "stateTax": 0,
-    "noStateTax": true
+    "noStateTax": true,
+    "noTipCredit": false
   },
   "utah": {
     "abbr": "UT",
@@ -345,7 +348,7 @@ export default async function Page({ params }: Props) {
           {'@type':'HowToStep',position:5,name:'See net take-home',text:'View your after-tax paycheck including tip income.'}
           ]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[{'@type':'Question',name:'Are tips taxable income in 2026?',acceptedAnswer:{'@type':'Answer',text:'Yes, tips are taxable. However, the 2026 No Tax on Tips deduction allows eligible workers to exclude up to $25,000 in tip income from federal taxes.'}},{'@type':'Question',name:'How does the No Tax on Tips law affect my paycheck?',acceptedAnswer:{'@type':'Answer',text:'Under the 2026 rule, tipped workers may deduct up to $25,000 in tip income. This calculator applies that deduction automatically to show your correct net pay.'}},{'@type':'Question',name:'Which states have no income tax on tips?',acceptedAnswer:{'@type':'Answer',text:'States with no income tax (Texas, Florida, Nevada, Washington, Wyoming, South Dakota, Alaska, Tennessee, New Hampshire) effectively have no state tax on tips either.'}}]}) }} />
-      <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} minWage={STATE_MIN_WAGE[STATE_SLUG_MAP[state]]?.hourly ?? 7.25} />
+      <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} noTipCredit={data.noTipCredit ?? null} stateSlug={state} minWage={STATE_MIN_WAGE[STATE_SLUG_MAP[state]]?.hourly ?? 7.25} />
     </>
   );
 }
