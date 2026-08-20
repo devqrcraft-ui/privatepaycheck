@@ -327,7 +327,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: data.noStateTax ? data.name + ' Hourly Paycheck Calculator — No State Tax' : data.name + ' Hourly Paycheck Calculator — After ' + data.stateTax + '% Tax',
     description: data.noStateTax ? 'How much do you take home hourly in ' + data.name + '? No state tax — free 2026 calculator, see exact pay after federal & FICA taxes. No login, no data stored.' : 'How much do you take home hourly in ' + data.name + '? Free 2026 calculator — see exact pay after federal, ' + data.stateTax + '% state & FICA taxes. No login, no data stored.',
     alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator/' + state },
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the PrivatePaycheck Team' }],
   };
 }
 

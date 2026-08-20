@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.privatepaycheck.com/wep-lump-sum-calculator',
   },
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the PrivatePaycheck Team' }],
 };
 
 export default function WEPLumpSumPage() {

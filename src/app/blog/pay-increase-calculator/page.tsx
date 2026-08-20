@@ -56,7 +56,7 @@ export default function Post() {
         </h1>
 
         <p style={{ opacity: 0.65, fontSize: '13px', marginBottom: '24px', fontStyle: 'italic' }}>
-          By <a href="https://medium.com/@ethanblake_tax" rel="nofollow" target="_blank" style={{ color: '#F5C842' }}>Ethan Blake</a>
+          By the PrivatePaycheck Team
           {' · ~7 min read · Updated June 2026'}
         </p>
 

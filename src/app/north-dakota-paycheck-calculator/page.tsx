@@ -21,7 +21,7 @@ export default function Page() {
 
       <h1 style={{ fontSize:34, fontWeight:900, marginBottom:8 }}>North Dakota Paycheck Calculator 2026</h1>
       <div style={{ fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:16 }}>
-        Last updated: June 2026 · By Ethan Blake · Tax Compliance Specialist · 4 min read
+        Last updated: June 2026 · By the PrivatePaycheck Team · 4 min read
       </div>
 
       <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>

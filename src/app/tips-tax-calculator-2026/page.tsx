@@ -92,7 +92,7 @@ export default function TipsTaxCalculator2026() {
             <div style={{ display: 'inline-block', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', marginBottom: '12px', color: '#F5C842' }}>2026 — No Tax on Tips Law</div>
             <h1 style={{ fontSize: 'clamp(24px,4vw,42px)', fontWeight: 900, margin: '0 0 8px', lineHeight: 1.2 }}>Tips Tax Calculator 2026</h1>
             <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.65)', marginBottom: '12px' }}>
-              Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+              Last updated: May 2026 · By the PrivatePaycheck Team
             </div>
             <p style={{ fontSize: '15px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
               Calculate your federal tax savings on tip income. The 2026 exemption covers up to $25,000 in tips per year.

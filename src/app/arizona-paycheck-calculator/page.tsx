@@ -21,7 +21,7 @@ export default function Page() {
 
       <h1 style={{ fontSize:34, fontWeight:900, marginBottom:8 }}>Arizona Paycheck Calculator 2026</h1>
       <div style={{ fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:16 }}>
-        Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+        Last updated: May 2026 · By the PrivatePaycheck Team
       </div>
 
       {/* Answer-First */}

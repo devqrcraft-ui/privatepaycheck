@@ -64,7 +64,7 @@ export default function Page() {
           <div style={{fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
             <span>Last updated: June 2026</span>
             <span>{'·'}</span>
-            <span>By Ethan Blake {'·'} Tax Compliance Specialist</span>
+            <span>By the PrivatePaycheck Team</span>
             <span>{'·'}</span>
             <span>{'~7 min read · 1,800 words'}</span>
           </div>
