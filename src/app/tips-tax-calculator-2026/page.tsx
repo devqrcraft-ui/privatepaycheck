@@ -79,7 +79,7 @@ export default function TipsTaxCalculator2026() {
       '{"@type":"Question","name":' + JSON.stringify(f.q) +
       ',"acceptedAnswer":{"@type":"Answer","text":' + JSON.stringify(f.a) + '}}'
     ).join(',') +
-  ']},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Tips Tax Calculator 2026","item":"https://www.privatepaycheck.com/tips-tax-calculator-2026"}]},{"@type":"BlogPosting","headline":"Tips Tax Calculator 2026 — No Tax on Tips Savings","datePublished":"2026-05-15","dateModified":"2026-05-15","author":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/tips-tax-calculator-2026"}]}';
+  ']},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Tips Tax Calculator 2026","item":"https://www.privatepaycheck.com/tips-tax-calculator-2026"}]},{"@type":"BlogPosting","headline":"Tips Tax Calculator 2026 — No Tax on Tips Savings","datePublished":"2026-05-15","dateModified":"2026-05-15","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/tips-tax-calculator-2026"}]}';
 
   return (
     <>

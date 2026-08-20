@@ -24,8 +24,8 @@ export default function Post() {
         headline: 'Pay Increase Calculator 2026: See Your Exact New Take-Home Pay',
         url: 'https://www.privatepaycheck.com/blog/pay-increase-calculator',
         datePublished: '2026-06-05', dateModified: '2026-06-05',
-        author: { '@type': 'Person', name: 'Ethan Blake', jobTitle: 'Tax Compliance Specialist' },
-        reviewedBy: { '@type': 'Person', name: 'Ethan Blake' },
+        author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },
+        reviewedBy: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },
         publisher: { '@type': 'Organization', name: 'PrivatePaycheck', url: 'https://www.privatepaycheck.com' },
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Pay Increase Calculator 2026","item":"https://www.privatepaycheck.com/blog/pay-increase-calculator"}]}' }} />

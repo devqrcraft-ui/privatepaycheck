@@ -73,16 +73,8 @@ export default function TrumpAccountCalculator() {
     "url": "https://www.privatepaycheck.com/blog/trump-account-calculator",
     "datePublished": "2026-05-20",
     "dateModified": "2026-05-20",
-    "author": {
-      "@type": "Person",
-      "name": "Ethan Blake",
-      "url": "https://medium.com/@dev.qrcraft"
-    },
-    "reviewedBy": {
-      "@type": "Person",
-      "name": "Ethan Blake",
-      "url": "https://medium.com/@dev.qrcraft"
-    },
+    "author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},
+    "reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},
     "publisher": {
       "@type": "Organization",
       "name": "PrivatePaycheck",
