@@ -1,4 +1,11 @@
+import os
 
+def add_bonus_calc():
+    # Створюємо нову сторінку для бонусу
+    os.makedirs('src/app/bonus-tax-calculator', exist_ok=True)
+    path = 'src/app/bonus-tax-calculator/page.tsx'
+    
+    content = """
 import React from 'react';
 import { Metadata } from 'next';
 
@@ -24,3 +31,21 @@ export default function BonusPage( ) {
     </div>
   );
 }
+"""
+    with open(path, 'w', encoding='utf-8') as f: f.write(content)
+    print("Created Bonus Tax Calculator page.")
+
+def optimize_ctr_metadata():
+    # Оновлюємо головну сторінку для вищого CTR
+    path = 'src/app/page.tsx'
+    if not os.path.exists(path): return
+    with open(path, 'r', encoding='utf-8') as f: content = f.read()
+    
+    # Додаємо "Save $1,000+" та "2026 Rules" у тайтл
+    content = content.replace("title: 'Paycheck Calculator 2026", "title: 'Paycheck Calculator 2026 — Save $1,000+ with New Rules")
+    
+    with open(path, 'w', encoding='utf-8') as f: f.write(content)
+    print("Optimized home page metadata for higher CTR.")
+
+add_bonus_calc()
+optimize_ctr_metadata()
