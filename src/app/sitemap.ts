@@ -81,6 +81,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   return [
+      { url: `https://www.privatepaycheck.com/compare-states-taxes`, lastModified: new Date( ) },
+      { url: `https://www.privatepaycheck.com/bonus-tax-calculator`, lastModified: new Date( ) },
+      { url: `https://www.privatepaycheck.com/housekeeper`, lastModified: new Date( ) },
+      { url: `https://www.privatepaycheck.com/nanny`, lastModified: new Date( ) },
     { url: BASE_URL,                                      lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE_URL}/all-states`,                      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/bonus-tax-calculator`,            lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
