@@ -1,35 +1,27 @@
-import Script from 'next/script'
-import { Playfair_Display, Inter } from 'next/font/google'
-
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['700'], display: 'swap', variable: '--font-playfair' })
-const inter = Inter({ subsets: ['latin'], weight: ['400','700'], display: 'swap', variable: '--font-inter' })
-import './globals.css';
 import type { Metadata } from 'next';
-import type { ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import './globals.css';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 
 export const metadata: Metadata = {
-  robots: { index: true, follow: true },
-  keywords: 'paycheck calculator, salary calculator, tax calculator 2026, US paycheck, take home pay, FICA calculator, 401k calculator',
-  authors: [{ name: 'the PrivatePaycheck Team' }],
-  metadataBase: new URL('https://www.privatepaycheck.com'),
-  title: {
-    default: 'Paycheck Calculator 2026 — Free & Private | PrivatePaycheck',
-    template: '%s | PrivatePaycheck',
-  },
-  description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private — your salary never leaves your browser.',
+  title: 'Paycheck Calculator 2026 — Free & Private | PrivatePaycheck',
+  description: 'Free paycheck calculator for all 50 US states. 100% private — your salary never leaves your browser.',
+  metadataBase: new URL('https://www.privatepaycheck.com' ),
   openGraph: {
-    locale: 'en_US',
-    url: 'https://www.privatepaycheck.com',
-    siteName: 'PrivatePaycheck',
-    type: 'website',
-    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck — Free Paycheck Calculator 2026' }],
+    title: "Paycheck Calculator 2026 — 100% Private & Free | PrivatePaycheck",
+    description: "Free paycheck calculator for all 50 US states.",
+    url: "https://www.privatepaycheck.com",
+    siteName: "PrivatePaycheck",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    images: ['/og-image.svg'],
+    card: "summary_large_image",
+    title: "Paycheck Calculator 2026 — 100% Private & Free | PrivatePaycheck",
+    description: "Free paycheck calculator for all 50 US states.",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [
@@ -40,71 +32,24 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.privatepaycheck.com"
-    }
-  ]
-};
+export default function RootLayout({ children }: { children: React.ReactNode } ) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.privatepaycheck.com" }]
+  };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en">
       <head>
-                            <style>{`
-  *{box-sizing:border-box;}
-  body{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;}
-  input,textarea,select,[contenteditable]{user-select:text;-webkit-user-select:text;-moz-user-select:text;}
-  a,button,[role=button]{cursor:pointer;transition:transform 0.15s,box-shadow 0.15s,background 0.15s,opacity 0.15s;}
-  a:hover,button:hover,[role=button]:hover{transform:translateY(-2px);opacity:0.92;}
-  button:active,[role=button]:active{transform:scale(0.97);}
-`}</style>
-              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema ) }} />
       </head>
-      
-<body suppressHydrationWarning style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
+      <body style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
         <Nav />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'WebApplication',
-        name: 'PrivatePaycheck — Paycheck Calculator 2026',
-        url: 'https://www.privatepaycheck.com',
-        applicationCategory: 'FinanceApplication',
-        operatingSystem: 'All',
-        description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private.',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-      }) }} />
-        <main role="main"><div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;padding:6px 14px;border-radius:20px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin:15px 0;border-left:4px solid #22c55e;"><span>✓</span> 2026 IRS Guidance Compliant</div>
-{children}        <div style={{background:'rgba(245,200,66,0.06)',borderTop:'1px solid rgba(245,200,66,0.15)',borderBottom:'1px solid rgba(245,200,66,0.15)',padding:'8px 20px',textAlign:'center'}}>
-          <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.65)',lineHeight:1.6}}>
-            <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not financial advice — consult a licensed professional for your situation.
-          </p>
-        </div>
-</main>
+        <main role="main">{children}</main>
+        <Footer />
         <Analytics />
-        <Script src="/ai-chat-widget.js?v=5" strategy="lazyOnload" />
-      <Footer />
-    
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XRMYZKZN69" strategy="lazyOnload" />
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XRMYZKZN69');
-        `}} />
-      <script dangerouslySetInnerHTML={{ __html: `
-document.addEventListener('dragstart', function(e){ e.preventDefault(); return false; });
-document.addEventListener('selectstart', function(e){ if(!['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) e.preventDefault(); });
-document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
-` }} />
-</body>
+      </body>
     </html>
   );
 }
