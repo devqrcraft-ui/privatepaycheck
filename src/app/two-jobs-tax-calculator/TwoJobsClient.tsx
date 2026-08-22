@@ -73,7 +73,7 @@ export default function TwoJobsClient() {
           </div>
           {res ? (
             <div>
-              <div style={{background:res.shortfall>0?'rgba(248,113,113,0.1)':'rgba(74,222,128,0.1)',border:`1px solid ${res.shortfall>0?'rgba(248,113,113,0.3)':'rgba(74,222,128,0.3)'}`,borderRadius:'12px',padding:'20px',marginBottom:'16px',textAlign:'center'}}>
+              <div style={{background:res.shortfall>0?'rgba(248,113,113,0.1)':'rgba(74,222,128,0.1)',border:`1px solid ${res.shortfall>0?'rgba(248,113,113,0.3)':'rgba(74,222,128,0.3)'}}`,borderRadius:'12px',padding:'20px',marginBottom:'16px',textAlign:'center'}}>
                 {res.shortfall>0 ? (<>
                   <div style={{fontSize:'13px',opacity:0.7,marginBottom:'8px'}}>Annual Tax Shortfall</div>
                   <div style={{fontSize:'44px',fontWeight:900,color:'#f87171'}}>{fmt(res.shortfall)}</div>

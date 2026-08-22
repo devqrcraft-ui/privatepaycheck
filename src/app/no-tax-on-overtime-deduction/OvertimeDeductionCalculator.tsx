@@ -81,7 +81,7 @@ export default function OvertimeDeductionCalculator() {
             <label style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Filing Status</label>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
               {(['single', 'joint'] as const).map(s => (
-                <button key={s} onClick={() => setStatus(s)} style={{ padding: '12px', borderRadius: '10px', border: `1px solid ${status === s ? '#c084fc' : 'rgba(255,255,255,0.1)'}`, background: status === s ? 'rgba(192,132,252,0.12)' : 'rgba(255,255,255,0.04)', color: status === s ? '#c084fc' : 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: '14px', fontWeight: status === s ? 700 : 400, transition: 'all 0.2s' }}>
+                <button key={s} onClick={() => setStatus(s)} style={{ padding: '12px', borderRadius: '10px', border: `1px solid ${status === s ? '#c084fc' : 'rgba(255,255,255,0.1)'}}`, background: status === s ? 'rgba(192,132,252,0.12)' : 'rgba(255,255,255,0.04)', color: status === s ? '#c084fc' : 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: '14px', fontWeight: status === s ? 700 : 400, transition: 'all 0.2s' }}>
                   {s === 'single' ? 'Single / Head of Household' : 'Married Filing Jointly'}
                 </button>
               ))}
@@ -100,7 +100,7 @@ export default function OvertimeDeductionCalculator() {
                 <div style={{ position: 'relative' }}>
                   {pre && <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.4)' }}>{pre}</span>}
                   <input type="number" value={val} onChange={e => set(Math.max(0,+e.target.value).toString())} min={0} placeholder={ph}
-                    style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: `14px 16px 14px ${pre ? '28px' : '16px'}`, color: 'white', fontSize: '15px', outline: 'none', boxSizing: 'border-box' }} />
+                    style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: `14px 16px 14px ${pre ? '28px' : '16px'}}`, color: 'white', fontSize: '15px', outline: 'none', boxSizing: 'border-box` }} />
                 </div>
               </div>
             ))}
@@ -119,7 +119,7 @@ export default function OvertimeDeductionCalculator() {
                   { label: 'Annual OT Premium Pay', value: fmt(result.premium),   big: false, color: 'white'   },
                   { label: 'Phase-Out Reduction',   value: fmt(result.phaseOut),  big: false, color: result.phaseOut > 0 ? '#f87171' : 'rgba(255,255,255,0.3)' },
                 ].map(({ label, value, big, color }) => (
-                  <div key={label} style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: `1px solid ${big ? 'rgba(192,132,252,0.3)' : 'rgba(255,255,255,0.07)'}` }}>
+                  <div key={label} style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: `1px solid ${big ? 'rgba(192,132,252,0.3)' : 'rgba(255,255,255,0.07)'}}` }}>
                     <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{label}</div>
                     <div style={{ fontSize: big ? '30px' : '22px', fontWeight: 800, color }}>{value}</div>
                   </div>

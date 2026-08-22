@@ -17,9 +17,9 @@ export default function Page() {
   ]
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com","logo":"https://www.privatepaycheck.com/og-image.svg","description":"Free paycheck calculators for all 50 US states. Federal + state taxes, FICA, 401k. 100% private."}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Trump Account Calculator","item":"https://www.privatepaycheck.com/trump-account-calculator"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebPage","name":"Trump Account Calculator","datePublished":"2026-01-15","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/trump-account-calculator"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com","logo":"https://www.privatepaycheck.com/og-image.svg","description":"Free paycheck calculators for all 50 US states. Federal + state taxes, FICA, 401k. 100% private."}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Trump Account Calculator","item":"https://www.privatepaycheck.com/trump-account-calculator"}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Trump Account Calculator","datePublished":"2026-01-15","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/trump-account-calculator"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
           {"@type":"Question","name":"What is the Trump Account 2026?","acceptedAnswer":{"@type":"Answer","text":"The Trump Account (also called MAGA Account or DOGE Dividend account) is a proposed government savings program that would deposit $1,000 into a tax-advantaged account for every American child born in 2026 or after. The funds would be invested and accessible when the child reaches adulthood."}},
@@ -71,7 +71,7 @@ export default function Page() {
             { label: 'Eligibility', value: 'Born 2025+', sub: 'American citizens', color: '#60a5fa' },
             { label: 'Status', value: 'Proposed', sub: 'Not yet signed into law', color: '#f87171' },
           ].map(item => (
-            <div key={item.label} style={{ background: '#0f1629', borderRadius: 6, padding: '14px 16px', borderLeft: `4px solid ${item.color}` }}>
+            <div key={item.label} style={{ background: '#0f1629', borderRadius: 6, padding: '14px 16px', borderLeft: `4px solid ${item.color}}` }}>
               <div style={{ fontSize: 11, color: '#e2e8f0', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 4 }}>{item.label}</div>
               <div style={{ fontSize: 22, fontWeight: 900, color: item.color }}>{item.value}</div>
               <div style={{ fontSize: 11, color: '#e2e8f0', marginTop: 2 }}>{item.sub}</div>

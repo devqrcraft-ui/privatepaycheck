@@ -44,7 +44,7 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/california-minimum-wage-2026',
         datePublished:'2026-02-23', author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },'reviewedBy':{'@type':'Organization','name':'the PrivatePaycheck Team','url':'https://www.privatepaycheck.com'},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Minimum Wage 2026 — History, Changes & What Workers Need to Know","item":"https://privatepaycheck.com/blog/california-minimum-wage-2026"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Minimum Wage 2026 — History, Changes & What Workers Need to Know","item":"https://privatepaycheck.com/blog/california-minimum-wage-2026"}]}` }} />
 
       <div style={{ maxWidth:'740px', margin:'0 auto', padding:'40px 16px' }}>
         <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'24px' }}>
@@ -99,7 +99,7 @@ export default function Post() {
               <div key={h.year} style={{ display:'flex', alignItems:'center', gap:'12px', padding:'8px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
                 <span style={{ width:'48px', opacity:0.6, fontSize:'13px' }}>{h.year}</span>
                 <div style={{ flex:1, background:'rgba(255,255,255,0.06)', borderRadius:'4px', overflow:'hidden', height:'24px', position:'relative' }}>
-                  <div style={{ background: h.current ? '#4ade80' : '#818cf8', height:'100%', width:`${(parseFloat(h.rate.replace('$','')) / 16.50) * 100}%`, transition:'width 0.3s' }} />
+                  <div style={{ background: h.current ? '#4ade80' : '#818cf8', height:'100%', width:`${(parseFloat(h.rate.replace('$','')) / 16.50) * 100}}%`, transition:'width 0.3s` }} />
                 </div>
                 <span style={{ width:'56px', fontWeight:700, color: h.current ? '#4ade80' : 'white', fontSize:'14px' }}>{h.rate}</span>
               </div>

@@ -174,7 +174,7 @@ export default function WEPLumpSumCalculator() {
           </div>
 
           {/* Extra tax */}
-          <div style={{ background: r.extraTax > 0 ? 'rgba(239,68,68,0.12)' : 'rgba(34,197,94,0.1)', border:`1px solid ${r.extraTax > 0 ? 'rgba(239,68,68,0.3)' : 'rgba(34,197,94,0.3)'}`, borderRadius:12, padding:'16px 20px', marginBottom:16, textAlign:'center' }}>
+          <div style={{ background: r.extraTax > 0 ? 'rgba(239,68,68,0.12)' : 'rgba(34,197,94,0.1)', border:`1px solid ${r.extraTax > 0 ? 'rgba(239,68,68,0.3)' : 'rgba(34,197,94,0.3)'}}`, borderRadius:12, padding:'16px 20px', marginBottom:16, textAlign:'center' }}>
             <div style={{ fontSize:13, color: r.extraTax > 0 ? '#fca5a5' : '#86efac', marginBottom:4 }}>
               {r.extraTax > 0 ? 'Extra tax from lump-sum' : 'No extra tax — lump-sum had no impact'}
             </div>
@@ -203,7 +203,7 @@ export default function WEPLumpSumCalculator() {
 
         {/* Lump-sum election */}
         {r.extraTax > 0 && (
-          <div style={{ background: r.electionBetter ? 'rgba(34,197,94,0.1)' : 'rgba(255,255,255,0.04)', border:`1px solid ${r.electionBetter ? 'rgba(34,197,94,0.3)' : 'rgba(255,255,255,.1)'}`, borderRadius:16, padding:20, marginBottom:16 }}>
+          <div style={{ background: r.electionBetter ? 'rgba(34,197,94,0.1)' : 'rgba(255,255,255,0.04)', border:`1px solid ${r.electionBetter ? 'rgba(34,197,94,0.3)' : 'rgba(255,255,255,.1)'}}`, borderRadius:16, padding:20, marginBottom:16 }}>
             <div style={{ fontSize:14, fontWeight:700, color: r.electionBetter ? '#4ade80' : '#cbd5e1', marginBottom:8 }}>
               {r.electionBetter ? ' Lump-Sum Election could save you money' : 'Lump-Sum Election — check with your tax preparer'}
             </div>

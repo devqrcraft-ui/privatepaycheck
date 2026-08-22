@@ -110,7 +110,7 @@ export default function TrumpAccountCalculator() {
 
         <nav style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
           <a href="/" style={{ color: '#F5C842', textDecoration: 'none' }}>Home</a>
-          {' › '}
+          <span> › </span>
           <a href="/blog" style={{ color: '#F5C842', textDecoration: 'none' }}>Blog</a>
           {' › Trump Account Calculator 2026'}
         </nav>

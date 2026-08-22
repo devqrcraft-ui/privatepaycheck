@@ -133,7 +133,7 @@ export default function TipCalculatorClient({ stateName, stateRate, noTax }: Pro
               { label:'Without New Law', data: result.withoutLaw, color:'#f87171', bg:'rgba(248,113,113,0.05)' },
               { label:'With No-Tax-on-Tips Law', data: result.withLaw, color:'#4ade80', bg:'rgba(74,222,128,0.05)' },
             ].map(col => (
-              <div key={col.label} style={{ background:col.bg, border:`1px solid ${col.color}33`, borderRadius:'10px', padding:'14px' }}>
+              <div key={col.label} style={{ background:col.bg, border:`1px solid ${col.color}}33`, borderRadius:'10px', padding:'14px' }}>
                 <div style={{ fontSize:'12px', fontWeight:700, color:col.color, marginBottom:'10px' }}>{col.label}</div>
                 <div style={{ fontSize:'13px', display:'flex', flexDirection:'column', gap:'6px' }}>
                   <div style={{ display:'flex', justifyContent:'space-between' }}>

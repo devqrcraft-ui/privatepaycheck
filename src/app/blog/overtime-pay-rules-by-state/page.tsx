@@ -26,7 +26,7 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state',
         datePublished:'2026-02-14', author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },'reviewedBy':{'@type':'Organization','name':'the PrivatePaycheck Team','url':'https://www.privatepaycheck.com'},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?","item":"https://privatepaycheck.com/blog/overtime-pay-rules-by-state"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?","item":"https://privatepaycheck.com/blog/overtime-pay-rules-by-state"}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

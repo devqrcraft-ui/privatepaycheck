@@ -18,7 +18,7 @@ export default function Post() {
         url:'https://www.privatepaycheck.com/blog/how-to-calculate-paycheck-taxes',
         datePublished:'2026-02-24', author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },'reviewedBy':{'@type':'Organization','name':'the PrivatePaycheck Team','url':'https://www.privatepaycheck.com'},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Paycheck Taxes 2026 — Step by Step Guide","item":"https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Paycheck Taxes 2026 — Step by Step Guide","item":"https://privatepaycheck.com/blog/how-to-calculate-paycheck-taxes"}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',
         mainEntity:[

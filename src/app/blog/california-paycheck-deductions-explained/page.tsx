@@ -24,7 +24,7 @@ export default function Post() {
         datePublished:'2026-05-06',
         author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },'reviewedBy':{'@type':'Organization','name':'the PrivatePaycheck Team','url':'https://www.privatepaycheck.com'},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Paycheck Deductions Explained 2026 — Complete Guide","item":"https://privatepaycheck.com/blog/california-paycheck-deductions-explained"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"California Paycheck Deductions Explained 2026 — Complete Guide","item":"https://privatepaycheck.com/blog/california-paycheck-deductions-explained"}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context':'https://schema.org','@type':'FAQPage',
         mainEntity:[
@@ -40,9 +40,9 @@ export default function Post() {
 
         <div style={{ fontSize:'13px', opacity:0.7, marginBottom:'24px' }}>
           <Link href="/" style={{ color:'inherit', textDecoration:'none' }}>Home</Link>
-          {' › '}
+          <span> › </span>
           <Link href="/blog" style={{ color:'inherit', textDecoration:'none' }}>Blog</Link>
-          {' › '}California Paycheck Deductions Explained
+          <span> › </span>California Paycheck Deductions Explained
         </div>
 
         <div style={{ display:'inline-block', background:'rgba(245,200,66,0.12)', color:'#F5C842', padding:'4px 12px', borderRadius:'20px', fontSize:'11px', fontWeight:700, marginBottom:'16px', letterSpacing:'0.05em' }}>CALIFORNIA</div>

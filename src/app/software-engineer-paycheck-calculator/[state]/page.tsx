@@ -308,7 +308,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
             { label: `${st.name} Unemployment Calculator`, href: `/unemployment-calculator/${state}`, color: 'rgba(99,102,241,0.1)', border: 'rgba(99,102,241,0.25)' },
             { label: 'Nurse Paycheck Calculator', href: `/nurse-paycheck-calculator/${state}`, color: 'rgba(16,185,129,0.1)', border: 'rgba(16,185,129,0.25)' },
           ].map(l => (
-            <Link key={l.href} href={l.href} style={{ display: 'block', background: l.color, border: `1px solid ${l.border}`, borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
+            <Link key={l.href} href={l.href} style={{ display: 'block', background: l.color, border: `1px solid ${l.border}}`, borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
               {l.label}
             </Link>
           ))}

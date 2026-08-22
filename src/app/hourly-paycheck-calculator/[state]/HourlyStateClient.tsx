@@ -54,120 +54,120 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
   const fmt2 = (n: number) => '$' + n.toFixed(2);
 
   return (
-    <div style={{BG}>
-      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }>
-        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }>Home</Link>
-          <span>/</span>
-          <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }>Hourly Paycheck Calculator</Link>
-          <span>/</span>
-          <span style={{ color: '#fff' }>{stateName}</span>
+    <div style={{BG}}>
+      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
+        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Link href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Home</Link>
+          <span> / </span>
+          <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Hourly Paycheck Calculator</Link>
+          <span> / </span>
+          <span style={{ color: '#fff' }}>{stateName}</span>
         </div>
 
-        <div style={{ marginBottom: '36px' }>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '20px', padding: '5px 14px', fontSize: '12px', marginBottom: '16px', color: '#4ade80' }>
+        <div style={{ marginBottom: '36px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '20px', padding: '5px 14px', fontSize: '12px', marginBottom: '16px', color: '#4ade80' }}>
             <span>●</span><span>UPDATED JANUARY 2026 · IRS COMPLIANT</span>
           </div>
-          <h1 style={{ fontSize: 'clamp(26px,4.5vw,46px)', fontWeight: 900, margin: '0 0 14px', lineHeight: 1.1 }>
+          <h1 style={{ fontSize: 'clamp(26px,4.5vw,46px)', fontWeight: 900, margin: '0 0 14px', lineHeight: 1.1 }}>
             {stateName} Hourly Paycheck
-            <br /><span style={{ color: '#F5C842' }>Calculator 2026</span>
+            <br /><span style={{ color: '#F5C842' }}>Calculator 2026</span>
           </h1>
-          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', maxWidth: '580px', lineHeight: 1.75, margin: '0 0 20px' }>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', maxWidth: '580px', lineHeight: 1.75, margin: '0 0 20px' }}>
             {noStateTax
               ? 'Calculate your exact take-home pay in ' + stateName + '. No state income tax — only federal taxes and FICA apply. The state minimum wage is $' + minWage + '/hr in 2026. Free, private, no signup.'
               : 'Calculate your exact hourly take-home pay in ' + stateName + ' after federal taxes, ' + stateTax + '% state tax, and FICA. The state minimum wage is $' + minWage + '/hr in 2026. Your data never leaves your browser.'}
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
             {[' Federal + State Taxes', ' FICA Included', ' All Pay Frequencies', ' 100% Private'].map(tag => (
-              <span key={tag} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '5px 14px', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }>{tag}</span>
+              <span key={tag} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '5px 14px', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>{tag}</span>
             ))}
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px', marginBottom: '40px' }>
-          <div style={{CARD}>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }>HOURLY PAYCHECK CALCULATOR</div>
-            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }>2026 IRS RULES · INSTANT RESULTS</div>
-            <div style={{ marginBottom: '16px' }>
-              <label style={{LABEL}>Hourly Rate ($)</label>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px', marginBottom: '40px' }}>
+          <div style={{CARD}}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>HOURLY PAYCHECK CALCULATOR</div>
+            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 IRS RULES · INSTANT RESULTS</div>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{LABEL}}>Hourly Rate ($)</label>
               <input type="number" value={hourly} onChange={e => setHourly(Number(e.target.value))} onFocus={e => e.target.select()} style={{INPUT_S}} min={0} step={0.25} />
             </div>
-            <div style={{ marginBottom: '16px' }>
-              <label style={{LABEL}>Hours Per Week</label>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{LABEL}}>Hours Per Week</label>
               <input type="number" value={hours} onChange={e => setHours(Number(e.target.value))} onFocus={e => e.target.select()} style={{INPUT_S}} min={1} max={80} />
             </div>
-            <div style={{ marginBottom: '16px' }>
-              <label style={{LABEL}>Pay Frequency</label>
-              <select value={freq} onChange={e => setFreq(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{LABEL}}>Pay Frequency</label>
+              <select value={freq} onChange={e => setFreq(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="weekly">Weekly (52/yr)</option>
                 <option value="biweekly">Bi-Weekly (26/yr)</option>
                 <option value="semimonthly">Semi-Monthly (24/yr)</option>
                 <option value="monthly">Monthly (12/yr)</option>
               </select>
             </div>
-            <div style={{ marginBottom: '16px' }>
-              <label style={{LABEL}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{LABEL}}>Filing Status</label>
+              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
-            <div style={{ marginBottom: '16px' }>
-              <label style={{LABEL}>State</label>
-              <div style={{ ...INPUT_S, background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontWeight: 700 }>
+            <div style={{ marginBottom: '16px' }}>
+              <label style={{LABEL}}>State</label>
+              <div style={{ ...INPUT_S, background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontWeight: 700 }}>
                 {stateName}{noStateTax ? ' — No State Tax' : ' — ' + stateTax + '% State Tax'}
               </div>
             </div>
-            <div style={{ background: 'rgba(74,222,128,0.06)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', display: 'flex', justifyContent: 'space-between' }>
-              <div><div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }>Take-Home / Period</div>
-              <div style={{ fontSize: '30px', fontWeight: 900, color: '#4ade80', marginTop: '4px' }>{fmt(perPeriodNet)}</div></div>
-              <div style={{ textAlign: 'right' }><div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }>Effective Rate</div>
-              <div style={{ fontSize: '26px', fontWeight: 900, color: '#F5C842', marginTop: '4px' }>{effectiveRate}%</div></div>
+            <div style={{ background: 'rgba(74,222,128,0.06)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', display: 'flex', justifyContent: 'space-between' }}>
+              <div><div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Take-Home / Period</div>
+              <div style={{ fontSize: '30px', fontWeight: 900, color: '#4ade80', marginTop: '4px' }}>{fmt(perPeriodNet)}</div></div>
+              <div style={{ textAlign: 'right' }}><div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Effective Rate</div>
+              <div style={{ fontSize: '26px', fontWeight: 900, color: '#F5C842', marginTop: '4px' }}>{effectiveRate}%</div></div>
             </div>
           </div>
 
-          <div style={{CARD}>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }>PAY BREAKDOWN</div>
-            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }>{stateName.toUpperCase()} · PER PAYCHECK</div>
-            <div style={ROW}><span style={{ opacity: 0.7 }>Gross Pay (per period)</span><span style={{ fontWeight: 700 }>{fmt(perPeriodGross)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.8}>Aggregate method</div></div><span style={{ color: '#f87171' }>-{fmt(federal / periodsPerYear)}</span></div>
+          <div style={{CARD}}>
+            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>PAY BREAKDOWN</div>
+            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>{stateName.toUpperCase()} · PER PAYCHECK</div>
+            <div style={ROW}><span style={{ opacity: 0.7 }}>Gross Pay (per period)</span><span style={{ fontWeight: 700 }}>{fmt(perPeriodGross)}</span></div>
+            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.8}}>Aggregate method</div></div><span style={{ color: '#f87171' }}>-{fmt(federal / periodsPerYear)}</span></div>
             <div style={ROW}>
-              <div><div style={{ opacity: 0.7 }>{stateName} State Tax</div>
-              <div style={{ fontSize: '11px', opacity: 0.8}>{noStateTax ? 'No state tax' : stateTax + '%'}</div></div>
+              <div><div style={{ opacity: 0.7 }}>{stateName} State Tax</div>
+              <div style={{ fontSize: '11px', opacity: 0.8}}>{noStateTax ? 'No state tax' : stateTax + '%'}</div></div>
               <span style={noStateTax ? { color: '#4ade80' } : { color: '#f87171' }>{noStateTax ? '$0' : '-' + fmt(state / periodsPerYear)}</span>
             </div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }>Social Security</div><div style={{ fontSize: '11px', opacity: 0.8}>6.2%</div></div><span style={{ color: '#f87171' }>-{fmt(ss / periodsPerYear)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }>Medicare</div><div style={{ fontSize: '11px', opacity: 0.8}>1.45%</div></div><span style={{ color: '#f87171' }>-{fmt(medicare / periodsPerYear)}</span></div>
-            <div style={{ ...ROW, borderBottom: 'none' }><span style={{ opacity: 0.7 }>Total Taxes</span><span style={{ color: '#f87171', fontWeight: 700 }>-{fmt(totalTax / periodsPerYear)}</span></div>
-            <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '12px', padding: '16px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }>
-              <span style={{ fontWeight: 700 }>Take-Home Pay</span>
-              <span style={{ fontWeight: 900, fontSize: '24px', color: '#4ade80' }>{fmt(perPeriodNet)}</span>
+            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Social Security</div><div style={{ fontSize: '11px', opacity: 0.8}}>6.2%</div></div><span style={{ color: '#f87171' }}>-{fmt(ss / periodsPerYear)}</span></div>
+            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Medicare</div><div style={{ fontSize: '11px', opacity: 0.8}}>1.45%</div></div><span style={{ color: '#f87171' }}>-{fmt(medicare / periodsPerYear)}</span></div>
+            <div style={{ ...ROW, borderBottom: 'none' }}><span style={{ opacity: 0.7 }}>Total Taxes</span><span style={{ color: '#f87171', fontWeight: 700 }}>-{fmt(totalTax / periodsPerYear)}</span></div>
+            <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '12px', padding: '16px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontWeight: 700 }}>Take-Home Pay</span>
+              <span style={{ fontWeight: 900, fontSize: '24px', color: '#4ade80' }}>{fmt(perPeriodNet)}</span>
             </div>
-            <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }>
-              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }>
-                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }>ANNUAL GROSS</div>
-                <div style={{ fontWeight: 700, color: '#F5C842' }>{fmt(annualGross)}</div>
+            <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
+                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>ANNUAL GROSS</div>
+                <div style={{ fontWeight: 700, color: '#F5C842' }}>{fmt(annualGross)}</div>
               </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }>
-                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }>ANNUAL NET</div>
-                <div style={{ fontWeight: 700, color: '#4ade80' }>{fmt(annualNet)}</div>
+              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
+                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>ANNUAL NET</div>
+                <div style={{ fontWeight: 700, color: '#4ade80' }}>{fmt(annualNet)}</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '32px' }>
-          <h2 style={{ fontSize: '22px', fontWeight: 800, margin: '0 0 14px' }>Hourly Pay in {stateName} — 2026 Tax Guide</h2>
-          <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '16px' }>
+        <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '32px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: 800, margin: '0 0 14px' }}>Hourly Pay in {stateName} — 2026 Tax Guide</h2>
+          <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '16px' }}>
             {noStateTax
               ? stateName + ' is one of the few states with no state income tax, meaning hourly workers keep more of every paycheck. Your take-home pay is only reduced by federal income tax and FICA (Social Security + Medicare).'
               : 'In ' + stateName + ', hourly workers pay federal income tax, ' + stateTax + '% state income tax, and FICA (Social Security at 6.2% and Medicare at 1.45%). This calculator applies all 2026 IRS rules automatically.'}
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }>
-            Federal income tax is withheld using the percentage method based on your annualized income and filing status. The more you earn, the higher your marginal bracket — but your <strong style={{ color: '#fff' }>effective rate</strong> is always lower than your top bracket rate.
+          <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }}>
+            Federal income tax is withheld using the percentage method based on your annualized income and filing status. The more you earn, the higher your marginal bracket — but your <strong style={{ color: '#fff' }}>effective rate</strong> is always lower than your top bracket rate.
           </p>
-          <Link href="/hourly-paycheck-calculator" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '8px', padding: '10px 18px', color: '#F5C842', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }>
+          <Link href="/hourly-paycheck-calculator" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '8px', padding: '10px 18px', color: '#F5C842', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }}>
             Back to Hourly Calculator →
           </Link>
         </div>

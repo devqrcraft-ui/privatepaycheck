@@ -35,9 +35,9 @@ export default function Page() {
         <header>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginBottom: 20 }}>
             <a href="/" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Home</a>
-            {' › '}
+            <span> › </span>
             <a href="/blog" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none' }}>Blog</a>
-            {' › '}
+            <span> › </span>
             <span style={{ color: '#C8D8EC' }}>1099 vs W-2 Taxes 2026</span>
           </nav>
 

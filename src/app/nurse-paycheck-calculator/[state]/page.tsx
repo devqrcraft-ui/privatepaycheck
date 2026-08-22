@@ -294,7 +294,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
             { label: `${st.name} Bonus Tax Calculator`, href: `/bonus-tax-calculator/${state}`, color: 'rgba(236,72,153,0.1)', border: 'rgba(236,72,153,0.3)' },
             { label: 'Teacher Paycheck Calculator', href: '/teacher-paycheck-calculator', color: 'rgba(16,185,129,0.1)', border: 'rgba(16,185,129,0.3)' },
           ].map(l => (
-            <Link key={l.href} href={l.href} style={{ display: 'block', background: l.color, border: `1px solid ${l.border}`, borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
+            <Link key={l.href} href={l.href} style={{ display: 'block', background: l.color, border: `1px solid ${l.border}}`, borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
               {l.label}
             </Link>
           ))}

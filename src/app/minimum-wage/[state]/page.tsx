@@ -83,9 +83,9 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         {/* Breadcrumb */}
         <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '24px' }}>
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
-          {' › '}
+          <span> › </span>
           <Link href="/minimum-wage" style={{ color: 'inherit', textDecoration: 'none' }}>Minimum Wage</Link>
-          {' › '}
+          <span> › </span>
           <span>{st.name}</span>
         </div>
 

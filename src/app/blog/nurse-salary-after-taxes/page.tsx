@@ -31,19 +31,19 @@ export default function Page() {
         style={{maxWidth:780, margin:'0 auto', padding:'clamp(14px,4vw,28px)', background:'#0f0c29', color:'#e8edf8', minHeight:'100vh'}}
       >
         <header>
-          <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.65)', marginBottom:16}>
-            <a href="/" style={{color:'rgba(255,255,255,0.65)', textDecoration:'none'}>Home</a>
-            {' › '}
-            <a href="/blog" style={{color:'rgba(255,255,255,0.65)', textDecoration:'none'}>Blog</a>
-            {' › '}
-            <span style={{color:'rgba(255,255,255,0.65)'}>Nurse Salary After Taxes 2026</span>
+          <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.65)', marginBottom:16}}>
+            <a href="/" style={{color:'rgba(255,255,255,0.65)', textDecoration:'none'}}>Home</a>
+            <span> › </span>
+            <a href="/blog" style={{color:'rgba(255,255,255,0.65)', textDecoration:'none'}}>Blog</a>
+            <span> › </span>
+            <span style={{color:'rgba(255,255,255,0.65)'}}>Nurse Salary After Taxes 2026</span>
           </nav>
 
-          <h1 itemProp="headline" style={{fontSize:'clamp(22px,5vw,24px)', fontWeight:900, color:'#e8edf8', lineHeight:1.3, marginBottom:12}>
+          <h1 itemProp="headline" style={{fontSize:'clamp(22px,5vw,24px)', fontWeight:900, color:'#e8edf8', lineHeight:1.3, marginBottom:12}}>
             Nurse Salary After Taxes 2026: How Much Do RNs Actually Take Home?
           </h1>
 
-          <div style={{fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap' as const}>
+          <div style={{fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap' as const}}>
             <span>Last updated: May 2026</span>
             <span>·</span>
             <span>By the PrivatePaycheck Team</span>
@@ -53,17 +53,17 @@ export default function Page() {
         </header>
 
         <section id="answer-first">
-          <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}>
-            <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}>
+          <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
+            <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
               {'A registered nurse earning $75,000 in 2026 takes home approximately $57,200 after federal tax, FICA, and average state tax — about $4,767/month. In no-tax states like Texas or Florida, take-home reaches $59,400. California nurses at $75K keep only $53,800 due to state income tax up to 9.3%. Overtime exclusion under OBBBA 2026 can save nurses up to $2,750 in federal tax.'}
             </p>
           </div>
         </section>
 
         <section id="key-takeaways">
-          <div style={{background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28}>
-            <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}>KEY TAKEAWAYS</div>
-            <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}>
+          <div style={{background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
+            <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
+            <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
               <li>{'$75K RN salary = $57,200 take-home on average — $4,767/month'}</li>
               <li>{'No-tax states (TX, FL, WA) add $2,200/year vs average state tax'}</li>
               <li>{'FICA: 7.65% = $5,738/year on $75,000 salary'}</li>
@@ -75,9 +75,9 @@ export default function Page() {
         </section>
 
         <section id="toc">
-          <div style={{background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:28}>
-            <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}>TABLE OF CONTENTS</div>
-            <ol style={{margin:0, padding:'0 0 0 18px', lineHeight:2, fontSize:14}>
+          <div style={{background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
+            <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}}>TABLE OF CONTENTS</div>
+            <ol style={{margin:0, padding:'0 0 0 18px', lineHeight:2, fontSize:14}}>
               {[
                 {label:'Nurse Take-Home Pay by State', id:'by-state'},
                 {label:'Full Tax Breakdown on $75K Salary', id:'breakdown'},
@@ -89,25 +89,25 @@ export default function Page() {
                 {label:'How to Increase Nurse Take-Home Pay', id:'increase'},
                 {label:'Frequently Asked Questions', id:'faq'},
               ].map(({label, id}) => (
-                <li key={id}><a href={'#'+id} style={{color:'#F5C842', textDecoration:'none'}>{label}</a></li>
+                <li key={id}><a href={'#'+id} style={{color:'#F5C842', textDecoration:'none'}}>{label}</a></li>
               ))}
             </ol>
           </div>
         </section>
 
         <section id="by-state">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             Nurse Take-Home Pay by State in 2026
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
             State income tax is the biggest variable in nurse take-home pay. On a $75,000 salary, the gap between Texas and California is over $3,400 per year. Here is what RNs keep in major states.
           </p>
-          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}>
-            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}>
+          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}}>
+            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}}>
               <thead>
                 <tr>
                   {['State','State Tax Rate','Annual Take-Home','Monthly Take-Home'].map(h => (
-                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}>{h}</th>
+                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -128,33 +128,33 @@ export default function Page() {
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}>{cell}</td>
+                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.5)', margin:'24px 0', padding:'12px 20px', background:'rgba(245,200,66,0.04)', borderRadius:'0 6px 6px 0'}>
-            <p style={{margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7}>
-              "Wages and salaries are subject to federal income tax withholding based on the employee's W-4 and filing status." — <a href="https://www.irs.gov/individuals/employees/tax-withholding" rel="nofollow" target="_blank" style={{color:'#F5C842'}>IRS Tax Withholding Guide</a>
+          <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.5)', margin:'24px 0', padding:'12px 20px', background:'rgba(245,200,66,0.04)', borderRadius:'0 6px 6px 0'}}>
+            <p style={{margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7}}>
+              "Wages and salaries are subject to federal income tax withholding based on the employee's W-4 and filing status." — <a href="https://www.irs.gov/individuals/employees/tax-withholding" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>IRS Tax Withholding Guide</a>
             </p>
           </blockquote>
         </section>
 
         <section id="breakdown">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             Full Tax Breakdown on $75K Nurse Salary in 2026
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
             On a $75,000 gross salary, here is every deduction a single RN in Texas faces in 2026. State tax is zero — other states add $1,200 to $5,600 on top.
           </p>
-          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}>
-            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}>
+          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}}>
+            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}}>
               <thead>
                 <tr>
                   {['Deduction','Rate','Annual Amount','Monthly'].map(h => (
-                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}>{h}</th>
+                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -168,7 +168,7 @@ export default function Page() {
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}>{cell}</td>
+                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -178,40 +178,40 @@ export default function Page() {
         </section>
 
         <section id="overtime">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             How Overtime Affects Nurse Take-Home Pay in 2026
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
-            Nurses frequently work overtime — 12-hour shifts, double shifts, and weekend differentials add up. Under <strong style={{color:'#e8edf8'}>OBBBA 2026</strong>, overtime pay up to $12,500 (single) is excluded from federal income tax.
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            Nurses frequently work overtime — 12-hour shifts, double shifts, and weekend differentials add up. Under <strong style={{color:'#e8edf8'}}>OBBBA 2026</strong>, overtime pay up to $12,500 (single) is excluded from federal income tax.
           </p>
-          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}>
+          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
             <li>Base salary $75,000 + $10,000 overtime = $85,000 gross</li>
             <li>Under OBBBA: $10,000 overtime excluded from federal income tax</li>
             <li>Federal tax savings: approximately $2,200 on excluded overtime</li>
             <li>Overtime still subject to FICA (7.65%) regardless of exclusion</li>
             <li>State taxes still apply to overtime in most states</li>
           </ul>
-          <ol style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}>
+          <ol style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
             <li>Track overtime hours separately on your pay stub</li>
             <li>Confirm your employer correctly excludes overtime from federal withholding</li>
             <li>File Form W-4 update if withholding does not reflect OBBBA changes</li>
-            <li>Use our <a href="/blog/how-to-calculate-paycheck-taxes" style={{color:'#F5C842', textDecoration:'none'}>paycheck calculator</a> to verify your exact overtime take-home</li>
+            <li>Use our <a href="/blog/how-to-calculate-paycheck-taxes" style={{color:'#F5C842', textDecoration:'none'}}>paycheck calculator</a> to verify your exact overtime take-home</li>
           </ol>
         </section>
 
         <section id="pay-frequency">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             Nurse Salary After Taxes by Pay Frequency in 2026
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
             Most hospitals pay nurses biweekly — 26 paychecks per year. Here is what a $75,000 RN takes home per paycheck in Texas.
           </p>
-          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}>
-            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}>
+          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}}>
+            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}}>
               <thead>
                 <tr>
                   {['Pay Frequency','Gross Per Check','Take-Home Per Check','Checks/Year'].map(h => (
-                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}>{h}</th>
+                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -224,7 +224,7 @@ export default function Page() {
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}>{cell}</td>
+                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -234,18 +234,18 @@ export default function Page() {
         </section>
 
         <section id="specialty">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             Nurse Take-Home Pay by Specialty in 2026
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
             Nursing salary varies significantly by specialty and credential. A CRNA earns nearly three times more than a CNA — and the after-tax gap is even wider due to higher marginal rates. Here is how the major nursing roles compare in Texas (no state income tax) for 2026.
           </p>
-          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}>
-            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}>
+          <div style={{overflowX:'auto' as const, marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)'}}>
+            <table style={{width:'100%', borderCollapse:'collapse' as const, fontSize:13}}>
               <thead>
                 <tr>
                   {['Nursing Role','Avg Salary (2026)','Federal Tax','FICA','Take-Home (TX)'].map(h => (
-                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}>{h}</th>
+                    <th key={h} style={{background:'rgba(255,255,255,0.05)', color:'#F5C842', padding:'10px 14px', textAlign:'left' as const, fontSize:12, fontFamily:'monospace', letterSpacing:'0.04em', borderBottom:'1px solid rgba(245,200,66,0.2)'}}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -259,72 +259,72 @@ export default function Page() {
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}>{cell}</td>
+                      <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.5)', margin:'24px 0', padding:'12px 20px', background:'rgba(245,200,66,0.04)', borderRadius:'0 6px 6px 0'}>
-            <p style={{margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7}>
-              {'Registered nurses earned a median annual wage of $86,070 in May 2023. Employment is projected to grow 6 percent from 2023 to 2033.'} — <a href="https://www.bls.gov/ooh/healthcare/registered-nurses.htm" rel="nofollow" target="_blank" style={{color:'#F5C842'}>Bureau of Labor Statistics, Occupational Outlook Handbook</a>
+          <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.5)', margin:'24px 0', padding:'12px 20px', background:'rgba(245,200,66,0.04)', borderRadius:'0 6px 6px 0'}}>
+            <p style={{margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7}}>
+              {'Registered nurses earned a median annual wage of $86,070 in May 2023. Employment is projected to grow 6 percent from 2023 to 2033.'} — <a href="https://www.bls.gov/ooh/healthcare/registered-nurses.htm" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>Bureau of Labor Statistics, Occupational Outlook Handbook</a>
             </p>
           </blockquote>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
             The jump from RN to NP adds roughly $39,000 in gross pay — but after taxes, the net gain is approximately $25,600 per year in Texas. Advanced credentials have a strong ROI even after higher marginal tax rates.
           </p>
         </section>
 
         <section id="travel-nurses">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             How Much Do Travel Nurses Take Home After Taxes in 2026?
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
             Travel nurses earn significantly more than staff nurses — typically $100,000 to $130,000 per year — but their tax situation is more complex. A portion of travel nurse pay comes as non-taxable stipends (housing, meals, incidentals), which can dramatically increase take-home pay.
           </p>
-          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}>
-            <li><strong style={{color:'#e8edf8'}>Taxable base pay</strong> — typically $25–$35/hour, subject to federal and state income tax and FICA</li>
-            <li><strong style={{color:'#e8edf8'}>Housing stipend</strong> — non-taxable if you maintain a tax home; typically $1,200–$2,500/month</li>
-            <li><strong style={{color:'#e8edf8'}>Meals and incidentals</strong> — non-taxable per diem up to GSA rates; typically $50–$80/day</li>
-            <li><strong style={{color:'#e8edf8'}>Total package $120K</strong> — effective take-home often exceeds $95,000 due to stipend structure</li>
-            <li><strong style={{color:'#e8edf8'}>Tax home requirement</strong> — you must maintain a permanent residence to qualify for non-taxable stipends</li>
+          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
+            <li><strong style={{color:'#e8edf8'}}>Taxable base pay</strong> — typically $25–$35/hour, subject to federal and state income tax and FICA</li>
+            <li><strong style={{color:'#e8edf8'}}>Housing stipend</strong> — non-taxable if you maintain a tax home; typically $1,200–$2,500/month</li>
+            <li><strong style={{color:'#e8edf8'}}>Meals and incidentals</strong> — non-taxable per diem up to GSA rates; typically $50–$80/day</li>
+            <li><strong style={{color:'#e8edf8'}}>Total package $120K</strong> — effective take-home often exceeds $95,000 due to stipend structure</li>
+            <li><strong style={{color:'#e8edf8'}}>Tax home requirement</strong> — you must maintain a permanent residence to qualify for non-taxable stipends</li>
           </ul>
-          <ol style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}>
+          <ol style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
             <li>Verify your tax home status with a tax professional before your first assignment</li>
             <li>Track all stipend payments separately from taxable wages on your pay stub</li>
             <li>Keep records of your permanent residence expenses to substantiate tax home</li>
             <li>File in each state where you work for more than the state threshold</li>
           </ol>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
-            A travel nurse earning $120,000 total ($40K taxable + $80K stipends) may take home over $110,000 — compared to $88,500 for a staff RN earning the same gross. The stipend advantage is one reason travel nursing remains highly competitive. Use our <a href="/" style={{color:'#F5C842', textDecoration:'none'}>paycheck calculator</a> to model your exact travel nurse take-home.
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            A travel nurse earning $120,000 total ($40K taxable + $80K stipends) may take home over $110,000 — compared to $88,500 for a staff RN earning the same gross. The stipend advantage is one reason travel nursing remains highly competitive. Use our <a href="/" style={{color:'#F5C842', textDecoration:'none'}}>paycheck calculator</a> to model your exact travel nurse take-home.
           </p>
         </section>
 
         <section id="states">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             Highest and Lowest Paying States for Nurses After Taxes
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
-            Average RN salaries vary by $72,000 between the lowest and highest states. After taxes, the gap narrows but remains significant. See our <a href="/blog/no-income-tax-states-2026" style={{color:'#F5C842', textDecoration:'none'}>no income tax states guide</a> for full state comparisons.
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            Average RN salaries vary by $72,000 between the lowest and highest states. After taxes, the gap narrows but remains significant. See our <a href="/blog/no-income-tax-states-2026" style={{color:'#F5C842', textDecoration:'none'}}>no income tax states guide</a> for full state comparisons.
           </p>
-          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}>
-            <li><strong style={{color:'#e8edf8'}>California</strong> — $130,000 avg, $89,400 after taxes</li>
-            <li><strong style={{color:'#e8edf8'}>Washington</strong> — $98,000 avg, $74,800 after taxes (no state tax)</li>
-            <li><strong style={{color:'#e8edf8'}>New York</strong> — $96,000 avg, $71,200 after taxes</li>
-            <li><strong style={{color:'#e8edf8'}>Texas</strong> — $80,000 avg, $63,200 after taxes (no state tax)</li>
-            <li><strong style={{color:'#e8edf8'}>South Dakota</strong> — $58,000 avg, $46,800 after taxes (no state tax)</li>
+          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
+            <li><strong style={{color:'#e8edf8'}}>California</strong> — $130,000 avg, $89,400 after taxes</li>
+            <li><strong style={{color:'#e8edf8'}}>Washington</strong> — $98,000 avg, $74,800 after taxes (no state tax)</li>
+            <li><strong style={{color:'#e8edf8'}}>New York</strong> — $96,000 avg, $71,200 after taxes</li>
+            <li><strong style={{color:'#e8edf8'}}>Texas</strong> — $80,000 avg, $63,200 after taxes (no state tax)</li>
+            <li><strong style={{color:'#e8edf8'}}>South Dakota</strong> — $58,000 avg, $46,800 after taxes (no state tax)</li>
           </ul>
         </section>
 
         <section id="increase">
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'32px 0 14px', lineHeight:1.35}}>
             How to Increase Nurse Take-Home Pay in 2026
           </h2>
-          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}>
-            Every pre-tax benefit reduces your taxable income and increases take-home pay. Nurses have strong options through employer benefits. See the full guide on <a href="/blog/how-to-increase-take-home-pay" style={{color:'#F5C842', textDecoration:'none'}>how to increase take-home pay</a>.
+          <p style={{fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            Every pre-tax benefit reduces your taxable income and increases take-home pay. Nurses have strong options through employer benefits. See the full guide on <a href="/blog/how-to-increase-take-home-pay" style={{color:'#F5C842', textDecoration:'none'}}>how to increase take-home pay</a>.
           </p>
-          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}>
+          <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
             <li>401(k) contributions up to $23,500 — reduces federal taxable income dollar for dollar</li>
             <li>HSA contributions up to $4,300 — triple tax advantage for high-deductible plans</li>
             <li>FSA for dependent care — up to $5,000 pre-tax for childcare</li>
@@ -333,8 +333,8 @@ export default function Page() {
           </ul>
         </section>
 
-        <section id="faq" style={{marginTop:40}>
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'0 0 14px', lineHeight:1.35}>
+        <section id="faq" style={{marginTop:40}}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'0 0 14px', lineHeight:1.35}}>
             Frequently Asked Questions
           </h2>
           {[
@@ -346,16 +346,16 @@ export default function Page() {
             ['How does the no-tax-on-overtime rule affect nurses in 2026?', 'Under OBBBA 2026, overtime pay up to $12,500 single / $25,000 MFJ is excluded from federal income tax. Nurses who work significant overtime can save up to $2,750 in federal tax.'],
             ['How do I calculate my nurse take-home pay?', 'Start with gross salary. Subtract federal income tax (22% bracket at $75K), FICA (7.65%), and state income tax (0-9.3%). Use our free paycheck calculator for your exact state and pay frequency.'],
           ].map(([q, a], i, arr) => (
-            <div key={i} style={{borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', padding:'18px 0'}>
-              <h3 style={{fontSize:15, fontWeight:600, color:'#e8edf8', margin:'0 0 8px'}>{q}</h3>
-              <p style={{fontSize:14, color:'rgba(255,255,255,0.8)', margin:0, lineHeight:1.7}>{a}</p>
+            <div key={i} style={{borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', padding:'18px 0'}}>
+              <h3 style={{fontSize:15, fontWeight:600, color:'#e8edf8', margin:'0 0 8px'}}>{q}</h3>
+              <p style={{fontSize:14, color:'rgba(255,255,255,0.8)', margin:0, lineHeight:1.7}}>{a}</p>
             </div>
           ))}
         </section>
 
-        <section style={{marginTop:40}>
-          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'0 0 16px', lineHeight:1.35}>Related Salary Guides</h2>
-          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))', gap:12}>
+        <section style={{marginTop:40}}>
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:800, color:'#e8edf8', margin:'0 0 16px', lineHeight:1.35}}>Related Salary Guides</h2>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))', gap:12}}>
             {[
               ['/blog/teacher-salary-after-taxes', 'Teacher Salary After Taxes 2026', 'GUIDE'],
               ['/blog/pharmacist-salary-after-taxes', 'Pharmacist Salary After Taxes 2026', 'GUIDE'],
@@ -363,9 +363,9 @@ export default function Page() {
               ['/blog/75k-a-year-after-taxes', '$75K After Taxes 2026', 'CALCULATOR'],
               ['/blog/how-to-increase-take-home-pay', 'Increase Take-Home Pay', 'GUIDE'],
             ].map(([href, title, tag]) => (
-              <a key={href} href={href} style={{background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:6, padding:16, textDecoration:'none', display:'block'}>
-                <div style={{fontSize:10, color:'#F5C842', fontFamily:'monospace', letterSpacing:'0.04em', marginBottom:6}>{tag}</div>
-                <div style={{color:'#e8edf8', fontSize:13, fontWeight:600, lineHeight:1.4}>{title}</div>
+              <a key={href} href={href} style={{background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:6, padding:16, textDecoration:'none', display:'block'}}>
+                <div style={{fontSize:10, color:'#F5C842', fontFamily:'monospace', letterSpacing:'0.04em', marginBottom:6}}>{tag}</div>
+                <div style={{color:'#e8edf8', fontSize:13, fontWeight:600, lineHeight:1.4}}>{title}</div>
               </a>
             ))}
           </div>
