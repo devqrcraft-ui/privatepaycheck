@@ -65,7 +65,7 @@ export default function RaiseCalculatorClient() {
   const keepRate = netGain / raiseAmount;
 
   return (
-    <div style={{BG}}>
+    <div style={BG}>
       
 
 
@@ -86,11 +86,11 @@ export default function RaiseCalculatorClient() {
 
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'24px' }}>
 
-          <div style={{CARD}}>
+          <div style={CARD}>
             <h2 style={{ fontSize:'16px', fontWeight:800, margin:'0 0 20px' }}>Your Raise Details</h2>
 
             <div style={{ marginBottom:'16px' }}>
-              <div style={{LABEL}}>Current Annual Salary</div>
+              <div style={LABEL}>Current Annual Salary</div>
               <div style={{ position:'relative' }}>
                 <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
                 <input type="number" value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value))} min={1} style={{ ...INPUT_S, paddingLeft:'28px' }} />
@@ -98,7 +98,7 @@ export default function RaiseCalculatorClient() {
             </div>
 
             <div style={{ marginBottom:'8px' }}>
-              <div style={{LABEL}}>Raise Type</div>
+              <div style={LABEL}>Raise Type</div>
               <div style={{ display:'flex', gap:'8px' }}>
                 {(['pct','fixed'] as const).map(t=>(
                   <button key={t} onClick={()=>setRaiseType(t)} style={{
@@ -112,7 +112,7 @@ export default function RaiseCalculatorClient() {
             </div>
 
             <div style={{ marginBottom:'16px', marginTop:'12px' }}>
-              <div style={{LABEL}}>{raiseType==='pct' ? 'Raise Percentage' : 'Raise Amount'}</div>
+              <div style={LABEL}>{raiseType==='pct' ? 'Raise Percentage' : 'Raise Amount'}</div>
               <div style={{ position:'relative' }}>
                 <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#F5C842', fontWeight:700 }}>
                   {raiseType==='pct' ? '%' : '$'}
@@ -122,7 +122,7 @@ export default function RaiseCalculatorClient() {
             </div>
 
             <div style={{ marginBottom:'16px' }}>
-              <div style={{LABEL}}>State</div>
+              <div style={LABEL}>State</div>
               <select value={state} onChange={e=>setState(e.target.value)} style={{ ...INPUT_S, cursor:'pointer', colorScheme:'dark', backgroundColor:'#0d1f35' }}>
                 {Object.entries(STATE_NAMES).sort((a,b)=>a[1].localeCompare(b[1])).map(([k,v])=>(
                   <option key={k} value={k}>{v}</option>
@@ -131,7 +131,7 @@ export default function RaiseCalculatorClient() {
             </div>
 
             <div>
-              <div style={{LABEL}}>Filing Status</div>
+              <div style={LABEL}>Filing Status</div>
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{ ...INPUT_S, cursor:'pointer', colorScheme:'dark', backgroundColor:'#0d1f35' }}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -148,7 +148,7 @@ export default function RaiseCalculatorClient() {
               <div style={{ fontSize:'13px', opacity: 0.8 }}>= {fmt(netGain/12)}/month · {fmt(netGain/26)}/bi-weekly</div>
             </div>
 
-            <div style={{CARD}}>
+            <div style={CARD}>
               <div style={{ fontSize:'13px', fontWeight:700, marginBottom:'14px', opacity:0.7 }}>Before vs After</div>
               {[
                 { label:'Gross Salary', before:salary, after:newSalary },

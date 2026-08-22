@@ -51,7 +51,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
 
   return (
-    <div style={{BG}}>
+    <div style={BG}>
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '32px 16px' }}>
 
         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -99,19 +99,19 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px', marginBottom: '40px' }}>
-          <div style={{CARD}}>
+          <div style={CARD}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#f472b6', marginBottom: '4px' }}>TIP TAX CALCULATOR</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 NO TAX ON TIPS LAW</div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={{LABEL}}>Annual Tips Earned ($)</label>
-              <input type="number" value={tips} onChange={e => setTips(Number(e.target.value))} onFocus={e => e.target.select()} style={{INPUT_S}} min={0} />
+              <label style={LABEL}>Annual Tips Earned ($)</label>
+              <input type="number" value={tips} onChange={e => setTips(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={{LABEL}}>Annual Salary (non-tip, $)</label>
-              <input type="number" value={salary} onChange={e => setSalary(Number(e.target.value))} onFocus={e => e.target.select()} style={{INPUT_S}} min={0} />
+              <label style={LABEL}>Annual Salary (non-tip, $)</label>
+              <input type="number" value={salary} onChange={e => setSalary(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={{LABEL}}>Filing Status</label>
+              <label style={LABEL}>Filing Status</label>
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -124,7 +124,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
             </div>
           </div>
 
-          <div style={{CARD}}>
+          <div style={CARD}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#f472b6', marginBottom: '4px' }}>YOUR SAVINGS</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>{stateName.toUpperCase()} · 2026</div>
             <div style={ROW}><span style={{ opacity: 0.7 }}>Tips Earned</span><span style={{ fontWeight: 700 }}>{fmt(tips)}</span></div>

@@ -64,7 +64,7 @@ export default function SigningBonusClient() {
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a signing bonus taxed differently than regular salary?","acceptedAnswer":{"@type":"Answer","text":"Not in terms of your final liability. Employers withhold at 22% supplemental rate. If your actual rate is higher, you may owe more at tax time."}},{"@type":"Question","name":"What happens if I leave before the clawback period?","acceptedAnswer":{"@type":"Answer","text":"You typically owe back the gross amount before taxes. Since you already paid taxes on it, you can claim a deduction or credit on next years return."}},{"@type":"Question","name":"Should I negotiate a higher signing bonus or higher salary?","acceptedAnswer":{"@type":"Answer","text":"Higher base salary is almost always better long-term: it compounds into raises, bonuses, 401k matches, and severance."}},{"@type":"Question","name":"Can I reduce taxes on my signing bonus?","acceptedAnswer":{"@type":"Answer","text":"Yes — ask your employer to defer part into your 401k directly, or time it into a year where your other income is lower."}}]};
   return (
-    <div style={{BG}}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <div style={BG}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
 
 
@@ -85,11 +85,11 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
 
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'24px' }}>
 
-          <div style={{CARD}}>
+          <div style={CARD}>
             <h2 style={{ fontSize:'16px', fontWeight:800, margin:'0 0 20px' }}>Your Offer Details</h2>
 
             <div style={{ marginBottom:'16px' }}>
-              <div style={{LABEL}}>Signing Bonus</div>
+              <div style={LABEL}>Signing Bonus</div>
               <div style={{ position:'relative' }}>
                 <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
                 <input type="number" value={bonus} onChange={e=>setBonus(Math.max(0,+e.target.value))} min={0} style={{ ...INPUT_S, paddingLeft:'28px' }} />
@@ -97,7 +97,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
             </div>
 
             <div style={{ marginBottom:'16px' }}>
-              <div style={{LABEL}}>Annual Base Salary</div>
+              <div style={LABEL}>Annual Base Salary</div>
               <div style={{ position:'relative' }}>
                 <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
                 <input type="number" value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value))} min={1} style={{ ...INPUT_S, paddingLeft:'28px' }} />
@@ -105,7 +105,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
             </div>
 
             <div style={{ marginBottom:'16px' }}>
-              <div style={{LABEL}}>State</div>
+              <div style={LABEL}>State</div>
               <select value={state} onChange={e=>setState(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 {Object.entries(STATE_NAMES).sort((a,b)=>a[1].localeCompare(b[1])).map(([k,v])=>(
                   <option key={k} value={k}>{v}</option>
@@ -114,7 +114,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
             </div>
 
             <div style={{ marginBottom:'16px' }}>
-              <div style={{LABEL}}>Filing Status</div>
+              <div style={LABEL}>Filing Status</div>
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -123,8 +123,8 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
             </div>
 
             <div>
-              <div style={{LABEL}}>Clawback Period (months)</div>
-              <input type="number" value={clawback} onChange={e=>setClawback(+e.target.value)} min={1} max={36} style={{INPUT_S}} />
+              <div style={LABEL}>Clawback Period (months)</div>
+              <input type="number" value={clawback} onChange={e=>setClawback(+e.target.value)} min={1} max={36} style={INPUT_S} />
               <div style={{ fontSize:'11px', color:'rgba(255,255,255,0.35)', marginTop:'4px' }}>
                 How long until you're free to leave without repaying?
               </div>
@@ -138,7 +138,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
               <div style={{ fontSize:'13px', opacity: 0.8, marginTop:'6px' }}>from {fmt(bonus)} signing bonus</div>
             </div>
 
-            <div style={{CARD}}>
+            <div style={CARD}>
               <div style={{ fontSize:'13px', fontWeight:700, marginBottom:'14px', opacity:0.7 }}>Tax Breakdown</div>
               {[
                 { label:'Federal Income Tax', value:fedTax, color:'#f87171' },

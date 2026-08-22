@@ -66,11 +66,11 @@ export default function NoTaxOnTipsCalculator() {
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '28px', marginBottom: '24px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(170px,1fr))', gap: '16px', marginBottom: '16px' }}>
-            <div><label style={{lbl}}>Weekly Tips ($)</label><input type="number" value={tips} onChange={e => setTips(Math.max(0,+e.target.value).toString())} min={0} style={{inp}} placeholder="800" /></div>
-            <div><label style={{lbl}}>Weekly Wages ($)</label><input type="number" value={wages} onChange={e => setWages(Math.max(0,+e.target.value).toString())} min={0} style={{inp}} placeholder="600" /></div>
-            <div><label style={{lbl}}>Weeks Worked/Year</label><input type="number" value={weeks} onChange={e => setWeeks(Math.max(1,+e.target.value).toString())} min={1} style={{inp}} placeholder="52" /></div>
+            <div><label style={lbl}>Weekly Tips ($)</label><input type="number" value={tips} onChange={e => setTips(Math.max(0,+e.target.value).toString())} min={0} style={inp} placeholder="800" /></div>
+            <div><label style={lbl}>Weekly Wages ($)</label><input type="number" value={wages} onChange={e => setWages(Math.max(0,+e.target.value).toString())} min={0} style={inp} placeholder="600" /></div>
+            <div><label style={lbl}>Weeks Worked/Year</label><input type="number" value={weeks} onChange={e => setWeeks(Math.max(1,+e.target.value).toString())} min={1} style={inp} placeholder="52" /></div>
             <div>
-              <label style={{lbl}}>Filing Status</label>
+              <label style={lbl}>Filing Status</label>
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...inp, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>

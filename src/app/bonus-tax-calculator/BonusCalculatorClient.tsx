@@ -74,7 +74,7 @@ export default function BonusTaxCalculator() {
   const pct = (n: number) => (n * 100).toFixed(1) + '%';
 
   return (
-    <div style={{BG}}>
+    <div style={BG}>
       
 
 
@@ -97,11 +97,11 @@ export default function BonusTaxCalculator() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
 
           {/* INPUTS */}
-          <div style={{CARD}}>
+          <div style={CARD}>
             <h2 style={{ fontSize: '16px', fontWeight: 800, margin: '0 0 20px' }}>Enter Your Details</h2>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>Bonus Amount</div>
+              <div style={LABEL}>Bonus Amount</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
                 <input type="text" inputMode="numeric" pattern="[0-9]*" value={bonus} onChange={e => setBonus(e.target.value.replace(/[^0-9]/g,""))} placeholder="10000" style={{ ...INPUT_S, paddingLeft: '28px' }} />
@@ -109,7 +109,7 @@ export default function BonusTaxCalculator() {
             </div>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>Annual Salary (before bonus)</div>
+              <div style={LABEL}>Annual Salary (before bonus)</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
                 <input type="text" inputMode="numeric" pattern="[0-9]*" value={salary} onChange={e => setSalary(e.target.value.replace(/[^0-9]/g,""))} placeholder="75000" style={{ ...INPUT_S, paddingLeft: '28px' }} />
@@ -118,7 +118,7 @@ export default function BonusTaxCalculator() {
             </div>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>State</div>
+              <div style={LABEL}>State</div>
               <select value={state} onChange={e => setState(e.target.value)} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 {Object.entries(STATE_NAMES).sort((a,b)=>a[1].localeCompare(b[1])).map(([k,v]) => (
                   <option key={k} value={k}>{v}</option>
@@ -127,7 +127,7 @@ export default function BonusTaxCalculator() {
             </div>
 
             <div>
-              <div style={{LABEL}}>Filing Status</div>
+              <div style={LABEL}>Filing Status</div>
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -145,7 +145,7 @@ export default function BonusTaxCalculator() {
               <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>out of {fmt(Number(bonus))} bonus</div>
             </div>
 
-            <div style={{CARD}}>
+            <div style={CARD}>
               <div style={{ fontSize: '13px', fontWeight: 700, marginBottom: '14px', opacity: 0.7 }}>Tax Breakdown</div>
               {[
                 { label: 'Federal Income Tax', value: res.fedTax, color: '#f87171' },
@@ -173,7 +173,7 @@ export default function BonusTaxCalculator() {
             { icon: '', title: 'State Taxes Vary Wildly', body: 'Texas and Florida take $0 in state tax on your bonus. California takes up to 9.3%. Know your state before negotiating.' },
             { icon: '', title: 'Pro Tip: Defer to 401k', body: 'Contributing your bonus to a 401k reduces taxable income and can push you into a lower bracket. Consider timing.' },
           ].map(f => (
-            <div key={f.title} style={{CARD}}>
+            <div key={f.title} style={CARD}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{f.title}</div>
               <div style={{ fontSize: '13px', opacity: 0.6, lineHeight: 1.6 }}>{f.body}</div>

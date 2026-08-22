@@ -126,19 +126,19 @@ export default function TipsTaxCalculator2026() {
             <h2 style={{ fontSize: '17px', fontWeight: 800, margin: '0 0 20px' }}>Calculate Your Tip Tax Savings</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '16px', marginBottom: '20px' }}>
               <div>
-                <label style={{lbl}}>Annual Tip Income ($)</label>
+                <label style={lbl}>Annual Tip Income ($)</label>
                 <input type="number" value={annualTips} min={0}
                   onChange={e => setAnnualTips(e.target.value)}
-                  style={{inp}} placeholder="25000" />
+                  style={inp} placeholder="25000" />
               </div>
               <div>
-                <label style={{lbl}}>Annual Wages ($)</label>
+                <label style={lbl}>Annual Wages ($)</label>
                 <input type="number" value={annualWages} min={0}
                   onChange={e => setAnnualWages(e.target.value)}
-                  style={{inp}} placeholder="32000" />
+                  style={inp} placeholder="32000" />
               </div>
               <div>
-                <label style={{lbl}}>Filing Status</label>
+                <label style={lbl}>Filing Status</label>
                 <select value={filing} onChange={e => setFiling(e.target.value)}
                   style={{ ...inp, colorScheme: 'dark', background: '#1e1b4b' }}>
                   <option value="single">Single</option>

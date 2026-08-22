@@ -98,11 +98,11 @@ export default function CompareClient() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 12, marginBottom: 20 }}>
         <div>
           <label style={{ fontSize: 12, color: '#94a3b8', display: 'block', marginBottom: 4 }}>ANNUAL SALARY</label>
-          <input type="number" min={0} value={salary} onChange={e => setSalary(Math.max(0, Number(e.target.value)))} style={{sel}} />
+          <input type="number" min={0} value={salary} onChange={e => setSalary(Math.max(0, Number(e.target.value)))} style={sel} />
         </div>
         <div>
           <label style={{ fontSize: 12, color: '#94a3b8', display: 'block', marginBottom: 4 }}>FILING STATUS</label>
-          <select value={filing} onChange={e => setFiling(e.target.value)} style={{sel}}>
+          <select value={filing} onChange={e => setFiling(e.target.value)} style={sel}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
           </select>
@@ -113,7 +113,7 @@ export default function CompareClient() {
         {[0,1,2].map(idx => (
           <div key={idx}>
             <label style={{ fontSize: 12, color: '#94a3b8', display: 'block', marginBottom: 4 }}>{'STATE ' + (idx + 1)}</label>
-            <select value={picks[idx]} onChange={e => setPickAt(idx, e.target.value)} style={{sel}}>
+            <select value={picks[idx]} onChange={e => setPickAt(idx, e.target.value)} style={sel}>
               {Object.entries(STATES).map(([k,v]) => (
                 <option key={k} value={k}>{v.name}</option>
               ))}

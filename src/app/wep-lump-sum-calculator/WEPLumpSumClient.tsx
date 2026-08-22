@@ -121,20 +121,20 @@ export default function WEPLumpSumCalculator() {
         <div style={{ background:'rgba(255,255,255,0.05)', borderRadius:16, padding:24, marginBottom:20 }}>
           <div style={{ fontSize:14, fontWeight:700, color:'#cbd5e1', marginBottom:4 }}>Your 2025 Income</div>
 
-          <label style={{lbl}}>Annual Pension / TRS Income</label>
+          <label style={lbl}>Annual Pension / TRS Income</label>
           <div style={{ position:'relative' }}>
             <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
             <input type="number" value={pension} onChange={e=>setPension(Math.max(0,+e.target.value).toString())} min={0} style={{ ...inp, paddingLeft:28 }} />
           </div>
 
-          <label style={{lbl}}>WEP Lump-Sum Payment Received in 2025</label>
+          <label style={lbl}>WEP Lump-Sum Payment Received in 2025</label>
           <div style={{ position:'relative' }}>
             <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#fbbf24', fontWeight:700 }}>$</span>
             <input type="number" value={lumpSum} onChange={e=>setLumpSum(Math.max(0,+e.target.value).toString())} min={0} style={{ ...inp, paddingLeft:28 }} />
           </div>
           <div style={{ fontSize:11, color:'rgba(255,255,255,.35)', marginTop:4 }}>Average retroactive payment was $6,710. Check your SSA-1099.</div>
 
-          <label style={{lbl}}>New Annual SS Benefit (after WEP repeal)</label>
+          <label style={lbl}>New Annual SS Benefit (after WEP repeal)</label>
           <div style={{ position:'relative' }}>
             <span style={{ position:'absolute', left:14, top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
             <input type="number" value={newSS} onChange={e=>setNewSS(Math.max(0,+e.target.value).toString())} min={0} style={{ ...inp, paddingLeft:28 }} />
@@ -152,7 +152,7 @@ export default function WEPLumpSumCalculator() {
             </div>
             <div>
               <label style={{ ...lbl, marginTop:0 }}>Your Age</label>
-              <input type="number" value={age} onChange={e=>setAge(e.target.value)} min="50" max="90" style={{inp}} />
+              <input type="number" value={age} onChange={e=>setAge(e.target.value)} min="50" max="90" style={inp} />
             </div>
           </div>
         </div>

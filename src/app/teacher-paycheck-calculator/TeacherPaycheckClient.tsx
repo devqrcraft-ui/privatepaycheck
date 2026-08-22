@@ -190,7 +190,7 @@ export default function TeacherPaycheckCalculator() {
   const pensionInfo = PENSION_RATE[state] ?? { rate: 0.07, system: 'State TRS', ss: true };
 
   return (
-    <div style={{BG}}>
+    <div style={BG}>
       
 
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
@@ -213,11 +213,11 @@ export default function TeacherPaycheckCalculator() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
 
           {/* INPUTS */}
-          <div style={{CARD}}>
+          <div style={CARD}>
             <h2 style={{ fontSize: '16px', fontWeight: 800, margin: '0 0 20px' }}>Enter Your Details</h2>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>Annual Gross Salary</div>
+              <div style={LABEL}>Annual Gross Salary</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
                 <input type="number" value={salary} onChange={e => setSalary(Math.max(1,+e.target.value))} min={1} style={{ ...INPUT_S, paddingLeft: '28px' }} />
@@ -225,7 +225,7 @@ export default function TeacherPaycheckCalculator() {
             </div>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>State</div>
+              <div style={LABEL}>State</div>
               <select value={state} onChange={e => setState(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
                 {Object.entries(STATE_NAMES).sort((a,b) => a[1].localeCompare(b[1])).map(([k,v]) => (
                   <option key={k} value={k}>{v}</option>
@@ -238,7 +238,7 @@ export default function TeacherPaycheckCalculator() {
             </div>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>Filing Status</div>
+              <div style={LABEL}>Filing Status</div>
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -247,8 +247,8 @@ export default function TeacherPaycheckCalculator() {
             </div>
 
             <div style={{ marginBottom: '16px' }}>
-              <div style={{LABEL}}>Your Age</div>
-              <input type="number" value={age} onChange={e => setAge(+e.target.value)} min={22} max={75} style={{INPUT_S}} />
+              <div style={LABEL}>Your Age</div>
+              <input type="number" value={age} onChange={e => setAge(+e.target.value)} min={22} max={75} style={INPUT_S} />
               {age >= 65 && (
                 <div style={{ fontSize: '11px', color: '#4ade80', marginTop: '4px' }}>
                    You qualify for the $6,000 OBBB Senior Deduction
@@ -270,8 +270,8 @@ export default function TeacherPaycheckCalculator() {
                     <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.6)', marginBottom: '10px', lineHeight: 1.5 }}>
                       WEP & GPO were fully eliminated Jan 2025. If you also worked in SS-covered jobs, enter your years of SS-covered work below to see your estimated new SS benefit.
                     </div>
-                    <div style={{LABEL}}>Years of SS-covered work (outside teaching)</div>
-                    <input type="number" value={ssYears} onChange={e => setSsYears(+e.target.value)} min={0} max={40} style={{INPUT_S}} placeholder="0" />
+                    <div style={LABEL}>Years of SS-covered work (outside teaching)</div>
+                    <input type="number" value={ssYears} onChange={e => setSsYears(+e.target.value)} min={0} max={40} style={INPUT_S} placeholder="0" />
                   </div>
                 )}
               </div>
@@ -296,7 +296,7 @@ export default function TeacherPaycheckCalculator() {
             </div>
 
             {/* Breakdown */}
-            <div style={{CARD}}>
+            <div style={CARD}>
               <div style={{ fontSize: '13px', fontWeight: 700, marginBottom: '14px', opacity: 0.7 }}>Paycheck Breakdown</div>
               {[
                 { label: 'Gross Salary',                              value: res.gross,            color: 'rgba(255,255,255,0.9)', plus: true },
@@ -343,7 +343,7 @@ export default function TeacherPaycheckCalculator() {
             { icon: '', title: 'SS Fairness Act 2025', body: 'WEP and GPO are fully repealed as of January 2025. Teachers in TX, CA, IL, OH, MA and 11 other states who also worked SS-covered jobs can now claim full SS benefits. File at ssa.gov — retroactive to Jan 2024.' },
             { icon: '', title: 'The $6,000 Senior Bonus', body: 'If you\'re 65+ in 2025-2028, you qualify for an additional $6,000 federal deduction under the One Big Beautiful Bill (Public Law 119-21). It phases out at MAGI over $75k (single) or $150k (married).' },
           ].map(f => (
-            <div key={f.title} style={{CARD}}>
+            <div key={f.title} style={CARD}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{f.title}</div>
               <div style={{ fontSize: '13px', opacity: 0.6, lineHeight: 1.6 }}>{f.body}</div>

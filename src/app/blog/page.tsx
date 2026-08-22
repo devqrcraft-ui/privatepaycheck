@@ -96,7 +96,7 @@ export default function BlogIndex() {
         <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Exact after-tax income for common wages — every state included.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {salaryPosts.map(p => (
-            <a key={p.slug} href={"/blog/" + p.slug} style={{card}}>
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
@@ -109,7 +109,7 @@ export default function BlogIndex() {
         <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Understand your withholding, deductions, and how to keep more.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {taxPosts.map(p => (
-            <a key={p.slug} href={"/blog/" + p.slug} style={{card}}>
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
@@ -122,7 +122,7 @@ export default function BlogIndex() {
         <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Take-home pay breakdowns for specific careers.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {professionPosts.map(p => (
-            <a key={p.slug} href={"/blog/" + p.slug} style={{card}}>
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
@@ -135,7 +135,7 @@ export default function BlogIndex() {
         <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>State-specific paycheck and tax guides.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {statePosts.map(p => (
-            <a key={p.slug} href={"/blog/" + p.slug} style={{card}}>
+            <a key={p.slug} href={"/blog/" + p.slug} style={card}>
               <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 4, color: '#e8edf8' }}>{p.title}</div>
               <div style={{ fontSize: 14, color:'#b8c8dc' }}>{p.desc}</div>
             </a>
