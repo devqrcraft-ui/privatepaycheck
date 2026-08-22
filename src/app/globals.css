@@ -63,3 +63,8 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
 .btn-3d-gold{position:relative;display:inline-flex;align-items:center;padding:12px 24px;background:linear-gradient(180deg,#F5C842 0%,#C9A84C 100%);color:#091526!important;font-weight:800;border-radius:8px;border:1px solid #FFD700;box-shadow:0 4px 0 #8a6d00,0 8px 15px rgba(0,0,0,0.3);transition:all .1s;cursor:pointer;text-transform:uppercase}
 .btn-3d-gold:hover{transform:translateY(-3px);box-shadow:0 7px 0 #8a6d00,0 12px 20px rgba(245,200,66,0.4)}
 .btn-3d-gold:active{transform:translateY(2px);box-shadow:0 2px 0 #8a6d00}
+
+/* 3D UI v85 */
+.btn-3d-gold{position:relative;display:inline-flex;align-items:center;padding:12px 24px;background:linear-gradient(180deg,#F5C842 0%,#C9A84C 100%);color:#091526!important;font-weight:800;border-radius:8px;border:1px solid #FFD700;box-shadow:0 4px 0 #8a6d00,0 8px 15px rgba(0,0,0,0.3);transition:all .1s;cursor:pointer;text-transform:uppercase;text-shadow:0 1px 1px rgba(255,255,255,0.3)}
+.btn-3d-gold:hover{transform:translateY(-3px);box-shadow:0 7px 0 #8a6d00,0 12px 20px rgba(245,200,66,0.4);filter:brightness(1.05)}
+.btn-3d-gold:active{transform:translateY(2px);box-shadow:0 2px 0 #8a6d00}
