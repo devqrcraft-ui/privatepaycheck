@@ -54,7 +54,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
   const fmt2 = (n: number) => '$' + n.toFixed(2);
 
   return (
-    <div style={BG}>
+    <div style={{BG}}>
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }}>
           <Link href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Home</Link>
@@ -85,19 +85,19 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px', marginBottom: '40px' }}>
-          <div style={CARD}>
+          <div style={{CARD}}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>HOURLY PAYCHECK CALCULATOR</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 IRS RULES · INSTANT RESULTS</div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Hourly Rate ($)</label>
-              <input type="number" value={hourly} onChange={e => setHourly(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} step={0.25} />
+              <label style={{LABEL}}>Hourly Rate ($)</label>
+              <input type="number" value={hourly} onChange={e => setHourly(Number(e.target.value))} onFocus={e => e.target.select()} style={{INPUT_S}} min={0} step={0.25} />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Hours Per Week</label>
-              <input type="number" value={hours} onChange={e => setHours(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={1} max={80} />
+              <label style={{LABEL}}>Hours Per Week</label>
+              <input type="number" value={hours} onChange={e => setHours(Number(e.target.value))} onFocus={e => e.target.select()} style={{INPUT_S}} min={1} max={80} />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Pay Frequency</label>
+              <label style={{LABEL}}>Pay Frequency</label>
               <select value={freq} onChange={e => setFreq(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="weekly">Weekly (52/yr)</option>
                 <option value="biweekly">Bi-Weekly (26/yr)</option>
@@ -106,7 +106,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
               </select>
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Filing Status</label>
+              <label style={{LABEL}}>Filing Status</label>
               <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -114,7 +114,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
               </select>
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>State</label>
+              <label style={{LABEL}}>State</label>
               <div style={{ ...INPUT_S, background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontWeight: 700 }}>
                 {stateName}{noStateTax ? ' — No State Tax' : ' — ' + stateTax + '% State Tax'}
               </div>
@@ -127,18 +127,18 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
             </div>
           </div>
 
-          <div style={CARD}>
+          <div style={{CARD}}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>PAY BREAKDOWN</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>{stateName.toUpperCase()} · PER PAYCHECK</div>
-            <div style={ROW}><span style={{ opacity: 0.7 }}>Gross Pay (per period)</span><span style={{ fontWeight: 700 }}>{fmt(perPeriodGross)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.8}}>Aggregate method</div></div><span style={{ color: '#f87171' }}>-{fmt(federal / periodsPerYear)}</span></div>
-            <div style={ROW}>
+            <div style={{ROW}}><span style={{ opacity: 0.7 }}>Gross Pay (per period)</span><span style={{ fontWeight: 700 }}>{fmt(perPeriodGross)}</span></div>
+            <div style={{ROW}}><div><div style={{ opacity: 0.7 }}>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.8}}>Aggregate method</div></div><span style={{ color: '#f87171' }}>-{fmt(federal / periodsPerYear)}</span></div>
+            <div style={{ROW}}>
               <div><div style={{ opacity: 0.7 }}>{stateName} State Tax</div>
               <div style={{ fontSize: '11px', opacity: 0.8}}>{noStateTax ? 'No state tax' : stateTax + '%'}</div></div>
-              <span style={noStateTax ? { color: '#4ade80' } : { color: '#f87171' }}>{noStateTax ? '$0' : '-' + fmt(state / periodsPerYear)}</span>
+              <span style={{noStateTax ? { color: '#4ade80' }} : { color: '#f87171' }}>{noStateTax ? '$0' : '-' + fmt(state / periodsPerYear)}</span>
             </div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Social Security</div><div style={{ fontSize: '11px', opacity: 0.8}}>6.2%</div></div><span style={{ color: '#f87171' }}>-{fmt(ss / periodsPerYear)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Medicare</div><div style={{ fontSize: '11px', opacity: 0.8}}>1.45%</div></div><span style={{ color: '#f87171' }}>-{fmt(medicare / periodsPerYear)}</span></div>
+            <div style={{ROW}}><div><div style={{ opacity: 0.7 }}>Social Security</div><div style={{ fontSize: '11px', opacity: 0.8}}>6.2%</div></div><span style={{ color: '#f87171' }}>-{fmt(ss / periodsPerYear)}</span></div>
+            <div style={{ROW}}><div><div style={{ opacity: 0.7 }}>Medicare</div><div style={{ fontSize: '11px', opacity: 0.8}}>1.45%</div></div><span style={{ color: '#f87171' }}>-{fmt(medicare / periodsPerYear)}</span></div>
             <div style={{ ...ROW, borderBottom: 'none' }}><span style={{ opacity: 0.7 }}>Total Taxes</span><span style={{ color: '#f87171', fontWeight: 700 }}>-{fmt(totalTax / periodsPerYear)}</span></div>
             <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '12px', padding: '16px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontWeight: 700 }}>Take-Home Pay</span>

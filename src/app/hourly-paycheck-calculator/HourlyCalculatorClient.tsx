@@ -137,23 +137,23 @@ export default function HourlyPaycheckCalculator() {
           {/* ROW 1: Hourly + Hours + Weeks */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
-              <label style={lbl}>Hourly Rate ($)</label>
-              <input type="number" value={hourly} onChange={e=>setHourly(e.target.value)} style={input} placeholder="25.00" min="0" step="0.25" />
+              <label style={{lbl}}>Hourly Rate ($)</label>
+              <input type="number" value={hourly} onChange={e=>setHourly(e.target.value)} style={{input}} placeholder="25.00" min="0" step="0.25" />
             </div>
             <div>
-              <label style={lbl}>Hours per Week</label>
-              <input type="number" value={hours} onChange={e=>setHours(e.target.value)} style={input} placeholder="40" min="1" max="168" />
+              <label style={{lbl}}>Hours per Week</label>
+              <input type="number" value={hours} onChange={e=>setHours(e.target.value)} style={{input}} placeholder="40" min="1" max="168" />
             </div>
             <div>
-              <label style={lbl}>Weeks per Year</label>
-              <input type="number" value={weeks} onChange={e=>setWeeks(e.target.value)} style={input} placeholder="52" min="1" max="52" />
+              <label style={{lbl}}>Weeks per Year</label>
+              <input type="number" value={weeks} onChange={e=>setWeeks(e.target.value)} style={{input}} placeholder="52" min="1" max="52" />
             </div>
           </div>
 
           {/* ROW 2: Filing + State */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
-              <label style={lbl}>Filing Status</label>
+              <label style={{lbl}}>Filing Status</label>
               <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...input, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -161,7 +161,7 @@ export default function HourlyPaycheckCalculator() {
               </select>
             </div>
             <div>
-              <label style={lbl}>State</label>
+              <label style={{lbl}}>State</label>
               <select value={state} onChange={e=>setState(e.target.value)} onFocus={e=>{e.currentTarget.scrollIntoView({behavior:"smooth",block:"center"});}} style={{...input, colorScheme:'dark'}}>
                 {STATES.map(s => <option key={s.code} value={s.code}>{s.name}{s.rate===0 ? ' (no income tax)' : ''}</option>)}
               </select>
@@ -171,12 +171,12 @@ export default function HourlyPaycheckCalculator() {
           {/* ROW 3: 401k + HSA */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'24px' }}>
             <div>
-              <label style={lbl}>401(k) Contribution ($/yr, max $23,500)</label>
-              <input type="number" value={k401} onChange={e=>setK401(e.target.value)} style={input} placeholder="0" min="0" max="23500" />
+              <label style={{lbl}}>401(k) Contribution ($/yr, max $23,500)</label>
+              <input type="number" value={k401} onChange={e=>setK401(e.target.value)} style={{input}} placeholder="0" min="0" max="23500" />
             </div>
             <div>
-              <label style={lbl}>HSA Contribution ($/yr, max $4,300)</label>
-              <input type="number" value={hsa} onChange={e=>setHsa(e.target.value)} style={input} placeholder="0" min="0" max="4300" />
+              <label style={{lbl}}>HSA Contribution ($/yr, max $4,300)</label>
+              <input type="number" value={hsa} onChange={e=>setHsa(e.target.value)} style={{input}} placeholder="0" min="0" max="4300" />
             </div>
           </div>
 

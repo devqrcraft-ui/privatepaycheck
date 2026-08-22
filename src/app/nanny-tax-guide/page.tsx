@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function HubPage() {
   return (
-    <div className="max-w-4xl mx-auto p-8" style={color: '#333', background: '#fff', minHeight: '100vh'}>
-      <div style={background:'#f0fdf4', border:'1px solid #dcfce7', color:'#166534', padding:'4px 12px', borderRadius:'20px', display:'inline-flex', alignItems:'center', gap:'6px', fontSize:'12px', fontWeight:700, marginBottom:'20px'}>
+    <div className="max-w-4xl mx-auto p-8" style={{color: '#333', background: '#fff', minHeight: '100vh'}}>
+      <div style={{background:'#f0fdf4', border:'1px solid #dcfce7', color:'#166534', padding:'4px 12px', borderRadius:'20px', display:'inline-flex', alignItems:'center', gap:'6px', fontSize:'12px', fontWeight:700, marginBottom:'20px'}}>
         <span>✓</span> 2026 Payroll Rules Updated
       </div>
       <h1 className="text-4xl font-bold mb-6 text-slate-900">Nanny Tax Guide 2026</h1>

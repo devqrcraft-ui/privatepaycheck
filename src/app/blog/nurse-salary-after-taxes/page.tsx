@@ -126,7 +126,7 @@ export default function Page() {
                   ['Oregon','8.75%','$54,400','$4,533'],
                   ['California','9.30%','$53,800','$4,483'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                  <tr key={i} style={{i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     {row.map((cell, j) => (
                       <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
@@ -166,7 +166,7 @@ export default function Page() {
                   ['State Tax (TX)','0%','$0','$0'],
                   ['Take-Home (TX)','—','$59,400','$4,950'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                  <tr key={i} style={{i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     {row.map((cell, j) => (
                       <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
@@ -222,7 +222,7 @@ export default function Page() {
                   ['Semi-monthly','$3,125','$2,475','24'],
                   ['Monthly','$6,250','$4,950','12'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                  <tr key={i} style={{i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     {row.map((cell, j) => (
                       <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}
@@ -257,7 +257,7 @@ export default function Page() {
                   ['NP (Nurse Practitioner)','$124,000','$22,824','$9,486','$91,690'],
                   ['CRNA (Nurse Anesthetist)','$214,000','$52,024','$12,924','$149,052'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                  <tr key={i} style={{i === arr.length - 1 ? {background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}} : {borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     {row.map((cell, j) => (
                       <td key={j} style={{padding:'10px 14px', color: i === arr.length - 1 ? '#F5C842' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400}}>{cell}</td>
                     ))}

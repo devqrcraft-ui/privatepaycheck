@@ -99,7 +99,7 @@ export default function Post() {
               </thead>
               <tbody>
                 {EXAMPLES.map((ex, i) => (
-                  <tr key={i} style={i === EXAMPLES.length - 1 ? { background: 'rgba(245,200,66,0.08)', borderTop: '1px solid rgba(245,200,66,0.3)' } : {}}>
+                  <tr key={i} style={{i === EXAMPLES.length - 1 ? { background: 'rgba(245,200,66,0.08)', borderTop: '1px solid rgba(245,200,66,0.3)' }} : {}}>
                     <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#C8D8EC' }}>{`${(ex.from/1000).toFixed(0)}k → ${(ex.to/1000).toFixed(0)}k`}</td>
                     <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#C8D8EC' }}>+${ex.raise.toLocaleString()}</td>
                     <td style={{ padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: i === EXAMPLES.length - 1 ? '#F5C842' : '#f87171' }}>-${ex.addFed.toLocaleString()}</td>
@@ -135,7 +135,7 @@ export default function Post() {
                   ['32%','$197,301-$250,525','$394,601-$501,050','Keep $6,800'],
                   ['37%','Over $626,350','Over $751,600','Keep $6,300'],
                 ].map(([rate,single,mfj,keep],i) => (
-                  <tr key={i} style={i===5?{background:'rgba(245,200,66,0.08)',borderTop:'1px solid rgba(245,200,66,0.3)'}:{}}>
+                  <tr key={i} style={{i===5?{background:'rgba(245,200,66,0.08)',borderTop:'1px solid rgba(245,200,66,0.3)'}}:{}}>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#F5C842', fontWeight:700 }}>{rate}</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid rgba(255,255,255,0.05)', color: i===5?'#F5C842':'#C8D8EC' }}>{single}</td>
                     <td style={{ padding:'10px 14px', borderBottom:'1px solid rgba(255,255,255,0.05)', color: i===5?'#F5C842':'#C8D8EC' }}>{mfj}</td>

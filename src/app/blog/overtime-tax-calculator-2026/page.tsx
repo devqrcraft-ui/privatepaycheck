@@ -42,7 +42,7 @@ export default function Post() {
         </div>
       </div>
       <div style={{ maxWidth:860, margin:'0 auto', padding:'32px 20px' }}>
-        <div style={box}>
+        <div style={{box}}>
           <div style={{ fontSize:13, fontWeight:800, color:accent, textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:8 }}>Quick Answer</div>
           <p style={{ fontSize:16, color:'rgba(255,255,255,0.9)', lineHeight:1.7, margin:0 }}>Under OBBBA 2026, you can deduct up to <strong>$12,500 in overtime pay</strong> (single) or <strong>$25,000</strong> (married filing jointly) from federal taxable income. On $10,000 in OT at the 22% bracket, this saves you $2,200 in federal income tax. FICA taxes still apply.</p>
         </div>
@@ -56,10 +56,10 @@ export default function Post() {
             <li>Deduction applies to <strong>2026 tax returns</strong> only (reported in early 2027)</li>
           </ul>
         </div>
-        <h2 style={h2}>What Is the OBBBA Overtime Deduction?</h2>
-        <p style={prose}>The One Big Beautiful Bill Act (OBBBA), enacted in 2026, introduced a federal deduction for overtime pay received by W-2 employees. If you worked overtime hours paid at 1.5x or 2x your regular rate, that overtime pay is now deductible from your federal taxable income — up to $12,500 for single filers and $25,000 for married filing jointly.</p>
-        <p style={prose}>This means overtime pay is effectively excluded from federal income tax up to the cap. It does not affect FICA taxes (Social Security 6.2%, Medicare 1.45%) which still apply to all wages.</p>
-        <h2 style={h2}>How to Calculate Your Overtime Tax in 2026</h2>
+        <h2 style={{h2}}>What Is the OBBBA Overtime Deduction?</h2>
+        <p style={{prose}}>The One Big Beautiful Bill Act (OBBBA), enacted in 2026, introduced a federal deduction for overtime pay received by W-2 employees. If you worked overtime hours paid at 1.5x or 2x your regular rate, that overtime pay is now deductible from your federal taxable income — up to $12,500 for single filers and $25,000 for married filing jointly.</p>
+        <p style={{prose}}>This means overtime pay is effectively excluded from federal income tax up to the cap. It does not affect FICA taxes (Social Security 6.2%, Medicare 1.45%) which still apply to all wages.</p>
+        <h2 style={{h2}}>How to Calculate Your Overtime Tax in 2026</h2>
         <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:8, padding:'20px 24px', marginBottom:20 }}>
           <div style={{ fontSize:15, fontWeight:700, color:accent, marginBottom:12 }}>Example: Single filer, $55,000 base salary, $8,000 overtime</div>
           <div style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:2 }}>
@@ -72,9 +72,9 @@ export default function Post() {
             <strong>Saved vs no OT deduction: ~$1,760</strong>
           </div>
         </div>
-        <h2 style={h2}>Who Qualifies for the Overtime Deduction?</h2>
-        <p style={prose}>W-2 employees who receive overtime pay (hours worked beyond 40 per week at 1.5x or 2x rate) qualify. The deduction applies to overtime received in 2026 and reported on your 2026 tax return. Self-employed workers and independent contractors do not qualify — this deduction is for W-2 overtime only.</p>
-        <h2 style={h2}>Single vs Married: Deduction Caps</h2>
+        <h2 style={{h2}}>Who Qualifies for the Overtime Deduction?</h2>
+        <p style={{prose}}>W-2 employees who receive overtime pay (hours worked beyond 40 per week at 1.5x or 2x rate) qualify. The deduction applies to overtime received in 2026 and reported on your 2026 tax return. Self-employed workers and independent contractors do not qualify — this deduction is for W-2 overtime only.</p>
+        <h2 style={{h2}}>Single vs Married: Deduction Caps</h2>
         <div style={{ overflowX:'auto' as const, marginBottom:20 }}>
           <table style={{ width:'100%', borderCollapse:'collapse' as const, fontSize:14 }}>
             <thead>
@@ -99,7 +99,7 @@ export default function Post() {
             </tbody>
           </table>
         </div>
-        <h2 style={h2}>FAQ</h2>
+        <h2 style={{h2}}>FAQ</h2>
               <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
         {'The Internal Revenue Service requires self-employed individuals and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
         <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.65)',fontStyle:'normal'}}>

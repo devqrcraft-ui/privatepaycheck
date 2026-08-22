@@ -45,7 +45,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
   const pct = (n: number) => bonus > 0 ? (n / bonus * 100).toFixed(1) + '%' : '0%';
 
   return (
-    <div style={BG}>
+    <div style={{BG}}>
 
       <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
 
@@ -86,22 +86,22 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px', marginBottom: '48px' }}>
 
           {/* Left: Inputs */}
-          <div style={CARD}>
+          <div style={{CARD}}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>BONUS TAX CALCULATOR</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 IRS RULES · INSTANT RESULTS</div>
 
             <div style={{ marginBottom: '18px' }}>
-              <label style={LABEL}>Bonus Amount ($)</label>
+              <label style={{LABEL}}>Bonus Amount ($)</label>
               <input type="number" value={bonus} onChange={e => setBonus(Number(e.target.value))}
-                style={INPUT_S} min={0} placeholder="e.g. 10000" />
+                style={{INPUT_S}} min={0} placeholder="e.g. 10000" />
             </div>
             <div style={{ marginBottom: '18px' }}>
-              <label style={LABEL}>Annual Salary ($)</label>
+              <label style={{LABEL}}>Annual Salary ($)</label>
               <input type="number" value={salary} onChange={e => setSalary(Number(e.target.value))}
-                style={INPUT_S} min={0} placeholder="e.g. 75000" />
+                style={{INPUT_S}} min={0} placeholder="e.g. 75000" />
             </div>
             <div style={{ marginBottom: '18px' }}>
-              <label style={LABEL}>Filing Status</label>
+              <label style={{LABEL}}>Filing Status</label>
               <select value={filing} onChange={e => setFiling(e.target.value)}
                 style={{...INPUT_S, cursor:'pointer', colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 <option value="single">Single</option>
@@ -110,7 +110,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
               </select>
             </div>
             <div style={{ marginBottom: '18px' }}>
-              <label style={LABEL}>State</label>
+              <label style={{LABEL}}>State</label>
               <div style={{ ...INPUT_S, background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontWeight: 700 }}>
                 {stateName}{noStateTax ? ' — No State Tax' : ' — ' + stateTax + '% State Tax'}
               </div>
@@ -129,39 +129,39 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
           </div>
 
           {/* Right: Breakdown */}
-          <div style={CARD}>
+          <div style={{CARD}}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>TAX BREAKDOWN</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>{stateName.toUpperCase()} · 2026 IRS</div>
 
-            <div style={ROW}>
+            <div style={{ROW}}>
               <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>Gross Bonus</span>
               <span style={{ fontWeight: 700, fontSize: '15px' }}>{fmt(bonus)}</span>
             </div>
-            <div style={ROW}>
+            <div style={{ROW}}>
               <div>
                 <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>Federal Income Tax</div>
                 <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>Aggregate method</div>
               </div>
               <span style={{ color: '#f87171', fontWeight: 600 }}>−{fmt(fedTax)} <span style={{ fontSize: '12px', opacity: 0.7 }}>({pct(fedTax)})</span></span>
             </div>
-            <div style={ROW}>
+            <div style={{ROW}}>
               <div>
                 <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>{stateName} State Tax</div>
                 <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>{noStateTax ? 'No state income tax' : stateTax + '% flat rate'}</div>
               </div>
-              <span style={noStateTax ? { color: '#4ade80', fontWeight: 600 } : { color: '#f87171', fontWeight: 600 }}>
+              <span style={{noStateTax ? { color: '#4ade80', fontWeight: 600 }} : { color: '#f87171', fontWeight: 600 }}>
                 {noStateTax ? '$0' : '−' + fmt(stTax) + ' '}
                 {!noStateTax && <span style={{ fontSize: '12px', opacity: 0.7 }}>({pct(stTax)})</span>}
               </span>
             </div>
-            <div style={ROW}>
+            <div style={{ROW}}>
               <div>
                 <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>Social Security</div>
                 <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>6.2% up to $168,600</div>
               </div>
               <span style={{ color: '#f87171', fontWeight: 600 }}>−{fmt(Math.min(bonus, Math.max(0, 168600 - salary)) * 0.062)} <span style={{ fontSize: '12px', opacity: 0.7 }}></span></span>
             </div>
-            <div style={ROW}>
+            <div style={{ROW}}>
               <div>
                 <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>Medicare</div>
                 <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>1.45% all wages</div>
