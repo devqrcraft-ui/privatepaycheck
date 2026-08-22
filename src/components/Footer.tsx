@@ -31,7 +31,11 @@ export default function Footer() {
             <Link href="/tip-calculator" className="foot-link">Tip Calculator</Link>
           </div>
           <div>
-            <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Info</div>
+            <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Sister Tools ➔</div>
+            <a href="https://www.gigwisetax.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>GigWiseTax ➔</a>
+            <a href="https://www.compressto20kb.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>Image Compressor ➔</a>
+            <a href="https://www.1099deductions.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>1099 Deductions ➔</a>
+          </div>
             <Link href="/blog" className="foot-link">Blog</Link>
             <Link href="/all-states" className="foot-link">All States</Link>
             <Link href="/minimum-wage" className="foot-link">Minimum Wage</Link>
