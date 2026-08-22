@@ -99,7 +99,295 @@ export default function Post() {
               <div key={h.year} style={{ display:'flex', alignItems:'center', gap:'12px', padding:'8px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
                 <span style={{ width:'48px', opacity:0.6, fontSize:'13px' }}>{h.year}</span>
                 <div style={{ flex:1, background:'rgba(255,255,255,0.06)', borderRadius:'4px', overflow:'hidden', height:'24px', position:'relative' }}>
-                  <div style={{ background: h.current ? '#4ade80' : '#818cf8', height:'100%', width:`${(parseFloat(h.rate.replace('$','')) / 16.50) * 100}}%`, transition:'width 0.3s` }} />
+                  <div style={{ background: h.current ? '#4ade80' : '#818cf8', height:'100%', width:`${(parseFloat(h.rate.replace('$','')) / 20.00) * 100}%` }} />
+                </div>
+                <span style={{ width:'56px', fontWeight:700, color: h.current ? '#4ade80' : 'white', fontSize:'14px' }}>{h.rate}</span>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Special Industry Rates</h2>
+          <div style={{ display:'flex', flexDirection:'column', gap:'10px', margin:'16px 0' }}>
+            {[
+              { industry:'Fast Food Workers', rate:'$20.00/hr', note:'AB 1228 — applies to fast food chains with 60+ locations nationally (effective April 2024)' },
+              { industry:'Healthcare Workers', rate:'$23–$25/hr', note:'Phased minimum for healthcare workers at covered facilities (SB 525)' },
+              { industry:'All Other Workers', rate:'$16.50/hr', note:'Standard California minimum wage' },
+            ].map(s => (
+              <div key={s.industry} style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px 16px' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'4px' }}>
+                  <strong style={{ fontSize:'14px' }}>{s.industry}</strong>
+                  <strong style={{ color:'#4ade80', fontSize:'15px' }}>{s.rate}</strong>
+                </div>
+                <p style={{ fontSize:'12px', opacity:0.55, margin:0 }}>{s.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Local Minimum Wages Higher Than State</h2>
+          <p>Many California cities have minimum wages above the state rate:</p>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px', margin:'16px 0' }}>
+            {[
+              { city:'San Francisco', rate:'$18.67' },
+              { city:'West Hollywood', rate:'$19.08' },
+              { city:'Los Angeles', rate:'$17.28' },
+              { city:'Santa Monica', rate:'$17.27' },
+              { city:'Pasadena', rate:'$17.50' },
+              { city:'San Jose', rate:'$17.55' },
+            ].map(c => (
+              <div key={c.city} style={{ background:'rgba(16,185,129,0.06)', border:'1px solid rgba(16,185,129,0.15)', borderRadius:'8px', padding:'12px' }}>
+                <div style={{ fontSize:'12px', opacity:0.6 }}>{c.city}</div>
+                <div style={{ fontWeight:800, color:'#4ade80', fontSize:'18px' }}>{c.rate}/hr</div>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>No Tipped Minimum Wage in California</h2>
+          <p>California is one of the few states that does not allow a tipped credit. All workers — including servers, bartenders, and delivery drivers — must receive the full $16.50/hour minimum wage. Tips are on top of this amount, not a substitute for wages.</p>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>What Does $16.50/Hour Mean for Your Paycheck?</h2>
+          <p>At minimum wage in California, a full-time worker earns $34,320/year gross. But California has state income tax starting at 1% — use the calculator to see your exact net pay after all deductions.</p>
+        </div>
+
+        <div style={{ margin:'40px 0', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
+          <div style={{ fontSize:'24px', marginBottom:'8px' }}></div>
+          <div style={{ fontWeight:800, fontSize:'18px', marginBottom:'8px' }}>Calculate California Take-Home Pay</div>
+          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>See exactly what you take home at any California wage after state + federal taxes.</p>
+          <div style={{ display:'flex', gap:'10px', justifyContent:'center', flexWrap:'wrap' }}>
+            <Link href="/california-paycheck-calculator" style={{ display:'inline-block', background:'#4ade80', color:'#0f0c29', fontWeight:800, padding:'12px 24px', borderRadius:'10px', textDecoration:'none', fontSize:'14px' }}>
+              CA Paycheck Calculator →
+            </Link>
+            <Link href="/minimum-wage/california" style={{ display:'inline-block', background:'rgba(255,255,255,0.1)', color:'white', fontWeight:700, padding:'12px 24px', borderRadius:'10px', textDecoration:'none', fontSize:'14px' }}>
+              CA Minimum Wage Page →
+            </Link>
+          </div>
+        </div>
+
+        <div style={{ marginTop:'32px' }}>
+          <h3 style={{ fontSize:'16px', fontWeight:800, marginBottom:'14px', opacity:0.7 }}>More California Calculators</h3>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px' }}>
+            <Link href="/overtime-calculator/california" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>CA Overtime Calculator</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Double-time rules →</div>
+            </Link>
+            <Link href="/unemployment-calculator/california" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>CA Unemployment</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $450/week →</div>
+            </Link>
+            <Link href="/blog/overtime-pay-rules-by-state" style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>Overtime Rules by State</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>CA has strictest rules →</div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+        © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
+      </footer>
+      <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+        {'The Internal Revenue Service requires self-employed individuals and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+        <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.65)',fontStyle:'normal'}}>
+          {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>IRS.gov — Self-Employed Tax Center</a>
+        </cite>
+      </blockquote>
+    </main>
+      <AuthorBox />
+    </>
+  );
+}
+,'')) / 16.50) * 100}%`, transition:'width 0.3s' }} />
+                </div>
+                <span style={{ width:'56px', fontWeight:700, color: h.current ? '#4ade80' : 'white', fontSize:'14px' }}>{h.rate}</span>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Special Industry Rates</h2>
+          <div style={{ display:'flex', flexDirection:'column', gap:'10px', margin:'16px 0' }}>
+            {[
+              { industry:'Fast Food Workers', rate:'$20.00/hr', note:'AB 1228 — applies to fast food chains with 60+ locations nationally (effective April 2024)' },
+              { industry:'Healthcare Workers', rate:'$23–$25/hr', note:'Phased minimum for healthcare workers at covered facilities (SB 525)' },
+              { industry:'All Other Workers', rate:'$16.50/hr', note:'Standard California minimum wage' },
+            ].map(s => (
+              <div key={s.industry} style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px 16px' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'4px' }}>
+                  <strong style={{ fontSize:'14px' }}>{s.industry}</strong>
+                  <strong style={{ color:'#4ade80', fontSize:'15px' }}>{s.rate}</strong>
+                </div>
+                <p style={{ fontSize:'12px', opacity:0.55, margin:0 }}>{s.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Local Minimum Wages Higher Than State</h2>
+          <p>Many California cities have minimum wages above the state rate:</p>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px', margin:'16px 0' }}>
+            {[
+              { city:'San Francisco', rate:'$18.67' },
+              { city:'West Hollywood', rate:'$19.08' },
+              { city:'Los Angeles', rate:'$17.28' },
+              { city:'Santa Monica', rate:'$17.27' },
+              { city:'Pasadena', rate:'$17.50' },
+              { city:'San Jose', rate:'$17.55' },
+            ].map(c => (
+              <div key={c.city} style={{ background:'rgba(16,185,129,0.06)', border:'1px solid rgba(16,185,129,0.15)', borderRadius:'8px', padding:'12px' }}>
+                <div style={{ fontSize:'12px', opacity:0.6 }}>{c.city}</div>
+                <div style={{ fontWeight:800, color:'#4ade80', fontSize:'18px' }}>{c.rate}/hr</div>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>No Tipped Minimum Wage in California</h2>
+          <p>California is one of the few states that does not allow a tipped credit. All workers — including servers, bartenders, and delivery drivers — must receive the full $16.50/hour minimum wage. Tips are on top of this amount, not a substitute for wages.</p>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>What Does $16.50/Hour Mean for Your Paycheck?</h2>
+          <p>At minimum wage in California, a full-time worker earns $34,320/year gross. But California has state income tax starting at 1% — use the calculator to see your exact net pay after all deductions.</p>
+        </div>
+
+        <div style={{ margin:'40px 0', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
+          <div style={{ fontSize:'24px', marginBottom:'8px' }}></div>
+          <div style={{ fontWeight:800, fontSize:'18px', marginBottom:'8px' }}>Calculate California Take-Home Pay</div>
+          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>See exactly what you take home at any California wage after state + federal taxes.</p>
+          <div style={{ display:'flex', gap:'10px', justifyContent:'center', flexWrap:'wrap' }}>
+            <Link href="/california-paycheck-calculator" style={{ display:'inline-block', background:'#4ade80', color:'#0f0c29', fontWeight:800, padding:'12px 24px', borderRadius:'10px', textDecoration:'none', fontSize:'14px' }}>
+              CA Paycheck Calculator →
+            </Link>
+            <Link href="/minimum-wage/california" style={{ display:'inline-block', background:'rgba(255,255,255,0.1)', color:'white', fontWeight:700, padding:'12px 24px', borderRadius:'10px', textDecoration:'none', fontSize:'14px' }}>
+              CA Minimum Wage Page →
+            </Link>
+          </div>
+        </div>
+
+        <div style={{ marginTop:'32px' }}>
+          <h3 style={{ fontSize:'16px', fontWeight:800, marginBottom:'14px', opacity:0.7 }}>More California Calculators</h3>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px' }}>
+            <Link href="/overtime-calculator/california" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>CA Overtime Calculator</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Double-time rules →</div>
+            </Link>
+            <Link href="/unemployment-calculator/california" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>CA Unemployment</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $450/week →</div>
+            </Link>
+            <Link href="/blog/overtime-pay-rules-by-state" style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>Overtime Rules by State</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>CA has strictest rules →</div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+        © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
+      </footer>
+      <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+        {'The Internal Revenue Service requires self-employed individuals and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+        <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.65)',fontStyle:'normal'}}>
+          {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>IRS.gov — Self-Employed Tax Center</a>
+        </cite>
+      </blockquote>
+    </main>
+      <AuthorBox />
+    </>
+  );
+}
+,'')) / 20.00) * 100}%` }} />
+                </div>
+                <span style={{ width:'56px', fontWeight:700, color: h.current ? '#4ade80' : 'white', fontSize:'14px' }}>{h.rate}</span>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Special Industry Rates</h2>
+          <div style={{ display:'flex', flexDirection:'column', gap:'10px', margin:'16px 0' }}>
+            {[
+              { industry:'Fast Food Workers', rate:'$20.00/hr', note:'AB 1228 — applies to fast food chains with 60+ locations nationally (effective April 2024)' },
+              { industry:'Healthcare Workers', rate:'$23–$25/hr', note:'Phased minimum for healthcare workers at covered facilities (SB 525)' },
+              { industry:'All Other Workers', rate:'$16.50/hr', note:'Standard California minimum wage' },
+            ].map(s => (
+              <div key={s.industry} style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px 16px' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'4px' }}>
+                  <strong style={{ fontSize:'14px' }}>{s.industry}</strong>
+                  <strong style={{ color:'#4ade80', fontSize:'15px' }}>{s.rate}</strong>
+                </div>
+                <p style={{ fontSize:'12px', opacity:0.55, margin:0 }}>{s.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Local Minimum Wages Higher Than State</h2>
+          <p>Many California cities have minimum wages above the state rate:</p>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px', margin:'16px 0' }}>
+            {[
+              { city:'San Francisco', rate:'$18.67' },
+              { city:'West Hollywood', rate:'$19.08' },
+              { city:'Los Angeles', rate:'$17.28' },
+              { city:'Santa Monica', rate:'$17.27' },
+              { city:'Pasadena', rate:'$17.50' },
+              { city:'San Jose', rate:'$17.55' },
+            ].map(c => (
+              <div key={c.city} style={{ background:'rgba(16,185,129,0.06)', border:'1px solid rgba(16,185,129,0.15)', borderRadius:'8px', padding:'12px' }}>
+                <div style={{ fontSize:'12px', opacity:0.6 }}>{c.city}</div>
+                <div style={{ fontWeight:800, color:'#4ade80', fontSize:'18px' }}>{c.rate}/hr</div>
+              </div>
+            ))}
+          </div>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>No Tipped Minimum Wage in California</h2>
+          <p>California is one of the few states that does not allow a tipped credit. All workers — including servers, bartenders, and delivery drivers — must receive the full $16.50/hour minimum wage. Tips are on top of this amount, not a substitute for wages.</p>
+
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>What Does $16.50/Hour Mean for Your Paycheck?</h2>
+          <p>At minimum wage in California, a full-time worker earns $34,320/year gross. But California has state income tax starting at 1% — use the calculator to see your exact net pay after all deductions.</p>
+        </div>
+
+        <div style={{ margin:'40px 0', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
+          <div style={{ fontSize:'24px', marginBottom:'8px' }}></div>
+          <div style={{ fontWeight:800, fontSize:'18px', marginBottom:'8px' }}>Calculate California Take-Home Pay</div>
+          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>See exactly what you take home at any California wage after state + federal taxes.</p>
+          <div style={{ display:'flex', gap:'10px', justifyContent:'center', flexWrap:'wrap' }}>
+            <Link href="/california-paycheck-calculator" style={{ display:'inline-block', background:'#4ade80', color:'#0f0c29', fontWeight:800, padding:'12px 24px', borderRadius:'10px', textDecoration:'none', fontSize:'14px' }}>
+              CA Paycheck Calculator →
+            </Link>
+            <Link href="/minimum-wage/california" style={{ display:'inline-block', background:'rgba(255,255,255,0.1)', color:'white', fontWeight:700, padding:'12px 24px', borderRadius:'10px', textDecoration:'none', fontSize:'14px' }}>
+              CA Minimum Wage Page →
+            </Link>
+          </div>
+        </div>
+
+        <div style={{ marginTop:'32px' }}>
+          <h3 style={{ fontSize:'16px', fontWeight:800, marginBottom:'14px', opacity:0.7 }}>More California Calculators</h3>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'10px' }}>
+            <Link href="/overtime-calculator/california" style={{ display:'block', background:'rgba(251,191,36,0.08)', border:'1px solid rgba(251,191,36,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>CA Overtime Calculator</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Double-time rules →</div>
+            </Link>
+            <Link href="/unemployment-calculator/california" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>CA Unemployment</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $450/week →</div>
+            </Link>
+            <Link href="/blog/overtime-pay-rules-by-state" style={{ display:'block', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
+              <div style={{ fontWeight:700, fontSize:'13px' }}>Overtime Rules by State</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>CA has strictest rules →</div>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <footer style={{ textAlign:'center', padding:'24px', fontSize:'12px', opacity: 0.8, borderTop:'1px solid rgba(255,255,255,0.06)', marginTop:'40px' }}>
+        © 2026 PrivatePaycheck.com · <Link href="/privacy-policy" style={{ color:'inherit' }}>Privacy Policy</Link> · <Link href="/terms" style={{ color:'inherit' }}>Terms</Link>
+      </footer>
+      <blockquote style={{borderLeft:'3px solid rgba(245,200,66,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+        {'The Internal Revenue Service requires self-employed individuals and freelancers to pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+        <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.65)',fontStyle:'normal'}}>
+          {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#F5C842'}}>IRS.gov — Self-Employed Tax Center</a>
+        </cite>
+      </blockquote>
+    </main>
+      <AuthorBox />
+    </>
+  );
+}
+,'')) / 16.50) * 100}%`, transition:'width 0.3s' }} />
                 </div>
                 <span style={{ width:'56px', fontWeight:700, color: h.current ? '#4ade80' : 'white', fontSize:'14px' }}>{h.rate}</span>
               </div>

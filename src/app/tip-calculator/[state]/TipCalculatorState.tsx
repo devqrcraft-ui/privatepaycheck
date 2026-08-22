@@ -133,7 +133,7 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
             <div style={ROW}><span style={{ opacity: 0.7 }}>Federal Tax Saved</span><span style={{ color: '#4ade80', fontWeight: 600 }}>+{fmt(federalSavings)}</span></div>
             <div style={ROW}>
               <span style={{ opacity: 0.7 }}>{stateName} State Tax Saved</span>
-              <span style={noStateTax ? { color: '#4ade80', fontWeight: 600 } : { color: '#4ade80', fontWeight: 600 }>
+              <span style={noStateTax ? { color: '#4ade80', fontWeight: 600 } : { color: '#4ade80', fontWeight: 600 }}>
                 {noStateTax ? '$0 (no state tax)' : '+' + fmt(stateSavings)}
               </span>
             </div>

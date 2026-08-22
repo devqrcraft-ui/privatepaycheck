@@ -93,7 +93,7 @@ export default function RaiseCalculatorClient() {
               <div style={{LABEL}}>Current Annual Salary</div>
               <div style={{ position:'relative' }}>
                 <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#4ade80', fontWeight:700 }}>$</span>
-                <input type="number" value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value))} min={1} style={{ ...INPUT_S, paddingLeft:'28px` }} />
+                <input type="number" value={salary} onChange={e=>setSalary(Math.max(1,+e.target.value))} min={1} style={{ ...INPUT_S, paddingLeft:'28px' }} />
               </div>
             </div>
 
@@ -117,7 +117,7 @@ export default function RaiseCalculatorClient() {
                 <span style={{ position:'absolute', left:'14px', top:'50%', transform:'translateY(-50%)', color:'#F5C842', fontWeight:700 }}>
                   {raiseType==='pct' ? '%' : '$'}
                 </span>
-                <input type="number" value={raise} onChange={e=>setRaise(Math.max(0,+e.target.value))} min={0} step={raiseType==='pct'?0.5:500} style={{ ...INPUT_S, paddingLeft:'28px` }} />
+                <input type="number" value={raise} onChange={e=>setRaise(Math.max(0,+e.target.value))} min={0} step={raiseType==='pct'?0.5:500} style={{ ...INPUT_S, paddingLeft:'28px' }} />
               </div>
             </div>
 
