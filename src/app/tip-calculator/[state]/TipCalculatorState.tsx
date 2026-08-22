@@ -127,13 +127,13 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
           <div style={{CARD}>
             <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#f472b6', marginBottom: '4px' }>YOUR SAVINGS</div>
             <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }>{stateName.toUpperCase()} · 2026</div>
-            <div style={{ROW}><span style={{ opacity: 0.7 }>Tips Earned</span><span style={{ fontWeight: 700 }>{fmt(tips)}</span></div>
-            <div style={{ROW}><span style={{ opacity: 0.7 }>Tax-Free Deduction</span><span style={{ color: '#4ade80', fontWeight: 600 }>{fmt(tipDeduction)}</span></div>
-            <div style={{ROW}><span style={{ opacity: 0.7 }>Taxable Tips Remaining</span><span style={{ color: taxableTips > 0 ? '#f87171' : '#4ade80' }>{fmt(taxableTips)}</span></div>
-            <div style={{ROW}><span style={{ opacity: 0.7 }>Federal Tax Saved</span><span style={{ color: '#4ade80', fontWeight: 600 }>+{fmt(federalSavings)}</span></div>
-            <div style={{ROW}>
+            <div style={ROW}><span style={{ opacity: 0.7 }>Tips Earned</span><span style={{ fontWeight: 700 }>{fmt(tips)}</span></div>
+            <div style={ROW}><span style={{ opacity: 0.7 }>Tax-Free Deduction</span><span style={{ color: '#4ade80', fontWeight: 600 }>{fmt(tipDeduction)}</span></div>
+            <div style={ROW}><span style={{ opacity: 0.7 }>Taxable Tips Remaining</span><span style={{ color: taxableTips > 0 ? '#f87171' : '#4ade80' }>{fmt(taxableTips)}</span></div>
+            <div style={ROW}><span style={{ opacity: 0.7 }>Federal Tax Saved</span><span style={{ color: '#4ade80', fontWeight: 600 }>+{fmt(federalSavings)}</span></div>
+            <div style={ROW}>
               <span style={{ opacity: 0.7 }>{stateName} State Tax Saved</span>
-              <span style={noStateTax ? { color: '#4ade80', fontWeight: 600 }} : { color: '#4ade80', fontWeight: 600 }>
+              <span style={noStateTax ? { color: '#4ade80', fontWeight: 600 } : { color: '#4ade80', fontWeight: 600 }>
                 {noStateTax ? '$0 (no state tax)' : '+' + fmt(stateSavings)}
               </span>
             </div>
