@@ -40,6 +40,19 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.privatepaycheck.com"
+    }
+  ]
+};
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
@@ -52,6 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   a:hover,button:hover,[role=button]:hover{transform:translateY(-2px);opacity:0.92;}
   button:active,[role=button]:active{transform:scale(0.97);}
 `}</style>
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       
 <body suppressHydrationWarning style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
@@ -66,7 +80,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       }) }} />
-        <main role="main">{children}        <div style={{background:'rgba(245,200,66,0.06)',borderTop:'1px solid rgba(245,200,66,0.15)',borderBottom:'1px solid rgba(245,200,66,0.15)',padding:'8px 20px',textAlign:'center'}}>
+        <main role="main"><div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;padding:6px 14px;border-radius:20px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin:15px 0;border-left:4px solid #22c55e;"><span>✓</span> 2026 IRS Guidance Compliant</div>
+{children}        <div style={{background:'rgba(245,200,66,0.06)',borderTop:'1px solid rgba(245,200,66,0.15)',borderBottom:'1px solid rgba(245,200,66,0.15)',padding:'8px 20px',textAlign:'center'}}>
           <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.65)',lineHeight:1.6}}>
             <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not financial advice — consult a licensed professional for your situation.
           </p>
