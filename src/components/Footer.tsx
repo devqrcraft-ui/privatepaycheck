@@ -1,55 +1,24 @@
-import Link from "next/link";
+'use client';
+import Link from 'next/link';
+
 export default function Footer() {
   return (
-    <footer style={{background:"#060E28",borderTop:"3px solid #C9A84C",padding:"52px 24px 28px",fontFamily:"'Source Serif 4',serif"}}>
-      <style>{`
-        .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:36px; }
-        .foot-link { font-size:13px; color:#A8C4E0; text-decoration:none; display:block; margin-bottom:9px; transition:color .2s; }
-        .foot-link:hover { color:#F5DC80; }
-        .sister-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:36px; }
-        .sister-card { display:flex; align-items:center; gap:10px; background:rgba(245,200,66,0.05); border:1px solid rgba(201,168,76,0.2); border-radius:10px; padding:12px 14px; text-decoration:none; transition:border-color .2s,background .2s; }
-        .sister-card:hover { background:rgba(245,200,66,0.1); border-color:rgba(201,168,76,0.45); }
-        @media(max-width:640px) {
-          .foot-grid { grid-template-columns:1fr 1fr; gap:28px; }
-          .foot-brand-col { grid-column:1/-1; }
-          .sister-grid { grid-template-columns:1fr; }
-        }
-      `}</style>
-      <div style={{maxWidth:1160,margin:"0 auto"}}>
-        <div className="foot-grid">
-          <div className="foot-brand-col">
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,color:"#FFD700",fontWeight:700,marginBottom:10}}>PrivatePaycheck.com</div>
-            <p style={{fontSize:13,color:"#A8C4E0",lineHeight:1.7,maxWidth:360}}>Free, private paycheck calculator for US workers. All calculations happen in your browser. Calculations stay in your browser. No accounts required. Updated for 2026.</p>
-          </div>
-          <div>
-            <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Calculators</div>
-            <Link href="/" className="foot-link">Salary Calculator</Link>
-            <Link href="/hourly-paycheck-calculator" className="foot-link">Hourly Calculator</Link>
-            <Link href="/bonus-calculator" className="foot-link">Bonus Calculator</Link>
-            <Link href="/overtime-calculator" className="foot-link">Overtime Calculator</Link>
-            <Link href="/w4-withholding-calculator" className="foot-link">W-4 Calculator</Link>
-            <Link href="/tip-calculator" className="foot-link">Tip Calculator</Link>
-          </div>
-          <div>
-            <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Sister Tools ➔</div>
-            <a href="https://www.gigwisetax.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>GigWiseTax ➔</a>
-            <a href="https://www.compressto20kb.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>Image Compressor ➔</a>
-            <a href="https://www.1099deductions.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>1099 Deductions ➔</a>
-          </div>
-            <Link href="/blog" className="foot-link">Blog</Link>
-            <Link href="/all-states" className="foot-link">All States</Link>
-            <Link href="/minimum-wage" className="foot-link">Minimum Wage</Link>
-            <Link href="/privacy-policy" className="foot-link">Privacy Policy</Link>
-            <Link href="/terms" className="foot-link">Terms of Use</Link>
-          </div>
+    <footer style={{ background: '#0a0f1e', padding: '60px 20px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
+        <div>
+          <h4 style={{ color: '#fff', marginBottom: '20px' }}>PrivatePaycheck</h4>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>Secure payroll calculations for household employers.</p>
         </div>
-
-        {/* ── Sister Sites ── */}
-
-        <div style={{borderTop:"1px solid rgba(201,168,76,.18)",paddingTop:18,display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:8,fontSize:12,color:"#8AAAC8"}}>
-          <span>© 2026 PrivatePaycheck.com · Not affiliated with the IRS or any government agency</span>
-          <span>Free · Private · Browser-Only</span>
+        <div>
+          <h4 style={{ color: '#fff', marginBottom: '20px' }}>Tools</h4>
+          <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px' }}>
+            <li><a href="/nanny" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Nanny Tax Calculator</a></li>
+            <li><a href="/housekeeper" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Housekeeper Tax</a></li>
+          </ul>
         </div>
+      </div>
+      <div style={{ maxWidth: '1200px', margin: '40px auto 0', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>
+        © {new Date().getFullYear()} PrivatePaycheck.com — 100% Private & Secure
       </div>
     </footer>
   );
