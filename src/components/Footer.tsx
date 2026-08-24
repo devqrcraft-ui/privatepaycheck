@@ -36,6 +36,7 @@ export default function Footer() {
             <a href="https://www.compressto20kb.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>Image Compressor ➔</a>
             <a href="https://www.1099deductions.com" className="foot-link" style={{color:'#F5DC80',fontWeight:700}}>1099 Deductions ➔</a>
           </div>
+            <div>
             <Link href="/blog" className="foot-link">Blog</Link>
             <Link href="/all-states" className="foot-link">All States</Link>
             <Link href="/minimum-wage" className="foot-link">Minimum Wage</Link>
