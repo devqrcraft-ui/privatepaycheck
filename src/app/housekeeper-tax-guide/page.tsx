@@ -3,7 +3,7 @@ import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Housekeeper Payroll Guide 2026 2026 — PrivatePaycheck',
+  title: 'Housekeeper Payroll Guide 2026 — PrivatePaycheck',
   description: 'How to pay your housekeeper correctly and save on taxes.',
   alternates: { canonical: 'https://www.privatepaycheck.com/housekeeper-tax-guide' }
 };
@@ -17,13 +17,13 @@ export default function HubPage() {
       <h1 className="text-4xl font-bold mb-6 text-slate-900">Housekeeper Payroll Guide 2026</h1>
       <p className="text-xl mb-8 text-slate-600">How to pay your housekeeper correctly and save on taxes.</p>
       <div className="prose prose-slate max-w-none text-lg">
-        <p>Housekeepers follow the same household employment rules as nannies. Proper tax filing saves you from IRS penalties.</p>
+        <p>Housekeepers follow the same household employment rules as nannies. You must pay FICA taxes once you pay $3,000 or more per year to that employee (the 2026 threshold, up from $2,800 in 2025), and FUTA taxes if you pay $1,000 or more in any calendar quarter. Proper tax filing saves you from IRS penalties.</p>
       </div>
       <div className="mt-12 p-8 rounded-2xl border border-blue-100 bg-blue-50 shadow-sm">
         <h3 className="text-2xl font-bold mb-3 text-slate-900">Calculate Your Housekeeper Paycheck</h3>
-        <p className="mb-6 text-slate-600">Get an exact breakdown of federal, state, and FICA taxes.</p>
-        <a href="/" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-md">
-          Calculate Paycheck Now ➔
+        <p className="mb-6 text-slate-600">Get an exact breakdown of FICA, FUTA, and total employer cost.</p>
+        <a href="/housekeeper" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-md">
+          Calculate Housekeeper Taxes Now ➔
         </a>
       </div>
     </div>
