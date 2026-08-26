@@ -31,9 +31,8 @@ export default function NoTaxOvertimeClient() {
     const fedOld = fedTax(taxableOld, filing);
     const fedNew = fedTax(taxableNew, filing);
     const savings = fedOld - fedNew;
-    const ficaSavings = Math.min(annualOT, Math.max(0, 184500 - annualRegular)) * 0.0765;
 
-    return { annualOT, annualRegular, annualTotal, fedOld, fedNew, savings, ficaSavings, totalSavings: savings + ficaSavings, otRate };
+    return { annualOT, annualRegular, annualTotal, fedOld, fedNew, savings, totalSavings: savings, otRate };
   }, [regular, otHours, weeks, filing]);
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
@@ -75,7 +74,6 @@ export default function NoTaxOvertimeClient() {
                 { l: 'OT Rate', v: '$' + r.otRate.toFixed(2) + '/hr' },
                 { l: 'Annual OT Pay', v: fmt(r.annualOT) },
                 { l: 'Fed Tax Saved', v: fmt(r.savings), c: '#fbbf24' },
-                { l: 'FICA Saved', v: fmt(r.ficaSavings), c: '#fbbf24' },
               ].map(b => (
                 <div key={b.l} style={{ background: 'rgba(0,0,0,0.25)', borderRadius: '8px', padding: '10px', textAlign: 'center' }}>
                   <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '3px' }}>{b.l}</div>
