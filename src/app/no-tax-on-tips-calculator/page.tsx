@@ -25,8 +25,8 @@ export default function NoTaxOnTipsCalculator() {
 
     function fedTax(income: number, f: string) {
       const b: [number, number][] = f === 'married'
-        ? [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]]
-        : [[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]];
+        ? [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]]
+        : [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]];
       let tax = 0, prev = 0;
       for (const [lim, rate] of b) { if (income <= prev) break; tax += (Math.min(income, lim) - prev) * rate; prev = lim; }
       return tax;
@@ -35,9 +35,8 @@ export default function NoTaxOnTipsCalculator() {
     const fedOld = fedTax(taxableOld, filing);
     const fedNew = fedTax(taxableNew, filing);
     const savings = fedOld - fedNew;
-    const ficaSavings = exemptTips * 0.0765;
 
-    return { annualTips, annualWages, annualTotal, exemptTips, taxableTips, fedOld, fedNew, savings, ficaSavings, totalSavings: savings + ficaSavings, cap };
+    return { annualTips, annualWages, annualTotal, exemptTips, taxableTips, fedOld, fedNew, savings, totalSavings: savings, cap };
   }, [tips, wages, filing, weeks]);
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
@@ -83,14 +82,13 @@ export default function NoTaxOnTipsCalculator() {
             <div style={{ textAlign: 'center', marginBottom: '20px' }}>
               <div style={{ fontSize: '12px', opacity: 0.6, marginBottom: '4px' }}>Your Annual Tax Savings</div>
               <div style={{ fontSize: 'clamp(32px,5vw,52px)', fontWeight: 900, color: '#4ade80', lineHeight: 1 }}>{fmt(r.totalSavings)}</div>
-              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>Federal income tax + FICA savings</div>
+                <div style={{ fontSize: "13px", opacity: 0.8, marginTop: "6px" }}>Federal income tax savings only (FICA still applies to all tips)</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '10px', marginBottom: '16px' }}>
               {[
                 { l: 'Annual Tips', v: fmt(r.annualTips) },
                 { l: 'Tips Exempt', v: fmt(r.exemptTips), c: '#4ade80' },
                 { l: 'Fed Tax Saved', v: fmt(r.savings), c: '#4ade80' },
-                { l: 'FICA Saved', v: fmt(r.ficaSavings), c: '#4ade80' },
               ].map(b => (
                 <div key={b.l} style={{ background: 'rgba(0,0,0,0.25)', borderRadius: '8px', padding: '10px', textAlign: 'center' }}>
                   <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '3px' }}>{b.l}</div>
