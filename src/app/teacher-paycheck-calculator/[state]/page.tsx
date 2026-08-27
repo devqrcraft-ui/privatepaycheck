@@ -19,10 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!name) return { title: 'Teacher Paycheck Calculator' };
   const p = PENSION_RATE[code];
   return {
-    title: !p.ss
-      ? `Teacher Paycheck Calculator ${name} 2026 — No Social Security, ${p.system}`
-      : `Teacher Paycheck Calculator ${name} 2026 — Take-Home After ${p.system}`,
-    description: `Calculate real teacher take-home pay in ${name} 2026 after ${p.system} pension (${(p.rate*100).toFixed(1)}%), federal tax, and state tax. Includes SS Fairness Act 2025.`,
+    title: `${name} Teacher Paycheck Calculator`,
+    description: `See ${name} teacher take-home pay 2026 after ${p.system} pension (${(p.rate*100).toFixed(1)}%), federal and state tax. SS Fairness Act 2025 included.`,
     alternates: { canonical: `https://www.privatepaycheck.com/teacher-paycheck-calculator/${state}` },
     authors: [{ name: 'the PrivatePaycheck Team' }],
   };
