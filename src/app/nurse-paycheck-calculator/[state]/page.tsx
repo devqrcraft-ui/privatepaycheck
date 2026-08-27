@@ -242,10 +242,10 @@ export default async function Page({ params }: { params: Promise<{ state: string
               {examples.map((e, i) => (
                 <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: i === 1 ? 'rgba(74,222,128,0.05)' : 'transparent' }}>
                   <td style={{ padding: '12px', fontWeight: 600 }}>{e.label}</td>
-                  <td style={{ padding: '12px', opacity: 0.8 }}>$${e.gross.toLocaleString()}</td>
-                  <td style={{ padding: '12px', color: '#4ade80', fontWeight: 700 }}>$${e.annual.toLocaleString()}</td>
-                  <td style={{ padding: '12px' }}>$${e.monthly.toLocaleString()}</td>
-                  <td style={{ padding: '12px', color: '#7dd3fc' }}>$${e.biweekly.toLocaleString()}</td>
+                  <td style={{ padding: '12px', opacity: 0.8 }}>{"$" + e.gross.toLocaleString()}</td>
+                  <td style={{ padding: '12px', color: '#4ade80', fontWeight: 700 }}>{"$" + e.annual.toLocaleString()}</td>
+                  <td style={{ padding: '12px' }}>{"$" + e.monthly.toLocaleString()}</td>
+                  <td style={{ padding: '12px', color: '#7dd3fc' }}>{"$" + e.biweekly.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
