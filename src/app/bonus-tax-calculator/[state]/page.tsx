@@ -353,15 +353,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state income tax';
   if (state === 'washington') {
     return {
-      title: 'Washington State Bonus Tax Calculator 2026 — Payroll Tax Rates on Bonus Pay',
-      description: 'Washington state has no income tax on bonus pay. See exact take-home after IRS 22% federal withholding and FICA only. Free calculator, instant results.',
+      title: 'Washington Bonus Tax Calculator 2026',
+      description: 'Free Washington bonus tax calculator 2026. No state income tax — see exact take-home after IRS 22% federal rate and FICA. Instant, no signup.',
       alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/washington' },
   authors: [{ name: 'the PrivatePaycheck Team' }],
     };
   }
   return {
-    title: data.noStateTax ? data.name + ' Bonus Tax Calculator 2026 — No State Tax, Keep More of Your Bonus' : data.name + ' Bonus Tax Calculator 2026 — Exact Take-Home After ' + data.stateTax + '% State Tax',
-    description: data.noStateTax ? 'Free ' + data.name + ' bonus tax calculator 2026. No state income tax — you keep more. See exact take-home after IRS 22% flat rate and FICA only. Instant, private, no signup.' : 'Free ' + data.name + ' bonus tax calculator 2026. See exact take-home after IRS 22% federal rate, ' + data.stateTax + '% ' + data.name + ' state tax, and FICA. Instant results, no signup.',
+    title: data.name + ' Bonus Tax Calculator 2026',
+    description: data.noStateTax ? 'Free ' + data.name + ' bonus tax calculator 2026. No state tax — see take-home after federal and FICA withholding.' : 'Free ' + data.name + ' bonus tax calculator 2026. See take-home after ' + data.stateTax + '% state tax, federal, and FICA withholding.',
     alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/' + state },
   };
 }

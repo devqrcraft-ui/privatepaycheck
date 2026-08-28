@@ -17,12 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!st) return { title: 'Nurse Paycheck Calculator' };
   const noTax = st.noTax;
   return {
-    title: noTax
-      ? `Nurse Paycheck Calculator ${st.name} 2026 — No State Tax, Higher Take-Home`
-      : `Nurse Paycheck Calculator ${st.name} 2026 — Net Pay After ${(st.rate * 100).toFixed(1)}% State Tax`,
+    title: `${st.name} Nurse Paycheck Calculator`,
     description: noTax
-      ? `Calculate your real nurse take-home pay in ${st.name} 2026. No state income tax — only federal + FICA. See biweekly and monthly net pay instantly. No signup.`
-      : `Free nurse paycheck calculator for ${st.name} 2026. See exact take-home after ${(st.rate * 100).toFixed(1)}% state tax, federal tax, and FICA. Biweekly and monthly breakdown.`,
+      ? `See ${st.name} nurse take-home pay 2026. No state income tax — only federal tax and FICA apply. Free, instant.`
+      : `See ${st.name} nurse take-home pay 2026 after ${(st.rate*100).toFixed(1)}% state tax, federal tax, and FICA. Free, instant.`,
     alternates: { canonical: `https://www.privatepaycheck.com/nurse-paycheck-calculator/${state}` },
   };
 }
