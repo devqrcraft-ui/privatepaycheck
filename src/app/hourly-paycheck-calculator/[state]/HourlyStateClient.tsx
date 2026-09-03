@@ -42,7 +42,7 @@ export default function HourlyStateClient({ stateName, stateTax, noStateTax, sta
   const annualGross = hourly * hours * periodsPerYear;
   const federal = fedTax(annualGross, filing);
   const state = annualGross * (stateTax / 100);
-  const ss = Math.min(annualGross, 168600) * 0.062;
+  const ss = Math.min(annualGross, 184500) * 0.062;
   const medicare = annualGross * 0.0145;
   const totalTax = federal + state + ss + medicare;
   const annualNet = annualGross - totalTax;

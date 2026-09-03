@@ -34,7 +34,7 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
   const [salary, setSalary] = useState(75000);
   const [filing, setFiling] = useState('single');
 
-  const fica = Math.min(bonus, Math.max(0, 168600 - salary)) * 0.062 + bonus * 0.0145;
+  const fica = Math.min(bonus, Math.max(0, 184500 - salary)) * 0.062 + bonus * 0.0145;
   const fedTax = federalTax(salary + bonus, filing) - federalTax(salary, filing);
   const stTax = bonus * (stateTax / 100);
   const total = fedTax + stTax + fica;
@@ -157,9 +157,9 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
             <div style={ROW}>
               <div>
                 <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>Social Security</div>
-                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>6.2% up to $168,600</div>
+                <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', marginTop: '2px' }}>6.2% up to $184,500</div>
               </div>
-              <span style={{ color: '#f87171', fontWeight: 600 }}>−{fmt(Math.min(bonus, Math.max(0, 168600 - salary)) * 0.062)} <span style={{ fontSize: '12px', opacity: 0.7 }}></span></span>
+              <span style={{ color: '#f87171', fontWeight: 600 }}>−{fmt(Math.min(bonus, Math.max(0, 184500 - salary)) * 0.062)} <span style={{ fontSize: '12px', opacity: 0.7 }}></span></span>
             </div>
             <div style={ROW}>
               <div>

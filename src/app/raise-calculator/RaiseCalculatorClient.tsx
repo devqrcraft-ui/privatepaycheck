@@ -34,7 +34,7 @@ function netPay(gross: number, filing: string, state: string): number {
     fed += (Math.min(gross, limit) - prev) * rate;
     prev = limit;
   }
-  const ss   = Math.min(gross, 168600) * 0.062;
+  const ss   = Math.min(gross, 184500) * 0.062;
   const medi = gross * 0.0145;
   const stTax = gross * (STATE_TAX[state] ?? 0);
   return gross - fed - ss - medi - stTax;

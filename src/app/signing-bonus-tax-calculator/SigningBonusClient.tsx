@@ -51,7 +51,7 @@ export default function SigningBonusClient() {
   const [filing, setFiling]   = useState('single');
   const [clawback, setClawback] = useState(12);
 
-  const fica = Math.min(bonus, Math.max(0, 168600 - salary)) * 0.062 + bonus * 0.0145;
+  const fica = Math.min(bonus, Math.max(0, 184500 - salary)) * 0.062 + bonus * 0.0145;
   const fedTax = federalTax(salary + bonus, filing) - federalTax(salary, filing);
   const stateTax = bonus * (STATE_TAX[state] ?? 0);
   const total = fedTax + stateTax + fica;
