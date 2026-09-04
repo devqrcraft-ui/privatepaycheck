@@ -14,7 +14,7 @@ export default function Page() {
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Data Sources</h2>
       <ul style={{ color:'#c8d4e8', lineHeight: 2, paddingLeft: 20, marginBottom: 32 }}>
         <li><strong>Federal tax brackets:</strong> IRS Rev. Proc. 2025-xx (2026 inflation adjustments)</li>
-        <li><strong>Standard deduction 2026:</strong> $15,000 single / $30,000 married filing jointly</li>
+        <li><strong>Standard deduction 2026:</strong> $16,100 single / $32,200 married filing jointly</li>
         <li><strong>FICA rates:</strong> Social Security 6.2% (wage base $184,500) + Medicare 1.45%</li>
         <li><strong>State income tax rates:</strong> Each state Department of Revenue official rate schedules</li>
         <li><strong>State SDI/SUI:</strong> State workforce agency publications</li>
@@ -27,13 +27,13 @@ export default function Page() {
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Taxable Income Range</th>
         </tr></thead>
         <tbody>{[
-          ['10%','$0 – $11,925'],
-          ['12%','$11,926 – $48,475'],
-          ['22%','$48,476 – $103,350'],
-          ['24%','$103,351 – $197,300'],
-          ['32%','$197,301 – $250,525'],
-          ['35%','$250,526 – $626,350'],
-          ['37%','Over $626,350'],
+          ['10%','$0 – $12,400'],
+          ['12%','$12,401 – $50,400'],
+          ['22%','$50,401 – $105,700'],
+          ['24%','$105,701 – $201,775'],
+          ['32%','$201,776 – $256,225'],
+          ['35%','$256,226 – $640,600'],
+          ['37%','Over $640,600'],
         ].map(([r,range]) => (
           <tr key={r} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 700, color:'#F5C842' }}>{r}</td>
