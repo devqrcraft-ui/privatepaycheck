@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'South Dakota paycheck calculator 2026. See exact take-home pay after federal + South Dakota state tax (0% — no state income tax) and FICA. All salary levels. Free & private.',
   keywords: 'south dakota paycheck calculator 2026, sd take home pay, south dakota salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/south-dakota-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/south-dakota-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

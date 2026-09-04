@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Ohio paycheck calculator 2026. See exact take-home pay after federal + Ohio state tax (up to 3.75%) and FICA. All salary levels. Free & private.',
   keywords: 'ohio paycheck calculator 2026, oh take home pay, ohio salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/ohio-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/ohio-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

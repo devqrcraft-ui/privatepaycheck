@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Nevada paycheck calculator 2026. See exact take-home pay after federal + Nevada state tax (0% — no state income tax) and FICA. All salary levels. Free & private.',
   keywords: 'nevada paycheck calculator 2026, nv take home pay, nevada salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/nevada-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/nevada-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

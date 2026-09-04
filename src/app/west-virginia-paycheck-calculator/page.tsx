@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'West Virginia paycheck calculator 2026. See exact take-home pay after federal + West Virginia state tax (up to 6.5%) and FICA. All salary levels. Free & private.',
   keywords: 'west virginia paycheck calculator 2026, wv take home pay, west virginia salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/west-virginia-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/west-virginia-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

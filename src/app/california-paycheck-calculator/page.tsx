@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Free California paycheck calculator 2026. $75K salary = ~$52,200 take-home after CA state tax (13.3%), federal tax, FICA & SDI 1.3%. Instant, no signup.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/california-paycheck-calculator',
+    type: 'website',
+  },
 }
 export default function Page() {
   const rows = [

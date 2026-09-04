@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   description: 'Free Oregon paycheck calculator 2026. $75K salary = ~$50,400 take-home after Oregon state tax (9.9% flat), federal tax & FICA. Instant, no signup.',
   keywords: 'oregon paycheck calculator 2026, or take home pay, oregon salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/oregon-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/oregon-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'New Hampshire paycheck calculator 2026. See exact take-home pay after federal + New Hampshire state tax (0% on wages — no income tax on earned income) and FICA. All salary levels. Free & private.',
   keywords: 'new hampshire paycheck calculator 2026, nh take home pay, new hampshire salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/new-hampshire-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/new-hampshire-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Indiana paycheck calculator 2026. See exact take-home pay after federal + Indiana state tax (3.05% flat) and FICA. All salary levels. Free & private.',
   keywords: 'indiana paycheck calculator 2026, in take home pay, indiana salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/indiana-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/indiana-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

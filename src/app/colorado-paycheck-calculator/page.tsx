@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Colorado paycheck calculator 2026. $75K salary = ~$55,200 take-home after 4.25% flat state tax, federal tax & FICA. Instant results, no signup.',
   keywords: 'colorado paycheck calculator 2026, co take home pay, colorado salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/colorado-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/colorado-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

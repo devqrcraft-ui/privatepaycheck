@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'North Carolina paycheck calculator 2026. See exact take-home pay after federal + North Carolina state tax (4.5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'north carolina paycheck calculator 2026, nc take home pay, north carolina salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/north-carolina-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/north-carolina-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

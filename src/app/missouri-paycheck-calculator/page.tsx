@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Missouri paycheck calculator 2026. See exact take-home pay after federal + Missouri state tax (up to 4.95%) and FICA. All salary levels. Free & private.',
   keywords: 'missouri paycheck calculator 2026, mo take home pay, missouri salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/missouri-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/missouri-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

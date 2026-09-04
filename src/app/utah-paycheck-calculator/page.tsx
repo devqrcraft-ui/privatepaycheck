@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Utah paycheck calculator 2026. See exact take-home pay after federal + Utah state tax (4.65% flat) and FICA. All salary levels. Free & private.',
   keywords: 'utah paycheck calculator 2026, ut take home pay, utah salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/utah-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/utah-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

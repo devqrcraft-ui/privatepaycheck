@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'North Dakota paycheck calculator 2026. See exact take-home pay after federal + North Dakota state tax (2.5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'north dakota paycheck calculator 2026, nd take home pay, north dakota salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/north-dakota-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/north-dakota-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

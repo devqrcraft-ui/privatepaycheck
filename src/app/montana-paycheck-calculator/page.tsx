@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Montana paycheck calculator 2026. See exact take-home pay after federal + Montana state tax (up to 5.9%) and FICA. All salary levels. Free & private.',
   keywords: 'montana paycheck calculator 2026, mt take home pay, montana salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/montana-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/montana-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

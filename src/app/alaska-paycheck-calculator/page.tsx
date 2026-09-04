@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Alaska paycheck calculator 2026. See exact take-home pay after federal + Alaska state tax (0% — no state income tax) and FICA. All salary levels. Free & private.',
   keywords: 'alaska paycheck calculator 2026, ak take home pay, alaska salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/alaska-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/alaska-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

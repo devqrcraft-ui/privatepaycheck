@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Idaho paycheck calculator 2026. See exact take-home pay after federal + Idaho state tax (up to 5.8%) and FICA. All salary levels. Free & private.',
   keywords: 'idaho paycheck calculator 2026, id take home pay, idaho salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/idaho-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/idaho-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Georgia paycheck calculator 2026. See exact take-home pay after federal + Georgia state tax (up to 5.5%) and FICA. All salary levels. Free & private.',
   keywords: 'georgia paycheck calculator 2026, ga take home pay, georgia salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/georgia-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/georgia-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

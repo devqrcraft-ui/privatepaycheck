@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Virginia paycheck calculator 2026. See exact take-home pay after federal + Virginia state tax (up to 5.75%) and FICA. All salary levels. Free & private.',
   keywords: 'virginia paycheck calculator 2026, va take home pay, virginia salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/virginia-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/virginia-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

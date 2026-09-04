@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Wisconsin paycheck calculator 2026. See exact take-home pay after federal + Wisconsin state tax (up to 7.65%) and FICA. All salary levels. Free & private.',
   keywords: 'wisconsin paycheck calculator 2026, wi take home pay, wisconsin salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/wisconsin-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/wisconsin-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

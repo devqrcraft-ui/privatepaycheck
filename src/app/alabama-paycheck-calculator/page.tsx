@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Alabama paycheck calculator 2026. See exact take-home pay after federal + Alabama state tax (up to 5%) and FICA. All salary levels. Free & private.',
   keywords: 'alabama paycheck calculator 2026, al take home pay, alabama salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/alabama-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/alabama-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

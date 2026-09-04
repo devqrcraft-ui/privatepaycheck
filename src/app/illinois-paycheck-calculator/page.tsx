@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Illinois paycheck calculator 2026. See exact take-home pay after federal + Illinois state tax (4.95% flat) and FICA. All salary levels. Free & private.',
   keywords: 'illinois paycheck calculator 2026, il take home pay, illinois salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/illinois-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/illinois-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

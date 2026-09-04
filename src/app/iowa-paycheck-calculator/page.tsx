@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Iowa paycheck calculator 2026. See exact take-home pay after federal + Iowa state tax (up to 6%) and FICA. All salary levels. Free & private.',
   keywords: 'iowa paycheck calculator 2026, ia take home pay, iowa salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/iowa-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/iowa-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

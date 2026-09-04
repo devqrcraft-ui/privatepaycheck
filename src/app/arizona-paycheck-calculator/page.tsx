@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Arizona paycheck calculator 2026. $75K salary = ~$56,800 take-home after 2.5% flat state tax, federal tax & FICA. Instant results, no signup.',
   keywords: 'arizona paycheck calculator 2026, az take home pay, arizona salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/arizona-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/arizona-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

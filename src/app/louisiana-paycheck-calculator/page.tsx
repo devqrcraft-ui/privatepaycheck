@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Louisiana paycheck calculator 2026. See exact take-home pay after federal + Louisiana state tax (up to 4.25%) and FICA. All salary levels. Free & private.',
   keywords: 'louisiana paycheck calculator 2026, la take home pay, louisiana salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/louisiana-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/louisiana-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

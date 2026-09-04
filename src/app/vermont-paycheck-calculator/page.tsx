@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Vermont paycheck calculator 2026. See exact take-home pay after federal + Vermont state tax (up to 8.75%) and FICA. All salary levels. Free & private.',
   keywords: 'vermont paycheck calculator 2026, vt take home pay, vermont salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/vermont-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/vermont-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

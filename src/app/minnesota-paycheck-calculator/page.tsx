@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Minnesota paycheck calculator 2026. See exact take-home pay after federal + Minnesota state tax (up to 9.85%) and FICA. All salary levels. Free & private.',
   keywords: 'minnesota paycheck calculator 2026, mn take home pay, minnesota salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/minnesota-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/minnesota-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

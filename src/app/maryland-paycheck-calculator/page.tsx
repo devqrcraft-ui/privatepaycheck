@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Maryland paycheck calculator 2026. See exact take-home pay after federal + Maryland state tax (up to 5.75%) and FICA. All salary levels. Free & private.',
   keywords: 'maryland paycheck calculator 2026, md take home pay, maryland salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/maryland-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/maryland-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {

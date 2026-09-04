@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: 'Massachusetts paycheck calculator 2026. See exact take-home pay after federal + Massachusetts state tax (5% flat) and FICA. All salary levels. Free & private.',
   keywords: 'massachusetts paycheck calculator 2026, ma take home pay, massachusetts salary after taxes',
   alternates: { canonical: 'https://www.privatepaycheck.com/massachusetts-paycheck-calculator' },
+  openGraph: {
+    url: 'https://www.privatepaycheck.com/massachusetts-paycheck-calculator',
+    type: 'website',
+  },
 }
 
 export default function Page() {
