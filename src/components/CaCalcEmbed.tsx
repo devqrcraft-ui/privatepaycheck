@@ -6,8 +6,8 @@ const CA_BRACKETS_SINGLE: [number,number][] = [
   [349137,.093],[418961,.103],[698274,.113],[1000000,.123],[Infinity,.133]
 ];
 const FED_BRACKETS_SINGLE: [number,number][] = [
-  [11925,.10],[48475,.12],[103350,.22],[197300,.24],
-  [250525,.32],[626350,.35],[Infinity,.37]
+  [12400,.10],[50400,.12],[105700,.22],[201775,.24],
+  [256225,.32],[640600,.35],[Infinity,.37]
 ];
 
 function calcTax(brackets: [number,number][], income: number): number {
