@@ -14,6 +14,12 @@ const STATE_SLUGS = [
   'wisconsin','wyoming','washington-dc',
 ];
 
+const UNEMPLOYMENT_SLUGS = [
+  'alabama','california','florida','illinois','louisiana','maine','massachusetts',
+  'montana','new-hampshire','new-jersey','new-mexico','ohio','pennsylvania',
+  'texas','washington','west-virginia',
+];
+
 const BLOG_SLUGS = [
   '10-dollars-an-hour-after-taxes',
   '100k-a-year-after-taxes',
@@ -159,6 +165,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
+    })),
+
+    { url: `${BASE_URL}/unemployment-calculator`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.75 },
+
+    ...UNEMPLOYMENT_SLUGS.map(slug => ({
+      url: `${BASE_URL}/unemployment-calculator/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
 
     ...BLOG_SLUGS.map(slug => ({
