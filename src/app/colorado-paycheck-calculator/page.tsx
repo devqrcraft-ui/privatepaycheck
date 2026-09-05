@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', background:'#0f0c29', minHeight:'100vh', color:'white' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Colorado income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Flat rate: 4.25% on all income."}},{"@type":"Question","name":"How much is $50,000 take-home in Colorado?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,106/month ($37,272/year) after federal, FICA, and CO state tax."}},{"@type":"Question","name":"Does Colorado tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Colorado offers a pension/annuity subtraction of up to $20,000 ($24,000 if 65+). Social Security is exempt from state tax."}},{"@type":"Question","name":"How is Colorado paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Colorado paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and CO state income tax (4.25%). Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Colorado a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Colorado is moderately tax-friendly with a flat 4.25% rate for all income levels."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Colorado income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Flat rate: 4.4% on all income."}},{"@type":"Question","name":"How much is $50,000 take-home in Colorado?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,346/month ($40,155/year) after federal, FICA, and CO state tax."}},{"@type":"Question","name":"Does Colorado tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Colorado offers a pension/annuity subtraction of up to $20,000 ($24,000 if 65+). Social Security is exempt from state tax."}},{"@type":"Question","name":"How is Colorado paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Colorado paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and CO state income tax (4.4%). Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Colorado a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Colorado is moderately tax-friendly with a flat 4.4% rate for all income levels."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Colorado Paycheck Calculator","item":"https://www.privatepaycheck.com/colorado-paycheck-calculator"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Colorado Paycheck Calculator 2026","datePublished":"2026-05-15","dateModified":"2026-05-15","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/colorado-paycheck-calculator"}' }} />
 
@@ -32,7 +32,7 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13 }}>QUICK ANSWER</div>
         <p style={{ fontSize:14, lineHeight:1.8, margin:0, color:'rgba(255,255,255,0.85)' }}>
-          Colorado has a flat 4.25% state income tax in 2026 — simple and predictable for all income levels. A worker earning $50,000 takes home about $3,106/month. Social Security is fully exempt from Colorado state tax.
+          Colorado has a flat 4.4% state income tax in 2026 — simple and predictable for all income levels. A worker earning $50,000 takes home about $3,346/month. Social Security is fully exempt from Colorado state tax.
         </p>
       </div>
 
@@ -40,8 +40,8 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28 }}>
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13 }}>✅ KEY TAKEAWAYS</div>
         <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)' }}>
-        <li dangerouslySetInnerHTML={{ __html: 'Colorado has a <strong>flat 4.25%</strong> state income tax rate for all income levels in 2026' }} />
-        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,106/month</strong> after federal, state, and FICA taxes' }} />
+        <li dangerouslySetInnerHTML={{ __html: 'Colorado has a <strong>flat 4.4%</strong> state income tax rate for all income levels in 2026' }} />
+        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,346/month</strong> after federal, state, and FICA taxes' }} />
         <li dangerouslySetInnerHTML={{ __html: 'Social Security income is <strong>fully exempt</strong> from Colorado state tax' }} />
         <li dangerouslySetInnerHTML={{ __html: 'FICA (Social Security 6.2% + Medicare 1.45%) applies to all Colorado workers' }} />
         <li dangerouslySetInnerHTML={{ __html: 'Denver has a small occupational privilege tax (~$5.75/month for employees)' }} />
@@ -106,9 +106,9 @@ export default function Page() {
       {/* How it works */}
       <div style={{ background:'rgba(15,22,41,0.9)', border:'1px solid rgba(245,200,66,0.15)', borderRadius:12, padding:'20px 24px', marginBottom:32 }}>
         <h2 style={{ fontSize:20, fontWeight:800, color:'#f8fafc', marginBottom:12 }}>How Colorado Income Tax Works in 2026</h2>
-        <p style={{ fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8, margin:0 }}>Colorado has a flat 4.25% state income tax that applies equally to all income levels. Social Security is exempt from Colorado state tax. No local income tax at the state level, though Denver has a small flat occupational privilege tax.</p>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8, margin:0 }}>Colorado has a flat 4.4% state income tax that applies equally to all income levels. Social Security is exempt from Colorado state tax. No local income tax at the state level, though Denver has a small flat occupational privilege tax.</p>
         <div style={{ marginTop:12, padding:'10px 14px', background:'rgba(245,200,66,0.06)', borderRadius:8, fontSize:13, color:'#fde68a' }}>
-          Colorado state income tax: <strong>4.25%</strong> · FICA: 7.65% · SS wage base: $184,500
+          Colorado state income tax: <strong>4.4%</strong> · FICA: 7.65% · SS wage base: $184,500
         </div>
       </div>
 
@@ -117,11 +117,11 @@ export default function Page() {
         <h2 style={{ fontSize:18, fontWeight:800, marginBottom:16 }}>Colorado Paycheck FAQ</h2>
           <div key={0} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>What is Colorado income tax rate 2026?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Flat rate: 4.25% on all income.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Flat rate: 4.4% on all income.</p>
           </div>
           <div key={1} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How much is $50,000 take-home in Colorado?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,106/month ($37,272/year) after federal, FICA, and CO state tax.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,346/month ($40,155/year) after federal, FICA, and CO state tax.</p>
           </div>
           <div key={2} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Does Colorado tax retirement income?</h3>
@@ -129,11 +129,11 @@ export default function Page() {
           </div>
           <div key={3} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How is Colorado paycheck calculated?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Your Colorado paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and CO state income tax (4.25%). Use the calculator at privatepaycheck.com for your exact number.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Your Colorado paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and CO state income tax (4.4%). Use the calculator at privatepaycheck.com for your exact number.</p>
           </div>
           <div key={4} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: 'none' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Is Colorado a tax-friendly state?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Colorado is moderately tax-friendly with a flat 4.25% rate for all income levels.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Colorado is moderately tax-friendly with a flat 4.4% rate for all income levels.</p>
           </div>
       </div>
 
