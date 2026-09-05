@@ -145,7 +145,7 @@ export default function Page() {
       </div>
     
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas: No State Income Tax Explained</h2>
-      <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 16, lineHeight: 1.7 }}>Texas has <strong style={{color:'#e2e8f0'}}>no state income tax</strong> — one of only 9 states. On a $75,000 salary, Texas workers take home ~$57,200/year vs ~$52,650 in California. The difference compounds: over 10 years that's <strong style={{color:'#4ade80'}}>$45,000+ more</strong> in your pocket. You still owe federal income tax and FICA.</p>
+      <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 16, lineHeight: 1.7 }}>Texas has <strong style={{color:'#e2e8f0'}}>no state income tax</strong> — one of only 9 states. On a $75,000 salary, Texas workers take home ~$61,593/year vs ~$57,520 in California. The difference compounds: over 10 years that's <strong style={{color:'#4ade80'}}>$40,000+ more</strong> in your pocket. You still owe federal income tax and FICA.</p>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Take-Home Pay by Salary (2026)</h2>
       <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>
@@ -158,14 +158,14 @@ export default function Page() {
           </tr></thead>
           <tbody>
             {[
-              ['$30,000','$2,500','$25,100','$965'],
-              ['$40,000','$3,333','$32,700','$1,258'],
-              ['$50,000','$4,167','$40,100','$1,542'],
-              ['$60,000','$5,000','$47,100','$1,812'],
-              ['$75,000','$6,250','$57,200','$2,200'],
-              ['$100,000','$8,333','$73,200','$2,815'],
-              ['$150,000','$12,500','$102,400','$3,938'],
-              ['$200,000','$16,667','$130,100','$5,004'],
+              ['$30,000','$2,500','$26,285','$1,011'],
+              ['$40,000','$3,333','$34,320','$1,320'],
+              ['$50,000','$4,167','$42,355','$1,629'],
+              ['$60,000','$5,000','$50,390','$1,938'],
+              ['$75,000','$6,250','$61,593','$2,369'],
+              ['$100,000','$8,333','$79,180','$3,045'],
+              ['$150,000','$12,500','$113,791','$4,377'],
+              ['$200,000','$16,667','$148,927','$5,728'],
             ].map(([sal,mo,net,bw],i) => (
               <tr key={sal} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
                 <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8edf8' }}>{sal}</td>
