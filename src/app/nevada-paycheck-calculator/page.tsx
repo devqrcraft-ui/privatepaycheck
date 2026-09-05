@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', background:'#0f0c29', minHeight:'100vh', color:'white' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Nevada income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"No state income tax."}},{"@type":"Question","name":"How much is $50,000 take-home in Nevada?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,271/month ($39,252/year) after federal, FICA, and NV state tax."}},{"@type":"Question","name":"Does Nevada tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Nevada has no state income tax, so all retirement income — Social Security, pensions, IRA withdrawals — is completely state-tax-free."}},{"@type":"Question","name":"How is Nevada paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Nevada paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and no state income tax. Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Nevada a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Yes — Nevada is one of the most tax-friendly states in the US with no state income tax."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Nevada income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"No state income tax."}},{"@type":"Question","name":"How much is $50,000 take-home in Nevada?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,530/month ($42,355/year) after federal, FICA, and NV state tax."}},{"@type":"Question","name":"Does Nevada tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Nevada has no state income tax, so all retirement income — Social Security, pensions, IRA withdrawals — is completely state-tax-free."}},{"@type":"Question","name":"How is Nevada paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Nevada paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and no state income tax. Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Nevada a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Yes — Nevada is one of the most tax-friendly states in the US with no state income tax."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Nevada Paycheck Calculator","item":"https://www.privatepaycheck.com/nevada-paycheck-calculator"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Nevada Paycheck Calculator 2026","datePublished":"2026-05-15","dateModified":"2026-05-15","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/nevada-paycheck-calculator"}' }} />
 
@@ -32,7 +32,7 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13 }}>QUICK ANSWER</div>
         <p style={{ fontSize:14, lineHeight:1.8, margin:0, color:'rgba(255,255,255,0.85)' }}>
-          Nevada has no state income tax in 2026. Workers only pay federal income tax and FICA. A worker earning $50,000 takes home about $3,271/month — significantly more than in high-tax states like California or Minnesota.
+          Nevada has no state income tax in 2026. Workers only pay federal income tax and FICA. A worker earning $50,000 takes home about $3,530/month — significantly more than in high-tax states like California or Minnesota.
         </p>
       </div>
 
@@ -41,7 +41,7 @@ export default function Page() {
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13 }}>✅ KEY TAKEAWAYS</div>
         <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)' }}>
         <li dangerouslySetInnerHTML={{ __html: 'Nevada has <strong>no state income tax</strong> — workers keep more of every dollar earned' }} />
-        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,271/month</strong> — only federal tax and FICA apply' }} />
+        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,530/month</strong> — only federal tax and FICA apply' }} />
         <li dangerouslySetInnerHTML={{ __html: 'All retirement income — Social Security, pensions, IRAs — is state-tax-free in Nevada' }} />
         <li dangerouslySetInnerHTML={{ __html: 'FICA (Social Security 6.2% + Medicare 1.45%) still applies to all Nevada workers' }} />
         <li dangerouslySetInnerHTML={{ __html: 'Nevada is one of 9 US states with no state income tax in 2026' }} />
@@ -62,38 +62,38 @@ export default function Page() {
           <tr key="$30,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$30,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$2,500</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,094</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,933</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,190</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,011</td>
           </tr>
           <tr key="$40,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$40,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$3,333</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,706</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,498</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,860</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,320</td>
           </tr>
           <tr key="$50,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$50,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$4,167</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,271</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,019</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,530</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,629</td>
           </tr>
           <tr key="$60,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$60,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$5,000</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,804</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,511</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,199</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,938</td>
           </tr>
           <tr key="$75,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$75,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$6,250</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,563</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$4,212</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,133</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,369</td>
           </tr>
           <tr key="$100,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$100,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$8,333</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,833</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$5,385</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$6,598</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,045</td>
           </tr>
         </tbody>
       </table>
@@ -121,7 +121,7 @@ export default function Page() {
           </div>
           <div key={1} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How much is $50,000 take-home in Nevada?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,271/month ($39,252/year) after federal, FICA, and NV state tax.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,530/month ($42,355/year) after federal, FICA, and NV state tax.</p>
           </div>
           <div key={2} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Does Nevada tax retirement income?</h3>
