@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', background:'#0f0c29', minHeight:'100vh', color:'white' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Wisconsin income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Progressive: 3.54%–7.65% (4 brackets)."}},{"@type":"Question","name":"How much is $50,000 take-home in Wisconsin?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,081/month ($36,972/year) after federal, FICA, and WI state tax."}},{"@type":"Question","name":"Does Wisconsin tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Wisconsin taxes most retirement income including pensions and IRA withdrawals, with limited exemptions."}},{"@type":"Question","name":"How is Wisconsin paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Wisconsin paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and WI state income tax (up to 7.65%). Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Wisconsin a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Wisconsin has a progressive tax rate (up to 7.65%). Mid-income earners pay a moderate effective state rate."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Wisconsin income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Progressive: 3.54%–7.65% (4 brackets)."}},{"@type":"Question","name":"How much is $50,000 take-home in Wisconsin?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,211/month ($38,530/year) after federal, FICA, and WI state tax."}},{"@type":"Question","name":"Does Wisconsin tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Wisconsin taxes most retirement income including pensions and IRA withdrawals, with limited exemptions."}},{"@type":"Question","name":"How is Wisconsin paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Wisconsin paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and WI state income tax (up to 7.65%). Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Wisconsin a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Wisconsin has a progressive tax rate (up to 7.65%). Mid-income earners pay a moderate effective state rate."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Wisconsin Paycheck Calculator","item":"https://www.privatepaycheck.com/wisconsin-paycheck-calculator"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Wisconsin Paycheck Calculator 2026","datePublished":"2026-05-15","dateModified":"2026-05-15","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/wisconsin-paycheck-calculator"}' }} />
 
@@ -32,7 +32,7 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13 }}>QUICK ANSWER</div>
         <p style={{ fontSize:14, lineHeight:1.8, margin:0, color:'rgba(255,255,255,0.85)' }}>
-          Wisconsin has a progressive income tax from 3.54% to 7.65% in 2026. A worker earning $50,000 takes home about $3,081/month after federal, state, and FICA taxes. There is no local income tax in Wisconsin.
+          Wisconsin has a progressive income tax from 3.54% to 7.65% in 2026. A worker earning $50,000 takes home about $3,211/month after federal, state, and FICA taxes. There is no local income tax in Wisconsin.
         </p>
       </div>
 
@@ -41,7 +41,7 @@ export default function Page() {
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13 }}>✅ KEY TAKEAWAYS</div>
         <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)' }}>
         <li dangerouslySetInnerHTML={{ __html: 'Wisconsin state income tax ranges from <strong>3.54% to 7.65%</strong> across 4 brackets in 2026' }} />
-        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,081/month</strong> after federal, state, and FICA taxes' }} />
+        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,211/month</strong> after federal, state, and FICA taxes' }} />
         <li dangerouslySetInnerHTML={{ __html: 'No local income tax in Wisconsin' }} />
         <li dangerouslySetInnerHTML={{ __html: 'FICA (Social Security 6.2% + Medicare 1.45%) applies to all Wisconsin workers' }} />
         <li dangerouslySetInnerHTML={{ __html: 'Wisconsin taxes most retirement income — pensions, IRAs, 401(k) withdrawals' }} />
@@ -62,38 +62,38 @@ export default function Page() {
           <tr key="$30,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$30,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$2,500</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$1,978</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,826</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$1,999</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$923</td>
           </tr>
           <tr key="$40,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$40,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$3,333</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,554</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,358</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,605</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,202</td>
           </tr>
           <tr key="$50,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$50,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$4,167</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,081</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,844</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,211</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,482</td>
           </tr>
           <tr key="$60,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$60,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$5,000</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,565</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,291</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,817</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,762</td>
           </tr>
           <tr key="$75,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$75,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$6,250</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,222</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,897</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,655</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,148</td>
           </tr>
           <tr key="$100,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$100,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$8,333</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,353</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$4,942</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,961</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,751</td>
           </tr>
         </tbody>
       </table>
@@ -121,7 +121,7 @@ export default function Page() {
           </div>
           <div key={1} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How much is $50,000 take-home in Wisconsin?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,081/month ($36,972/year) after federal, FICA, and WI state tax.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,211/month ($38,530/year) after federal, FICA, and WI state tax.</p>
           </div>
           <div key={2} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Does Wisconsin tax retirement income?</h3>
