@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', background:'#0f0c29', minHeight:'100vh', color:'white' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Minnesota income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Progressive: 5.35%–9.85% (4 brackets)."}},{"@type":"Question","name":"How much is $50,000 take-home in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,020/month ($36,240/year) after federal, FICA, and MN state tax."}},{"@type":"Question","name":"Does Minnesota tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Minnesota taxes most retirement income. Social Security is partially taxed depending on total income."}},{"@type":"Question","name":"How is Minnesota paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Minnesota paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and MN state income tax (up to 9.85%). Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Minnesota a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Minnesota has a progressive tax rate (up to 9.85%). Mid-income earners pay a moderate effective state rate."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Minnesota income tax rate 2026?","acceptedAnswer":{"@type":"Answer","text":"Progressive: 5.35%–9.85% (4 brackets)."}},{"@type":"Question","name":"How much is $50,000 take-home in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Approximately $3,119/month ($37,430/year) after federal, FICA, and MN state tax."}},{"@type":"Question","name":"Does Minnesota tax retirement income?","acceptedAnswer":{"@type":"Answer","text":"Minnesota taxes most retirement income. Social Security is partially taxed depending on total income."}},{"@type":"Question","name":"How is Minnesota paycheck calculated?","acceptedAnswer":{"@type":"Answer","text":"Your Minnesota paycheck is reduced by federal income tax (10%–37% brackets), FICA (7.65%), and MN state income tax (up to 9.85%). Use the calculator at privatepaycheck.com for your exact number."}},{"@type":"Question","name":"Is Minnesota a tax-friendly state?","acceptedAnswer":{"@type":"Answer","text":"Minnesota has a progressive tax rate (up to 9.85%). Mid-income earners pay a moderate effective state rate."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Minnesota Paycheck Calculator","item":"https://www.privatepaycheck.com/minnesota-paycheck-calculator"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Minnesota Paycheck Calculator 2026","datePublished":"2026-05-15","dateModified":"2026-05-15","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck"},"mainEntityOfPage":"https://www.privatepaycheck.com/minnesota-paycheck-calculator"}' }} />
 
@@ -32,7 +32,7 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:12, padding:'16px 20px', marginBottom:24 }}>
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13 }}>QUICK ANSWER</div>
         <p style={{ fontSize:14, lineHeight:1.8, margin:0, color:'rgba(255,255,255,0.85)' }}>
-          Minnesota has a progressive income tax from 5.35% to 9.85% in 2026 — one of the highest in the Midwest. A worker earning $50,000 takes home about $3,020/month after all taxes. Social Security income is partially taxed.
+          Minnesota has a progressive income tax from 5.35% to 9.85% in 2026 — one of the highest in the Midwest. A worker earning $50,000 takes home about $3,119/month after all taxes. Social Security income is partially taxed.
         </p>
       </div>
 
@@ -41,7 +41,7 @@ export default function Page() {
         <div style={{ fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13 }}>✅ KEY TAKEAWAYS</div>
         <ul style={{ margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)' }}>
         <li dangerouslySetInnerHTML={{ __html: 'Minnesota state income tax ranges from <strong>5.35% to 9.85%</strong> across 4 brackets in 2026' }} />
-        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,020/month</strong> after federal, state, and FICA taxes' }} />
+        <li dangerouslySetInnerHTML={{ __html: 'A $50,000 salary nets roughly <strong>$3,119/month</strong> after federal, state, and FICA taxes' }} />
         <li dangerouslySetInnerHTML={{ __html: 'Minnesota has one of the higher state income tax rates in the Midwest' }} />
         <li dangerouslySetInnerHTML={{ __html: 'FICA (Social Security 6.2% + Medicare 1.45%) applies to all Minnesota workers' }} />
         <li dangerouslySetInnerHTML={{ __html: 'Social Security income is partially taxed in Minnesota depending on total income level' }} />
@@ -62,38 +62,38 @@ export default function Page() {
           <tr key="$30,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$30,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$2,500</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$1,954</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,803</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$1,944</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$897</td>
           </tr>
           <tr key="$40,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$40,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$3,333</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,513</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,320</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$2,532</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,168</td>
           </tr>
           <tr key="$50,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$50,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$4,167</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,020</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,788</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,119</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,440</td>
           </tr>
           <tr key="$60,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$60,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$5,000</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,492</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,224</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$3,707</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$1,711</td>
           </tr>
           <tr key="$75,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$75,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$6,250</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,098</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$3,783</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$4,517</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,085</td>
           </tr>
           <tr key="$100,000">
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', fontWeight:700, color:'#F5C842' }}>$100,000</td>
             <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)' }}>$8,333</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,134</td>
-            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$4,739</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80', fontWeight:700 }}>$5,778</td>
+            <td style={{ padding:'10px 14px', fontSize:14, borderBottom:'1px solid rgba(255,255,255,0.05)', color:'#4ade80' }}>$2,667</td>
           </tr>
         </tbody>
       </table>
@@ -121,7 +121,7 @@ export default function Page() {
           </div>
           <div key={1} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>How much is $50,000 take-home in Minnesota?</h3>
-            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,020/month ($36,240/year) after federal, FICA, and MN state tax.</p>
+            <p style={{ fontSize:'13px', opacity:0.75, lineHeight:1.7, margin:0 }}>Approximately $3,119/month ($37,430/year) after federal, FICA, and MN state tax.</p>
           </div>
           <div key={2} style={{ marginBottom:'14px', paddingBottom:'14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
             <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'5px', color:'#F5C842' }}>Does Minnesota tax retirement income?</h3>
