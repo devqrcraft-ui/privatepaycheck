@@ -35,7 +35,7 @@ export default function Page() {
           {"@type":"Question","name":"How much of my Texas paycheck goes to taxes?","acceptedAnswer":{"@type":"Answer","text":"In Texas, only federal taxes are withheld: federal income tax (10%–22% for most earners) plus FICA 7.65%. Total effective withholding for a $50,000 salary is roughly 19%–21%."}}
         ]
       }) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to Calculate Your Texas Paycheck in 2026","description":"Step-by-step guide to calculating take-home pay for Texas workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Enter your gross salary","text":"Start with your annual or hourly gross pay before any deductions."},{"@type":"HowToStep","position":2,"name":"Subtract federal income tax","text":"Apply 2026 IRS tax brackets (10%-37%) based on filing status and standard deduction of $16,100 single / $32,200 MFJ."},{"@type":"HowToStep","position":3,"name":"Subtract FICA taxes","text":"Deduct Social Security (6.2% up to $184,500) and Medicare (1.45%) from gross pay."},{"@type":"HowToStep","position":4,"name":"Subtract Texas state tax","text":"Apply Texas state income tax rates for 2026 to your taxable income."},{"@type":"HowToStep","position":5,"name":"Calculate net take-home pay","text":"Subtract all deductions from gross pay to get your Texas take-home pay per paycheck."}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to Calculate Your Texas Paycheck in 2026","description":"Step-by-step guide to calculating take-home pay for Texas workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Enter your gross salary","text":"Start with your annual or hourly gross pay before any deductions."},{"@type":"HowToStep","position":2,"name":"Subtract federal income tax","text":"Apply 2026 IRS tax brackets (10%-37%) based on filing status and standard deduction of $16,100 single / $32,200 MFJ."},{"@type":"HowToStep","position":3,"name":"Subtract FICA taxes","text":"Deduct Social Security (6.2% up to $184,500) and Medicare (1.45%) from gross pay."},{"@type":"HowToStep","position":4,"name":"Skip state tax","text":"Texas has no state income tax, so this step does not apply."},{"@type":"HowToStep","position":5,"name":"Calculate net take-home pay","text":"Subtract all deductions from gross pay to get your Texas take-home pay per paycheck."}]}' }} />
       <nav style={{ fontSize: 13, color:'#b8c8dc', marginBottom: 24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Texas Paycheck Calculator
       </nav>
@@ -43,6 +43,15 @@ export default function Page() {
       <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.65)', marginBottom: 12 }}>Texas has <strong>no state income tax</strong> — you only pay federal income tax and FICA. This means Texans keep significantly more of every paycheck compared to residents of CA, NY, or IL.</p>
 
       <FlTxCalcEmbed state="texas" />
+
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginTop: 32, marginBottom: 16 }}>How to Calculate Your Texas Paycheck in 2026</h2>
+      <ol style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 2, paddingLeft: 20, marginBottom: 24 }}>
+        <li><strong>Enter your gross salary</strong> — Start with your annual or hourly gross pay before any deductions.</li>
+        <li><strong>Subtract federal income tax</strong> — Apply 2026 IRS tax brackets (10%-37%) based on filing status and standard deduction of $16,100 single / $32,200 MFJ.</li>
+        <li><strong>Subtract FICA taxes</strong> — Deduct Social Security (6.2% up to $184,500) and Medicare (1.45%) from gross pay.</li>
+        <li><strong>Skip state tax</strong> — Texas has no state income tax, so this step doesn't apply.</li>
+        <li><strong>Calculate net take-home pay</strong> — Subtract federal tax and FICA from gross pay to get your Texas take-home pay per paycheck.</li>
+      </ol>
 
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
