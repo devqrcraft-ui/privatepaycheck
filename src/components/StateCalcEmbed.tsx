@@ -6,10 +6,11 @@ interface Props {
   stateTaxRate: number;
   hasSDI?: boolean;
   sdiRate?: number;
+  sdiCap?: number;
   noStateTax?: boolean;
 }
 
-export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false, sdiRate = 0, noStateTax = false }: Props) {
+export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false, sdiRate = 0, sdiCap = Infinity, noStateTax = false }: Props) {
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('annual');
   const [filing, setFiling] = useState('single');
@@ -52,7 +53,7 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
         prevLim = lim;
       }
     }
-    const sdi = hasSDI ? Math.min(annual, 153164) * (sdiRate/100) : 0;
+    const sdi = hasSDI ? Math.min(Math.min(annual, 153164) * (sdiRate/100), sdiCap) : 0;
     const total = fed + ss + medicare + stateTax + sdi;
     const takeHome = annual - total;
     setResult({ annual, takeHome, biweekly: takeHome/26, monthly: takeHome/12, fed, ss, medicare, stateTax, sdi, eff: annual>0 ? (total/annual*100).toFixed(1) : '0' });
