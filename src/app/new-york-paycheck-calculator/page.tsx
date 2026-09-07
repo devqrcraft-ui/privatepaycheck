@@ -40,7 +40,7 @@ export default function Page() {
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › New York Paycheck Calculator
       </nav>
       <h1 style={{ fontSize: 'clamp(26px,4vw,36px)', fontWeight: 900, marginBottom: 8, color: '#f1f5f9' }}>New York Paycheck Calculator 2026</h1>
-      <StateCalcEmbed stateName="New York" stateTaxRate={6.33} hasSDI={true} sdiRate={0.5} noStateTax={false} />
+      <StateCalcEmbed stateName="New York" stateTaxRate={6.33} hasSDI={true} sdiRate={0.5} sdiCap={31.20} noStateTax={false} />
 
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
