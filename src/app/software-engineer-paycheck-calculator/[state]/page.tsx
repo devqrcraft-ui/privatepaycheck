@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import { STATE_TAXES, STATE_SLUG_MAP, FEDERAL_BRACKETS_SINGLE, STANDARD_DEDUCTION } from '@/lib/taxRates2026';
 
 
 export const dynamicParams = false;
@@ -81,15 +81,8 @@ const SWE_SALARY: Record<string, { median: number; low: number; high: number; no
 };
 
 function calcNet(gross: number, stateTaxRate: number): { annual: number; monthly: number; biweekly: number } {
-  const taxable = Math.max(0, gross - 15000);
-  const brackets = [
-    { min: 0, max: 11925, rate: 0.10 },
-    { min: 11925, max: 48475, rate: 0.12 },
-    { min: 48475, max: 103350, rate: 0.22 },
-    { min: 103350, max: 197300, rate: 0.24 },
-    { min: 197300, max: 250525, rate: 0.32 },
-    { min: 250525, max: Infinity, rate: 0.35 },
-  ];
+  const taxable = Math.max(0, gross - STANDARD_DEDUCTION.single);
+  const brackets = FEDERAL_BRACKETS_SINGLE;
   let federal = 0;
   for (const b of brackets) {
     if (taxable <= b.min) break;
