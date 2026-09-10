@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import FreshnessBar from '@/components/FreshnessBar'
 import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
+import LinkCardGrid from '@/components/LinkCardGrid'
 export const metadata: Metadata = {
   title: 'Texas Paycheck Calculator 2026 — $75K = $57,400 Take-Home (No State Tax)',
   description: 'Free Texas paycheck calculator 2026. No state income tax — $75K salary = ~$57,400 take-home after federal tax & FICA only. Instant results, no signup.',
@@ -140,11 +141,7 @@ export default function Page() {
       </div>
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))', gap: 10, marginBottom: 24 }}>
-          {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
-            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'12px 16px', background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:8, fontSize:15, fontWeight:700, color:'#818cf8', textDecoration:'none', textAlign:'center' }}>{n} Calculator</a>
-          ))}
-        </div>
+        <LinkCardGrid minCardWidth={140} links={[["/california-paycheck-calculator","California Calculator"],["/texas-paycheck-calculator","Texas Calculator"],["/florida-paycheck-calculator","Florida Calculator"],["/new-york-paycheck-calculator","New York Calculator"],["/illinois-paycheck-calculator","Illinois Calculator"],["/washington-paycheck-calculator","Washington Calculator"],["/nevada-paycheck-calculator","Nevada Calculator"],["/arizona-paycheck-calculator","Arizona Calculator"],["/colorado-paycheck-calculator","Colorado Calculator"],["/pennsylvania-paycheck-calculator","Pennsylvania Calculator"]]} />
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
           <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
           <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>Tax & Paycheck Blog</a>
@@ -243,19 +240,8 @@ export default function Page() {
         </ul>
       </div>
 
-      <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ fontWeight: 800, fontSize: 16, color: '#e8edf8', marginBottom: 16 }}>Related Calculators</div>
-        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 10 }}>
-          {[
-            ['/florida-paycheck-calculator','Florida Paycheck Calculator'],
-            ['/california-paycheck-calculator','California Paycheck Calculator'],
-            ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
-            ['/hourly-paycheck-calculator/texas','Texas Hourly Calculator'],
-            ['/bonus-tax-calculator/texas','Texas Bonus Tax Calculator'],
-          ].map(([href,label]) => (
-            <a key={href} href={href} style={{ padding:'8px 16px', borderRadius:8, background:'rgba(255,255,255,0.06)', border:'1px solid rgba(255,255,255,0.1)', color:'#b8c8dc', textDecoration:'none', fontSize:14, fontWeight:600 }}>{label}</a>
-          ))}
-        </div>
+      <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+        <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/florida-paycheck-calculator","Florida Paycheck Calculator"],["/california-paycheck-calculator","California Paycheck Calculator"],["/new-york-paycheck-calculator","New York Paycheck Calculator"],["/hourly-paycheck-calculator/texas","Texas Hourly Calculator"],["/bonus-tax-calculator/texas","Texas Bonus Tax Calculator"]]} />
       </div>
 </main>
   )
