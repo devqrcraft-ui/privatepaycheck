@@ -36,21 +36,21 @@ function calcTakeHome(gross: number, rate: number, sdiRate: number, filing: stri
   const taxable = Math.max(0, gross - stdDed);
   let fed = 0;
   if (filing === 'married') {
-    if (taxable > 751600) fed += (taxable - 751600) * 0.37;
-    if (taxable > 501050) fed += (Math.min(taxable, 751600) - 501050) * 0.35;
-    if (taxable > 394600) fed += (Math.min(taxable, 501050) - 394600) * 0.32;
-    if (taxable > 206700) fed += (Math.min(taxable, 394600) - 206700) * 0.24;
-    if (taxable > 96950)  fed += (Math.min(taxable, 206700) - 96950)  * 0.22;
-    if (taxable > 23850)  fed += (Math.min(taxable, 96950)  - 23850)  * 0.12;
-    fed += Math.min(taxable, 23850) * 0.10;
+    if (taxable > 768700) fed += (taxable - 768700) * 0.37;
+    if (taxable > 512450) fed += (Math.min(taxable, 768700) - 512450) * 0.35;
+    if (taxable > 403550) fed += (Math.min(taxable, 512450) - 403550) * 0.32;
+    if (taxable > 211400) fed += (Math.min(taxable, 403550) - 211400) * 0.24;
+    if (taxable > 100800)  fed += (Math.min(taxable, 211400) - 100800)  * 0.22;
+    if (taxable > 24800)  fed += (Math.min(taxable, 100800)  - 24800)  * 0.12;
+    fed += Math.min(taxable, 24800) * 0.10;
   } else {
-    if (taxable > 626350) fed += (taxable - 626350) * 0.37;
-    if (taxable > 250525) fed += (Math.min(taxable, 626350) - 250525) * 0.35;
-    if (taxable > 197300) fed += (Math.min(taxable, 250525) - 197300) * 0.32;
-    if (taxable > 103350) fed += (Math.min(taxable, 197300) - 103350) * 0.24;
-    if (taxable > 48475)  fed += (Math.min(taxable, 103350) - 48475)  * 0.22;
-    if (taxable > 11925)  fed += (Math.min(taxable, 48475)  - 11925)  * 0.12;
-    fed += Math.min(taxable, 11925) * 0.10;
+    if (taxable > 640600) fed += (taxable - 640600) * 0.37;
+    if (taxable > 256225) fed += (Math.min(taxable, 640600) - 256225) * 0.35;
+    if (taxable > 201775) fed += (Math.min(taxable, 256225) - 201775) * 0.32;
+    if (taxable > 105700) fed += (Math.min(taxable, 201775) - 105700) * 0.24;
+    if (taxable > 50400)  fed += (Math.min(taxable, 105700) - 50400)  * 0.22;
+    if (taxable > 12400)  fed += (Math.min(taxable, 50400)  - 12400)  * 0.12;
+    fed += Math.min(taxable, 12400) * 0.10;
   }
   const ss       = Math.min(gross, 184500) * 0.062;
   const medicare = gross * 0.0145;
