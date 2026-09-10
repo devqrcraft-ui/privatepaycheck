@@ -333,7 +333,7 @@ export default function Page() {
               ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
               ['/bonus-tax-calculator','Bonus Tax Calculator'],
               ['/hourly-paycheck-calculator','Hourly Paycheck Calculator'],
-              ['/blog/florida-paycheck-calculator','Florida Tax Guide 2026'],
+              ['/methodology','2026 Tax Methodology'],
             ].map(([href,label]) => (
               <a key={href} href={href} style={{padding:'8px 16px', borderRadius:8, background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', color:'#e8edf8', textDecoration:'none', fontSize:14, fontWeight:600}}>{label as string}</a>
             ))}
