@@ -3,8 +3,8 @@ import FreshnessBar from '@/components/FreshnessBar'
 import FlTxCalcEmbed from '@/components/FlTxCalcEmbed'
 import LinkCardGrid from '@/components/LinkCardGrid'
 export const metadata: Metadata = {
-  title: 'Texas Paycheck Calculator 2026 — $75K = $57,400 Take-Home (No State Tax)',
-  description: 'Free Texas paycheck calculator 2026. No state income tax — $75K salary = ~$57,400 take-home after federal tax & FICA only. Instant results, no signup.',
+  title: 'Texas Paycheck Calculator 2026 — $75K = $61,593 Take-Home (No State Tax)',
+  description: 'Free Texas paycheck calculator 2026. No state income tax — $75K salary = ~$61,593 take-home after federal tax & FICA only. Instant results, no signup.',
   keywords: 'texas paycheck calculator 2026, texas take home pay, texas salary after taxes, tx paycheck no state tax',
   alternates: { canonical: 'https://www.privatepaycheck.com/texas-paycheck-calculator' },
   openGraph: {
@@ -58,7 +58,7 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#F5C842', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Take-Home Summary — Texas</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          A $75,000 salary in Texas results in approximately <strong style={{ color:'#fff' }}>$57,400 take-home pay</strong> for a single filer. Texas has no state income tax. Breakdown: federal income tax $8,600 + Social Security $4,650 + Medicare $1,088 = $14,338 total deductions. Effective total tax rate: 19.1%. Texas is one of 9 states with zero state income tax in 2026.
+          A $75,000 salary in Texas results in approximately <strong style={{ color:'#fff' }}>$61,593 take-home pay</strong> for a single filer. Texas has no state income tax. Breakdown: federal income tax $7,670 + Social Security $4,650 + Medicare $1,088 = $13,408 total deductions. Effective total tax rate: 17.9%. Texas is one of 9 states with zero state income tax in 2026.
         </p>
       </div>
 
