@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import CaCalcEmbed from '@/components/CaCalcEmbed'
 import FreshnessBar from '@/components/FreshnessBar'
+import LinkCardGrid from '@/components/LinkCardGrid'
 export const metadata: Metadata = {
   title: 'California Paycheck Calculator 2026 — $75K Salary = $57,520 Take-Home',
   description: 'Free California paycheck calculator 2026. $75K salary = ~$57,520 take-home after CA state tax (13.3%), federal tax, FICA & SDI 1.3%. Instant, no signup.',
@@ -149,11 +150,7 @@ export default function Page() {
       </div>
       <div style={{ borderTop: '2px solid rgba(255,255,255,0.1)', marginTop: 40, paddingTop: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 16 }}>Compare Other States</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr))', gap: 10, marginBottom: 24 }}>
-          {([['California','california'],['Texas','texas'],['Florida','florida'],['New York','new-york'],['Illinois','illinois'],['Washington','washington'],['Nevada','nevada'],['Arizona','arizona'],['Colorado','colorado'],['Pennsylvania','pennsylvania']] as [string,string][]).map(([n,s]) => (
-            <a key={s} href={"/" + s + "-paycheck-calculator"} style={{ display:'block', padding:'12px 16px', background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:8, fontSize:15, fontWeight:700, color:'#818cf8', textDecoration:'none', textAlign:'center' }}>{n} Calculator</a>
-          ))}
-        </div>
+        <LinkCardGrid minCardWidth={140} links={[["/california-paycheck-calculator","California Calculator"],["/texas-paycheck-calculator","Texas Calculator"],["/florida-paycheck-calculator","Florida Calculator"],["/new-york-paycheck-calculator","New York Calculator"],["/illinois-paycheck-calculator","Illinois Calculator"],["/washington-paycheck-calculator","Washington Calculator"],["/nevada-paycheck-calculator","Nevada Calculator"],["/arizona-paycheck-calculator","Arizona Calculator"],["/colorado-paycheck-calculator","Colorado Calculator"],["/pennsylvania-paycheck-calculator","Pennsylvania Calculator"]]} />
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' as const }}>
           <a href="/" style={{ color:'#F5C842', fontSize: 14 }}>Free Paycheck Calculator</a>
           <a href="/blog" style={{ color:'#F5C842', fontSize: 14 }}>Tax & Paycheck Blog</a>
@@ -358,19 +355,8 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $20/hour after taxes in California?</h3>
       <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>At $20/hour (about $41,600/year), a California single filer takes home approximately $34,227/year or $1,316 biweekly after federal tax, CA state tax, FICA, and SDI.</p>
 
-      <div style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-        <div style={{ fontWeight: 800, fontSize: 16, color: '#e8edf8', marginBottom: 16 }}>Related Calculators</div>
-        <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 10 }}>
-          {[
-            ['/florida-paycheck-calculator','Florida Paycheck Calculator'],
-            ['/texas-paycheck-calculator','Texas Paycheck Calculator'],
-            ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
-            ['/hourly-paycheck-calculator/california','California Hourly Calculator'],
-            ['/bonus-tax-calculator/california','California Bonus Tax Calculator'],
-          ].map(([href,label]) => (
-            <a key={href} href={href} style={{ padding: '8px 16px', borderRadius: 8, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#b8c8dc', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>{label}</a>
-          ))}
-        </div>
+      <div style={{ marginTop: 40, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+        <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/florida-paycheck-calculator","Florida Paycheck Calculator"],["/texas-paycheck-calculator","Texas Paycheck Calculator"],["/new-york-paycheck-calculator","New York Paycheck Calculator"],["/hourly-paycheck-calculator/california","California Hourly Calculator"],["/bonus-tax-calculator/california","California Bonus Tax Calculator"]]} />
       </div>
 </main>
   )
