@@ -203,7 +203,7 @@ export default function Page() {
             How Does Overtime Affect Police Officer Taxes in 2026?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'Overtime pay is taxed as ordinary income — there is no separate overtime tax rate. However, overtime pushes total compensation into higher tax brackets. A base salary of $65,000 sits in the 22% bracket. Adding $15,000 in overtime brings total gross to $80,000 — still 22%, but approaching the 24% threshold at $100,525.'}
+            {'Overtime pay is taxed as ordinary income — there is no separate overtime tax rate. However, overtime pushes total compensation into higher tax brackets. A base salary of $65,000 sits in the 22% bracket. Adding $15,000 in overtime brings total gross to $80,000 — still 22%, but approaching the 24% threshold at $105,700.'}
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
@@ -257,7 +257,7 @@ export default function Page() {
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Calculate federal tax.'}</strong>
-              {' 10% on first $11,925 + 12% on next $33,491 = $1,193 + $4,019 = $5,212.'}
+              {' 10% on first $12,400 + 12% on next $33,016 = $1,240 + $3,962 = $5,202.'}
             </li>
             <li>
               <strong style={{color:'#e8edf8'}}>{'Subtract FICA.'}</strong>
