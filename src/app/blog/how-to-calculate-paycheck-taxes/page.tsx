@@ -68,8 +68,8 @@ export default function Post() {
             },
             {
               step:3, title:'Calculate Federal Income Tax',
-              content:'Federal income tax uses progressive brackets — you only pay the higher rate on income above each threshold. For 2026 single filers, the standard deduction is $15,000.',
-              example:'$67,000 − $15,000 standard deduction = $52,000 taxable. Tax: $1,160 (10%) + $4,266 (12%) + $1,045 (22%) = $6,471',
+              content:'Federal income tax uses progressive brackets — you only pay the higher rate on income above each threshold. For 2026 single filers, the standard deduction is $16,100.',
+              example:'$67,000 − $16,100 standard deduction = $50,900 taxable. Tax: $1,240 (10%) + $4,560 (12%) + $110 (22%) = $5,910',
             },
             {
               step:4, title:'Calculate FICA Taxes',
@@ -102,13 +102,13 @@ export default function Post() {
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>2026 Federal Tax Brackets (Single Filer)</h2>
           <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', overflow:'hidden', margin:'16px 0' }}>
             {[
-              { bracket:'10%', from:'$0', to:'$11,925', on:'First $11,925' },
-              { bracket:'12%', from:'$11,926', to:'$48,475', on:'Next $36,550' },
-              { bracket:'22%', from:'$48,476', to:'$103,350', on:'Next $54,875' },
-              { bracket:'24%', from:'$103,351', to:'$197,300', on:'Next $93,950' },
-              { bracket:'32%', from:'$197,301', to:'$250,525', on:'Next $53,225' },
-              { bracket:'35%', from:'$250,526', to:'$626,350', on:'Next $375,825' },
-              { bracket:'37%', from:'$626,351', to:'+', on:'Above $626,350' },
+              { bracket:'10%', from:'$0', to:'$12,400', on:'First $12,400' },
+              { bracket:'12%', from:'$12,401', to:'$50,400', on:'Next $38,000' },
+              { bracket:'22%', from:'$50,401', to:'$105,700', on:'Next $55,300' },
+              { bracket:'24%', from:'$105,701', to:'$201,775', on:'Next $96,075' },
+              { bracket:'32%', from:'$201,776', to:'$256,225', on:'Next $54,450' },
+              { bracket:'35%', from:'$256,226', to:'$640,600', on:'Next $384,375' },
+              { bracket:'37%', from:'$640,601', to:'+', on:'Above $640,600' },
             ].map((b, i) => (
               <div key={b.bracket} style={{ display:'grid', gridTemplateColumns:'60px 1fr 1fr', gap:'8px', padding:'10px 16px', borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.05)' : 'none', fontSize:'13px' }}>
                 <strong style={{ color:'#fbbf24' }}>{b.bracket}</strong>
