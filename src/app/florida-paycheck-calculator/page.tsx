@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 export const metadata: Metadata = {
   title: 'Florida Paycheck Calculator 2026 — $75K = $61,593 Take-Home (No State Tax)',
@@ -324,20 +325,8 @@ export default function Page() {
           ))}
         </section>
 
-        <div style={{marginTop:32, paddingTop:24, borderTop:'1px solid rgba(255,255,255,0.08)'}}>
-          <div style={{fontWeight:800, fontSize:15, color:'#e8edf8', marginBottom:12}}>Related Calculators</div>
-          <div style={{display:'flex', flexWrap:'wrap', gap:10}}>
-            {[
-              ['/texas-paycheck-calculator','Texas Paycheck Calculator'],
-              ['/california-paycheck-calculator','California Paycheck Calculator'],
-              ['/new-york-paycheck-calculator','New York Paycheck Calculator'],
-              ['/bonus-tax-calculator','Bonus Tax Calculator'],
-              ['/hourly-paycheck-calculator','Hourly Paycheck Calculator'],
-              ['/methodology','2026 Tax Methodology'],
-            ].map(([href,label]) => (
-              <a key={href} href={href} style={{padding:'8px 16px', borderRadius:8, background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.2)', color:'#e8edf8', textDecoration:'none', fontSize:14, fontWeight:600}}>{label as string}</a>
-            ))}
-          </div>
+        <div style={{marginTop:32, paddingTop:24, borderTop:"1px solid rgba(255,255,255,0.08)"}}>
+          <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/texas-paycheck-calculator","Texas Paycheck Calculator"],["/california-paycheck-calculator","California Paycheck Calculator"],["/new-york-paycheck-calculator","New York Paycheck Calculator"],["/bonus-tax-calculator","Bonus Tax Calculator"],["/hourly-paycheck-calculator","Hourly Paycheck Calculator"],["/methodology","2026 Tax Methodology"]]} />
         </div>
 
         <AuthorBox />
