@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 export const metadata: Metadata = {
   title: 'Software Engineer Paycheck Calculator 2026 — Take-Home Pay by State',
@@ -127,20 +128,8 @@ export default function SWEHub() {
           ))}
         </div>
 
-        <h2 style={{ fontSize: '16px', fontWeight: 800, marginBottom: '14px', opacity: 0.7 }}>Related Calculators</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '10px', marginBottom: '40px' }}>
-          {[
-            { label: 'Bonus Tax Calculator', href: '/bonus-tax-calculator', color: 'rgba(236,72,153,0.1)', border: 'rgba(236,72,153,0.25)' },
-            { label: 'Nurse Paycheck Calculator', href: '/nurse-paycheck-calculator', color: 'rgba(74,222,128,0.1)', border: 'rgba(74,222,128,0.25)' },
-            { label: 'Teacher Paycheck Calculator', href: '/teacher-paycheck-calculator', color: 'rgba(99,102,241,0.1)', border: 'rgba(99,102,241,0.25)' },
-            { label: 'Overtime Calculator', href: '/overtime-calculator', color: 'rgba(251,191,36,0.1)', border: 'rgba(251,191,36,0.25)' },
-            { label: '1099 Paycheck Calculator', href: '/1099-paycheck-calculator', color: 'rgba(16,185,129,0.1)', border: 'rgba(16,185,129,0.25)' },
-          ].map(l => (
-            <Link key={l.href} href={l.href} style={{ display: 'block', background: l.color, border: `1px solid ${l.border}`, borderRadius: '10px', padding: '14px 16px', color: 'white', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-              {l.label}
-            </Link>
-          ))}
-        </div>
+        <h2 style={{ fontSize: "16px", fontWeight: 800, marginBottom: "14px", opacity: 0.7 }}>Related Calculators</h2>
+        <LinkCardGrid minCardWidth={150} links={[["/bonus-tax-calculator","Bonus Tax Calculator"],["/nurse-paycheck-calculator","Nurse Paycheck Calculator"],["/teacher-paycheck-calculator","Teacher Paycheck Calculator"],["/overtime-calculator","Overtime Calculator"],["/1099-paycheck-calculator","1099 Paycheck Calculator"]]} />
 
         <p style={{ fontSize: '11px', opacity: 0.35, borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '16px' }}>
           Disclaimer: All figures are estimates. Based on 2026 IRS tax brackets, standard deduction, filing single, base salary only. RSUs, bonuses, and local taxes not included. Not financial or tax advice.
