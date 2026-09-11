@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 // ─── TRS/STRS Pension rates by state (employee contribution %) ──────────────
 // Source: each state's official TRS/STRS/PSERS website, 2025-2026
@@ -244,21 +245,8 @@ export default function TeacherPaycheckCalculator() {
           ))}
         </div>
 
-        {/* RELATED */}
-        <div style={{ marginTop: '32px', textAlign: 'center' }}>
-          <div style={{ fontSize: '14px', opacity: 0.8, marginBottom: '12px' }}>Related Calculators</div>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            {[
-              { href: '/bonus-tax-calculator', label: ' Bonus Tax Calculator' },
-              { href: '/hourly-paycheck-calculator', label: ' Hourly Paycheck' },
-              { href: '/', label: ' Salary Paycheck' },
-              { href: '/blog/one-big-beautiful-bill-tax-calculator-2026', label: ' OBBB Tax Guide' },
-            ].map(l => (
-              <Link key={l.href} href={l.href} style={{ background: 'rgba(129,140,248,0.15)', border: '1px solid rgba(129,140,248,0.3)', borderRadius: '20px', padding: '8px 16px', color: '#a5b4fc', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-                {l.label}
-              </Link>
-            ))}
-          </div>
+        <div style={{ marginTop: "32px" }}>
+          <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/bonus-tax-calculator","Bonus Tax Calculator"],["/hourly-paycheck-calculator","Hourly Paycheck"],["/","Salary Paycheck"],["/blog/one-big-beautiful-bill-tax-calculator-2026","OBBB Tax Guide"]]} />
         </div>
       </div>
 
