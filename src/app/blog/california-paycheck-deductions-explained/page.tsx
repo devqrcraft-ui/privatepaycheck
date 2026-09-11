@@ -124,7 +124,7 @@ export default function Post() {
           Federal income tax is the largest single deduction for most California workers. Your employer withholds based on your W-4 filing status and the 2026 federal tax brackets.
         </p>
         <p style={{ fontSize:'15px', lineHeight:1.8, marginBottom:'16px' }}>
-          The 2026 standard deduction is $15,000 for single filers and $30,000 for married filing jointly. After subtracting this from your adjusted gross income, the remaining amount is taxed progressively: 10% on the first $11,925, 12% up to $48,475, 22% up to $103,350, and so on.
+          The 2026 standard deduction is $16,100 for single filers and $32,200 for married filing jointly. After subtracting this from your adjusted gross income, the remaining amount is taxed progressively: 10% on the first $12,400, 12% up to $50,400, 22% up to $105,700, and so on.
         </p>
         <p style={{ fontSize:'15px', lineHeight:1.8, marginBottom:'24px' }}>
           For a $75,000 salary with no pre-tax deductions, the effective federal rate is around 12–13%. Pre-tax 401(k) contributions directly reduce this — every $1,000 contributed saves roughly $120–$220 in federal tax depending on your bracket.
