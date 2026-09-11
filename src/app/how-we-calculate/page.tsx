@@ -74,7 +74,7 @@ const faqSchema = {
       "name": "What is the 2026 standard deduction?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For 2026: $15,000 for Single filers, $30,000 for Married Filing Jointly, and $22,500 for Head of Household. These are built into every federal tax calculation on this site."
+        "text": "For 2026: $16,100 for Single filers, $32,200 for Married Filing Jointly, and $24,150 for Head of Household. These are built into every federal tax calculation on this site."
       }
     },
     {
@@ -117,17 +117,17 @@ export default function HowWeCalculatePage() {
               <tr><th>Rate</th><th>Single — Taxable Income</th><th>Married Filing Jointly</th></tr>
             </thead>
             <tbody>
-              <tr><td>10%</td><td>$0 – $11,925</td><td>$0 – $23,850</td></tr>
-              <tr><td>12%</td><td>$11,926 – $48,475</td><td>$23,851 – $96,950</td></tr>
-              <tr><td>22%</td><td>$48,476 – $103,350</td><td>$96,951 – $206,700</td></tr>
-              <tr><td>24%</td><td>$103,351 – $197,300</td><td>$206,701 – $394,600</td></tr>
-              <tr><td>32%</td><td>$197,301 – $250,525</td><td>$394,601 – $501,050</td></tr>
-              <tr><td>35%</td><td>$250,526 – $626,350</td><td>$501,051 – $751,600</td></tr>
-              <tr><td>37%</td><td>Over $626,350</td><td>Over $751,600</td></tr>
+              <tr><td>10%</td><td>$0 – $12,400</td><td>$0 – $24,800</td></tr>
+              <tr><td>12%</td><td>$12,401 – $50,400</td><td>$24,801 – $100,800</td></tr>
+              <tr><td>22%</td><td>$50,401 – $105,700</td><td>$100,801 – $211,400</td></tr>
+              <tr><td>24%</td><td>$105,701 – $201,775</td><td>$211,401 – $403,550</td></tr>
+              <tr><td>32%</td><td>$201,776 – $256,225</td><td>$403,551 – $512,450</td></tr>
+              <tr><td>35%</td><td>$256,226 – $640,600</td><td>$512,451 – $768,700</td></tr>
+              <tr><td>37%</td><td>Over $640,600</td><td>Over $768,700</td></tr>
             </tbody>
           </table>
           <div className="hwc-note">
-            Standard deduction: $15,000 (Single) · $30,000 (Married Filing Jointly) · $21,900 (Head of Household)
+            Standard deduction: $16,100 (Single) · $32,200 (Married Filing Jointly) · $24,150 (Head of Household)
           </div>
         </div>
 
@@ -250,7 +250,7 @@ export default function HowWeCalculatePage() {
 
           <div className="hwc-q">
             <div className="hwc-q-title">What is the 2026 standard deduction?</div>
-            <div className="hwc-q-ans">$15,000 for Single · $30,000 for Married Filing Jointly · $21,900 for Head of Household. Applied automatically to every federal calculation.</div>
+            <div className="hwc-q-ans">$16,100 for Single · $32,200 for Married Filing Jointly · $24,150 for Head of Household. Applied automatically to every federal calculation.</div>
           </div>
 
           <div className="hwc-q">
