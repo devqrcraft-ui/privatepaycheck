@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP, STATE_MIN_WAGE } from '@/lib/taxRates2026';
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 
 export const dynamicParams = false;
@@ -176,16 +177,8 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
-            {/* Related Calculators */}
       <div style={{ margin:'40px 0 0', padding:'28px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'16px' }}>
-        <h3 style={{ margin:'0 0 16px', fontSize:'16px', fontWeight:700, color:'#e2e8f0' }}>Related Calculators</h3>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(130px,1fr))', gap:'10px' }}>
-                <a href={`/${state}-paycheck-calculator`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Paycheck Calculator</span></a>
-                <a href={`/hourly-paycheck-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Hourly Paycheck</span></a>
-                <a href={`/overtime-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Overtime Pay</span></a>
-                <a href={`/bonus-tax-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Bonus Tax</span></a>
-                <a href={`/unemployment-calculator/${state}`} style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:'4px', padding:'12px 8px', background:'rgba(99,102,241,0.1)', border:'1px solid rgba(99,102,241,0.25)', borderRadius:'10px', color:'#a5b4fc', fontWeight:600, textDecoration:'none', textAlign:'center', fontSize:'13px' }}><span></span><span>Unemployment</span></a>
-        </div>
+        <LinkCardGrid title="Related Calculators" minCardWidth={130} links={[[`/${state}-paycheck-calculator`,'Paycheck Calculator'],[`/hourly-paycheck-calculator/${state}`,'Hourly Paycheck'],[`/overtime-calculator/${state}`,'Overtime Pay'],[`/bonus-tax-calculator/${state}`,'Bonus Tax'],[`/unemployment-calculator/${state}`,'Unemployment']]} />
       </div>
 </footer>
     </main>
