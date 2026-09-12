@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 
 export const dynamicParams = false;
@@ -169,22 +170,8 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         © 2026 PrivatePaycheck.com ·{' '}
         <Link href="/privacy-policy" style={{ color: 'inherit' }}>Privacy Policy</Link> ·{' '}
         <Link href="/terms" style={{ color: 'inherit' }}>Terms</Link>
-      {/* —— Related Calculators —— */}
       <div style={{ margin: '40px 0 0', padding: '28px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px' }}>
-        <h2 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '16px', opacity: 0.85 }}>Related Calculators for {st.name}</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '12px' }}>
-          {[
-        { label: ' Paycheck Calculator', href: `/${state}` },
-        { label: ' Hourly Paycheck', href: `/hourly-paycheck-calculator/${state}` },
-        { label: ' Unemployment', href: `/unemployment-calculator/${state}` },
-        { label: ' Bonus Tax', href: `/bonus-tax-calculator/${state}` },
-        { label: ' Minimum Wage', href: `/minimum-wage/${state}` },
-          ].map(l => (
-            <a key={l.href} href={l.href} style={{ display: 'block', padding: '12px 16px', background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.25)', borderRadius: '10px', color: '#a5b4fc', fontSize: '13px', fontWeight: 600, textDecoration: 'none', textAlign: 'center' }}>
-              {l.label}
-            </a>
-          ))}
-        </div>
+        <LinkCardGrid title={`Related Calculators for ${st.name}`} minCardWidth={180} links={[[`/${state}-paycheck-calculator`,'Paycheck Calculator'],[`/hourly-paycheck-calculator/${state}`,'Hourly Paycheck'],[`/unemployment-calculator/${state}`,'Unemployment'],[`/bonus-tax-calculator/${state}`,'Bonus Tax'],[`/minimum-wage/${state}`,'Minimum Wage']]} />
       </div>
       </footer>
     </main>
