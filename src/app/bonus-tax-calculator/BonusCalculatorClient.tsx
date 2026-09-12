@@ -3,6 +3,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 // ─── Tax helpers ────────────────────────────────────────────────────────────
 
@@ -255,21 +256,8 @@ export default function BonusTaxCalculator() {
           </div>
         </div>
 
-        {/* RELATED */}
-        <div style={{ marginTop: '32px', textAlign: 'center' }}>
-          <div style={{ fontSize: '14px', opacity: 0.8, marginBottom: '12px' }}>Related Calculators</div>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            {[
-              { href: '/signing-bonus-tax-calculator', label: ' Signing Bonus Tax' },
-              { href: '/raise-calculator', label: ' Raise Calculator' },
-              { href: '/overtime-calculator', label: ' Overtime Calculator' },
-              { href: '/', label: ' Paycheck Calculator' },
-            ].map(l => (
-              <Link key={l.href} href={l.href} style={{ background: 'rgba(129,140,248,0.15)', border: '1px solid rgba(129,140,248,0.3)', borderRadius: '20px', padding: '8px 16px', color: '#a5b4fc', textDecoration: 'none', fontSize: '13px', fontWeight: 600 }}>
-                {l.label}
-              </Link>
-            ))}
-          </div>
+        <div style={{ marginTop: "32px" }}>
+          <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/signing-bonus-tax-calculator","Signing Bonus Tax"],["/raise-calculator","Raise Calculator"],["/overtime-calculator","Overtime Calculator"],["/","Paycheck Calculator"]]} />
         </div>
       </div>
 
