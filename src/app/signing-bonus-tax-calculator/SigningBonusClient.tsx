@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import LinkCardGrid from '@/components/LinkCardGrid'
 
 const STATE_TAX: Record<string, number> = {
   AL: 0.05, AK: 0, AZ: 0.025, AR: 0.047, CA: 0.093, CO: 0.044, CT: 0.065,
@@ -182,20 +183,8 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
           ))}
         </div>
 
-        <div style={{ marginTop:'32px', textAlign:'center' }}>
-          <div style={{ fontSize:'14px', opacity: 0.8, marginBottom:'12px' }}>Related Calculators</div>
-          <div style={{ display:'flex', gap:'12px', flexWrap:'wrap', justifyContent:'center' }}>
-            {[
-              { href:'/bonus-tax-calculator', label:' Bonus Tax Calculator' },
-              { href:'/raise-calculator', label:' Raise Calculator' },
-              { href:'/overtime-calculator', label:' Overtime Calculator' },
-              { href:'/', label:' Paycheck Calculator' },
-            ].map(l=>(
-              <Link key={l.href} href={l.href} style={{ background:'rgba(129,140,248,0.15)', border:'1px solid rgba(129,140,248,0.3)', borderRadius:'20px', padding:'8px 16px', color:'#a5b4fc', textDecoration:'none', fontSize:'13px', fontWeight:600 }}>
-                {l.label}
-              </Link>
-            ))}
-          </div>
+        <div style={{ marginTop: "32px" }}>
+          <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/bonus-tax-calculator","Bonus Tax Calculator"],["/raise-calculator","Raise Calculator"],["/overtime-calculator","Overtime Calculator"],["/","Paycheck Calculator"]]} />
         </div>
       </div>
 
