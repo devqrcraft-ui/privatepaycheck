@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import LinkCardGrid from '@/components/LinkCardGrid'
 export const metadata: Metadata = {
   title: 'Trump Account Calculator 2026 — How Much Will Your Child Get?',
   description: 'Calculate your estimated Trump Account (DOGE dividend) payment for 2026. See how much you or your child may receive based on the proposed savings account program. Free, instant.',
@@ -121,22 +122,9 @@ export default function Page() {
         </div>
       ))}
 
-      {/* CROSS-LINKS */}
-      <div style={{ background: '#1a2235', borderRadius: 8, padding: '18px 20px', marginTop: 32 }}>
-        <div style={{ fontSize: 12, fontWeight: 700, color: '#e2e8f0', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>Related Calculators</div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-          {[
-            { href: '/bonus-tax-calculator', label: 'Bonus Tax Calculator' },
-            { href: '/federal-paycheck-calculator', label: 'Federal Paycheck Calculator' },
-            { href: '/texas-paycheck-calculator', label: 'Texas Paycheck Calculator' },
-            { href: '/2026-tax-changes', label: '2026 Tax Law Changes' },
-          ].map(link => (
-            <a key={link.href} href={link.href} style={{ background: '#0f1629', border: '1px solid #334155', borderRadius: 6, padding: '10px 14px', textDecoration: 'none', color: '#60a5fa', fontSize: 13, fontWeight: 600 }}>
-              → {link.label}
-            </a>
-          ))}
+        <div style={{ background: "#1a2235", borderRadius: 8, padding: "18px 20px", marginTop: 32 }}>
+          <LinkCardGrid title="Related Calculators" minCardWidth={160} links={[["/bonus-tax-calculator","Bonus Tax Calculator"],["/federal-paycheck-calculator","Federal Paycheck Calculator"],["/texas-paycheck-calculator","Texas Paycheck Calculator"],["/2026-tax-changes","2026 Tax Law Changes"]]} />
         </div>
-      </div>
 
       <div style={{ marginTop: 32, padding: '14px 18px', background: '#0f1629', border: '1px solid #e2e8f0', borderRadius: 6, fontSize: 12, color: '#e2e8f0', lineHeight: 1.7 }}>
         <strong style={{ color: '#e2e8f0' }}>Disclaimer:</strong> This calculator provides estimates based on the proposed Trump Account program as of March 2026.
