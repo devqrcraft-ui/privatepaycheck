@@ -215,6 +215,37 @@ export default function BonusTaxCalculatorState({ stateName, stateTax, noStateTa
           <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }}>
             The IRS optional flat supplemental withholding rate for 2026 is <strong style={{ color: 'white' }}>22%</strong> for bonuses under $1 million. However, using the aggregate method (as this calculator does), your effective federal rate depends on your total income and filing status — it may be higher or lower than 22%.
           </p>
+          <h2 style={{ fontSize: '20px', fontWeight: 800, margin: '28px 0 14px' }}>{stateName} Bonus Tax by Amount (2026)</h2>
+          <div style={{ overflowX: 'auto', marginBottom: '24px' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 480, fontSize: 14 }}>
+            <thead><tr style={{ background: 'rgba(245,200,66,0.08)' }}>
+              <th style={{ padding: '10px 12px', textAlign: 'left', color: 'rgba(255,255,255,0.7)' }}>Bonus</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', color: 'rgba(255,255,255,0.7)' }}>Federal (aggregate)</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', color: 'rgba(255,255,255,0.7)' }}>{stateName} State Tax</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', color: 'rgba(255,255,255,0.7)' }}>FICA</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', color: '#F5C842', fontWeight: 700 }}>Take-Home</th>
+            </tr></thead>
+            <tbody>
+              {[5000, 10000, 25000, 50000, 100000].map((amt) => {
+                const exSalary = 75000;
+                const exFed = federalTax(exSalary + amt, 'single') - federalTax(exSalary, 'single');
+                const exState = amt * (stateTax / 100);
+                const exFica = Math.min(amt, Math.max(0, 184500 - exSalary)) * 0.062 + amt * 0.0145;
+                const exTakeHome = amt - exFed - exState - exFica;
+                return (
+                  <tr key={amt} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                    <td style={{ padding: '10px 12px', fontWeight: 600 }}>${amt.toLocaleString()}</td>
+                    <td style={{ padding: '10px 12px', color: 'rgba(255,255,255,0.65)' }}>${Math.round(exFed).toLocaleString()}</td>
+                    <td style={{ padding: '10px 12px', color: 'rgba(255,255,255,0.65)' }}>{noStateTax ? '$0' : '$' + Math.round(exState).toLocaleString()}</td>
+                    <td style={{ padding: '10px 12px', color: 'rgba(255,255,255,0.65)' }}>${Math.round(exFica).toLocaleString()}</td>
+                    <td style={{ padding: '10px 12px', fontWeight: 700, color: '#F5C842' }}>${Math.round(exTakeHome).toLocaleString()}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          </div>
+          <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', marginBottom: 24 }}>Example assumes a $75,000 base salary, single filer. Your actual withholding depends on your specific salary and filing status — use the calculator above for an exact figure.</p>
           <Link href="/bonus-tax-calculator" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '8px', padding: '10px 18px', color: '#F5C842', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }}>
             Compare bonus taxes across all 50 states →
           </Link>
