@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import StatHighlightCards from '../../../components/StatHighlightCards';
 
 interface Props {
   stateName: string;
@@ -61,6 +62,15 @@ export default function UnemploymentCalculatorState({
         )}
       </p>
 
+
+      <StatHighlightCards
+        stats={[
+          { label: 'Max weekly benefit', value: '$' + maxWeekly, sublabel: 'per week' },
+          { label: 'Max duration', value: String(maxWeeks), sublabel: 'weeks' },
+          { label: 'Benefit rate', value: rate + '%', sublabel: 'of avg wage' },
+          { label: 'State tax on UI', value: stateIncomeTax > 0 ? stateIncomeTax + '%' : 'None' },
+        ]}
+      />
       <div style={{ background: '#1a2550', border: '1px solid #2a3a6a', borderRadius: 12, padding: '24px 28px', marginBottom: 32 }}>
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16, color: '#7dd3fc' }}>
           Calculate Your Benefit
