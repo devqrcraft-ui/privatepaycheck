@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Business Analyst Salary & Tax Calculator 2026 ★ ✓ Private",
+  title: "Business Analyst Salary & Tax Calculator 2026",
   description: "Calculate take-home pay for Business Analyst in 2026. ✓ 100% Private.",
   alternates: { canonical: "https://www.privatepaycheck.com/salary-for-business-analyst" }
 };

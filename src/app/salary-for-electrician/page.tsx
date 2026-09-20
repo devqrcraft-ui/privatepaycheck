@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Electrician Salary & Tax Calculator 2026 ★ ✓ Private",
+  title: "Electrician Salary & Tax Calculator 2026",
   description: "Calculate take-home pay for Electrician in 2026. ✓ 100% Private.",
   alternates: { canonical: "https://www.privatepaycheck.com/salary-for-electrician" }
 };

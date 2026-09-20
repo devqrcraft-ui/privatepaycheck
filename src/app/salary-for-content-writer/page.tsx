@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Content Writer Salary & Tax Calculator 2026 ★ ✓ Private",
+  title: "Content Writer Salary & Tax Calculator 2026",
   description: "Calculate take-home pay for Content Writer in 2026. ✓ 100% Private.",
   alternates: { canonical: "https://www.privatepaycheck.com/salary-for-content-writer" }
 };
