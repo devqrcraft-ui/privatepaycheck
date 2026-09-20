@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Salary & Paycheck Calculator Nashville 2026 ★ ✓",
+  title: "Salary & Paycheck Calculator Nashville 2026",
   description: "Calculate your net take-home pay in Nashville for 2026. ✓ 100% Private.",
   alternates: { canonical: "https://www.privatepaycheck.com/salary-in-nashville" }
 };
