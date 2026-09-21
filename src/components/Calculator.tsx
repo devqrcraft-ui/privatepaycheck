@@ -216,23 +216,6 @@ export default function Calculator({ defaultState }: CalcProps) {
           </div>
         )}
 
-        {/* Social proof — static, zero dependencies */}
-        {!results && (
-          <div className="social-proof">
-            <div className="sp-item">
-              <div className="sp-text">"Finally a calculator that doesn't ask for my email. Got my number in 10 seconds."</div>
-              <div className="sp-author">— Teacher, Texas</div>
-            </div>
-            <div className="sp-item">
-              <div className="sp-text">"The 401k field made me realize I was leaving $800/mo on the table in tax savings."</div>
-              <div className="sp-author">— Software Engineer, California</div>
-            </div>
-            <div className="sp-item">
-              <div className="sp-text">"Used this before every salary negotiation. Shows exactly what a raise actually means."</div>
-              <div className="sp-author">— Nurse, Florida</div>
-            </div>
-          </div>
-        )}
 
       </div>
     </>
