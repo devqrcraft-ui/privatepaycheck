@@ -120,7 +120,7 @@ export default function HomeClient() {
       <style dangerouslySetInnerHTML={{__html:CSS}}/>
 
       <div className="testimonial-bar">
-        ⭐ <strong>"Exact take-home in seconds"</strong> — Sarah K., Texas &nbsp;|&nbsp; 🔒 Calculations stay in your browser &nbsp;|&nbsp; ✓ 2026 IRS rates
+        🔒 Calculations stay in your browser &nbsp;|&nbsp; ✓ 2026 IRS rates
       </div>
       <section className="hero">
         <div className="hero-inner">
