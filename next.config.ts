@@ -59,7 +59,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/blog/:state-paycheck-calculator',
+        source: '/blog/:state((?!nurse-).*)-paycheck-calculator',
         destination: '/blog',
         permanent: true,
       },
