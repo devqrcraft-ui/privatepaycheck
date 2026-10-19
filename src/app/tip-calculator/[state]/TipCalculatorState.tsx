@@ -24,14 +24,16 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
   const [filing, setFiling] = useState('single');
 
   // No Tax on Tips: deduct up to $25,000 from federal income
-  const tipDeduction = Math.min(tips, 25000);
+  const tipThresh = filing === 'married' ? 300000 : 150000;
+  const tipPhaseOut = Math.max(0, Math.ceil((salary + tips - tipThresh) / 1000) * 100);
+  const tipDeduction = Math.max(0, Math.min(tips, 25000) - tipPhaseOut);
   const taxableTips = Math.max(0, tips - tipDeduction);
 
   // Federal brackets
   function fedTax(income: number) {
     const b = filing === 'married'
-      ? [[23200,0.10],[94300,0.12],[201050,0.22],[383900,0.24],[487450,0.32],[731200,0.35],[Infinity,0.37]]
-      : [[11600,0.10],[47150,0.12],[100525,0.22],[191950,0.24],[243725,0.32],[609350,0.35],[Infinity,0.37]];
+      ? [[24800,0.10],[100800,0.12],[211400,0.22],[403550,0.24],[512450,0.32],[768700,0.35],[Infinity,0.37]]
+      : [[12400,0.10],[50400,0.12],[105700,0.22],[201775,0.24],[256225,0.32],[640600,0.35],[Infinity,0.37]];
     let tax = 0, prev = 0;
     for (const [lim, rate] of b as [number,number][]) {
       if (income <= prev) break;
@@ -41,8 +43,9 @@ export default function TipCalculatorState({ stateName, stateTax, noStateTax, no
     return tax;
   }
 
-  const federalWithLaw = fedTax(salary + taxableTips);
-  const federalWithoutLaw = fedTax(salary + tips);
+  const stdDed = filing === 'married' ? 32200 : 16100;
+  const federalWithLaw = fedTax(Math.max(0, salary + taxableTips - stdDed));
+  const federalWithoutLaw = fedTax(Math.max(0, salary + tips - stdDed));
   const federalSavings = federalWithoutLaw - federalWithLaw;
   const stateSavings = noStateTax ? 0 : tipDeduction * (stateTax / 100);
   const ficaOnTips = tips * (0.062 + 0.0145); // FICA still applies

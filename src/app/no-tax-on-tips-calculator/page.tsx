@@ -12,13 +12,16 @@ export default function NoTaxOnTipsCalculator() {
   const r = useMemo(() => {
     const t = parseFloat(tips) || 0;
     const w = parseFloat(wages) || 0;
-    const wk = parseFloat(weeks) || 52;
+    const wk = Math.min(52, Math.max(1, parseFloat(weeks) || 52));
     const annualTips = t * wk;
     const annualWages = w * wk;
     const annualTotal = annualTips + annualWages;
     const cap = 25000;
-    const exemptTips = Math.min(annualTips, cap);
-    const taxableTips = Math.max(0, annualTips - cap);
+    // Phase-out: 100 per 1,000 of MAGI over 150k / 300k (MAGI approximated by total pay plus tips).
+    const tipThresh = filing === 'married' ? 300000 : 150000;
+    const tipPhaseOut = Math.max(0, Math.ceil((annualTotal - tipThresh) / 1000) * 100);
+    const exemptTips = Math.max(0, Math.min(annualTips, cap) - tipPhaseOut);
+    const taxableTips = Math.max(0, annualTips - exemptTips);
     const std = filing === 'married' ? 32200 : 16100;
     const taxableOld = Math.max(0, annualTotal - std);
     const taxableNew = Math.max(0, annualWages + taxableTips - std);
@@ -56,7 +59,7 @@ export default function NoTaxOnTipsCalculator() {
           <div style={{ fontWeight: 800, color: '#F5C842', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>
           <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
             <li>Up to <strong>$25,000</strong> in tip income is exempt from federal income tax in 2026</li>
-            <li>Workers must earn <strong>$160,000 or less</strong> in wages to qualify</li>
+            <li>The deduction phases out above $150,000 MAGI ($300,000 joint) and applies only to tips in occupations on the IRS list</li>
             <li>FICA taxes (Social Security 6.2% + Medicare 1.45%) still apply to all tips</li>
             <li>Tips must still be <strong>reported</strong> on your tax return — exemption removes income tax only</li>
             <li>A server earning $25,000 in tips saves roughly <strong>$2,500–$5,500</strong> in federal tax</li>
@@ -112,7 +115,7 @@ export default function NoTaxOnTipsCalculator() {
         <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '12px', padding: '24px' }}>
           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '16px' }}>No Tax on Tips &mdash; FAQ</h2>
           {[
-            { q: 'Who qualifies for No Tax on Tips?', a: 'Workers in traditionally tipped occupations qualify: servers, bartenders, hotel staff, hair stylists, valets, and similar roles. The income threshold is $160,000 or less in wages.' },
+            { q: 'Who qualifies for No Tax on Tips?', a: 'Workers in traditionally tipped occupations qualify: servers, bartenders, hotel staff, hair stylists, valets, and similar roles. The deduction phases out above $150,000 MAGI ($300,000 joint) and applies only to tips in qualifying occupations.' },
             { q: 'Is there a cap on tax-free tip income?', a: 'Yes, the exemption caps at $25,000 per year in tip income. Tips above $25,000 are still taxed normally.' },
             { q: 'Does it eliminate FICA on tips too?', a: 'No, Social Security (6.2%) and Medicare (1.45%) still apply to tips. Only federal income tax is exempt. This calculator shows federal income tax savings only.' },
             { q: 'Do I still need to report tips?', a: 'Yes, all tips must still be reported to your employer and on your tax return. The exemption means they are not subject to federal income tax, but they still count as income for Social Security.' },

@@ -10,7 +10,7 @@ const TICKER_ITEMS = [
   'Free Forever — No Signup Required',
   'Salary & Hourly Calculator',
   'Bonus & Overtime Calculator',
-  'IRS Publication 15-T Compliant',
+  'Uses 2026 IRS tax rates',
   'Standard Deduction $16,100 Single / $32,200 Married',
   'FICA Wage Base $184,500 for 2026',
   'No Accounts. No Cookies. No Tracking.',

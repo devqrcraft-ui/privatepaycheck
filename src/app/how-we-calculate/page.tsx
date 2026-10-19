@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'How We Calculate Your Paycheck',
-  description: 'Transparent methodology: federal tax brackets, FICA, state taxes, 2026 overtime and tip deductions. Every formula sourced from IRS Publication 15-T.',
+  description: 'Transparent methodology: federal tax brackets, FICA, state taxes, 2026 overtime and tip deductions. Every formula is documented with its IRS or state source.',
   alternates: { canonical: 'https://www.privatepaycheck.com/how-we-calculate' },
   authors: [{ name: 'the PrivatePaycheck Team' }],
 };
@@ -50,7 +50,7 @@ const faqSchema = {
       "name": "How accurate is the PrivatePaycheck calculator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our calculator uses the official 2026 IRS Publication 15-T withholding tables for federal tax, the SSA-announced $184,500 Social Security wage base, and official state tax rates from each state's revenue department. Results are accurate for standard W-2 employees. Self-employed workers should use our 1099 calculator."
+        "text": "Our calculator uses the 2026 IRS federal tax brackets and standard deduction for federal tax, the SSA-announced $184,500 Social Security wage base, and official state tax rates from each state's revenue department. Results are accurate for standard W-2 employees. Self-employed workers should use our 1099 calculator."
       }
     },
     {

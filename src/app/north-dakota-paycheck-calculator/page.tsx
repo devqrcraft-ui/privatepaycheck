@@ -109,7 +109,7 @@ export default function Page() {
           <li>Progressive tax: 2.5% flat rate — higher income = higher bracket</li>
           <li>FICA: Social Security 6.2% (up to $184,500 wage base) + Medicare 1.45%</li>
           <li>2026 standard deduction: $16,100 (single) / $32,200 (married filing jointly)</li>
-          <li>This calculator uses 2026 IRS Publication 15-T tables and North Dakota 2026 withholding rates</li>
+          <li>This calculator estimates take-home pay from 2026 IRS federal brackets and North Dakota 2026 withholding rates</li>
         </ul>
         <div style={{ marginTop:12, padding:'10px 14px', background:'rgba(245,200,66,0.06)', borderRadius:8, fontSize:13, color:'#fde68a' }}>
           North Dakota state income tax: <strong>2.5% flat</strong> · FICA: 7.65% · SS wage base: $184,500

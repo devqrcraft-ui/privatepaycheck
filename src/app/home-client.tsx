@@ -32,7 +32,7 @@ const TOP_STATES = [
 
 const FEATURES = [
   { icon:'', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.', href:'/' },
-  { icon:'', title:'IRS Compliant 2026', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Publication 15-T compliant.', href:'/methodology' },
+  { icon:'', title:'2026 IRS Rates', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Estimates only; see our methodology.', href:'/methodology' },
   { icon:'', title:'Instant Results',     desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.', href:'/' },
   { icon:'', title:'Salary & Hourly',     desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.', href:'/hourly-paycheck-calculator' },
   { icon:'', title:'Bonus Calculator',    desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.', href:'/bonus-tax-calculator' },
@@ -193,7 +193,7 @@ export default function HomeClient() {
             <div className="how-we-calculate-block" style={{ padding: '0' }}>
               <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.09)', borderRadius: 10, padding: '14px 16px', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }} className="hwc-grid">
                 {[
-                  { label: 'Federal income tax', detail: 'Uses 2026 IRS Publication 15-T withholding tables. Standard deduction $16,100 (single) / $32,200 (married). Rates 10%–37%.' },
+                  { label: 'Federal income tax', detail: 'Uses 2026 IRS federal brackets (annualized estimate, modeled on Publication 15-T). Standard deduction $16,100 (single) / $32,200 (married). Rates 10%–37%.' },
                   { label: 'FICA taxes', detail: 'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Additional 0.9% Medicare surtax above $200,000.' },
                   { label: 'State income tax', detail: "Includes your state's 2026 income tax rates. From 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year from official state sources." },
                 ].map(item => (
@@ -204,7 +204,7 @@ export default function HomeClient() {
                 ))}
               </div>
               <div style={{ paddingTop: 8, fontSize: 11, color: 'rgba(255,255,255,0.3)' }}>
-                Based on IRS Publication 15-T (2026). <a href="/methodology" style={{ color: '#F5C842', textDecoration: 'underline none' }}>See full methodology →</a>
+                Based on 2026 IRS federal brackets (modeled on Publication 15-T). <a href="/methodology" style={{ color: '#F5C842', textDecoration: 'underline none' }}>See full methodology →</a>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function HomeClient() {
         <div className="trust-inner">
           <div><div className="t-n">100%</div><div className="t-l">Browser-Only</div></div>
           <div><div className="t-n">0 ms</div><div className="t-l">Server Calls</div></div>
-          <div><div className="t-n">IRS</div><div className="t-l">Pub 15-T Source</div></div>
+          <div><div className="t-n">IRS</div><div className="t-l">Rates Source</div></div>
           <div><div className="t-n">SSA</div><div className="t-l">Wage Base Official</div></div>
           <div><div className="t-n">2026</div><div className="t-l">Tax Tables Live</div></div>
         </div>
@@ -405,7 +405,7 @@ export default function HomeClient() {
           <div className="feat-card">
             
             <div className="feat-title">Federal Tax</div>
-            <p className="feat-desc">2026 IRS Publication 15-T brackets. Standard deduction $16,100 (single) / $32,200 (married). Progressive rates 10%–37%.</p>
+            <p className="feat-desc">2026 IRS federal tax brackets. Standard deduction $16,100 (single) / $32,200 (married). Progressive rates 10%–37%.</p>
           </div>
           <div className="feat-card">
             
@@ -494,7 +494,7 @@ export default function HomeClient() {
             </div>
             <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:20,marginBottom:20}}>
               {[
-                {num:'01',title:'IRS Publication 15-T',desc:'We use official 2026 IRS withholding tables for federal income tax — the same tables your employer uses.'},
+                {num:'01',title:'2026 IRS Federal Brackets',desc:'We use 2026 IRS federal brackets and the standard deduction to estimate federal income tax. Your employer’s payroll system may withhold differently.'},
                 {num:'02',title:'FICA Rates',desc:'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Exact rates, no estimation.'},
                 {num:'03',title:'State Tax Tables',desc:'Official 2026 state income tax rates for all 50 states plus D.C. Updated from each state revenue department.'},
                 {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Calculations stay in your browser, ever.'},
@@ -519,7 +519,7 @@ export default function HomeClient() {
         <div className="s-head">
           <div className="s-tag">FAQ</div>
           <h2>Common <em>Paycheck Questions</em></h2>
-          <p className="s-desc">Answers based on 2026 IRS rules. All calculations verified against official IRS Publication 15-T.</p>
+          <p className="s-desc">Answers based on 2026 IRS rules. Calculations are estimates based on 2026 IRS rates; see our methodology.</p>
         </div>
         <div style={{maxWidth:'800px',margin:'0 auto',display:'flex',flexDirection:'column',gap:'12px'}}>
           {[

@@ -8,9 +8,9 @@ export default function NoTaxOvertimeClient() {
   const [filing, setFiling] = useState('single');
 
   const r = useMemo(() => {
-    const reg = parseFloat(regular) || 0;
-    const ot = parseFloat(otHours) || 0;
-    const wk = parseFloat(weeks) || 52;
+    const reg = Math.min(1000, Math.max(0, parseFloat(regular) || 0));
+    const ot = Math.min(80, Math.max(0, parseFloat(otHours) || 0));
+    const wk = Math.min(52, Math.max(1, parseFloat(weeks) || 52));
     const otRate = reg * 1.5;
     const annualOT = otRate * ot * wk;
     const annualRegular = reg * 40 * wk;
@@ -27,12 +27,19 @@ export default function NoTaxOvertimeClient() {
     }
 
     const taxableOld = Math.max(0, annualTotal - std);
-    const taxableNew = Math.max(0, annualRegular - std);
+    // IRS: only the premium (0.5x) part of overtime is deductible. Cap 12,500 / 25,000. Phase-out 100 per 1,000 of MAGI over 150k / 300k.
+    // MAGI is approximated by total annual pay (assumes no other income).
+    const qualifiedPremium = (otRate - reg) * ot * wk;
+    const otCap = filing === 'married' ? 25000 : 12500;
+    const otThresh = filing === 'married' ? 300000 : 150000;
+    const otPhaseOut = Math.max(0, Math.ceil((annualTotal - otThresh) / 1000) * 100);
+    const otDeduction = Math.max(0, Math.min(qualifiedPremium, otCap) - otPhaseOut);
+    const taxableNew = Math.max(0, annualTotal - std - otDeduction);
     const fedOld = fedTax(taxableOld, filing);
     const fedNew = fedTax(taxableNew, filing);
     const savings = fedOld - fedNew;
 
-    return { annualOT, annualRegular, annualTotal, fedOld, fedNew, savings, totalSavings: savings, otRate };
+    return { annualOT, annualRegular, annualTotal, fedOld, fedNew, savings, totalSavings: savings, otRate, qualifiedPremium, otDeduction };
   }, [regular, otHours, weeks, filing]);
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();

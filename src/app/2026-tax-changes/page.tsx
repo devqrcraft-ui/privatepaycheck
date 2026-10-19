@@ -122,7 +122,7 @@ export default function TaxChanges2026Page() {
             <div className="change-card-body">
               <div className="change-row"><span className="change-row-label">Max deduction</span><span className="change-row-val">$25,000/year</span></div>
               <div className="change-row"><span className="change-row-label">Who qualifies</span><span className="change-row-val">Tipped occupations</span></div>
-              <div className="change-row"><span className="change-row-label">Income limit</span><span className="change-row-val">Under $160,000</span></div>
+              <div className="change-row"><span className="change-row-label">Income limit</span><span className="change-row-val">Phases out above $150,000 MAGI</span></div>
               <div className="change-row"><span className="change-row-label">Affects FICA?</span><span className="change-row-val" style={{color:'#f87171'}}>No</span></div>
               <div className="change-row"><span className="change-row-label">Valid through</span><span className="change-row-val">Tax year 2028</span></div>
               <Link href="/no-tax-on-tips-calculator" className="change-cta">Calculate Tip Savings →</Link>

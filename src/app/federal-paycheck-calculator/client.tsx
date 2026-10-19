@@ -75,7 +75,7 @@ export default function FederalPaycheckPage() {
         <h1 className="f-h1">Federal Paycheck Calculator <em>2026</em></h1>
         <p className="f-lead">
           Calculate your exact federal income tax and FICA withholding for any pay period.
-          Based on 2026 IRS Publication 15-T tables. Includes overtime and tip deductions from the new law.
+          Based on 2026 IRS federal tax brackets. Includes overtime and tip deductions from the new law.
         </p>
 
         <div className="tax-pills">

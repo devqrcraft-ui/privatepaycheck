@@ -68,7 +68,7 @@ export default function TipsTaxCalculator2026() {
   const faqItems = [
     { q: 'How much tip income is tax-free in 2026?', a: 'Up to $25,000 in annual tip income is exempt from federal income tax under the No Tax on Tips law signed in 2025. Tips above $25,000 are taxed normally.' },
     { q: 'Does No Tax on Tips also remove FICA?', a: 'No. Social Security (6.2%) and Medicare (1.45%) still apply to all tip income, including exempt tips. Only federal income tax is waived on the first $25,000.' },
-    { q: 'Who qualifies for the tips tax exemption?', a: 'Workers in traditionally tipped jobs qualify: servers, bartenders, hotel staff, hair stylists, valets, and similar roles. Your total wages must be $160,000 or less.' },
+    { q: 'Who qualifies for the tips tax exemption?', a: 'Workers in traditionally tipped jobs qualify: servers, bartenders, hotel staff, hair stylists, valets, and similar roles. The deduction phases out above $150,000 MAGI ($300,000 joint) and applies only to tips in qualifying occupations.' },
     { q: 'Do I still report tips on my tax return?', a: 'Yes. All tips must still be reported to your employer and on your federal return. The exemption means the first $25,000 is not subject to income tax — but it is still reported income.' },
     { q: 'Does the $25,000 cap reset each year?', a: 'Yes. The $25,000 exemption applies per tax year. If you earn $30,000 in tips in 2026, $25,000 is exempt and $5,000 is taxable.' },
     { q: 'What states also exempt tip income from state tax?', a: 'Most states still tax tip income at the state level. A few states with no income tax — like Florida, Texas, and Nevada — effectively exempt tips. Check your state rules separately.' },
@@ -114,7 +114,7 @@ export default function TipsTaxCalculator2026() {
             <div style={{ fontWeight: 800, color: '#F5C842', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>
             <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
               <li>Up to <strong>$25,000</strong> in annual tip income is exempt from federal income tax in 2026</li>
-              <li>The exemption applies to workers earning <strong>$160,000 or less</strong> in wages</li>
+              <li>The deduction phases out above $150,000 MAGI ($300,000 joint) and applies only to qualifying tipped occupations</li>
               <li>FICA taxes (Social Security + Medicare = 7.65%) still apply to all tips</li>
               <li>Tips must still be <strong>reported</strong> — the exemption removes income tax, not reporting</li>
               <li>Most states still tax tip income — check your state rules separately</li>
