@@ -27,8 +27,8 @@ const STATE_NAMES: Record<string, string> = {
 function netPay(gross: number, filing: string, state: string): number {
   const brackets =
     filing === 'married'
-      ? [[23200,0.10],[94300,0.12],[201050,0.22],[383900,0.24],[487450,0.32],[731200,0.35],[Infinity,0.37]]
-      : [[11600,0.10],[47150,0.12],[100525,0.22],[191950,0.24],[243725,0.32],[609350,0.35],[Infinity,0.37]];
+      ? [[24800,0.10],[100800,0.12],[211400,0.22],[403550,0.24],[512450,0.32],[768700,0.35],[Infinity,0.37]]
+      : [[12400,0.10],[50400,0.12],[105700,0.22],[201775,0.24],[256225,0.32],[640600,0.35],[Infinity,0.37]];
   let fed = 0, prev = 0;
   for (const [limit, rate] of brackets as [number,number][]) {
     if (gross <= prev) break;

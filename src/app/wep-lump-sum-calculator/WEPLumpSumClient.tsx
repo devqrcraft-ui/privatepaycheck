@@ -5,8 +5,8 @@ import Link from 'next/link';
 // 2026 federal brackets
 function fedTax(taxable: number, filing: string): number {
   const b: [number, number][] = filing === 'married'
-    ? [[23200,.10],[94300,.12],[201050,.22],[383900,.24],[487450,.32],[731200,.35],[Infinity,.37]]
-    : [[11600,.10],[47150,.12],[100525,.22],[191950,.24],[243725,.32],[609350,.35],[Infinity,.37]];
+    ? [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]]
+    : [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]];
   let tax = 0, prev = 0;
   for (const [lim, rate] of b) {
     if (taxable <= prev) break;
