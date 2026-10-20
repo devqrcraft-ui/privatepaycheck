@@ -138,8 +138,10 @@ export function calcTeacher(salary: number, state: string, filing: Filing, ssYea
   const stateTaxableIncome = Math.max(0, salary - pensionDeduction);
   const stateTax = stateTaxableIncome * (STATE_TAX[state] ?? 0);
 
-  const seniorDeduction = age >= 65 ? Math.min(6000, Math.max(0, 6000 - Math.max(0, salary - 75000) * 0.06)) : 0;
-  const seniorTaxSaving = seniorDeduction * (fedTax / Math.max(federalTaxableIncome, 1));
+  const seniorMagi = Math.max(0, salary - pensionDeduction);
+  const seniorThreshold = filing === 'married' ? 150000 : 75000;
+  const seniorDeduction = age >= 65 ? Math.min(6000, Math.max(0, 6000 - Math.max(0, seniorMagi - seniorThreshold) * 0.06)) : 0;
+  const seniorTaxSaving = fedTax - federalTax(Math.max(0, federalTaxableIncome - seniorDeduction), filing);
 
   const totalDeductions = fedTax + stateTax + fica + pensionDeduction - seniorTaxSaving;
   const takeHome = salary - totalDeductions;
