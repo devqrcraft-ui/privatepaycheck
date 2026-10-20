@@ -106,7 +106,7 @@ export default function Post() {
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>How Overtime Affects Your Taxes</h2>
           <p>Overtime income is taxed at your <strong>marginal tax rate</strong> — not a special OT rate. If your regular income puts you in the 22% bracket, your overtime earnings are also taxed at 22% (or higher if the extra income pushes you into a new bracket).</p>
-          <p>For example: a worker earning $50,000 base salary is in the 22% bracket for income above $47,150. All overtime earnings would be taxed at 22% federally. If they earn enough OT to push above $100,525, the excess would be taxed at 24%.</p>
+          <p>For example: a single filer earns $50,000 in base pay. After the $16,100 standard deduction, taxable income is about $33,900, which is in the 12% bracket. Overtime is taxed at your marginal rate: taxable income above $50,400 is taxed at 22% and above $105,700 at 24%. In practice, overtime stays in the 12% bracket until total pay reaches roughly $66,500.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Exempt vs. Non-Exempt Employees</h2>
           <p>Not all workers qualify for overtime. Employees may be exempt if they are paid on a salary basis (over $684/week) AND their primary duties are executive, administrative, or professional in nature. Common exempt roles: managers, lawyers, doctors, teachers, outside sales reps, and most computer professionals earning over $27.63/hr.</p>

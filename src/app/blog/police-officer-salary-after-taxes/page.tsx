@@ -67,7 +67,7 @@ export default function Page() {
             <li>{'FICA is 7.65% — $5,172/year on $67,600 (some departments exempt from SS)'}</li>
             <li>{'Pension contributions (8-12%) are pre-tax — reduce taxable income but cut paycheck'}</li>
             <li>{'TX/FL officers keep $3,000-$6,000/year more than CA due to zero state income tax'}</li>
-            <li>{'Overtime taxed as regular income — pushes earnings into 22% bracket above $47,150'}</li>
+            <li>{'Overtime is taxed as regular income at your marginal rate: 22% on taxable income above $50,400 and 24% above $105,700 (single, 2026)'}</li>
           </ul>
         </div>
 

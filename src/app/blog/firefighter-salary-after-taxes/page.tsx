@@ -204,7 +204,7 @@ export default function Page() {
             How Is Overtime Taxed for Firefighters in 2026?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'Firefighters frequently work overtime due to shift coverage and emergency response demands. All overtime pay is taxed as ordinary income at your marginal federal bracket — there is no special overtime tax rate. On a $56,800 base, you are in the 22% federal bracket for income above $47,150 (single filer). Most overtime falls into this bracket.'}
+            {'Firefighters frequently work overtime due to shift coverage and emergency response demands. All overtime pay is taxed as ordinary income at your marginal federal bracket — there is no special overtime tax rate. On a $56,800 base, a single filer has about $40,700 of taxable income after the $16,100 standard deduction, which falls in the 12% bracket. Overtime is taxed at 12% until taxable income reaches $50,400 (roughly $9,700 of extra pay) and at 22% above that.'}
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
