@@ -44,7 +44,7 @@ export default function Page() {
           <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
           <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
           <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
-          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — reduces federal taxable income dollar-for-dollar</li>
           <li>Use the free calculator above for your exact state + filing status breakdown</li>
         </ul>
       </div>

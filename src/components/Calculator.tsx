@@ -58,7 +58,7 @@ export default function Calculator({ defaultState }: CalcProps) {
     const annual   = payType === 'hourly' ? raw * 40 * 52 : raw;
 
     // 401k reduces federal & state taxable income (pre-tax)
-    const k401Annual = Math.min(annual * k401pct, 23500); // 2026 IRS limit
+    const k401Annual = Math.min(annual * k401pct, 24500); // 2026 IRS limit (Notice 2025-67)
     const taxableAnnual = annual - k401Annual;
 
     const gross    = annual / f;

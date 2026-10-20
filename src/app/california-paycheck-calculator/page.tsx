@@ -112,7 +112,7 @@ export default function Page() {
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>Notes</th>
         </tr></thead>
         <tbody>{[
-          ['Federal Income Tax','10%–37%','Based on taxable income after $15,000 standard deduction'],
+          ['Federal Income Tax','10%–37%','Based on taxable income after $16,100 standard deduction'],
           ['Social Security','6.2%','On wages up to $184,500'],
           ['Medicare','1.45%','No wage cap; +0.9% over $200k'],
           ['CA State Income Tax','1%–13.3%','9 brackets; most earners pay 6%–9.3%'],

@@ -73,7 +73,7 @@ export default function Post() {
             <li>Only income <strong style={{ color: '#fff' }}>above</strong> a bracket threshold faces the higher rate — not your whole salary</li>
             <li>FICA (7.65%) applies to every dollar of a raise up to the $184,500 SS wage base</li>
             <li>2026 standard deduction: <strong style={{ color: '#fff' }}>$16,100</strong> single / <strong style={{ color: '#fff' }}>$32,200</strong> married filing jointly</li>
-            <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — raising contributions after a pay rise offsets bracket creep</li>
+            <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — raising contributions after a pay rise offsets bracket creep</li>
             <li>Overtime deduction 2026: up to <strong style={{ color: '#fff' }}>$12,500</strong> single under OBBBA — reduces overtime tax</li>
             <li>No-tax-on-tips: up to <strong style={{ color: '#fff' }}>$25,000</strong> tip income excluded federally under OBBBA 2026</li>
           </ul>

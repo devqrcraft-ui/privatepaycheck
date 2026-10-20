@@ -46,7 +46,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
           <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
           <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
           <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
-          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — reduces federal taxable income dollar-for-dollar</li>
           <li>Use the free calculator above for your exact state + filing status breakdown</li>
         </ul>
       </div>
@@ -66,7 +66,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
 </div>
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'0 0 12px',color:'white'}}>Federal Tax Breakdown on $50,000</h2>
-<p>For a single filer in 2026 with no pre-tax deductions: taxable income = $50,000 − $15,000 standard deduction = $35,000. Federal tax: first $11,600 at 10% ($1,160) + remaining $23,400 at 12% ($2,808) = <strong>$3,968 federal tax</strong>. FICA: $3,825. Total federal burden: $7,793 (15.6%).</p>
+<p>For a single filer in 2026 with no pre-tax deductions: taxable income = $50,000 − $16,100 standard deduction = $33,900. Federal tax: first $12,400 at 10% ($1,240) + remaining $21,500 at 12% ($2,580) = <strong>$3,820 federal tax</strong>. FICA: $3,825. Total federal burden: $7,645 (15.3%).</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>How to Get to $50k Faster — Common Hourly Rates</h2>
 <ul style={{paddingLeft:'20px'}}><li style={{marginBottom:'8px'}}><strong>$24.04/hr × 40 hrs × 52 weeks</strong> = exactly $50,003</li><li style={{marginBottom:'8px'}}><strong>$25/hr × 40 hrs × 50 weeks</strong> = $50,000 (2 weeks vacation)</li><li style={{marginBottom:'8px'}}><strong>$20/hr with 5 hrs overtime/week</strong> = $20×40 + $30×5 = $950/wk × 52 = $49,400</li></ul>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Is $50,000 a Good Salary in 2026?</h2>

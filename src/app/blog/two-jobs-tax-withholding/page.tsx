@@ -34,7 +34,7 @@ export default function Post(){return(<><script type="application/ld+json" dange
           <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
           <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
           <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
-          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — reduces federal taxable income dollar-for-dollar</li>
           <li>Use the free calculator above for your exact state + filing status breakdown</li>
         </ul>
       </div>
@@ -42,7 +42,7 @@ export default function Post(){return(<><script type="application/ld+json" dange
 <div style={{fontSize:'15px',lineHeight:1.9,opacity:0.85}}>
 <p>Working two jobs is one of the most common reasons people get an unexpected tax bill in April. It is not that you did anything wrong "" it is a built-in flaw in how withholding works. Here is why it happens and exactly how to fix it.</p>
 <h2 style={{fontSize:'22px',fontWeight:800,margin:'32px 0 12px',color:'white'}}>Why Two Jobs = Tax Surprise</h2>
-<p>Every employer withholds taxes as if their job is your <strong>only income</strong>. They give you the full standard deduction ($15,000 in 2026) and withhold starting from the lowest 10% bracket. This works fine with one job. With two jobs, both employers do this simultaneously "" but you only get one standard deduction when you file.</p>
+<p>Every employer withholds taxes as if their job is your <strong>only income</strong>. They give you the full standard deduction ($16,100 in 2026) and withhold starting from the lowest 10% bracket. This works fine with one job. With two jobs, both employers do this simultaneously "" but you only get one standard deduction when you file.</p>
 <div style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:'10px',padding:'16px',margin:'16px 0',fontFamily:'monospace',fontSize:'13px'}}>
 Example: $60k Job 1 + $25k Job 2 = $85k combined<br/>
 Job 1 withholds based on $60k в†' ~$5,180 federal<br/>

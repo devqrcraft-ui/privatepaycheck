@@ -188,7 +188,7 @@ export default function Calculator1099Page() {
             </div>
             <div className="r-quarterly">
               <strong>Quarterly estimated payment: <span id="r-quarterly"></span></strong>
-              Due dates: April 15 · June 16 · September 15 · January 15
+              Due dates: April 15 · June 15 · September 15 · January 15
             </div>
           </div>
         </div>

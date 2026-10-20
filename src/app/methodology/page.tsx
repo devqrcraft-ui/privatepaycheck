@@ -46,7 +46,7 @@ export default function Page() {
       <ol style={{ color:'#c8d4e8', lineHeight: 2, paddingLeft: 20, marginBottom: 32 }}>
         <li>Start with <strong>gross annual salary</strong></li>
         <li>Subtract <strong>pre-tax deductions</strong> (401k, HSA, health insurance premiums)</li>
-        <li>Subtract <strong>standard deduction</strong> ($15,000 single / $30,000 MFJ) to get taxable income</li>
+        <li>Subtract <strong>standard deduction</strong> ($16,100 single / $32,200 MFJ) to get taxable income</li>
         <li>Apply <strong>federal tax brackets</strong> progressively</li>
         <li>Calculate <strong>FICA</strong>: Social Security 6.2% on first $184,500 + Medicare 1.45% on all wages</li>
         <li>Apply <strong>state income tax</strong> using each state official rate schedule</li>

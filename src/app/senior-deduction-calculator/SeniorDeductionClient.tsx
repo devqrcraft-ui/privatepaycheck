@@ -13,7 +13,7 @@ export default function SeniorDeductionClient() {
     const phaseoutStart = filing === 'married' ? 150000 : 75000;
     const seniorBonus = 6000;
     const overThreshold = Math.max(0, inc - phaseoutStart);
-    const reducedBonus = Math.max(0, seniorBonus - overThreshold);
+    const reducedBonus = Math.max(0, seniorBonus - overThreshold * 0.06);
     const actualBonus = isEligible ? reducedBonus : 0;
     const stdDed = filing === 'married' ? 32200 : 16100;
 

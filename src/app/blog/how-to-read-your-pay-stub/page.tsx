@@ -60,7 +60,7 @@ export default function Post() {
           <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
           <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
           <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
-          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$23,500</strong> — reduces federal taxable income dollar-for-dollar</li>
+          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — reduces federal taxable income dollar-for-dollar</li>
           <li>Use the free calculator above for your exact state + filing status breakdown</li>
         </ul>
       </div>
@@ -74,7 +74,7 @@ export default function Post() {
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Federal Income Tax Withholding</h2>
           <p>This is the largest deduction for most workers. Your employer withholds federal income tax based on the W-4 you filled out when you were hired. The amount depends on your filing status, allowances, and income level. Federal tax brackets for 2026 range from 10% to 37%.</p>
-          <p>The 2026 standard deduction is $15,000 for single filers and $30,000 for married filing jointly. This means the first $15,000 of your annual income is tax-free. Everything above that is taxed at your marginal rate.</p>
+          <p>The 2026 standard deduction is $16,100 for single filers and $32,200 for married filing jointly. This means the first $15,000 of your annual income is tax-free. Everything above that is taxed at your marginal rate.</p>
           <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:'10px', padding:'16px', margin:'16px 0', fontFamily:'monospace', fontSize:'13px' }}>
             Example: $75,000 salary, single filer<br/>
             Taxable income: $75,000 - $15,000 = $60,000<br/>
