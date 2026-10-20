@@ -24,7 +24,7 @@ export default function W4Client(){
     const oi=parseFloat(otherIncome)||0;
     const ded=parseFloat(deductions)||0;
     const cred=parseFloat(credits)||0;
-    const std=filing==='married'?30000:15000;
+    const std=filing==='married'?32200:16100;
     const totalIncome=s+oi-k;
     const itemizedOrStd=Math.max(std,ded);
     const taxable=Math.max(0,totalIncome-itemizedOrStd);
