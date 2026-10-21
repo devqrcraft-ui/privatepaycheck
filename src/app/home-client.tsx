@@ -149,7 +149,7 @@ export default function HomeClient() {
           </div>
 
           <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16,borderTop:'1px solid rgba(245,200,66,0.15)',paddingTop:16,marginTop:8}}>
-            <div><div className="stat-n">2.4M+</div><div className="stat-l">Calculations</div></div>
+            <div><div className="stat-n">2026</div><div className="stat-l">Tax Year</div></div>
             <div><div className="stat-n">50</div><div className="stat-l">States</div></div>
             <div><div className="stat-n">100%</div><div className="stat-l">Private</div></div>
             <div><div className="stat-n">$0</div><div className="stat-l">Always Free</div></div>

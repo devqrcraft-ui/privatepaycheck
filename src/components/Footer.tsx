@@ -25,7 +25,7 @@ export default function Footer() {
             <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Calculators</div>
             <Link href="/" className="foot-link">Salary Calculator</Link>
             <Link href="/hourly-paycheck-calculator" className="foot-link">Hourly Calculator</Link>
-            <Link href="/bonus-calculator" className="foot-link">Bonus Calculator</Link>
+            <Link href="/bonus-tax-calculator" className="foot-link">Bonus Calculator</Link>
             <Link href="/overtime-calculator" className="foot-link">Overtime Calculator</Link>
             <Link href="/w4-withholding-calculator" className="foot-link">W-4 Calculator</Link>
             <Link href="/tip-calculator" className="foot-link">Tip Calculator</Link>
