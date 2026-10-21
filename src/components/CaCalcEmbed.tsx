@@ -1,24 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { estimateCaPaycheck } from '@/lib/caTax';
 
-const CA_BRACKETS_SINGLE: [number,number][] = [
-  [10412,.01],[24684,.02],[38959,.04],[54081,.06],[68350,.08],
-  [349137,.093],[418961,.103],[698274,.113],[1000000,.123],[Infinity,.133]
-];
-const FED_BRACKETS_SINGLE: [number,number][] = [
-  [12400,.10],[50400,.12],[105700,.22],[201775,.24],
-  [256225,.32],[640600,.35],[Infinity,.37]
-];
-
-function calcTax(brackets: [number,number][], income: number): number {
-  let tax = 0, prev = 0;
-  for (const [lim, rate] of brackets) {
-    if (income <= prev) break;
-    tax += (Math.min(income, lim) - prev) * rate;
-    prev = lim;
-  }
-  return tax;
-}
 
 function fmt(n: number) {
   return '$' + Math.round(n).toLocaleString('en-US');
@@ -39,20 +22,9 @@ export default function CaCalcEmbed() {
     const annual = parseFloat(sal.replace(/[^0-9.]/g,''));
     if (!annual || annual <= 0) return;
     const f = parseInt(per);
-    const stdDed = fil === 'married' ? 32200 : 16100;
-    const fedTaxable = Math.max(0, annual - stdDed);
-    const fed = calcTax(FED_BRACKETS_SINGLE, fedTaxable);
-    const ss  = Math.min(annual, 184500) * 0.062;
-    const med = annual * 0.0145;
-    const caSDI = annual * 0.013;
-    const caStdDed = fil === 'married' ? 11412 : 5706;
-    const caTaxable = Math.max(0, annual - caStdDed);
-    const caState = calcTax(CA_BRACKETS_SINGLE, caTaxable);
-    const totalTax = fed + ss + med + caState + caSDI;
-    const netYear = annual - totalTax;
-    const gross = annual / f;
-    const net = netYear / f;
-    const pct = (totalTax / annual) * 100;
+    const r = estimateCaPaycheck({ annual, freq: f, filing: fil === 'married' ? 'married' : 'single' });
+    const gross = r.gross, net = r.net, netYear = r.netYear, pct = r.pct;
+    const fed = r.fed * f, ss = r.ss * f, med = r.med * f, caState = r.caState * f, caSDI = r.caSDI * f;
     setResult({ gross, fed:fed/f, ss:ss/f, med:med/f,
       caState:caState/f, caSDI:caSDI/f, net, netYear, pct });
     try {
