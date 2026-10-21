@@ -4,11 +4,13 @@ import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
   title: 'Unemployment Calculator 2026 — Estimate Weekly Benefits by State',
-  description: 'Free unemployment calculator for all 50 states 2026. Estimate your weekly benefit amount based on recent wages. TX up to $563/wk, CA $450/wk, NY $504/wk, MA $1,033/wk. Instant & private.',
+  description: 'Free unemployment calculator for all 50 states 2026. Estimate your weekly benefit amount based on recent wages. TX up to $619/wk, CA $450/wk, NY $869/wk, MA $1,033/wk. Instant & private.',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator' },
   robots: 'index, follow',
 };
 
+// Verified 2026-10-21: TX $619 (twc.texas.gov, eff. 2026-10-04), NY $869 (dol.ny.gov/mbr, eff. 2025-10).
+// NOT yet verified against state agencies: MA, WA, MN, NJ, CT, FL and others.
 const MAX_BENEFITS: Record<string, { max: number; weeks: number }> = {
   massachusetts: { max: 1033, weeks: 30 },
   washington: { max: 1019, weeks: 26 },
@@ -16,8 +18,8 @@ const MAX_BENEFITS: Record<string, { max: number; weeks: number }> = {
   'new-jersey': { max: 854, weeks: 26 },
   connecticut: { max: 815, weeks: 26 },
   california: { max: 450, weeks: 26 },
-  texas: { max: 563, weeks: 26 },
-  'new-york': { max: 504, weeks: 26 },
+  texas: { max: 619, weeks: 26 },
+  'new-york': { max: 869, weeks: 26 },
   florida: { max: 275, weeks: 12 },
 };
 
@@ -31,7 +33,7 @@ const faqSchema = {
       name: 'How much is the maximum unemployment benefit in Texas in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The maximum weekly unemployment benefit in Texas is $563 per week for up to 26 weeks, for a maximum total of $14,638. Texas pays approximately 47% of your average weekly wage during your base period.',
+        text: 'The maximum weekly unemployment benefit in Texas is $619 per week for up to 26 weeks, for a maximum total of up to $16,094 (or 27% of your base-period wages, whichever is less). Your Texas weekly benefit is based on your wages in the highest-earning quarter of your base period, up to the maximum.',
       },
     },
     {

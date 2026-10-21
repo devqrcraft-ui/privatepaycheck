@@ -146,7 +146,7 @@ export default function Post() {
             </Link>
             <Link href="/unemployment-calculator/texas" style={{ display:'block', background:'rgba(99,102,241,0.08)', border:'1px solid rgba(99,102,241,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Texas Unemployment</div>
-              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $563/week →</div>
+              <div style={{ fontSize:'11px', opacity: 0.8, marginTop:'4px' }}>Up to $619/week →</div>
             </Link>
             <Link href="/minimum-wage/texas" style={{ display:'block', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:'10px', padding:'14px', color:'white', textDecoration:'none' }}>
               <div style={{ fontWeight:700, fontSize:'13px' }}>Texas Minimum Wage</div>
