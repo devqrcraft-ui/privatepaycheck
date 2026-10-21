@@ -158,9 +158,9 @@ export default function HomeClient() {
               <div style={{fontSize:11,fontWeight:800,color:'#a5b4fc',letterSpacing:'0.16em',textTransform:'uppercase',marginBottom:10}}>2026 Tax Law Updates</div>
               <div style={{display:'grid',gridTemplateColumns:'1fr',gap:8}}>
                 {[
-                  ['No Tax on Overtime','/no-tax-on-overtime-deduction','Save $2,750+'],
-                  ['No Tax on Tips','/no-tax-on-tips-calculator','Save $5,500+'],
-                  ['Senior $6,000 Deduction','/senior-deduction-calculator','Save $1,320+'],
+                  ['No Tax on Overtime','/no-tax-on-overtime-deduction','Up to $2,750 at 22%'],
+                  ['No Tax on Tips','/no-tax-on-tips-calculator','Up to $5,500 at 22%'],
+                  ['Senior $6,000 Deduction','/senior-deduction-calculator','Up to $1,320 at 22%'],
                   ['Trump Account','/trump-account-calculator','$38K+ at 18'],
                 ].map(([label, href, save]) => (
                   <a key={href} href={href} style={{display:'block',background:'rgba(99,102,241,0.10)',border:'1px solid rgba(99,102,241,0.25)',borderRadius:10,padding:'12px 16px',textDecoration:'none',textAlign:'center'}}>
@@ -225,28 +225,28 @@ export default function HomeClient() {
         <div className="s-head">
           <div className="s-tag" style={{color:'#a5b4fc',borderColor:'rgba(99,102,241,.40)'}}>One Big Beautiful Bill — Signed Law 2025–2028</div>
           <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:'clamp(26px,4vw,36px)',fontWeight:700,color:'#fff',marginBottom:14,lineHeight:1.15}}>New Tax Cuts — <em style={{color:'#818cf8'}}>Calculate Your Savings</em></h2>
-          <p className="s-desc">Federal law now eliminates tax on overtime and tips, adds $6,000 for seniors, and creates savings accounts for children.</p>
+          <p className="s-desc">Federal law now offers deductions for qualified overtime and tips, adds a $6,000 deduction for seniors, and creates savings accounts for children.</p>
         </div>
         <div className="obbb-grid">
           <Link href="/no-tax-on-overtime-deduction" className="obbb-card">
             <div className="obbb-badge">New Law</div>
             <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <div className="obbb-title">No Tax on Overtime</div>
-            <div className="obbb-save">Save $2,750+</div>
+            <div className="obbb-save">Up to $2,750 at 22%</div>
             <div className="obbb-desc">Up to $12,500 overtime deduction. 60M+ eligible workers.</div>
           </Link>
           <Link href="/no-tax-on-tips-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
             <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></div>
             <div className="obbb-title">No Tax on Tips</div>
-            <div className="obbb-save">Save $5,500+</div>
+            <div className="obbb-save">Up to $5,500 at 22%</div>
             <div className="obbb-desc">Up to $25,000 tip deduction. Servers, bartenders, drivers.</div>
           </Link>
           <Link href="/senior-deduction-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
             <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M8 21l4-4 4 4"/></svg></div>
             <div className="obbb-title">Senior $6,000 Deduction</div>
-            <div className="obbb-save">Save $1,320+</div>
+            <div className="obbb-save">Up to $1,320 at 22%</div>
             <div className="obbb-desc">Extra $6,000 deduction for age 65+. Phaseout at $75K.</div>
           </Link>
           <Link href="/trump-account-calculator" className="obbb-card">
@@ -283,7 +283,7 @@ export default function HomeClient() {
         <div className="s-head">
           <div className="s-tag">Most Searched States</div>
           <h2>Top State <em>Paycheck Calculators</em></h2>
-          <p className="s-desc">Texas, Florida, and California account for 40% of all US payroll. Get your exact take-home pay in seconds.</p>
+          <p className="s-desc">Get an estimated take-home pay for Texas, Florida and California in seconds.</p>
         </div>
         <div className="fs-grid">
           <Link href="/texas-paycheck-calculator" className="fs-card">
@@ -316,7 +316,7 @@ export default function HomeClient() {
             <div className="fs-rate">Up to 13.3%</div>
             <div className="fs-facts">
               <div className="fs-fact"> Highest state income tax in the US</div>
-              <div className="fs-fact"> Min wage $16.50/hr — highest in contiguous US</div>
+              <div className="fs-fact"> Min wage $16.90/hr statewide in 2026 (higher in many cities)</div>
               <div className="fs-fact"> $75,000 salary → ~$57,520 take-home</div>
               <div className="fs-fact"> SDI + federal + state + FICA included</div>
             </div>
@@ -547,10 +547,10 @@ export default function HomeClient() {
           {[
             {href:'/hourly-paycheck-calculator',name:'Hourly Calculator',rate:'Per hour → net pay'},
             {href:'/bonus-tax-calculator',name:'Bonus Calculator',rate:'Supplemental rate'},
-            {href:'/overtime-calculator',name:'Overtime Calculator',rate:'1.5× rate + no tax'},
+            {href:'/overtime-calculator',name:'Overtime Calculator',rate:'1.5× rate + OT deduction'},
             {href:'/no-tax-on-tips-calculator',name:'Tips Calculator',rate:'Up to $25,000 free'},
-            {href:'/no-tax-on-overtime-deduction',name:'Overtime Deduction',rate:'Save $2,750+'},
-            {href:'/w4-withholding-calculator',name:'W-4 Calculator',rate:'Optimize withholding'},
+            {href:'/no-tax-on-overtime-deduction',name:'Overtime Deduction',rate:'Up to $2,750 at 22%'},
+            {href:'/w4-withholding-calculator',name:'W-4 Calculator',rate:'Estimate withholding'},
             {href:'/senior-deduction-calculator',name:'Senior Deduction',rate:'$6,000 extra'},
             {href:'/trump-account-calculator',name:'Trump Account',rate:'$38K+ at age 18'},
             {href:'/teacher-paycheck-calculator',name:'Teacher Calculator',rate:'All 50 states'},

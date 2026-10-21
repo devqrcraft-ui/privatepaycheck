@@ -12,7 +12,7 @@ export default function UnemployCalc({ maxWBA, minWBA, stateName }: { maxWBA: nu
     else if (period === 'hourly') weekly = weekly * 40;
     else if (period === 'biweekly') weekly = weekly / 2;
 
-    const wba = Math.min(maxWBA, Math.max(minWBA, Math.round(weekly * 0.47)));
+    const wba = Math.min(maxWBA, Math.max(minWBA, Math.floor(weekly * 13 / 25)));
     const weeks = 26;
     setResult({ wba, total: wba * weeks, weeks });
   }

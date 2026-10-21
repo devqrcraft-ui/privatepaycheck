@@ -198,7 +198,7 @@ export default function Page() {
           { city: 'Los Angeles', salary: '$65,000', takehome: '~$46,800/yr', note: 'Min wage $17.28/hr' },
           { city: 'San Francisco', salary: '$95,000', takehome: '~$65,200/yr', note: 'Min wage $18.67/hr' },
           { city: 'San Diego', salary: '$70,000', takehome: '~$50,100/yr', note: 'Min wage $16.85/hr' },
-          { city: 'Sacramento', salary: '$60,000', takehome: '~$43,500/yr', note: 'State min wage $16.50/hr' },
+          { city: 'Sacramento', salary: '$60,000', takehome: '~$43,500/yr', note: 'State min wage $16.90/hr' },
         ].map(c2 => (
           <div key={c2.city} style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, padding: '14px 16px' }}>
             <div style={{ fontWeight: 800, color: '#e8edf8', marginBottom: 4 }}>{c2.city}</div>

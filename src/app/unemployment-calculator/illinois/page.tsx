@@ -3,7 +3,7 @@ import IlUnemployCalcEmbed from '@/components/IlUnemployCalcEmbed'
 
 export const metadata: Metadata = {
   title: 'Illinois Unemployment Calculator 2026 — Up to $628/Week, 26 Weeks',
-  description: 'Illinois unemployment benefits 2026: up to $628/week for individuals, $1,072 with dependants, up to 26 weeks. Free calculator — instant estimate based on your wages.',
+  description: 'Illinois unemployment benefits 2026: up to $628/week for single claimants ($748 with a dependent spouse, $859 with a dependent child), up to 26 weeks. Free calculator — instant estimate based on your wages.',
   keywords: 'illinois unemployment calculator, illinois unemployment benefits 2026, illinois WBA calculator, illinois unemployment weekly benefit',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/illinois' },
 }
