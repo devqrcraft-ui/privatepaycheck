@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import { estimatePaycheck } from '@/lib/paycheck';
+import type { FilingStatus } from '@/lib/paycheck';
 const STATES = [
   { value: '0',     label: 'No income tax (TX, FL, WA…)' },
   { value: '9.3',   label: 'California (up to 13.3%)' },
@@ -25,11 +27,6 @@ const STATES = [
   { value: '2.5',   label: 'Arizona (2.5%)' },
   { value: '2.0',   label: 'Indiana (3.15%)' },
 ];
-const BRACKETS = {
-  single:  [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]] as [number,number][],
-  married: [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]] as [number,number][],
-  head:    [[17700,.10],[67450,.12],[105700,.22],[201750,.24],[256200,.32],[640600,.35],[Infinity,.37]] as [number,number][],
-};
 
 function fmt(n: number) {
   return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -57,26 +54,9 @@ export default function Calculator({ defaultState }: CalcProps) {
     const k401pct  = Math.min(Math.max(parseFloat(k401) || 0, 0), 100) / 100;
     const annual   = payType === 'hourly' ? raw * 40 * 52 : raw;
 
-    // 401k reduces federal & state taxable income (pre-tax)
-    const k401Annual = Math.min(annual * k401pct, 24500); // 2026 IRS limit (Notice 2025-67)
-    const taxableAnnual = annual - k401Annual;
-
-    const gross    = annual / f;
-    const k401Per  = k401Annual / f;
-
-    let fed = 0, prev = 0, inc = taxableAnnual;
-    for (const [lim, rate] of BRACKETS[filing as keyof typeof BRACKETS]) {
-      if (inc <= 0) break;
-      const chunk = Math.min(inc, lim - prev);
-      fed += chunk * rate; inc -= chunk; prev = lim;
-    }
-    const fedPer = fed / f;
-    const ss  = Math.min(annual, 184500) * 0.062 / f;
-    const med = annual * 0.0145 / f;
-    const st  = (gross - k401Per) * (sr / 100);
-    const totalTax = fedPer + ss + med + st;
-    const net = gross - fedPer - ss - med - st - k401Per;
-    const taxPct = (totalTax / gross) * 100;
+    const { gross, fed: fedPer, ss, med, state: st, k401: k401Per, net, taxPct } = estimatePaycheck({
+      annual, freq: f, stateRatePct: sr, filing: filing as FilingStatus, k401Pct: k401pct,
+    });
 
     setResults({ gross, fed: fedPer, ss, med, state: st, k401: k401Per, net, taxPct });
   }
