@@ -84,7 +84,7 @@ const BLOG_SLUGS = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const stateSlugs = Object.keys(STATE_SLUG_MAP);
-  const now = new Date();
+  const now = new Date('2026-10-21T00:00:00Z'); // update only when page content actually changes
 
   return [
       { url: `https://www.privatepaycheck.com/compare-states-taxes`, lastModified: new Date( ) },

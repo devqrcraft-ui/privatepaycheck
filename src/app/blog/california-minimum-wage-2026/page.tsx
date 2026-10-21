@@ -3,9 +3,9 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: "What is the minimum wage in California in 2026?", acceptedAnswer: { '@type': 'Answer', text: "California minimum wage is $16.50/hour as of 2026 for most workers. Fast food workers earn $20/hour under AB 1228. Healthcare workers have a $25/hour minimum under SB 525." } },
-    { '@type': 'Question', name: "How much is California minimum wage per year?", acceptedAnswer: { '@type': 'Answer', text: "At $16.50/hour working full-time (40 hrs/week, 52 weeks), a California worker earns $34,320/year before taxes. After federal and state taxes, take-home is approximately $27,000-$28,000/year." } },
-    { '@type': 'Question', name: "Does California have a higher minimum wage than federal?", acceptedAnswer: { '@type': 'Answer', text: "Yes. The federal minimum wage is $7.25/hour, while California is $16.50/hour — more than double. California has had a higher state minimum wage than the federal rate since 2008." } }
+    { '@type': 'Question', name: "What is the minimum wage in California in 2026?", acceptedAnswer: { '@type': 'Answer', text: "California minimum wage is $16.90/hour as of January 1, 2026 for most workers. Fast food workers earn $20/hour under AB 1228. Healthcare workers have a $25/hour minimum under SB 525." } },
+    { '@type': 'Question', name: "How much is California minimum wage per year?", acceptedAnswer: { '@type': 'Answer', text: "At $16.90/hour working full-time (40 hrs/week, 52 weeks), a California worker earns $35,152/year before taxes. After federal and state taxes, take-home is approximately $27,000-$28,000/year." } },
+    { '@type': 'Question', name: "Does California have a higher minimum wage than federal?", acceptedAnswer: { '@type': 'Answer', text: "Yes. The federal minimum wage is $7.25/hour, while California is $16.90/hour — more than double. California has had a higher state minimum wage than the federal rate since 2008." } }
   ],
 };
 import type { Metadata } from 'next';
@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'California Minimum Wage 2026 — History, Changes & What Workers Need to Know',
-  description: 'California minimum wage is $16.50/hour in 2026. See the full history from 2016 to 2026, fast food exceptions, local rates, and tipped worker rules.',
+  description: 'California minimum wage is $16.90/hour in 2026. See the full history from 2016 to 2026, fast food exceptions, local rates, and tipped worker rules.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/california-minimum-wage-2026' },
 };
 
@@ -29,7 +29,7 @@ const HISTORY = [
   { year:'2023', rate:'$15.50' },
   { year:'2024', rate:'$16.00' },
   { year:'2025', rate:'$16.50' },
-  { year:'2026', rate:'$16.50', current:true },
+  { year:'2026', rate:'$16.90', current:true },
 ];
 
 export default function Post() {
@@ -54,7 +54,7 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>California Minimum Wage 2026 — History, Changes & What Workers Need to Know</h1>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
-          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> California minimum wage in 2026 is <strong style={{color:"#fff"}}>$16.50/hour</strong> statewide (fast food workers: $20/hour). At 40hrs/week that's $34,320/year gross. After CA state tax + federal tax + FICA, take-home is approximately <strong style={{color:"#fff"}}>$25,800–$27,200/year</strong>.
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> California minimum wage in 2026 is <strong style={{color:"#fff"}}>$16.90/hour</strong> statewide (fast food workers: $20/hour). At 40hrs/week that's $35,152/year gross. After CA state tax + federal tax + FICA, take-home is approximately <strong style={{color:"#fff"}}>$25,800–$27,200/year</strong>.
         </p>
       </div>
       <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
@@ -71,19 +71,19 @@ export default function Post() {
         <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 23, 2026 · 6 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
-          <p>California's minimum wage has more than doubled since 2016, rising from $10/hour to $16.50/hour in 2026. The state has no separate tipped minimum wage — all workers receive the full rate regardless of tips. Here's everything workers and employers need to know.</p>
+          <p>California's minimum wage has more than doubled since 2016, rising from $10/hour to $16.90/hour in 2026. The state has no separate tipped minimum wage — all workers receive the full rate regardless of tips. Here's everything workers and employers need to know.</p>
 
           {/* Current rate highlight */}
           <div style={{ background:'rgba(16,185,129,0.1)', border:'1px solid rgba(16,185,129,0.3)', borderRadius:'12px', padding:'24px', margin:'24px 0', textAlign:'center' }}>
             <div style={{ fontSize:'13px', opacity:0.6, marginBottom:'8px' }}>CALIFORNIA MINIMUM WAGE 2026</div>
-            <div style={{ fontSize:'56px', fontWeight:900, color:'#4ade80', lineHeight:1 }}>$16.50</div>
+            <div style={{ fontSize:'56px', fontWeight:900, color:'#4ade80', lineHeight:1 }}>$16.90</div>
             <div style={{ fontSize:'18px', opacity:0.7, marginTop:'4px' }}>per hour</div>
             <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:'8px', marginTop:'16px' }}>
               {[
                 { label:'Per Day (8h)', value:'$132' },
-                { label:'Per Week', value:'$660' },
-                { label:'Per Month', value:'$2,860' },
-                { label:'Per Year', value:'$34,320' },
+                { label:'Per Week', value:'$676' },
+                { label:'Per Month', value:'$2,929' },
+                { label:'Per Year', value:'$35,152' },
               ].map(s => (
                 <div key={s.label} style={{ background:'rgba(255,255,255,0.06)', borderRadius:'8px', padding:'10px 6px' }}>
                   <div style={{ fontSize:'10px', opacity: 0.8, marginBottom:'2px' }}>{s.label}</div>
@@ -99,7 +99,7 @@ export default function Post() {
               <div key={h.year} style={{ display:'flex', alignItems:'center', gap:'12px', padding:'8px 0', borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
                 <span style={{ width:'48px', opacity:0.6, fontSize:'13px' }}>{h.year}</span>
                 <div style={{ flex:1, background:'rgba(255,255,255,0.06)', borderRadius:'4px', overflow:'hidden', height:'24px', position:'relative' }}>
-                  <div style={{ background: h.current ? '#4ade80' : '#818cf8', height:'100%', width:`${(parseFloat(h.rate.replace('$','')) / 16.50) * 100}%`, transition:'width 0.3s' }} />
+                  <div style={{ background: h.current ? '#4ade80' : '#818cf8', height:'100%', width:`${(parseFloat(h.rate.replace('$','')) / 16.90) * 100}%`, transition:'width 0.3s' }} />
                 </div>
                 <span style={{ width:'56px', fontWeight:700, color: h.current ? '#4ade80' : 'white', fontSize:'14px' }}>{h.rate}</span>
               </div>
@@ -111,7 +111,7 @@ export default function Post() {
             {[
               { industry:'Fast Food Workers', rate:'$20.00/hr', note:'AB 1228 — applies to fast food chains with 60+ locations nationally (effective April 2024)' },
               { industry:'Healthcare Workers', rate:'$23–$25/hr', note:'Phased minimum for healthcare workers at covered facilities (SB 525)' },
-              { industry:'All Other Workers', rate:'$16.50/hr', note:'Standard California minimum wage' },
+              { industry:'All Other Workers', rate:'$16.90/hr', note:'Standard California minimum wage' },
             ].map(s => (
               <div key={s.industry} style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'14px 16px' }}>
                 <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'4px' }}>
@@ -142,10 +142,10 @@ export default function Post() {
           </div>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>No Tipped Minimum Wage in California</h2>
-          <p>California is one of the few states that does not allow a tipped credit. All workers — including servers, bartenders, and delivery drivers — must receive the full $16.50/hour minimum wage. Tips are on top of this amount, not a substitute for wages.</p>
+          <p>California is one of the few states that does not allow a tipped credit. All workers — including servers, bartenders, and delivery drivers — must receive the full $16.90/hour minimum wage. Tips are on top of this amount, not a substitute for wages.</p>
 
-          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>What Does $16.50/Hour Mean for Your Paycheck?</h2>
-          <p>At minimum wage in California, a full-time worker earns $34,320/year gross. But California has state income tax starting at 1% — use the calculator to see your exact net pay after all deductions.</p>
+          <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>What Does $16.90/Hour Mean for Your Paycheck?</h2>
+          <p>At minimum wage in California, a full-time worker earns $35,152/year gross. But California has state income tax starting at 1% — use the calculator to see your exact net pay after all deductions.</p>
         </div>
 
         <div style={{ margin:'40px 0', background:'rgba(16,185,129,0.08)', border:'1px solid rgba(16,185,129,0.25)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>

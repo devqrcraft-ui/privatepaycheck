@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const rows = [
-    ['$400/wk','$16 Qtr','$208','$104'],
-    ['$600/wk','$24 Qtr','$312','$156'],
-    ['$800/wk','$32 Qtr','$416','$208'],
-    ['$1,000/wk','$40 Qtr','$520','$260'],
-    ['$1,200/wk','$48 Qtr','$600','$300'],
-    ['$1,500/wk','$60 Qtr','$693','$346'],
-    ['$2,000/wk','$80 Qtr','$693','$346'],
+    ['$400/wk','$5,200','$188','$376'],
+    ['$600/wk','$7,800','$282','$564'],
+    ['$800/wk','$10,400','$376','$752'],
+    ['$1,000/wk','$13,000','$470','$940'],
+    ['$1,200/wk','$15,600','$564','$1,128'],
+    ['$1,500/wk','$19,500','$628','$1,256'],
+    ['$2,000/wk','$26,000','$628','$1,256'],
   ]
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', color:'#e2e8f0', background:'#0f1629', minHeight:'100vh' }}>
@@ -25,7 +25,7 @@ export default function Page() {
           {"@type":"Question","name":"How much is Illinois unemployment in 2026?","acceptedAnswer":{"@type":"Answer","text":"Illinois unemployment benefits (WBA) in 2026 are calculated as 47% of your average weekly wage in your two highest-earning quarters, up to a maximum of $628 per week for individuals (or $748 with a non-working spouse). Benefits last up to 26 weeks."}},
           {"@type":"Question","name":"How long do Illinois unemployment benefits last?","acceptedAnswer":{"@type":"Answer","text":"Illinois unemployment benefits last up to 26 weeks (6 months). Extended benefits may be available during periods of high unemployment."}},
           {"@type":"Question","name":"How do I calculate my Illinois unemployment benefit?","acceptedAnswer":{"@type":"Answer","text":"Illinois pays 47% of your average weekly wage from your two highest-earning base period quarters. The minimum is $51/week and the maximum is $628/week for individuals in 2026."}},
-          {"@type":"Question","name":"Is Illinois unemployment taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes. Illinois unemployment benefits are subject to federal income tax. Illinois does not tax unemployment benefits at the state level. You can elect to withhold 10% federal tax from your payments."}},
+          {"@type":"Question","name":"Is Illinois unemployment taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes. Illinois unemployment benefits are subject to federal income tax. Illinois also taxes unemployment benefits at its flat state income tax rate. You can elect to withhold 10% federal tax from your payments."}},
         ]
       }) }} />
       <nav style={{ fontSize:13, color:'#b8c8dc', marginBottom:24 }}>
@@ -45,7 +45,7 @@ export default function Page() {
       <IlUnemployCalcEmbed />
 
       <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, padding:'12px 16px', marginBottom:28, fontSize:14, color:'#fde68a' }}>
-        Illinois max WBA 2026: <strong>$628/week</strong> (individual) · Minimum: $51/week · Duration: up to 26 weeks · No state tax on UI benefits.
+        Illinois max WBA 2026: <strong>$628/week</strong> (individual) · Minimum: $51/week · Duration: up to 26 weeks · Federal tax applies; Illinois also taxes UI benefits at its flat state rate.
       </div>
 
       <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Illinois Weekly Benefit by Wage (2026)</h2>

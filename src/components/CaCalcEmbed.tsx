@@ -170,7 +170,7 @@ export default function CaCalcEmbed() {
               ['Social Security', '-'+fmt(result.ss),     '#fb923c'],
               ['Medicare',        '-'+fmt(result.med),    '#fb923c'],
               ['CA State Tax',    '-'+fmt(result.caState),'#c084fc'],
-              ['CA SDI (0.9%)',   '-'+fmt(result.caSDI),  '#c084fc'],
+              ['CA SDI (1.3%)',   '-'+fmt(result.caSDI),  '#c084fc'],
             ].map(([label,val,col])=>(
               <div key={label} style={{ display:'flex', justifyContent:'space-between', fontSize:14 }}>
                 <span style={{ color:'#94a3b8' }}>{label}</span>
