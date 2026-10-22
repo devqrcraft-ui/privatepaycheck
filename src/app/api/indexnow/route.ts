@@ -11,14 +11,21 @@ export async function GET() {
     `https://${HOST}/housekeeper`,
     `https://${HOST}/bonus-tax-calculator`,
     `https://${HOST}/compare-states-taxes`,
-    `https://${HOST}/all-states`
+    `https://${HOST}/all-states`,
+    `https://${HOST}/teacher-paycheck-calculator`,
+    `https://${HOST}/california-paycheck-calculator`,
+    `https://${HOST}/texas-paycheck-calculator`,
+    `https://${HOST}/florida-paycheck-calculator`,
+    `https://${HOST}/unemployment-calculator/texas`,
+    `https://${HOST}/unemployment-calculator/illinois`,
+    `https://${HOST}/unemployment-calculator/pennsylvania`,
+    `https://${HOST}/senior-deduction-calculator`
   ];
 
   // Додаємо основні штати для швидкої індексації
   const mainStates = ['california', 'texas', 'florida', 'new-york', 'illinois', 'pennsylvania', 'ohio', 'georgia', 'north-carolina', 'washington'];
   mainStates.forEach(s => {
     urlList.push(`https://${HOST}/hourly-paycheck-calculator/${s}` );
-    urlList.push(`https://${HOST}/salary-paycheck-calculator/${s}` );
   });
 
   try {

@@ -29,6 +29,9 @@ export default function Footer() {
             <Link href="/overtime-calculator" className="foot-link">Overtime Calculator</Link>
             <Link href="/w4-withholding-calculator" className="foot-link">W-4 Calculator</Link>
             <Link href="/tip-calculator" className="foot-link">Tip Calculator</Link>
+            <Link href="/teacher-paycheck-calculator" className="foot-link">Teacher Calculator</Link>
+            <Link href="/nurse-paycheck-calculator" className="foot-link">Nurse Calculator</Link>
+            <Link href="/unemployment-calculator" className="foot-link">Unemployment Calculator</Link>
           </div>
           <div>
             <div style={{fontSize:11,fontWeight:700,letterSpacing:".16em",textTransform:"uppercase",color:"#C9A84C",marginBottom:14}}>Sister Tools ➔</div>
