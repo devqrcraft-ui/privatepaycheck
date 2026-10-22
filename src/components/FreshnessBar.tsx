@@ -15,7 +15,7 @@ export default function FreshnessBar({ state, items }: Props) {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
         <span style={{ fontSize: 11, fontWeight: 800, color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-          Updated April 2026
+          Rates checked for the 2026 tax year
         </span>
         <span style={{ fontSize: 11, color: '#4ade80', background: 'rgba(74,222,128,0.12)', borderRadius: 4, padding: '1px 6px' }}>
           {state}

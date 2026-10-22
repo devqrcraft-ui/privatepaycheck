@@ -214,7 +214,7 @@ export default function HomeClient() {
       <div className="trust">
         <div className="trust-inner">
           <div><div className="t-n">100%</div><div className="t-l">Browser-Only</div></div>
-          <div><div className="t-n">0 ms</div><div className="t-l">Server Calls</div></div>
+          <div><div className="t-n">0</div><div className="t-l">Signups Needed</div></div>
           <div><div className="t-n">IRS</div><div className="t-l">Rates Source</div></div>
           <div><div className="t-n">SSA</div><div className="t-l">Wage Base Official</div></div>
           <div><div className="t-n">2026</div><div className="t-l">Tax Tables Live</div></div>
@@ -420,7 +420,7 @@ export default function HomeClient() {
           <div className="feat-card">
             
             <div className="feat-title">100% Private</div>
-            <p className="feat-desc">All math runs in your browser. Zero data sent to any server. No cookies, no tracking, no accounts required — ever.</p>
+            <p className="feat-desc">All math runs in your browser. Calculator inputs are never sent to our servers. No ad cookies, no accounts required — ever.</p>
           </div>
           <div className="feat-card">
             

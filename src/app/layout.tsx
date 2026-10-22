@@ -91,14 +91,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Script src="/ai-chat-widget.js?v=5" strategy="lazyOnload" />
       <Footer />
     
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XRMYZKZN69" strategy="lazyOnload" />
-        <script dangerouslySetInnerHTML={{ __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XRMYZKZN69');
-        `}} />
       <script dangerouslySetInnerHTML={{ __html: `
 document.addEventListener('dragstart', function(e){ e.preventDefault(); return false; });
 document.addEventListener('selectstart', function(e){ if(!['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) e.preventDefault(); });

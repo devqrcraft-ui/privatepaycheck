@@ -5,7 +5,7 @@ import { useState } from 'react';
 const TICKER_ITEMS = [
   '2026 IRS Tax Tables — Updated',
   'Federal + State + FICA — All Calculated',
-  '100% Private — Browser-Only',
+  'Calculators Run in Your Browser',
   'All 50 States Covered',
   'Free Forever — No Signup Required',
   'Salary & Hourly Calculator',
@@ -13,7 +13,7 @@ const TICKER_ITEMS = [
   'Uses 2026 IRS tax rates',
   'Standard Deduction $16,100 Single / $32,200 Married',
   'FICA Wage Base $184,500 for 2026',
-  'No Accounts. No Cookies. No Tracking.',
+  'No Accounts. No Signup. No Ad Trackers.',
   'Results in Under 1 Second',
 ];
 
