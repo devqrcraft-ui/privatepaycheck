@@ -14,26 +14,26 @@ export const metadata: Metadata = {
 }
 export default function Page() {
   const rows = [
-    ['$30,000','$2,500','$2,153','$1,994'],
-    ['$40,000','$3,333','$2,783','$2,572'],
-    ['$50,000','$4,167','$3,360','$3,103'],
-    ['$60,000','$5,000','$3,912','$3,612'],
-    ['$75,000','$6,250','$4,677','$4,318'],
-    ['$100,000','$8,333','$5,958','$5,498'],
-    ['$150,000','$12,500','$8,250','$7,612'],
-    ['$200,000','$16,667','$10,417','$9,583'],
-    ['$500,000','$41,667','$23,750','$21,875'],
+    ['$30,000','$2,500','$2,190','$1,011'],
+    ['$40,000','$3,333','$2,860','$1,320'],
+    ['$50,000','$4,167','$3,530','$1,629'],
+    ['$60,000','$5,000','$4,199','$1,938'],
+    ['$75,000','$6,250','$5,133','$2,369'],
+    ['$100,000','$8,333','$6,598','$3,045'],
+    ['$150,000','$12,500','$9,483','$4,377'],
+    ['$200,000','$16,667','$12,411','$5,728'],
+    ['$500,000','$41,667','$28,373','$13,095'],
   ]
   return (
     <main style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif', color: '#e2e8f0', background: '#0f1629', minHeight: '100vh' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com","logo":"https://www.privatepaycheck.com/og-image.svg","description":"Free paycheck calculators for all 50 US states. Federal + state taxes, FICA, 401k. 100% private."}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Texas Paycheck Calculator","item":"https://www.privatepaycheck.com/texas-paycheck-calculator"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebPage","name":"Texas Paycheck Calculator","datePublished":"2026-01-15","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/texas-paycheck-calculator"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebPage","name":"Texas Paycheck Calculator","datePublished":"2026-01-15","dateModified":"2026-10-22","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/texas-paycheck-calculator"}}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
           {"@type":"Question","name":"Does Texas have state income tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Texas has no state income tax. Workers only pay federal income tax and FICA (Social Security 6.2% + Medicare 1.45%). This makes Texas one of the highest take-home pay states in the US."}},
-          {"@type":"Question","name":"How much is $60,000 take-home pay in Texas?","acceptedAnswer":{"@type":"Answer","text":"A $60,000 salary in Texas results in approximately $46,944/year take-home ($3,912/month) for a single filer in 2026, after federal income tax and FICA. No state tax is withheld."}},
-          {"@type":"Question","name":"How much of my Texas paycheck goes to taxes?","acceptedAnswer":{"@type":"Answer","text":"In Texas, only federal taxes are withheld: federal income tax (10%–22% for most earners) plus FICA 7.65%. Total effective withholding for a $50,000 salary is roughly 19%–21%."}}
+          {"@type":"Question","name":"How much is $60,000 take-home pay in Texas?","acceptedAnswer":{"@type":"Answer","text":"A $60,000 salary in Texas results in approximately $50,390/year take-home ($4,199/month) for a single filer in 2026, after federal income tax and FICA. No state tax is withheld."}},
+          {"@type":"Question","name":"How much of my Texas paycheck goes to taxes?","acceptedAnswer":{"@type":"Answer","text":"In Texas, only federal taxes are withheld: federal income tax (10%–22% for most earners) plus FICA 7.65%. Total effective withholding (federal income tax plus FICA) for a $50,000 salary is roughly 15%."}}
         ]
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to Calculate Your Texas Paycheck in 2026","description":"Step-by-step guide to calculating take-home pay for Texas workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Enter your gross salary","text":"Start with your annual or hourly gross pay before any deductions."},{"@type":"HowToStep","position":2,"name":"Subtract federal income tax","text":"Apply 2026 IRS tax brackets (10%-37%) based on filing status and standard deduction of $16,100 single / $32,200 MFJ."},{"@type":"HowToStep","position":3,"name":"Subtract FICA taxes","text":"Deduct Social Security (6.2% up to $184,500) and Medicare (1.45%) from gross pay."},{"@type":"HowToStep","position":4,"name":"Skip state tax","text":"Texas has no state income tax, so this step does not apply."},{"@type":"HowToStep","position":5,"name":"Calculate net take-home pay","text":"Subtract all deductions from gross pay to get your Texas take-home pay per paycheck."}]}' }} />
@@ -67,16 +67,16 @@ export default function Page() {
         <div style={{background:'rgba(245,200,66,0.08)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24,marginTop:16}}>
           <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>{'Texas has no state income tax — workers keep $3,000–$7,000 more per year vs California'}</li>
-            <li>{'On a $75K salary in Texas, take-home is ~$59,100/year — $6,900 more than California'}</li>
+            <li>{'Texas has no state income tax — a single filer keeps about $1,700 (at $50K) to $11,700 (at $150K) more per year than in California'}</li>
+            <li>{'On a $75K salary in Texas, take-home is ~$61,593/year — about $3,750 more than California'}</li>
             <li>{'FICA tax is 7.65% on every paycheck — Social Security 6.2% + Medicare 1.45%'}</li>
-            <li>{'401k contribution up to $23,500 reduces federal taxable income in 2026'}</li>
+            <li>{'401(k) contributions up to $24,500 reduce federal taxable income in 2026'}</li>
             <li>{'Standard deduction 2026: $16,100 single / $32,200 married filing jointly'}</li>
           </ul>
         </div>
 
       <FreshnessBar state="Texas" items={["Texas has no state income tax in 2026","Federal SS wage base: $184,500 for 2026","Standard deduction: $16,100 single / $32,200 married","TX minimum wage: $7.25/hr (federal minimum)"]} />      <div style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.4)', borderRadius: 8, padding: '12px 16px', marginBottom: 28, fontSize: 14, color: '#6ee7b7' }}>
-        No Texas state income tax in 2026. Only federal withholding applies. Compare: at $75k salary, Texas take-home is ~$8,700/year MORE than California.
+        No Texas state income tax in 2026. Only federal withholding applies. Compare: at a $75k salary, a single filer in Texas takes home about $3,750 more per year than in California.
       </div>
       <div style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', marginBottom: '28px', display: 'flex', flexDirection: 'column' as const, gap: '12px', alignItems: 'center', textAlign: 'center' as const }}>
         <div style={{ fontSize: '15px', opacity: 0.8 }}>Texas has no state income tax — you keep significantly more of every paycheck vs CA or NY.</div>
@@ -109,10 +109,10 @@ export default function Page() {
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>TX Advantage</th>
         </tr></thead>
         <tbody>{[
-          ['$50,000','$40,320','$37,404','+$2,916'],
-          ['$75,000','$56,124','$52,500','+$3,624'],
-          ['$100,000','$71,496','$66,480','+$5,016'],
-          ['$150,000','$101,004','$91,344','+$9,660'],
+          ['$50,000','$42,355','$40,665','+$1,690'],
+          ['$75,000','$61,593','$57,843','+$3,750'],
+          ['$100,000','$79,180','$72,825','+$6,355'],
+          ['$150,000','$113,791','$102,136','+$11,655'],
         ].map(([s,tx,ca,diff]) => (
           <tr key={s} style={{ borderBottom: '1px solid #eee' }}>
             <td style={{ padding: '10px 14px', fontWeight: 600 }}>{s}</td>
@@ -133,7 +133,7 @@ export default function Page() {
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Texas has no state income tax — one of 9 states with $0 state tax</span></li>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>You still pay federal income tax (10%–37%) and FICA (7.65%)</span></li>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>No SDI, no local income tax in Texas</span></li>
-          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Higher take-home than most states: a $60,000 salary nets ~$47,000/year</span></li>
+          <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>Higher take-home than most states: a $60,000 salary nets ~$50,400/year</span></li>
           <li style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 'clamp(15px,2.5vw,16px)' as unknown as number, color: '#e2e8f0', lineHeight: 1.7 }}><span style={{ color: '#6366f1', fontWeight: 800, flexShrink: 0 }}>+</span><span>This calculator applies 2026 IRS federal brackets and FICA rates only</span></li>
         </ul>
         <h3 style={{ fontSize: 'clamp(16px,3vw,18px)' as unknown as number, fontWeight: 700, color: '#f8fafc', marginBottom: 10 }}>How much income tax will I pay in Texas?</h3>
@@ -195,12 +195,12 @@ export default function Page() {
           </tr></thead>
           <tbody>
             {[
-              ['$7.25 (fed min)','$15,080','$13,200','$508'],
-              ['$15/hr','$31,200','$25,800','$992'],
-              ['$20/hr','$41,600','$33,500','$1,288'],
-              ['$25/hr','$52,000','$41,000','$1,577'],
-              ['$30/hr','$62,400','$48,300','$1,858'],
-              ['$50/hr','$104,000','$76,800','$2,954'],
+              ['$7.25 (fed min)','$15,080','$13,926','$536'],
+              ['$15/hr','$31,200','$27,249','$1,048'],
+              ['$20/hr','$41,600','$35,606','$1,369'],
+              ['$25/hr','$52,000','$43,962','$1,691'],
+              ['$30/hr','$62,400','$52,318','$2,012'],
+              ['$50/hr','$104,000','$81,994','$3,154'],
             ].map(([rate,gross,net,bw],i) => (
               <tr key={rate} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0?'rgba(255,255,255,0.02)':'transparent' }}>
                 <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8edf8' }}>{rate}</td>
@@ -213,17 +213,17 @@ export default function Page() {
         </table>
       </div>
 
-      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Cities: Average Salary & Take-Home</h2>
+      <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Cities: Example Salaries & Take-Home</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: 12, marginBottom: 32 }}>
         {[
-          { city:'Houston', avg:'$68,000', net:'~$52,100/yr', note:'Energy & healthcare hub' },
-          { city:'Dallas', avg:'$72,000', net:'~$54,800/yr', note:'Finance & tech center' },
-          { city:'Austin', avg:'$85,000', net:'~$63,200/yr', note:'Tech boom city' },
-          { city:'San Antonio', avg:'$55,000', net:'~$43,500/yr', note:'Military & healthcare' },
+          { city:'Houston', avg:'$68,000', net:'~$56,668/yr', note:'Energy & healthcare hub' },
+          { city:'Dallas', avg:'$72,000', net:'~$59,482/yr', note:'Finance & tech center' },
+          { city:'Austin', avg:'$85,000', net:'~$68,628/yr', note:'Tech boom city' },
+          { city:'San Antonio', avg:'$55,000', net:'~$46,372/yr', note:'Military & healthcare' },
         ].map(c2 => (
           <div key={c2.city} style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)', borderRadius: 8, padding: '14px 16px' }}>
             <div style={{ fontWeight: 800, color: '#e8edf8', marginBottom: 4 }}>{c2.city}</div>
-            <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>Avg salary: {c2.avg}</div>
+            <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)' }}>Example salary: {c2.avg}</div>
             <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', margin: '6px 0' }}>{c2.net}</div>
             <div style={{ fontSize: 12, color: '#e2e8f0' }}>{c2.note}</div>
           </div>
@@ -236,7 +236,7 @@ export default function Page() {
           <li>No state income tax — but <strong style={{color:'#e2e8f0'}}>property taxes are among the highest</strong> in the US (avg 1.6%)</li>
           <li>Federal minimum wage applies: <strong style={{color:'#e2e8f0'}}>$7.25/hr</strong> — no state increase</li>
           <li>No TX disability insurance deduction — more take-home vs CA/NJ</li>
-          <li>Maximize 401(k) to $23,500 and HSA to $4,300 to cut federal tax</li>
+          <li>Maximize 401(k) to $24,500 and HSA to $4,400 (self-only) to cut federal tax</li>
         </ul>
       </div>
 
