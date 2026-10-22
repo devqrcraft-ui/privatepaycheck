@@ -3,8 +3,8 @@ import CaCalcEmbed from '@/components/CaCalcEmbed'
 import FreshnessBar from '@/components/FreshnessBar'
 import LinkCardGrid from '@/components/LinkCardGrid'
 export const metadata: Metadata = {
-  title: 'California Paycheck Calculator 2026 — $75K Salary = $57,520 Take-Home',
-  description: 'Free California paycheck calculator 2026. $75K salary = ~$57,520 take-home after CA state tax (13.3%), federal tax, FICA & SDI 1.3%. Instant, no signup.',
+  title: 'California Paycheck Calculator 2026 — $75K Salary = $57,843 Take-Home',
+  description: 'Free California paycheck calculator 2026. $75K salary = ~$57,843 take-home after CA state tax (13.3%), federal tax, FICA & SDI 1.3%. Instant, no signup.',
   keywords: 'california paycheck calculator 2026, california take home pay, california salary after taxes, ca paycheck calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/california-paycheck-calculator' },
   openGraph: {
@@ -18,7 +18,7 @@ export default function Page() {
     ['$40,000','$3,333','$2,558','$2,090'],
     ['$50,000','$4,167','$3,117','$2,512'],
     ['$60,000','$5,000','$3,650','$2,896'],
-    ['$75,000','$6,250','$4,793','$3,388'],
+    ['$75,000','$6,250','$4,820','$3,388'],
     ['$100,000','$8,333','$5,540','$4,158'],
     ['$150,000','$12,500','$7,650','$5,412'],
     ['$200,000','$16,667','$9,750','$6,917'],
@@ -34,11 +34,11 @@ export default function Page() {
           {"@type":"Question","name":"How much is taken out of a paycheck in California 2026?","acceptedAnswer":{"@type":"Answer","text":"California withholds federal income tax, Social Security (6.2%), Medicare (1.45%), California state income tax (1%–13.3%), and SDI (1.3%). On a $60,000 salary, total withholding is roughly 27%–31% depending on filing status."}},
           {"@type":"Question","name":"What is California state income tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"California has 9 tax brackets in 2026 ranging from 1% to 13.3%. The 13.3% rate applies only to income over $1 million. Most middle-income earners fall in the 6%–9.3% range."}},
           {"@type":"Question","name":"Does California have SDI tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. California SDI (State Disability Insurance) is 1.3% of gross wages in 2026 with no wage base cap. It is withheld from every paycheck automatically."}},
-          {"@type":"Question","name":"How much is $75,000 salary take-home in California?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in California results in approximately $57,520/year take-home ($4,793/month) for a single filer after federal tax, FICA, CA state tax, and SDI (1.3%)."}},
+          {"@type":"Question","name":"How much is $75,000 salary take-home in California?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in California results in approximately $57,843/year take-home ($4,820/month) for a single filer after federal tax, FICA, CA state tax, and SDI (1.3%)."}},
           {"@type":"Question","name":"What are California paycheck deductions in 2026?","acceptedAnswer":{"@type":"Answer","text":"California paycheck deductions include: federal income tax (10%–37%), Social Security (6.2% up to $184,500), Medicare (1.45%+), California state income tax (1%–13.3%), and SDI (1.3% with no wage cap in 2026)."}},
           {"@type":"Question","name":"How much is taken out of a $50,000 salary in California?","acceptedAnswer":{"@type":"Answer","text":"On a $50,000 salary in California, a single filer takes home approximately $40,424/year ($3,369/month). Deductions include ~$3,820 federal tax, ~$3,825 FICA, ~$1,281 CA state tax, and $650 SDI."}},
           {"@type":"Question","name":"Does California tax Social Security income?","acceptedAnswer":{"@type":"Answer","text":"No. California does not tax Social Security benefits, making it relatively favorable for retirees despite high income tax rates on wages."}},
-          {"@type":"Question","name":"How much is $20/hour after taxes in California?","acceptedAnswer":{"@type":"Answer","text":"At $20/hour (about $41,600/year) in California, a single filer takes home approximately $34,227/year or $1,316 biweekly after federal tax, CA state tax, FICA, and SDI."}}
+          {"@type":"Question","name":"How much is $20/hour after taxes in California?","acceptedAnswer":{"@type":"Answer","text":"At $20/hour (about $41,600/year) in California, a single filer takes home approximately $34,418/year or $1,324 biweekly after federal tax, CA state tax, FICA, and SDI."}}
         ]
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to Calculate Your California Paycheck in 2026","description":"Step-by-step guide to calculating take-home pay for California workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Enter your gross salary","text":"Start with your annual or hourly gross pay before any deductions."},{"@type":"HowToStep","position":2,"name":"Subtract federal income tax","text":"Apply 2026 IRS tax brackets (10%-37%) based on filing status and standard deduction of $16,100 single / $32,200 MFJ."},{"@type":"HowToStep","position":3,"name":"Subtract FICA taxes","text":"Deduct Social Security (6.2% up to $184,500) and Medicare (1.45%) from gross pay."},{"@type":"HowToStep","position":4,"name":"Subtract California state tax","text":"Apply California state income tax rates for 2026 to your taxable income."},{"@type":"HowToStep","position":5,"name":"Calculate net take-home pay","text":"Subtract all deductions from gross pay to get your California take-home pay per paycheck."}]}' }} />
@@ -62,7 +62,7 @@ export default function Page() {
       <div style={{ background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#F5C842', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Take-Home Summary — California</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          A $75,000 salary in California results in approximately <strong style={{ color:'#fff' }}>$57,520 take-home pay</strong> for a single filer. Breakdown: federal income tax $7,670 + CA state tax $3,097 + Social Security $4,650 + Medicare $1,088 + SDI $975 = $17,480 total deductions. Effective total tax rate: 23.3%. California SDI is 1.3% with no wage base cap in 2026.
+          A $75,000 salary in California results in approximately <strong style={{ color:'#fff' }}>$57,843 take-home pay</strong> for a single filer. Breakdown: federal income tax $7,670 + CA state tax $3,097 + Social Security $4,650 + Medicare $1,088 + SDI $975 = $17,480 total deductions. Effective total tax rate: 23.3%. California SDI is 1.3% with no wage base cap in 2026.
         </p>
       </div>
 
@@ -71,7 +71,7 @@ export default function Page() {
           <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>{'California has the highest state income tax in the US — up to 13.3% on income over $1 million'}</li>
-            <li>{'On a $75K salary, CA workers take home ~$57,520/year after federal, FICA, state tax and SDI'}</li>
+            <li>{'On a $75K salary, CA workers take home ~$57,843/year after federal, FICA, state tax and SDI'}</li>
             <li>{'SDI (State Disability Insurance) is 1.3% with no wage base cap since Jan 2024'}</li>
             <li>{'401k contribution up to $23,500 reduces both federal and CA state taxable income'}</li>
             <li>{'Standard deduction 2026: $16,100 single / $32,200 married filing jointly'}</li>
@@ -252,7 +252,7 @@ export default function Page() {
               ['Texas','0%','~$57,200'],
               ['Florida','0%','~$57,200'],
               ['Nevada','0%','~$57,200'],
-              ['California','Up to 9.3%','~$57,520'],
+              ['California','Up to 9.3%','~$57,843'],
               ['New York','Up to 6.85%','~$53,400'],
               ['Oregon','Up to 9.9%','~$51,800'],
             ].map(([state,rate,th],i) => (
@@ -292,7 +292,7 @@ export default function Page() {
               ['$40,000','$582','$1,164','$2,521'],
               ['$50,000','$719','$1,438','$3,117'],
               ['$60,000','$855','$1,710','$3,706'],
-              ['$75,000','$1,012','$2,024','$4,793'],
+              ['$75,000','$1,012','$2,024','$4,820'],
               ['$100,000','$1,294','$2,588','$5,608'],
               ['$150,000','$1,787','$3,574','$7,743'],
             ].map(([sal,wk,bwk,mo],i) => (
@@ -345,7 +345,7 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Does California have SDI tax?</h3>
       <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>Yes. California SDI (State Disability Insurance) is 1.3% of gross wages in 2026 with no wage base cap. It is automatically withheld from every paycheck.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is a $75,000 salary take-home in California?</h3>
-      <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>A $75,000 salary results in approximately $57,520/year take-home ($4,793/month) for a single filer after all deductions including federal tax, FICA, CA state tax, and SDI.</p>
+      <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>A $75,000 salary results in approximately $57,843/year take-home ($4,820/month) for a single filer after all deductions including federal tax, FICA, CA state tax, and SDI.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>What are California paycheck deductions in 2026?</h3>
       <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>California paycheck deductions include: federal income tax (10% to 37%), Social Security (6.2% up to $184,500), Medicare (1.45%), California state income tax (1% to 13.3%), and SDI (1.3% with no wage cap).</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is taken out of a $50,000 salary in California?</h3>
@@ -353,7 +353,7 @@ export default function Page() {
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>Does California tax Social Security income?</h3>
       <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>No. California does not tax Social Security benefits. This makes it relatively favorable for retirees despite having the highest state income tax rate in the US for wage earners.</p>
       <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 20 }}>How much is $20/hour after taxes in California?</h3>
-      <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>At $20/hour (about $41,600/year), a California single filer takes home approximately $34,227/year or $1,316 biweekly after federal tax, CA state tax, FICA, and SDI.</p>
+      <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>At $20/hour (about $41,600/year), a California single filer takes home approximately $34,418/year or $1,324 biweekly after federal tax, CA state tax, FICA, and SDI.</p>
 
       <div style={{ marginTop: 40, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.08)" }}>
         <LinkCardGrid title="Related Calculators" minCardWidth={150} links={[["/florida-paycheck-calculator","Florida Paycheck Calculator"],["/texas-paycheck-calculator","Texas Paycheck Calculator"],["/new-york-paycheck-calculator","New York Paycheck Calculator"],["/hourly-paycheck-calculator/california","California Hourly Calculator"],["/bonus-tax-calculator/california","California Bonus Tax Calculator"]]} />

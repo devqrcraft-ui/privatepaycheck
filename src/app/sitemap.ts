@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { STATE_SLUG_MAP } from '@/lib/taxRates2026';
+import { STATE_SLUG_TO_CODE } from '@/lib/teacherCalc';
 
 const BASE_URL = 'https://www.privatepaycheck.com';
 
@@ -172,6 +173,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     ...UNEMPLOYMENT_SLUGS.map(slug => ({
       url: `${BASE_URL}/unemployment-calculator/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+
+    { url: `${BASE_URL}/nurse-paycheck-calculator`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    ...stateSlugs.map(slug => ({
+      url: `${BASE_URL}/nurse-paycheck-calculator/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+
+    ...Object.keys(STATE_SLUG_TO_CODE).map(slug => ({
+      url: `${BASE_URL}/teacher-paycheck-calculator/${slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,

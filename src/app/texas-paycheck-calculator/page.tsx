@@ -151,7 +151,7 @@ export default function Page() {
       </div>
     
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas: No State Income Tax Explained</h2>
-      <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 16, lineHeight: 1.7 }}>Texas has <strong style={{color:'#e2e8f0'}}>no state income tax</strong> — one of only 9 states. On a $75,000 salary, Texas workers take home ~$61,593/year vs ~$57,520 in California. The difference compounds: over 10 years that's <strong style={{color:'#4ade80'}}>$40,000+ more</strong> in your pocket. You still owe federal income tax and FICA.</p>
+      <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 16, lineHeight: 1.7 }}>Texas has <strong style={{color:'#e2e8f0'}}>no state income tax</strong> — one of only 9 states. On a $75,000 salary, Texas workers take home ~$61,593/year vs ~$57,843 in California. The difference compounds: over 10 years that's <strong style={{color:'#4ade80'}}>$37,000+ more</strong> in your pocket. You still owe federal income tax and FICA.</p>
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16, marginTop: 40 }}>Texas Take-Home Pay by Salary (2026)</h2>
       <div style={{ overflowX: 'auto' as const, marginBottom: 32 }}>

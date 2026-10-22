@@ -175,7 +175,7 @@ export default function HomeClient() {
             <div style={{fontSize:11,fontWeight:800,color:'rgba(245,200,66,0.7)',letterSpacing:'0.18em',textTransform:'uppercase',marginBottom:4}}>Quick Examples</div>
             {[
               {label:'$65,000 salary · Texas',net:'~$54,408/yr · $2,093/biweekly',color:'#4ade80'},
-              {label:'$85,000 salary · California',net:'~$63,495/yr · $2,442/biweekly',color:'#4ade80'},
+              {label:'$85,000 salary · California',net:'~$63,863/yr · $2,456/biweekly',color:'#4ade80'},
               {label:'$20/hr · Florida',net:'~$35,606/yr · $1,369/biweekly',color:'#4ade80'},
               {label:'$120,000 salary · New York',net:'~$87,179/yr · $3,353/biweekly',color:'#4ade80'},
             ].map((ex,i)=>(
@@ -317,7 +317,7 @@ export default function HomeClient() {
             <div className="fs-facts">
               <div className="fs-fact"> Highest state income tax in the US</div>
               <div className="fs-fact"> Min wage $16.90/hr statewide in 2026 (higher in many cities)</div>
-              <div className="fs-fact"> $75,000 salary → ~$57,520 take-home</div>
+              <div className="fs-fact"> $75,000 salary → ~$57,843 take-home</div>
               <div className="fs-fact"> SDI + federal + state + FICA included</div>
             </div>
             <div className="fs-cta">Calculate California Paycheck <span className="arr">→</span></div>
@@ -334,11 +334,11 @@ export default function HomeClient() {
         <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'12px'}} className='salary-grid'>
           {[
             {salary:'$20/hr in Texas',net:'~$35,606/yr · $1,369/biweekly',note:'No state tax. Federal + FICA only.',href:'/hourly-paycheck-calculator/texas'},
-            {salary:'$20/hr in California',net:'~$34,227/yr · $1,316/biweekly',note:'State tax up to 9.3% applies.',href:'/hourly-paycheck-calculator/california'},
+            {salary:'$20/hr in California',net:'~$34,418/yr · $1,324/biweekly',note:'State tax up to 9.3% applies.',href:'/hourly-paycheck-calculator/california'},
             {salary:'$60,000 salary Florida',net:'~$50,390/yr · $1,938/biweekly',note:'No Florida state income tax.',href:'/florida-paycheck-calculator'},
             {salary:'$75,000 salary New York',net:'~$58,108/yr · $2,235/biweekly',note:'NYC adds extra local tax if applicable.',href:'/new-york-paycheck-calculator'},
             {salary:'$50,000 salary Illinois',net:'~$39,880/yr · $1,534/biweekly',note:'Flat 4.95% state tax rate.',href:'/illinois-paycheck-calculator'},
-            {salary:'$100,000 salary California',net:'~$72,458/yr · $2,787/biweekly',note:'SDI + state up to 9.3% + federal.',href:'/california-paycheck-calculator'},
+            {salary:'$100,000 salary California',net:'~$72,825/yr · $2,801/biweekly',note:'SDI + state up to 9.3% + federal.',href:'/california-paycheck-calculator'},
           ].map((ex,i)=>(
             <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.15)',borderRadius:'10px',padding:'18px 20px',textDecoration:'none',display:'block',transition:'all .2s'}}
               onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(245,200,66,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(245,200,66,0.06)';}}
@@ -523,11 +523,11 @@ export default function HomeClient() {
         </div>
         <div style={{maxWidth:'800px',margin:'0 auto',display:'flex',flexDirection:'column',gap:'12px'}}>
           {[
-            ['How much of my paycheck goes to taxes?','For most Americans: 22–24% federal income tax + 7.65% FICA (Social Security + Medicare) + state tax. A $60,000 salary in Texas takes home ~$50,390. The same salary in California takes home ~$47,725 after state income tax up to 9.3%.'],
+            ['How much of my paycheck goes to taxes?','For most Americans: 22–24% federal income tax + 7.65% FICA (Social Security + Medicare) + state tax. A $60,000 salary in Texas takes home ~$50,390. The same salary in California takes home ~$47,970 after state income tax up to 9.3%.'],
             ['What is the difference between gross and net pay?','Gross pay is your salary or hourly rate before any deductions. Net pay (take-home) is what hits your bank account after federal tax, state tax, Social Security (6.2%), and Medicare (1.45%) are withheld.'],
-            ['How do I calculate my biweekly paycheck?','Divide your annual salary by 26 (biweekly pay periods). Then subtract federal withholding based on your W-4, state tax, and FICA. Example: $75,000 ÷ 26 = $2,884 gross → ~$2,369 net in Texas, ~$2,212 net in California.'],
+            ['How do I calculate my biweekly paycheck?','Divide your annual salary by 26 (biweekly pay periods). Then subtract federal withholding based on your W-4, state tax, and FICA. Example: $75,000 ÷ 26 = $2,884 gross → ~$2,369 net in Texas, ~$2,225 net in California.'],
             ['Does overtime get taxed more?','No — overtime is taxed at your regular marginal rate, not a higher rate. However, under the 2025 One Big Beautiful Bill, up to $12,500 of overtime pay is now deductible, saving workers up to $2,750+ per year.'],
-            ['How much is $20 an hour after taxes?','$20/hr × 2,080 hours = $41,600 gross. After federal tax (~10–12%), FICA (7.65%), and state tax: ~$35,606/yr in Texas (no state tax), ~$34,227/yr in California. That is ~$1,369/biweekly in Texas.'],
+            ['How much is $20 an hour after taxes?','$20/hr × 2,080 hours = $41,600 gross. After federal tax (~10–12%), FICA (7.65%), and state tax: ~$35,606/yr in Texas (no state tax), ~$34,418/yr in California. That is ~$1,369/biweekly in Texas.'],
             ['Why does my paycheck vary each period?','Withholding can shift based on bonuses, overtime, or W-4 changes. The IRS uses an annualized method — a large single payment can push you into a higher bracket for that period. Use our bonus calculator to see the exact impact.'],
           ].map(([q,a],i)=>(
             <details key={i} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.15)',borderRadius:'10px',padding:'16px 20px'}}>

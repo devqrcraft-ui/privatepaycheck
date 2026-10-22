@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Florida have state income tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Florida has no state income tax in 2026. Workers only pay federal income tax and FICA (7.65%). This makes Florida one of the top states for take-home pay in the US."}},{"@type":"Question","name":"How much is a $75,000 salary take-home in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) for a single filer after federal income tax and FICA only. No state tax is deducted."}},{"@type":"Question","name":"What taxes are taken out of a Florida paycheck?","acceptedAnswer":{"@type":"Answer","text":"Only federal taxes: federal income tax (10-22% for most earners) and FICA (Social Security 6.2% + Medicare 1.45% = 7.65% total). No state income tax, no state SDI in Florida."}},{"@type":"Question","name":"How much is $50,000 take-home pay in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"A $50,000 salary in Florida gives approximately $42,355/year take-home ($3,530/month) for a single filer after federal income tax and FICA only."}},{"@type":"Question","name":"How does Florida compare to California for take-home pay?","acceptedAnswer":{"@type":"Answer","text":"On a $75,000 salary, a Florida worker takes home ~$61,593 vs ~$57,520 in California — a difference of $4,073/year due to California state income tax of up to 9.3%."}},{"@type":"Question","name":"What is the Florida minimum wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Florida minimum wage is $14.00/hour in 2026, rising $1/year toward $15. At 40 hours/week, that is $29,120/year gross or approximately $25,578 take-home."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Florida freelancer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Florida self-employed workers must pay quarterly estimated taxes to the IRS by April 15, June 15, September 15, and January 15. You owe self-employment tax of 15.3% plus federal income tax on net profit."}},{"@type":"Question","name":"How do I reduce taxes on my Florida paycheck?","acceptedAnswer":{"@type":"Answer","text":"Maximize pre-tax deductions: 401(k) up to $23,500, HSA up to $4,300 if eligible, FSA up to $3,300. Each dollar contributed reduces your federal taxable income and lowers FICA on 401(k) contributions."}},{"@type":"Question","name":"Is overtime taxed differently in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"Under the OBBBA 2026, the first $12,500 of overtime pay per year is exempt from federal income tax for single filers ($25,000 for married filing jointly). Florida has no state overtime tax either."}},{"@type":"Question","name":"What is the biweekly take-home for $60,000 in Florida?","acceptedAnswer":{"@type":"Answer","text":"A $60,000 salary in Florida gives approximately $1,938 biweekly net pay (26 pay periods) after federal income tax and FICA. Monthly take-home is approximately $4,199."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Florida have state income tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Florida has no state income tax in 2026. Workers only pay federal income tax and FICA (7.65%). This makes Florida one of the top states for take-home pay in the US."}},{"@type":"Question","name":"How much is a $75,000 salary take-home in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) for a single filer after federal income tax and FICA only. No state tax is deducted."}},{"@type":"Question","name":"What taxes are taken out of a Florida paycheck?","acceptedAnswer":{"@type":"Answer","text":"Only federal taxes: federal income tax (10-22% for most earners) and FICA (Social Security 6.2% + Medicare 1.45% = 7.65% total). No state income tax, no state SDI in Florida."}},{"@type":"Question","name":"How much is $50,000 take-home pay in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"A $50,000 salary in Florida gives approximately $42,355/year take-home ($3,530/month) for a single filer after federal income tax and FICA only."}},{"@type":"Question","name":"How does Florida compare to California for take-home pay?","acceptedAnswer":{"@type":"Answer","text":"On a $75,000 salary, a Florida worker takes home ~$61,593 vs ~$57,843 in California — a difference of $3,750/year due to California state income tax of up to 9.3%."}},{"@type":"Question","name":"What is the Florida minimum wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Florida minimum wage is $14.00/hour in 2026, rising $1/year toward $15. At 40 hours/week, that is $29,120/year gross or approximately $25,578 take-home."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Florida freelancer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Florida self-employed workers must pay quarterly estimated taxes to the IRS by April 15, June 15, September 15, and January 15. You owe self-employment tax of 15.3% plus federal income tax on net profit."}},{"@type":"Question","name":"How do I reduce taxes on my Florida paycheck?","acceptedAnswer":{"@type":"Answer","text":"Maximize pre-tax deductions: 401(k) up to $23,500, HSA up to $4,300 if eligible, FSA up to $3,300. Each dollar contributed reduces your federal taxable income and lowers FICA on 401(k) contributions."}},{"@type":"Question","name":"Is overtime taxed differently in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"Under the OBBBA 2026, the first $12,500 of overtime pay per year is exempt from federal income tax for single filers ($25,000 for married filing jointly). Florida has no state overtime tax either."}},{"@type":"Question","name":"What is the biweekly take-home for $60,000 in Florida?","acceptedAnswer":{"@type":"Answer","text":"A $60,000 salary in Florida gives approximately $1,938 biweekly net pay (26 pay periods) after federal income tax and FICA. Monthly take-home is approximately $4,199."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Florida Paycheck Calculator 2026","item":"https://www.privatepaycheck.com/florida-paycheck-calculator"}]}'
 
@@ -74,7 +74,7 @@ export default function Page() {
 
         <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) in 2026 — because Florida has no state income tax. You only pay federal income tax and FICA (7.65%). Compared to California, Florida workers keep $4,073 more per year on the same salary.'}
+            {'A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) in 2026 — because Florida has no state income tax. You only pay federal income tax and FICA (7.65%). Compared to California, Florida workers keep $3,750 more per year on the same salary.'}
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function Page() {
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li>{'Florida has zero state income tax — only federal + FICA (7.65%) withheld'}</li>
             <li>{'$75,000 salary = $61,593 take-home/year ($5,133/month) for single filer'}</li>
-            <li>{'Florida workers earn $4,073 more per year than California on same $75K salary'}</li>
+            <li>{'Florida workers earn $3,750 more per year than California on same $75K salary'}</li>
             <li>{'Florida minimum wage: $14.00/hr in 2026 (~$25,578/year take-home)'}</li>
             <li>{'Overtime: first $12,500 exempt from federal tax under OBBBA 2026'}</li>
             <li>{'Maximize 401(k) to $23,500 to reduce federal taxable income'}</li>
@@ -195,7 +195,7 @@ export default function Page() {
             How Does Florida Compare to Other States for Take-Home Pay?
           </h2>
           <p style={{fontSize:15, color:'rgba(255,255,255,0.8)', marginBottom:8, fontWeight:700}}>
-            {'On a $75,000 salary, Florida workers keep $4,073 more per year than California workers.'}
+            {'On a $75,000 salary, Florida workers keep $3,750 more per year than California workers.'}
           </p>
           <div style={{overflowX:'auto', marginBottom:24, borderRadius:8, border:'1px solid rgba(255,255,255,0.08)'}}>
             <table style={{width:'100%', borderCollapse:'collapse', minWidth:420}}>
@@ -215,7 +215,7 @@ export default function Page() {
                   ['Washington','0%','~$61,593','$0'],
                   ['Georgia','5.49%','~$53,200','-$4,200'],
                   ['New York','4-10.9%','~$50,800','-$6,600'],
-                  ['California','1-9.3%','~$57,520','-$4,073'],
+                  ['California','1-9.3%','~$57,843','-$3,750'],
                   ['Oregon','8.75-9.9%','~$48,900','-$8,500'],
                 ].map(([st,rate,net,diff],i) => (
                   <tr key={st} style={{borderBottom:'1px solid rgba(255,255,255,0.05)', background: i === 0 ? 'rgba(245,200,66,0.08)' : 'transparent', borderTop: i === 0 ? '1px solid rgba(245,200,66,0.3)' : 'none'}}>
@@ -231,7 +231,7 @@ export default function Page() {
 
           <ul style={{margin:'0 0 24px 0', padding:'0 0 0 20px', fontSize:14, lineHeight:2, color:'rgba(255,255,255,0.8)'}}>
             <li>{'Florida, Texas, Nevada, and Washington all have zero state income tax'}</li>
-            <li>{'California costs workers $4,073/year more than Florida on a $75K salary'}</li>
+            <li>{'California costs workers $3,750/year more than Florida on a $75K salary'}</li>
             <li>{'Oregon and New York have the highest effective state tax burden'}</li>
             <li>{'Florida also has no state disability insurance (unlike CA SDI at 1.3%)'}</li>
             <li>{'No local city income taxes in Florida (unlike NYC which adds up to 3.876%)'}</li>
@@ -315,7 +315,7 @@ export default function Page() {
             ['Does Florida have state income tax in 2026?','No. Florida has no state income tax. Workers only pay federal income tax and FICA (7.65%). This makes Florida one of the top 7 states for take-home pay.'],
             ['How much is a $75,000 salary take-home in Florida 2026?','A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) for a single filer after federal income tax and FICA only.'],
             ['What taxes are deducted from a Florida paycheck?','Federal income tax (10-22% for most earners) and FICA (6.2% Social Security + 1.45% Medicare = 7.65% total). No state income tax, no state SDI.'],
-            ['How does Florida compare to California take-home pay?','On a $75,000 salary, Florida workers take home ~$61,593 vs ~$57,520 in California — $4,073 more per year due to no state tax.'],
+            ['How does Florida compare to California take-home pay?','On a $75,000 salary, Florida workers take home ~$61,593 vs ~$57,843 in California — $3,750 more per year due to no state tax.'],
             ['What is the Florida minimum wage in 2026?','$14.00 per hour in 2026, rising $1/year toward $15. At 40 hours/week that is $29,120/year gross or approximately $25,578 take-home.'],
           ].map(([q,a]) => (
             <div key={q as string} style={{borderBottom:'1px solid rgba(255,255,255,0.08)', padding:'16px 0'}}>
