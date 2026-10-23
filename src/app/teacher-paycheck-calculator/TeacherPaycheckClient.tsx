@@ -25,7 +25,7 @@ export default function TeacherPaycheckCalculator() {
   const [showSS, setShowSS]   = useState(false);
 
   const res = calcTeacher(salary, state, filing as Filing, ssYears, age);
-  const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
+  const fmt = (n: number) => '$' + (Math.round(n) || 0).toLocaleString('en-US');
   const pct = (n: number) => (n * 100).toFixed(1) + '%';
   const stateName = STATE_NAMES[state] ?? state;
   const pensionInfo = PENSION_RATE[state] ?? { rate: 0.07, system: 'State TRS', ss: true };

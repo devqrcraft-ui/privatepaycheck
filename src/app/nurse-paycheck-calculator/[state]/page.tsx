@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { STATE_TAXES, STATE_SLUG_MAP, FEDERAL_BRACKETS_SINGLE, STANDARD_DEDUCTION } from '@/lib/taxRates2026';
+import { stateIncomeTax, statePayrollTax } from '@/lib/stateTax';
 
 
 export const dynamicParams = false;
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `${st.name} Nurse Paycheck Calculator`,
     description: noTax
       ? `See ${st.name} nurse take-home pay 2026. No state income tax — only federal tax and FICA apply. Free, instant.`
-      : `See ${st.name} nurse take-home pay 2026 after ${(st.rate*100).toFixed(1)}% state tax, federal tax, and FICA. Free, instant.`,
+      : `See ${st.name} nurse take-home pay 2026 after state income tax, federal tax, and FICA. Free, instant.`,
     alternates: { canonical: `https://www.privatepaycheck.com/nurse-paycheck-calculator/${state}` },
   };
 }
@@ -79,7 +80,7 @@ const NURSE_SALARY: Record<string, { median: number; low: number; high: number; 
   dc: { median: 98000, low: 80000, high: 122000 },
 };
 
-function calcNet(gross: number, stateTaxRate: number): { annual: number; monthly: number; biweekly: number } {
+function calcNet(gross: number, code: string): { annual: number; monthly: number; biweekly: number } {
   const taxable = Math.max(0, gross - STANDARD_DEDUCTION.single);
   const brackets = FEDERAL_BRACKETS_SINGLE;
   let federal = 0;
@@ -88,7 +89,7 @@ function calcNet(gross: number, stateTaxRate: number): { annual: number; monthly
     federal += (Math.min(taxable, b.max) - b.min) * b.rate;
   }
   const fica = gross * 0.0765;
-  const state = gross * stateTaxRate;
+  const state = stateIncomeTax(code, gross, 'single', federal) + statePayrollTax(code, gross);
   const annual = Math.round(gross - federal - fica - state);
   return { annual, monthly: Math.round(annual / 12), biweekly: Math.round(annual / 26) };
 }
@@ -101,13 +102,13 @@ export default async function Page({ params }: { params: Promise<{ state: string
 
   const ns = NURSE_SALARY[code] || { median: 72000, low: 58000, high: 90000 };
   const noTax = !!st.noTax;
-  const stateRate = st.rate;
+  const stateRate = ns.median > 0 ? (stateIncomeTax(code, ns.median, 'single') + statePayrollTax(code, ns.median)) / ns.median : 0;
 
   const examples = [
     { label: 'Entry-Level RN', gross: ns.low },
     { label: 'Median RN', gross: ns.median },
     { label: 'Senior / ICU RN', gross: ns.high },
-  ].map(e => ({ ...e, ...calcNet(e.gross, stateRate) }));
+  ].map(e => ({ ...e, ...calcNet(e.gross, code) }));
 
   const faqSchema = {
     '@context': 'https://schema.org',

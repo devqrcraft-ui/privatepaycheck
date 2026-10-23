@@ -63,6 +63,7 @@ export const PENSION_RATE: Record<string, { rate: number; system: string; ss: bo
 // STATE_TAX тепер береться з канонічного джерела taxRates2026.ts (STATE_TAXES),
 // а не з окремої дубльованої таблиці (виправлено: NY/NJ/HI/DC розходились на 2-4 п.п.)
 import { STATE_TAXES } from './taxRates2026';
+import { stateIncomeTax, statePayrollTax } from './stateTax';
 export const STATE_TAX: Record<string, number> = Object.fromEntries(
   Object.entries(STATE_TAXES).map(([code, v]) => [code, v.rate])
 );
@@ -136,7 +137,7 @@ export function calcTeacher(salary: number, state: string, filing: Filing, ssYea
   const fica = ficaSS + ficaMedicare;
 
   const stateTaxableIncome = Math.max(0, salary - pensionDeduction);
-  const stateTax = stateTaxableIncome * (STATE_TAX[state] ?? 0);
+  const stateTax = stateIncomeTax(state, stateTaxableIncome, filing === 'married' ? 'married' : 'single', fedTax) + statePayrollTax(state, salary);
 
   const seniorMagi = Math.max(0, salary - pensionDeduction);
   const seniorThreshold = filing === 'married' ? 150000 : 75000;

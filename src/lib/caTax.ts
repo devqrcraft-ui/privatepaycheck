@@ -9,7 +9,7 @@ const SINGLE: [number, number][] = [
 // Married/RDP filing jointly thresholds are double the single thresholds
 const MARRIED: [number, number][] = SINGLE.map(([l, r]) => [l === Infinity ? Infinity : l * 2, r] as [number, number]);
 const CA_STD = { single: 5706, married: 11412 };
-const CA_EXEMPTION_CREDIT = { single: 153, married: 307 };
+const CA_EXEMPTION_CREDIT = { single: 153, married: 306 };
 export const CA_SDI_RATE = 0.013; // 2026 SDI rate, no wage cap
 
 export type CaFiling = 'single' | 'married';
