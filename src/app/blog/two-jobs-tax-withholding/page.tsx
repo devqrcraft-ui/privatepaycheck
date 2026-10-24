@@ -10,7 +10,7 @@ const faqSchema = {
 };
 import type { Metadata } from 'next';
 import AuthorBox from '@/app/components/AuthorBox'
-import Link from 'next/link';
+import Link from 'next/link'; import SponsoredTaxHelp from '@/components/SponsoredTaxHelp';
 export const metadata: Metadata = {
   title: 'Two Jobs and Taxes: Why You Owe More & How to Fix It (2026)',
   description: 'Working two jobs means each employer under-withholds. Learn exactly how much extra to put on your W-4 to avoid a tax bill. 2026 guide.',
@@ -88,4 +88,4 @@ Actual tax on $85k combined: ~$10,294<br/>
           <a href="/washington-dc-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>Washington DC Calculator</a>
         </div>
       </div>
-    </main></>);}
+    <SponsoredTaxHelp placement="pp-blog-two-jobs" wrap={false} /></main></>);}

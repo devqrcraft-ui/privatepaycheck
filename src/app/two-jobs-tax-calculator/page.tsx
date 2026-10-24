@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import TwoJobsClient from './TwoJobsClient';
+import TwoJobsClient from './TwoJobsClient'; import SponsoredTaxHelp from '@/components/SponsoredTaxHelp';
 
 export const metadata: Metadata = {
   title: 'Two Jobs Tax Calculator 2026 — Avoid Underpayment',
@@ -49,5 +49,5 @@ const faqSchema = {
 };
 
 export default function TwoJobsPage() {
-  return <TwoJobsClient />;
+  return (<><TwoJobsClient /><SponsoredTaxHelp placement="pp-two-jobs" /></>);
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import W4Client from './W4Client';
+import W4Client from './W4Client'; import SponsoredTaxHelp from '@/components/SponsoredTaxHelp';
 
 export const metadata: Metadata = {
   title: 'W-4 Withholding Calculator 2026 — Optimize Your Paycheck',
@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <W4Client />;
+  return (<><W4Client /><SponsoredTaxHelp placement="pp-w4" /></>);
 }
