@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </div>
 </main>
         <Analytics />
-        <Script src="/ai-chat-widget.js?v=5" strategy="lazyOnload" />
+        <Script src="/ai-chat-widget.js?v=6" strategy="lazyOnload" />
       <Footer />
     
       <script dangerouslySetInnerHTML={{ __html: `

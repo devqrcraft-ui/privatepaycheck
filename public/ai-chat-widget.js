@@ -10,7 +10,7 @@
     '.pp-fab:hover{transform:scale(1.08);}',
     '@media(max-width:768px){.pp-fab{display:none!important;}}',
     '.pp-fab svg{width:26px;height:26px;fill:#0f0c29;transition:opacity 0.2s;}',
-    '.pp-win{position:fixed;bottom:20px;right:20px;width:320px;height:320px;',
+    '.pp-win{position:fixed;bottom:20px;right:20px;width:320px;height:372px;',
     'background:#0f1629;border:1.5px solid rgba(245,200,66,0.35);border-radius:16px;',
     'box-shadow:0 8px 32px rgba(0,0,0,0.6);z-index:9999;display:flex;',
     'flex-direction:column;overflow:hidden;opacity:0;pointer-events:none;',
@@ -21,7 +21,7 @@
     '.pp-head strong{color:#F5C842;font-size:14px;font-weight:700;flex:1;}',
     '#pp-x{background:none;border:none;color:#94a3b8;cursor:pointer;font-size:20px;',
     'line-height:1;padding:0 2px;}#pp-x:hover{color:#F5C842;}',
-    '.pp-msgs{flex:1;overflow-y:auto;padding:14px 12px;display:flex;',
+    '.pp-note{padding:6px 12px;font-size:10.5px;line-height:1.35;color:#94a3b8;border-bottom:1px solid rgba(245,200,66,0.12);}.pp-note a{color:#F5C842;}.pp-msgs{flex:1;overflow-y:auto;padding:14px 12px;display:flex;',
     'flex-direction:column;gap:10px;scroll-behavior:smooth;}',
     '.pp-msgs::-webkit-scrollbar{width:4px;}',
     '.pp-msgs::-webkit-scrollbar-thumb{background:rgba(245,200,66,0.3);border-radius:2px;}',
@@ -63,7 +63,7 @@
   var win = document.createElement('div');
   win.className = 'pp-win';
   win.innerHTML = '<div class="pp-head"><span>💬</span><strong>PayCheck AI</strong><button id="pp-x" aria-label="Close chat">✕</button></div>' +
-    '<div class="pp-msgs" id="pp-msgs"></div>' +
+    '<div class=pp-note>AI answers are general information, not tax advice. Messages you type are sent to our server and to our AI provider (Groq). Do not enter personal or financial identifiers. <a href=/privacy-policy target=_blank rel=noopener>Privacy</a></div><div class="pp-msgs" id="pp-msgs"></div>' +
     '<form class="pp-form" id="pp-form"><input id="pp-inp" type="text" placeholder="Ask about your paycheck..." autocomplete="off" />' +
     '<button type="submit" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg></button></form>';
 
