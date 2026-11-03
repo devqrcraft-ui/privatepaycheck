@@ -50,7 +50,7 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'How much do you save living in a no-tax state?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Moving from California to Texas on a })}} />00,000 salary saves roughly $6,000-$9,000/year in state income taxes. The exact amount depends on your income, filing status, and deductions.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Moving from California to Texas on a $100,000 salary saves roughly $6,200/year for a single filer in state income tax and SDI. The exact amount depends on your income, filing status, and deductions.' },
       },
       {
         '@type': 'Question',

@@ -143,7 +143,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
         name: 'Does contributing to a 401(k) significantly reduce my tax bill as a software engineer?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. The 2026 401(k) contribution limit is $23,500. A software engineer earning $150,000 who maxes out their 401(k) reduces taxable income by $23,500, saving approximately $5,640 in federal taxes alone at the 24% bracket — plus state tax savings.',
+          text: 'Yes. The 2026 401(k) contribution limit is $24,500. A software engineer earning $150,000 who maxes out their 401(k) reduces taxable income by $24,500, saving approximately $5,880 in federal taxes alone at the 24% bracket — plus state tax savings.',
         },
       },
       {
@@ -256,7 +256,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
           {[
             { title: 'Federal Tax Brackets', desc: 'Most mid-level engineers fall in the 22-24% federal bracket. Senior and staff engineers earning $200k+ enter the 32-35% bracket.' },
             { title: `${st.name} State Tax`, desc: noTax ? `${st.name} has no state income tax — engineers keep significantly more vs. California or New York at similar salaries.` : `${st.name} taxes income at ${(stateRate * 100).toFixed(1)}%. On a $150k salary this is $${Math.round(150000 * stateRate).toLocaleString()}/year in state taxes.` },
-            { title: '401(k) Max-Out', desc: 'The 2026 limit is $23,500 ($31,000 if 50+). At the 24% bracket, maxing out saves $5,640/year in federal taxes alone.' },
+            { title: '401(k) Max-Out', desc: 'The 2026 limit is $24,500 ($32,500 if 50+). At the 24% bracket, maxing out saves $5,880/year in federal taxes alone.' },
             { title: 'RSU Vesting', desc: 'RSUs vest as ordinary income. Default withholding is 22% federal but your effective rate may be higher. Model your tax bill before year-end.' },
             { title: 'Bonus Withholding', desc: 'Sign-on and performance bonuses are withheld at the 22% federal supplemental rate. Higher earners often owe additional tax at filing.' },
             { title: 'Health / Dental / Vision', desc: 'Employer plans are pre-tax. A $500/month premium reduces your taxable income by $6,000/year, saving roughly $1,320 at the 22% bracket.' },

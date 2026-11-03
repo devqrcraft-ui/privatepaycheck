@@ -38,7 +38,7 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'Why does my federal withholding change each paycheck?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Withholding can vary if your hours/earnings vary, you updated your W-4, you hit the Social Security wage cap (})}} />76,100 in 2026), or your employer uses the aggregate method for withholding calculations.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Withholding can vary if your hours/earnings vary, you updated your W-4, you hit the Social Security wage cap ($184,500 in 2026), or your employer uses the aggregate method for withholding calculations.' },
       }
         ],
       })}} />
@@ -99,10 +99,10 @@ export default function Post() {
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Pre-Tax Deductions (The Good Ones)</h2>
           <p>These deductions reduce your taxable income — meaning you pay less in all taxes above:</p>
           <ul style={{ paddingLeft:'20px', opacity:0.85 }}>
-            <li style={{ marginBottom:'8px' }}><strong>401(k) contributions:</strong> Up to $23,500 in 2026 ($31,000 if age 50+). Reduces federal and state taxable income.</li>
-            <li style={{ marginBottom:'8px' }}><strong>HSA contributions:</strong> Up to $4,300 individual / $8,550 family in 2026. Triple tax-advantaged.</li>
+            <li style={{ marginBottom:'8px' }}><strong>401(k) contributions:</strong> Up to $24,500 in 2026 ($32,500 if age 50+). Reduces federal and state taxable income.</li>
+            <li style={{ marginBottom:'8px' }}><strong>HSA contributions:</strong> Up to $4,400 individual / $8,750 family in 2026. Triple tax-advantaged.</li>
             <li style={{ marginBottom:'8px' }}><strong>Health insurance premiums:</strong> Employer-sponsored plans are typically pre-tax.</li>
-            <li style={{ marginBottom:'8px' }}><strong>FSA contributions:</strong> Flexible Spending Account, up to $3,300 for healthcare.</li>
+            <li style={{ marginBottom:'8px' }}><strong>FSA contributions:</strong> Flexible Spending Account, up to $3,400 for healthcare.</li>
             <li style={{ marginBottom:'8px' }}><strong>Dependent care FSA:</strong> Up to $5,000 per household.</li>
           </ul>
 

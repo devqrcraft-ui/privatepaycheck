@@ -4,16 +4,16 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '401(k) Contribution Limits 2026 — Max Out & Save Thousands in Taxes',
-  description: 'The 2026 401(k) limit is $23,500 ($31,000 if 50+). See exactly how much you save in taxes at every income level. Free guide.',
+  description: 'The 2026 401(k) limit is $24,500 ($32,500 if 50+). See exactly how much you save in taxes at every income level. Free guide.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/401k-contribution-limits-2026' },
 };
 
 const SAVINGS_TABLE = [
-  { contrib:3000,  inc50k:660,   inc75k:720,   inc100k:792  },
-  { contrib:6000,  inc50k:1320,  inc75k:1440,  inc100k:1584 },
-  { contrib:10000, inc50k:2200,  inc75k:2400,  inc100k:2640 },
-  { contrib:15000, inc50k:3300,  inc75k:3600,  inc100k:3960 },
-  { contrib:23500, inc50k:5170,  inc75k:5640,  inc100k:6204 },
+  { contrib:3000,  inc50k:360,   inc75k:660,   inc100k:660  },
+  { contrib:6000,  inc50k:720,   inc75k:1320,  inc100k:1320 },
+  { contrib:10000, inc50k:1200,  inc75k:2050,  inc100k:2200 },
+  { contrib:15000, inc50k:1800,  inc75k:2650,  inc100k:3300 },
+  { contrib:24500, inc50k:2880,  inc75k:3790,  inc100k:5390 },
 ];
 
 export default function Post() {
@@ -34,12 +34,12 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'What is the 401k contribution limit for 2026?',
-        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 401(k) employee contribution limit is  />3,500. Workers age 50+ can add a $7,500 catch-up contribution for a total of $31,000. The total employer + employee limit is $70,000.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 401(k) employee contribution limit is $24,500 (IRS Notice 2025-67). Workers age 50+ can add an $8,000 catch-up contribution for a total of $32,500, and ages 60-63 can add $11,250 under SECURE 2.0. The total employer + employee limit is $72,000.' },
       },
       {
         '@type': 'Question',
         name: 'How much does a 401k reduce my paycheck?',
-        acceptedAnswer: { '@type': 'Answer', text: 'A  />3,500 annual 401(k) contribution reduces your taxable income by  />3,500, saving roughly $5,170 in taxes at the 22% bracket. Your net paycheck reduction is less than the contribution amount.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'A $24,500 annual 401(k) contribution reduces your taxable income by $24,500. For a single filer earning $100,000 in 2026 that cuts federal income tax by about $5,390, so your net paycheck reduction is less than the contribution amount.' },
       },
       {
         '@type': 'Question',
@@ -56,7 +56,7 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>401(k) Contribution Limits 2026 — Max Out & Save Thousands in Taxes</h1>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
-          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> For 2026, the 401(k) contribution limit is <strong style={{color:"#fff"}}>$23,500</strong> for employees under 50. Catch-up contribution (age 50+): additional $7,500. SIMPLE IRA limit: $16,500. Contributing the max reduces your taxable income dollar-for-dollar.
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> For 2026, the 401(k) contribution limit is <strong style={{color:"#fff"}}>$24,500</strong> for employees under 50. Catch-up contribution (age 50+): additional $8,000 ($11,250 at ages 60-63). SIMPLE IRA limit: $17,000. Contributing the max reduces your taxable income dollar-for-dollar.
         </p>
       </div>
       <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
@@ -80,10 +80,10 @@ export default function Post() {
 
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'12px', margin:'16px 0 32px' }}>
           {[
-            { label:'Employee Limit', value:'$23,500', sub:'Under age 50', color:'#4ade80' },
-            { label:'Catch-Up (50+)', value:'+$7,500', sub:'Total: $31,000', color:'#fbbf24' },
+            { label:'Employee Limit', value:'$24,500', sub:'Under age 50', color:'#4ade80' },
+            { label:'Catch-Up (50+)', value:'+$8,000', sub:'Total: $32,500', color:'#fbbf24' },
             { label:'Employer Match', value:'Not counted', sub:'Toward your limit', color:'#818cf8' },
-            { label:'Total (with match)', value:'$70,000', sub:'Employee + employer', color:'#a5b4fc' },
+            { label:'Total (with match)', value:'$72,000', sub:'Employee + employer', color:'#a5b4fc' },
           ].map(b => (
             <div key={b.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'16px', textAlign:'center' }}>
               <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'6px', textTransform:'uppercase', letterSpacing:'0.05em' }}>{b.label}</div>
@@ -109,8 +109,8 @@ export default function Post() {
             </thead>
             <tbody>
               {SAVINGS_TABLE.map(row => (
-                <tr key={row.contrib} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)', background: row.contrib === 23500 ? 'rgba(74,222,128,0.05)' : 'transparent' }}>
-                  <td style={{ padding:'10px 12px', fontWeight: row.contrib === 23500 ? 800 : 400, color: row.contrib === 23500 ? '#4ade80' : 'inherit' }}>${row.contrib.toLocaleString()}{row.contrib === 23500 ? ' (max)' : ''}</td>
+                <tr key={row.contrib} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)',                 background: row.contrib === 24500 ? 'rgba(74,222,128,0.05)' : 'transparent' }}>
+                                  <td style={{ padding:'10px 12px', fontWeight: row.contrib === 24500 ? 800 : 400, color: row.contrib === 24500 ? '#4ade80' : 'inherit' }}>${row.contrib.toLocaleString()}{row.contrib === 24500 ? ' (max)' : ''}</td>
                   <td style={{ padding:'10px 12px', color:'#4ade80' }}>-${row.inc50k.toLocaleString()}</td>
                   <td style={{ padding:'10px 12px', color:'#4ade80' }}>-${row.inc75k.toLocaleString()}</td>
                   <td style={{ padding:'10px 12px', color:'#4ade80' }}>-${row.inc100k.toLocaleString()}</td>
@@ -124,21 +124,21 @@ export default function Post() {
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Traditional vs. Roth 401(k)</h2>
           <p><strong>Traditional 401(k):</strong> Contributions are pre-tax. You pay taxes when you withdraw in retirement. Best if you expect to be in a lower tax bracket in retirement.</p>
           <p><strong>Roth 401(k):</strong> Contributions are post-tax. Withdrawals in retirement are 100% tax-free. Best if you expect to be in a higher bracket later, or if you want tax-free growth.</p>
-          <p>Many plans allow you to split contributions between traditional and Roth, up to the combined $23,500 limit.</p>
+          <p>Many plans allow you to split contributions between traditional and Roth, up to the combined $24,500 limit.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Employer Match — Free Money</h2>
-          <p>Most employers match a percentage of your contributions — commonly 50% or 100% of the first 3–6% of your salary. This is free money that does not count toward your $23,500 limit. Always contribute at least enough to get the full employer match before doing anything else with your money.</p>
+          <p>Most employers match a percentage of your contributions — commonly 50% or 100% of the first 3–6% of your salary. This is free money that does not count toward your $24,500 limit. Always contribute at least enough to get the full employer match before doing anything else with your money.</p>
           <p>Example: $80,000 salary, employer matches 100% of first 4% ($3,200). If you contribute at least $3,200, you get $3,200 in free employer contributions = 100% instant return.</p>
         </div>
 
         <div style={{ marginTop:'32px', background:'rgba(251,191,36,0.06)', border:'1px solid rgba(251,191,36,0.15)', borderRadius:'12px', padding:'20px' }}>
           <h3 style={{ fontWeight:800, marginBottom:'8px', color:'#fbbf24' }}> Pro Tip: Stack 401(k) + HSA</h3>
-          <p style={{ fontSize:'14px', opacity:0.8, lineHeight:1.7, margin:0 }}>Max out both your 401(k) ($23,500) and HSA ($4,300) for a total of $27,800 in pre-tax deductions. On a $100,000 salary, this alone saves you approximately $6,000–$8,000 per year in federal taxes depending on your bracket. Enter both in our calculator to see your exact savings.</p>
+          <p style={{ fontSize:'14px', opacity:0.8, lineHeight:1.7, margin:0 }}>Max out both your 401(k) ($24,500) and self-only HSA ($4,400) for a total of $28,900 in pre-tax deductions. For a single filer on a $100,000 salary, this cuts federal income tax by about $6,358 in 2026 (HSA payroll deferrals also skip FICA). Enter both in our calculator to see your exact savings.</p>
         </div>
 
         <div style={{ marginTop:'40px', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.2)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
           <h3 style={{ fontWeight:800, marginBottom:'8px' }}>See Your Take-Home With Max 401(k)</h3>
-          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Enter your salary + $23,500 contribution to see exactly how much more you keep.</p>
+          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Enter your salary + $24,500 contribution to see exactly how much more you keep.</p>
           <Link href="/" style={{ display:'inline-block', background:'linear-gradient(135deg,#4ade80,#22c55e)', color:'#052e16', fontWeight:800, padding:'11px 24px', borderRadius:'9px', textDecoration:'none', fontSize:'14px' }}>Open Paycheck Calculator →</Link>
         </div>
 

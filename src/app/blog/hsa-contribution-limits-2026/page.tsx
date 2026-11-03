@@ -26,17 +26,17 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'What is the HSA contribution limit for 2026?',
-        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 HSA contribution limit is $4,300 for individual coverage and $8,550 for family coverage. Workers age 55+ can add a })}} />,000 catch-up contribution.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The 2026 HSA contribution limit is $4,400 for individual coverage and $8,750 for family coverage. Workers age 55+ can add a $1,000 catch-up contribution.' },
       },
       {
         '@type': 'Question',
         name: 'How does an HSA reduce my taxes?',
-        acceptedAnswer: { '@type': 'Answer', text: 'HSA contributions are pre-tax, reducing both federal income tax and FICA taxes. A $4,300 HSA contribution saves roughly $946 in taxes at the 22% bracket plus $329 in FICA — total })}} />,275 in savings.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'HSA contributions are pre-tax, reducing both federal income tax and FICA taxes. A $4,400 HSA contribution saves roughly $968 in federal tax at the 22% bracket plus $337 in FICA (when contributed through payroll) — a total of about $1,305 in savings.' },
       },
       {
         '@type': 'Question',
         name: 'Can I use an HSA with any health plan?',
-        acceptedAnswer: { '@type': 'Answer', text: 'No — you must be enrolled in a High Deductible Health Plan (HDHP) to contribute to an HSA. For 2026, an HDHP has a minimum deductible of })}} />,650 (individual) or $3,300 (family).' },
+        acceptedAnswer: { '@type': 'Answer', text: 'No — you must be enrolled in a High Deductible Health Plan (HDHP) to contribute to an HSA. For 2026, an HDHP has a minimum deductible of $1,700 (individual) or $3,400 (family).' },
       }
         ],
       })}} />
@@ -48,7 +48,7 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>HSA Contribution Limits 2026 — The Most Underrated Tax Shelter</h1>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
-          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> HSA contribution limits 2026: <strong style={{color:"#fff"}}>$4,300 self-only / $8,550 family</strong>. Catch-up (age 55+): additional $1,000. HSA contributions are 100% tax-deductible and reduce your federal taxable income dollar-for-dollar — saving ~$1,000/year at a 22% tax rate.
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> HSA contribution limits 2026: <strong style={{color:"#fff"}}>$4,400 self-only / $8,750 family</strong>. Catch-up (age 55+): additional $1,000. HSA contributions are 100% tax-deductible and reduce your federal taxable income dollar-for-dollar — saving ~$968/year at a 22% tax rate.
         </p>
       </div>
       <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
@@ -75,10 +75,10 @@ export default function Post() {
 
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:'12px', margin:'16px 0 32px' }}>
           {[
-            { label:'Individual Coverage', value:'$4,300', sub:'+$1,000 if 55+', color:'#34d399' },
-            { label:'Family Coverage', value:'$8,550', sub:'+$1,000 if 55+', color:'#34d399' },
-            { label:'Min Deductible (Self)', value:'$1,650', sub:'HDHP requirement', color:'#818cf8' },
-            { label:'Min Deductible (Family)', value:'$3,300', sub:'HDHP requirement', color:'#818cf8' },
+            { label:'Individual Coverage', value:'$4,400', sub:'+$1,000 if 55+', color:'#34d399' },
+            { label:'Family Coverage', value:'$8,750', sub:'+$1,000 if 55+', color:'#34d399' },
+            { label:'Min Deductible (Self)', value:'$1,700', sub:'HDHP requirement', color:'#818cf8' },
+            { label:'Min Deductible (Family)', value:'$3,400', sub:'HDHP requirement', color:'#818cf8' },
           ].map(b => (
             <div key={b.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'10px', padding:'16px', textAlign:'center' }}>
               <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'6px', textTransform:'uppercase', letterSpacing:'0.05em' }}>{b.label}</div>
@@ -90,12 +90,12 @@ export default function Post() {
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'0 0 12px', color:'white' }}>How Much Can You Save in Taxes?</h2>
-          <p>On an individual plan, maxing out the $4,300 HSA saves:</p>
+          <p>On an individual plan, maxing out the $4,400 HSA saves:</p>
           <ul style={{ paddingLeft:'20px' }}>
-            <li style={{ marginBottom:'8px' }}><strong>22% federal bracket:</strong> $946 in federal taxes</li>
-            <li style={{ marginBottom:'8px' }}><strong>7.65% FICA:</strong> $329 in Social Security + Medicare</li>
-            <li style={{ marginBottom:'8px' }}><strong>5% state tax:</strong> $215 in state taxes (varies)</li>
-            <li style={{ marginBottom:'8px', borderTop:'1px solid rgba(255,255,255,0.1)', paddingTop:'8px' }}><strong>Total savings: ~$1,490/year</strong> for a typical middle-income earner</li>
+            <li style={{ marginBottom:'8px' }}>            <strong>22% federal bracket:</strong> $968 in federal taxes</li>
+                        <li style={{ marginBottom:'8px' }}><strong>7.65% FICA:</strong> $337 in Social Security + Medicare</li>
+                        <li style={{ marginBottom:'8px' }}><strong>5% state tax:</strong> $220 in state taxes (varies)</li>
+                        <li style={{ marginBottom:'8px', borderTop:'1px solid rgba(255,255,255,0.1)', paddingTop:'8px' }}><strong>Total savings: ~$1,525/year</strong> for a typical middle-income earner</li>
           </ul>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>The Secret Strategy: HSA as a Retirement Account</h2>
@@ -103,22 +103,22 @@ export default function Post() {
           <p>Strategy used by many financial planners: pay medical bills out-of-pocket now, save receipts, and reimburse yourself from the HSA decades later. There is no time limit on reimbursements. Your HSA grows tax-free the entire time.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>HSA Eligibility Requirements</h2>
-          <p>To contribute to an HSA, you must be enrolled in a <strong>High Deductible Health Plan (HDHP)</strong>. In 2026, an HDHP has a minimum deductible of $1,650 (self) or $3,300 (family). You cannot be enrolled in Medicare, be claimed as a dependent on someone else's return, or have a general-purpose FSA.</p>
+          <p>To contribute to an HSA, you must be enrolled in a <strong>High Deductible Health Plan (HDHP)</strong>. In 2026, an HDHP has a minimum deductible of $1,700 (self) or $3,400 (family). You cannot be enrolled in Medicare, be claimed as a dependent on someone else's return, or have a general-purpose FSA.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>HSA vs. FSA — Which Is Better?</h2>
           <ul style={{ paddingLeft:'20px' }}>
             <li style={{ marginBottom:'8px' }}><strong>HSA:</strong> Funds roll over forever, can be invested, portable (yours even if you change jobs), triple tax advantage. Requires HDHP.</li>
-            <li style={{ marginBottom:'8px' }}><strong>FSA:</strong> Use-it-or-lose-it by year end (up to $660 rollover allowed), not investable, not portable. Works with any health plan.</li>
+            <li style={{ marginBottom:'8px' }}><strong>FSA:</strong> Use-it-or-lose-it by year end (up to $680 rollover allowed), not investable, not portable. Works with any health plan.</li>
           </ul>
           <p>For most healthy workers under 50 with an HDHP option, the HSA is substantially better. The FSA makes sense when you have predictable medical expenses and cannot qualify for an HSA.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Stack HSA + 401(k) for Maximum Tax Savings</h2>
-          <p>On a $100,000 salary, maxing both 401(k) ($23,500) and HSA ($4,300) creates $27,800 in pre-tax deductions. This reduces your federal taxable income from $85,000 to $57,200 — saving approximately $7,500–$9,000 per year in combined federal, state, and FICA taxes. Enter your numbers in our calculator to see your exact savings.</p>
+          <p>On a $100,000 salary, maxing both 401(k) ($24,500) and HSA ($4,400) creates $28,900 in pre-tax deductions. For a single filer this reduces federal taxable income from $83,900 to $55,000 — saving approximately $6,358 in federal income tax, plus about $337 in FICA on the HSA portion when it is contributed through payroll. Enter your numbers in our calculator to see your exact savings.</p>
         </div>
 
         <div style={{ marginTop:'32px', background:'rgba(74,222,128,0.08)', border:'1px solid rgba(74,222,128,0.2)', borderRadius:'14px', padding:'24px', textAlign:'center' }}>
           <h3 style={{ fontWeight:800, marginBottom:'8px' }}>See Your Savings With Max HSA + 401(k)</h3>
-          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Enter $4,300 HSA and $23,500 401(k) to see your exact tax savings instantly.</p>
+          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Enter $4,400 HSA and $24,500 401(k) to see your exact tax savings instantly.</p>
           <Link href="/" style={{ display:'inline-block', background:'linear-gradient(135deg,#4ade80,#22c55e)', color:'#052e16', fontWeight:800, padding:'11px 24px', borderRadius:'9px', textDecoration:'none', fontSize:'14px' }}>Open Paycheck Calculator →</Link>
         </div>
 

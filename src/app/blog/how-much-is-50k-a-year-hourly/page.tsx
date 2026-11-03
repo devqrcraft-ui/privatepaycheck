@@ -15,7 +15,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
       {
         '@type': 'Question',
         name: 'How much is $50,000 a year per hour?',
-        acceptedAnswer: { '@type': 'Answer', text: '$50,000/year equals approximately />4.04/hour based on a standard 2,080-hour work year (40 hours/week, 52 weeks). This is before taxes.' },
+        acceptedAnswer: { '@type': 'Answer', text: '$50,000/year equals approximately $24.04/hour based on a standard 2,080-hour work year (40 hours/week, 52 weeks). This is before taxes.' },
       },
       {
         '@type': 'Question',

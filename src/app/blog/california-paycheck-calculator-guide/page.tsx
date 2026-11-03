@@ -37,7 +37,7 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'How much is taken out of a California paycheck?',
-        acceptedAnswer: { '@type': 'Answer', text: 'For a $75,000 salary in California, expect roughly  />2,000- />4,000 in total taxes (federal + state + FICA + SDI), leaving about $51,000-$53,000 take-home per year.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'For a $75,000 salary in California, expect roughly $17,100 in total taxes for a single filer (federal + state + FICA + SDI), leaving about $57,900 take-home per year.' },
       },
       {
         '@type': 'Question',

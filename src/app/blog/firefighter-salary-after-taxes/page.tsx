@@ -260,15 +260,15 @@ export default function Page() {
           <ol style={{margin:'0 0 24px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Contribute to your 457(b) plan.'}</strong>
-              {' Government firefighters have access to a 457(b) — contribute up to $23,500 pre-tax in 2026. Unlike 401(k), no 10% penalty on early withdrawals after separation from service.'}
+              {' Government firefighters have access to a 457(b) — contribute up to $24,500 pre-tax in 2026. Unlike 401(k), no 10% penalty on early withdrawals after separation from service.'}
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Use a Health FSA.'}</strong>
-              {' Up to $3,300 pre-tax in 2026. Saves FICA (7.65%) plus federal income tax — approximately $580 total on the full $3,300 contribution.'}
+              {' Up to $3,400 pre-tax in 2026. Saves FICA (7.65%) plus federal income tax — approximately $668 total at the 12% federal bracket on the full $3,400 contribution.'}
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Open an HSA if eligible.'}</strong>
-              {' If enrolled in a high-deductible health plan, contribute up to $4,300 to an HSA. Triple tax advantage — deductible contribution, tax-free growth, tax-free withdrawals for medical expenses.'}
+              {' If enrolled in a high-deductible health plan, contribute up to $4,400 to an HSA. Triple tax advantage — deductible contribution, tax-free growth, tax-free withdrawals for medical expenses.'}
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Update your W-4 withholding.'}</strong>
@@ -282,8 +282,8 @@ export default function Page() {
 
           <ul style={{margin:'0 0 24px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li>{'457(b) contribution of $10,000/year saves $1,200-$2,200 in federal tax on $56,800 salary'}</li>
-            <li>{'FSA $3,300/year saves approximately $580 in combined tax and FICA'}</li>
-            <li>{'HSA $4,300/year saves approximately $750 in federal tax plus tax-free growth'}</li>
+            <li>{'FSA $3,400/year saves approximately $668 in combined tax and FICA at the 12% bracket'}</li>
+            <li>{'HSA $4,400/year saves approximately $528-$968 in federal tax (12%-22% brackets) plus tax-free growth'}</li>
             <li>{'No state income tax saves firefighters $1,500-$5,200/year vs California'}</li>
           </ul>
 

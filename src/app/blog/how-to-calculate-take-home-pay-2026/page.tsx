@@ -72,7 +72,7 @@ export default function Post() {
           <p>Gross pay is your salary before any deductions. For a $75,000/year salary paid biweekly, gross pay per paycheck is <strong>$75,000 ÷ 26 = $2,884.62</strong>.</p>
 
           <h2 style={{ fontSize:22, fontWeight:800, color:'#f1f5f9', margin:'32px 0 12px' }}>Step 2: Subtract Pre-Tax Deductions</h2>
-          <p>Pre-tax deductions reduce your taxable income. Common ones include 401(k) contributions (up to $23,500 in 2026), HSA contributions ($4,300 single / $8,550 family), and employer health insurance premiums. If you contribute $6,000/year to a 401(k), your taxable income drops to $69,000.</p>
+          <p>Pre-tax deductions reduce your taxable income. Common ones include 401(k) contributions (up to $24,500 in 2026), HSA contributions ($4,400 single / $8,750 family), and employer health insurance premiums. If you contribute $6,000/year to a 401(k), your taxable income drops to $69,000.</p>
 
           <h2 style={{ fontSize:22, fontWeight:800, color:'#f1f5f9', margin:'32px 0 12px' }}>Step 3: Calculate Federal Income Tax</h2>
           <p>The US uses a progressive tax system. For 2026 single filers:</p>

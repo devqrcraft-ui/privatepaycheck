@@ -14,7 +14,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
       {
         '@type': 'Question',
         name: 'What is FICA tax?',
-        acceptedAnswer: { '@type': 'Answer', text: 'FICA (Federal Insurance Contributions Act) tax funds Social Security and Medicare. In 2026: Social Security is 6.2% on wages up to })}}/>76,100, and Medicare is 1.45% on all wages. Employers match these amounts.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'FICA (Federal Insurance Contributions Act) tax funds Social Security and Medicare. In 2026: Social Security is 6.2% on wages up to $184,500, and Medicare is 1.45% on all wages. Employers match these amounts.' },
       },
       {
         '@type': 'Question',
@@ -24,7 +24,7 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
       {
         '@type': 'Question',
         name: 'What is the FICA wage base limit in 2026?',
-        acceptedAnswer: { '@type': 'Answer', text: 'The Social Security wage base is })}}/>76,100 in 2026. You stop paying the 6.2% Social Security tax once your earnings exceed this amount. The 1.45% Medicare tax has no cap — high earners also pay an extra 0.9% above />00,000.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The Social Security wage base is $184,500 in 2026. You stop paying the 6.2% Social Security tax once your earnings exceed this amount. The 1.45% Medicare tax has no cap — high earners also pay an extra 0.9% above $200,000 (single filers).' },
       }
         ],
       })}} />

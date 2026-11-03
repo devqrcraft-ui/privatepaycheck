@@ -325,8 +325,8 @@ export default function Page() {
             Every pre-tax benefit reduces your taxable income and increases take-home pay. Nurses have strong options through employer benefits. See the full guide on <a href="/blog/how-to-increase-take-home-pay" style={{color:'#F5C842', textDecoration:'none'}}>how to increase take-home pay</a>.
           </p>
           <ul style={{paddingLeft:20, marginBottom:16, lineHeight:1.9, fontSize:14, color:'rgba(255,255,255,0.85)'}}>
-            <li>401(k) contributions up to $23,500 — reduces federal taxable income dollar for dollar</li>
-            <li>HSA contributions up to $4,300 — triple tax advantage for high-deductible plans</li>
+            <li>401(k) contributions up to $24,500 — reduces federal taxable income dollar for dollar</li>
+            <li>HSA contributions up to $4,400 — triple tax advantage for high-deductible plans</li>
             <li>FSA for dependent care — up to $5,000 pre-tax for childcare</li>
             <li>Update W-4 after marriage, child, or major income change</li>
             <li>Work in a no-income-tax state — saves $1,200-$5,600/year at $75K</li>

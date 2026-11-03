@@ -31,12 +31,12 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'How much is taken out of a Texas paycheck?',
-        acceptedAnswer: { '@type': 'Answer', text: 'For a $75,000 salary in Texas, expect roughly })}} />6,500 in federal income tax and FICA combined — a take-home of about $58,500/year or $4,875/month. There is no state income tax deduction.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'For a $75,000 salary in Texas, expect roughly $13,400 in federal income tax and FICA combined (single filer) — a take-home of about $61,600/year or $5,133/month. There is no state income tax deduction.' },
       },
       {
         '@type': 'Question',
         name: 'How do I calculate my Texas paycheck?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Enter your salary or hourly rate in our Texas paycheck calculator. It applies 2026 IRS federal brackets, the standard deduction (})}} />5,000 single), and FICA rates to show your exact take-home pay.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Enter your salary or hourly rate in our Texas paycheck calculator. It applies 2026 IRS federal brackets, the standard deduction ($16,100 single), and FICA rates to show your exact take-home pay.' },
       }
         ],
       })}} />
@@ -74,9 +74,9 @@ export default function Post() {
             <li style={{ marginBottom:'8px' }}><strong>Federal income tax</strong> — 10% to 37% depending on income and filing status</li>
             <li style={{ marginBottom:'8px' }}><strong>Social Security</strong> — 6.2% on wages up to $184,500</li>
             <li style={{ marginBottom:'8px' }}><strong>Medicare</strong> — 1.45% on all wages (plus 0.9% on earnings over $200,000)</li>
-            <li style={{ marginBottom:'8px' }}><strong>401(k) contributions</strong> — up to $23,500 pre-tax in 2026</li>
+            <li style={{ marginBottom:'8px' }}><strong>401(k) contributions</strong> — up to $24,500 pre-tax in 2026</li>
             <li style={{ marginBottom:'8px' }}><strong>Health insurance premiums</strong> — if paid pre-tax through employer</li>
-            <li style={{ marginBottom:'8px' }}><strong>HSA contributions</strong> — up to $4,300 for individual coverage</li>
+            <li style={{ marginBottom:'8px' }}><strong>HSA contributions</strong> — up to $4,400 for individual coverage</li>
           </ul>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Texas Paycheck Example — $75,000 Salary</h2>
@@ -116,7 +116,7 @@ export default function Post() {
               { label:'Federal Std Deduction (MFJ)', value:'$30,000' },
               { label:'FICA (Social Security)', value:'6.2%' },
               { label:'FICA (Medicare)', value:'1.45%' },
-              { label:'401(k) Limit 2026', value:'$23,500' },
+              { label:'401(k) Limit 2026', value:'$24,500' },
             ].map(f => (
               <div key={f.label} style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'8px', padding:'14px' }}>
                 <div style={{ fontSize:'11px', opacity: 0.8, marginBottom:'4px' }}>{f.label}</div>

@@ -222,9 +222,9 @@ export default function Post() {
           Pre-tax contributions directly reduce both your federal and California state taxable income:
         </p>
         <ul style={{ fontSize:'15px', lineHeight:2, paddingLeft:'20px', marginBottom:'24px' }}>
-          <li><strong style={{ color:'#F5C842' }}>401(k):</strong> Up to $23,500 in 2026 ($31,000 if age 50+). Reduces federal and CA taxable income dollar-for-dollar.</li>
-          <li><strong style={{ color:'#F5C842' }}>HSA:</strong> Up to $4,300 (self-only) or $8,550 (family) in 2026. Reduces federal tax but note: California does not recognize HSA tax benefits — CA taxes your HSA contributions.</li>
-          <li><strong style={{ color:'#F5C842' }}>FSA:</strong> Up to $3,300 in 2026 for healthcare FSA. Reduces both federal and CA taxable income.</li>
+          <li><strong style={{ color:'#F5C842' }}>401(k):</strong> Up to $24,500 in 2026 ($32,500 if age 50+). Reduces federal and CA taxable income dollar-for-dollar.</li>
+          <li><strong style={{ color:'#F5C842' }}>HSA:</strong> Up to $4,400 (self-only) or $8,750 (family) in 2026. Reduces federal tax but note: California does not recognize HSA tax benefits — CA taxes your HSA contributions.</li>
+          <li><strong style={{ color:'#F5C842' }}>FSA:</strong> Up to $3,400 in 2026 for healthcare FSA. Reduces both federal and CA taxable income.</li>
           <li><strong style={{ color:'#F5C842' }}>Health Insurance Premiums:</strong> If employer-sponsored, these are pre-tax and reduce your taxable wages before any tax is calculated.</li>
         </ul>
 

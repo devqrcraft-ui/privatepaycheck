@@ -15,17 +15,17 @@ export default function Post(){return(<main style={{minHeight:'100vh',background
       {
         '@type': 'Question',
         name: 'Is it better to work in Texas or California for taxes?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Texas has no state income tax, saving workers $5,000-})}}/>5,000+/year vs California at the same salary. However, California has higher wages in tech and entertainment. The net benefit depends on your industry and income.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Texas has no state income tax, saving single workers roughly $6,200/year at a $100,000 salary and about $16,800/year at $200,000 vs California. However, California has higher wages in tech and entertainment. The net benefit depends on your industry and income.' },
       },
       {
         '@type': 'Question',
         name: 'How much more do you take home in Texas vs California?',
-        acceptedAnswer: { '@type': 'Answer', text: 'On a })}}/>00,000 salary, Texas workers take home roughly $7,500-$9,000 more than California workers annually due to no state income tax. At />00,000, the difference exceeds })}}/>8,000/year.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'On a $100,000 salary, a single Texas worker takes home roughly $6,200 more than a California worker annually because Texas has no state income tax or SDI. At $200,000, the difference is about $16,800/year.' },
       },
       {
         '@type': 'Question',
         name: 'Does California or Texas have a higher minimum wage?',
-        acceptedAnswer: { '@type': 'Answer', text: 'California has a much higher minimum wage at })}}/>6.50/hour in 2026. Texas follows the federal minimum of $7.25/hour — less than half of California\'s rate.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'California has a much higher minimum wage at $16.90/hour in 2026. Texas follows the federal minimum of $7.25/hour — less than half of California\'s rate.' },
       }
         ],
       })}} />

@@ -44,7 +44,7 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'How does the 2026 overtime tax deduction work?',
-        acceptedAnswer: { '@type': 'Answer', text: 'The No Tax on Overtime deduction (2025-2028) lets workers deduct up to })}} />2,500 in overtime wages from federal taxable income. You still pay FICA on overtime. Claim the deduction when filing your federal tax return.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The No Tax on Overtime deduction (2025-2028) lets workers deduct up to $12,500 in overtime premium pay ($25,000 on a joint return) from federal taxable income. You still pay FICA on overtime. Claim the deduction when filing your federal tax return.' },
       }
         ],
       })}} />

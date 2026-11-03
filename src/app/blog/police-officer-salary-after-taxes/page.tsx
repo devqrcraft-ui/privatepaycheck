@@ -276,8 +276,8 @@ export default function Page() {
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'457(b) deferred compensation: contribute up to $23,500 pre-tax in 2026 — reduces federal tax by $2,820-$5,170 depending on bracket'}</li>
-            <li>{'FSA: up to $3,300 pre-tax for medical expenses — saves $396 in federal tax plus $252 in FICA'}</li>
+            <li>{'457(b) deferred compensation: contribute up to $24,500 pre-tax in 2026 — reduces federal tax by $2,940-$5,390 depending on bracket (12%-22%)'}</li>
+            <li>{'FSA: up to $3,400 pre-tax for medical expenses — saves $408 in federal tax (12% bracket) plus $260 in FICA'}</li>
             <li>{'Update W-4: if married or have dependents, adjust withholding to avoid over-paying'}</li>
             <li>{'Uniform deduction: unreimbursed uniform costs may be deductible if you itemize above $16,100'}</li>
           </ul>
