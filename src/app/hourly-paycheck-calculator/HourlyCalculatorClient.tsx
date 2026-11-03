@@ -86,7 +86,7 @@ export default function HourlyPaycheckCalculator() {
   const r = useMemo(() => {
     const h = parseFloat(hourly)||0, hw = parseFloat(hours)||0, w = parseFloat(weeks)||52;
     const annual = h * hw * w;
-    const k = Math.min(parseFloat(k401)||0, 23500);
+    const k = Math.min(parseFloat(k401)||0, 24500);
     const hsaV = Math.min(parseFloat(hsa)||0, 4300);
     const preTax = annual - k - hsaV;
     const fed    = calcFederal(preTax, filing);
@@ -116,9 +116,9 @@ export default function HourlyPaycheckCalculator() {
     if (!Number.isFinite(hourlyValue) || hourlyValue <= 0 ||
       !Number.isFinite(hoursValue) || hoursValue < 1 || hoursValue > 168 ||
       !Number.isFinite(weeksValue) || weeksValue < 1 || weeksValue > 52 ||
-      !Number.isFinite(k401Value) || k401Value < 0 || k401Value > 23500 ||
+      !Number.isFinite(k401Value) || k401Value < 0 || k401Value > 24500 ||
       !Number.isFinite(hsaValue) || hsaValue < 0 || hsaValue > 4300) {
-      setError('Enter a positive hourly rate, 1–168 hours, 1–52 weeks, 401(k) from $0–$23,500, and HSA from $0–$4,300.');
+      setError('Enter a positive hourly rate, 1–168 hours, 1–52 weeks, 401(k) from $0–$24,500, and HSA from $0–$4,400.');
       setHasCalculated(false);
       return;
     }
@@ -193,11 +193,11 @@ export default function HourlyPaycheckCalculator() {
           {/* ROW 3: 401k + HSA */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'24px' }}>
             <div>
-              <label style={lbl}>401(k) Contribution ($/yr, max $23,500)</label>
-              <input type="number" value={k401} onChange={e=>{setK401(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="23500" />
+              <label style={lbl}>401(k) Contribution ($/yr, max $24,500)</label>
+              <input type="number" value={k401} onChange={e=>{setK401(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="24500" />
             </div>
             <div>
-              <label style={lbl}>HSA Contribution ($/yr, max $4,300)</label>
+              <label style={lbl}>HSA Contribution ($/yr, max $4,400)</label>
               <input type="number" value={hsa} onChange={e=>{setHsa(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="4300" />
             </div>
           </div>

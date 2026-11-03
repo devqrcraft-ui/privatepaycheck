@@ -20,7 +20,7 @@ export default function W4Client(){
 
   const r=useMemo(()=>{
     const s=parseFloat(salary)||0;
-    const k=Math.min(parseFloat(k401)||0,23500);
+    const k=Math.min(parseFloat(k401)||0,24500);
     const oi=parseFloat(otherIncome)||0;
     const ded=parseFloat(deductions)||0;
     const cred=parseFloat(credits)||0;
