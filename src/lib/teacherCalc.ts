@@ -62,7 +62,7 @@ export const PENSION_RATE: Record<string, { rate: number; system: string; ss: bo
 
 // STATE_TAX тепер береться з канонічного джерела taxRates2026.ts (STATE_TAXES),
 // а не з окремої дубльованої таблиці (виправлено: NY/NJ/HI/DC розходились на 2-4 п.п.)
-import { STATE_TAXES } from './taxRates2026';
+import { FICA, STATE_TAXES } from './taxRates2026';
 import { stateIncomeTax, statePayrollTax } from './stateTax';
 export const STATE_TAX: Record<string, number> = Object.fromEntries(
   Object.entries(STATE_TAXES).map(([code, v]) => [code, v.rate])
@@ -113,19 +113,10 @@ export function federalTax(income: number, filing: Filing): number {
   return tax;
 }
 
-// ─── SS Fairness Act: simplified new SS benefit estimate ────────────────────
-// Comment preserved from original: simplified AIME estimate, not a precise SSA calc.
-export function estimateSSBenefit(salary: number, ssYears: number): number {
-  if (ssYears === 0) return 0;
-  const aime = (salary * 0.5 * ssYears) / 35 / 12;
-  const pia = aime <= 1226
-    ? aime * 0.9
-    : 1226 * 0.9 + Math.min(aime - 1226, 6172) * 0.32;
-  return Math.round(pia * 12);
-}
-
 // ─── Main calculation ─────────────────────────────────────────────────────
-export function calcTeacher(salary: number, state: string, filing: Filing, ssYears: number, age: number) {
+export function calcTeacher(salary: number, state: string, filing: Filing, age: number) {
+  if (!Number.isFinite(salary) || salary <= 0) throw new RangeError('Salary must be a positive finite number.');
+  if (!Number.isFinite(age) || age < 0 || age > 120) throw new RangeError('Age must be between 0 and 120.');
   const pensionInfo = PENSION_RATE[state] ?? { rate: 0.07, system: 'State TRS', ss: true };
   const pensionDeduction = salary * pensionInfo.rate;
 
@@ -133,7 +124,10 @@ export function calcTeacher(salary: number, state: string, filing: Filing, ssYea
   const fedTax = federalTax(federalTaxableIncome, filing);
 
   const ficaSS = pensionInfo.ss ? Math.min(salary, 184500) * 0.062 : 0;
-  const ficaMedicare = salary * 0.0145;
+  const additionalMedicareThreshold = filing === 'married' ? 250000 : FICA.additionalMedicare.threshold;
+  const ficaMedicare =
+    salary * FICA.medicare.rate +
+    Math.max(0, salary - additionalMedicareThreshold) * FICA.additionalMedicare.rate;
   const fica = ficaSS + ficaMedicare;
 
   const stateTaxableIncome = Math.max(0, salary - pensionDeduction);
@@ -149,12 +143,10 @@ export function calcTeacher(salary: number, state: string, filing: Filing, ssYea
   const monthlyTakeHome = takeHome / 12;
   const biweeklyTakeHome = takeHome / 26;
 
-  const ssBenefit = !pensionInfo.ss ? estimateSSBenefit(salary, ssYears) : 0;
-
   return {
     gross: salary, pensionDeduction, pensionRate: pensionInfo.rate, pensionSystem: pensionInfo.system,
     isSScovered: pensionInfo.ss, fedTax, stateTax, fica, seniorDeduction, seniorTaxSaving,
-    totalDeductions, takeHome, monthlyTakeHome, biweeklyTakeHome, ssBenefit,
+    totalDeductions, takeHome, monthlyTakeHome, biweeklyTakeHome,
     effectiveRate: totalDeductions / salary,
   };
 }

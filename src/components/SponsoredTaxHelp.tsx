@@ -32,7 +32,7 @@ export default function SponsoredTaxHelp({ placement, wrap = true }: { placement
       <a
         href={sponsoredTaxHelpUrl(placement)}
         target="_blank"
-        rel="sponsored noopener noreferrer"
+        rel="sponsored nofollow noopener noreferrer"
         style={{ display: 'inline-block', background: '#F5C842', color: '#091526', fontWeight: 800, fontSize: 14, padding: '11px 20px', borderRadius: 8, textDecoration: 'none' }}
       >
         See Community Tax&apos;s free consultation →

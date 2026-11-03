@@ -1,18 +1,74 @@
 import type { Metadata } from 'next'
-import UnemployCalc from './_calc'
+import UnemploymentIllustration from '@/components/UnemploymentIllustration'
+import { estimateIllustrativeWeeklyAmount } from '@/lib/unemployment'
+
+const faqItems = [
+  {
+    question: 'Does this calculator determine my Texas unemployment benefit?',
+    answer: 'No. This page provides an arithmetic illustration that divides entered highest-quarter wages by 25. It does not apply a verified current TWC benefit schedule or determine eligibility; TWC makes the official claim determination.',
+  },
+  {
+    question: 'How much unemployment can I receive in Texas?',
+    answer: 'Your amount depends on your claim and current Texas Workforce Commission rules. This page does not publish a verified current minimum or maximum; check TWC guidance and your monetary determination.',
+  },
+  {
+    question: 'How long do Texas unemployment benefits last?',
+    answer: 'Payable duration depends on current program rules and your claim. This calculator does not estimate duration; check TWC guidance and your determination.',
+  },
+  {
+    question: 'Is Texas unemployment taxable?',
+    answer: 'Unemployment compensation is generally subject to federal income tax. Texas does not impose an individual state income tax. Voluntary federal withholding is separate from your final tax liability.',
+  },
+  {
+    question: 'How do I apply for Texas unemployment?',
+    answer: 'Apply through the Texas Workforce Commission and follow its current eligibility and filing instructions.',
+  },
+]
 
 export const metadata: Metadata = {
-  title: 'Texas Unemployment Calculator 2026 — Up to $619/Week, 26 Weeks',
-  description: 'Texas unemployment benefits 2026: up to $619/week for up to 26 weeks. No state income tax on benefits. Free calculator — instant estimate based on your prior wages.',
+  title: 'Texas Unemployment Calculator | Illustrative Benefit Estimate',
+  description: 'Explore a simplified Texas unemployment calculation example. It does not apply a verified current TWC benefit schedule or determine eligibility, payable duration, or your official benefit.',
   keywords: 'texas unemployment calculator, texas unemployment benefits 2026, texas WBA calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/texas' },
+  openGraph: {
+    title: 'Texas Unemployment Calculator | Illustrative Benefit Estimate',
+    description: 'Explore a simplified Texas unemployment calculation example. It does not apply a verified current TWC benefit schedule or determine eligibility, payable duration, or your official benefit.',
+    url: 'https://www.privatepaycheck.com/unemployment-calculator/texas',
+    siteName: 'PrivatePaycheck',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck Texas unemployment calculator' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Texas Unemployment Calculator | Illustrative Benefit Estimate',
+    description: 'Explore a simplified Texas unemployment calculation example. It does not apply a verified current TWC benefit schedule or determine eligibility, payable duration, or your official benefit.',
+    images: ['/og-image.svg'],
+  },
 }
 
 export default function Page() {
-  const rows = [["$400/wk","$20,800/yr","$208","$416"],["$600/wk","$31,200/yr","$312","$624"],["$800/wk","$41,600/yr","$416","$832"],["$1,000/wk","$52,000/yr","$520","$1,040"],["$1,200/wk","$62,400/yr","$619","$1,238"],["$1,500/wk","$78,000/yr","$619","$1,238"]]
+  const rows = [400, 600, 800, 1000, 1200, 1500].map((weeklyWage) => {
+    const modelAmount = estimateIllustrativeWeeklyAmount(weeklyWage * 13, 25);
+    return [
+      `$${weeklyWage.toLocaleString('en-US')}/wk`,
+      `$${(weeklyWage * 52).toLocaleString('en-US')}/yr`,
+      `$${modelAmount.toLocaleString('en-US')}`,
+      `$${(modelAmount * 2).toLocaleString('en-US')}`,
+    ];
+  });
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', color:'#e2e8f0', background:'#0f1629', minHeight:'100vh' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is Texas unemployment in 2026?","acceptedAnswer":{"@type":"Answer","text":"Texas unemployment benefits (WBA) in 2026 are up to $619 per week. Benefits are calculated as approximately 1/25 of wages in your highest-earning base period quarter. The minimum is $76/week."}},{"@type":"Question","name":"How long do Texas unemployment benefits last?","acceptedAnswer":{"@type":"Answer","text":"Texas unemployment benefits last 10–26 weeks depending on your total base-period wages and the state unemployment rate. Most claimants receive 26 weeks."}},{"@type":"Question","name":"Is Texas unemployment taxable?","acceptedAnswer":{"@type":"Answer","text":"Texas unemployment benefits are subject to federal income tax. Texas has no state income tax, so there is no state tax on your benefits. You can elect 10% federal withholding."}},{"@type":"Question","name":"How do I apply for Texas unemployment?","acceptedAnswer":{"@type":"Answer","text":"Apply online at TWC.texas.gov within 3 weeks of losing your job. You must have earned wages in at least two base-period quarters and been separated through no fault of your own."}}]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <nav style={{ fontSize:13, color:'#b8c8dc', marginBottom:24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> ›{' '}
         <a href="/unemployment-calculator" style={{ color:'#b8c8dc' }}>Unemployment Calculator</a> ›{' '}
@@ -22,25 +78,28 @@ export default function Page() {
         Texas Unemployment Calculator 2026
       </h1>
       <p style={{ fontSize:17, color:'#94a3b8', marginBottom:20, lineHeight:1.7 }}>
-        Estimate your Texas weekly unemployment benefit (WBA) for 2026.
-        Texas pays <strong style={{ color:'#F5C842' }}>up to $619/week</strong> for up to 26 weeks.
-        Formula: 1/25 of your wages in your highest-earning base-period quarter (about 52% of weekly pay), up to the $619 maximum.
+        This page shows a simplified arithmetic example based on wages entered for a highest-paid quarter. It is not a verified TWC benefit calculation; official amounts, eligibility, and duration depend on current rules and your claim determination.
       </p>
 
-      <UnemployCalc maxWBA={619} minWBA={76} stateName="Texas" />
+      <UnemploymentIllustration stateName="Texas" divisor={25} />
 
       <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, padding:'12px 16px', marginBottom:28, fontSize:14, color:'#fde68a' }}>
-        Texas max WBA: <strong>$619/week</strong> · Minimum: $76/week (effective October 4, 2026) · Duration: up to 26 weeks · No state income tax on UI benefits.
+        This model does not encode verified current minimum/maximum benefits or payable weeks. Confirm current rules and your determination with TWC.
       </div>
 
-      <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Texas Weekly Benefit by Wage (2026, steady full-year wages)</h2>
+      <p style={{ color:'#94a3b8', fontSize:13, lineHeight:1.7, marginBottom:28 }}>
+        Check current information with the <a href="https://www.twc.texas.gov/jobseekers/eligibility-benefit-amounts" target="_blank" rel="noreferrer" style={{ color:'#F5C842' }}>Texas Workforce Commission — eligibility and benefit amounts</a>.
+      </p>
+
+      <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Illustrative model outputs</h2>
+      <p style={{ color:'#94a3b8', fontSize:13, lineHeight:1.7 }}>The table assumes the same weekly wage in each of 13 weeks and divides the resulting quarter wages by 25. These are arithmetic examples only, not verified benefit amounts.</p>
       <div style={{ overflowX:'auto', marginBottom:32 }}>
         <table style={{ width:'100%', borderCollapse:'collapse', minWidth:480 }}>
           <thead><tr style={{ background:'rgba(99,102,241,0.12)' }}>
             <th style={{ padding:'10px 14px', textAlign:'left' }}>Weekly Wage</th>
-            <th style={{ padding:'10px 14px', textAlign:'left' }}>Annual Earnings</th>
-            <th style={{ padding:'10px 14px', textAlign:'left' }}>Weekly Benefit (WBA)</th>
-            <th style={{ padding:'10px 14px', textAlign:'left' }}>Biweekly Payment</th>
+            <th style={{ padding:'10px 14px', textAlign:'left' }}>Annualized Wage Illustration</th>
+            <th style={{ padding:'10px 14px', textAlign:'left' }}>Weekly Model Amount</th>
+            <th style={{ padding:'10px 14px', textAlign:'left' }}>Two-week Arithmetic Equivalent</th>
           </tr></thead>
           <tbody>{rows.map(([ww,ae,wba,bw]: string[])=>(
             <tr key={ww} style={{ borderBottom:'1px solid rgba(255,255,255,0.06)' }}>
@@ -54,14 +113,12 @@ export default function Page() {
       </div>
 
       <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Frequently Asked Questions</h2>
-      <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>How much is Texas unemployment in 2026?</h3>
-      <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Texas unemployment benefits (WBA) in 2026 are up to $619 per week. Benefits are calculated as approximately 1/25 of wages in your highest-earning base period quarter. The minimum is $76/week.</p>
-      <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>How long do Texas unemployment benefits last?</h3>
-      <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Texas unemployment benefits last 10–26 weeks depending on your total base-period wages and the state unemployment rate. Most claimants receive 26 weeks.</p>
-      <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>Is Texas unemployment taxable?</h3>
-      <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Texas unemployment benefits are subject to federal income tax. Texas has no state income tax, so there is no state tax on your benefits. You can elect 10% federal withholding.</p>
-      <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>How do I apply for Texas unemployment?</h3>
-      <p style={{ color:'#94a3b8', lineHeight:1.7 }}>Apply online at TWC.texas.gov within 3 weeks of losing your job. You must have earned wages in at least two base-period quarters and been separated through no fault of your own.</p>
+      {faqItems.map(({ question, answer }) => (
+        <div key={question}>
+          <h3 style={{ fontSize:17, fontWeight:700, marginTop:20, color:'#f1f5f9' }}>{question}</h3>
+          <p style={{ color:'#94a3b8', lineHeight:1.7 }}>{answer}</p>
+        </div>
+      ))}
 
       <div style={{ borderTop:'2px solid rgba(255,255,255,0.1)', marginTop:40, paddingTop:32 }}>
         <h2 style={{ fontSize:18, fontWeight:800, marginBottom:16 }}>Other State Unemployment Calculators</h2>
@@ -82,7 +139,7 @@ export default function Page() {
         <div style={{ width:44, height:44, borderRadius:'50%', background:'rgba(245,200,66,0.15)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20, flexShrink:0 }}>✍️</div>
         <div>
           <div style={{ fontSize:13, fontWeight:700, color:'#e8edf8' }}>the PrivatePaycheck Team</div>
-          <div style={{ fontSize:11, color:'rgba(255,255,255,0.4)', marginTop:2 }}>Updated June 2026</div>
+          <div style={{ fontSize:11, color:'rgba(255,255,255,0.4)', marginTop:2 }}>Updated November 2026</div>
         </div>
       </div>
       </main>

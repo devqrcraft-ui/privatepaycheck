@@ -343,7 +343,7 @@ export default function Page() {
             {[
               {title:'Police Officer Salary After Taxes 2026', href:'/blog/police-officer-salary-after-taxes'},
               {title:'Teacher Salary After Taxes 2026', href:'/blog/teacher-salary-after-taxes'},
-              {title:'Nurse Salary After Taxes 2026', href:'/blog/nurse-paycheck-calculator'},
+              {title:'Nurse Salary After Taxes 2026', href:'/nurse-paycheck-calculator'},
             ].map((a, i) => (
               <a key={i} href={a.href} style={{
                 display:'block', padding:'12px 16px',

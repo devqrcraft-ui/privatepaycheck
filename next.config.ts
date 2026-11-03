@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/blog/nurse-salary-after-taxes',
+        destination: '/blog/nurse-paycheck-calculator',
+        permanent: true,
+      },
+      {
         source: '/california',
         destination: '/california-paycheck-calculator',
         permanent: true,

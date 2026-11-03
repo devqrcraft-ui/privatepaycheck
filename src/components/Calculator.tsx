@@ -2,31 +2,9 @@
 import { useState } from 'react';
 import { estimatePaycheck } from '@/lib/paycheck';
 import type { FilingStatus } from '@/lib/paycheck';
-const STATES = [
-  { value: '0',     label: 'No income tax (TX, FL, WA…)' },
-  { value: '9.3',   label: 'California (up to 13.3%)' },
-  { value: '10.9',  label: 'New York (up to 10.9%)' },
-  { value: '10.75', label: 'New Jersey (up to 10.75%)' },
-  { value: '9.85',  label: 'Minnesota (up to 9.85%)' },
-  { value: '9.9',   label: 'Oregon (up to 9.9%)' },
-  { value: '8.75',  label: 'Vermont (up to 8.75%)' },
-  { value: '7.65',  label: 'Wisconsin (7.65%)' },
-  { value: '6.99',  label: 'Connecticut (6.99%)' },
-  { value: '6.84',  label: 'Nebraska (up to 6.84%)' },
-  { value: '5.75',  label: 'Georgia (5.75%)' },
-  { value: '5.75',  label: 'Maryland (up to 5.75%)' },
-  { value: '5.75',  label: 'Virginia (5.75%)' },
-  { value: '5.3',   label: 'Missouri (up to 5.3%)' },
-  { value: '5.0',   label: 'Massachusetts (5%)' },
-  { value: '4.95',  label: 'Illinois (4.95%)' },
-  { value: '4.85',  label: 'Utah (4.85%)' },
-  { value: '4.4',   label: 'Colorado (4.4%)' },
-  { value: '4.25',  label: 'Michigan (4.25%)' },
-  { value: '3.99',  label: 'Ohio (up to 3.99%)' },
-  { value: '3.07',  label: 'Pennsylvania (3.07%)' },
-  { value: '2.5',   label: 'Arizona (2.5%)' },
-  { value: '2.0',   label: 'Indiana (3.15%)' },
-];
+import { K401_LIMIT_2026 } from '@/lib/paycheck';
+import { STATE_SLUG_MAP, STATE_TAXES, STATES_LIST } from '@/lib/taxRates2026';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
 
 function fmt(n: number) {
   return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -35,10 +13,14 @@ function fmt(n: number) {
 interface CalcProps { defaultState?: string; }
 
 export default function Calculator({ defaultState }: CalcProps) {
+  const requestedState = defaultState?.toLowerCase();
+  const initialState = requestedState
+    ? (STATE_SLUG_MAP[requestedState] ?? requestedState)
+    : 'tx';
   const [payType, setPayType]   = useState('salary');
   const [income, setIncome]     = useState('');
   const [freq, setFreq]         = useState('26');
-  const [stateRate, setStateRate] = useState(defaultState || '0');
+  const [stateCode, setStateCode] = useState(STATE_TAXES[initialState] ? initialState : 'tx');
   const [filing, setFiling]     = useState('single');
   const [k401, setK401]         = useState('0');
   const [results, setResults]   = useState<null|{
@@ -48,14 +30,20 @@ export default function Calculator({ defaultState }: CalcProps) {
 
   function calculate() {
     const raw = parseFloat(income);
-    if (!raw || raw <= 0) { alert('Please enter your income.'); return; }
+    if (!Number.isFinite(raw) || raw <= 0) { alert('Please enter a valid income greater than zero.'); return; }
     const f        = parseInt(freq);
-    const sr       = parseFloat(stateRate) || 0;
-    const k401pct  = Math.min(Math.max(parseFloat(k401) || 0, 0), 100) / 100;
+    const sr       = (STATE_TAXES[stateCode]?.rate ?? 0) * 100;
+    const k401Value = Number(k401);
+    if (!Number.isFinite(k401Value) || k401Value < 0 || k401Value > 100) {
+      alert('Enter a 401(k) contribution between 0% and 100%.');
+      return;
+    }
+    const k401pct  = k401Value / 100;
     const annual   = payType === 'hourly' ? raw * 40 * 52 : raw;
+    if (!Number.isFinite(annual)) { alert('The annualized income is outside the supported range.'); return; }
 
     const { gross, fed: fedPer, ss, med, state: st, k401: k401Per, net, taxPct } = estimatePaycheck({
-      annual, freq: f, stateRatePct: sr, filing: filing as FilingStatus, k401Pct: k401pct,
+      annual, freq: f, stateRatePct: sr, stateCode, filing: filing as FilingStatus, k401Pct: k401pct,
     });
 
     setResults({ gross, fed: fedPer, ss, med, state: st, k401: k401Per, net, taxPct });
@@ -94,7 +82,7 @@ export default function Calculator({ defaultState }: CalcProps) {
       <style>{css}</style>
       <div className="calc-card">
         <div className="card-title">Paycheck Calculator</div>
-        <div className="card-sub">2026 IRS Rules · Instant Results</div>
+        <div className="card-sub">2026 tax estimate · annualized</div>
 
         <label className="fl">Pay Type</label>
         <select aria-label="Pay type" value={payType} onChange={e=>setPayType(e.target.value)}>
@@ -114,8 +102,8 @@ export default function Calculator({ defaultState }: CalcProps) {
         </select>
 
         <label className="fl">State of Residence</label>
-        <select aria-label="State of residence" value={stateRate} onChange={e=>setStateRate(e.target.value)}>
-          {STATES.map(s=><option key={s.label} value={s.value}>{s.label}</option>)}
+        <select aria-label="State of residence" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+          {STATES_LIST.map(s=><option key={s.slug} value={s.slug}>{s.name}{s.noTax ? ' (no individual income tax)' : ''}</option>)}
         </select>
 
         <label className="fl">Filing Status</label>
@@ -134,12 +122,15 @@ export default function Calculator({ defaultState }: CalcProps) {
           />
           {parseFloat(k401) > 0 && (
             <span className="k401-badge">
-              Pre-tax · saves ~${Math.round((parseFloat(income)||0) * (parseFloat(k401)/100) * 0.22)} fed tax/yr
+            Traditional 401(k) · ${K401_LIMIT_2026.toLocaleString('en-US')} federal limit; catch-up not modeled
             </span>
           )}
         </div>
 
         <button className="calc-btn" onClick={calculate}>Calculate My Take-Home Pay →</button>
+        <p style={{fontSize:11,color:'#7A9FBF',lineHeight:1.5,margin:'10px 0 0'}}>
+          Estimate excludes local taxes and personal credits. Hourly pay assumes 40 hours/week for 52 weeks. State tax uses modeled brackets; 401(k) contributions remain state-taxable in PA/NJ, and Head of Household uses the single state model.
+        </p>
 
         {results && (
           <div className="results">
@@ -164,7 +155,7 @@ export default function Calculator({ defaultState }: CalcProps) {
             {results.k401 > 0 && (
               <div className="r-row">
                 <span>401(k) Contribution <span className="hint">ⓘ</span>
-                  <span className="tooltip">Pre-tax — reduces your federal &amp; state taxable income</span>
+                  <span className="tooltip">Reduces federal taxable wages; state treatment may differ</span>
                 </span>
                 <span style={{color:'#4ade80'}}>−{fmt(results.k401)}</span>
               </div>
@@ -182,17 +173,24 @@ export default function Calculator({ defaultState }: CalcProps) {
               <span>−{fmt(results.ss)}</span>
             </div>
             <div className="r-row">
-              <span>Medicare (1.45%)</span>
+              <span>Medicare &amp; Additional Medicare</span>
               <span>−{fmt(results.med)}</span>
             </div>
             <div className="r-row">
-              <span>State Income Tax</span>
+              <span>State Income &amp; Payroll Taxes</span>
               <span>−{fmt(results.state)}</span>
             </div>
             <div className="r-row">
               <span>🏦 Net Take-Home Pay</span>
               <span>{fmt(results.net)}</span>
             </div>
+            <CalculatorResultActions
+              summary={`2026 ${stateCode.toUpperCase()} paycheck estimate (${filing}, ${freq} paychecks/year)\nGross pay per period: ${fmt(results.gross)}\nFederal tax: ${fmt(results.fed)}\nSocial Security: ${fmt(results.ss)}\nMedicare: ${fmt(results.med)}\nState taxes: ${fmt(results.state)}\n401(k): ${fmt(results.k401)}\nEstimated take-home: ${fmt(results.net)}\nThis is an estimate; local taxes, credits, and individual withholding may differ.`}
+              relatedLinks={[
+                { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
+                { href: '/w4-withholding-calculator', label: 'Adjust W-4 →' },
+              ]}
+            />
           </div>
         )}
 

@@ -1,41 +1,69 @@
 'use client';
 
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-const Calculator = dynamic(() => import('@/components/Calculator'), {
-  ssr: false,
-  loading: () => <div style={{minHeight:'20px',display:'flex',alignItems:'center',justifyContent:'center',color:'rgba(245,200,66,0.6)',fontSize:'15px'}}>Loading calculator...</div>
-});
+import Calculator from '@/components/Calculator';
+import { estimatePaycheck } from '@/lib/paycheck';
+
+function estimateNet(annual: number, stateCode: string) {
+  return estimatePaycheck({
+    annual,
+    freq: 1,
+    stateRatePct: 0,
+    stateCode,
+    filing: 'single',
+    k401Pct: 0,
+  }).net;
+}
+
+function estimateStateAndPayrollTax(annual: number, stateCode: string) {
+  return estimatePaycheck({
+    annual,
+    freq: 1,
+    stateRatePct: 0,
+    stateCode,
+    filing: 'single',
+    k401Pct: 0,
+  }).state;
+}
+
+function formatMoney(value: number) {
+  return '$' + Math.round(value).toLocaleString('en-US');
+}
+
+function formatPayExample(annual: number, stateCode: string) {
+  const net = estimateNet(annual, stateCode);
+  return `${formatMoney(net)}/yr · ${formatMoney(net / 26)}/biweekly`;
+}
 
 const TOP_STATES = [
-  { slug:'california',    name:'California',     rate:'Up to 13.3%'  },
-  { slug:'new-york',      name:'New York',        rate:'Up to 10.9%'  },
-  { slug:'texas',         name:'Texas',           rate:'0% State Tax' },
-  { slug:'florida',       name:'Florida',         rate:'0% State Tax' },
-  { slug:'washington',    name:'Washington',      rate:'0% State Tax' },
-  { slug:'illinois',      name:'Illinois',        rate:'4.95% Flat'   },
-  { slug:'pennsylvania',  name:'Pennsylvania',    rate:'3.07% Flat'   },
-  { slug:'ohio',          name:'Ohio',            rate:'Up to 3.99%'  },
-  { slug:'georgia',       name:'Georgia',         rate:'Up to 5.75%'  },
-  { slug:'north-carolina',name:'North Carolina',  rate:'5.25% Flat'   },
-  { slug:'michigan',      name:'Michigan',        rate:'4.25% Flat'   },
-  { slug:'new-jersey',    name:'New Jersey',      rate:'Up to 10.75%' },
-  { slug:'virginia',      name:'Virginia',        rate:'Up to 5.75%'  },
-  { slug:'massachusetts', name:'Massachusetts',   rate:'5% Flat'      },
-  { slug:'arizona',       name:'Arizona',         rate:'2.5% Flat'    },
-  { slug:'colorado',      name:'Colorado',        rate:'4.4% Flat'    },
-  { slug:'minnesota',     name:'Minnesota',       rate:'Up to 9.85%'  },
-  { slug:'maryland',      name:'Maryland',        rate:'Up to 5.75%'  },
-  { slug:'oregon',        name:'Oregon',          rate:'Up to 9.9%'   },
-  { slug:'connecticut',   name:'Connecticut',     rate:'Up to 6.99%'  },
+  { slug:'california',    name:'California',     rate:'Progressive tax' },
+  { slug:'new-york',      name:'New York',       rate:'State + local rules' },
+  { slug:'texas',         name:'Texas',          rate:'No individual income tax' },
+  { slug:'florida',       name:'Florida',        rate:'No individual income tax' },
+  { slug:'washington',    name:'Washington',     rate:'No individual income tax' },
+  { slug:'illinois',      name:'Illinois',       rate:'State income tax' },
+  { slug:'pennsylvania',  name:'Pennsylvania',   rate:'State income tax' },
+  { slug:'ohio',          name:'Ohio',           rate:'State + local rules' },
+  { slug:'georgia',       name:'Georgia',        rate:'State income tax' },
+  { slug:'north-carolina',name:'North Carolina', rate:'State income tax' },
+  { slug:'michigan',      name:'Michigan',       rate:'State income tax' },
+  { slug:'new-jersey',    name:'New Jersey',     rate:'Progressive tax' },
+  { slug:'virginia',      name:'Virginia',       rate:'State income tax' },
+  { slug:'massachusetts', name:'Massachusetts',  rate:'State income tax' },
+  { slug:'arizona',       name:'Arizona',        rate:'State income tax' },
+  { slug:'colorado',      name:'Colorado',       rate:'State income tax' },
+  { slug:'minnesota',     name:'Minnesota',      rate:'Progressive tax' },
+  { slug:'maryland',      name:'Maryland',       rate:'State + local rules' },
+  { slug:'oregon',        name:'Oregon',          rate:'Progressive tax' },
+  { slug:'connecticut',   name:'Connecticut',    rate:'Progressive tax' },
 ];
 
 const FEATURES = [
-  { icon:'', title:'100% Private',       desc:'All calculations happen in your browser. We never see your income or results. Zero data collection, zero tracking.', href:'/' },
-  { icon:'', title:'2026 IRS Rates', desc:'Updated with official 2026 federal tax brackets, FICA rates, and all 50 state income tax rates. Estimates only; see our methodology.', href:'/methodology' },
-  { icon:'', title:'Instant Results',     desc:'No waiting. See your exact take-home broken down by federal, state, Social Security, and Medicare instantly.', href:'/' },
+  { icon:'', title:'Private by design', desc:'Calculator inputs and results are processed in your browser; no login is required.', href:'/' },
+  { icon:'', title:'2026 Tax Models', desc:'Uses 2026 federal, FICA, and state tax assumptions. Local taxes, credits, and individual withholding details can change results.', href:'/methodology' },
+  { icon:'', title:'Instant Results',     desc:'See an estimated take-home breakdown for federal income tax, modeled state tax, Social Security, and Medicare.', href:'/' },
   { icon:'', title:'Salary & Hourly',     desc:'Works for salaried and hourly workers. Supports weekly, bi-weekly, semi-monthly, and monthly pay schedules.', href:'/hourly-paycheck-calculator' },
-  { icon:'', title:'Bonus Calculator',    desc:'Calculate your exact take-home on year-end bonuses, signing bonuses, and overtime using IRS supplemental wage rules.', href:'/bonus-tax-calculator' },
+  { icon:'', title:'Bonus Calculator',    desc:'Estimate take-home pay on year-end bonuses and signing bonuses using supplemental-wage assumptions.', href:'/bonus-tax-calculator' },
   { icon:'', title:'All 50 States',       desc:'From no-tax states like Texas and Florida to high-tax states like California and New York — every state covered.', href:'/all-states' },
 ];
 
@@ -108,8 +136,6 @@ const CSS = `
   .all-link{display:block;text-align:center;margin-top:16px;color:#F5C842;font-size:14px;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;text-decoration:none;padding-bottom:16px;border-bottom:1px solid rgba(245,200,66,0.15);}
   .all-link:hover{color:#FFD700;}
   
-  body{user-select:none;-webkit-user-select:none;}
-  input,textarea,select,.selectable{user-select:text;-webkit-user-select:text;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:20px;}.hero{padding:0 16px 20px;}.feat-grid{grid-template-columns:repeat(2,1fr);}.hero-copy{order:-1;}}
   @media(max-width:540px){.hero{padding:0 12px 16px;}.hero h1{font-size:28px;}.hero-desc{font-size:15px!important;}.pp-section{padding:16px 12px;}.featured-states{padding:16px 12px;}.obbb-section{padding:16px 12px;}.feat-grid{grid-template-columns:1fr;}.feat-card{padding:20px 16px;}.feat-title{font-size:20px!important;}.feat-desc{font-size:16px!important;line-height:1.75!important;}.states-grid{grid-template-columns:repeat(2,1fr);}.salary-grid{grid-template-columns:1fr!important;}.high-income-grid{grid-template-columns:1fr!important;}.s-desc{font-size:16px!important;line-height:1.7!important;}.pp-section h2{font-size:26px!important;}.fs-fact{font-size:16px!important;line-height:1.7!important;}.fs-title{font-size:20px!important;}.fs-rate{font-size:30px!important;}.fs-card{padding:20px 16px;}.hwc-grid{grid-template-columns:1fr!important;}.s-name{font-size:16px!important;}.s-rate{font-size:15px!important;}.obbb-desc{font-size:15px!important;}.obbb-title{font-size:17px!important;}.stat-n{font-size:28px!important;}.t-n{font-size:26px!important;}.trust{padding:16px 12px;}.pp-section h2{margin-bottom:8px!important;}.feat-card{margin-bottom:0!important;}.obbb-grid{gap:10px!important;}.feat-grid{gap:12px!important;}.fs-grid{gap:12px!important;}}
 `;
@@ -158,9 +184,9 @@ export default function HomeClient() {
               <div style={{fontSize:11,fontWeight:800,color:'#a5b4fc',letterSpacing:'0.16em',textTransform:'uppercase',marginBottom:10}}>2026 Tax Law Updates</div>
               <div style={{display:'grid',gridTemplateColumns:'1fr',gap:8}}>
                 {[
-                  ['No Tax on Overtime','/no-tax-on-overtime-deduction','Up to $2,750 at 22%'],
-                  ['No Tax on Tips','/no-tax-on-tips-calculator','Up to $5,500 at 22%'],
-                  ['Senior $6,000 Deduction','/senior-deduction-calculator','Up to $1,320 at 22%'],
+                  ['Qualified Overtime Deduction','/no-tax-on-overtime-deduction','Eligibility and limits apply'],
+                  ['Qualified Tip Income Deduction','/no-tax-on-tips-calculator','Eligibility and limits apply'],
+                  ['Additional Senior Deduction','/senior-deduction-calculator','Income limits apply'],
                   ['Trump Account','/trump-account-calculator','$38K+ at 18'],
                 ].map(([label, href, save]) => (
                   <a key={href} href={href} style={{display:'block',background:'rgba(99,102,241,0.10)',border:'1px solid rgba(99,102,241,0.25)',borderRadius:10,padding:'12px 16px',textDecoration:'none',textAlign:'center'}}>
@@ -174,10 +200,10 @@ export default function HomeClient() {
           <div style={{marginTop:28,display:'flex',flexDirection:'column',gap:10}}>
             <div style={{fontSize:11,fontWeight:800,color:'rgba(245,200,66,0.7)',letterSpacing:'0.18em',textTransform:'uppercase',marginBottom:4}}>Quick Examples</div>
             {[
-              {label:'$65,000 salary · Texas',net:'~$54,408/yr · $2,093/biweekly',color:'#4ade80'},
-              {label:'$85,000 salary · California',net:'~$63,863/yr · $2,456/biweekly',color:'#4ade80'},
-              {label:'$20/hr · Florida',net:'~$35,606/yr · $1,369/biweekly',color:'#4ade80'},
-              {label:'$120,000 salary · New York',net:'~$87,179/yr · $3,353/biweekly',color:'#4ade80'},
+              {label:'$65,000 salary · Texas',net:formatPayExample(65000, 'tx'),color:'#4ade80'},
+              {label:'$85,000 salary · California',net:formatPayExample(85000, 'ca'),color:'#4ade80'},
+              {label:'$20/hr · Florida',net:formatPayExample(20 * 2080, 'fl'),color:'#4ade80'},
+              {label:'$120,000 salary · New York',net:formatPayExample(120000, 'ny'),color:'#4ade80'},
             ].map((ex,i)=>(
               <div key={i} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(245,200,66,0.12)',borderRadius:8,padding:'12px 16px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:8}}>
                 <span style={{fontSize:13,fontWeight:600,color:'#c8d8ec'}}>{ex.label}</span>
@@ -195,7 +221,7 @@ export default function HomeClient() {
                 {[
                   { label: 'Federal income tax', detail: 'Uses 2026 IRS federal brackets (annualized estimate, modeled on Publication 15-T). Standard deduction $16,100 (single) / $32,200 (married). Rates 10%–37%.' },
                   { label: 'FICA taxes', detail: 'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Additional 0.9% Medicare surtax above $200,000.' },
-                  { label: 'State income tax', detail: "Includes your state's 2026 income tax rates. From 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year from official state sources." },
+                  { label: 'State income tax', detail: "Uses modeled 2026 state income-tax schedules. Local taxes, credits, and state-specific rules may not be included; see the methodology." },
                 ].map(item => (
                   <div key={item.label} style={{ borderLeft: '3px solid rgba(245,200,66,0.5)', paddingLeft: 10 }}>
                     <div style={{ fontSize: 12, fontWeight: 800, color: '#F5C842', marginBottom: 3 }}>{item.label}</div>
@@ -231,16 +257,16 @@ export default function HomeClient() {
           <Link href="/no-tax-on-overtime-deduction" className="obbb-card">
             <div className="obbb-badge">New Law</div>
             <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div className="obbb-title">No Tax on Overtime</div>
-            <div className="obbb-save">Up to $2,750 at 22%</div>
-            <div className="obbb-desc">Up to $12,500 overtime deduction. 60M+ eligible workers.</div>
+            <div className="obbb-title">Qualified Overtime Deduction</div>
+            <div className="obbb-save">Eligibility and limits apply</div>
+            <div className="obbb-desc">Some eligible overtime compensation may qualify for a federal deduction. FICA and other taxes may still apply.</div>
           </Link>
           <Link href="/no-tax-on-tips-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
             <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></div>
-            <div className="obbb-title">No Tax on Tips</div>
-            <div className="obbb-save">Up to $5,500 at 22%</div>
-            <div className="obbb-desc">Up to $25,000 tip deduction. Servers, bartenders, drivers.</div>
+            <div className="obbb-title">Qualified Tip Income Deduction</div>
+            <div className="obbb-save">Eligibility and limits apply</div>
+            <div className="obbb-desc">Eligible tip income may qualify for a federal deduction; this does not remove every payroll or state tax.</div>
           </Link>
           <Link href="/senior-deduction-calculator" className="obbb-card">
             <div className="obbb-badge">New Law</div>
@@ -289,36 +315,36 @@ export default function HomeClient() {
           <Link href="/texas-paycheck-calculator" className="fs-card">
             <div className="fs-state">Texas</div>
             <div className="fs-title">Texas Paycheck Calculator 2026</div>
-            <div className="fs-rate">0% State Tax</div>
+            <div className="fs-rate">No individual income tax</div>
             <div className="fs-facts">
               <div className="fs-fact"> No state income tax — keep more of every paycheck</div>
               <div className="fs-fact"> Federal tax + 7.65% FICA only</div>
-              <div className="fs-fact"> $75,000 salary → ~$61,593 take-home</div>
-              <div className="fs-fact"> Updated for 2026 IRS brackets</div>
+              <div className="fs-fact"> $75,000 salary → {formatMoney(estimateNet(75000, 'tx'))} estimated annual net</div>
+              <div className="fs-fact"> Uses modeled 2026 federal tax and FICA</div>
             </div>
             <div className="fs-cta">Calculate Texas Paycheck <span className="arr">→</span></div>
           </Link>
           <Link href="/florida-paycheck-calculator" className="fs-card">
             <div className="fs-state">Florida</div>
             <div className="fs-title">Florida Paycheck Calculator 2026</div>
-            <div className="fs-rate">0% State Tax</div>
+            <div className="fs-rate">No individual income tax</div>
             <div className="fs-facts">
               <div className="fs-fact"> Florida has no state income tax</div>
-              <div className="fs-fact"> Min wage $15.00/hr (2026)</div>
-              <div className="fs-fact"> $75,000 salary → ~$61,593 take-home</div>
-              <div className="fs-fact"> Federal + FICA deductions only</div>
+              <div className="fs-fact">Minimum wage and local ordinances can vary by date and location</div>
+              <div className="fs-fact"> $75,000 salary → {formatMoney(estimateNet(75000, 'fl'))} estimated annual net</div>
+              <div className="fs-fact"> Modeled federal tax and FICA; no state income tax</div>
             </div>
             <div className="fs-cta">Calculate Florida Paycheck <span className="arr">→</span></div>
           </Link>
           <Link href="/california-paycheck-calculator" className="fs-card">
             <div className="fs-state">California</div>
             <div className="fs-title">California Paycheck Calculator 2026</div>
-            <div className="fs-rate">Up to 13.3%</div>
+            <div className="fs-rate">Progressive tax</div>
             <div className="fs-facts">
-              <div className="fs-fact"> Highest state income tax in the US</div>
-              <div className="fs-fact"> Min wage $16.90/hr statewide in 2026 (higher in many cities)</div>
-              <div className="fs-fact"> $75,000 salary → ~$57,843 take-home</div>
-              <div className="fs-fact"> SDI + federal + state + FICA included</div>
+            <div className="fs-fact">State income tax and employee SDI can affect net pay</div>
+            <div className="fs-fact">Minimum wage may vary by city and employer</div>
+            <div className="fs-fact"> $75,000 salary → {formatMoney(estimateNet(75000, 'ca'))} estimated annual net</div>
+            <div className="fs-fact">Estimate includes modeled federal, state, payroll-tax, and SDI deductions</div>
             </div>
             <div className="fs-cta">Calculate California Paycheck <span className="arr">→</span></div>
           </Link>
@@ -328,17 +354,17 @@ export default function HomeClient() {
       <section className="pp-section" style={{background:'#08142a'}}>
         <div className="s-head">
           <div className="s-tag">Salary Examples</div>
-          <h2>Real Take-Home <em>Pay Examples</em></h2>
-          <p className="s-desc">See exactly what common salaries and hourly rates bring home after all taxes — by state.</p>
+          <h2>Illustrative Take-Home <em>Pay Examples</em></h2>
+          <p className="s-desc">Compare modeled take-home pay for common salaries. Estimates assume a single filer and exclude some local taxes and personal deductions.</p>
         </div>
         <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'12px'}} className='salary-grid'>
           {[
-            {salary:'$20/hr in Texas',net:'~$35,606/yr · $1,369/biweekly',note:'No state tax. Federal + FICA only.',href:'/hourly-paycheck-calculator/texas'},
-            {salary:'$20/hr in California',net:'~$34,418/yr · $1,324/biweekly',note:'State tax up to 9.3% applies.',href:'/hourly-paycheck-calculator/california'},
-            {salary:'$60,000 salary Florida',net:'~$50,390/yr · $1,938/biweekly',note:'No Florida state income tax.',href:'/florida-paycheck-calculator'},
-            {salary:'$75,000 salary New York',net:'~$58,108/yr · $2,235/biweekly',note:'NYC adds extra local tax if applicable.',href:'/new-york-paycheck-calculator'},
-            {salary:'$50,000 salary Illinois',net:'~$39,880/yr · $1,534/biweekly',note:'Flat 4.95% state tax rate.',href:'/illinois-paycheck-calculator'},
-            {salary:'$100,000 salary California',net:'~$72,825/yr · $2,801/biweekly',note:'SDI + state up to 9.3% + federal.',href:'/california-paycheck-calculator'},
+            {salary:'$20/hr in Texas',net:formatPayExample(20 * 2080, 'tx'),note:'Illustrative single-filer estimate; no individual income tax.',href:'/hourly-paycheck-calculator/texas'},
+            {salary:'$20/hr in California',net:formatPayExample(20 * 2080, 'ca'),note:'Includes modeled state income tax and California SDI.',href:'/hourly-paycheck-calculator/california'},
+            {salary:'$60,000 salary Florida',net:formatPayExample(60000, 'fl'),note:'Illustrative single-filer estimate; no individual income tax.',href:'/florida-paycheck-calculator'},
+            {salary:'$75,000 salary New York',net:formatPayExample(75000, 'ny'),note:'Excludes NYC and other local income taxes.',href:'/new-york-paycheck-calculator'},
+            {salary:'$50,000 salary Illinois',net:formatPayExample(50000, 'il'),note:'Includes modeled Illinois income tax.',href:'/illinois-paycheck-calculator'},
+            {salary:'$100,000 salary California',net:formatPayExample(100000, 'ca'),note:'Includes modeled state income tax and California SDI.',href:'/california-paycheck-calculator'},
           ].map((ex,i)=>(
             <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.15)',borderRadius:'10px',padding:'18px 20px',textDecoration:'none',display:'block',transition:'all .2s'}}
               onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(245,200,66,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(245,200,66,0.06)';}}
@@ -382,7 +408,7 @@ export default function HomeClient() {
         <div className="s-head">
           <div className="s-tag">By State</div>
           <h2>Calculate by <em>Your State</em></h2>
-          <p className="s-desc">Select your state for a precise calculation including your exact local income tax rate.</p>
+          <p className="s-desc">Choose a state for an estimate using the applicable modeled tax schedule. Local taxes and individual deductions may not be included.</p>
         </div>
         <div className="states-grid">
           {TOP_STATES.map((s)=>(
@@ -451,7 +477,7 @@ export default function HomeClient() {
             </div>
             <div style={{background:'rgba(255,255,255,0.04)',borderRadius:8,padding:'14px 16px'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#F5C842',marginBottom:6}}>State Impact at $500k</div>
-              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>CA top rate 13.3%, NY 10.9%, NJ 10.75%. Moving from CA to TX on $500k salary saves <strong style={{color:'#fff'}}>~$66,500/year</strong> in state tax alone.</div>
+              <div style={{fontSize:13,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>At $500,000 of modeled wages, the estimated state and payroll-tax difference between California and Texas is {formatMoney(estimateStateAndPayrollTax(500000, 'ca') - estimateStateAndPayrollTax(500000, 'tx'))} per year. This illustration excludes local taxes, credits, and individual filing details.</div>
             </div>
           </div>
         </div>
@@ -495,8 +521,8 @@ export default function HomeClient() {
             <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:20,marginBottom:20}}>
               {[
                 {num:'01',title:'2026 IRS Federal Brackets',desc:'We use 2026 IRS federal brackets and the standard deduction to estimate federal income tax. Your employer’s payroll system may withhold differently.'},
-                {num:'02',title:'FICA Rates',desc:'Social Security 6.2% on wages up to $184,500. Medicare 1.45% on all wages. Exact rates, no estimation.'},
-                {num:'03',title:'State Tax Tables',desc:'Official 2026 state income tax rates for all 50 states plus D.C. Updated from each state revenue department.'},
+                {num:'02',title:'FICA Rates',desc:'Uses statutory Social Security and Medicare rates and the 2026 wage base. Your payroll withholding may differ.'},
+                {num:'03',title:'State Tax Tables',desc:'Uses 2026 modeled state income-tax schedules for all states and D.C. Local taxes and some state-specific rules may not be included.'},
                 {num:'04',title:'100% Private',desc:'All calculations run in your browser. We never see your income or results. Calculations stay in your browser, ever.'},
               ].map(item => (
                 <div key={item.num} style={{display:'flex',gap:16,alignItems:'flex-start'}}>
@@ -523,12 +549,12 @@ export default function HomeClient() {
         </div>
         <div style={{maxWidth:'800px',margin:'0 auto',display:'flex',flexDirection:'column',gap:'12px'}}>
           {[
-            ['How much of my paycheck goes to taxes?','For most Americans: 22–24% federal income tax + 7.65% FICA (Social Security + Medicare) + state tax. A $60,000 salary in Texas takes home ~$50,390. The same salary in California takes home ~$47,970 after state income tax up to 9.3%.'],
+            ['How much of my paycheck goes to taxes?',`There is no single percentage: filing status, deductions, state, and pay details change the result. For an illustrative $60,000 single-filer salary, this model estimates ${formatMoney(estimateNet(60000, 'tx'))} annual take-home in Texas and ${formatMoney(estimateNet(60000, 'ca'))} in California, before benefits and local taxes.`],
             ['What is the difference between gross and net pay?','Gross pay is your salary or hourly rate before any deductions. Net pay (take-home) is what hits your bank account after federal tax, state tax, Social Security (6.2%), and Medicare (1.45%) are withheld.'],
-            ['How do I calculate my biweekly paycheck?','Divide your annual salary by 26 (biweekly pay periods). Then subtract federal withholding based on your W-4, state tax, and FICA. Example: $75,000 ÷ 26 = $2,884 gross → ~$2,369 net in Texas, ~$2,225 net in California.'],
-            ['Does overtime get taxed more?','No — overtime is taxed at your regular marginal rate, not a higher rate. However, under the 2025 One Big Beautiful Bill, up to $12,500 of overtime pay is now deductible, saving workers up to $2,750+ per year.'],
-            ['How much is $20 an hour after taxes?','$20/hr × 2,080 hours = $41,600 gross. After federal tax (~10–12%), FICA (7.65%), and state tax: ~$35,606/yr in Texas (no state tax), ~$34,418/yr in California. That is ~$1,369/biweekly in Texas.'],
-            ['Why does my paycheck vary each period?','Withholding can shift based on bonuses, overtime, or W-4 changes. The IRS uses an annualized method — a large single payment can push you into a higher bracket for that period. Use our bonus calculator to see the exact impact.'],
+            ['How do I calculate my biweekly paycheck?',`For a salary, divide annual gross pay by 26 to get a simple gross-pay average; net withholding depends on your W-4, state, benefits, and payroll schedule. The model estimates ${formatMoney(estimateNet(75000, 'tx') / 26)} net per period in Texas and ${formatMoney(estimateNet(75000, 'ca') / 26)} in California for a $75,000 single-filer example.`],
+            ['Does overtime get taxed more?','Overtime is generally included in wage income and is not automatically taxed at a special higher rate. Eligible workers may qualify for a federal overtime deduction under current law, but limits and eligibility apply; this base paycheck estimate does not calculate that deduction.'],
+            ['How much is $20 an hour after taxes?',`At 2,080 hours per year, $20/hour is $41,600 gross. Under this model, estimated annual net is ${formatMoney(estimateNet(41600, 'tx'))} in Texas and ${formatMoney(estimateNet(41600, 'ca'))} in California, before benefits and any local tax.`],
+            ['Why does my paycheck vary each period?','Withholding can shift based on bonuses, overtime, benefits, or W-4 changes. A per-paycheck withholding amount is not necessarily the same as your final annual tax. Use our bonus calculator for a separate supplemental-wage estimate.'],
           ].map(([q,a],i)=>(
             <details key={i} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(245,200,66,0.15)',borderRadius:'10px',padding:'16px 20px'}}>
               <summary style={{fontFamily:"'Playfair Display',serif",fontSize:'16px',fontWeight:700,color:'#F0E090',cursor:'pointer',listStyle:'none'}}>{q}</summary>
@@ -549,7 +575,7 @@ export default function HomeClient() {
             {href:'/bonus-tax-calculator',name:'Bonus Calculator',rate:'Supplemental rate'},
             {href:'/overtime-calculator',name:'Overtime Calculator',rate:'1.5× rate + OT deduction'},
             {href:'/no-tax-on-tips-calculator',name:'Tips Calculator',rate:'Up to $25,000 free'},
-            {href:'/no-tax-on-overtime-deduction',name:'Overtime Deduction',rate:'Up to $2,750 at 22%'},
+            {href:'/no-tax-on-overtime-deduction',name:'Overtime Deduction',rate:'Eligibility and limits apply'},
             {href:'/w4-withholding-calculator',name:'W-4 Calculator',rate:'Estimate withholding'},
             {href:'/senior-deduction-calculator',name:'Senior Deduction',rate:'$6,000 extra'},
             {href:'/trump-account-calculator',name:'Trump Account',rate:'$38K+ at age 18'},
@@ -573,10 +599,10 @@ export default function HomeClient() {
         <p style={{fontSize:'13px',color:'rgba(232,237,248,0.5)',marginBottom:'24px',marginLeft:'13px'}}>Step-by-step guides for every salary, state, and situation.</p>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))',gap:'12px'}}>
           {[
-            {href:'/blog/100k-a-year-after-taxes',title:'$100k a Year After Taxes',desc:'See your exact take-home pay on a $100,000 salary in every state.'},
+            {href:'/blog/100k-a-year-after-taxes',title:'$100k a Year After Taxes',desc:'Compare estimated take-home pay on a $100,000 salary across states.'},
             {href:'/blog/california-paycheck-calculator-guide',title:'California Paycheck Calculator Guide',desc:'How California state taxes affect your paycheck — 2026 rates.'},
             {href:'/blog/texas-paycheck-calculator-guide',title:'Texas Paycheck Calculator Guide',desc:'No state income tax in Texas — see what you actually keep.'},
-            {href:'/blog/nurse-paycheck-calculator',title:'Nurse Paycheck Calculator',desc:'Take-home pay for RNs, LPNs and travel nurses after taxes.'},
+            {href:'/nurse-paycheck-calculator',title:'Nurse Paycheck Calculator',desc:'Take-home pay for RNs, LPNs and travel nurses after taxes.'},
             {href:'/blog/200k-a-year-after-taxes',title:'$200k a Year After Taxes',desc:'What $200,000 looks like after federal, state and FICA taxes.'},
             {href:'/blog/2026-federal-tax-brackets',title:'2026 Federal Tax Brackets',desc:'Full IRS bracket table and how to calculate your marginal rate.'},
             {href:'/blog/texas-vs-california-salary',title:'Texas vs California Salary',desc:'Side-by-side take-home pay comparison for the two biggest states.'},

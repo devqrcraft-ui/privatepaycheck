@@ -1,14 +1,12 @@
 function getStateFaqSchema(stateName: string, stateTax: number, noStateTax: boolean) {
-  const keep10k = noStateTax ? 7820 : Math.round(10000 * (1 - 0.22 - 0.0765 - stateTax / 100));
-  const totalRate = noStateTax ? '29.65%' : (22 + stateTax + 7.65).toFixed(1) + '%';
-  const noTaxText = stateName + ' has no state income tax. Only 22% federal + 7.65% FICA apply.';
-  const hasTaxText = stateName + ' withholds ' + stateTax + '% state tax plus 22% federal + 7.65% FICA.';
-  const stateText = noStateTax ? noTaxText : hasTaxText;
-  const keepText = 'On a $10,000 bonus in ' + stateName + ', you keep approximately $' + keep10k.toLocaleString() + '.';
-  const rateText = 'Total withholding in ' + stateName + ' is approximately ' + totalRate + '.';
-  const reduceText = 'Yes. Contribute to a 401(k) or HSA before year-end. Ask your employer to use the aggregate method in ' + stateName + ' if your effective rate is below 22%.';
+  const stateText = noStateTax
+    ? stateName + ' has no state individual income tax.'
+    : 'This estimate uses a configured ' + stateTax + '% state-rate approximation; it is not a state withholding calculation.';
+  const estimateText = stateText + ' The calculator estimates incremental federal income-tax liability, a state-tax approximation, and payroll taxes. It does not predict paycheck withholding or guarantee a final tax amount.';
+  const rateText = 'There is no single bonus tax rate. Federal income tax depends on annual taxable income; employer withholding is a prepayment and may differ from final tax liability.';
+  const reduceText = 'Eligible retirement or health-plan contributions may affect taxable wages, subject to plan rules and annual limits. Changing withholding affects the paycheck amount, not the final tax liability.';
   return { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: [
-    { '@type': 'Question', name: 'How much of my bonus will I keep after taxes in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: stateText + ' ' + keepText } },
+    { '@type': 'Question', name: 'How much of my bonus will I keep after taxes in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: estimateText } },
     { '@type': 'Question', name: 'What is the bonus tax rate in ' + stateName + ' 2026?', acceptedAnswer: { '@type': 'Answer', text: rateText } },
     { '@type': 'Question', name: 'Can I reduce bonus taxes in ' + stateName + '?', acceptedAnswer: { '@type': 'Answer', text: reduceText } }
   ]};
@@ -327,19 +325,6 @@ const STATE_DATA: Record<string, { abbr: string; name: string; stateTax: number;
 };
 
 
-const STATE_NOTES: Record<string, string> = {
-  "connecticut": "Connecticut taxes bonus income at 6.5% — one of the highest rates in the Northeast. Combined with federal 22% withholding and FICA, a Connecticut worker receiving a $10,000 bonus takes home approximately $6,890. Connecticut also imposes a 0.5% surcharge on incomes above $500,000.",
-  "washington": "Washington State has no personal income tax — your bonus is only subject to federal withholding (22%) and FICA. On a $10,000 bonus, a Washington worker keeps approximately $7,820, saving over $600 compared to neighboring Oregon.",
-  "illinois": "Illinois taxes all income including bonuses at a flat 4.95% rate. On a $10,000 bonus, Illinois workers pay roughly $495 in state tax plus federal withholding and FICA, keeping approximately $7,325.",
-  "california": "California taxes bonus income up to 13.3% at the top marginal rate. The state supplemental withholding rate is 10.23%. On a $10,000 bonus, a California worker in the top bracket takes home roughly $6,200 — the lowest of any U.S. state.",
-  "new-york": "New York State taxes bonus income up to 10.9%. NYC residents pay an additional 3.876% city tax. A New York City worker receiving a $10,000 bonus may take home as little as $5,900 after all taxes.",
-  "texas": "Texas has no state income tax — your bonus is only subject to federal withholding (22%) and FICA. On a $10,000 bonus, a Texas worker keeps approximately $7,820.",
-  "florida": "Florida has no state income tax — your bonus is only subject to federal withholding (22%) and FICA. On a $10,000 bonus, a Florida worker keeps approximately $7,820.",
-  "pennsylvania": "Pennsylvania taxes bonus income at a flat 3.07% — one of the lowest flat rates in the U.S. On a $10,000 bonus, Pennsylvania workers pay $307 in state tax, keeping approximately $7,513 after all taxes.",
-  "ohio": "Ohio taxes bonus income on a graduated scale up to 3.99%. On a $10,000 bonus for a median earner, Ohio workers keep approximately $7,421 after federal, state, and FICA taxes.",
-  "massachusetts": "Massachusetts taxes bonus income at a flat 5%. On a $10,000 bonus, Massachusetts workers pay $500 in state tax, keeping approximately $7,270 after all taxes.",
-};
-
 type Props = { params: Promise<{ state: string }> };
 
 export async function generateStaticParams() {
@@ -350,19 +335,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
-  const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state income tax';
-  if (state === 'washington') {
-    return {
-      title: 'Washington Bonus Tax Calculator 2026',
-      description: 'Free Washington bonus tax calculator 2026. No state income tax — see exact take-home after IRS 22% federal rate and FICA. Instant, no signup.',
-      alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/washington' },
-  authors: [{ name: 'the PrivatePaycheck Team' }],
-    };
-  }
+  const title = data.name + ' Bonus Tax Calculator 2026';
+  const description = data.noStateTax
+    ? `Estimate the federal income-tax impact and FICA on a bonus in ${data.name}. This is a tax-liability estimate, not a paycheck-withholding calculation.`
+    : `Estimate the federal income-tax impact, FICA, and a simplified state-rate approximation for a bonus in ${data.name}. Actual tax and withholding vary.`;
+  const canonicalUrl = 'https://www.privatepaycheck.com/bonus-tax-calculator/' + state;
   return {
-    title: data.name + ' Bonus Tax Calculator 2026',
-    description: data.noStateTax ? 'Free ' + data.name + ' bonus tax calculator 2026. No state tax — see take-home after federal and FICA withholding.' : 'Free ' + data.name + ' bonus tax calculator 2026. See take-home after ' + data.stateTax + '% state tax, federal, and FICA withholding.',
-    alternates: { canonical: 'https://www.privatepaycheck.com/bonus-tax-calculator/' + state },
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'PrivatePaycheck',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck bonus tax calculator' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og-image.svg'],
+    },
+    authors: [{ name: 'the PrivatePaycheck Team' }],
   };
 }
 
@@ -371,17 +368,16 @@ export default async function Page({ params }: Props) {
   const data = STATE_DATA[state];
   if (!data) notFound();
 
-  const stateNote = STATE_NOTES[state];
-  const ssrContent = stateNote ? (
+  const ssrContent = (
     <div style={{ maxWidth: 860, margin: '0 auto', padding: '0 24px 32px', fontFamily: 'system-ui,sans-serif' }}>
       <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 10, color: '#e8edf8' }}>
-        Bonus Tax in {data.name}: What You Need to Know
+        How this {data.name} bonus estimate works
       </h2>
-      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#e2e8f0' }}>{stateNote}</p>
+      <p style={{ fontSize: 15, lineHeight: 1.8, color: '#e2e8f0' }}>
+        The calculator compares estimated federal income tax on salary plus bonus with tax on salary alone, adds modeled payroll taxes, and—where applicable—uses a simplified state-rate assumption. It does not calculate employer withholding, state tax brackets, local taxes, credits, or your final return. Check current state and IRS guidance for your circumstances.
+      </p>
     </div>
-  ) : null;
-
-  const answerFirst = state === 'washington' ? (<div style={{ maxWidth: 860, margin: '0 auto', padding: '24px 24px 8px', fontFamily: 'system-ui,sans-serif' }}><p style={{ fontSize: 16, lineHeight: 1.8, color: '#e2e8f0', background: 'rgba(245,200,66,0.07)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: 8, padding: '16px 20px', margin: 0 }}><strong style={{ color: '#F5C842' }}>Washington has no state income tax</strong> — your bonus is taxed federally only. On a <strong>$10,000 bonus</strong>: $2,200 federal (22%) + $620 Social Security (6.2%) + $145 Medicare (1.45%) = <strong>$2,965 total withholding</strong>. You keep <strong>$7,035</strong>.</p></div>) : null;
+  );
   const faqSchema = getStateFaqSchema(data.name, data.stateTax, data.noStateTax);
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />{answerFirst}<BonusTaxCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />{ssrContent}</>;
-}
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} /><BonusTaxCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} />{ssrContent}</>;
+}

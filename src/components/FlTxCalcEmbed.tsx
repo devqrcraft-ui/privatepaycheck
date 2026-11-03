@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
 
 const FED_BRACKETS: [number,number][] = [
   [12400,.10],[50400,.12],[105700,.22],[201775,.24],
@@ -151,6 +152,13 @@ export default function FlTxCalcEmbed({ state, accent = '#F5C842' }: Props) {
               {fmt(result.netYear)}/yr · {result.pct.toFixed(1)}% total tax
             </span>
           </div>
+          <CalculatorResultActions
+            summary={`2026 ${stateName} paycheck estimate (${filing}, ${period} paychecks/year)\nGross pay per period: ${fmt(result.gross)}\nFederal tax: ${fmt(result.fed)}\nSocial Security: ${fmt(result.ss)}\nMedicare: ${fmt(result.med)}\nEstimated take-home per period: ${fmt(result.net)}\nAnnual take-home: ${fmt(result.netYear)}\nState income tax is not included because ${stateName} has no individual income tax. This is an estimate; local taxes and personal credits may differ.`}
+            relatedLinks={[
+              { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
+              { href: '/w4-withholding-calculator', label: 'Adjust W-4 →' },
+            ]}
+          />
 
           <div style={{ marginTop:16, padding:'14px 16px', background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10 }}>
             <div style={{ fontSize:12, color:'#8892b0', marginBottom:6 }}>Self-employed or gig worker?</div>

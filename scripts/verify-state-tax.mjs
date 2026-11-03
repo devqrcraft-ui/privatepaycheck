@@ -40,7 +40,7 @@ const REF = [
   ['ar', 60000, 'single', 1732.41, 0.01],  // SB 1 brackets, 3.7% top
   ['ar', 100000, 'single', 3489.71, 0.01], // high-income table + bracket adjustment
   ['ar', 130000, 'single', 4609.71, 0.01],
-  ['ca', 42006, 'single', 662.93, 0.5],    // FTB tax table gives 663
+  ['ca', 42006, 'single', 641.30, 0.01],   // FTB 2026 schedule less the $153 single exemption credit
   ['pa', 60000, 'single', 1842.0, 0.01],
   ['il', 60000, 'single', 2825.2125, 0.01],
   ['co', 60000, 'single', 1931.6, 0.01],

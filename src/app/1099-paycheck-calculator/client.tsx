@@ -1,10 +1,12 @@
 'use client';
+import { useState } from 'react';
 import Link from 'next/link';
-
+import CalculatorResultActions from '@/components/CalculatorResultActions';
+import EstimatedTaxCalendar from '@/components/EstimatedTaxCalendar';
+import { estimateContractorTax, type ContractorTaxEstimate } from '@/lib/contractorTaxEstimate';
+import type { FilingStatus } from '@/lib/paycheck';
 
 const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is self-employment tax for 1099 workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employment tax is 15.3% of net self-employment income: 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare (no limit). As a 1099 worker you pay both the employee and employer portions."}},{"@type":"Question","name":"Can 1099 contractors deduct self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct 50% of your self-employment tax from gross income before calculating federal income tax. This deduction is automatic and does not require itemizing."}},{"@type":"Question","name":"What is the QBI deduction for self-employed workers?","acceptedAnswer":{"@type":"Answer","text":"The Qualified Business Income deduction allows most self-employed workers to deduct up to 20% of qualified business income from federal taxable income. Income limits apply above $201,750 (single) for certain service businesses in 2026."}},{"@type":"Question","name":"How much should I set aside for taxes as a 1099 contractor?","acceptedAnswer":{"@type":"Answer","text":"A common rule of thumb is 25-30% of net income. This covers self-employment tax (15.3%) plus federal income tax (typically 10-22% for most contractors). Use the calculator for a precise figure based on your actual income and state."}},{"@type":"Question","name":"Do 1099 workers qualify for the overtime tax exemption in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. The 2026 overtime deduction from the One Big Beautiful Bill applies only to W-2 employees earning overtime as defined by the Fair Labor Standards Act. Independent contractors are not eligible."}}]};
-
-const browserScript = "\nfunction calc1099(){\n  var gross = parseFloat(document.getElementById('g1099').value)||0;\n  var expenses = parseFloat(document.getElementById('exp1099').value)||0;\n  var qbi = document.getElementById('qbi1099').checked;\n  var state = document.getElementById('st1099').value;\n  var filing = document.getElementById('fil1099').value;\n\n  var net = Math.max(0, gross - expenses);\n  var seBase = net * 0.9235;\n  var ssTax = Math.min(seBase, 184500) * 0.124;\n  var medTax = seBase * 0.029;\n  var seTax = ssTax + medTax;\n  var seDeduct = seTax * 0.5;\n\n  var taxable = net - seDeduct;\n  if(qbi) taxable = taxable * 0.80;\n\n  var stdDed = filing==='mfj' ? 32200 : filing==='hoh' ? 24150 : 16100;\n  taxable = Math.max(0, taxable - stdDed);\n\n  var fedTax = 0;\n  if(filing==='mfj'){\n    var bm=[[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[999999999,.37]];\n    var prev=0; for(var i=0;i<bm.length;i++){var top=bm[i][0],rate=bm[i][1];fedTax+=Math.max(0,Math.min(taxable,top)-prev)*rate;prev=top;if(taxable<=top)break;}\n  } else {\n    var bs=[[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[999999999,.37]];\n    var prev2=0; for(var j=0;j<bs.length;j++){var top2=bs[j][0],rate2=bs[j][1];fedTax+=Math.max(0,Math.min(taxable,top2)-prev2)*rate2;prev2=top2;if(taxable<=top2)break;}\n  }\n\n  var stateRates={AL:.05,AZ:.025,AR:.044,CA:.093,CO:.044,CT:.05,DE:.066,GA:.055,HI:.11,ID:.058,IL:.0495,IN:.0305,IA:.057,KS:.057,KY:.04,LA:.03,ME:.075,MD:.0575,MA:.05,MI:.0425,MN:.0985,MS:.05,MO:.054,MT:.069,NE:.0664,NJ:.1075,NM:.059,NY:.109,NC:.0475,ND:.025,OH:.035,OK:.05,OR:.099,PA:.0307,RI:.0599,SC:.065,UT:.0465,VT:.0875,VA:.0575,WV:.065,WI:.0765};\n  var stateTax = (stateRates[state]||0) * net;\n\n  var totalTax = fedTax + seTax + stateTax;\n  var takeHome = gross - expenses - totalTax;\n  var quarterly = totalTax / 4;\n  var effectiveRate = gross>0 ? (totalTax/gross*100).toFixed(1) : '0.0';\n\n  function fmt(n){ return '$'+Math.round(n).toLocaleString(); }\n\n  document.getElementById('r-gross').textContent = fmt(gross);\n  document.getElementById('r-expenses').textContent = '-'+fmt(expenses);\n  document.getElementById('r-net').textContent = fmt(net);\n  document.getElementById('r-se').textContent = '-'+fmt(seTax);\n  document.getElementById('r-fed').textContent = '-'+fmt(fedTax);\n  document.getElementById('r-state').textContent = '-'+fmt(stateTax);\n  document.getElementById('r-effective').textContent = effectiveRate+'%';\n  document.getElementById('r-total-tax').textContent = fmt(totalTax);\n  document.getElementById('r-takehome').textContent = fmt(takeHome);\n  document.getElementById('r-quarterly').textContent = fmt(quarterly);\n  document.getElementById('results1099').style.display='block';\n}\n";
 
 const CSS = `
   body{background:#0a1628;}
@@ -33,7 +35,7 @@ const CSS = `
   .f-select{width:100%;background:#0f1e35;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;color:#fff;font-size:14px;}
   .calc-btn{width:100%;background:#F5C842;color:#0a1628;font-weight:700;font-size:16px;padding:14px;border:none;border-radius:10px;cursor:pointer;margin-top:8px;letter-spacing:.02em;}
   .calc-btn:hover{background:#FFD700;}
-  .results{display:none;margin-top:28px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;}
+  .results{margin-top:28px;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;}
   .r-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;}
   .r-row:last-child{border-bottom:none;}
   .r-label{color:#8aa4be;}
@@ -61,6 +63,41 @@ const CSS = `
 `;
 
 export default function Calculator1099Page() {
+  const [grossIncome, setGrossIncome] = useState('75000');
+  const [businessExpenses, setBusinessExpenses] = useState('0');
+  const [applySimplifiedQbi, setApplySimplifiedQbi] = useState(false);
+  const [stateCode, setStateCode] = useState('');
+  const [filingStatus, setFilingStatus] = useState<FilingStatus>('single');
+  const [result, setResult] = useState<ContractorTaxEstimate | null>(null);
+  const [calculationError, setCalculationError] = useState('');
+
+  const formatMoney = (value: number) => '$' + Math.round(value).toLocaleString('en-US');
+  const filingLabel = filingStatus === 'married' ? 'Married Filing Jointly' : filingStatus === 'head' ? 'Head of Household' : 'Single';
+
+  function updateInput(update: () => void) {
+    update();
+    setResult(null);
+    setCalculationError('');
+  }
+
+  function calculate() {
+    try {
+      const estimate = estimateContractorTax({
+        grossIncome: Number(grossIncome),
+        businessExpenses: Number(businessExpenses),
+        applySimplifiedQbi,
+        stateCode,
+        filingStatus,
+      });
+      setResult(estimate);
+      setCalculationError('');
+    } catch (error) {
+      if (!(error instanceof RangeError)) throw error;
+      setResult(null);
+      setCalculationError(error.message);
+    }
+  }
+
   return (
     <>
 
@@ -69,7 +106,7 @@ export default function Calculator1099Page() {
         <h1 className="c-h1">1099 Paycheck Calculator <em>2026</em></h1>
         <p className="c-lead">
           Calculate your real take-home pay as a freelancer, contractor, or gig worker.
-          Includes self-employment tax (15.3%), federal income tax, QBI deduction, and quarterly estimated payments.
+          Includes self-employment tax (15.3%), federal income tax, an optional simplified QBI scenario, and an illustrative quarterly set-aside.
           All math runs in your browser — nothing is stored.
         </p>
 
@@ -88,7 +125,7 @@ export default function Calculator1099Page() {
             <div className="c-diff-row"><span>Medicare</span><span>2.9% (you pay both sides)</span></div>
             <div className="c-diff-row"><span>Total SE tax burden</span><span>15.3%</span></div>
             <div className="c-diff-row"><span>Quarterly taxes</span><span>You pay Apr/Jun/Sep/Jan</span></div>
-            <div className="c-diff-row"><span>QBI deduction</span><span>Up to 20% of net income</span></div>
+            <div className="c-diff-row"><span>QBI estimate</span><span>Optional simplified scenario</span></div>
           </div>
         </div>
 
@@ -97,26 +134,26 @@ export default function Calculator1099Page() {
 
           <div className="f-row">
             <label className="f-label" htmlFor="g1099">Annual gross income (1099 / contract income)</label>
-            <input className="f-input" id="g1099" type="number" placeholder="75000" defaultValue="75000" min={0} />
+            <input className="f-input" id="g1099" type="number" placeholder="75000" value={grossIncome} onChange={(event) => updateInput(() => setGrossIncome(event.target.value))} min={0} />
           </div>
 
           <div className="f-row">
             <label className="f-label" htmlFor="exp1099">Business expenses (deductible)</label>
-            <input className="f-input" id="exp1099" type="number" placeholder="0" defaultValue="0" min={0} />
+            <input className="f-input" id="exp1099" type="number" placeholder="0" value={businessExpenses} onChange={(event) => updateInput(() => setBusinessExpenses(event.target.value))} min={0} />
           </div>
 
           <div className="f-row-2">
             <div>
               <label className="f-label" htmlFor="fil1099">Filing status</label>
-              <select className="f-select" id="fil1099">
+              <select className="f-select" id="fil1099" value={filingStatus} onChange={(event) => updateInput(() => setFilingStatus(event.target.value as FilingStatus))}>
                 <option value="single">Single</option>
-                <option value="mfj">Married Filing Jointly</option>
-                <option value="hoh">Head of Household</option>
+                <option value="married">Married Filing Jointly</option>
+                <option value="head">Head of Household</option>
               </select>
             </div>
             <div>
               <label className="f-label" htmlFor="st1099">State</label>
-              <select className="f-select" id="st1099">
+              <select className="f-select" id="st1099" value={stateCode} onChange={(event) => updateInput(() => setStateCode(event.target.value))}>
                 <option value="">No state tax (TX, FL, NV...)</option>
                 <option value="AL">Alabama</option>
                 <option value="AZ">Arizona</option>
@@ -164,33 +201,48 @@ export default function Calculator1099Page() {
           </div>
 
           <div className="f-row" style={{display:'flex',alignItems:'center',gap:'10px'}}>
-            <input type="checkbox" id="qbi1099" defaultChecked style={{accentColor:'#F5C842',width:'16px',height:'16px'}} />
+            <input type="checkbox" id="qbi1099" checked={applySimplifiedQbi} onChange={(event) => updateInput(() => setApplySimplifiedQbi(event.target.checked))} style={{accentColor:'#F5C842',width:'16px',height:'16px'}} />
             <label htmlFor="qbi1099" style={{fontSize:'14px',color:'#8aa4be',cursor:'pointer'}}>
-              Apply QBI deduction (20% of net income — most self-employed qualify)
+              Include a basic QBI estimate (eligibility and phase-outs are not checked)
             </label>
           </div>
 
-          <button className="calc-btn" onClick={() => { if(typeof window !== 'undefined') window.calc1099 && window.calc1099(); }}>
+          <button className="calc-btn" onClick={calculate}>
             Calculate My 1099 Take-Home Pay
           </button>
+          {calculationError && <p role="alert" style={{ color:'#fca5a5', fontSize:13, lineHeight:1.6 }}>{calculationError}</p>}
 
-          <div className="results" id="results1099">
-            <div className="r-row"><span className="r-label">Gross income</span><span className="r-val" id="r-gross"></span></div>
-            <div className="r-row"><span className="r-label">Business expenses</span><span className="r-val neg" id="r-expenses"></span></div>
-            <div className="r-row"><span className="r-label">Net self-employment income</span><span className="r-val" id="r-net"></span></div>
-            <div className="r-row"><span className="r-label">Self-employment tax (15.3%)</span><span className="r-val neg" id="r-se"></span></div>
-            <div className="r-row"><span className="r-label">Federal income tax</span><span className="r-val neg" id="r-fed"></span></div>
-            <div className="r-row"><span className="r-label">State income tax</span><span className="r-val neg" id="r-state"></span></div>
-            <div className="r-row"><span className="r-label">Effective tax rate</span><span className="r-val" id="r-effective"></span></div>
-            <div className="r-total">
-              <span className="r-label">Annual take-home pay</span>
-              <span className="r-val" id="r-takehome"></span>
+          {result && (
+            <div className="results" id="results1099">
+              <div className="r-row"><span className="r-label">Gross income</span><span className="r-val">{formatMoney(result.grossIncome)}</span></div>
+              <div className="r-row"><span className="r-label">Business expenses</span><span className="r-val neg">-{formatMoney(result.businessExpenses)}</span></div>
+              <div className="r-row"><span className="r-label">Net self-employment income</span><span className="r-val">{formatMoney(result.netIncome)}</span></div>
+              <div className="r-row"><span className="r-label">Self-employment tax (modeled)</span><span className="r-val neg">-{formatMoney(result.selfEmploymentTax)}</span></div>
+              <div className="r-row"><span className="r-label">Federal income-tax estimate</span><span className="r-val neg">-{formatMoney(result.federalIncomeTax)}</span></div>
+              <div className="r-row"><span className="r-label">State income tax (flat-rate estimate)</span><span className="r-val neg">-{formatMoney(result.stateIncomeTax)}</span></div>
+              <div className="r-row"><span className="r-label">Effective modeled tax rate</span><span className="r-val">{(result.effectiveRate * 100).toFixed(1)}%</span></div>
+              <div className="r-total">
+                <span className="r-label">Estimated annual take-home</span>
+                <span className="r-val">{formatMoney(result.takeHome)}</span>
+              </div>
+              <div className="r-quarterly">
+                <strong>Illustrative quarterly set-aside: {formatMoney(result.quarterlySetAside)}</strong>
+                One quarter of modeled annual tax; it does not determine your required payment.
+                <div style={{ marginTop: 6 }}>Standard 2026 federal dates: Apr 15, Jun 15, Sep 15, 2026 · Jan 15, 2027.</div>
+              </div>
+              <p style={{ margin: '14px 0 0', color: '#8aa4be', fontSize: 12, lineHeight: 1.6 }}>
+                The QBI estimate assumes no net capital gains and does not check eligibility, phase-outs, or W-2/property limits. Additional Medicare Tax, local taxes, credits, and estimated-payment safe harbors are not fully modeled. State tax uses a flat-rate approximation.
+              </p>
+              <CalculatorResultActions
+                summary={`2026 1099 contractor estimate (${filingLabel}, state ${stateCode || 'not modeled'})\nGross income: ${formatMoney(result.grossIncome)}\nBusiness expenses: ${formatMoney(result.businessExpenses)}\nNet income: ${formatMoney(result.netIncome)}\nSelf-employment tax: ${formatMoney(result.selfEmploymentTax)}\nFederal income tax: ${formatMoney(result.federalIncomeTax)}\nFlat-rate state tax estimate: ${formatMoney(result.stateIncomeTax)}\nEstimated annual take-home: ${formatMoney(result.takeHome)}\nIllustrative quarterly set-aside: ${formatMoney(result.quarterlySetAside)}\nQBI assumes no net capital gains and does not check eligibility, phase-outs, or W-2/property limits; other tax details are also simplified.`}
+                relatedLinks={[
+                  { href: '/', label: 'W-2 paycheck calculator →' },
+                  { href: '/w4-withholding-calculator', label: 'W-4 withholding →' },
+                ]}
+              />
+              <EstimatedTaxCalendar />
             </div>
-            <div className="r-quarterly">
-              <strong>Quarterly estimated payment: <span id="r-quarterly"></span></strong>
-              Due dates: April 15 · June 15 · September 15 · January 15
-            </div>
-          </div>
+          )}
         </div>
 
         <div className="note-box">

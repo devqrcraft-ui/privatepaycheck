@@ -17,21 +17,37 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Nurse Paycheck Calculator' };
   const noTax = st.noTax;
+  const title = `${st.name} Nurse Paycheck Calculator`;
+  const description = `Estimate nurse paycheck take-home in ${st.name} using modeled 2026 federal tax, FICA, and a simplified state-tax estimate. Results vary with filing status, benefits, and local taxes.`;
+  const canonicalUrl = `https://www.privatepaycheck.com/nurse-paycheck-calculator/${state}`;
   return {
-    title: `${st.name} Nurse Paycheck Calculator`,
-    description: noTax
-      ? `See ${st.name} nurse take-home pay 2026. No state income tax — only federal tax and FICA apply. Free, instant.`
-      : `See ${st.name} nurse take-home pay 2026 after state income tax, federal tax, and FICA. Free, instant.`,
-    alternates: { canonical: `https://www.privatepaycheck.com/nurse-paycheck-calculator/${state}` },
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'PrivatePaycheck',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck nurse paycheck calculator' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/og-image.svg'],
+    },
   };
 }
 
-const NURSE_SALARY: Record<string, { median: number; low: number; high: number; unionNote?: string }> = {
+const NURSE_SALARY: Record<string, { median: number; low: number; high: number }> = {
   al: { median: 62000, low: 52000, high: 78000 },
   ak: { median: 95000, low: 78000, high: 115000 },
   az: { median: 80000, low: 65000, high: 98000 },
   ar: { median: 60000, low: 50000, high: 74000 },
-  ca: { median: 130000, low: 105000, high: 160000, unionNote: 'California RNs are protected by strong union contracts; many earn 20-30% above median.' },
+  ca: { median: 130000, low: 105000, high: 160000 },
   co: { median: 82000, low: 67000, high: 100000 },
   ct: { median: 90000, low: 74000, high: 110000 },
   de: { median: 78000, low: 64000, high: 95000 },
@@ -58,7 +74,7 @@ const NURSE_SALARY: Record<string, { median: number; low: number; high: number; 
   nh: { median: 78000, low: 64000, high: 96000 },
   nj: { median: 94000, low: 77000, high: 116000 },
   nm: { median: 72000, low: 59000, high: 90000 },
-  ny: { median: 98000, low: 80000, high: 122000, unionNote: 'NYC-area hospital nurses often earn $110,000-$140,000 with union differentials.' },
+  ny: { median: 98000, low: 80000, high: 122000 },
   nc: { median: 70000, low: 58000, high: 88000 },
   nd: { median: 66000, low: 54000, high: 82000 },
   oh: { median: 68000, low: 56000, high: 86000 },
@@ -102,12 +118,11 @@ export default async function Page({ params }: { params: Promise<{ state: string
 
   const ns = NURSE_SALARY[code] || { median: 72000, low: 58000, high: 90000 };
   const noTax = !!st.noTax;
-  const stateRate = ns.median > 0 ? (stateIncomeTax(code, ns.median, 'single') + statePayrollTax(code, ns.median)) / ns.median : 0;
 
   const examples = [
-    { label: 'Entry-Level RN', gross: ns.low },
-    { label: 'Median RN', gross: ns.median },
-    { label: 'Senior / ICU RN', gross: ns.high },
+    { label: 'Illustrative salary 1', gross: ns.low },
+    { label: 'Illustrative salary 2', gross: ns.median },
+    { label: 'Illustrative salary 3', gross: ns.high },
   ].map(e => ({ ...e, ...calcNet(e.gross, code) }));
 
   const faqSchema = {
@@ -116,18 +131,18 @@ export default async function Page({ params }: { params: Promise<{ state: string
     mainEntity: [
       {
         '@type': 'Question',
-        name: `How much do nurses take home after taxes in ${st.name} in 2026?`,
+        name: `How does this ${st.name} nurse paycheck estimate work?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `A median RN in ${st.name} earning $${ns.median.toLocaleString()} takes home approximately $${examples[1].annual.toLocaleString()}/year ($${examples[1].biweekly.toLocaleString()} biweekly) after federal tax, FICA${noTax ? '.' : ` and ${(stateRate * 100).toFixed(1)}% ${st.name} state income tax.`}`,
+          text: `For an illustrative $${ns.median.toLocaleString()} salary input, this model estimates $${examples[1].annual.toLocaleString()} annual take-home for a single filer using the standard deduction and no modeled benefits or local taxes. It is not a salary benchmark, payroll quote, or personalized tax result.`,
         },
       },
       {
         '@type': 'Question',
-        name: `What is the average nurse salary in ${st.name}?`,
+        name: `What salary should I enter for ${st.name}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `The median registered nurse salary in ${st.name} is approximately $${ns.median.toLocaleString()}/year in 2026, ranging from $${ns.low.toLocaleString()} for entry-level RNs to $${ns.high.toLocaleString()} for senior or specialty nurses.`,
+          text: `Enter your own expected annual wages for a personalized estimate. The example salaries on this page are illustrative inputs, not verified state salary medians or experience-level wage ranges.`,
         },
       },
       {
@@ -135,7 +150,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
         name: 'Do nurses pay Social Security and Medicare taxes?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. Most hospital-employed nurses pay 6.2% Social Security and 1.45% Medicare (FICA) on their full salary. Travel nurses on agency contracts also pay FICA on taxable wages.',
+          text: 'Most employees pay Social Security tax on wages up to the annual wage base and Medicare tax on covered wages. Additional Medicare Tax may apply above the applicable threshold. Payroll treatment depends on the worker and wages.',
         },
       },
       {
@@ -143,7 +158,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
         name: 'How do 401(k) contributions affect my nurse paycheck?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Pre-tax 401(k) contributions reduce your federal and state taxable income dollar-for-dollar. A nurse contributing 6% of an $80,000 salary saves approximately $1,056 in federal taxes annually at the 22% bracket.',
+          text: 'Eligible traditional 401(k) contributions generally reduce federal income-taxable wages, subject to plan rules and annual limits. They generally do not reduce Social Security or Medicare wages; state treatment may differ.',
         },
       },
       {
@@ -152,8 +167,8 @@ export default async function Page({ params }: { params: Promise<{ state: string
         acceptedAnswer: {
           '@type': 'Answer',
           text: noTax
-            ? `${st.name} has no state income tax. Nurses keep more of their paycheck compared to high-tax states — only federal income tax and FICA apply.`
-            : `Yes. ${st.name} taxes nurse income at ${(stateRate * 100).toFixed(1)}%. On a median salary this reduces annual take-home by approximately $${Math.round(ns.median * stateRate).toLocaleString()}.`,
+            ? `${st.name} does not levy an individual income tax. Federal income tax and FICA still apply, and local taxes or payroll deductions may affect pay.`
+            : `${st.name} state income-tax rules may affect your paycheck. This estimate uses a simplified state-tax model and may not include local taxes, credits, or payroll-specific deductions.`,
         },
       },
     ],
@@ -164,7 +179,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
     '@type': 'WebApplication',
     name: `${st.name} Nurse Paycheck Calculator 2026`,
     url: `https://www.privatepaycheck.com/nurse-paycheck-calculator/${state}`,
-    description: `Calculate real nurse take-home pay in ${st.name} after all taxes. 2026 IRS brackets.`,
+    description: `Estimate nurse paycheck take-home in ${st.name} with modeled 2026 federal tax, FICA, and simplified state-tax assumptions.`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -200,16 +215,15 @@ export default async function Page({ params }: { params: Promise<{ state: string
           Nurse Paycheck Calculator — {st.name} 2026
         </h1>
         <p style={{ fontSize: '16px', lineHeight: 1.7, opacity: 0.75, maxWidth: '680px', marginBottom: '32px' }}>
-          Calculate your real RN take-home pay in {st.name} after federal tax, FICA
-          {noTax ? '. ' : `, and ${(stateRate * 100).toFixed(1)}% ${st.name} state income tax. `}
+          Estimate RN take-home pay in {st.name} after modeled federal tax and FICA
+          {noTax ? '. ' : ' and a simplified state-tax estimate. '}
           All calculations happen in your browser — no account required.
-          {ns.unionNote && ` ${ns.unionNote}`}
         </p>
 
         <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '14px', padding: '20px 24px', marginBottom: '36px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
           <div>
             <div style={{ fontWeight: 700, fontSize: '15px', marginBottom: '4px' }}>Use the Full Paycheck Calculator</div>
-            <div style={{ fontSize: '13px', opacity: 0.65 }}>Enter your exact salary, filing status, 401(k), and health insurance deductions</div>
+            <div style={{ fontSize: '13px', opacity: 0.65 }}>Enter your salary, filing status, 401(k), and health insurance deductions</div>
           </div>
           <Link href={`/${state}-paycheck-calculator`} style={{ background: '#4ade80', color: '#091526', borderRadius: '10px', padding: '10px 22px', fontWeight: 800, fontSize: '14px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Calculate My Pay
@@ -217,16 +231,16 @@ export default async function Page({ params }: { params: Promise<{ state: string
         </div>
 
         <h2 style={{ fontSize: '22px', fontWeight: 800, marginBottom: '16px' }}>
-          Example Nurse Paychecks in {st.name} 2026
+          Illustrative Nurse Paycheck Scenarios in {st.name} 2026
         </h2>
         <p style={{ fontSize: '14px', opacity: 0.6, marginBottom: '16px' }}>
-          Filing single, standard deduction, no pre-tax deductions. Actual pay varies by filing status, benefits, and local taxes.
+          Salary inputs are examples, not current salary survey data. Each estimate assumes a single filer, standard deduction, and no benefits or pre-tax contributions; actual payroll can differ.
         </p>
         <div style={{ overflowX: 'auto', marginBottom: '36px' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
-                {['Experience Level', 'Annual Gross', 'Annual Net', 'Monthly Net', 'Biweekly Net'].map(h => (
+                {['Illustrative input', 'Annual Gross', 'Estimated Annual Net', 'Estimated Monthly Net', 'Estimated Biweekly Net'].map(h => (
                   <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8, fontWeight: 700 }}>{h}</th>
                 ))}
               </tr>
@@ -250,12 +264,12 @@ export default async function Page({ params }: { params: Promise<{ state: string
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '14px', marginBottom: '36px' }}>
           {[
-            { title: 'Federal Tax Brackets', desc: 'Most RNs fall in the 22-24% federal bracket. Married filing jointly significantly lowers your rate.' },
-            { title: `${st.name} State Tax`, desc: noTax ? `${st.name} has no state income tax — every dollar saved vs. high-tax states goes directly to your paycheck.` : `${st.name} taxes income at ${(stateRate * 100).toFixed(1)}%. On an $80k salary this reduces take-home by approximately $${Math.round(80000 * stateRate).toLocaleString()}/year.` },
+            { title: 'Federal Tax Brackets', desc: 'Federal tax depends on taxable income, filing status, deductions, and credits. The estimate uses simplified assumptions.' },
+            { title: `${st.name} State Tax`, desc: noTax ? `${st.name} does not levy an individual income tax. Federal tax, FICA, local taxes, and payroll deductions may still affect pay.` : `State income tax and payroll deductions depend on your circumstances. This estimate uses a simplified state-tax model and may omit local taxes and credits.` },
             { title: 'Health Insurance', desc: 'Employer-sponsored health plan premiums are pre-tax, reducing your federal and state taxable income.' },
-            { title: '401(k) / 403(b)', desc: 'Hospital employers often match 3-6%. Pre-tax contributions lower taxable income by the full contribution amount.' },
-            { title: 'Shift Differentials', desc: 'Night, weekend, and holiday differentials are taxable income. Budget an extra 22-24% federal withholding on these.' },
-            { title: 'Travel Nurse Stipends', desc: 'Non-taxable housing and meal stipends for travel nurses are not subject to federal or state income tax when properly structured.' },
+            { title: '401(k) / 403(b)', desc: 'Plan eligibility, employer matches, contribution limits, and tax treatment vary. Confirm the details in your employer plan.' },
+            { title: 'Shift Differentials', desc: 'Shift differentials are generally wage income. Withholding is a prepayment and may not equal final tax.' },
+            { title: 'Travel Nurse Stipends', desc: 'A stipend is not automatically tax-free. Tax treatment depends on tax-home and assignment facts and applicable IRS requirements.' },
           ].map(f => (
             <div key={f.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px' }}>
               <div style={{ fontWeight: 700, fontSize: '13px', marginBottom: '6px' }}>{f.title}</div>

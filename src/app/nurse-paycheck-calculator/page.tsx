@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Nurse Paycheck Calculator 2026 — RN Take-Home Pay by State',
-  description: 'Calculate your real nurse take-home pay after taxes in all 51 states. See biweekly and monthly net pay for RNs in 2026. Free, no signup, instant results.',
+  title: 'Nurse Paycheck Calculator 2026 | Estimate Take-Home by State',
+  description: 'Estimate nurse paycheck take-home across all 50 states and DC using modeled 2026 tax assumptions. Results vary by salary, filing status, benefits, and local taxes.',
   alternates: { canonical: 'https://www.privatepaycheck.com/nurse-paycheck-calculator' },
   robots: 'index, follow',
 };
@@ -69,7 +69,7 @@ export default function NursePaycheckHub() {
     <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com","logo":"https://www.privatepaycheck.com/og-image.svg","description":"Free paycheck calculators for all 50 US states. Federal + state taxes, FICA, 401k. 100% private."}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Nurse Paycheck Calculator","item":"https://www.privatepaycheck.com/nurse-paycheck-calculator"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebPage","name":"Nurse Paycheck Calculator","datePublished":"2026-01-15","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/nurse-paycheck-calculator"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebPage","name":"Nurse Paycheck Calculator","datePublished":"2026-01-15","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/nurse-paycheck-calculator"}}' }} />
       <nav style={{ padding: '14px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.3)', position: 'sticky', top: 0, zIndex: 100 }}>
         <Link href="/" style={{ fontWeight: 800, fontSize: '18px', color: 'white', textDecoration: 'none' }}>
           <span style={{ color: '#4ade80' }}>$</span> PrivatePaycheck
@@ -93,11 +93,11 @@ export default function NursePaycheckHub() {
           Nurse Paycheck Calculator 2026
         </h1>
         <p style={{ fontSize: '16px', lineHeight: 1.75, opacity: 0.75, maxWidth: '680px', marginBottom: '12px' }}>
-          See your real RN take-home pay after federal tax, FICA, and state income tax — for all 50 states + DC.
-          Select your state below to get an instant breakdown with biweekly and monthly net pay.
+          Estimate RN paycheck take-home after modeled federal tax, FICA, and state taxes for all 50 states + DC.
+          Results are estimates, not payroll quotes; actual withholding and take-home pay depend on your situation.
         </p>
         <p style={{ fontSize: '14px', lineHeight: 1.7, opacity: 0.55, maxWidth: '680px', marginBottom: '36px' }}>
-          All calculations use 2026 IRS tax brackets and run entirely in your browser. No account, no signup.
+          Calculations run in your browser. State and local rules, benefits, credits, and payroll deductions may not be fully reflected.
         </p>
 
         <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '16px' }}>
@@ -126,7 +126,7 @@ export default function NursePaycheckHub() {
               <span>{s.name}</span>
               {NO_TAX.has(s.slug) && (
                 <span style={{ fontSize: '10px', background: 'rgba(74,222,128,0.15)', color: '#4ade80', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '4px', padding: '2px 6px', fontWeight: 700 }}>
-                  No Tax
+                  No state wage income tax
                 </span>
               )}
             </Link>
@@ -137,59 +137,23 @@ export default function NursePaycheckHub() {
           How This Calculator Works
         </h2>
         <p style={{ fontSize: '15px', lineHeight: 1.75, opacity: 0.7, marginBottom: '12px' }}>
-          Enter your state to see pre-calculated take-home pay examples for entry-level, median, and senior RN salaries.
-          The calculator applies 2026 federal income tax brackets, 7.65% FICA (Social Security + Medicare), and your state income tax rate.
+          Choose a state to review illustrative salary scenarios. The scenario inputs are not verified nurse salary medians or experience-level wage data.
+          Estimates use a single-filer standard deduction and simplified federal, FICA, and state-tax assumptions; they do not model every local tax or personal deduction.
         </p>
         <p style={{ fontSize: '15px', lineHeight: 1.75, opacity: 0.7, marginBottom: '32px' }}>
           For a personalized result — including your 401(k) contributions, health insurance premiums, filing status, and pay frequency —
           use the full <Link href="/" style={{ color: '#4ade80' }}>PrivatePaycheck calculator</Link>.
         </p>
 
-        <h2 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '14px' }}>
-          Highest-Paying States for Nurses in 2026
-        </h2>
-        <div style={{ overflowX: 'auto', marginBottom: '36px' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
-                {['State', 'Median RN Salary', 'State Tax', 'Est. Annual Net'].map(h => (
-                  <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.05em', opacity: 0.8, fontWeight: 700 }}>{h}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { state: 'California', slug: 'california', median: '$130,000', tax: '9.3%', net: '~$89,000' },
-                { state: 'Washington', slug: 'washington', median: '$98,000', tax: 'None', net: '~$76,000' },
-                { state: 'Oregon', slug: 'oregon', median: '$98,000', tax: '9.9%', net: '~$71,000' },
-                { state: 'Massachusetts', slug: 'massachusetts', median: '$98,000', tax: '5.0%', net: '~$73,000' },
-                { state: 'New York', slug: 'new-york', median: '$98,000', tax: '10.9%', net: '~$70,000' },
-                { state: 'Hawaii', slug: 'hawaii', median: '$106,000', tax: '11.0%', net: '~$74,000' },
-                { state: 'Nevada', slug: 'nevada', median: '$90,000', tax: 'None', net: '~$70,000' },
-                { state: 'Alaska', slug: 'alaska', median: '$95,000', tax: 'None', net: '~$74,000' },
-              ].map((r, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                  <td style={{ padding: '12px' }}>
-                    <Link href={`/nurse-paycheck-calculator/${r.slug}`} style={{ color: '#7dd3fc', textDecoration: 'none', fontWeight: 600 }}>{r.state}</Link>
-                  </td>
-                  <td style={{ padding: '12px', color: '#4ade80', fontWeight: 700 }}>{r.median}</td>
-                  <td style={{ padding: '12px', opacity: 0.7 }}>{r.tax}</td>
-                  <td style={{ padding: '12px', opacity: 0.8 }}>{r.net}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
         <h2 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '16px' }}>
           Nurse Paycheck FAQ
         </h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '40px' }}>
           {[
-            { q: 'What is the average nurse take-home pay in the US?', a: 'The median RN salary in the US is approximately $81,000/year in 2026. After federal tax, FICA, and average state tax, most nurses take home between $58,000 and $68,000/year depending on their state.' },
-            { q: 'Which states are best for nurses after taxes?', a: 'No-income-tax states like Washington, Texas, Nevada, and Alaska offer the highest net pay for nurses. Washington RNs earning $98,000 keep approximately $76,000 after taxes — significantly more than nurses in California or New York at similar salaries.' },
-            { q: 'Do travel nurses pay taxes differently?', a: 'Travel nurses receive a base taxable wage plus non-taxable stipends for housing and meals. Only the base wage is subject to federal and state income tax and FICA. Stipends are tax-free when you maintain a tax home.' },
-            { q: 'How does filing status affect my nurse paycheck?', a: 'Married filing jointly uses wider tax brackets, often moving RNs from the 22% to the 12% bracket on a portion of income. This can increase annual take-home by $2,000 to $5,000 compared to filing single.' },
+            { q: 'What is the average nurse take-home pay in the US?', a: 'Take-home pay depends on wages, filing status, benefits, location, and other factors. This site does not provide a verified national nurse salary or take-home-pay benchmark; use your own salary in the state calculator for an illustrative estimate.' },
+            { q: 'Which states are best for nurses after taxes?', a: 'There is no single best state based only on income tax. Compare the same salary and filing assumptions in each state, and consider local taxes, benefits, and cost of living. The estimates on this site may omit some of those factors.' },
+            { q: 'Do travel nurses pay taxes differently?', a: 'Travel assignments do not automatically make housing or meal stipends tax-free. Tax treatment depends on the worker’s tax home, assignment facts, and applicable IRS requirements.' },
+            { q: 'How does filing status affect my nurse paycheck?', a: 'Filing status changes tax brackets and deductions, so it can change an estimate. The state examples use a single-filer assumption; use the full paycheck calculator for a result that reflects your filing status and other inputs.' },
           ].map(item => (
             <div key={item.q} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '10px', padding: '18px 20px' }}>
               <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '8px', color: '#7dd3fc' }}>{item.q}</h3>

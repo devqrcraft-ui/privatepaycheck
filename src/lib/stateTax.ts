@@ -1,6 +1,6 @@
 // State income tax estimate for a resident wage earner.
 // Source: Tax Foundation, "State Individual Income Tax Rates and Brackets, 2026" (as of Jan 1, 2026; some inflation-indexed amounts are 2025 values).
-// California cross-checked with the FTB 2025 Form 540 tax table. Re-verify every January.
+// California uses FTB 2026 Tax Rate Schedules: https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf
 // NOT modeled: local taxes (NYC, Maryland counties, PA/OH/KY local), non-personal credits, itemized deductions, retirement exclusions,
 // high-income recapture (NY, CT, CT 2% bracket phase-out), Oregon/Missouri federal-tax subtraction, Maine/Minnesota deduction phase-outs,
 // South Carolina rate change on 2026-07-01 (NOT verified), Georgia overtime/tips exclusion. Mid-2026 laws applied: GA HB 463, AR SB 1 (incl. high-income table), UT SB 60, WV SB 392 (tax.wv.gov). Verified 2026-10-23. Treat results as estimates.
@@ -15,7 +15,7 @@ export type StateFiling = 'single' | 'married';
 const R: Record<string, Rule> = {
   'al': { s:[[0,0.02],[500,0.04],[3000,0.05]], m:[[0,0.02],[1000,0.04],[6000,0.05]], pe:[1500,3000] },
   'ar': { s:[[5600,0.02],[11200,0.03],[16000,0.034],[26400,0.037]], m:[[5600,0.02],[11200,0.03],[16000,0.034],[26400,0.037]], sd:[2470,4940], cr:[29,58] },
-  'ca': { s:[[0,0.01],[11079,0.02],[26264,0.04],[41452,0.06],[57542,0.08],[72724,0.093],[371479,0.103],[445771,0.113],[742953,0.123]], m:[[0,0.01],[22158,0.02],[52528,0.04],[82904,0.06],[115084,0.08],[145448,0.093],[742958,0.103],[891542,0.113],[1485906,0.123]], sd:[5706,11412], cr:[153,306] },
+  'ca': { s:[[0,0.01],[11456,0.02],[27157,0.04],[42861,0.06],[59498,0.08],[75197,0.093],[384109,0.103],[460927,0.113],[768213,0.123]], m:[[0,0.01],[22912,0.02],[54314,0.04],[85722,0.06],[118996,0.08],[150394,0.093],[768218,0.103],[921854,0.113],[1536426,0.123]], sd:[5706,11412], cr:[153,306] },
   'co': { s:[[0,0.044]], m:[[0,0.044]], sd:[16100,32200] },
   'ct': { s:[[0,0.02],[10000,0.045],[50000,0.055],[100000,0.06],[200000,0.065],[250000,0.069],[500000,0.0699]], m:[[0,0.02],[20000,0.045],[100000,0.055],[200000,0.06],[400000,0.065],[500000,0.069],[1000000,0.0699]], pe:[15000,24000] },
   'dc': { s:[[0,0.04],[10000,0.06],[40000,0.065],[60000,0.085],[250000,0.0925],[500000,0.0975],[1000000,0.1075]], m:[[0,0.04],[10000,0.06],[40000,0.065],[60000,0.085],[250000,0.0925],[500000,0.0975],[1000000,0.1075]], sd:[16100,32200] },

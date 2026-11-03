@@ -1,6 +1,7 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
 
 // ── All 50 states with 2026 rates ──────────────────────────────────────────
 const STATES = [
@@ -79,6 +80,8 @@ export default function HourlyPaycheckCalculator() {
   const [state,  setState]    = useState('TX');
   const [k401,   setK401]     = useState('0');
   const [hsa,    setHsa]      = useState('0');
+  const [hasCalculated, setHasCalculated] = useState(false);
+  const [error, setError] = useState('');
 
   const r = useMemo(() => {
     const h = parseFloat(hourly)||0, hw = parseFloat(hours)||0, w = parseFloat(weeks)||52;
@@ -103,6 +106,25 @@ export default function HourlyPaycheckCalculator() {
   const card:  React.CSSProperties = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'16px' };
   const sel = state;
   const stObj = STATES.find(s => s.code === sel)!;
+
+  function calculate() {
+    const hourlyValue = Number(hourly);
+    const hoursValue = Number(hours);
+    const weeksValue = Number(weeks);
+    const k401Value = Number(k401);
+    const hsaValue = Number(hsa);
+    if (!Number.isFinite(hourlyValue) || hourlyValue <= 0 ||
+      !Number.isFinite(hoursValue) || hoursValue < 1 || hoursValue > 168 ||
+      !Number.isFinite(weeksValue) || weeksValue < 1 || weeksValue > 52 ||
+      !Number.isFinite(k401Value) || k401Value < 0 || k401Value > 23500 ||
+      !Number.isFinite(hsaValue) || hsaValue < 0 || hsaValue > 4300) {
+      setError('Enter a positive hourly rate, 1–168 hours, 1–52 weeks, 401(k) from $0–$23,500, and HSA from $0–$4,300.');
+      setHasCalculated(false);
+      return;
+    }
+    setError('');
+    setHasCalculated(true);
+  }
 
   return (
     <div style={{ minHeight:'100vh', background:'var(--navy,#091526)', color:'#fff', fontFamily:'system-ui,sans-serif' }}>
@@ -138,15 +160,15 @@ export default function HourlyPaycheckCalculator() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
               <label style={lbl}>Hourly Rate ($)</label>
-              <input type="number" value={hourly} onChange={e=>setHourly(e.target.value)} style={input} placeholder="25.00" min="0" step="0.25" />
+              <input type="number" value={hourly} onChange={e=>{setHourly(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="25.00" min="0" step="0.25" />
             </div>
             <div>
               <label style={lbl}>Hours per Week</label>
-              <input type="number" value={hours} onChange={e=>setHours(e.target.value)} style={input} placeholder="40" min="1" max="168" />
+              <input type="number" value={hours} onChange={e=>{setHours(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="40" min="1" max="168" />
             </div>
             <div>
               <label style={lbl}>Weeks per Year</label>
-              <input type="number" value={weeks} onChange={e=>setWeeks(e.target.value)} style={input} placeholder="52" min="1" max="52" />
+              <input type="number" value={weeks} onChange={e=>{setWeeks(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="52" min="1" max="52" />
             </div>
           </div>
 
@@ -154,7 +176,7 @@ export default function HourlyPaycheckCalculator() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
               <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e=>setFiling(e.target.value)} style={{...input, colorScheme:'dark'}}>
+              <select value={filing} onChange={e=>{setFiling(e.target.value);setHasCalculated(false);}} style={{...input, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
@@ -162,7 +184,7 @@ export default function HourlyPaycheckCalculator() {
             </div>
             <div>
               <label style={lbl}>State</label>
-              <select value={state} onChange={e=>setState(e.target.value)} onFocus={e=>{e.currentTarget.scrollIntoView({behavior:"smooth",block:"center"});}} style={{...input, colorScheme:'dark'}}>
+              <select value={state} onChange={e=>{setState(e.target.value);setHasCalculated(false);}} onFocus={e=>{e.currentTarget.scrollIntoView({behavior:"smooth",block:"center"});}} style={{...input, colorScheme:'dark'}}>
                 {STATES.map(s => <option key={s.code} value={s.code}>{s.name}{s.rate===0 ? ' (no income tax)' : ''}</option>)}
               </select>
             </div>
@@ -172,15 +194,20 @@ export default function HourlyPaycheckCalculator() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'24px' }}>
             <div>
               <label style={lbl}>401(k) Contribution ($/yr, max $23,500)</label>
-              <input type="number" value={k401} onChange={e=>setK401(e.target.value)} style={input} placeholder="0" min="0" max="23500" />
+              <input type="number" value={k401} onChange={e=>{setK401(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="23500" />
             </div>
             <div>
               <label style={lbl}>HSA Contribution ($/yr, max $4,300)</label>
-              <input type="number" value={hsa} onChange={e=>setHsa(e.target.value)} style={input} placeholder="0" min="0" max="4300" />
+              <input type="number" value={hsa} onChange={e=>{setHsa(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="4300" />
             </div>
           </div>
+          <button type="button" onClick={calculate} style={{ width:'100%', padding:'13px 16px', marginTop:20, border:0, borderRadius:9, background:'linear-gradient(135deg,#F5C842,#FFD700)', color:'#091526', fontSize:15, fontWeight:800, cursor:'pointer' }}>
+            Calculate My Take-Home Pay →
+          </button>
+          {error && <p role="alert" style={{ color:'#fca5a5', fontSize:12, lineHeight:1.5, margin:'10px 0 0' }}>{error}</p>}
 
           {/* RESULTS */}
+          {hasCalculated && <>
           <div style={{ background:'linear-gradient(135deg,rgba(74,222,128,0.12),rgba(201,168,76,0.12))', border:'1px solid rgba(74,222,128,0.25)', borderRadius:'12px', padding:'24px' }}>
             <div style={{ textAlign:'center', marginBottom:'20px' }}>
               <div style={{ fontSize:'13px', opacity:0.6, marginBottom:'4px' }}>Annual Gross → Take-Home</div>
@@ -231,6 +258,14 @@ export default function HourlyPaycheckCalculator() {
             </div>
           </div>
           <p style={{ textAlign:'center', fontSize:'11px', opacity: 0.8, margin:'12px 0 0' }}> All calculations happen in your browser — your data is never sent anywhere</p>
+          <CalculatorResultActions
+            summary={`2026 ${stObj.name} hourly paycheck estimate (${filing})\nAnnual gross: ${fmt(r.annual)}\nFederal tax: ${fmt(r.fed)}\nFICA: ${fmt(r.fica)}\nState income-tax estimate: ${fmt(r.stateTx)}\n401(k): ${fmt(r.k)}\nHSA: ${fmt(r.hsaV)}\nEstimated annual take-home: ${fmt(r.net)}\nEffective modeled tax rate: ${r.effectiveRate.toFixed(1)}%\nEstimate excludes local taxes and personal credits; verify current state rules.`}
+            relatedLinks={[
+              { href: '/teacher-paycheck-calculator', label: 'Teacher paycheck →' },
+              { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
+            ]}
+          />
+          </>}
         </div>
 
         {/* QUICK REFERENCE TABLE */}

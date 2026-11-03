@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   description: 'Free paycheck calculator for all 50 US states. Federal + state taxes, FICA, 401k, HSA. 100% private — your salary never leaves your browser.',
   openGraph: {
     locale: 'en_US',
-    url: 'https://www.privatepaycheck.com',
     siteName: 'PrivatePaycheck',
     type: 'website',
     images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'PrivatePaycheck — Free Paycheck Calculator 2026' }],
@@ -40,32 +39,16 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.privatepaycheck.com"
-    }
-  ]
-};
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
                             <style>{`
   *{box-sizing:border-box;}
-  body{user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;}
-  input,textarea,select,[contenteditable]{user-select:text;-webkit-user-select:text;-moz-user-select:text;}
   a,button,[role=button]{cursor:pointer;transition:transform 0.15s,box-shadow 0.15s,background 0.15s,opacity 0.15s;}
   a:hover,button:hover,[role=button]:hover{transform:translateY(-2px);opacity:0.92;}
   button:active,[role=button]:active{transform:scale(0.97);}
 `}</style>
-              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       
 <body suppressHydrationWarning style={{ margin: 0, padding: 0, overflowX:"hidden", maxWidth:"100%" }}>
@@ -91,11 +74,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Script src="/ai-chat-widget.js?v=6" strategy="lazyOnload" />
       <Footer />
     
-      <script dangerouslySetInnerHTML={{ __html: `
-document.addEventListener('dragstart', function(e){ e.preventDefault(); return false; });
-document.addEventListener('selectstart', function(e){ if(!['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) e.preventDefault(); });
-document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
-` }} />
 </body>
     </html>
   );

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PENSION_RATE[code];
   return {
     title: `${name} Teacher Paycheck Calculator`,
-    description: `See ${name} teacher take-home pay 2026 after ${p.system} pension (${(p.rate*100).toFixed(1)}%), federal and state tax. SS Fairness Act 2025 included.`,
+    description: `Estimate ${name} teacher take-home pay using modeled ${p.system} pension and 2026 federal and state tax rules. Local taxes and plan-specific details may change results.`,
     alternates: { canonical: `https://www.privatepaycheck.com/teacher-paycheck-calculator/${state}` },
     authors: [{ name: 'the PrivatePaycheck Team' }],
   };
@@ -48,29 +48,29 @@ export default async function Page({ params }: { params: Promise<{ state: string
 
   const examples = BENCHMARK_SALARIES.map(e => ({
     ...e,
-    ...calcTeacher(e.gross, code, 'single', 0, 40),
+    ...calcTeacher(e.gross, code, 'single', 40),
   }));
 
   const faqItems = [
     {
       q: `How much do teachers take home after taxes in ${name} in 2026?`,
-      a: `A teacher earning the national average salary of $${examples[1].gross.toLocaleString()} in ${name} takes home approximately $${Math.round(examples[1].takeHome).toLocaleString()}/year ($${Math.round(examples[1].monthlyTakeHome).toLocaleString()}/month) after ${p.system} pension (${(p.rate*100).toFixed(1)}%), federal tax${noTax ? ', and FICA.' : `, ${(stateRate*100).toFixed(1)}% ${name} state tax, and FICA.`}`,
+      a: `For an illustrative $${examples[1].gross.toLocaleString()} salary (the 2024 NEA national benchmark, not a 2026 state average), this model estimates $${Math.round(examples[1].takeHome).toLocaleString()}/year ($${Math.round(examples[1].monthlyTakeHome).toLocaleString()}/month) after the listed ${p.system} pension, modeled federal and state taxes, and applicable payroll taxes. Your result depends on your actual pay, plan, filing status, local taxes, and credits.`,
     },
     {
       q: `Do ${name} teachers pay Social Security?`,
       a: p.ss
-        ? `Yes. ${name} teachers are covered by Social Security through ${p.system} in addition to their pension, so 6.2% Social Security tax applies alongside 1.45% Medicare.`
-        : `No. ${name} teachers are NOT covered by Social Security through ${p.system} — only 1.45% Medicare tax applies, not the 6.2% Social Security portion. Since the SS Fairness Act (Jan 2025) fully repealed WEP/GPO, ${name} teachers with outside SS-covered work now receive their full Social Security benefit from that other work.`,
+        ? `This model assumes a ${p.system}-covered job also pays Social Security tax. Coverage can depend on the employer and position; confirm it on your pay statement or with your employer.`
+        : `This model assumes a ${p.system}-covered job is not covered by Social Security, so it does not include the 6.2% Social Security tax for that job. Coverage can depend on the employer and position; confirm it with your employer. The Social Security Fairness Act repealed WEP/GPO but does not determine an individual's benefit amount.`,
     },
     {
       q: `What is the ${p.system} pension contribution rate?`,
-      a: `${name} teachers contribute ${(p.rate*100).toFixed(2)}% of gross salary to ${p.system}, pre-tax. On the national average salary of $69,544, that is $${Math.round(69544*p.rate).toLocaleString()}/year taken before federal and state tax are calculated.`,
+      a: `The calculator uses a ${(p.rate*100).toFixed(2)}% default contribution for ${p.system}. Actual rates can vary by plan tier and job. On the illustrative $69,544 salary, this model calculates a $${Math.round(69544*p.rate).toLocaleString()} annual contribution; confirm your rate and tax treatment with your plan.`,
     },
     {
       q: `Does ${name} tax teacher income?`,
       a: noTax
-        ? `${name} has no state income tax. Teachers here keep more of their paycheck than in high-tax states — only federal tax, ${p.system}, and FICA${p.ss ? '' : ' (Medicare only)'} apply.`
-        : `Yes. ${name} taxes income at ${(stateRate*100).toFixed(1)}%. On the national average teacher salary, this reduces take-home by approximately $${Math.round((69544 - 69544*p.rate) * stateRate).toLocaleString()}/year.`,
+        ? `${name} has no broad individual income tax in this model. State payroll programs, local taxes, and individual plan treatment may still affect take-home pay.`
+        : `The state tax model estimates $${Math.round(examples[1].stateTax).toLocaleString()} in state income and modeled payroll taxes for the illustrative $69,544 salary. Local taxes, credits, and some state-specific rules are not included.`,
     },
   ];
 
@@ -88,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ state: string
     '@type': 'WebApplication',
     name: `${name} Teacher Paycheck Calculator 2026`,
     url: `https://www.privatepaycheck.com/teacher-paycheck-calculator/${state}`,
-    description: `Calculate real teacher take-home pay in ${name} after ${p.system} pension and all taxes. 2026 IRS brackets.`,
+    description: `Estimate teacher take-home pay in ${name} after the modeled ${p.system} pension, federal tax and state tax. Local taxes and individual plan differences may change results.`,
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'Any',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -125,15 +125,15 @@ export default async function Page({ params }: { params: Promise<{ state: string
           Teacher Paycheck Calculator — {name} 2026
         </h1>
         <p style={{ fontSize: '18px', lineHeight: 1.75, opacity: 0.85, marginBottom: '28px' }}>
-          See your real take-home pay as a {name} teacher after {p.system} pension
-          ({(p.rate*100).toFixed(1)}% pre-tax), federal tax, {noTax ? 'and FICA' : `${(stateRate*100).toFixed(1)}% ${name} state tax, and FICA`}.
-          {!p.ss && ' This calculator also accounts for the SS Fairness Act 2025 — WEP/GPO are fully repealed.'}
+          Estimate take-home pay as a {name} teacher after the modeled {p.system} pension
+          ({(p.rate*100).toFixed(1)}% default contribution), federal tax, {noTax ? 'and FICA' : `modeled ${name} state income tax, and FICA`}.
+          {' Local taxes and plan-specific details are not fully modeled.'}
         </p>
 
         <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '14px', padding: '20px', marginBottom: '32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '14px' }}>
           <div>
             <div style={{ fontWeight: 700, fontSize: '17px', marginBottom: '4px' }}>Use the Full Interactive Calculator</div>
-            <div style={{ fontSize: '15px', opacity: 0.75 }}>Enter your exact salary, filing status, age, and years of outside SS-covered work</div>
+            <div style={{ fontSize: '15px', opacity: 0.75 }}>Enter your salary, state, filing status, and age for an estimate</div>
           </div>
           <Link href="/teacher-paycheck-calculator" style={{ background: '#4ade80', color: '#091526', borderRadius: '10px', padding: '12px 24px', fontWeight: 800, fontSize: '15px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
             Calculate My Pay
@@ -174,10 +174,10 @@ export default async function Page({ params }: { params: Promise<{ state: string
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '14px', marginBottom: '32px' }}>
           {[
-            { title: `${p.system} Pension`, desc: `${(p.rate*100).toFixed(2)}% of gross salary, pre-tax, comes out before federal or state tax is calculated.` },
-            { title: noTax ? `${name} Has No State Tax` : `${name} State Tax`, desc: noTax ? `Every dollar you save vs. high-tax states goes straight to your paycheck.` : `Taxed at ${(stateRate*100).toFixed(1)}% on income after your pension deduction.` },
-            { title: 'Social Security', desc: p.ss ? `${name} teachers pay 6.2% Social Security plus 1.45% Medicare.` : `${name} teachers pay only 1.45% Medicare — no 6.2% Social Security withholding through this job.` },
-            { title: 'SS Fairness Act 2025', desc: p.ss ? `Not applicable — ${name} teachers are already SS-covered.` : `WEP/GPO fully repealed Jan 2025. Outside SS-covered work now counts toward a full benefit.` },
+            { title: `${p.system} Pension`, desc: `The calculator uses a ${(p.rate*100).toFixed(2)}% default contribution. Actual rate and federal/state tax treatment depend on your plan and job.` },
+            { title: noTax ? `${name} Has No State Income Tax` : `${name} State Tax`, desc: noTax ? `No broad individual income tax is modeled. Local taxes and state payroll programs may still affect take-home pay.` : `The estimate uses modeled state income and payroll taxes. Local taxes, credits, and some state-specific rules are not included.` },
+            { title: 'Social Security', desc: p.ss ? `This model assumes the listed job is covered by Social Security and includes 6.2% Social Security and 1.45% Medicare. Confirm your coverage with your employer.` : `This model assumes the listed job is not covered by Social Security and includes Medicare only. Coverage can vary by employer and position.` },
+            { title: 'Social Security Fairness Act', desc: `The Act repealed WEP/GPO for benefits payable after December 2023. It does not change paycheck deductions or determine an individual benefit amount.` },
           ].map(f => (
             <div key={f.title} style={CARD}>
               <div style={{ fontWeight: 700, fontSize: '15px', marginBottom: '6px' }}>{f.title}</div>

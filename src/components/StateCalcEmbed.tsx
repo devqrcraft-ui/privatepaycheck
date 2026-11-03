@@ -1,66 +1,57 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
+import { estimatePaycheck } from '@/lib/paycheck';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
 
 interface Props {
   stateName: string;
-  stateTaxRate: number;
-  hasSDI?: boolean;
-  sdiRate?: number;
-  sdiCap?: number;
+  stateCode: string;
   noStateTax?: boolean;
 }
 
-export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false, sdiRate = 0, sdiCap = Infinity, noStateTax = false }: Props) {
+export default function StateCalcEmbed({ stateName, stateCode, noStateTax = false }: Props) {
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('annual');
   const [filing, setFiling] = useState('single');
-  const [copied, setCopied] = useState(false);
+  const [error, setError] = useState('');
   const didInit = useRef(false);
   const [result, setResult] = useState<{
     annual:number; takeHome:number; biweekly:number; monthly:number;
-    fed:number; ss:number; medicare:number; stateTax:number; sdi:number; eff:string;
+    fed:number; ss:number; medicare:number; stateTax:number; eff:string;
   }|null>(null);
 
   function calculateWithValues(sal: string, per: string, fil: string) {
-    let annual = parseFloat(sal.replace(/,/g,'')) || 0;
-    if (annual <= 0) return;
+    let annual = Number(sal.replace(/,/g,''));
+    if (!Number.isFinite(annual) || annual <= 0) {
+      setError('Enter a valid wage greater than zero.');
+      setResult(null);
+      return;
+    }
     if (per === 'hourly') annual = annual * 40 * 52;
     else if (per === 'monthly') annual = annual * 12;
     else if (per === 'biweekly') annual = annual * 26;
 
-    const stdDeduct = fil === 'married' ? 32200 : 16100;
-    const taxable = Math.max(0, annual - stdDeduct);
-    const brackets = fil === 'married'
-      ? [[0,24800,0.10],[24800,100800,0.12],[100800,211400,0.22],[211400,403550,0.24],[403550,512450,0.32],[512450,768700,0.35],[768700,Infinity,0.37]]
-      : [[0,12400,0.10],[12400,50400,0.12],[50400,105700,0.22],[105700,201775,0.24],[201775,256225,0.32],[256225,640600,0.35],[640600,Infinity,0.37]];
-    let fed = 0;
-    for (const [lo,hi,r] of brackets) if (taxable > lo) fed += (Math.min(taxable,hi)-lo)*r;
-
-    const ssBase = Math.min(annual, 184500);
-    const ss = ssBase * 0.062;
-    const medicare = annual * 0.0145 + (annual > 200000 ? (annual-200000)*0.009 : 0);
-    const nyStdDed = fil === 'married' ? 16050 : 8000;
-    const nyTaxable = Math.max(0, annual - nyStdDed);
-    const nyBrackets: [number,number][] = fil === 'married'
-      ? [[17150,.039],[23600,.044],[27900,.0515],[161550,.054],[323200,.059],[2155350,.0685],[5000000,.0965],[25000000,.103],[Infinity,.109]]
-      : [[8500,.039],[11700,.044],[13900,.0515],[80650,.054],[215400,.059],[1077550,.0685],[5000000,.0965],[25000000,.103],[Infinity,.109]];
-    let stateTax = 0;
-    if (!noStateTax) {
-      let prevLim = 0;
-      for (const [lim, rate] of nyBrackets) {
-        if (nyTaxable <= prevLim) break;
-        stateTax += (Math.min(nyTaxable, lim) - prevLim) * rate;
-        prevLim = lim;
-      }
+    if (!Number.isFinite(annual)) {
+      setError('The annualized wage is outside the supported range.');
+      setResult(null);
+      return;
     }
-    const sdi = hasSDI ? Math.min(Math.min(annual, 153164) * (sdiRate/100), sdiCap) : 0;
-    const total = fed + ss + medicare + stateTax + sdi;
+    const estimate = estimatePaycheck({
+      annual,
+      freq: 1,
+      stateRatePct: 0,
+      stateCode: noStateTax ? undefined : stateCode,
+      filing: fil === 'married' ? 'married' : 'single',
+      k401Pct: 0,
+    });
+    const fed = estimate.fed;
+    const ss = estimate.ss;
+    const medicare = estimate.med;
+    const stateTax = estimate.state;
+    const total = fed + ss + medicare + stateTax;
     const takeHome = annual - total;
-    setResult({ annual, takeHome, biweekly: takeHome/26, monthly: takeHome/12, fed, ss, medicare, stateTax, sdi, eff: annual>0 ? (total/annual*100).toFixed(1) : '0' });
-    try {
-      const params = new URLSearchParams({ salary: sal, period: per, filing: fil });
-      window.history.replaceState(null, '', '?' + params.toString());
-    } catch(e) {}
+    setError('');
+    setResult({ annual, takeHome, biweekly: takeHome/26, monthly: takeHome/12, fed, ss, medicare, stateTax, eff: (total/annual*100).toFixed(1) });
   }
 
   function calculate() {
@@ -70,27 +61,27 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
   useEffect(() => {
     if (didInit.current) return;
     didInit.current = true;
-    try {
-      const p = new URLSearchParams(window.location.search);
-      const s = p.get('salary');
-      const per = p.get('period');
-      const fil = p.get('filing');
-      if (s && parseFloat(s) > 0) {
-        const resolvedPer = per || 'annual';
-        const resolvedFil = fil || 'single';
-        setSalary(s);
-        if (per) setPeriod(per);
-        if (fil) setFiling(fil);
-        calculateWithValues(s, resolvedPer, resolvedFil);
-      }
-    } catch(e) {}
+    const params = new URLSearchParams(window.location.search);
+    const salaryFromLink = params.get('salary');
+    const periodFromLink = params.get('period');
+    const filingFromLink = params.get('filing');
+    const hadSensitiveParams = ['salary', 'period', 'filing'].some((key) => params.has(key));
+    if (hadSensitiveParams) {
+      params.delete('salary');
+      params.delete('period');
+      params.delete('filing');
+      const query = params.toString();
+      window.history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`);
+    }
+    if (salaryFromLink && parseFloat(salaryFromLink) > 0) {
+      const resolvedPeriod = periodFromLink || 'annual';
+      const resolvedFiling = filingFromLink || 'single';
+      setSalary(salaryFromLink);
+      if (periodFromLink) setPeriod(periodFromLink);
+      if (filingFromLink) setFiling(filingFromLink);
+      calculateWithValues(salaryFromLink, resolvedPeriod, resolvedFiling);
+    }
   }, []);
-
-  function handleShare() {
-    navigator.clipboard.writeText(window.location.href).catch(function() {});
-    setCopied(true);
-    setTimeout(function() { setCopied(false); }, 2000);
-  }
 
   const fmt = (n: number) => Math.round(n||0).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
 
@@ -103,6 +94,8 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
         <div>
           <label style={{ color:'#e8edf8', fontSize:13, display:'block', marginBottom:4 }}>Salary or hourly wage</label>
           <input type="number" placeholder="e.g. 75000" value={salary} onChange={e=>setSalary(e.target.value)} min={0}
+            aria-invalid={Boolean(error)}
+            aria-describedby={error ? 'state-calc-error' : undefined}
             style={{ width:'100%', padding:'12px 14px', borderRadius:8, border:'1px solid #F5C84244',
               background:'#0f0c29', color:'#e8edf8', fontSize:15, boxSizing:'border-box' }} />
         </div>
@@ -130,6 +123,7 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
           style={{ padding:14, background:'#F5C842', color:'#0f0c29', fontWeight:800, fontSize:16, border:'none', borderRadius:8, cursor:'pointer' }}>
           Calculate Take-Home Pay
         </button>
+        {error && <p id="state-calc-error" role="alert" style={{ color:'#fca5a5', fontSize:12, margin:0 }}>{error}</p>}
       </div>
 
       {result && (
@@ -143,9 +137,8 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
             {[
               ['Federal income tax', result.fed],
               ['Social Security (6.2%)', result.ss],
-              ['Medicare (1.45%+)', result.medicare],
-              ...(!noStateTax ? [[stateName + ' state tax', result.stateTax]] : [['State tax', 0]]),
-              ...(hasSDI ? [['SDI', result.sdi]] : []),
+              ['Medicare (including Additional Medicare Tax if applicable)', result.medicare],
+              ...(!noStateTax ? [[stateName + ' state income/payroll taxes', result.stateTax]] : [['State tax', 0]]),
             ].map(([label, val]) => (
               <div key={String(label)} style={{ display:'flex', justifyContent:'space-between', padding:'5px 0', borderBottom:'1px solid #ffffff0a' }}>
                 <span style={{ color:'#8892b0', fontSize:13 }}>{label}</span>
@@ -153,16 +146,14 @@ export default function StateCalcEmbed({ stateName, stateTaxRate, hasSDI = false
               </div>
             ))}
           </div>
-          <p style={{ color:'#8892b0', fontSize:11, margin:'14px 0 8px' }}>Estimate only. Actual taxes vary by deductions and filing details.</p>
-          <button onClick={handleShare} style={{
-            width:'100%', padding:'10px 0', borderRadius:8,
-            border:'1px solid rgba(245,200,66,0.4)',
-            background: copied ? 'rgba(74,222,128,0.1)' : 'rgba(245,200,66,0.08)',
-            color: copied ? '#4ade80' : '#F5C842',
-            fontWeight:700, fontSize:13, cursor:'pointer'
-          }}>
-            {copied ? 'Link copied!' : 'Share my result'}
-          </button>
+          <p style={{ color:'#8892b0', fontSize:11, margin:'14px 0 8px' }}>Annualized estimate. Local taxes, credits, deductions, and payroll withholding rules are not fully modeled.</p>
+          <CalculatorResultActions
+            summary={`2026 ${stateName} paycheck estimate (${filing}, income entered as ${period})\nAnnualized take-home: ${fmt(result.takeHome)}\nBi-weekly take-home: ${fmt(result.biweekly)}\nMonthly take-home: ${fmt(result.monthly)}\nFederal tax: ${fmt(result.fed)}\nSocial Security: ${fmt(result.ss)}\nMedicare: ${fmt(result.medicare)}\n${noStateTax ? 'State income tax was not modeled.' : `${stateName} state tax: ${fmt(result.stateTax)}`}\nEffective tax rate: ${result.eff}%\nLocal taxes, credits, and payroll withholding rules are not fully modeled.`}
+            relatedLinks={[
+              { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
+              { href: '/w4-withholding-calculator', label: 'Adjust W-4 →' },
+            ]}
+          />
 
           <div style={{ marginTop:16, padding:'14px 16px', background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10 }}>
             <div style={{ fontSize:12, color:'#8892b0', marginBottom:6 }}>Self-employed or gig worker?</div>

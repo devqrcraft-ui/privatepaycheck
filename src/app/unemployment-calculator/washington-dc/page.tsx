@@ -1,25 +1,57 @@
 import type { Metadata } from 'next'
-import UnemployCalc from '../texas/_calc'
+import UnemploymentIllustration from '@/components/UnemploymentIllustration'
 
 export const metadata: Metadata = {
-  title: 'Washington DC Unemployment Calculator 2026 — Estimate Your Weekly Benefits',
-  description: 'Free Washington DC unemployment calculator 2026. Estimate your weekly benefit amount (WBA). DC pays up to $444/week for up to 26 weeks. Instant, no signup.',
+  title: 'Washington DC Unemployment Calculator | Illustrative Estimate',
+  description: 'Explore a simplified Washington DC unemployment calculation example. It does not apply a verified current benefit schedule or determine eligibility, payable duration, or your official benefit.',
   keywords: 'washington dc unemployment calculator, dc unemployment benefits 2026, dc WBA calculator',
   alternates: { canonical: 'https://www.privatepaycheck.com/unemployment-calculator/washington-dc' },
 }
 
 export default function Page() {
-  const rows = [
-    ['$300/wk','$15,600/yr','$150','$75'],
-    ['$500/wk','$26,000/yr','$250','$125'],
-    ['$700/wk','$36,400/yr','$350','$175'],
-    ['$900/wk','$46,800/yr','$444','$222'],
-    ['$1,200/wk','$62,400/yr','$444','$222'],
-    ['$1,500/wk','$78,000/yr','$444','$222'],
+  const weeklyWages = [300, 500, 700, 900, 1200, 1500]
+  const rows = weeklyWages.map((weeklyWage) => {
+    const modelAmount = Math.floor((weeklyWage * 13) / 26)
+    return [
+      `$${weeklyWage.toLocaleString('en-US')}/wk`,
+      `$${(weeklyWage * 52).toLocaleString('en-US')}/yr`,
+      `$${modelAmount.toLocaleString('en-US')}`,
+    ]
+  })
+  const faqItems = [
+    {
+      question: 'Does this calculator determine my DC unemployment benefit?',
+      answer: 'No. It provides an arithmetic illustration that divides entered highest-quarter wages by 26. It does not apply a verified current DC benefit schedule or determine eligibility; the DC Department of Employment Services makes the official claim determination.',
+    },
+    {
+      question: 'How much unemployment can I receive in Washington, DC?',
+      answer: 'Your amount depends on your claim and current DC rules. This page does not publish a verified current minimum or maximum; check official DC guidance and your monetary determination.',
+    },
+    {
+      question: 'How long do DC unemployment benefits last?',
+      answer: 'Payable duration depends on current program rules and your claim. This calculator does not estimate duration; check official DC guidance and your determination.',
+    },
+    {
+      question: 'Is DC unemployment taxable?',
+      answer: 'Unemployment compensation is generally subject to federal income tax. Check current DC and IRS guidance for state tax treatment and withholding options.',
+    },
+    {
+      question: 'How do I apply for DC unemployment?',
+      answer: 'Use the DC Department of Employment Services and follow its current eligibility and filing instructions.',
+    },
   ]
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  }
   return (
     <main style={{ maxWidth:860, margin:'0 auto', padding:'48px 24px', fontFamily:'system-ui,sans-serif', color:'#e2e8f0', background:'#0f1629', minHeight:'100vh' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much is Washington DC unemployment in 2026?","acceptedAnswer":{"@type":"Answer","text":"Washington DC unemployment benefits (WBA) in 2026 are up to $444 per week. Benefits are calculated as 1/26 of wages in your two highest-earning base period quarters. The minimum is $50/week."}},{"@type":"Question","name":"How long do Washington DC unemployment benefits last?","acceptedAnswer":{"@type":"Answer","text":"Washington DC unemployment benefits last up to 26 weeks. The exact duration depends on your total base-period wages."}},{"@type":"Question","name":"Is Washington DC unemployment taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes, Washington DC unemployment benefits are subject to both federal and DC state income tax. You can elect voluntary withholding to avoid a tax bill at year end."}},{"@type":"Question","name":"How do I apply for Washington DC unemployment?","acceptedAnswer":{"@type":"Answer","text":"Apply online at does.dc.gov. You must have earned wages in DC during the base period and been separated through no fault of your own."}}]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <nav style={{ fontSize:13, color:'#b8c8dc', marginBottom:24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> ›{' '}
         <a href="/unemployment-calculator" style={{ color:'#b8c8dc' }}>Unemployment Calculator</a> ›{' '}
@@ -29,55 +61,64 @@ export default function Page() {
         Washington DC Unemployment Calculator 2026
       </h1>
       <p style={{ fontSize:17, color:'#94a3b8', marginBottom:20, lineHeight:1.7 }}>
-        Estimate your Washington DC weekly unemployment benefit (WBA) for 2026.
-        DC pays <strong style={{ color:'#F5C842' }}>up to $444/week</strong> for up to 26 weeks.
-        Formula: 1/26 of wages in your two highest base-period quarters.
+        This page shows a simplified arithmetic example based on wages entered
+        for a highest-paid quarter. It is not a verified DC benefit calculation;
+        official amounts, eligibility, and duration depend on current rules and your claim determination.
       </p>
 
-      <UnemployCalc maxWBA={444} minWBA={50} stateName="Washington DC" />
+      <UnemploymentIllustration stateName="Washington DC" divisor={26} />
 
       <div style={{ background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.3)', borderRadius:8, padding:'12px 16px', marginBottom:28, fontSize:14, color:'#fde68a' }}>
-        DC max WBA 2026: <strong>$444/week</strong> · Minimum: $50/week · Duration: up to 26 weeks · DC income tax applies.
+        This model does not encode verified current minimum/maximum benefits or payable weeks. Confirm current rules and your determination with DC DOES.
       </div>
 
-      <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>DC Weekly Benefit by Wage (2026)</h2>
+      <p style={{ color:'#94a3b8', fontSize:13, lineHeight:1.7, marginBottom:28 }}>
+        Check current information with the <a href="https://does.dc.gov/" target="_blank" rel="noreferrer" style={{ color:'#F5C842' }}>DC Department of Employment Services</a>.
+      </p>
+
+      <h2 style={{ fontSize:22, fontWeight:800, marginBottom:12 }}>Illustrative model outputs</h2>
+      <p style={{ color:'#94a3b8', fontSize:13, lineHeight:1.7 }}>The table assumes the same weekly wage in each of 13 weeks and divides the resulting quarter wages by 26. These are arithmetic examples only, not verified benefit amounts.</p>
       <div style={{ overflowX:'auto', marginBottom:32 }}>
         <table style={{ width:'100%', borderCollapse:'collapse', minWidth:480 }}>
           <thead><tr style={{ background:'rgba(99,102,241,0.12)' }}>
             <th style={{ padding:'10px 14px', textAlign:'left', color:'#e2e8f0' }}>Weekly Wage</th>
-            <th style={{ padding:'10px 14px', textAlign:'left', color:'#e2e8f0' }}>Annual Salary</th>
-            <th style={{ padding:'10px 14px', textAlign:'left', color:'#F5C842' }}>Est. WBA</th>
-            <th style={{ padding:'10px 14px', textAlign:'left', color:'#e2e8f0' }}>After 10% Fed Tax</th>
+            <th style={{ padding:'10px 14px', textAlign:'left', color:'#e2e8f0' }}>Annualized Wage Illustration</th>
+            <th style={{ padding:'10px 14px', textAlign:'left', color:'#F5C842' }}>Weekly Model Amount</th>
           </tr></thead>
           <tbody>
-            {rows.map(([w,a,b,t],i) => (
+            {rows.map(([w,a,b],i) => (
               <tr key={i} style={{ borderTop:'1px solid rgba(255,255,255,0.07)', background: i%2===0 ? 'transparent' : 'rgba(255,255,255,0.03)' }}>
                 <td style={{ padding:'9px 14px', color:'#e2e8f0' }}>{w}</td>
                 <td style={{ padding:'9px 14px', color:'#94a3b8' }}>{a}</td>
                 <td style={{ padding:'9px 14px', color:'#F5C842', fontWeight:700 }}>{b}</td>
-                <td style={{ padding:'9px 14px', color:'#94a3b8' }}>{t}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <h2 style={{ fontSize:20, fontWeight:800, marginBottom:10 }}>How DC Unemployment Benefits Are Calculated</h2>
+      <h2 style={{ fontSize:20, fontWeight:800, marginBottom:10 }}>About this calculation example</h2>
       <p style={{ fontSize:15, color:'#94a3b8', lineHeight:1.8, marginBottom:24 }}>
-        DC uses your two highest-earning quarters in the base period. Your WBA is 1/26 of the combined wages from those two quarters, capped at $444/week. You must have earned at least $1,300 in your highest quarter.
+        The site model divides the entered highest-quarter wages by 26. It does
+        not apply a verified current minimum or maximum, eligibility test, or
+        payable-duration rule. Use the DC Department of Employment Services
+        guidance and your official determination for current claim information.
       </p>
 
-      <h2 style={{ fontSize:20, fontWeight:800, marginBottom:10 }}>DC Unemployment Eligibility 2026</h2>
-      <p style={{ fontSize:15, color:'#94a3b8', lineHeight:1.8, marginBottom:32 }}>
-        To qualify, you must have worked in DC during the base period, earned at least $1,300 in your highest quarter, and been separated from your job through no fault of your own. Apply at <strong style={{ color:'#e2e8f0' }}>does.dc.gov</strong>.
-      </p>
+      <h2 style={{ fontSize:20, fontWeight:800, marginBottom:10 }}>Washington, DC unemployment FAQ</h2>
+      {faqItems.map(({ question, answer }) => (
+        <div key={question}>
+          <h3 style={{ fontSize:16, fontWeight:700, marginTop:18, color:'#f1f5f9' }}>{question}</h3>
+          <p style={{ fontSize:14, color:'#94a3b8', lineHeight:1.8 }}>{answer}</p>
+        </div>
+      ))}
     
       {/* AuthorBox */}
       <div style={{ display:'flex', alignItems:'center', gap:14, background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:10, padding:'14px 18px', margin:'32px 0 16px' }}>
         <div style={{ width:44, height:44, borderRadius:'50%', background:'rgba(245,200,66,0.15)', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20, flexShrink:0 }}>✍️</div>
         <div>
           <div style={{ fontSize:13, fontWeight:700, color:'#e8edf8' }}>the PrivatePaycheck Team</div>
-          <div style={{ fontSize:11, color:'rgba(255,255,255,0.4)', marginTop:2 }}>Updated June 2026</div>
+          <div style={{ fontSize:11, color:'rgba(255,255,255,0.4)', marginTop:2 }}>Updated November 2026</div>
         </div>
       </div>
       </main>

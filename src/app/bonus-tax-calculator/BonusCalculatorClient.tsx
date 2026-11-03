@@ -4,22 +4,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
 import LinkCardGrid from '@/components/LinkCardGrid'
+import CalculatorResultActions from '@/components/CalculatorResultActions';
+import { estimateFederalIncomeTax, type FilingStatus } from '@/lib/paycheck';
+import { FICA } from '@/lib/taxRates2026';
 
 // ─── Tax helpers ────────────────────────────────────────────────────────────
-
-function federalTax(income: number, filing: string): number {
-  const brackets =
-    filing === 'married'
-      ? [[24800, 0.10], [100800, 0.12], [211400, 0.22], [403550, 0.24], [512450, 0.32], [768700, 0.35], [Infinity, 0.37]]
-      : [[12400, 0.10], [50400, 0.12], [105700, 0.22], [201775, 0.24], [256225, 0.32], [640600, 0.35], [Infinity, 0.37]];
-  let tax = 0, prev = 0;
-  for (const [limit, rate] of brackets as [number, number][]) {
-    if (income <= prev) break;
-    tax += (Math.min(income, limit) - prev) * rate;
-    prev = limit;
-  }
-  return tax;
-}
 
 const STATE_TAX: Record<string, number> = {
   AL: 0.05, AK: 0, AZ: 0.025, AR: 0.047, CA: 0.093, CO: 0.044, CT: 0.065,
@@ -44,10 +33,17 @@ const STATE_NAMES: Record<string, string> = {
   WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington DC',
 };
 
-function calcBonus(bonus: number, salary: number, state: string, filing: string) {
-  const fica = Math.min(bonus, Math.max(0, 184500 - salary)) * 0.062 + bonus * 0.0145;
-  const fedWithBonus = federalTax(salary + bonus, filing);
-  const fedWithout  = federalTax(salary, filing);
+function calcBonus(bonus: number, salary: number, state: string, filing: FilingStatus) {
+  const additionalMedicareThreshold = filing === 'married' ? 250000 : FICA.additionalMedicare.threshold;
+  const additionalMedicareWages =
+    Math.max(0, salary + bonus - additionalMedicareThreshold) -
+    Math.max(0, salary - additionalMedicareThreshold);
+  const fica =
+    Math.min(bonus, Math.max(0, FICA.socialSecurity.cap - salary)) * FICA.socialSecurity.rate +
+    bonus * FICA.medicare.rate +
+    additionalMedicareWages * FICA.additionalMedicare.rate;
+  const fedWithBonus = estimateFederalIncomeTax(salary + bonus, filing);
+  const fedWithout  = estimateFederalIncomeTax(salary, filing);
   const fedTax = fedWithBonus - fedWithout;
   const stateTax = bonus * (STATE_TAX[state] ?? 0);
   const total = fedTax + stateTax + fica;
@@ -68,11 +64,26 @@ export default function BonusTaxCalculator() {
   const [bonus, setBonus]   = useState('10000');
   const [salary, setSalary] = useState('75000');
   const [state, setState]   = useState('CA');
-  const [filing, setFiling] = useState('single');
+  const [filing, setFiling] = useState<FilingStatus>('single');
+  const [hasCalculated, setHasCalculated] = useState(false);
+  const [calculationError, setCalculationError] = useState('');
 
   const res = calcBonus(Math.max(0,+(bonus||0)), Math.max(1,+(salary||1)), state, filing);
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
   const pct = (n: number) => (n * 100).toFixed(1) + '%';
+
+  function calculate() {
+    const bonusValue = Number(bonus);
+    const salaryValue = Number(salary);
+    if (!Number.isFinite(bonusValue) || bonusValue <= 0 ||
+      !Number.isFinite(salaryValue) || salaryValue <= 0) {
+      setCalculationError('Enter a bonus and annual salary greater than zero.');
+      setHasCalculated(false);
+      return;
+    }
+    setCalculationError('');
+    setHasCalculated(true);
+  }
 
   return (
     <div style={BG}>
@@ -91,11 +102,11 @@ export default function BonusTaxCalculator() {
             <br/><span style={{ color: '#F5C842' }}>Free & 100% Private</span>
           </h1>
           <p style={{ fontSize: '16px', opacity: 0.65, maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-            Find out exactly how much of your bonus you'll actually keep after federal taxes, state taxes, and FICA. No signup. No data sent anywhere.
+            Estimate how much of your bonus may remain after modeled federal tax, a state-tax approximation, and FICA. Withholding and final tax can differ.
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: hasCalculated ? '1fr 1fr' : '1fr', gap: '24px' }}>
 
           {/* INPUTS */}
           <div style={CARD}>
@@ -105,7 +116,7 @@ export default function BonusTaxCalculator() {
               <div style={LABEL}>Bonus Amount</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
-                <input type="text" inputMode="numeric" pattern="[0-9]*" value={bonus} onChange={e => setBonus(e.target.value.replace(/[^0-9]/g,""))} placeholder="10000" style={{ ...INPUT_S, paddingLeft: '28px' }} />
+                <input type="text" inputMode="numeric" pattern="[0-9]*" value={bonus} onChange={e => { setBonus(e.target.value.replace(/[^0-9]/g,"")); setHasCalculated(false); setCalculationError(''); }} placeholder="10000" style={{ ...INPUT_S, paddingLeft: '28px' }} />
               </div>
             </div>
 
@@ -113,14 +124,14 @@ export default function BonusTaxCalculator() {
               <div style={LABEL}>Annual Salary (before bonus)</div>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#4ade80', fontWeight: 700 }}>$</span>
-                <input type="text" inputMode="numeric" pattern="[0-9]*" value={salary} onChange={e => setSalary(e.target.value.replace(/[^0-9]/g,""))} placeholder="75000" style={{ ...INPUT_S, paddingLeft: '28px' }} />
+                <input type="text" inputMode="numeric" pattern="[0-9]*" value={salary} onChange={e => { setSalary(e.target.value.replace(/[^0-9]/g,"")); setHasCalculated(false); setCalculationError(''); }} placeholder="75000" style={{ ...INPUT_S, paddingLeft: '28px' }} />
               </div>
               <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginTop: '4px' }}>Used to determine your marginal tax bracket</div>
             </div>
 
             <div style={{ marginBottom: '16px' }}>
               <div style={LABEL}>State</div>
-              <select value={state} onChange={e => setState(e.target.value)} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
+              <select value={state} onChange={e => { setState(e.target.value); setHasCalculated(false); }} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 {Object.entries(STATE_NAMES).sort((a,b)=>a[1].localeCompare(b[1])).map(([k,v]) => (
                   <option key={k} value={k}>{v}</option>
                 ))}
@@ -129,30 +140,41 @@ export default function BonusTaxCalculator() {
 
             <div>
               <div style={LABEL}>Filing Status</div>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
+              <select value={filing} onChange={e => {
+                const value = e.target.value;
+                if (value === 'married' || value === 'head') setFiling(value);
+                else setFiling('single');
+                setHasCalculated(false);
+                setCalculationError('');
+              }} style={{...SELECT_S, colorScheme:'dark', color:'#fff', background:'#1e2a4a'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
+            <button type="button" onClick={calculate} style={{ width: '100%', minHeight: 46, marginTop: 18, border: 0, borderRadius: 9, background: 'linear-gradient(135deg,#F5C842,#FFD700)', color: '#091526', fontSize: 15, fontWeight: 800, cursor: 'pointer' }}>
+              Calculate My Bonus Take-Home →
+            </button>
+            {calculationError && <p role="alert" style={{ color: '#fca5a5', fontSize: 12, lineHeight: 1.5, margin: '10px 0 0' }}>{calculationError}</p>}
           </div>
 
           {/* RESULTS */}
+          {hasCalculated && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
 
             <div style={{ ...CARD, background: 'linear-gradient(135deg,rgba(74,222,128,0.15),rgba(201,168,76,0.15))', border: '1px solid rgba(74,222,128,0.3)', textAlign: 'center', padding: '28px' }}>
-              <div style={{ fontSize: '13px', opacity: 0.65, marginBottom: '6px' }}>You'll Take Home</div>
+              <div style={{ fontSize: '13px', opacity: 0.65, marginBottom: '6px' }}>Estimated After-Tax Bonus</div>
               <div style={{ fontSize: '48px', fontWeight: 900, color: '#4ade80' }}>{fmt(res.takeHome)}</div>
-              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>out of {fmt(Number(bonus))} bonus</div>
+              <div style={{ fontSize: '13px', opacity: 0.8, marginTop: '6px' }}>Estimated annual tax liability on {fmt(Number(bonus))} bonus; paycheck withholding may differ.</div>
             </div>
 
             <div style={CARD}>
               <div style={{ fontSize: '13px', fontWeight: 700, marginBottom: '14px', opacity: 0.7 }}>Tax Breakdown</div>
               {[
-                { label: 'Federal Income Tax', value: res.fedTax, color: '#f87171' },
-                { label: 'State Tax (' + STATE_NAMES[state] + ')', value: res.stateTax, color: '#fb923c' },
-                { label: 'FICA (SS + Medicare)', value: res.fica, color: '#facc15' },
-                { label: 'Total Tax', value: res.total, color: '#e879f9', bold: true },
+                { label: 'Incremental Federal Income-Tax Liability', value: res.fedTax, color: '#f87171' },
+                { label: 'State-rate approximation (' + STATE_NAMES[state] + ')', value: res.stateTax, color: '#fb923c' },
+                { label: 'Payroll Taxes (SS + Medicare)', value: res.fica, color: '#facc15' },
+                { label: 'Total Estimated Tax Liability', value: res.total, color: '#e879f9', bold: true },
               ].map(row => (
                 <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <span style={{ fontSize: '13px', opacity: row.bold ? 1 : 0.7, fontWeight: row.bold ? 700 : 400 }}>{row.label}</span>
@@ -164,15 +186,23 @@ export default function BonusTaxCalculator() {
                 <span style={{ color: '#e879f9', fontWeight: 700 }}>{pct(res.effectiveRate)}</span>
               </div>
             </div>
+            <CalculatorResultActions
+              summary={`2026 ${STATE_NAMES[state]} bonus tax estimate (${filing})\nBonus: ${fmt(Number(bonus))}\nIncremental federal income-tax liability: ${fmt(res.fedTax)}\nState-rate approximation: ${fmt(res.stateTax)}\nPayroll taxes: ${fmt(res.fica)}\nTotal estimated tax liability: ${fmt(res.total)}\nEstimated after-tax bonus: ${fmt(res.takeHome)}\nThis is an estimate; state tax is simplified and paycheck withholding may differ from final tax liability.`}
+              relatedLinks={[
+                { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
+                { href: '/w4-withholding-calculator', label: 'Adjust W-4 →' },
+              ]}
+            />
           </div>
+          )}
         </div>
 
         {/* INFO */}
         <div style={{ marginTop: '40px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px' }}>
           {[
-            { icon: '', title: 'Marginal Rate Method', body: 'Your bonus is taxed at your marginal (highest) federal bracket — not a flat rate. This calculator uses your full salary to determine the exact bracket.' },
-            { icon: '', title: 'State Taxes Vary Wildly', body: 'Texas and Florida take $0 in state tax on your bonus. California takes up to 9.3%. Know your state before negotiating.' },
-            { icon: '', title: 'Pro Tip: Defer to 401k', body: 'Contributing your bonus to a 401k reduces taxable income and can push you into a lower bracket. Consider timing.' },
+            { icon: '', title: 'Marginal Rate Method', body: 'Your bonus generally adds to ordinary income. This estimate compares modeled federal income tax before and after the bonus; employer withholding may use a different method.' },
+            { icon: '', title: 'State Taxes Vary', body: 'State income tax treatment depends on your state and income. This result uses a simplified state-rate estimate and may not match your final liability.' },
+            { icon: '', title: 'Eligible pre-tax contributions', body: 'Eligible plan contributions may affect taxable wages, subject to your employer plan, contribution limits, and payroll rules.' },
           ].map(f => (
             <div key={f.title} style={CARD}>
               <div style={{ fontSize: '24px', marginBottom: '8px' }}>{f.icon}</div>
@@ -186,10 +216,10 @@ export default function BonusTaxCalculator() {
         <div style={{ marginTop: '40px', ...CARD }}>
           <h2 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '20px' }}>Frequently Asked Questions</h2>
           {[
-            { q: 'What percentage of my bonus goes to taxes?', a: 'It depends on your salary, state, and filing status. Federal tax alone can be 22%–37% for high earners. Add state taxes (0%–13.3%) and FICA (7.65%) and many people lose 35%–50% of their bonus.' },
+            { q: 'What percentage of my bonus goes to taxes?', a: 'It depends on your annual taxable income, state, and filing status. The 22%–37% federal figures are marginal tax brackets for higher earners, not a flat tax on every bonus. State tax and payroll taxes may also apply.' },
             { q: 'Is my bonus taxed differently than my salary?', a: 'Your bonus is subject to the same federal tax brackets as your salary — just added on top. Employers may withhold at a flat 22% supplemental rate, but your actual liability is based on your full income.' },
-            { q: 'How can I reduce taxes on my bonus?', a: 'Contribute it to a 401k (up to $23,500 in 2026), fund an HSA, or ask your employer to pay it in January to spread income across two tax years.' },
-            { q: 'Does FICA apply to bonuses?', a: 'Yes. You pay 7.65% FICA on your bonus up to the Social Security wage base ($184,500 in 2026). If your salary already exceeds that, only Medicare (1.45%) applies.' },
+            { q: 'How can I reduce taxes on my bonus?', a: 'Eligible pre-tax retirement or health-plan contributions may affect taxable wages. Contribution limits and plan rules apply; ask your employer about timing and consult a qualified tax professional for your situation.' },
+            { q: 'Does FICA apply to bonuses?', a: 'Yes. Social Security tax applies until your 2026 wages reach the $184,500 wage base, and Medicare tax generally applies to all wages. An additional 0.9% Medicare tax may apply to wages above $200,000 ($250,000 for married filing jointly). This estimate includes the incremental payroll taxes modeled on your bonus; your employer’s withholding can differ.' },
           ].map(({ q, a }) => (
             <div key={q} style={{ marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
               <div style={{ fontWeight: 700, fontSize: '14px', marginBottom: '6px' }}>{q}</div>

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 import LinkCardGrid from '@/components/LinkCardGrid'
+import { estimateCaPaycheck } from '@/lib/caTax'
+import { FEDERAL_BRACKETS_SINGLE, STANDARD_DEDUCTION } from '@/lib/taxRates2026'
+import { estimatePaycheck } from '@/lib/paycheck'
+import { stateIncomeTax } from '@/lib/stateTax'
 
 export const metadata: Metadata = {
   title: 'Florida Paycheck Calculator 2026 — $75K = $61,593 Take-Home (No State Tax)',
@@ -14,31 +18,65 @@ export const metadata: Metadata = {
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Florida have state income tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Florida has no state income tax in 2026. Workers only pay federal income tax and FICA (7.65%). This makes Florida one of the top states for take-home pay in the US."}},{"@type":"Question","name":"How much is a $75,000 salary take-home in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) for a single filer after federal income tax and FICA only. No state tax is deducted."}},{"@type":"Question","name":"What taxes are taken out of a Florida paycheck?","acceptedAnswer":{"@type":"Answer","text":"Only federal taxes: federal income tax (10-22% for most earners) and FICA (Social Security 6.2% + Medicare 1.45% = 7.65% total). No state income tax, no state SDI in Florida."}},{"@type":"Question","name":"How much is $50,000 take-home pay in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"A $50,000 salary in Florida gives approximately $42,355/year take-home ($3,530/month) for a single filer after federal income tax and FICA only."}},{"@type":"Question","name":"How does Florida compare to California for take-home pay?","acceptedAnswer":{"@type":"Answer","text":"On a $75,000 salary, a Florida worker takes home ~$61,593 vs ~$57,843 in California — a difference of $3,750/year due to California state income tax of up to 9.3%."}},{"@type":"Question","name":"What is the Florida minimum wage in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Florida minimum wage is $14.00/hour in 2026, rising $1/year toward $15. At 40 hours/week, that is $29,120/year gross or approximately $25,578 take-home."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Florida freelancer?","acceptedAnswer":{"@type":"Answer","text":"Yes. Florida self-employed workers must pay quarterly estimated taxes to the IRS by April 15, June 15, September 15, and January 15. You owe self-employment tax of 15.3% plus federal income tax on net profit."}},{"@type":"Question","name":"How do I reduce taxes on my Florida paycheck?","acceptedAnswer":{"@type":"Answer","text":"Maximize pre-tax deductions: 401(k) up to $23,500, HSA up to $4,300 if eligible, FSA up to $3,300. Each dollar contributed reduces your federal taxable income and lowers FICA on 401(k) contributions."}},{"@type":"Question","name":"Is overtime taxed differently in Florida 2026?","acceptedAnswer":{"@type":"Answer","text":"Under the OBBBA 2026, the first $12,500 of overtime pay per year is exempt from federal income tax for single filers ($25,000 for married filing jointly). Florida has no state overtime tax either."}},{"@type":"Question","name":"What is the biweekly take-home for $60,000 in Florida?","acceptedAnswer":{"@type":"Answer","text":"A $60,000 salary in Florida gives approximately $1,938 biweekly net pay (26 pay periods) after federal income tax and FICA. Monthly take-home is approximately $4,199."}}]}'
-
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Florida Paycheck Calculator 2026","item":"https://www.privatepaycheck.com/florida-paycheck-calculator"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Florida Paycheck Calculator 2026: Take-Home Pay After Taxes","datePublished":"2026-01-01","dateModified":"2026-06-04","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/florida-paycheck-calculator"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Florida Paycheck Calculator 2026: Take-Home Pay After Taxes","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/florida-paycheck-calculator"}}'
 
-const salaryRows = [
-  ['$30,000','$2,500','$26,285','$1,011','12%'],
-  ['$40,000','$3,333','$34,320','$1,320','12%'],
-  ['$50,000','$4,167','$42,355','$1,629','12%'],
-  ['$60,000','$5,000','$50,390','$1,938','12%'],
-  ['$75,000','$6,250','$61,593','$2,369','22%'],
-  ['$100,000','$8,333','$79,180','$3,045','22%'],
-  ['$150,000','$12,500','$113,791','$4,377','24%'],
-  ['$200,000','$16,667','$148,927','$5,728','24%'],
-]
+const money = (amount: number) => '$' + Math.round(amount).toLocaleString('en-US')
+const floridaEstimate = (annual: number, freq = 1) =>
+  estimatePaycheck({ annual, freq, stateRatePct: 0, filing: 'single', k401Pct: 0 })
+const fl75 = floridaEstimate(75000)
+const ca75 = estimateCaPaycheck({ annual: 75000, freq: 1, filing: 'single' })
+const salaryRows = [30000, 40000, 50000, 60000, 75000, 100000, 150000, 200000].map((annual) => {
+  const taxableIncome = Math.max(0, annual - STANDARD_DEDUCTION.single)
+  const bracket = FEDERAL_BRACKETS_SINGLE.find(({ max }) => taxableIncome <= max)?.rate ?? 0.37
+  const result = floridaEstimate(annual)
+  return [money(annual), money(annual / 12), money(result.net), money(floridaEstimate(annual, 26).net), `${Math.round(bracket * 100)}%`]
+})
 
-const hourlyRows = [
-  ['$14 (min wage)','$29,120','$25,578','$984'],
-  ['$15/hr','$31,200','$27,249','$1,048'],
-  ['$20/hr','$41,600','$35,606','$1,369'],
-  ['$25/hr','$52,000','$43,962','$1,691'],
-  ['$30/hr','$62,400','$52,318','$2,012'],
-  ['$50/hr','$104,000','$81,994','$3,154'],
+const hourlyRows = [15, 20, 25, 30, 50].map((rate, index) => {
+  const annual = rate * 2080
+  const result = floridaEstimate(annual)
+  return [index === 0 ? '$15.00 (current min wage)' : `$${rate}/hr`, money(annual), money(result.net), money(floridaEstimate(annual, 26).net)]
+})
+const fl75Net = money(fl75.net)
+const fl75Monthly = money(fl75.net / 12)
+const flMinWageAnnual = 15 * 2080
+const flMinWageNet = floridaEstimate(flMinWageAnnual)
+const caDifference = money(fl75.net - ca75.net)
+const fl60Biweekly = money(floridaEstimate(60000, 26).net)
+const fl60Monthly = money(floridaEstimate(60000).net / 12)
+const comparisonValues: [string, number, number][] = [
+  ['Florida', 0, fl75.net],
+  ['Texas', 0, fl75.net],
+  ['Nevada', 0, fl75.net],
+  ['Washington', 0, fl75.net],
+  ['Georgia', stateIncomeTax('ga', 75000, 'single'), fl75.net - stateIncomeTax('ga', 75000, 'single')],
+  ['New York', stateIncomeTax('ny', 75000, 'single'), fl75.net - stateIncomeTax('ny', 75000, 'single')],
+  ['California', fl75.net - ca75.net, ca75.net],
+  ['Oregon', stateIncomeTax('or', 75000, 'single'), fl75.net - stateIncomeTax('or', 75000, 'single')],
 ]
+const comparisonRows = comparisonValues.map(([state, tax, net]): [string, string, string, string] => [
+  state,
+  money(tax),
+  money(net),
+  net === fl75.net ? '$0' : `${net < fl75.net ? '-' : ''}${money(Math.abs(net - fl75.net))}`,
+])
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Does Florida have state income tax in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'No. Florida has no state individual income tax. This estimate includes federal income tax and FICA only.' } },
+    { '@type': 'Question', name: 'How much is a $75,000 salary take-home in Florida in 2026?', acceptedAnswer: { '@type': 'Answer', text: `About ${fl75Net} per year (${fl75Monthly} per month) for a single filer using the standard deduction, before benefits or other payroll deductions.` } },
+    { '@type': 'Question', name: 'What taxes are taken out of a Florida paycheck?', acceptedAnswer: { '@type': 'Answer', text: 'Federal income tax and FICA (Social Security and Medicare) generally apply. Florida has no state individual income tax.' } },
+    { '@type': 'Question', name: 'How does Florida compare to California for take-home pay?', acceptedAnswer: { '@type': 'Answer', text: `Under these calculator assumptions, take-home on $75,000 is ${fl75Net} in Florida and ${money(ca75.net)} in California, a difference of ${caDifference} per year.` } },
+    { '@type': 'Question', name: 'What is the Florida minimum wage in 2026?', acceptedAnswer: { '@type': 'Answer', text: `Florida's minimum wage became $15 per hour on September 30, 2026. At 2,080 hours per year, that is ${money(flMinWageAnnual)} gross; estimated take-home is ${money(flMinWageNet.net)} for a single filer before benefits or other payroll deductions.` } },
+    { '@type': 'Question', name: 'Do I need to pay quarterly taxes as a Florida freelancer?', acceptedAnswer: { '@type': 'Answer', text: 'Self-employed people may need to make federal estimated tax payments. Federal deadlines and liability depend on individual circumstances; Florida has no state individual income tax.' } },
+    { '@type': 'Question', name: 'How do I reduce taxes on my Florida paycheck?', acceptedAnswer: { '@type': 'Answer', text: 'Eligible workers may reduce federal taxable income with qualifying pre-tax retirement and health-plan contributions. Contribution limits and eligibility rules apply; traditional 401(k) deferrals generally remain subject to Social Security and Medicare taxes.' } },
+    { '@type': 'Question', name: 'Is overtime taxed differently in Florida in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Eligible workers may claim a federal deduction of up to $12,500 ($25,000 for joint filers) for qualified overtime compensation, subject to eligibility and income limits. It is not an exemption from payroll taxes.' } },
+    { '@type': 'Question', name: 'What is the biweekly take-home for $60,000 in Florida?', acceptedAnswer: { '@type': 'Answer', text: `${fl60Biweekly} per biweekly pay period (26 periods) and approximately ${fl60Monthly} per month for a single filer using the standard deduction, before benefits or other payroll deductions.` } },
+  ],
+})
 
 export default function Page() {
   return (
@@ -64,7 +102,7 @@ export default function Page() {
           </h1>
 
           <div style={{fontSize:12, color:'rgba(255,255,255,0.65)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
-            <span>Last updated: June 2026</span>
+            <span>Last updated: November 2, 2026</span>
             <span>{'·'}</span>
             <span>By the PrivatePaycheck Team</span>
             <span>{'·'}</span>
@@ -74,7 +112,7 @@ export default function Page() {
 
         <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) in 2026 — because Florida has no state income tax. You only pay federal income tax and FICA (7.65%). Compared to California, Florida workers keep $3,750 more per year on the same salary.'}
+            {`A $75,000 salary in Florida gives an estimated ${fl75Net}/year take-home (${fl75Monthly}/month) for a single filer in 2026. Florida has no state individual income tax; this estimate includes federal income tax and FICA. Compared with the California estimate on the same assumptions, the difference is ${caDifference}/year.`}
           </p>
         </div>
 
@@ -82,11 +120,11 @@ export default function Page() {
           <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li>{'Florida has zero state income tax — only federal + FICA (7.65%) withheld'}</li>
-            <li>{'$75,000 salary = $61,593 take-home/year ($5,133/month) for single filer'}</li>
-            <li>{'Florida workers earn $3,750 more per year than California on same $75K salary'}</li>
-            <li>{'Florida minimum wage: $14.00/hr in 2026 (~$25,578/year take-home)'}</li>
-            <li>{'Overtime: first $12,500 exempt from federal tax under OBBBA 2026'}</li>
-            <li>{'Maximize 401(k) to $23,500 to reduce federal taxable income'}</li>
+            <li>{`$75,000 salary = estimated ${fl75Net}/year take-home (${fl75Monthly}/month) for a single filer`}</li>
+            <li>{`Estimated Florida take-home is ${caDifference}/year higher than California on the same $75,000 assumptions`}</li>
+            <li>{`Florida's minimum wage is $15/hour as of September 30, 2026 (${money(flMinWageAnnual)} gross/year at 2,080 hours)`}</li>
+            <li>{'Eligible workers may deduct up to $12,500 of qualified overtime compensation from federal taxable income ($25,000 for joint filers); payroll taxes still apply'}</li>
+            <li>{'The 2026 employee 401(k) elective deferral limit is $24,500; eligibility and plan rules apply'}</li>
           </ul>
         </div>
 
@@ -107,7 +145,7 @@ export default function Page() {
             What Is Florida Take-Home Pay by Salary in 2026?
           </h2>
           <p style={{fontSize:15, color:'rgba(255,255,255,0.8)', marginBottom:4, fontWeight:700}}>
-            {'Florida has no state income tax — your take-home is higher than 43 other states on the same salary.'}
+            {'Florida has no state individual income tax, so this estimate includes federal income tax and FICA only.'}
           </p>
           <p style={{fontSize:14, color:'rgba(255,255,255,0.7)', marginBottom:16, lineHeight:1.8}}>
             {'The table below shows annual salary, monthly gross, annual take-home, and biweekly net for a single filer claiming the standard deduction in Florida 2026. Only federal income tax and FICA are deducted.'}
@@ -143,7 +181,7 @@ export default function Page() {
             How Is a Florida Paycheck Calculated in 2026?
           </h2>
           <p style={{fontSize:15, color:'rgba(255,255,255,0.8)', marginBottom:8, fontWeight:700}}>
-            {'Florida paycheck = Gross Pay minus Federal Income Tax minus FICA. No state tax is ever deducted.'}
+            {'Estimated Florida paycheck = gross pay minus federal income tax and FICA. Florida has no state individual income tax.'}
           </p>
           <p style={{fontSize:14, color:'rgba(255,255,255,0.7)', marginBottom:16, lineHeight:1.8}}>
             {'Here is the step-by-step calculation for a $75,000 Florida salary in 2026:'}
@@ -154,7 +192,7 @@ export default function Page() {
             <li>{'Federal income tax on $58,900: $1,240 (10%) + $4,560 (12%) + $1,870 (22%) = $7,670'}</li>
             <li>{'FICA: $75,000 x 7.65% = $5,738'}</li>
             <li>{'Florida state tax: $0'}</li>
-            <li>{'Take-home: $75,000 - $7,670 - $5,738 = $61,593'}</li>
+            <li>{'Take-home: $75,000 - $7,670 - $5,737.50 = $61,592.50 (rounded to $61,593)'}</li>
           </ol>
 
           <div style={{overflowX:'auto', marginBottom:24, borderRadius:8, border:'1px solid rgba(255,255,255,0.08)'}}>
@@ -168,12 +206,12 @@ export default function Page() {
               </thead>
               <tbody>
                 {[
-                  ['Federal Income Tax','10-22% (marginal)','~$7,670'],
-                  ['Social Security','6.2% on first $184,500','$4,650'],
-                  ['Medicare','1.45%','$1,088'],
-                  ['Florida State Tax','0%','$0'],
-                  ['Total Deductions','','~$13,408'],
-                  ['Take-Home','','~$61,593'],
+                  ['Federal Income Tax','2026 progressive brackets',money(fl75.fed)],
+                  ['Social Security','6.2% on first $184,500',money(fl75.ss)],
+                  ['Medicare','1.45%',money(fl75.med)],
+                  ['Florida State Income Tax','None','$0'],
+                  ['Total Deductions','',money(fl75.gross - fl75.net)],
+                  ['Estimated Take-Home','',money(fl75.net)],
                 ].map(([d,r,a],i) => (
                   <tr key={d} style={{borderBottom:'1px solid rgba(255,255,255,0.05)', background: i >= 4 ? 'rgba(245,200,66,0.08)' : 'transparent'}}>
                     <td style={{padding:'10px 14px', color: i >= 4 ? '#F5C842' : '#e8edf8', fontWeight: i >= 4 ? 700 : 400, borderTop: i === 4 ? '1px solid rgba(245,200,66,0.3)' : 'none'}}>{d}</td>
@@ -195,32 +233,23 @@ export default function Page() {
             How Does Florida Compare to Other States for Take-Home Pay?
           </h2>
           <p style={{fontSize:15, color:'rgba(255,255,255,0.8)', marginBottom:8, fontWeight:700}}>
-            {'On a $75,000 salary, Florida workers keep $3,750 more per year than California workers.'}
+            {`On a $75,000 salary, the Florida estimate is ${caDifference} higher per year than the California estimate with the same federal assumptions.`}
           </p>
           <div style={{overflowX:'auto', marginBottom:24, borderRadius:8, border:'1px solid rgba(255,255,255,0.08)'}}>
             <table style={{width:'100%', borderCollapse:'collapse', minWidth:420}}>
               <thead>
                 <tr style={{background:'rgba(245,200,66,0.1)'}}>
                   <th style={{padding:'10px 14px', textAlign:'left', color:'#F5C842', fontWeight:700, fontSize:13}}>State</th>
-                  <th style={{padding:'10px 14px', textAlign:'left', color:'#F5C842', fontWeight:700, fontSize:13}}>State Tax Rate</th>
-                  <th style={{padding:'10px 14px', textAlign:'left', color:'#F5C842', fontWeight:700, fontSize:13}}>Take-Home on $75K</th>
+                  <th style={{padding:'10px 14px', textAlign:'left', color:'#F5C842', fontWeight:700, fontSize:13}}>State Income Tax / SDI Estimate</th>
+                  <th style={{padding:'10px 14px', textAlign:'left', color:'#F5C842', fontWeight:700, fontSize:13}}>Estimated Take-Home on $75K</th>
                   <th style={{padding:'10px 14px', textAlign:'left', color:'#F5C842', fontWeight:700, fontSize:13}}>vs Florida</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  ['Florida','0%','~$61,593','—'],
-                  ['Texas','0%','~$61,593','$0'],
-                  ['Nevada','0%','~$61,593','$0'],
-                  ['Washington','0%','~$61,593','$0'],
-                  ['Georgia','5.49%','~$53,200','-$4,200'],
-                  ['New York','4-10.9%','~$50,800','-$6,600'],
-                  ['California','1-9.3%','~$57,843','-$3,750'],
-                  ['Oregon','8.75-9.9%','~$48,900','-$8,500'],
-                ].map(([st,rate,net,diff],i) => (
+                {comparisonRows.map(([st,tax,net,diff],i) => (
                   <tr key={st} style={{borderBottom:'1px solid rgba(255,255,255,0.05)', background: i === 0 ? 'rgba(245,200,66,0.08)' : 'transparent', borderTop: i === 0 ? '1px solid rgba(245,200,66,0.3)' : 'none'}}>
                     <td style={{padding:'10px 14px', fontWeight: i===0 ? 800 : 600, color: i===0 ? '#F5C842' : '#e8edf8'}}>{st}</td>
-                    <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.6)', fontSize:13}}>{rate}</td>
+                    <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.6)', fontSize:13}}>{tax}</td>
                     <td style={{padding:'10px 14px', color: i===0 ? '#F5C842' : '#4ade80', fontWeight:700}}>{net}</td>
                     <td style={{padding:'10px 14px', color: diff.startsWith('-') ? '#f87171' : i===0 ? '#F5C842' : '#4ade80', fontWeight:600}}>{diff}</td>
                   </tr>
@@ -231,10 +260,10 @@ export default function Page() {
 
           <ul style={{margin:'0 0 24px 0', padding:'0 0 0 20px', fontSize:14, lineHeight:2, color:'rgba(255,255,255,0.8)'}}>
             <li>{'Florida, Texas, Nevada, and Washington all have zero state income tax'}</li>
-            <li>{'California costs workers $3,750/year more than Florida on a $75K salary'}</li>
-            <li>{'Oregon and New York have the highest effective state tax burden'}</li>
+            <li>{`California state income tax and SDI increase estimated deductions by ${caDifference}/year compared with Florida on a $75,000 salary`}</li>
+            <li>{'Oregon and New York state income taxes can add to paycheck deductions; local taxes are not included here'}</li>
             <li>{'Florida also has no state disability insurance (unlike CA SDI at 1.3%)'}</li>
-            <li>{'No local city income taxes in Florida (unlike NYC which adds up to 3.876%)'}</li>
+            <li>{'Florida has no local individual income tax; some cities elsewhere, including New York City, levy local income taxes'}</li>
           </ul>
         </section>
 
@@ -243,7 +272,7 @@ export default function Page() {
             What Is Florida Hourly Wage Take-Home Pay in 2026?
           </h2>
           <p style={{fontSize:15, color:'rgba(255,255,255,0.8)', marginBottom:8, fontWeight:700}}>
-            {'Florida minimum wage is $14.00/hr in 2026 — take-home is approximately $11.60/hr after federal tax and FICA.'}
+            {`Florida's minimum wage is $15.00/hour as of September 30, 2026. At 2,080 hours, estimated take-home is ${money(flMinWageNet.net)} per year (${money(flMinWageNet.net / 2080)}/hour) for a single filer, before benefits or other payroll deductions.`}
           </p>
           <div style={{overflowX:'auto', marginBottom:24, borderRadius:8, border:'1px solid rgba(255,255,255,0.08)'}}>
             <table style={{width:'100%', borderCollapse:'collapse', minWidth:420}}>
@@ -277,31 +306,31 @@ export default function Page() {
             {'Even without state tax, Florida workers can reduce federal tax with these pre-tax strategies:'}
           </p>
           <ul style={{margin:'0 0 16px 0', padding:'0 0 0 20px', fontSize:14, lineHeight:2, color:'rgba(255,255,255,0.8)'}}>
-            <li>{'401(k): contribute up to $23,500 in 2026 — reduces federal taxable income dollar-for-dollar'}</li>
-            <li>{'HSA: contribute up to $4,300 (self) or $8,550 (family) — triple tax advantage'}</li>
-            <li>{'FSA: up to $3,300 for healthcare expenses — pre-tax reduction'}</li>
-            <li>{'Traditional IRA: up to $7,000 ($8,000 if 50+) if eligible — reduces taxable income'}</li>
-            <li>{'Overtime: first $12,500 exempt from federal income tax under OBBBA 2026'}</li>
-            <li>{'Tips: up to $25,000 in tips exempt from federal income tax under OBBBA 2026'}</li>
+            <li>{'401(k): the 2026 employee elective deferral limit is $24,500; traditional deferrals generally remain subject to Social Security and Medicare taxes'}</li>
+            <li>{'HSA: 2026 contribution limits are $4,400 for self-only coverage and $8,750 for family coverage, subject to eligibility'}</li>
+            <li>{'Health FSA: the 2026 salary-reduction limit is $3,400; plan terms and eligibility apply'}</li>
+            <li>{'Traditional IRA: the 2026 contribution limit is $7,500, plus a $1,100 catch-up limit for people age 50 or older; deductibility rules apply'}</li>
+            <li>{'Qualified overtime compensation may be eligible for a federal deduction up to $12,500 ($25,000 for joint filers), subject to income limits; FICA still applies'}</li>
+            <li>{'Qualified tips may be eligible for a federal deduction up to $25,000, subject to income limits; FICA still applies'}</li>
           </ul>
 
           <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
             <p style={{margin:0, fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)'}}>
-              {'Example: A Florida worker earning $75,000 who maxes out a 401(k) at $23,500 reduces taxable income to $51,500. Federal tax drops from ~$7,670 to ~$4,000 — saving $3,670/year in taxes while building retirement savings.'}
+              {'Example: A single filer earning $75,000 with the standard deduction has estimated federal income tax of $7,670 before a 401(k) deferral. A full $24,500 traditional 401(k) deferral lowers estimated federal income tax to $3,880, a $3,790 reduction. The deferral remains subject to Social Security and Medicare taxes.'}
             </p>
           </div>
 
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))', gap:12, marginBottom:24}}>
             {[
-              {city:'Miami', avg:'$62,000', net:'~$48,600/yr'},
-              {city:'Orlando', avg:'$55,000', net:'~$43,500/yr'},
-              {city:'Tampa', avg:'$58,000', net:'~$45,700/yr'},
-              {city:'Jacksonville', avg:'$52,000', net:'~$41,400/yr'},
+              {city:'Miami', annual:62000},
+              {city:'Orlando', annual:55000},
+              {city:'Tampa', annual:58000},
+              {city:'Jacksonville', annual:52000},
             ].map(c => (
               <div key={c.city} style={{background:'rgba(245,200,66,0.06)', border:'1px solid rgba(245,200,66,0.15)', borderRadius:8, padding:'14px 16px'}}>
                 <div style={{fontWeight:800, color:'#e8edf8', marginBottom:4}}>{c.city}</div>
-                <div style={{fontSize:13, color:'rgba(255,255,255,0.6)'}}>{'Avg salary: '}{c.avg}</div>
-                <div style={{fontSize:15, fontWeight:700, color:'#4ade80', margin:'6px 0'}}>{c.net}</div>
+                <div style={{fontSize:13, color:'rgba(255,255,255,0.6)'}}>{'Illustrative salary: '}{money(c.annual)}</div>
+                <div style={{fontSize:15, fontWeight:700, color:'#4ade80', margin:'6px 0'}}>{'Estimated take-home: '}{money(floridaEstimate(c.annual).net)}{'/yr'}</div>
               </div>
             ))}
           </div>
@@ -312,17 +341,29 @@ export default function Page() {
             Florida Paycheck Calculator FAQ 2026
           </h2>
           {[
-            ['Does Florida have state income tax in 2026?','No. Florida has no state income tax. Workers only pay federal income tax and FICA (7.65%). This makes Florida one of the top 7 states for take-home pay.'],
-            ['How much is a $75,000 salary take-home in Florida 2026?','A $75,000 salary in Florida gives approximately $61,593/year take-home ($5,133/month) for a single filer after federal income tax and FICA only.'],
-            ['What taxes are deducted from a Florida paycheck?','Federal income tax (10-22% for most earners) and FICA (6.2% Social Security + 1.45% Medicare = 7.65% total). No state income tax, no state SDI.'],
-            ['How does Florida compare to California take-home pay?','On a $75,000 salary, Florida workers take home ~$61,593 vs ~$57,843 in California — $3,750 more per year due to no state tax.'],
-            ['What is the Florida minimum wage in 2026?','$14.00 per hour in 2026, rising $1/year toward $15. At 40 hours/week that is $29,120/year gross or approximately $25,578 take-home.'],
+            ['Does Florida have state income tax in 2026?','No. Florida has no state individual income tax. This estimate includes federal income tax and FICA only.'],
+            ['How much is a $75,000 salary take-home in Florida 2026?',`About ${fl75Net}/year (${fl75Monthly}/month) for a single filer using the standard deduction, before benefits or other payroll deductions.`],
+            ['What taxes are deducted from a Florida paycheck?','Federal income tax under progressive 2026 brackets (10%-37%) and FICA (6.2% Social Security plus 1.45% Medicare, subject to applicable limits). Florida has no state individual income tax.'],
+            ['How does Florida compare to California take-home pay?',`Under these calculator assumptions, take-home on $75,000 is ${fl75Net} in Florida and ${money(ca75.net)} in California, a difference of ${caDifference}/year.`],
+            ['What is the Florida minimum wage in 2026?',`Florida's minimum wage became $15 per hour on September 30, 2026. At 2,080 hours per year, that is ${money(flMinWageAnnual)} gross; estimated take-home is ${money(flMinWageNet.net)} for a single filer before benefits or other payroll deductions.`],
           ].map(([q,a]) => (
             <div key={q as string} style={{borderBottom:'1px solid rgba(255,255,255,0.08)', padding:'16px 0'}}>
               <div style={{fontWeight:700, color:'#e8edf8', marginBottom:6, fontSize:15}}>{q}</div>
               <div style={{color:'rgba(255,255,255,0.75)', fontSize:14, lineHeight:1.8}}>{a}</div>
             </div>
           ))}
+        </section>
+
+        <section aria-label="Sources and assumptions" style={{marginTop:32, color:'rgba(255,255,255,0.65)', fontSize:13, lineHeight:1.8}}>
+          <h2 style={{fontSize:18, color:'#e8edf8'}}>Sources and assumptions</h2>
+          <p>Annualized estimates for a single filer using the 2026 federal standard deduction and tax brackets, Social Security wage base, and Medicare rates. Florida has no state individual income tax. Cross-state comparisons are estimates and may exclude state-specific adjustments and local taxes. Estimates exclude benefits, tax credits, and individual withholding elections. Minimum-wage annualization assumes 2,080 hours.</p>
+          <ul>
+            <li><a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noreferrer" style={{color:'#F5C842'}}>IRS Revenue Procedure 2025-32 (2026 federal tax adjustments)</a></li>
+            <li><a href="https://www.irs.gov/publications/p15" target="_blank" rel="noreferrer" style={{color:'#F5C842'}}>IRS Publication 15 (2026 payroll tax rates)</a></li>
+            <li><a href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500" target="_blank" rel="noreferrer" style={{color:'#F5C842'}}>IRS 2026 retirement contribution limits</a></li>
+            <li><a href="https://www.ftb.ca.gov/forms/2026/2026-540-tax-rate-schedules.pdf" target="_blank" rel="noreferrer" style={{color:'#F5C842'}}>California FTB 2026 tax rate schedules</a></li>
+            <li><a href="https://www.dol.gov/agencies/whd/minimum-wage/state" target="_blank" rel="noreferrer" style={{color:'#F5C842'}}>U.S. Department of Labor state minimum-wage table</a></li>
+          </ul>
         </section>
 
         <div style={{marginTop:32, paddingTop:24, borderTop:"1px solid rgba(255,255,255,0.08)"}}>

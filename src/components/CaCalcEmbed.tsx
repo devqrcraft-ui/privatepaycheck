@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { estimateCaPaycheck } from '@/lib/caTax';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
 
 
 function fmt(n: number) {
@@ -11,7 +12,6 @@ export default function CaCalcEmbed() {
   const [salary, setSalary] = useState('');
   const [period, setPeriod] = useState('26');
   const [filing, setFiling] = useState('single');
-  const [copied, setCopied] = useState(false);
   const didInit = useRef(false);
   const [result, setResult] = useState<null|{
     gross:number; fed:number; ss:number; med:number;
@@ -27,10 +27,6 @@ export default function CaCalcEmbed() {
     const fed = r.fed * f, ss = r.ss * f, med = r.med * f, caState = r.caState * f, caSDI = r.caSDI * f;
     setResult({ gross, fed:fed/f, ss:ss/f, med:med/f,
       caState:caState/f, caSDI:caSDI/f, net, netYear, pct });
-    try {
-      const params = new URLSearchParams({ salary: sal, period: per, filing: fil });
-      window.history.replaceState(null, '', '?' + params.toString());
-    } catch(e) {}
   }
 
   function calculate() {
@@ -40,27 +36,27 @@ export default function CaCalcEmbed() {
   useEffect(() => {
     if (didInit.current) return;
     didInit.current = true;
-    try {
-      const p = new URLSearchParams(window.location.search);
-      const s = p.get('salary');
-      const per = p.get('period');
-      const fil = p.get('filing');
-      if (s && parseFloat(s) > 0) {
-        const resolvedPer = per || '26';
-        const resolvedFil = fil || 'single';
-        setSalary(s);
-        if (per) setPeriod(per);
-        if (fil) setFiling(fil);
-        calculateWithValues(s, resolvedPer, resolvedFil);
-      }
-    } catch(e) {}
+    const params = new URLSearchParams(window.location.search);
+    const salaryFromLink = params.get('salary');
+    const periodFromLink = params.get('period');
+    const filingFromLink = params.get('filing');
+    const hadSensitiveParams = ['salary', 'period', 'filing'].some((key) => params.has(key));
+    if (hadSensitiveParams) {
+      params.delete('salary');
+      params.delete('period');
+      params.delete('filing');
+      const query = params.toString();
+      window.history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`);
+    }
+    if (salaryFromLink && parseFloat(salaryFromLink) > 0) {
+      const resolvedPeriod = periodFromLink || '26';
+      const resolvedFiling = filingFromLink || 'single';
+      setSalary(salaryFromLink);
+      if (periodFromLink) setPeriod(periodFromLink);
+      if (filingFromLink) setFiling(filingFromLink);
+      calculateWithValues(salaryFromLink, resolvedPeriod, resolvedFiling);
+    }
   }, []);
-
-  function handleShare() {
-    navigator.clipboard.writeText(window.location.href).catch(function() {});
-    setCopied(true);
-    setTimeout(function() { setCopied(false); }, 2000);
-  }
 
   const inp: React.CSSProperties = {
     width:'100%', padding:'10px 14px', borderRadius:8,
@@ -157,15 +153,13 @@ export default function CaCalcEmbed() {
             <span style={{ color:'#64748b' }}>Annual take-home</span>
             <span style={{ color:'#F5C842', fontWeight:700 }}>{fmt(result.netYear)}/yr · {result.pct.toFixed(1)}% total tax</span>
           </div>
-          <button onClick={handleShare} style={{
-            marginTop:12, width:'100%', padding:'10px 0', borderRadius:8,
-            border:'1px solid rgba(245,200,66,0.4)',
-            background: copied ? 'rgba(74,222,128,0.1)' : 'rgba(245,200,66,0.08)',
-            color: copied ? '#4ade80' : '#F5C842',
-            fontWeight:700, fontSize:13, cursor:'pointer'
-          }}>
-            {copied ? 'Link copied!' : 'Share my result'}
-          </button>
+          <CalculatorResultActions
+            summary={`2026 California paycheck estimate (${filing}, ${period} pay periods/year)\nGross pay per period: ${fmt(result.gross)}\nFederal tax: ${fmt(result.fed)}\nSocial Security: ${fmt(result.ss)}\nMedicare: ${fmt(result.med)}\nCalifornia income tax: ${fmt(result.caState)}\nCalifornia SDI: ${fmt(result.caSDI)}\nEstimated take-home per period: ${fmt(result.net)}\nThis is an estimate; local taxes, credits, and individual withholding may differ.`}
+            relatedLinks={[
+              { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
+              { href: '/w4-withholding-calculator', label: 'Adjust W-4 →' },
+            ]}
+          />
         </div>
       )}
 
