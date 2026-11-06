@@ -3,7 +3,7 @@ import FederalPaycheckCalculatorClient from './client';
 
 export const metadata: Metadata = {
   title: 'Federal Paycheck Calculator 2026 — Federal Tax + FICA Withholding',
-  description: 'Calculate exact federal income tax and FICA withholding for 2026. Includes overtime and tip deductions from the One Big Beautiful Bill. No data stored.',
+  description: 'Estimate federal income tax and FICA on 2026 paycheck wages. Includes modeled overtime and tip deductions. No data stored.',
   alternates: { canonical: 'https://www.privatepaycheck.com/federal-paycheck-calculator' },
   authors: [{ name: 'the PrivatePaycheck Team' }],
 };

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?',
-  description: 'California, Alaska, Nevada, and Colorado have stricter overtime rules than federal 40-hour standard. Know your rights. Free 2026 guide.',
+  description: 'Compare federal overtime basics with selected state daily-overtime rules. Exemptions and state requirements vary; check current agency guidance.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state' },
 };
 
@@ -12,8 +12,8 @@ const OT_STATES = [
   { state:'California', slug:'california', rule:'OT after 8 hrs/day OR 40 hrs/week. Double time after 12 hrs/day or 8 hrs on 7th consecutive day.', special:true },
   { state:'Alaska',     slug:'alaska',     rule:'OT after 8 hrs/day OR 40 hrs/week.', special:true },
   { state:'Nevada',     slug:'nevada',     rule:'OT after 8 hrs/day for employees earning less than 1.5x minimum wage, otherwise 40 hrs/week.', special:true },
-  { state:'Colorado',   slug:'colorado',   rule:'OT after 12 hrs/day OR 40 hrs/week, whichever is greater.', special:true },
-  { state:'All Others', slug:'',           rule:'Federal FLSA standard: OT only after 40 hours in a workweek. No daily OT requirement.', special:false },
+  { state:'Colorado',   slug:'colorado',   rule:'Overtime may be due after 12 hours in a workday, 12 consecutive hours, or 40 hours in a workweek, whichever results in greater pay.', special:true },
+  { state:'All Others', slug:'',           rule:'The FLSA generally requires overtime for covered, nonexempt employees after 40 hours in a workweek. State and occupation-specific rules may add protections.', special:false },
 ];
 
 export default function Post() {
@@ -24,7 +24,7 @@ export default function Post() {
         '@context':'https://schema.org','@type':'BlogPosting',
         headline:'Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?',
         url:'https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state',
-        datePublished:'2026-02-14', author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },'reviewedBy':{'@type':'Organization','name':'the PrivatePaycheck Team','url':'https://www.privatepaycheck.com'},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
+        datePublished:'2026-02-14', dateModified:'2026-11-06', author: { '@type': 'Organization', name: 'the PrivatePaycheck Team', url: 'https://www.privatepaycheck.com' },'reviewedBy':{'@type':'Organization','name':'the PrivatePaycheck Team','url':'https://www.privatepaycheck.com'},'publisher':{'@type':'Organization','name':'PrivatePaycheck','url':'https://www.privatepaycheck.com'},
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?","item":"https://www.privatepaycheck.com/blog/overtime-pay-rules-by-state"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -34,17 +34,17 @@ export default function Post() {
       {
         '@type': 'Question',
         name: 'When does overtime pay start?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Federal law (FLSA) requires 1.5x overtime after 40 hours/week. California also requires daily overtime after 8 hours and double time after 12 hours. Alaska and Nevada have similar daily rules.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The FLSA generally requires 1.5x overtime for covered, nonexempt employees after 40 hours in a workweek. Some states, including California, Alaska, and Nevada, also have daily overtime rules. Coverage and exemptions matter.' },
       },
       {
         '@type': 'Question',
         name: 'Is overtime pay mandatory in all states?',
-        acceptedAnswer: { '@type': 'Answer', text: 'All states must follow the federal 40-hour weekly rule at minimum. Some states (CA, AK, NV) have stricter daily overtime rules. Some states also have higher overtime thresholds for certain industries.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The federal FLSA sets a baseline for covered, nonexempt employees. State law may provide additional protections, and exemptions and coverage rules vary by worker and industry.' },
       },
       {
         '@type': 'Question',
         name: 'How does the 2026 overtime tax deduction work?',
-        acceptedAnswer: { '@type': 'Answer', text: 'The No Tax on Overtime deduction (2025-2028) lets workers deduct up to $12,500 in overtime premium pay ($25,000 on a joint return) from federal taxable income. You still pay FICA on overtime. Claim the deduction when filing your federal tax return.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'The temporary federal deduction (generally for tax years 2025–2028) applies to qualified overtime compensation, subject to annual caps and income phase-outs. It does not make all overtime wages tax-free, and Social Security and Medicare taxes still apply.' },
       }
         ],
       })}} />
@@ -56,31 +56,30 @@ export default function Post() {
         <h1 style={{ fontSize:'clamp(22px,4vw,38px)', fontWeight:900, margin:'0 0 16px', lineHeight:1.25 }}>Overtime Pay Rules by State 2026 — Which States Pay More Than Federal Law?</h1>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
-          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Federal overtime rule: 1.5× regular rate for hours over 40/week. Under OBBBA 2026, overtime pay has a new <strong style={{color:"#fff"}}>$12,500 federal tax deduction</strong> ($25,000 MFJ). Some states (CA, CO, AK) have daily overtime rules. California requires OT after 8 hours/day.
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> The FLSA generally requires overtime for covered, nonexempt employees after 40 hours in a workweek. Some states also require daily overtime. A separate federal deduction may apply to qualified overtime compensation, subject to limits; it does not make all overtime pay tax-free.
         </p>
       </div>
       <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
         <p style={{ fontSize: 14, fontWeight: 800, color: '#F5C842', marginBottom: 12, marginTop: 0 }}>Key Takeaways</p>
         <ul style={{ margin: 0, paddingLeft: 20, color: '#c8d0e7', fontSize: 14, lineHeight: 1.85 }}>
-          <li>Federal effective tax rate depends on your total gross income and filing status</li>
-          <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
-          <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
-          <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
-          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — reduces federal taxable income dollar-for-dollar</li>
-          <li>Use the free calculator above for your exact state + filing status breakdown</li>
+          <li>Overtime eligibility depends on coverage, exemption status, hours, and applicable state law.</li>
+          <li>Federal overtime generally uses a workweek, not a biweekly pay period.</li>
+          <li>Some states add daily overtime rules and may have special thresholds.</li>
+          <li>Tax deductions for qualified overtime do not remove payroll taxes or determine wage-law entitlement.</li>
+          <li>Use state agency guidance for a specific employment situation; calculator outputs are estimates.</li>
         </ul>
       </div>
-        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>February 14, 2026 · 5 min read</p>
+        <p style={{ opacity: 0.8, fontSize:'13px', marginBottom:'32px' }}>Updated November 6, 2026 · 5 min read</p>
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
-          <p>Federal law (FLSA) requires overtime pay at 1.5x your regular rate for any hours over 40 in a single workweek. But four states go further — requiring daily overtime, double time, or both. If you work in one of these states, you may be owed more than you think.</p>
+          <p>The FLSA generally requires overtime pay at 1.5 times the regular rate for covered, nonexempt employees after 40 hours in a workweek. Some states add daily overtime or double-time rules. Whether a rule applies depends on coverage, exemptions, occupation, and the facts of the work arrangement.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Federal Overtime Basics (FLSA)</h2>
           <ul style={{ paddingLeft:'20px' }}>
             <li style={{ marginBottom:'8px' }}>Overtime kicks in after <strong>40 hours in a single workweek</strong> (not 8 hours/day, not biweekly)</li>
             <li style={{ marginBottom:'8px' }}>Rate: <strong>1.5× your regular hourly rate</strong></li>
-            <li style={{ marginBottom:'8px' }}>Applies to non-exempt employees. Most hourly workers are non-exempt.</li>
-            <li style={{ marginBottom:'8px' }}>Salaried workers earning under <strong>$684/week ($35,568/year)</strong> are also entitled to OT</li>
+            <li style={{ marginBottom:'8px' }}>Applies to covered, nonexempt employees; job title or pay method alone does not determine exemption.</li>
+            <li style={{ marginBottom:'8px' }}>Salary-level requirements can change and may differ by state; check current federal and state guidance.</li>
             <li style={{ marginBottom:'8px' }}>Employers cannot average hours across two weeks — each week is calculated separately</li>
           </ul>
 
@@ -105,17 +104,16 @@ export default function Post() {
 
         <div style={{ fontSize:'15px', lineHeight:1.9, opacity:0.85 }}>
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>How Overtime Affects Your Taxes</h2>
-          <p>Overtime income is taxed at your <strong>marginal tax rate</strong> — not a special OT rate. If your regular income puts you in the 22% bracket, your overtime earnings are also taxed at 22% (or higher if the extra income pushes you into a new bracket).</p>
-          <p>For example: a single filer earns $50,000 in base pay. After the $16,100 standard deduction, taxable income is about $33,900, which is in the 12% bracket. Overtime is taxed at your marginal rate: taxable income above $50,400 is taxed at 22% and above $105,700 at 24%. In practice, overtime stays in the 12% bracket until total pay reaches roughly $66,500.</p>
+          <p>Overtime wages are generally subject to the same federal marginal tax rates as other wages. Additional income may push only the dollars above a bracket threshold into the next marginal bracket. A separate deduction may apply to qualified overtime compensation, subject to eligibility limits.</p>
 
           <h2 style={{ fontSize:'22px', fontWeight:800, margin:'32px 0 12px', color:'white' }}>Exempt vs. Non-Exempt Employees</h2>
-          <p>Not all workers qualify for overtime. Employees may be exempt if they are paid on a salary basis (over $684/week) AND their primary duties are executive, administrative, or professional in nature. Common exempt roles: managers, lawyers, doctors, teachers, outside sales reps, and most computer professionals earning over $27.63/hr.</p>
+          <p>Some employees may be exempt when they meet the applicable salary-basis, salary-level, and duties tests. Thresholds and exemptions can vary by federal rule, state law, and occupation; do not rely on an outdated salary figure or job title alone.</p>
           <p>Being paid a salary does not automatically make you exempt — the duties test must also be met. Misclassification is common, and employees who should have received overtime can sue for back pay plus penalties.</p>
         </div>
 
         <div style={{ marginTop:'32px', background:'rgba(251,191,36,0.06)', border:'1px solid rgba(251,191,36,0.15)', borderRadius:'12px', padding:'20px', textAlign:'center' }}>
           <h3 style={{ fontWeight:800, marginBottom:'8px', color:'#fbbf24' }}>Calculate Your OT Pay by State</h3>
-          <p style={{ opacity:0.65, fontSize:'14px', marginBottom:'16px' }}>Free overtime calculator for all 50 states — see exactly what you are owed.</p>
+          <p style={{ opacity:0.82, fontSize:'15px', marginBottom:'16px' }}>Explore an overtime estimate. Actual eligibility and amounts depend on the law and facts of your work.</p>
           <Link href="/overtime-calculator" style={{ display:'inline-block', background:'linear-gradient(135deg,#fbbf24,#f59e0b)', color:'#1c1003', fontWeight:800, padding:'11px 24px', borderRadius:'9px', textDecoration:'none', fontSize:'14px' }}>Open Overtime Calculator →</Link>
         </div>
 

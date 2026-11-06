@@ -2,17 +2,24 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '2026 Tax Changes — Complete Guide to New Deductions',
-  description: 'Full guide to 2026 tax law changes: no tax on overtime ($12,500), no tax on tips ($25,000), senior $6,000 deduction, Trump Account. Calculate your exact savings.',
+  title: '2026 Federal Tax Changes — Deductions and Trump Accounts',
+  description: 'Guide to 2026 federal tax deductions for qualified overtime, tips, and older taxpayers, plus current Trump Account eligibility and contribution rules.',
   alternates: { canonical: 'https://www.privatepaycheck.com/2026-tax-changes' },
+  openGraph: {
+    title: '2026 Federal Tax Changes — Deductions and Trump Accounts',
+    description: 'Eligibility, limits, and current IRS rules for selected 2026 federal deductions and Trump Accounts.',
+    url: 'https://www.privatepaycheck.com/2026-tax-changes',
+    siteName: 'PrivatePaycheck',
+    type: 'website',
+  },
   authors: [{ name: 'the PrivatePaycheck Team' }],
 };
 
-const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the new tax changes for 2026?","acceptedAnswer":{"@type":"Answer","text":"The One Big Beautiful Bill signed in 2025 introduced four major changes effective 2025–2028: (1) no federal income tax on up to $12,500 of overtime pay for W-2 employees, (2) no federal income tax on up to $25,000 of tip income for tipped workers, (3) a $6,000 additional standard deduction for taxpayers age 65+ (phasing out above $75,000), and (4) Trump Accounts — government-seeded savings accounts for children under 8."}},{"@type":"Question","name":"Does the no-tax-on-overtime apply to 1099 workers?","acceptedAnswer":{"@type":"Answer","text":"No. The overtime deduction applies only to W-2 employees earning overtime as defined by the Fair Labor Standards Act. Self-employed workers, independent contractors, and 1099 workers do not qualify."}},{"@type":"Question","name":"How much can I save with the no-tax-on-overtime deduction?","acceptedAnswer":{"@type":"Answer","text":"The maximum federal tax savings depends on your bracket. At the 22% bracket: $12,500 deduction × 22% = $2,750 saved. At 24%: $3,000 saved. At 12%: $1,500 saved. FICA taxes are not reduced by this deduction."}},{"@type":"Question","name":"Who qualifies for the new $6,000 senior deduction?","acceptedAnswer":{"@type":"Answer","text":"Taxpayers age 65 or older with adjusted gross income below $75,000 (single) or $150,000 (married filing jointly) qualify for the full $6,000 additional deduction. The deduction phases out above these thresholds."}},{"@type":"Question","name":"Are these 2026 tax changes permanent?","acceptedAnswer":{"@type":"Answer","text":"No. The overtime deduction, tip deduction, and senior deduction are currently authorized for tax years 2025 through 2028. Congress would need to extend them beyond 2028. The Trump Account program has a longer authorization period."}}]};
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What federal tax changes apply in 2026?","acceptedAnswer":{"@type":"Answer","text":"For 2026, the law provides deductions for qualified overtime compensation and qualified tips, plus an additional deduction for eligible taxpayers age 65 or older. These deductions have separate requirements and generally apply for tax years 2025 through 2028. Trump Accounts are a separate account program, not a tax deduction."}},{"@type":"Question","name":"Does a 1099 form automatically disqualify someone from the overtime deduction?","acceptedAnswer":{"@type":"Answer","text":"No. Eligibility depends on whether the compensation is qualified overtime required under the Fair Labor Standards Act and on other statutory rules. A tax form alone does not determine eligibility; ordinary independent contractors generally are not entitled to FLSA overtime."}},{"@type":"Question","name":"How much can I save with the qualified-overtime deduction?","acceptedAnswer":{"@type":"Answer","text":"The annual deduction limit is generally $12,500 ($25,000 for joint filers), subject to qualified overtime and income limits. It applies to the eligible premium portion above the regular rate, not all overtime pay. Tax savings depend on the taxpayer's full return; payroll taxes are not reduced by this deduction."}},{"@type":"Question","name":"Who qualifies for the additional senior deduction?","acceptedAnswer":{"@type":"Answer","text":"Eligible taxpayers age 65 or older may claim an additional deduction subject to filing-status and income phase-out rules. Consult current IRS instructions for the tax year."}},{"@type":"Question","name":"Are these deductions permanent?","acceptedAnswer":{"@type":"Answer","text":"The overtime, qualified-tips, and additional senior deductions are currently authorized for tax years 2025 through 2028. Trump Accounts are a separate program governed by their own rules."}}]};
 
 const CSS = `
   body{background:#091526;}
-  .hub{max-width:940px;margin:0 auto;padding:60px 24px 80px;color:#c8d8e8;font-family:system-ui,sans-serif;}
+  .hub{max-width:940px;margin:0 auto;padding:60px clamp(6px,1.5vw,24px) 80px;color:#c8d8e8;font-family:system-ui,sans-serif;}
   .hub-badge{display:inline-block;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.35);color:#F5C842;font-size:13px;font-weight:700;letter-spacing:.08em;padding:5px 16px;border-radius:20px;margin-bottom:20px;}
   .hub-h1{font-size:clamp(28px,5vw,44px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
   .hub-h1 em{color:#F5C842;font-style:normal;}
@@ -73,11 +80,11 @@ export default function TaxChanges2026Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
 
       <div className="hub">
-        <div className="hub-badge">One Big Beautiful Bill — Signed 2025 · Active 2025–2028</div>
-        <h1 className="hub-h1">2026 Tax Changes — <em>Every New Deduction</em> Explained</h1>
+        <div className="hub-badge">One Big Beautiful Bill — Signed 2025 · Selected rules apply 2025–2028</div>
+        <h1 className="hub-h1">2026 Federal Tax Changes — <em>Deductions and Accounts</em></h1>
         <p className="hub-lead">
-          The One Big Beautiful Bill introduced four major federal tax changes effective 2025–2028.
-          Here is exactly what changed, who qualifies, how much you save, and how to calculate your paycheck with the new rules.
+          The 2025 law introduced federal deductions for qualified overtime, qualified tips, and eligible older taxpayers for tax years 2025–2028.
+          Eligibility, income limits, and the amount that may be deducted differ by provision. Trump Accounts are a separate program.
         </p>
 
         <div className="law-banner">
@@ -85,9 +92,8 @@ export default function TaxChanges2026Page() {
           <div>
             <div className="law-title">One Big Beautiful Bill — Signed into Law 2025</div>
             <div className="law-desc">
-              Effective for tax years 2025–2028. Four above-the-line federal income tax deductions added.
-              These reduce your federal taxable income — they do not affect FICA (Social Security + Medicare) or most state income taxes.
-              Source: <a href="https://www.irs.gov" target="_blank" rel="noopener" style={{color:'#F5C842',textDecoration:'underline'}}>IRS.gov</a>
+              The overtime, qualified-tips, and additional senior deductions generally apply for tax years 2025–2028. They do not reduce Social Security or Medicare payroll taxes; state treatment varies.
+              Source: <a href="https://www.irs.gov/newsroom/one-big-beautiful-bill-how-to-take-advantage-of-no-tax-on-tips-and-overtime" target="_blank" rel="noopener noreferrer" style={{color:'#F5C842',textDecoration:'underline'}}>IRS guidance</a>
             </div>
           </div>
         </div>
@@ -98,14 +104,14 @@ export default function TaxChanges2026Page() {
           <div className="change-card">
             <div className="change-card-head">
               <div className="change-icon"></div>
-              <div className="change-title">No Tax on Overtime</div>
-              <div className="change-save">Save up to $2,750–$4,625/year</div>
-              <div className="change-desc">W-2 employees can deduct up to $12,500 of overtime pay annually from federal taxable income.</div>
+              <div className="change-title">Qualified Overtime Deduction</div>
+              <div className="change-save">Deduct up to $12,500 ($25,000 joint)</div>
+              <div className="change-desc">Eligible individuals may deduct qualified overtime compensation required by the FLSA—the premium above their regular rate, not all overtime pay.</div>
             </div>
             <div className="change-card-body">
-              <div className="change-row"><span className="change-row-label">Max deduction</span><span className="change-row-val">$12,500/year</span></div>
-              <div className="change-row"><span className="change-row-label">Who qualifies</span><span className="change-row-val">W-2 FLSA employees</span></div>
-              <div className="change-row"><span className="change-row-label">1099 workers</span><span className="change-row-val" style={{color:'#f87171'}}>Not eligible</span></div>
+              <div className="change-row"><span className="change-row-label">Max deduction</span><span className="change-row-val">$12,500 ($25,000 joint)</span></div>
+              <div className="change-row"><span className="change-row-label">Who qualifies</span><span className="change-row-val">FLSA-covered and nonexempt; details apply</span></div>
+              <div className="change-row"><span className="change-row-label">1099 reporting</span><span className="change-row-val">Form alone does not decide eligibility</span></div>
               <div className="change-row"><span className="change-row-label">Affects FICA?</span><span className="change-row-val" style={{color:'#f87171'}}>No</span></div>
               <div className="change-row"><span className="change-row-label">Valid through</span><span className="change-row-val">Tax year 2028</span></div>
               <Link href="/no-tax-on-overtime-deduction" className="change-cta">Calculate Overtime Savings →</Link>
@@ -116,13 +122,13 @@ export default function TaxChanges2026Page() {
             <div className="change-card-head">
               <div className="change-icon"></div>
               <div className="change-title">No Tax on Tips</div>
-              <div className="change-save">Save up to $5,500/year</div>
-              <div className="change-desc">Tipped workers in qualifying occupations can deduct up to $25,000 of tip income from federal taxable income.</div>
+              <div className="change-save">Deduct up to $25,000/year</div>
+              <div className="change-desc">Eligible employees and self-employed individuals may deduct qualified tips, subject to occupation, income, and business-income rules.</div>
             </div>
             <div className="change-card-body">
               <div className="change-row"><span className="change-row-label">Max deduction</span><span className="change-row-val">$25,000/year</span></div>
               <div className="change-row"><span className="change-row-label">Who qualifies</span><span className="change-row-val">Tipped occupations</span></div>
-              <div className="change-row"><span className="change-row-label">Income limit</span><span className="change-row-val">Phases out above $150,000 MAGI</span></div>
+              <div className="change-row"><span className="change-row-label">Income phase-out</span><span className="change-row-val">Above $150k MAGI ($300k joint)</span></div>
               <div className="change-row"><span className="change-row-label">Affects FICA?</span><span className="change-row-val" style={{color:'#f87171'}}>No</span></div>
               <div className="change-row"><span className="change-row-label">Valid through</span><span className="change-row-val">Tax year 2028</span></div>
               <Link href="/no-tax-on-tips-calculator" className="change-cta">Calculate Tip Savings →</Link>
@@ -150,16 +156,15 @@ export default function TaxChanges2026Page() {
             <div className="change-card-head">
               <div className="change-icon"></div>
               <div className="change-title">Trump Account</div>
-              <div className="change-save">$38,000+ projected at age 18</div>
-              <div className="change-desc">Government-seeded savings account for children under 8. $1,000 federal seed plus up to $2,500/year employer contributions.</div>
+              <div className="change-save">Separate account program</div>
+              <div className="change-desc">Eligible children may have a Trump Account. A one-time $1,000 pilot contribution has separate citizenship, birth-date, and election requirements.</div>
             </div>
             <div className="change-card-body">
-              <div className="change-row"><span className="change-row-label">Gov seed</span><span className="change-row-val">$1,000 one-time</span></div>
-              <div className="change-row"><span className="change-row-label">Max employer/yr</span><span className="change-row-val">$2,500/year</span></div>
-              <div className="change-row"><span className="change-row-label">Child age limit</span><span className="change-row-val">Under 8 at opening</span></div>
-              <div className="change-row"><span className="change-row-label">Tax treatment</span><span className="change-row-val">Tax-advantaged</span></div>
-              <div className="change-row"><span className="change-row-label">Access</span><span className="change-row-val">At age 18</span></div>
-              <Link href="/trump-account-calculator" className="change-cta">Calculate Trump Account →</Link>
+              <div className="change-row"><span className="change-row-label">Pilot contribution</span><span className="change-row-val">$1,000 one-time if eligible and elected</span></div>
+              <div className="change-row"><span className="change-row-label">Birth dates</span><span className="change-row-val">Jan. 1, 2025–Dec. 31, 2028 (pilot)</span></div>
+              <div className="change-row"><span className="change-row-label">Account eligibility</span><span className="change-row-val">Valid SSN; age rule applies</span></div>
+              <div className="change-row"><span className="change-row-label">Official details</span><span className="change-row-val">See current IRS FAQ</span></div>
+              <Link href="/trump-account-calculator" className="change-cta">Project a Hypothetical Balance →</Link>
             </div>
           </div>
 
@@ -203,40 +208,33 @@ export default function TaxChanges2026Page() {
             <thead>
               <tr>
                 <th>Deduction</th>
-                <th>W-2 Employee</th>
-                <th>1099 Contractor</th>
+                <th>Employee</th>
+                <th>Self-employed / 1099</th>
                 <th>Max Amount</th>
                 <th>Affects FICA</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>No Tax on Overtime</td>
-                <td className="td-yes"> Yes</td>
-                <td className="td-no"> No</td>
-                <td>$12,500/yr</td>
+                <td>Qualified overtime</td>
+                <td className="td-yes">If FLSA-eligible</td>
+                <td>Form alone does not decide</td>
+                <td>$12,500 ($25,000 joint)</td>
                 <td className="td-no">No</td>
               </tr>
               <tr>
-                <td>No Tax on Tips</td>
-                <td className="td-yes"> Yes (tipped)</td>
-                <td className="td-yes"> Yes (tipped)</td>
+                <td>Qualified tips</td>
+                <td className="td-yes">May qualify</td>
+                <td className="td-yes">May qualify</td>
                 <td>$25,000/yr</td>
                 <td className="td-no">No</td>
               </tr>
               <tr>
-                <td>Senior Deduction</td>
+                <td>Additional senior deduction</td>
                 <td className="td-yes"> Yes (65+)</td>
                 <td className="td-yes"> Yes (65+)</td>
                 <td>$6,000/yr</td>
                 <td className="td-no">No</td>
-              </tr>
-              <tr>
-                <td>Trump Account</td>
-                <td className="td-yes"> Yes</td>
-                <td className="td-yes"> Yes</td>
-                <td>$2,500/yr + seed</td>
-                <td className="td-no">N/A</td>
               </tr>
             </tbody>
           </table>
@@ -245,9 +243,9 @@ export default function TaxChanges2026Page() {
         {/* FAQ */}
         <div className="faq-section">
           <h2>2026 Tax Changes — FAQs</h2>
-          <div className="faq-q"><div className="faq-qt">What are the new tax changes for 2026?</div><div className="faq-qa">Four changes from the One Big Beautiful Bill: no tax on overtime (up to $12,500), no tax on tips (up to $25,000), $6,000 senior deduction (age 65+), and Trump Accounts for children. All reduce federal taxable income for tax years 2025–2028.</div></div>
-          <div className="faq-q"><div className="faq-qt">Does the no-tax-on-overtime apply to 1099 workers?</div><div className="faq-qa">No. Only W-2 employees earning FLSA overtime qualify. Self-employed workers and 1099 contractors are not eligible for the overtime deduction.</div></div>
-          <div className="faq-q"><div className="faq-qt">How much can I save with the overtime deduction?</div><div className="faq-qa">At 22% bracket: $12,500 max deduction × 22% = $2,750 saved. At 24%: $3,000. At 12%: $1,500. FICA taxes are not reduced.</div></div>
+          <div className="faq-q"><div className="faq-qt">What federal tax changes apply in 2026?</div><div className="faq-qa">The law provides deductions for qualified overtime compensation, qualified tips, and eligible taxpayers age 65 or older. Trump Accounts are a separate account program, not a deduction. Each provision has different eligibility and income rules.</div></div>
+          <div className="faq-q"><div className="faq-qt">Does a 1099 form automatically disqualify someone from the overtime deduction?</div><div className="faq-qa">No. Eligibility depends on whether compensation is qualified overtime required under the FLSA and other statutory rules; a tax form alone does not decide it. Ordinary independent contractors generally are not entitled to FLSA overtime.</div></div>
+          <div className="faq-q"><div className="faq-qt">How much can I deduct for qualified overtime?</div><div className="faq-qa">The limit is generally $12,500 ($25,000 for joint filers), subject to income and qualification rules. Only the qualified premium above the regular rate is included, not all overtime pay. Payroll taxes are not reduced.</div></div>
           <div className="faq-q"><div className="faq-qt">Who qualifies for the $6,000 senior deduction?</div><div className="faq-qa">Taxpayers age 65+ with AGI below $75,000 (single) or $150,000 (MFJ) get the full $6,000. It phases out above these thresholds.</div></div>
           <div className="faq-q"><div className="faq-qt">Are these changes permanent?</div><div className="faq-qa">No — currently authorized through tax year 2028. Congress must extend them. The Trump Account program has a longer authorization window.</div></div>
         </div>
@@ -258,12 +256,12 @@ export default function TaxChanges2026Page() {
           <Link href="/no-tax-on-overtime-deduction" className="tool-card">
             <div className="tool-emoji"></div>
             <div className="tool-name">Overtime Calculator</div>
-            <div className="tool-desc">Save up to $2,750+/yr</div>
+            <div className="tool-desc">Estimate qualified premium deduction</div>
           </Link>
           <Link href="/no-tax-on-tips-calculator" className="tool-card">
             <div className="tool-emoji"></div>
             <div className="tool-name">Tips Calculator</div>
-            <div className="tool-desc">Save up to $5,500+/yr</div>
+            <div className="tool-desc">Estimate qualified tips deduction</div>
           </Link>
           <Link href="/senior-deduction-calculator" className="tool-card">
             <div className="tool-emoji"></div>
@@ -273,7 +271,7 @@ export default function TaxChanges2026Page() {
           <Link href="/trump-account-calculator" className="tool-card">
             <div className="tool-emoji"></div>
             <div className="tool-name">Trump Account</div>
-            <div className="tool-desc">$38,000+ at age 18</div>
+            <div className="tool-desc">Hypothetical balance projection</div>
           </Link>
           <Link href="/" className="tool-card">
             <div className="tool-emoji"></div>

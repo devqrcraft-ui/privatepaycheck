@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 import LinkCardGrid from '@/components/LinkCardGrid'
+import OvertimeCalculatorWidget from '@/components/OvertimeCalculatorWidget';
 
 
 export const dynamicParams = false;
@@ -16,8 +17,15 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Overtime Calculator' };
   return {
-    title: `${st.name} Overtime Pay Calculator 2026 — Time-and-a-Half & Double Time Instantly`,
-    description: `How much overtime will you earn in ${st.name}? Calculate time-and-a-half & double time instantly — 2026 federal & state rules. Free, no signup.`,
+    title: `${st.name} Weekly Overtime Calculator 2026 — 1.5× Pay Estimate`,
+    description: `Estimate weekly gross pay in ${st.name} using a 1.5× overtime rate. State daily and double-time rules, taxes, and payroll deductions are not modeled.`,
+    openGraph: {
+      title: `${st.name} Weekly Overtime Calculator 2026 — 1.5× Pay Estimate`,
+      description: `Estimate weekly gross overtime pay in ${st.name}; state daily rules and taxes are not modeled.`,
+      url: `https://www.privatepaycheck.com/overtime-calculator/${state}`,
+      siteName: 'PrivatePaycheck',
+      type: 'website',
+    },
     alternates: { canonical: `https://www.privatepaycheck.com/overtime-calculator/${state}` },
   };
 }
@@ -42,13 +50,13 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'HowTo',
-        name: `How to Calculate Overtime Pay in ${st.name}`,
-        description: `Calculate time-and-a-half and double time overtime pay in ${st.name} for 2026.`,
+        name: `How to Estimate Weekly Overtime Pay in ${st.name}`,
+        description: `Estimate weekly gross overtime pay in ${st.name} using a 1.5× rate. State daily and double-time rules are not modeled.`,
         step: [
           { '@type': 'HowToStep', name: 'Enter your regular hourly rate', text: 'Input your standard hourly wage before overtime.' },
-          { '@type': 'HowToStep', name: 'Enter overtime hours', text: 'Add hours worked beyond 40 per week. Federal law requires 1.5× pay for these hours.' },
-          { '@type': 'HowToStep', name: 'Check double time', text: `Some ${st.name} workers qualify for 2× pay. Enter any double-time hours separately.` },
-          { '@type': 'HowToStep', name: 'See your total pay', text: 'Your regular pay + overtime pay + double time pay are calculated instantly.' },
+          { '@type': 'HowToStep', name: 'Enter your regular weekly hours', text: 'Set the weekly hours that receive your regular hourly rate.' },
+          { '@type': 'HowToStep', name: 'Enter total weekly hours worked', text: 'Hours above your regular weekly hours are estimated at 1.5× the regular rate.' },
+          { '@type': 'HowToStep', name: 'Review the estimate', text: 'The result estimates weekly gross pay; state daily overtime, double-time, taxes, and payroll deductions are not modeled.' },
         ],
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -56,7 +64,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         '@type': 'WebApplication',
         name: `${st.name} Overtime Calculator 2026`,
         url: `https://www.privatepaycheck.com/overtime-calculator/${state}`,
-        description: `Free overtime pay calculator for ${st.name}. Calculate time-and-a-half, double time. 2026 rules.`,
+        description: `Free weekly gross overtime estimate for ${st.name} using a 1.5× rate. State-specific daily and double-time rules are not modeled.`,
         applicationCategory: 'FinanceApplication',
         operatingSystem: 'Any',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -82,7 +90,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
         </div>
       </nav>
 
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 16px' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 6px' }}>
         {/* Breadcrumb */}
         <div style={{ fontSize: '13px', opacity: 0.8, marginBottom: '24px' }}>
           <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}>Home</Link>
@@ -101,24 +109,39 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           <h1 style={{ fontSize: 'clamp(24px,4vw,44px)', fontWeight: 900, margin: '0 0 12px' }}>
             {st.name} Overtime Pay Calculator 2026
           </h1>
-          <p style={{ fontSize: '16px', opacity: 0.65, maxWidth: '550px', margin: '0 auto', lineHeight: 1.7 }}>
+          <p style={{ fontSize: '16px', color: '#c4d2e3', maxWidth: '550px', margin: '0 auto', lineHeight: 1.7 }}>
             {rules.note || `Federal overtime: 1.5x pay after 40 hours/week.`}
           </p>
         </div>
 
-        <OvertimeCalculatorWidget stateName={st.name} hasDoubleTime={!!rules.doubleTime} hasDailyOT={!!rules.dailyOT} dailyOTHours={rules.dailyOTHours} />
+        <OvertimeCalculatorWidget stateName={st.name} stateSlug={state} hasDoubleTime={!!rules.doubleTime} hasDailyOT={!!rules.dailyOT} dailyOTHours={rules.dailyOTHours} />
 
-        <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '16px' }}>
+        {code === 'CA' && (
+          <aside style={{ marginTop: '24px', padding: '20px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(232,184,75,0.45)' }}>
+            <h2 style={{ margin: '0 0 8px', fontSize: '18px' }}>California salary test for some exemptions</h2>
+            <p style={{ margin: '0 0 8px', color: '#c4d2e3', lineHeight: 1.7 }}>
+              Effective January 1, 2026, the salary threshold for many California executive, administrative, and professional exemptions is $70,304 per year. Salary alone does not establish an exemption; duties and exemption-specific rules also apply. This weekly gross-pay calculator does not determine exempt status.
+            </p>
+            <a href="https://www.dir.ca.gov/DIRNews/2025/2025-118.html" target="_blank" rel="noopener noreferrer" style={{ color: '#e8b84b', textDecoration: 'underline' }}>
+              California DIR: 2026 salary threshold
+            </a>
+            {' · '}
+            <a href="https://www.dir.ca.gov/dlse/faq_overtime.htm" target="_blank" rel="noopener noreferrer" style={{ color: '#e8b84b', textDecoration: 'underline' }}>
+              California DIR overtime FAQ
+            </a>
+          </aside>
+        )}
+
+        <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(170px,1fr))', gap: '16px' }}>
           {[
-            { label: 'Federal OT Rule', value: '40 hrs/week', icon: '' },
-            { label: 'OT Rate', value: '1.5x regular pay', icon: '' },
-            { label: 'Double Time', value: rules.doubleTime ? ' Yes' : ' N/A', icon: '2⃣' },
-            { label: 'Daily OT', value: rules.dailyOT ? `After ${rules.dailyOTHours}h/day` : 'Weekly only', icon: '' },
+            { label: 'Federal OT Rule', value: '40 hrs/week' },
+            { label: 'OT Rate', value: '1.5× regular pay' },
+            { label: 'Double Time', value: rules.doubleTime ? 'Yes' : 'N/A' },
+            { label: 'Daily OT', value: rules.dailyOT ? `After ${rules.dailyOTHours}h/day` : 'Weekly only' },
           ].map(b => (
             <div key={b.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
-              <div style={{ fontSize: '24px', marginBottom: '8px' }}>{b.icon}</div>
-              <div style={{ fontSize: '11px', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>{b.label}</div>
-              <div style={{ fontWeight: 700, fontSize: '15px' }}>{b.value}</div>
+              <div style={{ fontSize: '14px', color: '#c4d2e3', marginBottom: '4px' }}>{b.label}</div>
+              <div style={{ fontWeight: 700, fontSize: '16px' }}>{b.value}</div>
             </div>
           ))}
         </div>
@@ -129,7 +152,7 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {[
               { q: `How is overtime calculated in ${st.name}?`, a: rules.note || `In ${st.name}, overtime follows federal FLSA law: any hours over 40 in a single workweek must be paid at 1.5x your regular hourly rate. Your employer cannot average hours across multiple weeks.` },
-              { q: 'What is the overtime rate for salaried employees?', a: 'Salaried employees earning under $684/week ($35,568/year) are entitled to overtime under FLSA. For those above the threshold, it depends on their job duties. Non-exempt salaried workers use their regular rate: annual salary ÷ 52 weeks ÷ 40 hours.' },
+              { q: 'What is the overtime rate for salaried employees?', a: 'A salary alone does not determine whether an employee is exempt. Coverage, duties, salary basis, and applicable state rules matter. Nonexempt salaried employees may still be entitled to overtime; this calculator does not determine exemption status.' },
               { q: 'Can my employer give comp time instead of overtime pay?', a: 'Private sector employers generally cannot substitute comp time for overtime pay under federal law. Government employees may receive comp time. Some states have additional restrictions.' },
               { q: `Does ${st.name} have any additional overtime protections?`, a: rules.note || `${st.name} follows the federal FLSA standard. Overtime is required after 40 hours in a workweek at 1.5x regular pay. Always check with your state labor department for the most current rules.` },
             ].map(item => (
@@ -175,39 +198,5 @@ export default async function OvertimePage({ params }: { params: Promise<{ state
       </div>
       </footer>
     </main>
-  );
-}
-
-function OvertimeCalculatorWidget({ stateName, hasDoubleTime, hasDailyOT, dailyOTHours }: {
-  stateName: string; hasDoubleTime: boolean; hasDailyOT: boolean; dailyOTHours?: number;
-}) {
-  return (
-    <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '16px', padding: '28px' }}>
-      <p style={{ textAlign: 'center', opacity: 0.6, fontSize: '14px', marginBottom: '20px' }}>
-        Enter your hourly rate and hours worked to calculate overtime pay
-      </p>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: '16px', marginBottom: '20px' }}>
-        {[
-          { label: 'Regular Hourly Rate ($)', placeholder: '25.00', id: 'ot-rate' },
-          { label: 'Regular Hours (per week)', placeholder: '40', id: 'ot-regular' },
-          { label: 'Total Hours Worked', placeholder: '48', id: 'ot-total' },
-        ].map(f => (
-          <div key={f.id}>
-            <label style={{ fontSize: '11px', color: 'rgba(255,255,255,0.65)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px', display: 'block' }}>{f.label}</label>
-            <input id={f.id} type="number" placeholder={f.placeholder} min={0} style={{ width: '100%', background: 'rgba(255,255,255,0.07)', border: '1.5px solid rgba(255,255,255,0.12)', borderRadius: '10px', padding: '11px 14px', color: 'white', fontSize: '15px', fontFamily: 'inherit', outline: 'none', boxSizing: 'border-box' as const }} />
-          </div>
-        ))}
-      </div>
-      <div style={{ background: 'linear-gradient(135deg,rgba(99,102,241,0.2),rgba(139,92,246,0.15))', border: '1px solid rgba(99,102,241,0.3)', borderRadius: '12px', padding: '20px', textAlign: 'center' }}>
-        <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', marginBottom: '8px' }}>Overtime Premium · {stateName}</div>
-        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-          Enter your hours above to calculate overtime pay.<br />
-          {hasDoubleTime && <span style={{ color: '#fbbf24' }}> {stateName} double-time rules apply after 12 hrs/day</span>}
-          {hasDailyOT && !hasDoubleTime && <span style={{ color: '#fbbf24' }}> Daily OT applies after {dailyOTHours} hrs/day</span>}
-          {!hasDoubleTime && !hasDailyOT && <span>Federal rule: 1.5x after 40 hrs/week</span>}
-        </div>
-      </div>
-      <p style={{ textAlign: 'center', fontSize: '11px', opacity: 0.8, marginTop: '12px' }}> All calculations happen in your browser</p>
-    </div>
   );
 }

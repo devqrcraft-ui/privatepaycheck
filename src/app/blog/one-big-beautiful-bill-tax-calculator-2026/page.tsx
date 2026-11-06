@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'One Big Beautiful Bill Tax Calculator 2026 — Overtime, Tips & Senior Savings',
-  description: 'Calculate your exact tax savings under the One Big Beautiful Bill 2026. No tax on overtime up to $12,500, no tax on tips up to $25,000, extra $6,000 for seniors 65+.',
+  description: 'Understand the 2025–2028 federal deductions for qualified overtime, tips, and eligible seniors, plus Trump Account eligibility. Includes links to estimates and official guidance.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026' },
   keywords: 'one big beautiful bill calculator, one big beautiful bill 2026 tax savings, no tax overtime tips 2026, OBBB tax calculator',
   openGraph: {
     title: 'One Big Beautiful Bill Tax Calculator 2026',
-    description: 'Calculate your savings: no tax on overtime, tips, $6,000 senior deduction. Signed into law.',
+    description: 'An overview of federal deductions for qualified overtime and tips, the senior deduction, and Trump Account eligibility.',
     url: 'https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026',
     type: 'article',
   },
@@ -19,11 +19,11 @@ const schemaData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   'mainEntity': [
-    { '@type': 'Question', 'name': 'What is the One Big Beautiful Bill?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'The One Big Beautiful Bill is signed US law eliminating federal income tax on overtime pay up to $12,500/year and tips up to $25,000/year, adding a $6,000 deduction for age 65+, and creating Trump Accounts for children. Applies 2025-2028.' } },
-    { '@type': 'Question', 'name': 'How much can I save with no tax on overtime in 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'You can deduct up to $12,500 of overtime pay from federal taxable income per year. At the 22% tax bracket that saves up to $2,750 annually. Phaseout begins at $150,000 income for single filers.' } },
-    { '@type': 'Question', 'name': 'How much can I save with no tax on tips in 2026?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Tipped workers can deduct up to $25,000 in tips from federal taxes. At the 22% bracket that saves up to $5,500 per year. Applies to servers, bartenders, hotel staff, and delivery drivers.' } },
-    { '@type': 'Question', 'name': 'Who qualifies for the $6,000 senior deduction?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Americans age 65 and older get an additional $6,000 above-the-line deduction. Phases out at $75,000 income for single filers or $150,000 for married filing jointly.' } },
-    { '@type': 'Question', 'name': 'What is a Trump Account and how much will my child have at 18?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Trump Accounts are tax-advantaged savings accounts for children under 18. Government seeds $1,000 at birth. Employers can contribute up to $2,500 per year tax-free. At 7% return a newborn reaches age 18 with over $38,000.' } },
+    { '@type': 'Question', 'name': 'What is the One Big Beautiful Bill?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'The law created temporary federal income-tax deductions for qualified overtime compensation and qualified tips, an additional deduction for eligible taxpayers age 65 or older, and Trump Accounts. The deductions generally apply to tax years 2025 through 2028; eligibility rules and limits apply.' } },
+    { '@type': 'Question', 'name': 'Does the overtime provision make all overtime pay tax-free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'No. It is a deduction for qualified overtime compensation, subject to annual limits and income phase-outs. It does not make all overtime wages exempt from tax, and payroll taxes still apply.' } },
+    { '@type': 'Question', 'name': 'Does the tips provision make all tips tax-free?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'No. Eligible workers may claim a deduction for qualified tips subject to the annual limit, income phase-out, occupation rules, and other requirements. FICA and state tax treatment are separate.' } },
+    { '@type': 'Question', 'name': 'Who may qualify for the senior deduction?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Eligible taxpayers age 65 or older may qualify for an additional deduction, subject to income phase-outs and other requirements. Check current IRS guidance for the tax year.' } },
+    { '@type': 'Question', 'name': 'Does every child receive a $1,000 Trump Account contribution?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'No. The pilot contribution is limited to eligible U.S. citizens born from 2025 through 2028, and an election is required. Account eligibility does not guarantee a contribution or investment return.' } },
   ],
 };
 
@@ -33,7 +33,7 @@ export default function OBBBBlogPage() {
     <main style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#1e2a4a 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"One Big Beautiful Bill Tax Calculator 2026 — Overtime, Tips & Senior Savings","item":"https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"One Big Beautiful Bill Tax Calculator 2026 — Overtime, Tips & Senior Savings","description":"Calculate your exact tax savings under the One Big Beautiful Bill 2026. No tax on overtime up to $12,500, no tax on tips up to $25,000, extra $6,000 for seniors 65+.","url":"https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"One Big Beautiful Bill Tax Calculator 2026 — Overtime, Tips & Senior Savings","description":"An overview of federal deductions for qualified overtime and tips, the senior deduction, and Trump Account eligibility.","url":"https://www.privatepaycheck.com/blog/one-big-beautiful-bill-tax-calculator-2026","datePublished":"2026-01-01","dateModified":"2026-11-06","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"}}' }} />
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         <Link href="/blog" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: 14 }}>All articles</Link>
         <h1 style={{ fontSize: 32, fontWeight: 900, marginTop: 16, marginBottom: 8, lineHeight: 1.2 }}>
@@ -41,27 +41,26 @@ export default function OBBBBlogPage() {
         </h1>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
-          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> The One Big Beautiful Bill (OBBBA) 2026 key changes: standard deduction raised to <strong style={{color:"#fff"}}>$16,100 single / $32,200 MFJ</strong>, tips deduction up to $25,000, overtime deduction up to $12,500, QBI deduction made permanent. Use the calculator above to see your exact 2026 tax savings.
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> The law created deductions for qualified tips and overtime compensation, an additional deduction for eligible seniors, and Trump Accounts. These are not blanket tax exemptions: eligibility, income limits, annual caps, and state treatment vary. Use the linked tools for estimates, and check current IRS guidance before filing.
         </p>
       </div>
       <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
         <p style={{ fontSize: 14, fontWeight: 800, color: '#F5C842', marginBottom: 12, marginTop: 0 }}>Key Takeaways</p>
         <ul style={{ margin: 0, paddingLeft: 20, color: '#c8d0e7', fontSize: 14, lineHeight: 1.85 }}>
           <li>Federal effective tax rate depends on your total gross income and filing status</li>
-          <li>FICA (Social Security 6.2% + Medicare 1.45%) = <strong style={{ color: '#fff' }}>7.65%</strong> for all W-2 employees</li>
-          <li>No state income tax in TX, FL, WA, NV, SD, WY, AK — keeps more in your pocket</li>
-          <li>Standard deduction 2026: <strong style={{ color: '#fff' }}>$16,100</strong> single / $32,200 MFJ</li>
-          <li>401(k) limit 2026: <strong style={{ color: '#fff' }}>$24,500</strong> — reduces federal taxable income dollar-for-dollar</li>
-          <li>Use the free calculator above for your exact state + filing status breakdown</li>
+          <li>Qualified overtime and tip deductions reduce federal taxable income; they do not erase payroll taxes.</li>
+          <li>The standard deduction and 401(k) rules depend on filing status, contribution type, and tax year.</li>
+          <li>State conformity and local taxes can differ from federal treatment.</li>
+          <li>Calculator results are estimates, not an exact tax or withholding determination.</li>
         </ul>
       </div>
-        <p style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 32 }}>Updated March 12, 2026 · 5 min read</p>
+        <p style={{ color: '#e2e8f0', fontSize: 14, marginBottom: 32 }}>Updated November 6, 2026 · 5 min read</p>
 
         <div style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: 16, padding: 24, marginBottom: 32 }}>
           <p style={{ margin: '0 0 14px', fontSize: 15, fontWeight: 700, color: '#a5b4fc' }}>Calculate your savings now:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <Link href="/no-tax-on-overtime-deduction" style={{ color: '#818cf8', fontSize: 15, textDecoration: 'none' }}>No Tax on Overtime — save up to $2,750/year</Link>
-            <Link href="/no-tax-on-tips-calculator" style={{ color: '#818cf8', fontSize: 15, textDecoration: 'none' }}>No Tax on Tips — save up to $5,500/year</Link>
+            <Link href="/no-tax-on-overtime-deduction" style={{ color: '#818cf8', fontSize: 15, textDecoration: 'none' }}>Estimate the qualified overtime deduction</Link>
+            <Link href="/no-tax-on-tips-calculator" style={{ color: '#818cf8', fontSize: 15, textDecoration: 'none' }}>Estimate the qualified tips deduction</Link>
             <Link href="/senior-deduction-calculator" style={{ color: '#818cf8', fontSize: 15, textDecoration: 'none' }}>Senior $6,000 Deduction — age 65+</Link>
             <Link href="/trump-account-calculator" style={{ color: '#818cf8', fontSize: 15, textDecoration: 'none' }}>Trump Account — child savings at 18</Link>
           </div>
@@ -69,36 +68,36 @@ export default function OBBBBlogPage() {
 
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>What is the One Big Beautiful Bill?</h2>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 24 }}>
-          The One Big Beautiful Bill is now signed US federal law. It delivers four major tax changes affecting tens of millions of Americans from 2025 through 2028: no federal tax on overtime pay, no federal tax on tips, an extra $6,000 deduction for seniors 65 and older, and new Trump Accounts for children.
+          The law applies several changes across tax years 2025 through 2028. The overtime and tip provisions are deductions for qualifying amounts, not exemptions for all wages or tips. They do not remove Social Security or Medicare taxes, and state tax treatment may differ.
         </p>
 
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>No Tax on Overtime — Up to $12,500 Deduction</h2>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>
-          If you earn overtime pay, you can deduct up to $12,500 of that overtime from your federal taxable income each year. Phases out above $150,000 for single filers or $300,000 for married filing jointly.
+          Eligible taxpayers may deduct qualified overtime compensation up to $12,500 ($25,000 for a joint return), subject to income phase-outs. The qualifying amount is not necessarily all overtime wages: it is tied to the overtime premium that meets the applicable rules.
         </p>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 8 }}>
-          At the 22% tax bracket that is up to <strong style={{ color: '#4ade80' }}>$2,750 in annual savings</strong>. At 24%, up to $3,000.
+          The deduction reduces federal taxable income; the actual tax effect depends on the qualified amount, income limits, filing status, and marginal tax rates. It does not eliminate FICA taxes on wages.
         </p>
-        <p style={{ marginBottom: 24 }}><Link href="/no-tax-on-overtime-deduction" style={{ color: '#818cf8' }}>Calculate your exact overtime savings</Link></p>
+        <p style={{ marginBottom: 24 }}><Link href="/no-tax-on-overtime-deduction" style={{ color: '#818cf8' }}>Estimate the overtime deduction</Link></p>
 
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>No Tax on Tips — Up to $25,000 Deduction</h2>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 12 }}>
-          Tipped workers can deduct up to $25,000 in tip income from federal taxes annually. Applies to restaurant servers, bartenders, hotel staff, and delivery drivers.
+          Eligible workers may deduct qualified tips up to the annual limit of $25,000, subject to occupation requirements and an income phase-out. Not every worker or every payment classified as a tip qualifies.
         </p>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 8 }}>
-          A server earning $800/week in tips saves over <strong style={{ color: '#4ade80' }}>$5,500 per year</strong> in federal taxes.
+          The deduction reduces federal taxable income, not tax dollar-for-dollar. The resulting benefit depends on eligibility, income, filing status, and tax bracket. FICA still applies, and state rules may differ.
         </p>
-        <p style={{ marginBottom: 24 }}><Link href="/no-tax-on-tips-calculator" style={{ color: '#818cf8' }}>Calculate your exact tips savings</Link></p>
+        <p style={{ marginBottom: 24 }}><Link href="/no-tax-on-tips-calculator" style={{ color: '#818cf8' }}>Estimate the qualified tips deduction</Link></p>
 
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>Senior $6,000 Deduction — Age 65+</h2>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 8 }}>
-          Americans 65 and older get an additional $6,000 above-the-line deduction. Phases out at $75,000 single or $150,000 married, reducing $1 per $1 over the threshold.
+          Eligible taxpayers age 65 and older may claim an additional deduction of up to $6,000, subject to income phase-outs and other requirements. Verify eligibility and current-year thresholds with IRS guidance.
         </p>
         <p style={{ marginBottom: 24 }}><Link href="/senior-deduction-calculator" style={{ color: '#818cf8' }}>Calculate your senior deduction</Link></p>
 
         <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 12 }}>Trump Accounts — $1,000 Seed for Every Child</h2>
         <p style={{ color: '#cbd5e1', lineHeight: 1.7, marginBottom: 8 }}>
-          Children born in the US receive a $1,000 government seed invested in a stock index fund. Employers can contribute up to $2,500/year tax-free. At 7% average annual return, a newborn with $1,000 seed and $1,000/year employer contribution reaches 18 with over <strong style={{ color: '#818cf8' }}>$38,000</strong>.
+          The $1,000 pilot contribution is available only for eligible U.S. citizens born from 2025 through 2028, and an election is required. Eligibility does not guarantee the contribution. Any projection depends on assumptions about contributions, fees, and investment returns; returns are not guaranteed.
         </p>
         <p style={{ marginBottom: 32 }}><Link href="/trump-account-calculator" style={{ color: '#818cf8' }}>Calculate your child Trump Account balance</Link></p>
 
@@ -114,7 +113,7 @@ export default function OBBBBlogPage() {
         </cite>
       </blockquote>
       <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)', marginTop:32, paddingTop:24 }}>
-        <p style={{ fontSize:14, fontWeight:700, color:'#F5C842', marginBottom:12 }}>Calculate your exact take-home pay by state:</p>
+        <p style={{ fontSize:14, fontWeight:700, color:'#F5C842', marginBottom:12 }}>Explore estimated take-home pay by state:</p>
         <div style={{ display:'flex', flexWrap:'wrap', gap:10 }}>
           <a href="/california-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>California Calculator</a>
           <a href="/texas-paycheck-calculator" style={{ color:'#F5C842', fontSize:14, textDecoration:'none', background:'rgba(245,200,66,0.08)', padding:'6px 12px', borderRadius:6, border:'1px solid rgba(245,200,66,0.2)' }}>Texas Calculator</a>

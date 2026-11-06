@@ -3,9 +3,9 @@ import AuthorBox from '@/app/components/AuthorBox'
 import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Overtime Tax Calculator 2026 — How Much Tax Do You Pay on OT? (OBBBA)',
-  description: 'Overtime deduction 2026: OBBBA lets you deduct up to $12,500 (single) or $25,000 (joint) in OT pay. Free calculator — enter hours, get exact tax bill.',
+  description: 'Learn how the 2025–2028 federal deduction for qualified overtime compensation works, including annual limits, income phase-outs, and payroll-tax exclusions.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/overtime-tax-calculator-2026' },
-  openGraph: { title: 'Overtime Tax Calculator 2026', description: 'OBBBA 2026 overtime deduction: up to $12,500 single / $25,000 joint.', type: 'article', url: 'https://www.privatepaycheck.com/blog/overtime-tax-calculator-2026' },
+  openGraph: { title: 'Overtime Tax Calculator 2026', description: 'An overview of qualified overtime compensation, deduction limits, and eligibility.', type: 'article', url: 'https://www.privatepaycheck.com/blog/overtime-tax-calculator-2026' },
 };
 const RELATED = [
   { href:'/blog/overtime-pay-rules-by-state', tag:'OVERTIME', title:'Overtime Pay Rules by State 2026' },
@@ -20,9 +20,9 @@ export default function Post() {
   return (
     <>
     <main style={{ background:bg, minHeight:'100vh', color:'#e8edf8', fontFamily:'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do you pay on overtime in 2026?","acceptedAnswer":{"@type":"Answer","text":"Under OBBBA 2026, you can deduct up to $12,500 (single) or $25,000 (married filing jointly) from federal taxable income. Without the deduction, overtime is taxed at your marginal rate — typically 22-24%."}},{"@type":"Question","name":"What is the overtime deduction under OBBBA 2026?","acceptedAnswer":{"@type":"Answer","text":"The One Big Beautiful Bill Act 2026 created a federal deduction for overtime pay: up to $12,500 for single filers and $25,000 for married filing jointly."}},{"@type":"Question","name":"Does overtime get taxed more than regular pay?","acceptedAnswer":{"@type":"Answer","text":"No. Overtime is taxed at your regular marginal rate. However, earning overtime can push you into a higher bracket. The OBBBA 2026 deduction helps offset this."}},{"@type":"Question","name":"How do I claim the overtime deduction in 2026?","acceptedAnswer":{"@type":"Answer","text":"Report total wages on your W-2 as usual. Then deduct qualifying overtime pay (up to $12,500 single or $25,000 joint) as a separate line item on your federal return."}},{"@type":"Question","name":"Does the overtime deduction apply to FICA?","acceptedAnswer":{"@type":"Answer","text":"No. The OBBBA overtime deduction only reduces federal income tax. FICA taxes (Social Security and Medicare) still apply to all wages including overtime."}}]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the overtime deduction work in 2026?","acceptedAnswer":{"@type":"Answer","text":"Eligible taxpayers may deduct qualified overtime compensation from federal taxable income, up to $12,500 or $25,000 on a joint return. Annual limits and income phase-outs apply; the deduction does not make all overtime wages tax-free."}},{"@type":"Question","name":"What counts as qualified overtime compensation?","acceptedAnswer":{"@type":"Answer","text":"The deduction is tied to qualifying overtime compensation under applicable FLSA rules, generally the premium portion above the regular rate, not automatically all wages paid for overtime hours. Consult current IRS guidance."}},{"@type":"Question","name":"Does overtime get taxed more than regular pay?","acceptedAnswer":{"@type":"Answer","text":"Overtime is generally subject to the same marginal tax rates as other wages. Additional income can cross a tax bracket threshold; only income within the higher bracket is taxed at that rate."}},{"@type":"Question","name":"How do I claim the overtime deduction?","acceptedAnswer":{"@type":"Answer","text":"Follow current IRS instructions for the tax year and use employer reporting and records to determine qualified overtime compensation. The deduction is subject to annual caps and income phase-outs."}},{"@type":"Question","name":"Does the overtime deduction apply to FICA?","acceptedAnswer":{"@type":"Answer","text":"No. The federal income-tax deduction does not remove Social Security or Medicare taxes on wages. State tax treatment may also differ."}}]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Overtime Tax Calculator 2026","item":"https://www.privatepaycheck.com/blog/overtime-tax-calculator-2026"}]}) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BlogPosting","headline":"Overtime Tax Calculator 2026","url":"https://www.privatepaycheck.com/blog/overtime-tax-calculator-2026","datePublished":"2026-05-13","dateModified":"2026-05-13","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"}}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BlogPosting","headline":"Overtime Tax Calculator 2026","url":"https://www.privatepaycheck.com/blog/overtime-tax-calculator-2026","datePublished":"2026-05-13","dateModified":"2026-11-06","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"}}) }} />
       <div style={{ background:'linear-gradient(135deg,#1a1040,#0f0c29)', borderBottom:'1px solid rgba(255,255,255,0.07)', padding:'32px 20px 28px' }}>
         <div style={{ maxWidth:860, margin:'0 auto' }}>
           <nav style={{ fontSize:12, color:'rgba(255,255,255,0.4)', marginBottom:14 }}>
@@ -34,46 +34,40 @@ export default function Post() {
           </nav>
           <div style={{ display:'flex', gap:8, flexWrap:'wrap' as const, marginBottom:14 }}>
             <span style={{ background:'rgba(245,200,66,0.15)', color:accent, fontSize:12, fontWeight:700, padding:'3px 10px', borderRadius:20 }}>OBBBA 2026</span>
-            <span style={{ background:'rgba(255,255,255,0.07)', color:'rgba(255,255,255,.55)', fontSize:12, padding:'3px 10px', borderRadius:20 }}>Updated May 2026</span>
+            <span style={{ background:'rgba(255,255,255,0.07)', color:'rgba(255,255,255,.72)', fontSize:12, padding:'3px 10px', borderRadius:20 }}>Updated November 2026</span>
           </div>
           <h1 style={{ fontSize:'clamp(24px,4vw,36px)', fontWeight:900, color:'#fff', lineHeight:1.25, marginBottom:14 }}>Overtime Tax Calculator 2026: How Much Tax Do You Pay on OT?</h1>
-          <p style={{fontSize:13,color:'#9aa3bc',marginBottom:12}}>By the PrivatePaycheck Team · Updated May 2026 · ~6 min read</p>
-          <p style={{ fontSize:16, color:'rgba(255,255,255,0.65)', lineHeight:1.7 }}>OBBBA 2026 created a new federal deduction for overtime pay — up to $12,500 for single filers and $25,000 for married couples. Here is exactly how it works and how to calculate your overtime tax bill.</p>
+          <p style={{fontSize:13,color:'#b7c1d8',marginBottom:12}}>By the PrivatePaycheck Team · Updated November 2026 · ~6 min read</p>
+          <p style={{ fontSize:16, color:'rgba(255,255,255,0.78)', lineHeight:1.7 }}>The 2025–2028 federal deduction is limited to qualified overtime compensation and is subject to caps and income phase-outs. This guide explains what the deduction does—and what it does not do.</p>
         </div>
       </div>
       <div style={{ maxWidth:860, margin:'0 auto', padding:'32px 20px' }}>
         <div style={box}>
           <div style={{ fontSize:13, fontWeight:800, color:accent, textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:8 }}>Quick Answer</div>
-          <p style={{ fontSize:16, color:'rgba(255,255,255,0.9)', lineHeight:1.7, margin:0 }}>Under OBBBA 2026, you can deduct up to <strong>$12,500 in overtime pay</strong> (single) or <strong>$25,000</strong> (married filing jointly) from federal taxable income. On $10,000 in OT at the 22% bracket, this saves you $2,200 in federal income tax. FICA taxes still apply.</p>
+          <p style={{ fontSize:16, color:'rgba(255,255,255,0.9)', lineHeight:1.7, margin:0 }}>Eligible taxpayers may deduct qualified overtime compensation up to <strong>$12,500</strong> or <strong>$25,000 on a joint return</strong>, subject to income phase-outs. The deduction is not an exemption for all overtime wages; the actual tax effect depends on eligibility and tax circumstances. FICA taxes still apply.</p>
         </div>
         <div style={{background:'rgba(245,200,66,0.08)',border:'1px solid rgba(245,200,66,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
           <div style={{fontWeight:800,color:'#F5C842',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>OBBBA 2026 deducts up to <strong>$12,500</strong> (single) or <strong>$25,000</strong> (married) in overtime pay from federal taxable income</li>
-            <li>On $10,000 OT at 22% bracket, the deduction saves <strong>$2,200</strong> in federal income tax</li>
-            <li>FICA taxes (Social Security 6.2% + Medicare 1.45%) <strong>still apply</strong> to overtime — only income tax is reduced</li>
-            <li>Only <strong>W-2 employees</strong> qualify — self-employed and 1099 contractors do not</li>
-            <li>Deduction applies to <strong>2026 tax returns</strong> only (reported in early 2027)</li>
+            <li>The deduction is capped at <strong>$12,500</strong> or <strong>$25,000 for a joint return</strong>; income phase-outs apply</li>
+            <li>Qualified overtime compensation is generally the qualifying premium portion, not automatically all overtime wages</li>
+            <li>FICA taxes remain due on wages; state tax treatment can differ</li>
+            <li>A tax form or worker label alone does not determine eligibility; the qualifying compensation and applicable rules matter</li>
+            <li>The provision generally applies to tax years <strong>2025–2028</strong>; follow current IRS filing instructions</li>
           </ul>
         </div>
         <h2 style={h2}>What Is the OBBBA Overtime Deduction?</h2>
-        <p style={prose}>The One Big Beautiful Bill Act (OBBBA), enacted in 2026, introduced a federal deduction for overtime pay received by W-2 employees. If you worked overtime hours paid at 1.5x or 2x your regular rate, that overtime pay is now deductible from your federal taxable income — up to $12,500 for single filers and $25,000 for married filing jointly.</p>
-        <p style={prose}>This means overtime pay is effectively excluded from federal income tax up to the cap. It does not affect FICA taxes (Social Security 6.2%, Medicare 1.45%) which still apply to all wages.</p>
+        <p style={prose}>The One Big Beautiful Bill Act (OBBBA), enacted in 2025, introduced a temporary federal income-tax deduction for qualified overtime compensation. Eligibility is tied to applicable overtime rules and the qualifying premium, not simply every dollar paid for hours above 40. The deduction is subject to annual caps and income phase-outs, and generally applies to tax years 2025 through 2028.</p>
+        <p style={prose}>This is a deduction from federal taxable income, not an exemption from all tax on overtime. Social Security and Medicare taxes still apply to wages, and state tax treatment may differ.</p>
         <h2 style={h2}>How to Calculate Your Overtime Tax in 2026</h2>
         <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:8, padding:'20px 24px', marginBottom:20 }}>
-          <div style={{ fontSize:15, fontWeight:700, color:accent, marginBottom:12 }}>Example: Single filer, $55,000 base salary, $8,000 overtime</div>
-          <div style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:2 }}>
-            Regular wages: $55,000<br/>
-            Overtime pay: $8,000<br/>
-            Standard deduction: −$16,100<br/>
-            OT deduction (OBBBA): −$8,000 (under $12,500 cap)<br/>
-            <strong>Taxable income: $38,900</strong><br/>
-            Federal income tax: ~$4,507<br/>
-            <strong>Saved vs no OT deduction: ~$1,760</strong>
-          </div>
+          <div style={{ fontSize:15, fontWeight:700, color:accent, marginBottom:12 }}>Illustrative calculation</div>
+          <p style={{ fontSize:15, color:'rgba(255,255,255,0.85)', lineHeight:1.75, margin:0 }}>
+            Start with the amount of overtime compensation that qualifies under current rules—not total overtime wages. Apply the annual cap and any income phase-out, then calculate the federal income-tax effect using the taxpayer’s full return. Hours, hourly rate, and an assumed tax bracket alone are not enough to determine an exact deduction or tax saving.
+          </p>
         </div>
         <h2 style={h2}>Who Qualifies for the Overtime Deduction?</h2>
-        <p style={prose}>W-2 employees who receive overtime pay (hours worked beyond 40 per week at 1.5x or 2x rate) qualify. The deduction applies to overtime received in 2026 and reported on your 2026 tax return. Self-employed workers and independent contractors do not qualify — this deduction is for W-2 overtime only.</p>
+        <p style={prose}>The deduction is limited to qualified overtime compensation under the applicable rules. Work beyond 40 hours does not by itself establish the amount eligible for the deduction; state law, exemptions, how compensation was calculated, income limits, and current IRS guidance matter. A 1099 or W-2 label alone does not determine eligibility.</p>
         <h2 style={h2}>Single vs Married: Deduction Caps</h2>
         <div style={{ overflowX:'auto' as const, marginBottom:20 }}>
           <table style={{ width:'100%', borderCollapse:'collapse' as const, fontSize:14 }}>
@@ -81,14 +75,14 @@ export default function Post() {
               <tr style={{ background:'rgba(245,200,66,0.1)' }}>
                 <th style={{ padding:'10px 14px', textAlign:'left' as const, color:accent, fontWeight:700 }}>Filing Status</th>
                 <th style={{ padding:'10px 14px', textAlign:'left' as const, color:accent, fontWeight:700 }}>OT Deduction Cap</th>
-                <th style={{ padding:'10px 14px', textAlign:'left' as const, color:accent, fontWeight:700 }}>Max Tax Saved (22%)</th>
+                <th style={{ padding:'10px 14px', textAlign:'left' as const, color:accent, fontWeight:700 }}>Important limit</th>
               </tr>
             </thead>
             <tbody>
               {[
-                ['Single', '$12,500', '$2,750'],
-                ['Married Filing Jointly', '$25,000', '$5,500'],
-                ['Head of Household', '$12,500', '$2,750'],
+                ['Individual return', '$12,500', 'Income phase-out applies'],
+                ['Married filing jointly', '$25,000', 'Income phase-out applies'],
+                ['Other filing status', 'Generally $12,500', 'Verify current IRS rules'],
               ].map(([s,c,t],i) => (
                 <tr key={i} style={{ borderBottom:'1px solid rgba(255,255,255,0.06)' }}>
                   <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.85)' }}>{s}</td>
@@ -108,10 +102,10 @@ export default function Post() {
       </blockquote>
       <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)' }}>
           {[
-            { q:'How much tax do you pay on overtime in 2026?', a:'With the OBBBA deduction, you save up to $2,750 (single) or $5,500 (joint) in federal income tax on overtime pay. Without the deduction, OT is taxed at your marginal rate — typically 22-24% for most workers.' },
-            { q:'Does overtime get taxed more than regular pay?', a:'No. Overtime is taxed at your regular marginal rate, not a higher rate. The OBBBA deduction further reduces the tax impact of overtime for 2026.' },
-            { q:'How do I claim the overtime deduction?', a:'Report total W-2 wages as usual. Then deduct qualifying overtime (up to $12,500 single or $25,000 joint) as a separate line item on your federal return. Keep pay stubs as documentation.' },
-            { q:'Does the OT deduction apply to FICA taxes?', a:'No. FICA (Social Security 6.2% and Medicare 1.45%) still applies to all wages including overtime. Only federal income tax is reduced.' },
+            { q:'How much tax do you pay on overtime in 2026?', a:'Overtime wages are generally subject to ordinary income-tax rates. An eligible taxpayer may also claim a deduction for qualified overtime compensation, subject to annual caps and income phase-outs. The tax effect depends on the full tax return.' },
+            { q:'Does overtime get taxed more than regular pay?', a:'There is no separate federal overtime tax rate. Additional wages can put part of income into a higher marginal bracket; only income in that bracket is taxed at the higher rate.' },
+            { q:'How do I claim the overtime deduction?', a:'Follow current IRS instructions for the tax year and use employer reporting and records to determine qualified overtime compensation. Do not assume that all overtime wages qualify.' },
+            { q:'Does the OT deduction apply to FICA taxes?', a:'No. The deduction reduces federal taxable income; Social Security and Medicare taxes still apply to wages. State tax treatment may differ.' },
           ].map(({ q,a },i) => (
             <div key={i} style={{ borderBottom:'1px solid rgba(255,255,255,0.08)', padding:'16px 0' }}>
               <div style={{ fontSize:16, fontWeight:700, color:accent, marginBottom:8 }}>{q}</div>
@@ -120,7 +114,7 @@ export default function Post() {
           ))}
         </div>
         <div style={{ margin:'32px 0 24px', padding:'20px 24px', background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap' as const, gap:12 }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8edf8' }}>Calculate your exact take-home pay with overtime — free</div>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8edf8' }}>Explore an estimated paycheck with overtime</div>
           <Link href="/new-york-paycheck-calculator" style={{ background:accent, color:'#0f0c29', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>Paycheck Calculator →</Link>
         </div>
         <div style={{ margin:'0 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10 }}>

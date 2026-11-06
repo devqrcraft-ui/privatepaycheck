@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "Trump Account Calculator 2026 — See Your Child's Balance at Age 18 | PrivatePaycheck",
-  description: "Calculate your child's Trump Account (MAGA Account) balance at age 18. $1,000 government seed + $2,500/yr employer contributions. See exact growth free.",
+  title: 'Trump Account Calculator 2026 — Project a Balance at Age 18',
+  description: 'Model a hypothetical account balance and review current IRS eligibility and the limited $1,000 pilot contribution rules.',
   alternates: { canonical: 'https://www.privatepaycheck.com/trump-account-calculator' },
   openGraph: {
-    title: "Trump Account Calculator 2026 — See Your Child's Balance at Age 18 | PrivatePaycheck",
-    description: "Calculate your child's Trump Account (MAGA Account) balance at age 18. $1,000 government seed + $2,500/yr employer contributions. See exact growth free.",
+    title: 'Trump Account Calculator 2026 — Project a Balance at Age 18',
+    description: 'Estimate a hypothetical account balance and review current IRS eligibility and pilot contribution rules.',
     url: 'https://www.privatepaycheck.com/trump-account-calculator',
     type: 'website',
   },

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import TeacherPaycheckCalculator from './TeacherPaycheckClient';
-import { calcTeacher } from '@/lib/teacherCalc';
+import { calcTeacher, STATE_NAMES, STATE_SLUG_TO_CODE } from '@/lib/teacherCalc';
 
 export const metadata: Metadata = {
   title: 'Teacher Paycheck Calculator 2026 — Estimate Pay After Taxes & Pension',
@@ -31,6 +32,10 @@ export const metadata: Metadata = {
 
 export default function TeacherPaycheckPage() {
   const formatCurrency = (amount: number) => '$' + Math.round(amount).toLocaleString('en-US');
+  const states = Object.entries(STATE_SLUG_TO_CODE)
+    .map(([slug, code]) => ({ slug, name: STATE_NAMES[code] }))
+    .filter((state): state is { slug: string; name: string } => Boolean(state.name))
+    .sort((a, b) => a.name.localeCompare(b.name));
   const texas55k = calcTeacher(55000, 'TX', 'single', 40);
   const texas68k = calcTeacher(68000, 'TX', 'single', 40);
   const faqSchema = {
@@ -76,6 +81,41 @@ export default function TeacherPaycheckPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <TeacherPaycheckCalculator />
+      <section aria-labelledby="teacher-state-links-title" style={{ maxWidth: '928px', margin: '0 auto', padding: '0 16px 40px', color: '#fff', fontFamily: 'system-ui,sans-serif' }}>
+        <nav aria-label="Breadcrumb" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.78)', marginBottom: '20px' }}>
+          <Link href="/" style={{ color: '#e8b84b' }}>Home</Link>
+          {' / '}
+          <span>Teacher Paycheck Calculator</span>
+        </nav>
+        <h2 id="teacher-state-links-title" style={{ fontSize: '24px', margin: '0 0 8px' }}>Teacher paycheck calculators by state</h2>
+        <p style={{ fontSize: '16px', lineHeight: 1.65, color: 'rgba(255,255,255,0.78)', margin: '0 0 18px' }}>
+          Open a state page for its modeled teacher pension, payroll-tax assumptions, and an illustrative take-home estimate. Verify plan-specific rates and Social Security coverage with your employer or pension system.
+        </p>
+        <style>{`
+          .teacher-state-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+          .teacher-state-link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+          .teacher-state-link:hover { border-color: #e8b84b !important; background: rgba(232,184,75,0.12) !important; }
+          @media (max-width: 600px) {
+            .teacher-state-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .teacher-state-link:last-child { grid-column: span 2; }
+          }
+        `}</style>
+        <div className="teacher-state-links">
+          {states.map(({ slug, name }) => (
+            <Link
+              className="teacher-state-link"
+              key={slug}
+              href={`/teacher-paycheck-calculator/${slug}`}
+              style={{ display: 'block', minWidth: 0, padding: '14px 16px', border: '1px solid rgba(255,255,255,0.16)', borderRadius: '10px', color: '#fff', textDecoration: 'none', fontSize: '16px', fontWeight: 700, textAlign: 'center', background: 'rgba(255,255,255,0.04)' }}
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
+        <p style={{ margin: '18px 0 0', fontSize: '15px' }}>
+          Compare hourly take-home estimates with the <Link href="/hourly-paycheck-calculator" style={{ color: '#e8b84b', textDecoration: 'underline' }}>hourly paycheck calculator</Link>.
+        </p>
+      </section>
     </>
   );
 }

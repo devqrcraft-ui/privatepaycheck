@@ -1,14 +1,23 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
 export default function SeniorDeductionClient() {
   const [income, setIncome] = useState('55000');
   const [filing, setFiling] = useState('single');
   const [age, setAge] = useState('68');
 
+  const inputError = useMemo(() => {
+    const inc = income.trim() === '' ? NaN : Number(income);
+    const ag = age.trim() === '' ? NaN : Number(age);
+    if (!Number.isFinite(inc) || inc < 0) return 'Enter a valid annual income of $0 or more.';
+    if (!Number.isInteger(ag) || ag < 0 || ag > 120) return 'Enter an age from 0 to 120.';
+    return '';
+  }, [income, age]);
+
   const r = useMemo(() => {
-    const inc = parseFloat(income) || 0;
-    const ag = parseInt(age) || 0;
+    const inc = Number(income);
+    const ag = Number(age);
     const isEligible = ag >= 65;
     const phaseoutStart = filing === 'married' ? 150000 : 75000;
     const seniorBonus = 6000;
@@ -41,7 +50,7 @@ export default function SeniorDeductionClient() {
   const fmt = (n: number) => n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
   return (
-    <div suppressHydrationWarning style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#1e2a4a 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: '40px 20px' }}>
+    <div suppressHydrationWarning style={{ minHeight: '100vh', background: 'linear-gradient(135deg,#0f172a 0%,#1e2a4a 100%)', color: 'white', fontFamily: 'Inter,sans-serif', padding: 'clamp(24px, 6vw, 40px) 6px' }}>
       <div style={{ maxWidth: 560, margin: '0 auto' }}>
         <Link href="/" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: 14 }}>Back to all calculators</Link>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginTop: 16, marginBottom: 8 }}>Senior Tax Deduction Calculator 2026</h1>
@@ -51,24 +60,27 @@ export default function SeniorDeductionClient() {
         </p>
 
         <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: 24, marginBottom: 20 }}>
-          <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6 }}>Annual Income</label>
-          <input type="number" value={income} onChange={e => setIncome(e.target.value)} min={0}
+          <label style={{ display: 'block', fontSize: 16, color: '#c4d2e3', marginBottom: 6 }}>Annual Income</label>
+          <input type="number" value={income} onChange={e => setIncome(e.target.value)} min={0} step="any"
+            aria-invalid={Boolean(inputError)} aria-describedby={inputError ? 'senior-calc-error' : undefined}
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.08)', color: 'white', fontSize: 16, boxSizing: 'border-box' }} />
 
-          <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6, marginTop: 16 }}>Your Age</label>
-          <input type="number" value={age} onChange={e => setAge(e.target.value)} min="0" max="100"
+          <label style={{ display: 'block', fontSize: 16, color: '#c4d2e3', marginBottom: 6, marginTop: 16 }}>Your Age</label>
+          <input type="number" value={age} onChange={e => setAge(e.target.value)} min="0" max="120" step="1"
+            aria-invalid={Boolean(inputError)} aria-describedby={inputError ? 'senior-calc-error' : undefined}
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.08)', color: 'white', fontSize: 16, boxSizing: 'border-box' }} />
 
-          <label style={{ display: 'block', fontSize: 13, color: '#94a3b8', marginBottom: 6, marginTop: 16 }}>Filing Status</label>
+          <label style={{ display: 'block', fontSize: 16, color: '#c4d2e3', marginBottom: 6, marginTop: 16 }}>Filing Status</label>
           <select value={filing} onChange={e => setFiling(e.target.value)}
             style={{ width: '100%', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.15)', background:'#1e2a4a', color: 'white', fontSize: 16, boxSizing: 'border-box', colorScheme: 'dark' }}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
-                <option value="hoh">Head of Household</option>
           </select>
         </div>
 
-        {!r.isEligible ? (
+        {inputError ? (
+          <p id="senior-calc-error" role="alert" style={{ color: '#fca5a5', fontSize: 16, margin: '0 0 16px' }}>{inputError}</p>
+        ) : !r.isEligible ? (
           <div style={{ background: 'rgba(239,68,68,0.15)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: 12, padding: 20, textAlign: 'center' }}>
             <p style={{ fontSize: 16, color: '#fca5a5', margin: 0 }}>Must be age 65 or older to qualify.</p>
           </div>
@@ -82,10 +94,10 @@ export default function SeniorDeductionClient() {
               <div style={{ fontSize: 13, color: '#86efac', marginBottom: 4 }}>Your Senior Deduction</div>
               <div style={{ fontSize: 42, fontWeight: 900, color: '#4ade80' }}>{fmt(r.actualBonus)}</div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(170px,1fr))', gap: 12 }}>
               {([['Annual Tax Savings', fmt(r.savings)], ['Monthly Savings', fmt(r.monthly)], ['Tax Without Deduction', fmt(r.taxOld)], ['Tax With Deduction', fmt(r.taxNew)]] as [string,string][]).map(([label, value]) => (
                 <div key={label} style={{ background: 'rgba(255,255,255,0.05)', borderRadius: 10, padding: '12px 16px' }}>
-                  <div style={{ fontSize: 12, color: '#94a3b8', marginBottom: 4 }}>{label}</div>
+                  <div style={{ fontSize: 14, color: '#c4d2e3', marginBottom: 4 }}>{label}</div>
                   <div style={{ fontSize: 20, fontWeight: 700 }}>{value}</div>
                 </div>
               ))}
@@ -93,7 +105,18 @@ export default function SeniorDeductionClient() {
           </div>
         )}
 
-        <div style={{ marginTop: 24, background: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 20, fontSize: 13, color: '#94a3b8' }}>
+        {!inputError && (
+          <CalculatorResultActions
+            summary={`2026 senior deduction estimate (${filing === 'married' ? 'Married Filing Jointly' : 'Single'})\nAge entered: ${age}\nAnnual income entered: ${fmt(Number(income))}\nEstimated senior deduction: ${fmt(r.actualBonus)}\nEstimated federal income-tax savings: ${fmt(r.savings)}\nThis estimate models federal income tax only; state tax, credits, and other deductions are not included.`}
+            relatedLinks={[
+              { href: '/no-tax-on-overtime-deduction', label: 'Overtime deduction calculator →' },
+              { href: '/no-tax-on-tips-calculator', label: 'Tip deduction calculator →' },
+              { href: '/federal-paycheck-calculator', label: 'Federal paycheck calculator →' },
+            ]}
+          />
+        )}
+
+        <div style={{ marginTop: 24, background: 'rgba(255,255,255,0.04)', borderRadius: 12, padding: 20, fontSize: 15, color: '#c4d2e3', lineHeight: 1.6 }}>
           <p style={{ margin: '0 0 8px', fontWeight: 600, color: '#cbd5e1' }}>How it works:</p>
           <p style={{ margin: '0 0 6px' }}>The One Big Beautiful Bill adds a $6,000 above-the-line deduction for taxpayers age 65+.</p>
           <p style={{ margin: '0 0 6px' }}>Phaseout starts at $75,000 (single) or $150,000 (married) — reduces $1 for every $1 over the threshold.</p>

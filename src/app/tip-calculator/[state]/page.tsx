@@ -325,12 +325,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
-  const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state tax';
   return {
-    title: data.noStateTax ? data.name + ' Tip Tax Calculator — No State Tax on Tips' : data.name + ' Tip Tax Calculator — Keep Tips After ' + data.stateTax + '%',
-    description: data.noStateTax ? 'Working for tips in ' + data.name + '? No state income tax means you keep more. See exactly how much with the 2026 No Tax on Tips deduction. Free & instant.' : 'Working for tips in ' + data.name + '? See exactly how much you keep after ' + data.stateTax + '% state tax with the 2026 No Tax on Tips deduction. Free & instant.',
+    title: `${data.name} Qualified Tips Deduction Calculator 2026`,
+    description: `Estimate federal income-tax savings for qualified tips in ${data.name}. State tax treatment is not modeled and may vary.`,
+    openGraph: {
+      title: `${data.name} Qualified Tips Deduction Calculator 2026`,
+      description: `Estimate federal income-tax savings for qualified tips in ${data.name}; state tax treatment is not modeled.`,
+      url: `https://www.privatepaycheck.com/tip-calculator/${state}`,
+      siteName: 'PrivatePaycheck',
+      type: 'website',
+    },
     alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator/' + state },
-  authors: [{ name: 'the PrivatePaycheck Team' }],
+    authors: [{ name: 'the PrivatePaycheck Team' }],
   };
 }
 
@@ -340,15 +346,40 @@ export default async function Page({ params }: Props) {
   if (!data) notFound();
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'HowTo',name:data.name+' Tip and Paycheck Calculator 2026',description:'How to calculate your '+data.name+' take-home pay in 2026.',step:[
-          {'@type':'HowToStep',position:1,name:'Enter base hourly wage',text:'Type your base hourly rate before tips.'},
-          {'@type':'HowToStep',position:2,name:'Add tip income',text:'Enter your average weekly tip amount.'},
-          {'@type':'HowToStep',position:3,name:'Select pay frequency',text:'Choose how often you get paid.'},
-          {'@type':'HowToStep',position:4,name:'Pick your state',text:'Select your state for accurate state tax calculation.'},
-          {'@type':'HowToStep',position:5,name:'See net take-home',text:'View your after-tax paycheck including tip income.'}
-          ]}) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[{'@type':'Question',name:'Are tips taxable income in 2026?',acceptedAnswer:{'@type':'Answer',text:'Yes, tips are taxable. However, the 2026 No Tax on Tips deduction allows eligible workers to exclude up to $25,000 in tip income from federal taxes.'}},{'@type':'Question',name:'How does the No Tax on Tips law affect my paycheck?',acceptedAnswer:{'@type':'Answer',text:'Under the 2026 rule, tipped workers may deduct up to $25,000 in tip income. This calculator applies that deduction automatically to show your correct net pay.'}},{'@type':'Question',name:'Which states have no income tax on tips?',acceptedAnswer:{'@type':'Answer',text:'States with no income tax (Texas, Florida, Nevada, Washington, Wyoming, South Dakota, Alaska, Tennessee, New Hampshire) effectively have no state tax on tips either.'}}]}) }} />
-      <TipCalculatorState stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} noTipCredit={data.noTipCredit ?? null} stateSlug={state} minWage={STATE_MIN_WAGE[STATE_SLUG_MAP[state]]?.hourly ?? 7.25} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: `${data.name} qualified-tips deduction estimate`,
+        description: 'Estimate a federal income-tax scenario for qualified tips. This is not a state-tax or take-home-pay calculator.',
+        step: [
+          { '@type': 'HowToStep', position: 1, name: 'Enter tips', text: 'Enter annual tips; the estimate assumes all entered tips qualify.' },
+          { '@type': 'HowToStep', position: 2, name: 'Enter employee wages', text: 'Enter annual employee wages excluding tips; the estimate approximates modified adjusted gross income using only wages and tips.' },
+          { '@type': 'HowToStep', position: 3, name: 'Choose filing status', text: 'Select a filing status to apply the modeled federal income-tax brackets and phase-out.' },
+          { '@type': 'HowToStep', position: 4, name: 'Review the estimate', text: 'Review the estimated federal deduction and tax savings. State taxes, self-employment income and tax, other income, credits, and eligibility are not determined.' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'Are tips taxable income in 2026?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Tips remain reportable. Eligible workers may qualify for a federal deduction for qualified tips for tax years 2025–2028, subject to occupation, income, and other limits. The deduction does not eliminate employee Social Security or Medicare taxes.' },
+          },
+          {
+            '@type': 'Question',
+            name: 'What does this tips calculator estimate?',
+            acceptedAnswer: { '@type': 'Answer', text: 'It estimates a federal income-tax deduction and possible federal income-tax savings, assuming the entered tips qualify and modified adjusted gross income is wages plus tips. It does not calculate state tax or exact take-home pay, validate eligibility, or model self-employment income and tax.' },
+          },
+          {
+            '@type': 'Question',
+            name: 'Does the federal tips deduction reduce state income tax?',
+            acceptedAnswer: { '@type': 'Answer', text: 'State conformity varies, and this calculator does not estimate state income-tax savings. A state with no broad individual income tax may still have payroll taxes or other state-level deductions.' },
+          },
+        ],
+      }) }} />
+      <TipCalculatorState stateName={data.name} noStateTax={data.noStateTax} noTipCredit={data.noTipCredit ?? null} minWage={STATE_MIN_WAGE[STATE_SLUG_MAP[state]]?.hourly ?? 7.25} />
     </>
   );
 }

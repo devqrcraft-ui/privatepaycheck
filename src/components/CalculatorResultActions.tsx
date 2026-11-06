@@ -93,35 +93,34 @@ export default function CalculatorResultActions({ summary, relatedLinks }: Props
     border: '1px solid rgba(245,200,66,0.42)',
     background: 'rgba(245,200,66,0.1)',
     color: '#F5C842',
-    fontSize: 13,
+    fontSize: 14,
     fontWeight: 700,
     cursor: 'pointer',
   };
 
   return (
     <div style={{ marginTop: 16 }}>
+      <style>{`
+        .calculator-action-button:hover { background: rgba(245,200,66,0.2) !important; }
+        .calculator-action-button:focus-visible,
+        .calculator-action-link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+        .calculator-action-link:hover { color: #fff !important; }
+      `}</style>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-        <button type="button" onClick={copyResult} style={buttonStyle}>Copy result</button>
-        <button type="button" onClick={shareResult} style={buttonStyle}>Share result</button>
+        <button className="calculator-action-button" type="button" onClick={copyResult} style={buttonStyle}>Copy result</button>
+        <button className="calculator-action-button" type="button" onClick={shareResult} style={buttonStyle}>Share result</button>
         {relatedLinks.map((link) => (
           <Link
             key={link.href}
             href={link.href}
-            style={{
-              ...buttonStyle,
-              display: 'inline-flex',
-              alignItems: 'center',
-              textDecoration: 'none',
-              borderColor: 'rgba(255,255,255,0.2)',
-              background: 'rgba(255,255,255,0.06)',
-              color: '#e8edf8',
-            }}
+            className="calculator-action-link"
+            style={{ display: 'inline-flex', alignItems: 'center', minHeight: 42, padding: '9px 4px', color: '#F5C842', fontSize: 14, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 3 }}
           >
             {link.label}
           </Link>
         ))}
       </div>
-      <p aria-live="polite" style={{ minHeight: 18, margin: '7px 0 0', color: '#94a3b8', fontSize: 12 }}>
+      <p aria-live="polite" style={{ minHeight: 18, margin: '7px 0 0', color: '#b8c8d8', fontSize: 14 }}>
         {status}
       </p>
     </div>

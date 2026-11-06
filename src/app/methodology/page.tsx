@@ -3,6 +3,13 @@ export const metadata: Metadata = {
   title: 'Paycheck Calculator Methodology 2026 — How We Calculate',
   description: 'How PrivatePaycheck calculates take-home pay. All formulas use 2026 IRS tax brackets, standard deductions, FICA rates, and state tax tables sourced directly from official government publications.',
   alternates: { canonical: 'https://www.privatepaycheck.com/methodology' },
+  openGraph: {
+    title: 'Paycheck Calculator Methodology 2026 — How We Calculate',
+    description: 'Sources, assumptions, and limitations behind PrivatePaycheck estimates.',
+    url: 'https://www.privatepaycheck.com/methodology',
+    siteName: 'PrivatePaycheck',
+    type: 'website',
+  },
 }
 export default function Page() {
   return (
@@ -13,9 +20,9 @@ export default function Page() {
 
       <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Data Sources</h2>
       <ul style={{ color:'#c8d4e8', lineHeight: 2, paddingLeft: 20, marginBottom: 32 }}>
-        <li><strong>Federal tax brackets:</strong> IRS Rev. Proc. 2025-xx (2026 inflation adjustments)</li>
-        <li><strong>Standard deduction 2026:</strong> $16,100 single / $32,200 married filing jointly</li>
-        <li><strong>FICA rates:</strong> Social Security 6.2% (wage base $184,500) + Medicare 1.45%</li>
+        <li><strong>Federal tax brackets and standard deduction:</strong> <a href="https://www.irs.gov/pub/irs-drop/rp-25-32.pdf" target="_blank" rel="noopener noreferrer" style={{ color:'#F5C842' }}>IRS Revenue Procedure 2025-32</a> (2026 inflation adjustments); standard deduction $16,100 single / $32,200 married filing jointly.</li>
+        <li><strong>Federal withholding tables:</strong> <a href="https://www.irs.gov/pub/irs-pdf/p15t.pdf" target="_blank" rel="noopener noreferrer" style={{ color:'#F5C842' }}>IRS Publication 15-T</a>.</li>
+        <li><strong>FICA rates and Social Security wage base:</strong> Social Security 6.2% up to $184,500 and Medicare 1.45%; see the <a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer" style={{ color:'#F5C842' }}>Social Security Administration contribution and benefit base</a>.</li>
         <li><strong>State income tax rates:</strong> Each state Department of Revenue official rate schedules</li>
         <li><strong>State SDI/SUI:</strong> State workforce agency publications</li>
       </ul>

@@ -21,6 +21,13 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: `${name} Teacher Paycheck Calculator`,
     description: `Estimate ${name} teacher take-home pay using modeled ${p.system} pension and 2026 federal and state tax rules. Local taxes and plan-specific details may change results.`,
+    openGraph: {
+      title: `${name} Teacher Paycheck Calculator`,
+      description: `Estimate teacher take-home pay in ${name} using the modeled ${p.system} pension and tax assumptions.`,
+      url: `https://www.privatepaycheck.com/teacher-paycheck-calculator/${state}`,
+      siteName: 'PrivatePaycheck',
+      type: 'website',
+    },
     alternates: { canonical: `https://www.privatepaycheck.com/teacher-paycheck-calculator/${state}` },
     authors: [{ name: 'the PrivatePaycheck Team' }],
   };

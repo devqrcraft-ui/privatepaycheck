@@ -1,33 +1,9 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-
-const BRACKETS_SINGLE = [
-  { min: 0,       max: 12400,    rate: 0.10 },
-  { min: 12400,   max: 50400,    rate: 0.12 },
-  { min: 50400,   max: 105700,   rate: 0.22 },
-  { min: 105700,  max: 201775,   rate: 0.24 },
-  { min: 201775,  max: 256225,   rate: 0.32 },
-  { min: 256225,  max: 640600,   rate: 0.35 },
-  { min: 640600,  max: Infinity, rate: 0.37 },
-]
-const BRACKETS_JOINT = [
-  { min: 0,       max: 24800,    rate: 0.10 },
-  { min: 24800,   max: 100800,   rate: 0.12 },
-  { min: 100800,  max: 211400,   rate: 0.22 },
-  { min: 211400,  max: 403550,   rate: 0.24 },
-  { min: 403550,  max: 512450,   rate: 0.32 },
-  { min: 512450,  max: 768700,   rate: 0.35 },
-  { min: 768700,  max: Infinity, rate: 0.37 },
-]
-function calcTax(inc: number, br: typeof BRACKETS_SINGLE) {
-  let t = 0
-  for (const { min, max, rate } of br) {
-    if (inc <= min) break
-    t += (Math.min(inc, max) - min) * rate
-  }
-  return t
-}
+import CalculatorResultActions from '@/components/CalculatorResultActions'
+import { estimateFederalIncomeTax } from '@/lib/paycheck'
+import { FICA } from '@/lib/taxRates2026'
 const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US')
 
 const JOBS = [
@@ -43,22 +19,45 @@ const JOBS = [
 export default function TipsCalculator() {
   const [income, setIncome] = useState('')
   const [tips,   setTips]   = useState('')
-  const [status, setStatus] = useState<'single' | 'joint'>('single')
+  const [status, setStatus] = useState<'single' | 'joint' | 'head'>('single')
   const [job,    setJob]    = useState('')
+  const [error,  setError]  = useState('')
   const [result, setResult] = useState<null | {
     deduction: number; taxSaved: number; fica: number; phaseOut: number
   }>(null)
 
   const calc = () => {
-    const inc     = parseFloat(income) || 0
-    const tip     = parseFloat(tips)   || 0
-    const thresh  = status === 'single' ? 150000 : 300000
-    const phaseOut   = Math.max(0, Math.floor((inc - thresh) / 1000) * 100)
-    const deduction  = Math.max(0, Math.min(tip, 25000) - phaseOut)
-    const br         = status === 'single' ? BRACKETS_SINGLE : BRACKETS_JOINT
-    const taxSaved   = calcTax(inc, br) - calcTax(inc - deduction, br)
-    const fica       = tip * 0.0765
+    const inc = Number(income)
+    const tip = Number(tips)
+    if (!income.trim() || !tips.trim() || !Number.isFinite(inc) || inc < 0 ||
+        !Number.isFinite(tip) || tip < 0 || inc > 1_000_000_000 || tip > 1_000_000_000) {
+      setResult(null)
+      setError('Enter valid annual income and tips of $0 or more.')
+      return
+    }
+    if (!job) {
+      setResult(null)
+      setError('Select an occupation to estimate eligible tip deductions.')
+      return
+    }
+
+    const filingStatus = status === 'joint' ? 'married' : status === 'head' ? 'head' : 'single'
+    const thresh = status === 'joint' ? 300000 : 150000
+    const phaseOut = Math.max(0, Math.ceil((inc + tip - thresh) / 1000) * 100)
+    const deduction = Math.max(0, Math.min(tip, 25000) - phaseOut)
+    const taxSaved = estimateFederalIncomeTax(inc + tip, filingStatus)
+      - estimateFederalIncomeTax(inc + tip - deduction, filingStatus)
+    const totalWages = inc + tip
+    const socialSecurity = Math.max(
+      0,
+      Math.min(totalWages, FICA.socialSecurity.cap) - Math.min(inc, FICA.socialSecurity.cap),
+    ) * FICA.socialSecurity.rate
+    const additionalMedicareThreshold = status === 'joint' ? 250000 : FICA.additionalMedicare.threshold
+    const additionalMedicare = Math.max(0, totalWages - additionalMedicareThreshold)
+      - Math.max(0, inc - additionalMedicareThreshold)
+    const fica = socialSecurity + tip * FICA.medicare.rate + additionalMedicare * FICA.additionalMedicare.rate
     setResult({ deduction, taxSaved, fica, phaseOut })
+    setError('')
   }
 
   return (
@@ -66,49 +65,49 @@ export default function TipsCalculator() {
       
       
 
-      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 16px' }}>
+      <div style={{ maxWidth: '680px', margin: '0 auto', padding: '40px 6px' }}>
         <div style={{ display: 'inline-block', background: 'rgba(74,222,128,0.1)', border: '1px solid rgba(74,222,128,0.3)', borderRadius: '20px', padding: '6px 16px', fontSize: '13px', color: '#4ade80', marginBottom: '20px' }}>
            One Big Beautiful Bill — Signed July 4, 2025
         </div>
         <h1 style={{ fontSize: 'clamp(28px,5vw,44px)', fontWeight: 900, lineHeight: 1.15, margin: '0 0 16px', letterSpacing: '-1px' }}>
-          No Tax on Tips<br /><span style={{ color: '#4ade80' }}>Calculator 2025</span>
+          No Tax on Tips<br /><span style={{ color: '#4ade80' }}>Calculator 2026</span>
         </h1>
         <p style={{ fontSize: '17px', opacity: 0.65, lineHeight: 1.7, marginBottom: '36px' }}>
           Under the new law, up to <strong style={{ color: '#4ade80' }}>$25,000 of tips</strong> are exempt from federal income tax.
-          Find out exactly how much you&apos;ll save — 100% private, nothing stored.
+          Estimate your potential savings — calculations run in your browser and your inputs are not stored.
         </p>
 
         <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px' }}>
           <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Filing Status</label>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-              {(['single', 'joint'] as const).map(s => (
-                <button key={s} onClick={() => setStatus(s)} style={{ padding: '12px', borderRadius: '10px', border: `1px solid ${status === s ? '#4ade80' : 'rgba(255,255,255,0.1)'}`, background: status === s ? 'rgba(74,222,128,0.12)' : 'rgba(255,255,255,0.04)', color: status === s ? '#4ade80' : 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: '14px', fontWeight: status === s ? 700 : 400, transition: 'all 0.2s' }}>
-                  {s === 'single' ? 'Single / Head of Household' : 'Married Filing Jointly'}
+            <label style={{ display: 'block', fontSize: '16px', color: '#c4d2e3', marginBottom: '8px' }}>Filing Status</label>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(130px,1fr))', gap: '10px' }}>
+              {(['single', 'head', 'joint'] as const).map(s => (
+                <button key={s} type="button" aria-pressed={status === s} onClick={() => { setStatus(s); setResult(null); setError(''); }} style={{ minHeight: 48, padding: '12px', borderRadius: '10px', border: `1px solid ${status === s ? '#4ade80' : 'rgba(255,255,255,0.1)'}`, background: status === s ? 'rgba(74,222,128,0.12)' : 'rgba(255,255,255,0.04)', color: status === s ? '#4ade80' : 'rgba(255,255,255,0.8)', cursor: 'pointer', fontSize: '15px', fontWeight: status === s ? 700 : 400, transition: 'all 0.2s' }}>
+                  {s === 'single' ? 'Single' : s === 'head' ? 'Head of Household' : 'Married Filing Jointly'}
                 </button>
               ))}
             </div>
           </div>
 
           <div style={{ marginBottom: '24px' }}>
-            <label style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>Your Occupation</label>
-            <select value={job} onChange={e => setJob(e.target.value)} style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '14px 16px', color: job ? 'white' : 'rgba(255,255,255,0.4)', fontSize: '15px', outline: 'none', cursor: 'pointer', colorScheme: 'dark' }}>
+            <label style={{ display: 'block', fontSize: '16px', color: '#c4d2e3', marginBottom: '8px' }}>Your Occupation</label>
+            <select value={job} onChange={e => { setJob(e.target.value); setResult(null); setError(''); }} style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '14px 16px', color: job ? 'white' : 'rgba(255,255,255,0.8)', fontSize: '16px', outline: 'none', cursor: 'pointer', colorScheme: 'dark' }}>
               <option value="" style={{ background: '#1a1040' }}>Select your occupation...</option>
               {JOBS.map(j => <option key={j} value={j} style={{ background: '#1a1040' }}>{j}</option>)}
             </select>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '28px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,220px),1fr))', gap: '16px', marginBottom: '28px' }}>
             {[
               { label: 'Annual Base Income (before tips)', val: income, set: setIncome, ph: '48,000' },
               { label: 'Annual Tips Received',             val: tips,   set: setTips,   ph: '22,000' },
             ].map(({ label, val, set, ph }) => (
               <div key={label}>
-                <label style={{ display: 'block', fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>{label}</label>
+                <label style={{ display: 'block', fontSize: '16px', color: '#c4d2e3', marginBottom: '8px' }}>{label}</label>
                 <div style={{ position: 'relative' }}>
                   <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.4)' }}>$</span>
-                  <input type="number" value={val} onChange={e => set(e.target.value)} min={0} placeholder={ph}
-                    style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '14px 16px 14px 28px', color: 'white', fontSize: '15px', outline: 'none', boxSizing: 'border-box' }} />
+                  <input type="number" value={val} onChange={e => { set(e.target.value); setResult(null); setError(''); }} min={0} placeholder={ph}
+                    style={{ width: '100%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '14px 16px 14px 28px', color: 'white', fontSize: '16px', outline: 'none', boxSizing: 'border-box' }} />
                 </div>
               </div>
             ))}
@@ -117,10 +116,11 @@ export default function TipsCalculator() {
           <button onClick={calc} style={{ width: '100%', padding: '16px', background: 'linear-gradient(135deg,#4ade80,#22c55e)', border: 'none', borderRadius: '14px', color: 'white', fontSize: '17px', fontWeight: 800, cursor: 'pointer' }}>
             Calculate My Tip Tax Savings →
           </button>
+          {error && <p role="alert" style={{ color: '#fca5a5', fontSize: 16, lineHeight: 1.5 }}>{error}</p>}
 
           {result && (
             <div style={{ marginTop: '28px', padding: '28px', background: 'rgba(74,222,128,0.07)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '16px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '14px', marginBottom: '16px' }}>
                 {[
                   { label: 'Federal Tax Saved',       value: fmt(result.taxSaved),  big: true,  color: '#4ade80' },
                   { label: 'Tip Deduction',           value: fmt(result.deduction), big: false, color: 'white'   },
@@ -128,19 +128,26 @@ export default function TipsCalculator() {
                   { label: 'Phase-Out Reduction',     value: fmt(result.phaseOut),  big: false, color: result.phaseOut > 0 ? '#f87171' : 'rgba(255,255,255,0.3)' },
                 ].map(({ label, value, big, color }) => (
                   <div key={label} style={{ padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', border: `1px solid ${big ? 'rgba(74,222,128,0.3)' : 'rgba(255,255,255,0.07)'}` }}>
-                    <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '6px' }}>{label}</div>
+                    <div style={{ fontSize: '14px', color: '#c4d2e3', marginBottom: '6px' }}>{label}</div>
                     <div style={{ fontSize: big ? '30px' : '22px', fontWeight: 800, color }}>{value}</div>
                   </div>
                 ))}
               </div>
               {result.phaseOut > 0 && (
-                <div style={{ background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '12px 16px', fontSize: '13px', color: '#fbbf24', marginBottom: '12px' }}>
+                <div style={{ background: 'rgba(251,191,36,0.1)', border: '1px solid rgba(251,191,36,0.3)', borderRadius: '10px', padding: '12px 16px', fontSize: '15px', color: '#fbbf24', marginBottom: '12px' }}>
                    Income exceeds threshold — deduction reduced by {fmt(result.phaseOut)}.
                 </div>
               )}
-              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)', margin: 0, lineHeight: 1.6 }}>
-                 Federal income tax only. SS (6.2%) + Medicare (1.45%) still apply. Valid 2025–2028.
+              <p style={{ fontSize: '15px', color: '#b8c8d8', margin: 0, lineHeight: 1.6 }}>
+                 Federal income-tax savings are estimated; Social Security and Medicare taxes still apply to tips. Eligibility and state tax are not fully modeled.
               </p>
+              <CalculatorResultActions
+                summary={`2026 no-tax-on-tips estimate (${status === 'joint' ? 'Married Filing Jointly' : status === 'head' ? 'Head of Household' : 'Single'})\nOccupation: ${job}\nAnnual income before tips: ${fmt(Number(income))}\nAnnual tips entered: ${fmt(Number(tips))}\nEstimated eligible tip deduction: ${fmt(result.deduction)}\nEstimated federal income-tax savings: ${fmt(result.taxSaved)}\nEstimated FICA on tips remains due: ${fmt(result.fica)}. State tax, eligibility details, and other deductions are not modeled.`}
+                relatedLinks={[
+                  { href: '/tip-calculator', label: 'State tip tax calculator →' },
+                  { href: '/no-tax-on-overtime-deduction', label: 'Overtime deduction calculator →' },
+                ]}
+              />
             </div>
           )}
         </div>

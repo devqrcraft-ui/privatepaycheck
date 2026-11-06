@@ -1,176 +1,214 @@
 'use client';
-import { useState } from 'react';
+
+import { useMemo, useState, type FormEvent } from 'react';
 import Link from 'next/link';
+import CalculatorResultActions from '@/components/CalculatorResultActions';
+import { estimatePaycheck, type FilingStatus } from '@/lib/paycheck';
 
 interface Props {
   stateName: string;
   stateAbbr: string;
-  stateTax: number;
   noStateTax: boolean;
   stateSlug: string;
   minWage: number;
 }
 
 const BG: React.CSSProperties = { minHeight: '100vh', background: '#091526', color: '#fff', fontFamily: 'system-ui,sans-serif' };
-const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '24px' };
-const LABEL: React.CSSProperties = { fontSize: '11px', fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', marginBottom: '8px', display: 'block' };
-const INPUT_S: React.CSSProperties = { width: '100%', background:'#1e2a4a', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '10px', padding: '14px 16px', color: '#fff', fontSize: '18px', boxSizing: 'border-box', outline: 'none' , colorScheme: 'dark' as const };
-const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' };
-
-function fedTax(income: number, filing: string): number {
-  const b = filing === 'married'
-    ? [[24800,0.10],[100800,0.12],[211400,0.22],[403550,0.24],[512450,0.32],[768700,0.35],[Infinity,0.37]]
-    : [[12400,0.10],[50400,0.12],[105700,0.22],[201775,0.24],[256225,0.32],[640600,0.35],[Infinity,0.37]];
-  let tax = 0, prev = 0;
-  for (const [lim, rate] of b as [number,number][]) {
-    if (income <= prev) break;
-    tax += (Math.min(income, lim as number) - prev) * rate;
-    prev = lim as number;
-  }
-  return tax;
-}
-
+const CARD: React.CSSProperties = { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '12px', padding: '20px' };
+const LABEL: React.CSSProperties = { fontSize: '16px', fontWeight: 600, color: 'rgba(255,255,255,0.82)', marginBottom: '8px', display: 'block' };
+const INPUT_S: React.CSSProperties = { width: '100%', background: '#1e2a4a', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '8px', padding: '12px 14px', color: '#fff', fontSize: '18px', boxSizing: 'border-box', colorScheme: 'dark' };
+const ROW: React.CSSProperties = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.12)', fontSize: '16px' };
 const FREQ: Record<string, number> = { weekly: 52, biweekly: 26, semimonthly: 24, monthly: 12 };
 
-export default function HourlyStateClient({ stateName, stateTax, noStateTax, stateSlug, minWage }: Props) {
-  const [hourly, setHourly] = useState(25);
-  const [hours, setHours] = useState(40);
+export default function HourlyStateClient({ stateName, stateAbbr, noStateTax, stateSlug, minWage }: Props) {
+  const [hourly, setHourly] = useState('25');
+  const [hours, setHours] = useState('40');
   const [freq, setFreq] = useState('biweekly');
   const [filing, setFiling] = useState('single');
+  const [hasCalculated, setHasCalculated] = useState(false);
+  const [error, setError] = useState('');
+  const periodsPerYear = FREQ[freq];
 
-  const periodsPerYear = FREQ[freq] || 26;
-  const annualGross = hourly * hours * periodsPerYear;
-  const federal = fedTax(annualGross, filing);
-  const state = annualGross * (stateTax / 100);
-  const ss = Math.min(annualGross, 184500) * 0.062;
-  const medicare = annualGross * 0.0145;
-  const totalTax = federal + state + ss + medicare;
-  const annualNet = annualGross - totalTax;
-  const perPeriodGross = annualGross / periodsPerYear;
-  const perPeriodNet = annualNet / periodsPerYear;
-  const effectiveRate = annualGross > 0 ? (totalTax / annualGross * 100).toFixed(1) : '0.0';
+  const model = useMemo(() => {
+    const hourlyValue = Number(hourly);
+    const hoursValue = Number(hours);
+    if (!Number.isFinite(hourlyValue) || hourlyValue <= 0 ||
+      !Number.isFinite(hoursValue) || hoursValue < 1 || hoursValue > 168 ||
+      !periodsPerYear) return null;
 
-  const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
-  const fmt2 = (n: number) => '$' + n.toFixed(2);
+    const filingStatus: FilingStatus = filing === 'married' ? 'married' : filing === 'hoh' ? 'head' : 'single';
+    const annualGross = hourlyValue * hoursValue * 52;
+    const estimate = estimatePaycheck({
+      annual: annualGross,
+      freq: periodsPerYear,
+      stateRatePct: 0,
+      stateCode: stateAbbr.toLowerCase(),
+      filing: filingStatus,
+      k401Pct: 0,
+    });
+
+    return {
+      annualGross,
+      estimate,
+      annualNet: estimate.net * periodsPerYear,
+    };
+  }, [filing, hourly, hours, periodsPerYear, stateAbbr]);
+
+  const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
+  const update = (setter: (value: string) => void) => (value: string) => {
+    setter(value);
+    setHasCalculated(false);
+    setError('');
+  };
+
+  function calculate(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const hourlyValue = Number(hourly);
+    const hoursValue = Number(hours);
+    if (!Number.isFinite(hourlyValue) || hourlyValue <= 0 || hourlyValue > 10000) {
+      setError('Enter an hourly rate greater than $0 and no more than $10,000.');
+      setHasCalculated(false);
+      return;
+    }
+    if (!Number.isFinite(hoursValue) || hoursValue < 1 || hoursValue > 168) {
+      setError('Enter between 1 and 168 hours per week.');
+      setHasCalculated(false);
+      return;
+    }
+    if (!periodsPerYear || !model) {
+      setError('Choose a valid pay frequency and check your entries.');
+      setHasCalculated(false);
+      return;
+    }
+    setError('');
+    setHasCalculated(true);
+  }
+
+  const result = hasCalculated ? model : null;
 
   return (
     <div style={BG}>
-      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 16px' }}>
-        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.35)', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <Link href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Home</Link>
-          <span>/</span>
-          <Link href="/hourly-paycheck-calculator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Hourly Paycheck Calculator</Link>
-          <span>/</span>
-          <span style={{ color: '#fff' }}>{stateName}</span>
-        </div>
+      <style>{`
+        .hourly-state-input:focus-visible,
+        .hourly-state-calculate:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+        .hourly-state-calculate:hover { filter: brightness(1.08); }
+      `}</style>
+      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '24px 6px' }}>
+        <nav aria-label="Breadcrumb" style={{ fontSize: '14px', color: 'rgba(255,255,255,0.72)', marginBottom: '24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
+          <Link href="/" style={{ color: '#e8b84b' }}>Home</Link>
+          <span aria-hidden="true">/</span>
+          <Link href="/hourly-paycheck-calculator" style={{ color: '#e8b84b' }}>Hourly Paycheck Calculator</Link>
+          <span aria-hidden="true">/</span>
+          <span>{stateName}</span>
+        </nav>
 
-        <div style={{ marginBottom: '36px' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '20px', padding: '5px 14px', fontSize: '12px', marginBottom: '16px', color: '#4ade80' }}>
-            <span>●</span><span>UPDATED JANUARY 2026 · IRS COMPLIANT</span>
-          </div>
-          <h1 style={{ fontSize: 'clamp(26px,4.5vw,46px)', fontWeight: 900, margin: '0 0 14px', lineHeight: 1.1 }}>
-            {stateName} Hourly Paycheck
-            <br /><span style={{ color: '#F5C842' }}>Calculator 2026</span>
+        <header style={{ marginBottom: '28px' }}>
+          <p style={{ color: '#e8b84b', fontSize: '14px', fontWeight: 700, margin: '0 0 10px' }}>2026 ESTIMATE · STATE-SPECIFIC TAX MODEL</p>
+          <h1 style={{ fontSize: 'clamp(28px,5vw,46px)', fontWeight: 900, margin: '0 0 14px', lineHeight: 1.12 }}>
+            {stateName} Hourly Paycheck Calculator 2026
           </h1>
-          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)', maxWidth: '580px', lineHeight: 1.75, margin: '0 0 20px' }}>
-            {noStateTax
-              ? 'Calculate your exact take-home pay in ' + stateName + '. No state income tax — only federal taxes and FICA apply. The state minimum wage is $' + minWage + '/hr in 2026. Free, private, no signup.'
-              : 'Calculate your exact hourly take-home pay in ' + stateName + ' after federal taxes, ' + stateTax + '% state tax, and FICA. The state minimum wage is $' + minWage + '/hr in 2026. Your data never leaves your browser.'}
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.82)', maxWidth: '700px', lineHeight: 1.7, margin: 0 }}>
+            Estimate take-home pay using modeled 2026 federal, state, and payroll taxes. Results are estimates, not an exact paycheck or tax determination. The {stateName} minimum wage is listed as ${minWage}/hour; local rules may differ.
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {[' Federal + State Taxes', ' FICA Included', ' All Pay Frequencies', ' 100% Private'].map(tag => (
-              <span key={tag} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '5px 14px', fontSize: '13px', color: 'rgba(255,255,255,0.7)' }}>{tag}</span>
-            ))}
-          </div>
-        </div>
+        </header>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '24px', marginBottom: '40px' }}>
-          <div style={CARD}>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>HOURLY PAYCHECK CALCULATOR</div>
-            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>2026 IRS RULES · INSTANT RESULTS</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,320px),1fr))', gap: '16px', marginBottom: '24px' }}>
+          <form onSubmit={calculate} style={CARD}>
+            <h2 style={{ fontSize: '20px', color: '#e8b84b', margin: '0 0 6px' }}>Estimate your paycheck</h2>
+            <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.6, margin: '0 0 20px' }}>
+              Results use annualized gross wages and the selected filing status. Enter gross hours; overtime premiums and pre-tax benefits are not modeled.
+            </p>
+
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Hourly Rate ($)</label>
-              <input type="number" value={hourly} onChange={e => setHourly(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={0} step={0.25} />
+              <label htmlFor="hourly-rate" style={LABEL}>Hourly rate ($)</label>
+              <input className="hourly-state-input" id="hourly-rate" type="number" value={hourly} onChange={event => update(setHourly)(event.target.value)} style={INPUT_S} min="0.01" max="10000" step="0.01" required />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Hours Per Week</label>
-              <input type="number" value={hours} onChange={e => setHours(Number(e.target.value))} onFocus={e => e.target.select()} style={INPUT_S} min={1} max={80} />
+              <label htmlFor="hours-week" style={LABEL}>Hours per week</label>
+              <input className="hourly-state-input" id="hours-week" type="number" value={hours} onChange={event => update(setHours)(event.target.value)} style={INPUT_S} min="1" max="168" step="0.25" required />
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Pay Frequency</label>
-              <select value={freq} onChange={e => setFreq(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
-                <option value="weekly">Weekly (52/yr)</option>
-                <option value="biweekly">Bi-Weekly (26/yr)</option>
-                <option value="semimonthly">Semi-Monthly (24/yr)</option>
-                <option value="monthly">Monthly (12/yr)</option>
+              <label htmlFor="pay-frequency" style={LABEL}>Pay frequency</label>
+              <select className="hourly-state-input" id="pay-frequency" value={freq} onChange={event => update(setFreq)(event.target.value)} style={{ ...INPUT_S, cursor: 'pointer' }}>
+                <option value="weekly">Weekly (52/year)</option>
+                <option value="biweekly">Biweekly (26/year)</option>
+                <option value="semimonthly">Semi-monthly (24/year)</option>
+                <option value="monthly">Monthly (12/year)</option>
               </select>
             </div>
             <div style={{ marginBottom: '16px' }}>
-              <label style={LABEL}>Filing Status</label>
-              <select value={filing} onChange={e => setFiling(e.target.value)} style={{...INPUT_S, cursor:'pointer', colorScheme:'dark'}}>
+              <label htmlFor="filing-status" style={LABEL}>Federal filing status</label>
+              <select className="hourly-state-input" id="filing-status" value={filing} onChange={event => update(setFiling)(event.target.value)} style={{ ...INPUT_S, cursor: 'pointer' }}>
                 <option value="single">Single</option>
-                <option value="married">Married Filing Jointly</option>
-                <option value="hoh">Head of Household</option>
+                <option value="married">Married filing jointly</option>
+                <option value="hoh">Head of household</option>
               </select>
             </div>
-            <div style={{ marginBottom: '16px' }}>
+            <div style={{ marginBottom: '18px' }}>
               <label style={LABEL}>State</label>
-              <div style={{ ...INPUT_S, background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontWeight: 700 }}>
-                {stateName}{noStateTax ? ' — No State Tax' : ' — ' + stateTax + '% State Tax'}
+              <div style={{ ...INPUT_S, background: 'rgba(232,184,75,0.08)', borderColor: 'rgba(232,184,75,0.45)', color: '#e8b84b', fontWeight: 700 }} aria-label={`Selected state: ${stateName}`}>
+                {stateName} — {noStateTax ? 'no broad personal income tax' : 'state-specific tax schedule'}
               </div>
             </div>
-            <div style={{ background: 'rgba(74,222,128,0.06)', border: '1px solid rgba(74,222,128,0.2)', borderRadius: '12px', padding: '16px', display: 'flex', justifyContent: 'space-between' }}>
-              <div><div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Take-Home / Period</div>
-              <div style={{ fontSize: '30px', fontWeight: 900, color: '#4ade80', marginTop: '4px' }}>{fmt(perPeriodNet)}</div></div>
-              <div style={{ textAlign: 'right' }}><div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Effective Rate</div>
-              <div style={{ fontSize: '26px', fontWeight: 900, color: '#F5C842', marginTop: '4px' }}>{effectiveRate}%</div></div>
-            </div>
-          </div>
+            <button className="hourly-state-calculate" type="submit" style={{ width: '100%', padding: '14px 18px', background: '#e8b84b', border: '1px solid #e8b84b', borderRadius: '8px', color: '#07111f', fontSize: '17px', fontWeight: 800, cursor: 'pointer' }}>
+              Calculate estimate
+            </button>
+            {error && <p role="alert" style={{ color: '#fecaca', fontSize: '15px', lineHeight: 1.5, margin: '14px 0 0' }}>{error}</p>}
+          </form>
 
-          <div style={CARD}>
-            <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: '#F5C842', marginBottom: '4px' }}>PAY BREAKDOWN</div>
-            <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', marginBottom: '24px' }}>{stateName.toUpperCase()} · PER PAYCHECK</div>
-            <div style={ROW}><span style={{ opacity: 0.7 }}>Gross Pay (per period)</span><span style={{ fontWeight: 700 }}>{fmt(perPeriodGross)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Federal Income Tax</div><div style={{ fontSize: '11px', opacity: 0.8}}>Aggregate method</div></div><span style={{ color: '#f87171' }}>-{fmt(federal / periodsPerYear)}</span></div>
-            <div style={ROW}>
-              <div><div style={{ opacity: 0.7 }}>{stateName} State Tax</div>
-              <div style={{ fontSize: '11px', opacity: 0.8}}>{noStateTax ? 'No state tax' : stateTax + '%'}</div></div>
-              <span style={noStateTax ? { color: '#4ade80' } : { color: '#f87171' }}>{noStateTax ? '$0' : '-' + fmt(state / periodsPerYear)}</span>
-            </div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Social Security</div><div style={{ fontSize: '11px', opacity: 0.8}}>6.2%</div></div><span style={{ color: '#f87171' }}>-{fmt(ss / periodsPerYear)}</span></div>
-            <div style={ROW}><div><div style={{ opacity: 0.7 }}>Medicare</div><div style={{ fontSize: '11px', opacity: 0.8}}>1.45%</div></div><span style={{ color: '#f87171' }}>-{fmt(medicare / periodsPerYear)}</span></div>
-            <div style={{ ...ROW, borderBottom: 'none' }}><span style={{ opacity: 0.7 }}>Total Taxes</span><span style={{ color: '#f87171', fontWeight: 700 }}>-{fmt(totalTax / periodsPerYear)}</span></div>
-            <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: '12px', padding: '16px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 700 }}>Take-Home Pay</span>
-              <span style={{ fontWeight: 900, fontSize: '24px', color: '#4ade80' }}>{fmt(perPeriodNet)}</span>
-            </div>
-            <div style={{ marginTop: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
-                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>ANNUAL GROSS</div>
-                <div style={{ fontWeight: 700, color: '#F5C842' }}>{fmt(annualGross)}</div>
-              </div>
-              <div style={{ background: 'rgba(255,255,255,0.03)', borderRadius: '10px', padding: '12px', textAlign: 'center' }}>
-                <div style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>ANNUAL NET</div>
-                <div style={{ fontWeight: 700, color: '#4ade80' }}>{fmt(annualNet)}</div>
-              </div>
-            </div>
-          </div>
+          <section aria-live="polite" aria-label="Paycheck estimate" style={CARD}>
+            <h2 style={{ fontSize: '20px', color: '#e8b84b', margin: '0 0 18px' }}>Estimated pay breakdown</h2>
+            {!result ? (
+              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.78)', lineHeight: 1.6, margin: 0 }}>Enter your details and select “Calculate estimate” to see a modeled result.</p>
+            ) : (
+              <>
+                <div style={{ ...ROW, fontWeight: 700 }}><span>Gross pay per period</span><span>{fmt(result.estimate.gross)}</span></div>
+                <div style={ROW}><span>Federal income tax</span><span style={{ color: '#fecaca' }}>-{fmt(result.estimate.fed)}</span></div>
+                <div style={ROW}><span>State income and payroll taxes</span><span style={{ color: '#fecaca' }}>-{fmt(result.estimate.state)}</span></div>
+                <div style={ROW}><span>Social Security</span><span style={{ color: '#fecaca' }}>-{fmt(result.estimate.ss)}</span></div>
+                <div style={ROW}><span>Medicare (additional tax may apply)</span><span style={{ color: '#fecaca' }}>-{fmt(result.estimate.med)}</span></div>
+                <div style={{ ...ROW, fontWeight: 700 }}><span>Estimated total taxes</span><span style={{ color: '#fecaca' }}>-{fmt(result.estimate.fed + result.estimate.state + result.estimate.ss + result.estimate.med)}</span></div>
+                <div style={{ background: 'rgba(74,222,128,0.08)', border: '1px solid rgba(74,222,128,0.32)', borderRadius: '10px', padding: '16px', marginTop: '18px' }}>
+                  <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.78)' }}>Estimated take-home per period</div>
+                  <div style={{ fontSize: '32px', fontWeight: 900, color: '#86efac', marginTop: '4px' }}>{fmt(result.estimate.net)}</div>
+                  <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.78)', marginTop: '8px' }}>
+                    Effective modeled tax rate: {result.estimate.taxPct.toFixed(1)}%
+                  </div>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginTop: '14px' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '8px', padding: '12px' }}>
+                    <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.72)', marginBottom: '5px' }}>Annual gross</div>
+                    <strong>{fmt(result.annualGross)}</strong>
+                  </div>
+                  <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '8px', padding: '12px' }}>
+                    <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.72)', marginBottom: '5px' }}>Annual net estimate</div>
+                    <strong>{fmt(result.annualNet)}</strong>
+                  </div>
+                </div>
+                <CalculatorResultActions
+                  summary={`${stateName} hourly paycheck estimate (${freq}, ${filing}): gross ${fmt(result.estimate.gross)}, estimated take-home ${fmt(result.estimate.net)} per pay period. Modeled federal, state, and payroll taxes; actual withholding, local taxes, overtime premiums, and pre-tax benefits are not modeled.`}
+                  relatedLinks={[
+                    { href: '/hourly-paycheck-calculator', label: 'Hourly paycheck calculator' },
+                    { href: `/${stateSlug}-paycheck-calculator`, label: `${stateName} paycheck calculator` },
+                    { href: `/minimum-wage/${stateSlug}`, label: `${stateName} minimum wage` },
+                  ]}
+                />
+              </>
+            )}
+          </section>
         </div>
 
-        <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '32px' }}>
-          <h2 style={{ fontSize: '22px', fontWeight: 800, margin: '0 0 14px' }}>Hourly Pay in {stateName} — 2026 Tax Guide</h2>
-          <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '16px' }}>
-            {noStateTax
-              ? stateName + ' is one of the few states with no state income tax, meaning hourly workers keep more of every paycheck. Your take-home pay is only reduced by federal income tax and FICA (Social Security + Medicare).'
-              : 'In ' + stateName + ', hourly workers pay federal income tax, ' + stateTax + '% state income tax, and FICA (Social Security at 6.2% and Medicare at 1.45%). This calculator applies all 2026 IRS rules automatically.'}
+        <section style={{ ...CARD, marginBottom: '24px' }}>
+          <h2 style={{ fontSize: '21px', margin: '0 0 12px' }}>How this estimate works</h2>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.75, margin: '0 0 12px' }}>
+            The estimate annualizes hourly wages using your hours and pay frequency, then applies the shared federal, state, Social Security, and Medicare model. {noStateTax
+              ? `${stateName} has no broad personal income tax; state payroll programs or local charges may still apply.`
+              : `The state estimate uses the modeled ${stateName} tax schedule rather than applying a single flat rate to all wages.`}
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.85, marginBottom: '24px' }}>
-            Federal income tax is withheld using the percentage method based on your annualized income and filing status. The more you earn, the higher your marginal bracket — but your <strong style={{ color: '#fff' }}>effective rate</strong> is always lower than your top bracket rate.
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.82)', lineHeight: 1.75, margin: 0 }}>
+            This is not an exact paycheck calculation. Withholding elections, local taxes, deductions and credits, overtime premiums, benefits, and individual circumstances can change actual pay. Head-of-household status is used for the federal estimate; the state model uses its available single or married schedule.
           </p>
-          <Link href="/hourly-paycheck-calculator" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.3)', borderRadius: '8px', padding: '10px 18px', color: '#F5C842', textDecoration: 'none', fontWeight: 600, fontSize: '14px' }}>
-            Back to Hourly Calculator →
-          </Link>
-        </div>
+        </section>
       </div>
     </div>
   );

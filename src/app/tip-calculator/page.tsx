@@ -3,17 +3,24 @@ import Link from 'next/link';
 import { STATE_TAXES, STATE_SLUG_MAP } from '@/lib/taxRates2026';
 
 export const metadata: Metadata = {
-  title: 'Tip Tax Calculator 2026 — No Tax on Tips Law, By State',
-  description: 'New 2025 law: up to $25,000 in tips are now tax-free. Calculate your tip tax savings by state. Free & instant.',
+  title: 'Qualified Tips Deduction Calculator 2026 — By State',
+  description: 'Estimate federal income-tax savings for qualified tips in 2026. Review the $25,000 annual deduction limit, income phase-out, and state-specific pages.',
   alternates: { canonical: 'https://www.privatepaycheck.com/tip-calculator' },
   robots: 'index, follow',
+  openGraph: {
+    title: 'Qualified Tips Deduction Calculator 2026 — By State',
+    description: 'Estimate federal income-tax savings for qualified tips and review state information.',
+    url: 'https://www.privatepaycheck.com/tip-calculator',
+    siteName: 'PrivatePaycheck',
+    type: 'website',
+  },
 };
 
 
   const schemaJson = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    'name': 'Tip & Tax Calculator 2026',
+    'name': 'Qualified Tips Deduction Calculator 2026',
     'url': 'https://www.privatepaycheck.com/tip-calculator',
     'description': 'Free tip and tax calculator for tipped workers. All 50 US states.',
     'applicationCategory': 'FinanceApplication',
@@ -28,23 +35,23 @@ const faqSchema = {
   mainEntity: [
   {
     '@type': 'Question',
-    name: 'Are tips tax-free in 2026?',
-    acceptedAnswer: { '@type': 'Answer', text: 'The No Tax on Tips law (2025-2028) allows workers to deduct up to $25,000 in tip income from federal taxable income. Tips are still reported on your W-2, but the deduction reduces your tax bill. State taxes may still apply.' },
+    name: 'Can eligible workers deduct tips in 2026?',
+    acceptedAnswer: { '@type': 'Answer', text: 'For tax years 2025–2028, eligible workers may claim a federal deduction for qualified tips, up to $25,000 annually, subject to occupation and income rules. Tips remain reportable, and state tax treatment varies.' },
   },
   {
     '@type': 'Question',
     name: 'Who qualifies for the no tax on tips deduction?',
-    acceptedAnswer: { '@type': 'Answer', text: 'Workers in traditionally tipped occupations qualify: servers, bartenders, hotel staff, rideshare and delivery drivers, salon workers. Tips must be voluntary customer payments — mandatory service charges do not qualify.' },
+    acceptedAnswer: { '@type': 'Answer', text: 'Employees and self-employed individuals may qualify for qualified tips from occupations identified by the IRS. Tip type, modified adjusted gross income, and additional limits matter; a calculator cannot verify eligibility.' },
   },
   {
     '@type': 'Question',
-    name: 'How much can I save with the no tax on tips deduction?',
-    acceptedAnswer: { '@type': 'Answer', text: 'At the 22% federal bracket, a worker with $25,000 in tips saves up to $5,500/year. At 12%, savings are $3,000. The deduction phases out for higher incomes above $150,000.' },
+    name: 'What is the maximum qualified tips deduction?',
+    acceptedAnswer: { '@type': 'Answer', text: 'The maximum annual federal deduction is $25,000. It phases out above modified adjusted gross income of $150,000 ($300,000 for married filing jointly). The deduction does not itself eliminate Social Security or Medicare taxes.' },
   },
   {
     '@type': 'Question',
     name: 'Do I still owe state tax on tips?',
-    acceptedAnswer: { '@type': 'Answer', text: 'The no tax on tips deduction is federal only. Most states still tax tip income as regular income. Nine states (TX, FL, NV, WA, WY, SD, TN, NH, AK) have no income tax, so tips are fully exempt from state tax there.' },
+    acceptedAnswer: { '@type': 'Answer', text: 'The deduction is federal. State conformity and local tax treatment vary, and this calculator does not estimate state tax savings. Some states do not impose an individual income tax.' },
   }
   ],
 };
@@ -64,14 +71,14 @@ export default function TipHub() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com","logo":"https://www.privatepaycheck.com/og-image.svg","description":"Free paycheck calculators for all 50 US states. Federal + state taxes, FICA, 401k. 100% private."}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Tip Calculator","item":"https://www.privatepaycheck.com/tip-calculator"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebPage","name":"Tip Calculator","datePublished":"2026-01-15","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.privatepaycheck.com/tip-calculator"}}' }} />
-      <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'40px 16px' }}>
+      <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'40px 6px' }}>
         <div style={{ textAlign:'center', marginBottom:'40px' }}>
           <div style={{ display:'inline-block', background:'rgba(244,114,182,0.1)', border:'1px solid rgba(244,114,182,0.3)', borderRadius:'20px', padding:'6px 16px', fontSize:'13px', marginBottom:'16px', color:'#f472b6' }}>
-             NEW 2025 LAW — Up to $25,000 in tips are now federal tax-free
+             Qualified tips may be deductible from federal income
           </div>
           <h1 style={{ fontSize:'clamp(28px,5vw,52px)', fontWeight:900, margin:'0 0 12px' }}>Tip Tax Calculator 2026</h1>
           <p style={{ fontSize:'16px', opacity:0.65, maxWidth:'600px', margin:'0 auto', lineHeight:1.7 }}>
-            The "No Tax on Tips" law lets tipped workers deduct up to $25,000 in tips from federal income tax. See how much you save — choose your state below.
+            Eligible workers may deduct up to $25,000 of qualified tips from federal income for tax years 2025–2028, subject to income and other rules. Choose a state page for local context; state tax treatment is not modeled.
           </p>
         </div>
 
@@ -80,8 +87,8 @@ export default function TipHub() {
           {[
             { label:'Max Tip Deduction', value:'$25,000', icon:'' },
             { label:'Effective From', value:'Jan 1, 2025', icon:'' },
-            { label:'Income Phase-Out', value:'$150,000', icon:'' },
-            { label:'Workers Eligible', value:'70M+', icon:'' },
+            { label:'Income Phase-Out', value:'$150k / $300k joint', icon:'' },
+            { label:'Other taxes', value:'FICA may still apply', icon:'' },
           ].map(s => (
             <div key={s.label} style={{ textAlign:'center' }}>
               <div style={{ fontSize:'22px', marginBottom:'4px' }}>{s.icon}</div>

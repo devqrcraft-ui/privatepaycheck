@@ -16,8 +16,15 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const st = STATE_TAXES[code];
   if (!st) return { title: 'Minimum Wage' };
   return {
-    title: `${st.name} Minimum Wage 2026: $${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hr — Take-Home Pay Calculator`,
-    description: `${st.name} minimum wage is ${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hr in 2026. See annual, monthly & weekly take-home pay, tipped worker rates & upcoming increases. Free calculator.`,
+    title: `${st.name} Minimum Wage 2026: $${STATE_MIN_WAGE[code]?.hourly ?? 7.25}/hr`,
+    description: `See the listed ${st.name} minimum wage for 2026 and gross earnings at common work schedules. Use a separate paycheck calculator for a modeled take-home estimate.`,
+    openGraph: {
+      title: `${st.name} Minimum Wage 2026`,
+      description: `See the listed 2026 minimum wage and illustrative gross earnings for ${st.name}.`,
+      url: `https://www.privatepaycheck.com/minimum-wage/${state}`,
+      siteName: 'PrivatePaycheck',
+      type: 'website',
+    },
     alternates: { canonical: `https://www.privatepaycheck.com/minimum-wage/${state}` },
   };
 }
@@ -39,20 +46,6 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
 
   return (
     <>
-      {/* HowTo Schema */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context':'https://schema.org',
-        '@type':'HowTo',
-        name:`Minimum Wage Paycheck Calculator — ${st.name} 2026`,
-        description:`How to calculate your ${st.name} take-home pay using the minimum wage paycheck calculator in 2026.`,
-        step:[
-          { '@type':'HowToStep', position:1, name:'Select your state', text:'Choose your state to load the 2026 minimum wage rate.' },
-          { '@type':'HowToStep', position:2, name:'Set hours per week', text:'Enter your weekly hours at minimum wage.' },
-          { '@type':'HowToStep', position:3, name:'Choose pay frequency', text:'Select weekly, bi-weekly, or monthly pay period.' },
-          { '@type':'HowToStep', position:4, name:'Review tax breakdown', text:'See federal, state, and FICA deductions applied.' },
-          { '@type':'HowToStep', position:5, name:'View take-home pay', text:'Get your net minimum wage paycheck after all taxes.' }
-        ]
-      })}} />
       <main style={{ minHeight: '100vh', background: '#091526', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -136,7 +129,7 @@ export default async function MinWagePage({ params }: { params: Promise<{ state:
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {[
               { q: `What is the minimum wage in ${st.name} in 2026?`, a: `The ${st.name} minimum wage is ${mw.hourly}/hour in 2026. This applies to most employees. Working full-time (2,080 hours/year), a minimum wage worker earns ${annualFT.toLocaleString()}/year before taxes.` },
-              { q: `How much is ${st.name} minimum wage per year?`, a: `At ${mw.hourly}/hour, a full-time worker (40 hrs/week, 52 weeks) earns ${annualFT.toLocaleString()}/year gross. After taxes, take-home pay will be lower — use our paycheck calculator to see your exact net pay.` },
+              { q: `How much is ${st.name} minimum wage per year?`, a: `At ${mw.hourly}/hour, a full-time worker (40 hrs/week, 52 weeks) earns ${annualFT.toLocaleString()}/year gross before taxes. A state paycheck calculator can provide a separate estimate, but actual withholding and take-home pay depend on filing status, deductions, and individual circumstances.` },
               { q: `Is ${st.name} minimum wage above federal minimum wage?`, a: aboveFederal ? `Yes — ${st.name}'s minimum wage of ${mw.hourly}/hour is above the federal minimum of ${FEDERAL_MIN_WAGE}/hour. The higher state rate applies.` : `${st.name} follows the federal minimum wage of ${FEDERAL_MIN_WAGE}/hour. State and federal minimums are the same.` },
               { q: 'Who is exempt from minimum wage laws?', a: 'Some workers are exempt including certain farm workers, outside salespeople, and some apprentices/students. Tipped employees can be paid a lower direct wage if tips bring total compensation to minimum wage.' },
             ].map(item => (

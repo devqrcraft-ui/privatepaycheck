@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: 'Paycheck & Tax Blog 2026 — Guides, Calculators & Tips',
   description: 'Free paycheck and tax guides for 2026. How much is your salary after taxes? State-by-state take-home pay tables, hourly wage calculators, and tax tips.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog' },
+  openGraph: {
+    title: 'Paycheck & Tax Blog 2026 — Guides, Calculators & Tips',
+    description: 'Guides about estimated take-home pay, tax deductions, and state tax rules.',
+    url: 'https://www.privatepaycheck.com/blog',
+    siteName: 'PrivatePaycheck',
+    type: 'website',
+  },
 }
 
 const salaryPosts = [
@@ -12,11 +19,11 @@ const salaryPosts = [
   { slug: '200k-a-year-after-taxes', title: '$200,000 a Year After Taxes 2026', desc: '$200k salary net pay by state' },
   { slug: '150k-a-year-after-taxes', title: '$150,000 a Year After Taxes 2026', desc: 'Take-home for high earners — all states' },
   { slug: '120k-a-year-after-taxes', title: '$120,000 a Year After Taxes 2026', desc: 'Monthly take-home for $120k salary' },
-  { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Exact net pay for $80k by state' },
+  { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Estimated net pay for $80k by state' },
   { slug: '60k-a-year-after-taxes', title: '$60,000 a Year After Taxes 2026', desc: 'Monthly & hourly breakdown for $60k' },
   { slug: '70k-a-year-after-taxes', title: '$70,000 a Year After Taxes 2026', desc: 'Take-home for $70k by state' },
-  { slug: '80k-a-year-after-taxes', title: '$80,000 a Year After Taxes 2026', desc: 'Exact net pay for $80k by state' },
   { slug: '90k-a-year-after-taxes', title: '$90,000 a Year After Taxes 2026', desc: 'Monthly & hourly breakdown for $90k' },
+  { slug: 'how-much-is-50k-a-year-hourly', title: '$50,000 a Year Is How Much an Hour?', desc: 'Hourly equivalent and paycheck estimate' },
   { slug: '17-dollars-an-hour-after-taxes', title: '$17 an Hour After Taxes 2026', desc: '$35,360/year — net pay by state' },
   { slug: '12-dollars-an-hour-after-taxes', title: '$12 an Hour After Taxes 2026', desc: '$24,960/year — take-home by state' },
   { slug: '10-dollars-an-hour-after-taxes', title: '$10 an Hour After Taxes 2026', desc: '$20,800/year — take-home by state' },
@@ -24,7 +31,7 @@ const salaryPosts = [
   { slug: '45-dollars-an-hour-after-taxes', title: '$45 an Hour After Taxes 2026', desc: '$93,600/year gross — see net pay by state' },
   { slug: '18-dollars-an-hour-after-taxes', title: '$18 an Hour After Taxes 2026', desc: '$37,440/year gross — state comparisons' },
   { slug: '15-dollars-an-hour-after-taxes', title: '$15 an Hour After Taxes 2026', desc: 'Minimum wage take-home — every state' },
-  { slug: '75k-a-year-after-taxes', title: '$75,000 a Year After Taxes 2026', desc: 'Exact take-home pay by state for $75k salary' },
+  { slug: '75k-a-year-after-taxes', title: '$75,000 a Year After Taxes 2026', desc: 'Estimated take-home pay by state for $75k salary' },
   { slug: '50k-a-year-after-taxes', title: '$50,000 a Year After Taxes 2026', desc: 'Monthly, biweekly, and hourly breakdown' },
   { slug: '40-dollars-an-hour-after-taxes', title: '$40 an Hour After Taxes 2026', desc: '$83,200/year gross — see net pay by state' },
   { slug: '35-dollars-an-hour-after-taxes', title: '$35 an Hour After Taxes 2026', desc: '$72,800/year gross — state-by-state tables' },
@@ -45,8 +52,10 @@ const taxPosts = [
   { slug: 'how-much-of-my-raise-do-i-keep', title: 'How Much of My Raise Do I Keep?', desc: 'Marginal vs effective tax rate explained' },
   { slug: 'two-jobs-tax-withholding', title: 'Two Jobs Tax Withholding Guide', desc: 'Avoid underpaying when you have two jobs' },
   { slug: 'overtime-pay-rules-by-state', title: 'Overtime Pay Rules by State 2026', desc: 'State-by-state overtime requirements' },
-  { slug: 'no-tax-on-tips-explained', title: 'No Tax on Tips — Explained', desc: 'What the tip tax exemption means for you' },
-  { slug: 'one-big-beautiful-bill-tax-calculator-2026', title: 'One Big Beautiful Bill Tax Calculator 2026', desc: 'How the proposed tax changes affect your paycheck' },
+  { slug: 'no-tax-on-tips-explained', title: 'Qualified Tips Deduction — Explained', desc: 'Eligibility, limits, and the federal deduction' },
+  { slug: 'trump-account-calculator', title: 'Trump Accounts in 2026', desc: 'IRS account eligibility and pilot contribution rules' },
+  { slug: 'overtime-tax-calculator-2026', title: 'Qualified Overtime Deduction 2026', desc: 'How the deduction applies to qualified overtime premiums' },
+  { slug: 'one-big-beautiful-bill-tax-calculator-2026', title: 'One Big Beautiful Bill Tax Changes 2026', desc: 'How the law and deductions may affect your federal taxes' },
   { slug: 'texas-vs-california-salary', title: 'Texas vs California Salary Comparison', desc: 'Side-by-side take-home pay comparison' },
   { slug: 'washington-vs-california-salary', title: 'Washington vs California Salary 2026', desc: 'WA no-tax advantage vs CA' },
   { slug: 'nevada-vs-california-salary', title: 'Nevada vs California Salary 2026', desc: 'Las Vegas vs LA take-home comparison' },
@@ -65,6 +74,7 @@ const professionPosts = [
 ]
 
 const statePosts = [
+  { slug: 'california-paycheck-deductions-explained', title: 'California Paycheck Deductions Explained', desc: 'State income tax, payroll deductions, and estimated take-home pay' },
   { slug: 'california-paycheck-calculator-guide', title: 'California Paycheck Calculator Guide', desc: 'CA state tax, SDI, and take-home explained' },
   { slug: 'texas-paycheck-calculator-guide', title: 'Texas Paycheck Calculator Guide', desc: 'No state tax — what TX workers actually keep' },
   { slug: 'florida-unemployment-benefits-2026', title: 'Florida Unemployment Benefits 2026', desc: 'FL unemployment eligibility and amounts' },
@@ -84,7 +94,7 @@ const card: React.CSSProperties = {
 
 export default function BlogIndex() {
   return (
-    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
+    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 6px', fontFamily: 'system-ui,sans-serif' }}>
       <nav style={{ fontSize: 14, color:'#b8c8dc', marginBottom: 24 }}>
         <a href="/" style={{ color:'#b8c8dc' }}>Home</a> › Blog
       </nav>
@@ -93,7 +103,7 @@ export default function BlogIndex() {
 
       <section style={{ marginBottom: 48 }}>
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 4 }}> Salary & Hourly Take-Home Pay</h2>
-        <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Exact after-tax income for common wages — every state included.</p>
+        <p style={{ color:'#b8c8dc', fontSize: 14, marginBottom: 20 }}>Estimated after-tax income for common wages — state assumptions are described in each guide.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
           {salaryPosts.map(p => (
             <a key={p.slug} href={"/blog/" + p.slug} style={card}>

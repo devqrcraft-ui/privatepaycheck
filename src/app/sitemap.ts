@@ -85,6 +85,7 @@ const BLOG_SLUGS = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const stateSlugs = Object.keys(STATE_SLUG_MAP);
   const now = new Date('2026-10-21T00:00:00Z'); // update only when page content actually changes
+  const updatedByAudit = new Date('2026-11-06T00:00:00Z');
 
   return [
       { url: `https://www.privatepaycheck.com/compare-states-taxes`, lastModified: new Date( ) },
@@ -92,25 +93,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { url: `https://www.privatepaycheck.com/nanny`, lastModified: new Date( ) },
       { url: `https://www.privatepaycheck.com/housekeeper-tax-guide`, lastModified: new Date( ) },
       { url: `https://www.privatepaycheck.com/nanny-tax-guide`, lastModified: new Date( ) },
-    { url: BASE_URL,                                      lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
+    { url: BASE_URL,                                      lastModified: updatedByAudit, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE_URL}/all-states`,                      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/bonus-tax-calculator`,            lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog`,                            lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${BASE_URL}/no-tax-on-overtime-deduction`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/no-tax-on-tips-calculator`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/tips-tax-calculator-2026`,         lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/no-tax-on-overtime-deduction`,    lastModified: updatedByAudit, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/no-tax-on-tips-calculator`,       lastModified: updatedByAudit, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/raise-calculator`,                lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/signing-bonus-tax-calculator`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/two-jobs-tax-calculator`,         lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/w4-withholding-calculator`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/senior-deduction-calculator`,     lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE_URL}/trump-account-calculator`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/trump-account-calculator`,        lastModified: updatedByAudit, changeFrequency: 'monthly', priority: 0.8 },
 
     { url: `${BASE_URL}/federal-paycheck-calculator`,          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${BASE_URL}/1099-paycheck-calculator`,             lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
-    { url: `${BASE_URL}/2026-tax-changes`,                     lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/2026-tax-changes`,                     lastModified: updatedByAudit, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/how-we-calculate`,                     lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.5 },
-    { url: `${BASE_URL}/methodology`,                          lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.5 },
+    { url: `${BASE_URL}/methodology`,                          lastModified: updatedByAudit, changeFrequency: 'yearly'  as const, priority: 0.5 },
     { url: `${BASE_URL}/wep-lump-sum-calculator`,              lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/teacher-paycheck-calculator`,          lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/overtime-calculator`,      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
@@ -128,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/overtime-calculator/${slug}`,
-      lastModified: now,
+      lastModified: slug === 'california' ? updatedByAudit : now,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
@@ -163,7 +163,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     ...STATE_SLUGS.map(slug => ({
       url: `${BASE_URL}/tip-calculator/${slug}`,
-      lastModified: now,
+      lastModified: updatedByAudit,
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
@@ -194,7 +194,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     ...BLOG_SLUGS.map(slug => ({
       url: `${BASE_URL}/blog/${slug}`,
-      lastModified: now,
+      lastModified: slug === 'no-tax-on-tips-explained' || slug === 'trump-account-calculator' ? updatedByAudit : now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),

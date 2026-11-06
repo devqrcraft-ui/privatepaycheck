@@ -2,75 +2,64 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import CalculatorResultActions from '@/components/CalculatorResultActions';
+import { estimateFederalIncomeTax, estimatePaycheck, type FilingStatus } from '@/lib/paycheck';
 
-// ── All 50 states with 2026 rates ──────────────────────────────────────────
+// ── All 50 states ──────────────────────────────────────────────────────────
 const STATES = [
-  { code:'AL',name:'Alabama',slug:'alabama',rate:0.05 },
-  { code:'AK',name:'Alaska',slug:'alaska',rate:0 },
-  { code:'AZ',name:'Arizona',slug:'arizona',rate:0.025 },
-  { code:'AR',name:'Arkansas',slug:'arkansas',rate:0.044 },
-  { code:'CA',name:'California',slug:'california',rate:0.093 },
-  { code:'CO',name:'Colorado',slug:'colorado',rate:0.044 },
-  { code:'CT',name:'Connecticut',slug:'connecticut',rate:0.05 },
-  { code:'DE',name:'Delaware',slug:'delaware',rate:0.066 },
-  { code:'FL',name:'Florida',slug:'florida',rate:0 },
-  { code:'GA',name:'Georgia',slug:'georgia',rate:0.055 },
-  { code:'HI',name:'Hawaii',slug:'hawaii',rate:0.08 },
-  { code:'ID',name:'Idaho',slug:'idaho',rate:0.058 },
-  { code:'IL',name:'Illinois',slug:'illinois',rate:0.0495 },
-  { code:'IN',name:'Indiana',slug:'indiana',rate:0.0305 },
-  { code:'IA',name:'Iowa',slug:'iowa',rate:0.057 },
-  { code:'KS',name:'Kansas',slug:'kansas',rate:0.057 },
-  { code:'KY',name:'Kentucky',slug:'kentucky',rate:0.045 },
-  { code:'LA',name:'Louisiana',slug:'louisiana',rate:0.0425 },
-  { code:'ME',name:'Maine',slug:'maine',rate:0.075 },
-  { code:'MD',name:'Maryland',slug:'maryland',rate:0.0575 },
-  { code:'MA',name:'Massachusetts',slug:'massachusetts',rate:0.05 },
-  { code:'MI',name:'Michigan',slug:'michigan',rate:0.0425 },
-  { code:'MN',name:'Minnesota',slug:'minnesota',rate:0.0985 },
-  { code:'MS',name:'Mississippi',slug:'mississippi',rate:0.047 },
-  { code:'MO',name:'Missouri',slug:'missouri',rate:0.048 },
-  { code:'MT',name:'Montana',slug:'montana',rate:0.059 },
-  { code:'NE',name:'Nebraska',slug:'nebraska',rate:0.0664 },
-  { code:'NV',name:'Nevada',slug:'nevada',rate:0 },
-  { code:'NH',name:'New Hampshire',slug:'new-hampshire',rate:0 },
-  { code:'NJ',name:'New Jersey',slug:'new-jersey',rate:0.0637 },
-  { code:'NM',name:'New Mexico',slug:'new-mexico',rate:0.059 },
-  { code:'NY',name:'New York',slug:'new-york',rate:0.0685 },
-  { code:'NC',name:'North Carolina',slug:'north-carolina',rate:0.0499 },
-  { code:'ND',name:'North Dakota',slug:'north-dakota',rate:0.025 },
-  { code:'OH',name:'Ohio',slug:'ohio',rate:0.04 },
-  { code:'OK',name:'Oklahoma',slug:'oklahoma',rate:0.0475 },
-  { code:'OR',name:'Oregon',slug:'oregon',rate:0.099 },
-  { code:'PA',name:'Pennsylvania',slug:'pennsylvania',rate:0.0307 },
-  { code:'RI',name:'Rhode Island',slug:'rhode-island',rate:0.0599 },
-  { code:'SC',name:'South Carolina',slug:'south-carolina',rate:0.064 },
-  { code:'SD',name:'South Dakota',slug:'south-dakota',rate:0 },
-  { code:'TN',name:'Tennessee',slug:'tennessee',rate:0 },
-  { code:'TX',name:'Texas',slug:'texas',rate:0 },
-  { code:'UT',name:'Utah',slug:'utah',rate:0.0485 },
-  { code:'VT',name:'Vermont',slug:'vermont',rate:0.0875 },
-  { code:'VA',name:'Virginia',slug:'virginia',rate:0.0575 },
-  { code:'WA',name:'Washington',slug:'washington',rate:0 },
-  { code:'WV',name:'West Virginia',slug:'west-virginia',rate:0.065 },
-  { code:'WI',name:'Wisconsin',slug:'wisconsin',rate:0.0765 },
-  { code:'WY',name:'Wyoming',slug:'wyoming',rate:0 },
+  { code:'AL',name:'Alabama',slug:'alabama' },
+  { code:'AK',name:'Alaska',slug:'alaska' },
+  { code:'AZ',name:'Arizona',slug:'arizona' },
+  { code:'AR',name:'Arkansas',slug:'arkansas' },
+  { code:'CA',name:'California',slug:'california' },
+  { code:'CO',name:'Colorado',slug:'colorado' },
+  { code:'CT',name:'Connecticut',slug:'connecticut' },
+  { code:'DE',name:'Delaware',slug:'delaware' },
+  { code:'FL',name:'Florida',slug:'florida' },
+  { code:'GA',name:'Georgia',slug:'georgia' },
+  { code:'HI',name:'Hawaii',slug:'hawaii' },
+  { code:'ID',name:'Idaho',slug:'idaho' },
+  { code:'IL',name:'Illinois',slug:'illinois' },
+  { code:'IN',name:'Indiana',slug:'indiana' },
+  { code:'IA',name:'Iowa',slug:'iowa' },
+  { code:'KS',name:'Kansas',slug:'kansas' },
+  { code:'KY',name:'Kentucky',slug:'kentucky' },
+  { code:'LA',name:'Louisiana',slug:'louisiana' },
+  { code:'ME',name:'Maine',slug:'maine' },
+  { code:'MD',name:'Maryland',slug:'maryland' },
+  { code:'MA',name:'Massachusetts',slug:'massachusetts' },
+  { code:'MI',name:'Michigan',slug:'michigan' },
+  { code:'MN',name:'Minnesota',slug:'minnesota' },
+  { code:'MS',name:'Mississippi',slug:'mississippi' },
+  { code:'MO',name:'Missouri',slug:'missouri' },
+  { code:'MT',name:'Montana',slug:'montana' },
+  { code:'NE',name:'Nebraska',slug:'nebraska' },
+  { code:'NV',name:'Nevada',slug:'nevada' },
+  { code:'NH',name:'New Hampshire',slug:'new-hampshire' },
+  { code:'NJ',name:'New Jersey',slug:'new-jersey' },
+  { code:'NM',name:'New Mexico',slug:'new-mexico' },
+  { code:'NY',name:'New York',slug:'new-york' },
+  { code:'NC',name:'North Carolina',slug:'north-carolina' },
+  { code:'ND',name:'North Dakota',slug:'north-dakota' },
+  { code:'OH',name:'Ohio',slug:'ohio' },
+  { code:'OK',name:'Oklahoma',slug:'oklahoma' },
+  { code:'OR',name:'Oregon',slug:'oregon' },
+  { code:'PA',name:'Pennsylvania',slug:'pennsylvania' },
+  { code:'RI',name:'Rhode Island',slug:'rhode-island' },
+  { code:'SC',name:'South Carolina',slug:'south-carolina' },
+  { code:'SD',name:'South Dakota',slug:'south-dakota' },
+  { code:'TN',name:'Tennessee',slug:'tennessee' },
+  { code:'TX',name:'Texas',slug:'texas' },
+  { code:'UT',name:'Utah',slug:'utah' },
+  { code:'VT',name:'Vermont',slug:'vermont' },
+  { code:'VA',name:'Virginia',slug:'virginia' },
+  { code:'WA',name:'Washington',slug:'washington' },
+  { code:'WV',name:'West Virginia',slug:'west-virginia' },
+  { code:'WI',name:'Wisconsin',slug:'wisconsin' },
+  { code:'WY',name:'Wyoming',slug:'wyoming' },
 ];
 
-function calcFederal(taxable: number, filing: string): number {
-  const std = filing === 'married' ? 32200 : 16100;
-  const t = Math.max(0, taxable - std);
-  const brackets: [number,number][] = filing === 'married'
-    ? [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]]
-    : [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]];
-  let tax = 0, prev = 0;
-  for (const [lim, rate] of brackets) {
-    if (t <= prev) break;
-    tax += (Math.min(t, lim) - prev) * rate;
-    prev = lim;
-  }
-  return tax;
-}
+const NO_STATE_INCOME_TAX = new Set(['AK', 'FL', 'NH', 'NV', 'SD', 'TN', 'TX', 'WA', 'WY']);
+const HSA_LIMIT_2026 = 4400;
 
 export default function HourlyPaycheckCalculator() {
   const [hourly, setHourly]   = useState('25');
@@ -84,25 +73,36 @@ export default function HourlyPaycheckCalculator() {
   const [error, setError] = useState('');
 
   const r = useMemo(() => {
-    const h = parseFloat(hourly)||0, hw = parseFloat(hours)||0, w = parseFloat(weeks)||52;
+    const h = Number(hourly), hw = Number(hours), w = Number(weeks);
     const annual = h * hw * w;
-    const k = Math.min(parseFloat(k401)||0, 24500);
-    const hsaV = Math.min(parseFloat(hsa)||0, 4300);
-    const preTax = annual - k - hsaV;
-    const fed    = calcFederal(preTax, filing);
-    const fica   = Math.min(annual, 184500)*0.062 + annual*0.0145;
-    const st     = STATES.find(s => s.code === state)!;
-    const stateTx = st.rate > 0 ? Math.max(0, preTax - 5000) * st.rate : 0;
-    const total  = fed + fica + stateTx;
-    const net    = annual - total - k - hsaV;
-    return { annual, fed, fica, stateTx, total, net, k, hsaV,
+    const kRequested = Number(k401), hsaV = Number(hsa);
+    if (!Number.isFinite(annual) || annual <= 0 ||
+      !Number.isFinite(kRequested) || kRequested < 0 ||
+      !Number.isFinite(hsaV) || hsaV < 0) return null;
+
+    const k = Math.min(kRequested, 24500);
+    const filingStatus: FilingStatus = filing === 'married' ? 'married' : filing === 'hoh' ? 'head' : 'single';
+    const estimate = estimatePaycheck({
+      annual,
+      freq: 1,
+      stateRatePct: 0,
+      stateCode: state.toLowerCase(),
+      filing: filingStatus,
+      k401Pct: k / annual,
+    });
+    const fed = estimateFederalIncomeTax(Math.max(0, annual - estimate.k401 - hsaV), filingStatus);
+    const fica = estimate.ss + estimate.med;
+    const stateTx = estimate.state;
+    const total = fed + fica + stateTx;
+    const net = annual - total - estimate.k401 - hsaV;
+    return { annual, fed, fica, stateTx, total, net, k: estimate.k401, hsaV,
       perPaycheck: net/26, weekly: w > 0 ? net/w : 0,
       effectiveRate: annual > 0 ? (total/annual)*100 : 0 };
   }, [hourly, hours, weeks, filing, state, k401, hsa]);
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString();
-  const input: React.CSSProperties = { width:'100%', padding:'10px 14px', background:'#0F2040', border:'1px solid rgba(201,168,76,0.3)', borderRadius:'8px', color:'#fff', fontSize:'15px', outline:'none', boxSizing:'border-box', fontFamily:'inherit' };
-  const lbl:   React.CSSProperties = { fontSize:'11px', color:'rgba(255,255,255,0.65)', fontWeight:600, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:'6px', display:'block' };
+  const input: React.CSSProperties = { width:'100%', padding:'10px 14px', background:'#0F2040', border:'1px solid rgba(201,168,76,0.5)', borderRadius:'8px', color:'#fff', fontSize:'16px', boxSizing:'border-box', fontFamily:'inherit' };
+  const lbl:   React.CSSProperties = { fontSize:'16px', color:'rgba(255,255,255,0.82)', fontWeight:600, marginBottom:'6px', display:'block' };
   const card:  React.CSSProperties = { background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:'12px', padding:'16px' };
   const sel = state;
   const stObj = STATES.find(s => s.code === sel)!;
@@ -113,12 +113,14 @@ export default function HourlyPaycheckCalculator() {
     const weeksValue = Number(weeks);
     const k401Value = Number(k401);
     const hsaValue = Number(hsa);
+    const annualGross = hourlyValue * hoursValue * weeksValue;
     if (!Number.isFinite(hourlyValue) || hourlyValue <= 0 ||
       !Number.isFinite(hoursValue) || hoursValue < 1 || hoursValue > 168 ||
       !Number.isFinite(weeksValue) || weeksValue < 1 || weeksValue > 52 ||
       !Number.isFinite(k401Value) || k401Value < 0 || k401Value > 24500 ||
-      !Number.isFinite(hsaValue) || hsaValue < 0 || hsaValue > 4300) {
-      setError('Enter a positive hourly rate, 1–168 hours, 1–52 weeks, 401(k) from $0–$24,500, and HSA from $0–$4,400.');
+      !Number.isFinite(hsaValue) || hsaValue < 0 || hsaValue > HSA_LIMIT_2026 ||
+      k401Value + hsaValue > annualGross || !r) {
+      setError(`Enter a valid hourly rate, 1–168 hours, 1–52 weeks, 401(k) from $0–$24,500, and HSA from $0–$${HSA_LIMIT_2026}; contributions cannot exceed annual gross pay.`);
       setHasCalculated(false);
       return;
     }
@@ -133,7 +135,14 @@ export default function HourlyPaycheckCalculator() {
 
       {/* NAV */}
 
-      <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'32px 16px' }}>
+      <style>{`
+        .hourly-calculator-input:focus-visible,
+        .hourly-calc-button:focus-visible,
+        .hourly-state-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+        .hourly-calc-button:hover { filter: brightness(1.08); }
+        .hourly-state-button:hover { background: rgba(129,140,248,0.18) !important; }
+      `}</style>
+      <div style={{ maxWidth:'1000px', margin:'0 auto', padding:'32px 6px' }}>
 
         {/* BREADCRUMB */}
         <div style={{ fontSize:'13px', opacity: 0.8, marginBottom:'20px' }}>
@@ -149,7 +158,7 @@ export default function HourlyPaycheckCalculator() {
             Hourly Paycheck<br/><span style={{ color:'#FFFFFF' }}>Calculator 2026</span>
           </h1>
           <p style={{ fontSize:'17px', opacity:0.65, maxWidth:'580px', margin:'0 auto', lineHeight:1.7 }}>
-            Enter your hourly rate and hours worked. Instantly see your weekly, biweekly, and annual take-home pay after all taxes for all 50 states.
+            Enter your hourly rate and hours worked to estimate weekly, biweekly, and annual take-home pay using modeled federal, state, and payroll taxes. Actual withholding may differ.
           </p>
         </div>
 
@@ -159,33 +168,33 @@ export default function HourlyPaycheckCalculator() {
           {/* ROW 1: Hourly + Hours + Weeks */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
-              <label style={lbl}>Hourly Rate ($)</label>
-              <input type="number" value={hourly} onChange={e=>{setHourly(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="25.00" min="0" step="0.25" />
+              <label htmlFor="hourly-rate" style={lbl}>Hourly Rate ($)</label>
+              <input className="hourly-calculator-input" id="hourly-rate" type="number" value={hourly} onChange={e=>{setHourly(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="25.00" min="0.01" step="0.25" />
             </div>
             <div>
-              <label style={lbl}>Hours per Week</label>
-              <input type="number" value={hours} onChange={e=>{setHours(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="40" min="1" max="168" />
+              <label htmlFor="hours-per-week" style={lbl}>Hours per Week</label>
+              <input className="hourly-calculator-input" id="hours-per-week" type="number" value={hours} onChange={e=>{setHours(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="40" min="1" max="168" />
             </div>
             <div>
-              <label style={lbl}>Weeks per Year</label>
-              <input type="number" value={weeks} onChange={e=>{setWeeks(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="52" min="1" max="52" />
+              <label htmlFor="weeks-per-year" style={lbl}>Weeks per Year</label>
+              <input className="hourly-calculator-input" id="weeks-per-year" type="number" value={weeks} onChange={e=>{setWeeks(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="52" min="1" max="52" />
             </div>
           </div>
 
           {/* ROW 2: Filing + State */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'16px' }}>
             <div>
-              <label style={lbl}>Filing Status</label>
-              <select value={filing} onChange={e=>{setFiling(e.target.value);setHasCalculated(false);}} style={{...input, colorScheme:'dark'}}>
+              <label htmlFor="filing-status" style={lbl}>Filing Status</label>
+              <select className="hourly-calculator-input" id="filing-status" value={filing} onChange={e=>{setFiling(e.target.value);setHasCalculated(false);setError('');}} style={{...input, colorScheme:'dark'}}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
             <div>
-              <label style={lbl}>State</label>
-              <select value={state} onChange={e=>{setState(e.target.value);setHasCalculated(false);}} onFocus={e=>{e.currentTarget.scrollIntoView({behavior:"smooth",block:"center"});}} style={{...input, colorScheme:'dark'}}>
-                {STATES.map(s => <option key={s.code} value={s.code}>{s.name}{s.rate===0 ? ' (no income tax)' : ''}</option>)}
+              <label htmlFor="work-state" style={lbl}>State</label>
+              <select className="hourly-calculator-input" id="work-state" value={state} onChange={e=>{setState(e.target.value);setHasCalculated(false);setError('');}} onFocus={e=>{e.currentTarget.scrollIntoView({behavior:"smooth",block:"center"});}} style={{...input, colorScheme:'dark'}}>
+                {STATES.map(s => <option key={s.code} value={s.code}>{s.name}{NO_STATE_INCOME_TAX.has(s.code) ? ' (no wage income tax)' : ''}</option>)}
               </select>
             </div>
           </div>
@@ -193,24 +202,24 @@ export default function HourlyPaycheckCalculator() {
           {/* ROW 3: 401k + HSA */}
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))', gap:'16px', marginBottom:'24px' }}>
             <div>
-              <label style={lbl}>401(k) Contribution ($/yr, max $24,500)</label>
-              <input type="number" value={k401} onChange={e=>{setK401(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="24500" />
+              <label htmlFor="401k-contribution" style={lbl}>401(k) contribution ($/yr, max $24,500)</label>
+              <input className="hourly-calculator-input" id="401k-contribution" type="number" value={k401} onChange={e=>{setK401(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="24500" />
             </div>
             <div>
-              <label style={lbl}>HSA Contribution ($/yr, max $4,400)</label>
-              <input type="number" value={hsa} onChange={e=>{setHsa(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max="4300" />
+              <label htmlFor="hsa-contribution" style={lbl}>HSA contribution ($/yr, max $4,400 self-only)</label>
+              <input className="hourly-calculator-input" id="hsa-contribution" type="number" value={hsa} onChange={e=>{setHsa(e.target.value);setHasCalculated(false);setError('');}} style={input} placeholder="0" min="0" max={HSA_LIMIT_2026} />
             </div>
           </div>
-          <button type="button" onClick={calculate} style={{ width:'100%', padding:'13px 16px', marginTop:20, border:0, borderRadius:9, background:'linear-gradient(135deg,#F5C842,#FFD700)', color:'#091526', fontSize:15, fontWeight:800, cursor:'pointer' }}>
+          <button className="hourly-calc-button" type="button" onClick={calculate} style={{ width:'100%', padding:'13px 16px', marginTop:20, border:0, borderRadius:9, background:'linear-gradient(135deg,#F5C842,#FFD700)', color:'#091526', fontSize:16, fontWeight:800, cursor:'pointer' }}>
             Calculate My Take-Home Pay →
           </button>
           {error && <p role="alert" style={{ color:'#fca5a5', fontSize:12, lineHeight:1.5, margin:'10px 0 0' }}>{error}</p>}
 
           {/* RESULTS */}
-          {hasCalculated && <>
+          {hasCalculated && r && <>
           <div style={{ background:'linear-gradient(135deg,rgba(74,222,128,0.12),rgba(201,168,76,0.12))', border:'1px solid rgba(74,222,128,0.25)', borderRadius:'12px', padding:'24px' }}>
             <div style={{ textAlign:'center', marginBottom:'20px' }}>
-              <div style={{ fontSize:'13px', opacity:0.6, marginBottom:'4px' }}>Annual Gross → Take-Home</div>
+              <div style={{ fontSize:'15px', opacity:0.82, marginBottom:'4px' }}>Estimated annual take-home</div>
               <div style={{ fontSize:'clamp(28px,5vw,48px)', fontWeight:900, color:'#4ade80', lineHeight:1 }}>{fmt(r.net)}</div>
               <div style={{ fontSize:'13px', opacity: 0.8, marginTop:'4px' }}>per year · {stObj.name}</div>
             </div>
@@ -239,7 +248,7 @@ export default function HourlyPaycheckCalculator() {
               </div>
               {r.stateTx > 0 && (
                 <div style={{ display:'flex', justifyContent:'space-between', opacity:0.7 }}>
-                  <span>{stObj.name} State Tax</span><span>-{fmt(r.stateTx)}</span>
+                  <span>{stObj.name} income/payroll taxes</span><span>-{fmt(r.stateTx)}</span>
                 </div>
               )}
               {r.k > 0 && (
@@ -259,7 +268,7 @@ export default function HourlyPaycheckCalculator() {
           </div>
           <p style={{ textAlign:'center', fontSize:'11px', opacity: 0.8, margin:'12px 0 0' }}> All calculations happen in your browser — your data is never sent anywhere</p>
           <CalculatorResultActions
-            summary={`2026 ${stObj.name} hourly paycheck estimate (${filing})\nAnnual gross: ${fmt(r.annual)}\nFederal tax: ${fmt(r.fed)}\nFICA: ${fmt(r.fica)}\nState income-tax estimate: ${fmt(r.stateTx)}\n401(k): ${fmt(r.k)}\nHSA: ${fmt(r.hsaV)}\nEstimated annual take-home: ${fmt(r.net)}\nEffective modeled tax rate: ${r.effectiveRate.toFixed(1)}%\nEstimate excludes local taxes and personal credits; verify current state rules.`}
+            summary={`2026 ${stObj.name} hourly paycheck estimate (${filing})\nAnnual gross: ${fmt(r.annual)}\nFederal tax estimate: ${fmt(r.fed)}\nSocial Security and Medicare estimate: ${fmt(r.fica)}\nState income/payroll tax estimate: ${fmt(r.stateTx)}\n401(k): ${fmt(r.k)}\nHSA: ${fmt(r.hsaV)}\nEstimated annual take-home: ${fmt(r.net)}\nEffective modeled tax rate: ${r.effectiveRate.toFixed(1)}%\nThis estimate uses modeled federal and state rules. Local taxes, credits, and HSA payroll-tax/state treatment may differ.`}
             relatedLinks={[
               { href: '/teacher-paycheck-calculator', label: 'Teacher paycheck →' },
               { href: '/1099-paycheck-calculator', label: '1099 tax calculator →' },
@@ -275,7 +284,7 @@ export default function HourlyPaycheckCalculator() {
             <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'13px' }}>
               <thead>
                 <tr style={{ borderBottom:'1px solid rgba(255,255,255,0.1)' }}>
-                  {['Hourly Rate','Annual Gross','Federal Tax','FICA','Take-Home (TX, Single)'].map(h => (
+                  {['Hourly Rate','Annual Gross','Federal Tax','FICA','Estimated take-home (TX, Single)'].map(h => (
                     <th key={h} style={{ textAlign:'left', padding:'8px 12px', opacity:0.6, fontWeight:600, fontSize:'11px', textTransform:'uppercase', letterSpacing:'0.04em' }}>{h}</th>
                   ))}
                 </tr>
@@ -283,9 +292,17 @@ export default function HourlyPaycheckCalculator() {
               <tbody>
                 {[15,17,20,25,30,35,40,50,60,75,100].map(rate => {
                   const ann = rate*40*52;
-                  const fed = calcFederal(ann,'single');
-                  const fica = Math.min(ann,184500)*0.062+ann*0.0145;
-                  const net = ann-fed-fica;
+                  const estimate = estimatePaycheck({
+                    annual: ann,
+                    freq: 1,
+                    stateRatePct: 0,
+                    stateCode: 'tx',
+                    filing: 'single',
+                    k401Pct: 0,
+                  });
+                  const fed = estimate.fed;
+                  const fica = estimate.ss + estimate.med;
+                  const net = estimate.net;
                   return (
                     <tr key={rate} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)' }}>
                       <td style={{ padding:'8px 12px', fontWeight:700, color:'#F5C842' }}>${rate}/hr</td>
@@ -304,11 +321,11 @@ export default function HourlyPaycheckCalculator() {
         {/* HOW IT WORKS */}
         <div style={{ ...card, marginBottom:'28px' }}>
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'16px' }}>How to Calculate Hourly Take-Home Pay</h2>
-          <p style={{ fontSize:'14px', opacity:0.7, lineHeight:1.8, marginBottom:'12px' }}>
-            To find your annual gross: multiply <strong>hourly rate × hours/week × weeks/year</strong>. For a standard full-time job, that's rate × 40 × 52. From gross pay, subtract pre-tax deductions like 401(k) and HSA, then apply federal income tax brackets, FICA (6.2% Social Security on first $184,500 + 1.45% Medicare on all wages), and your state income tax.
+          <p style={{ fontSize:'16px', opacity:0.85, lineHeight:1.8, marginBottom:'12px' }}>
+            Annual gross pay is hourly rate × hours per week × weeks worked. The estimate applies the shared federal, state, Social Security, and Medicare model. Traditional 401(k) contributions reduce modeled taxable wages; the HSA input is treated as a federal income-tax deduction only. HSA payroll-tax and state-tax treatment can differ.
           </p>
-          <p style={{ fontSize:'14px', opacity:0.7, lineHeight:1.8 }}>
-            The result is your annual net pay. Divide by 26 for biweekly paychecks, by 24 for semi-monthly, or by 12 for monthly. This calculator handles all of that instantly and privately — zero data sent to any server.
+          <p style={{ fontSize:'16px', opacity:0.85, lineHeight:1.8 }}>
+            This is an estimate, not an exact paycheck or tax determination. Local taxes, credits, withholding elections, benefits, and individual circumstances may change actual pay. Calculations run in your browser; the entered values are not sent to the server.
           </p>
         </div>
 
@@ -317,15 +334,15 @@ export default function HourlyPaycheckCalculator() {
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'20px' }}>Frequently Asked Questions</h2>
           <div style={{ display:'flex', flexDirection:'column', gap:'16px' }}>
             {[
-              { q:'How much is $20 an hour after taxes?', a:'$20/hr × 40 hrs × 52 weeks = $41,600 gross. In Texas (no state tax), a single filer takes home roughly $33,500–$34,000 after federal tax and FICA. In California add ~$2,500 state tax, reducing net to ~$31,000.' },
-              { q:'What is the hourly equivalent of a $60,000 salary?', a:'$60,000 ÷ 52 weeks ÷ 40 hours = $28.85/hour. After federal tax and FICA (single, no state tax), take-home is roughly $47,000/year or $22.60/hr net.' },
-              { q:'Does my employer match affect my take-home pay?', a:'No — employer 401(k) match does not appear on your paycheck as a deduction. It is additional compensation added to your retirement account. Only your own contributions reduce your taxable income.' },
-              { q:'How does overtime affect my hourly paycheck?', a:'Overtime hours are paid at 1.5× your regular rate. However, the additional income can push you into a higher marginal tax bracket. Use our Overtime Calculator to see your exact take-home including OT hours.' },
-              { q:'Why is my actual paycheck different from the calculator?', a:'Common reasons: pre-tax health insurance premiums, life insurance, local city taxes, additional state withholding, garnishments, or different pay periods. This calculator uses the standard deduction — itemizers may pay less tax.' },
+              { q:'How much is $20 an hour after taxes?', a:'It depends on hours and weeks worked, filing status, state, deductions, and withholding elections. Enter your details to get a modeled estimate; the result is not an exact paycheck.' },
+              { q:'What is the hourly equivalent of a $60,000 salary?', a:'At 40 hours per week for 52 weeks, $60,000 is about $28.85 per hour before taxes ($60,000 ÷ 2,080 hours). Actual hours and compensation can vary.' },
+              { q:'Does my employer match affect my take-home pay?', a:'An employer 401(k) match is generally not an employee paycheck deduction. This estimate includes only the employee contribution entered; plan terms and tax treatment vary.' },
+              { q:'How does overtime affect my hourly paycheck?', a:'Overtime rules depend on coverage, exemption status, state law, and the workweek. This calculator does not model overtime premiums; use the overtime calculator for a separate estimate, not an exact amount.' },
+              { q:'Why is my actual paycheck different from the calculator?', a:'Withholding elections, local taxes, benefits, credits, garnishments, pay periods, and state-specific rules can change actual pay. This calculator uses a simplified modeled estimate.' },
             ].map(item => (
               <div key={item.q}>
-                <h3 style={{ fontSize:'14px', fontWeight:700, marginBottom:'6px' }}>{item.q}</h3>
-                <p style={{ fontSize:'13px', opacity:0.7, lineHeight:1.7, margin:0 }}>{item.a}</p>
+                <h3 style={{ fontSize:'16px', fontWeight:700, marginBottom:'6px' }}>{item.q}</h3>
+                <p style={{ fontSize:'16px', opacity:0.85, lineHeight:1.7, margin:0 }}>{item.a}</p>
               </div>
             ))}
           </div>
@@ -419,13 +436,20 @@ export default function HourlyPaycheckCalculator() {
         {/* STATE GRID */}
         <div>
           <h2 style={{ fontSize:'18px', fontWeight:800, marginBottom:'8px', textAlign:'center' }}>Hourly Calculator by State</h2>
-          <p style={{ textAlign:'center', opacity: 0.8, fontSize:'13px', marginBottom:'20px' }}>State tax rates automatically applied when you select your state above</p>
+          <p style={{ textAlign:'center', opacity: 0.82, fontSize:'15px', marginBottom:'20px' }}>Choose a state-specific tax model by selecting a card.</p>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(160px,1fr))', gap:'8px' }}>
             {STATES.map(s => (
-              <div key={s.code} onClick={() => setState(s.code)} style={{ background: state===s.code ? 'rgba(129,140,248,0.15)' : 'rgba(255,255,255,0.03)', border: state===s.code ? '1px solid rgba(129,140,248,0.4)' : '1px solid rgba(255,255,255,0.06)', borderRadius:'8px', padding:'10px 12px', cursor:'pointer', transition:'all .15s' }}>
-                <div style={{ fontWeight:700, fontSize:'13px' }}>{s.name}</div>
-                <div style={{ fontSize:'11px', opacity:0.45, marginTop:'2px' }}>{s.rate===0 ? 'No state tax' : (s.rate*100).toFixed(2)+'% state tax'}</div>
-              </div>
+              <button
+                key={s.code}
+                className="hourly-state-button"
+                type="button"
+                aria-pressed={state === s.code}
+                onClick={() => { setState(s.code); setHasCalculated(false); setError(''); }}
+                style={{ background: state===s.code ? 'rgba(129,140,248,0.15)' : 'rgba(255,255,255,0.04)', border: state===s.code ? '1px solid rgba(129,140,248,0.65)' : '1px solid rgba(255,255,255,0.2)', borderRadius:'8px', padding:'12px', cursor:'pointer', color:'#fff', textAlign:'left', minHeight:64 }}
+              >
+                <div style={{ fontWeight:700, fontSize:'16px' }}>{s.name}</div>
+                <div style={{ fontSize:'14px', color:'rgba(255,255,255,0.8)', marginTop:'4px' }}>{NO_STATE_INCOME_TAX.has(s.code) ? 'No wage income tax' : 'State tax schedule modeled'}</div>
+              </button>
             ))}
           </div>
         </div>

@@ -199,7 +199,7 @@ export default function Page() {
           <li>
             Social Security is modeled at {FICA.socialSecurity.rate * 100}% up
             to the 2026 wage base of {formatMoney(FICA.socialSecurity.cap)};
-            Medicare is modeled at {FICA.medicare.rate * 100}%.
+            Medicare is modeled at {(FICA.medicare.rate * 100).toFixed(2)}%.
           </li>
           <li>
             New Jersey employee payroll programs, health insurance, pension

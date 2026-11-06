@@ -322,12 +322,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { state } = await params;
   const data = STATE_DATA[state];
   if (!data) return { title: 'Not Found' };
-  const taxNote = data.noStateTax ? 'no state income tax' : data.stateTax + '% state tax';
   return {
-    title: data.noStateTax ? data.name + ' Hourly Paycheck Calculator — No State Tax' : data.name + ' Hourly Paycheck Calculator — After ' + data.stateTax + '% Tax',
-    description: data.noStateTax ? 'How much do you take home hourly in ' + data.name + '? No state tax — free 2026 calculator, see exact pay after federal & FICA taxes. No login, no data stored.' : 'How much do you take home hourly in ' + data.name + '? Free 2026 calculator — see exact pay after federal, ' + data.stateTax + '% state & FICA taxes. No login, no data stored.',
+    title: `${data.name} Hourly Paycheck Calculator 2026`,
+    description: `Estimate hourly take-home pay in ${data.name} using modeled federal, state, and payroll taxes. Local taxes and individual withholding may change results.`,
+    openGraph: {
+      title: `${data.name} Hourly Paycheck Calculator 2026`,
+      description: `Estimate hourly take-home pay in ${data.name}; actual withholding and local taxes may vary.`,
+      url: `https://www.privatepaycheck.com/hourly-paycheck-calculator/${state}`,
+      siteName: 'PrivatePaycheck',
+      type: 'website',
+    },
     alternates: { canonical: 'https://www.privatepaycheck.com/hourly-paycheck-calculator/' + state },
-  authors: [{ name: 'the PrivatePaycheck Team' }],
+    authors: [{ name: 'the PrivatePaycheck Team' }],
   };
 }
 
@@ -341,11 +347,11 @@ export default async function Page({ params }: Props) {
           {'@type':'HowToStep',position:1,name:'Enter hourly wage',text:'Type your hourly rate into the wage field.'},
           {'@type':'HowToStep',position:2,name:'Set hours per week',text:'Enter how many hours you work per week.'},
           {'@type':'HowToStep',position:3,name:'Choose pay frequency',text:'Select weekly, bi-weekly, or monthly pay schedule.'},
-          {'@type':'HowToStep',position:4,name:'Pick your state',text:'Select your state to apply correct state income tax.'},
-          {'@type':'HowToStep',position:5,name:'View take-home pay',text:'See your net pay after federal, state, and FICA taxes instantly.'}
+          {'@type':'HowToStep',position:4,name:'Pick your state',text:'This page selects the state tax model for the estimate.'},
+          {'@type':'HowToStep',position:5,name:'View take-home pay',text:'Calculate an estimate after modeled federal, state, Social Security, and Medicare taxes.'}
           ]}) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[{'@type':'Question',name:'How do I calculate my hourly take-home pay?',acceptedAnswer:{'@type':'Answer',text:'Enter your hourly rate, hours per week, pay frequency, and state. The calculator applies 2026 federal and state tax rates plus FICA to show your exact net pay.'}},{'@type':'Question',name:'What taxes are taken out of my hourly paycheck?',acceptedAnswer:{'@type':'Answer',text:'Federal income tax (10-37%), Social Security (6.2%), Medicare (1.45%), and state income tax if applicable. Some states like Texas and Florida have no state income tax.'}},{'@type':'Question',name:'Is the hourly paycheck calculator free?',acceptedAnswer:{'@type':'Answer',text:'Yes, completely free. No signup required. All calculations run locally in your browser using 2026 IRS tax tables.'}}]}) }} />
-      <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} stateTax={data.stateTax} noStateTax={data.noStateTax} stateSlug={state} minWage={STATE_MIN_WAGE[STATE_SLUG_MAP[state]]?.hourly ?? 7.25} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[{'@type':'Question',name:'How do I estimate my hourly take-home pay?',acceptedAnswer:{'@type':'Answer',text:'Enter your hourly rate, weekly hours, pay frequency, and filing status. The selected state page applies a modeled 2026 federal, state, Social Security, and Medicare estimate; actual withholding and local taxes may differ.'}},{'@type':'Question',name:'What taxes may affect my hourly paycheck?',acceptedAnswer:{'@type':'Answer',text:'Federal income tax, Social Security, Medicare, and applicable state or local taxes may affect take-home pay. Additional Medicare tax may apply at higher incomes.'}},{'@type':'Question',name:'Is the hourly paycheck calculator free?',acceptedAnswer:{'@type':'Answer',text:'Yes, free to use. The estimate runs in your browser; actual withholding, local taxes, benefits, and individual circumstances may change results.'}}]}) }} />
+      <HourlyStateClient stateName={data.name} stateAbbr={data.abbr} noStateTax={data.noStateTax} stateSlug={state} minWage={STATE_MIN_WAGE[STATE_SLUG_MAP[state]]?.hourly ?? 7.25} />
     </>
   );
 }

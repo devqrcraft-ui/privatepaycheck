@@ -187,7 +187,7 @@ export default function HomeClient() {
                   ['Qualified Overtime Deduction','/no-tax-on-overtime-deduction','Eligibility and limits apply'],
                   ['Qualified Tip Income Deduction','/no-tax-on-tips-calculator','Eligibility and limits apply'],
                   ['Additional Senior Deduction','/senior-deduction-calculator','Income limits apply'],
-                  ['Trump Account','/trump-account-calculator','$38K+ at 18'],
+                  ['Trump Account','/trump-account-calculator','Hypothetical balance projection'],
                 ].map(([label, href, save]) => (
                   <a key={href} href={href} style={{display:'block',background:'rgba(99,102,241,0.10)',border:'1px solid rgba(99,102,241,0.25)',borderRadius:10,padding:'12px 16px',textDecoration:'none',textAlign:'center'}}>
                     <div style={{fontSize:15,fontWeight:700,color:'#e0e7ff',lineHeight:1.3,marginBottom:4}}>{label}</div>
@@ -279,8 +279,8 @@ export default function HomeClient() {
             <div className="obbb-badge">New Law</div>
             <div className="obbb-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a5 5 0 0 1 5 5v2a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M9 11c0 2 1.5 3 3 3s3-1 3-3"/></svg></div>
             <div className="obbb-title">Trump Account</div>
-            <div className="obbb-save">$38,000+ at 18</div>
-            <div className="obbb-desc">$1,000 gov seed + $2,500/yr employer. See your child total.</div>
+            <div className="obbb-save">Check eligibility and assumptions</div>
+            <div className="obbb-desc">Review IRS rules and model a hypothetical balance with an assumed return.</div>
           </Link>
         </div>
       </section>
@@ -500,8 +500,8 @@ export default function HomeClient() {
               {[
                 {title:'2026 IRS Tax Brackets',desc:'Updated federal brackets and standard deductions: $16,100 single / $32,200 married filing jointly.'},
                 {title:'FICA & Social Security',desc:'Social Security wage base $184,500. Medicare 1.45% on all wages. Additional 0.9% above $200k.'},
-                {title:'Overtime & Tips',desc:'No-tax-on-overtime rules and no-tax-on-tips deduction up to $25,000 included in calculations.'},
-                {title:'Senior & Trump Account',desc:'Trump Account contributions and $6,000 senior deduction for age 65+ included for 2026.'},
+                {title:'Overtime & Tips',desc:'Use dedicated estimates for qualified overtime and qualified tips deductions; eligibility and limits apply.'},
+                {title:'Senior deduction & Trump Accounts',desc:'Learn about the additional deduction for eligible adults age 65+ and current IRS Trump Account rules.'},
               ].map(item => (
                 <div key={item.title} style={{background:'rgba(245,200,66,0.06)',border:'1px solid rgba(245,200,66,0.2)',borderRadius:12,padding:'22px 20px',transition:'transform 0.2s,box-shadow 0.2s',cursor:'default'}}
                   onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.transform='translateY(-3px)';(e.currentTarget as HTMLElement).style.boxShadow='0 8px 24px rgba(245,200,66,0.15)';}}
@@ -578,7 +578,7 @@ export default function HomeClient() {
             {href:'/no-tax-on-overtime-deduction',name:'Overtime Deduction',rate:'Eligibility and limits apply'},
             {href:'/w4-withholding-calculator',name:'W-4 Calculator',rate:'Estimate withholding'},
             {href:'/senior-deduction-calculator',name:'Senior Deduction',rate:'$6,000 extra'},
-            {href:'/trump-account-calculator',name:'Trump Account',rate:'$38K+ at age 18'},
+            {href:'/trump-account-calculator',name:'Trump Account',rate:'Hypothetical projection'},
             {href:'/teacher-paycheck-calculator',name:'Teacher Calculator',rate:'All 50 states'},
             {href:'/raise-calculator',name:'Raise Calculator',rate:'See your real gain'},
           ].map((s)=>(
