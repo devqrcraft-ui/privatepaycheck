@@ -70,6 +70,7 @@ const professionPosts = [
   { slug: 'police-officer-salary-after-taxes', title: 'Police Officer Salary After Taxes 2026', desc: 'Net pay with pension deductions' },
   { slug: 'married-filing-jointly-paycheck-2026', title: 'Married Filing Jointly Paycheck 2026', desc: 'How MFJ changes your withholding and take-home' },
   { slug: 'nurse-paycheck-calculator', title: 'Nurse Paycheck Calculator 2026', desc: 'RN take-home pay — all 50 states' },
+  { slug: 'firefighter-salary-after-taxes', title: 'Firefighter Salary After Taxes 2026', desc: 'Firefighter take-home pay after taxes' },
   { slug: 'teacher-salary-after-taxes', title: 'Teacher Salary After Taxes 2026', desc: 'Net teacher pay with pension deductions' },
 ]
 

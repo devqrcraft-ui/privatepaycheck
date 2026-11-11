@@ -37,6 +37,12 @@ export default function Footer() {
             <Link href="/blog" className="foot-link">Blog</Link>
             <Link href="/all-states" className="foot-link">All States</Link>
             <Link href="/minimum-wage" className="foot-link">Minimum Wage</Link>
+            <Link href="/2026-tax-changes" className="foot-link">2026 Tax Changes</Link>
+            <Link href="/compare-states-paycheck" className="foot-link">Compare State Paychecks</Link>
+            <Link href="/compare-states-taxes" className="foot-link">Compare State Taxes</Link>
+            <Link href="/nanny-tax-guide" className="foot-link">Nanny Tax Guide</Link>
+            <Link href="/housekeeper-tax-guide" className="foot-link">Housekeeper Tax Guide</Link>
+            <Link href="/wep-lump-sum-calculator" className="foot-link">WEP Lump-Sum Calculator</Link>
             <Link href="/privacy-policy" className="foot-link">Privacy Policy</Link>
             <Link href="/terms" className="foot-link">Terms of Use</Link>
           </div>
