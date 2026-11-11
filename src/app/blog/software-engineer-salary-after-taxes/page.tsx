@@ -335,9 +335,7 @@ export default function Page() {
           </ul>
 
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 28px', color: 'rgba(255,255,255,0.85)' }}>
-            {'Use IRS Form 1040-ES to determine whether and how much to pay; withholding can count toward the requirement. See the '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer" style={{ color: '#e8b84b', textDecoration: 'none' }}>IRS estimated-tax guidance</a>{' and our full guide on '}
-            <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly taxes for gig workers</a>
-            {' for step-by-step instructions.'}
+            {'Use IRS Form 1040-ES to determine whether and how much to pay; withholding can count toward the requirement. See the '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer" style={{ color: '#e8b84b', textDecoration: 'none' }}>IRS estimated-tax guidance</a>{'.'}
           </p>
         </section>
 
@@ -384,9 +382,9 @@ export default function Page() {
             Related Articles
           </h2>
           <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
-            <li><a href="/blog/self-employment-tax-rate-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>Self-Employment Tax Rate 2026: 15.3% Explained</a></li>
-            <li><a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>Quarterly Taxes for Gig Workers: Deadlines and How to Pay</a></li>
-            <li><a href="/doordash" style={{ color: '#e8b84b', textDecoration: 'none' }}>DoorDash Tax Calculator 2026</a></li>
+            <li><a href="/blog/software-engineer-take-home-pay" style={{ color: '#e8b84b', textDecoration: 'none' }}>Software Engineer Take-Home Pay</a></li>
+            <li><a href="/1099-paycheck-calculator" style={{ color: '#e8b84b', textDecoration: 'none' }}>1099 Paycheck Calculator</a></li>
+            <li><a href="/raise-calculator" style={{ color: '#e8b84b', textDecoration: 'none' }}>Raise Calculator</a></li>
           </ul>
         </section>
 

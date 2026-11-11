@@ -337,7 +337,7 @@ export default function Page() {
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:12}}>
             {[
               {title:'Teacher Salary After Taxes 2026', href:'/blog/teacher-salary-after-taxes'},
-              {title:'Nurse Salary After Taxes 2026', href:'/blog/nurse-salary-after-taxes'},
+              {title:'Nurse Salary After Taxes 2026', href:'/blog/nurse-paycheck-calculator'},
               {title:'Trump Account Calculator 2026', href:'/blog/trump-account-calculator'},
             ].map((a, i) => (
               <a key={i} href={a.href} style={{
