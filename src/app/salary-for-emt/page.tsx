@@ -14,7 +14,6 @@ export default function Page( ) {
           <p style={{ fontSize: "20px", lineHeight: 1.7, marginBottom: "30px" }}>See exactly how much a <strong>EMT</strong> takes home in 2026.</p>
           <a href="/" className="btn-3d-gold" style={{ display: "inline-block", textDecoration: "none" }}>Calculate My Paycheck ➔</a>
         </div>
-        <p style={{fontSize:"12px"}}>Powered by <a href="https://www.gigwisetax.com" style={{color:"#F5C842"}}>GigWiseTax</a></p>
       </div>
     </div>
    );
