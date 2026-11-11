@@ -335,7 +335,7 @@ export default function Page() {
           <h2 style={{fontSize:16, fontWeight:700, color:'#e8edf8', marginBottom:16}}>Related Articles</h2>
           <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:12}}>
             {[
-              {title:'Police Officer Paycheck 2026', href:'/blog/police-paycheck-calculator'},
+              {title:'Police Officer Paycheck 2026', href:'/blog/police-officer-salary-after-taxes'},
               {title:'Nurse Salary After Taxes 2026', href:'/blog/nurse-paycheck-calculator'},
               {title:'Trump Account Calculator 2026', href:'/blog/trump-account-calculator'},
             ].map((a, i) => (
