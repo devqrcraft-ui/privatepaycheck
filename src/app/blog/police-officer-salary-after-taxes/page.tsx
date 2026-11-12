@@ -2,17 +2,17 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Police Officer Salary After Taxes 2026: $65K = $49,200 Take-Home',
-  description: 'Police officer on $65K takes home $49,200 in 2026. Includes pension, overtime, state taxes. State-by-state breakdown + free paycheck calculator.',
+  title: 'Police Officer Salary After Taxes 2026: $65K = $54,408 Take-Home',
+  description: 'Police officer on $65K takes home $54,408 in Texas (single, no pension). Covers pension, overtime, state taxes. State-by-state breakdown + free paycheck calculator.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/police-officer-salary-after-taxes' },
   openGraph: {
-    title: 'Police Officer Salary After Taxes 2026: $65K = $49,200 Take-Home',
+    title: 'Police Officer Salary After Taxes 2026: $65K = $54,408 Take-Home',
     description: 'See your real police officer take-home pay after federal, state, FICA, and pension deductions.',
     type: 'article',
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a police officer take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A police officer earning $65,000 takes home approximately $49,200 in Texas, $47,100 in Illinois, and $44,800 in California after federal tax, FICA, and state tax — before pension contributions."}},{"@type":"Question","name":"What is the average police officer salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national average police officer salary is approximately $67,600 in 2026. Ranges from $45,000 in rural departments to $100,000+ for NYPD officers with overtime and longevity pay."}},{"@type":"Question","name":"How much do police officers pay into pensions?","acceptedAnswer":{"@type":"Answer","text":"Most police pension plans require 8-12% employee contributions. On $67,600 salary, that is $5,408-$8,112 withheld per year. These contributions are pre-tax in most states, reducing taxable income."}},{"@type":"Question","name":"Does police overtime get taxed at a higher rate?","acceptedAnswer":{"@type":"Answer","text":"Overtime is taxed as regular income — there is no special overtime tax rate. However, overtime pushes total income into higher brackets. On $20,000 in overtime added to a $65,000 base, the extra income is taxed at 22%."}},{"@type":"Question","name":"Which state pays police officers the most after taxes?","acceptedAnswer":{"@type":"Answer","text":"Washington state combines no state income tax with above-average police salaries ($75,000+ average). Officers take home approximately $57,500/year. Texas and Florida also rank high due to zero state income tax."}},{"@type":"Question","name":"Do police officers pay Social Security?","acceptedAnswer":{"@type":"Answer","text":"Most police officers do pay Social Security — FICA is 7.65% of gross salary. However, some departments (mainly in Ohio, Illinois, Massachusetts, and California) are exempt from Social Security and use pension-only systems."}},{"@type":"Question","name":"How do I calculate my police paycheck after taxes?","acceptedAnswer":{"@type":"Answer","text":"Start with gross salary plus overtime. Subtract federal income tax (10-22% bracket), FICA (7.65%), state income tax (0-9.3%), and pension contribution (8-12%). Use our free paycheck calculator for your exact result."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a police officer take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A police officer earning $65,000 takes home approximately $54,408 in Texas, $51,335 in Illinois, and $51,673 in California after federal tax, FICA, and state tax — before pension contributions."}},{"@type":"Question","name":"What is the average police officer salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"Police pay varies widely by department, state, and overtime. This guide uses a $65,000 example salary; check your own department pay scale for exact figures."}},{"@type":"Question","name":"How much do police officers pay into pensions?","acceptedAnswer":{"@type":"Answer","text":"Most police pension plans require 8-12% employee contributions. On a $65,000 salary, that is $5,200-$7,800 withheld per year. These contributions are pre-tax in most states, reducing taxable income."}},{"@type":"Question","name":"Does police overtime get taxed at a higher rate?","acceptedAnswer":{"@type":"Answer","text":"Overtime is taxed as regular income — there is no special overtime tax rate. However, overtime pushes total income into higher brackets. On $20,000 of overtime added to a $65,000 base, the first $1,500 or so is taxed at 12% federal and the rest at 22%, so federal tax rises by about $4,250."}},{"@type":"Question","name":"Which state pays police officers the most after taxes?","acceptedAnswer":{"@type":"Answer","text":"Among the states in our table, Texas and Florida leave the most because they have no state income tax: a single officer earning $65,000 takes home about $54,408/year. Washington is close at about $54,031."}},{"@type":"Question","name":"Do police officers pay Social Security?","acceptedAnswer":{"@type":"Answer","text":"Most police officers do pay Social Security — FICA is 7.65% of gross salary. However, some departments (mainly in Ohio, Illinois, Massachusetts, and California) are exempt from Social Security and use pension-only systems."}},{"@type":"Question","name":"How do I calculate my police paycheck after taxes?","acceptedAnswer":{"@type":"Answer","text":"Start with gross salary plus overtime. Subtract federal income tax (10-22% bracket), FICA (7.65%), state income tax (0-9.3%), and pension contribution (8-12%). Use our free paycheck calculator for your exact result."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Police Officer Salary After Taxes 2026","item":"https://www.privatepaycheck.com/blog/police-officer-salary-after-taxes"}]}'
 
@@ -55,7 +55,7 @@ export default function Page() {
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A police officer earning $65,000 in 2026 takes home approximately $49,200 after federal tax, FICA, and state tax in Texas — about $4,100/month. In California the same salary yields $44,800 due to 9.3% state income tax. Pension contributions of 8-12% reduce net pay by an additional $430-$650/month.'}
+            {'A police officer earning $65,000 in 2026 takes home approximately $54,408 after federal tax, FICA, and state tax in Texas — about $4,534/month. In California the same salary yields $51,673 after state taxes (estimate). Pension contributions of 8-12% reduce net pay by roughly $380-$570/month.'}
           </p>
         </div>
 
@@ -63,10 +63,10 @@ export default function Page() {
         <div style={{background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
           <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'National average police salary is $67,600 in 2026 — take-home $49,200-$51,700'}</li>
-            <li>{'FICA is 7.65% — $5,172/year on $67,600 (some departments exempt from SS)'}</li>
+            <li>{'Example salary $65,000 (single filer) — take-home about $51,335-$54,408 by state'}</li>
+            <li>{'FICA is 7.65% — $4,973/year on $65,000 (some departments exempt from SS)'}</li>
             <li>{'Pension contributions (8-12%) are pre-tax — reduce taxable income but cut paycheck'}</li>
-            <li>{'TX/FL officers keep $3,000-$6,000/year more than CA due to zero state income tax'}</li>
+            <li>{'TX/FL officers keep about $2,735/year more than CA on a $65,000 salary due to zero state income tax'}</li>
             <li>{'Overtime is taxed as regular income at your marginal rate: 22% on taxable income above $50,400 and 24% above $105,700 (single, 2026)'}</li>
           </ul>
         </div>
@@ -98,7 +98,7 @@ export default function Page() {
             How Much Do Police Officers Take Home After Taxes by State?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'State income tax is the biggest variable in officer take-home pay. The table below uses $67,600 gross salary, single filer, standard federal deduction $16,100, and no pension. FICA (7.65%) applies in all rows.'}
+            {'State income tax is the biggest variable in officer take-home pay. The table below uses $65,000 gross salary, single filer, standard federal deduction $16,100, and no pension. FICA (7.65%) applies in all rows.'}
           </p>
 
           <div style={{overflowX:'auto', marginBottom:24}}>
@@ -113,13 +113,13 @@ export default function Page() {
               </thead>
               <tbody>
                 {[
-                  {state:'Texas', tax:'0%', annual:'$51,720', monthly:'$4,310'},
-                  {state:'Florida', tax:'0%', annual:'$51,720', monthly:'$4,310'},
-                  {state:'Washington', tax:'0%', annual:'$51,720', monthly:'$4,310'},
-                  {state:'Pennsylvania', tax:'3.07%', annual:'$49,640', monthly:'$4,137'},
-                  {state:'Illinois', tax:'4.95%', annual:'$48,380', monthly:'$4,032'},
-                  {state:'New York', tax:'6.85%', annual:'$46,510', monthly:'$3,876'},
-                  {state:'New Jersey', tax:'6.37%', annual:'$46,880', monthly:'$3,907'},
+                  {state:'Texas', tax:'$0', annual:'$54,408', monthly:'$4,534'},
+                  {state:'Florida', tax:'$0', annual:'$54,408', monthly:'$4,534'},
+                  {state:'Washington', tax:'$377', annual:'$54,031', monthly:'$4,503'},
+                  {state:'Pennsylvania', tax:'$1,996', annual:'$52,412', monthly:'$4,368'},
+                  {state:'Illinois', tax:'$3,073', annual:'$51,335', monthly:'$4,278'},
+                  {state:'New York', tax:'$2,944', annual:'$51,463', monthly:'$4,289'},
+                  {state:'New Jersey', tax:'$2,045', annual:'$52,363', monthly:'$4,364'},
                 ].map((row, i) => (
                   <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)', fontWeight:600}}>{row.state}</td>
@@ -130,9 +130,9 @@ export default function Page() {
                 ))}
                 <tr style={{background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#F5C842', fontWeight:700}}>California</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>9.30%</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$44,420'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$3,702'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>$2,735</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$51,673'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$4,306'}</td>
                 </tr>
               </tbody>
             </table>
@@ -166,7 +166,7 @@ export default function Page() {
               <tbody>
                 {[
                   {item:'Gross Salary', rate:'—', amt:'$65,000'},
-                  {item:'Federal Income Tax', rate:'10-22%', amt:'−$6,658'},
+                  {item:'Federal Income Tax', rate:'10-12%', amt:'−$5,620'},
                   {item:'Social Security (FICA)', rate:'6.20%', amt:'−$4,030'},
                   {item:'Medicare (FICA)', rate:'1.45%', amt:'−$943'},
                   {item:'State Income Tax (TX)', rate:'0%', amt:'$0'},
@@ -179,8 +179,8 @@ export default function Page() {
                 ))}
                 <tr style={{background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#F5C842', fontWeight:700}}>Net Take-Home</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'~18.0%'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$53,369 / $4,447/mo'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'~16.3%'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$54,408 / $4,534/mo'}</td>
                 </tr>
               </tbody>
             </table>
@@ -203,21 +203,21 @@ export default function Page() {
             How Does Overtime Affect Police Officer Taxes in 2026?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'Overtime pay is taxed as ordinary income — there is no separate overtime tax rate. However, overtime pushes total compensation into higher tax brackets. A base salary of $65,000 sits in the 22% bracket. Adding $15,000 in overtime brings total gross to $80,000 — still 22%, but approaching the 24% threshold at $105,700.'}
+            {'Overtime pay is taxed as ordinary income — there is no separate overtime tax rate. However, overtime pushes total compensation into higher tax brackets. A base salary of $65,000 leaves $48,900 of taxable income, which sits in the 12% bracket; the 22% bracket starts at $50,400 of taxable income, so only the first $1,500 or so of overtime is taxed at 12%. Adding $15,000 in overtime brings total gross to $80,000, and the overtime above that point is taxed at 22%; the 24% bracket starts at $105,700 of taxable income (about $121,800 gross).'}
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'Base $65,000 + $10,000 OT = $75,000 gross — federal tax increases by ~$2,200'}</li>
-            <li>{'Base $65,000 + $20,000 OT = $85,000 gross — federal tax increases by ~$4,400'}</li>
-            <li>{'Overtime deduction 2026: up to $12,500 for single / $25,000 MFJ — may apply'}</li>
+            <li>{'Base $65,000 + $10,000 OT = $75,000 gross — federal tax increases by ~$2,050'}</li>
+            <li>{'Base $65,000 + $20,000 OT = $85,000 gross — federal tax increases by ~$4,250'}</li>
+            <li>{'Overtime deduction 2026: up to $12,500 single / $25,000 joint, only on the premium part (the half in time-and-a-half) of FLSA-required overtime, phasing out above $150,000 income — may apply'}</li>
             <li>{'FICA on overtime: same 7.65% rate applies — no exemption for overtime hours'}</li>
           </ul>
 
           {/* INFORMATION GAIN */}
           <div style={{background:'rgba(245,200,66,0.05)', border:'1px solid rgba(245,200,66,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
-            <div style={{fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
+            <div style={{fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13}}>Worked example (estimate)</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'The 2026 overtime tax deduction (up to $12,500 single) was introduced for hourly workers. Police officers earning overtime may qualify — consult a tax professional. If it applies, a Texas officer earning $15,000 in OT could deduct $12,500, saving approximately $2,750 in federal tax.'}
+              {'The 2026 qualified-overtime deduction (up to $12,500 single) covers only the premium part of overtime that the Fair Labor Standards Act requires, and it phases out above $150,000 of income. Whether overtime for police officers qualifies depends on how it is paid, so consult a tax professional. Example: $15,000 of overtime paid at time-and-a-half includes about $5,000 of premium; if all of it qualified, a single filer in the 22% bracket would save roughly $1,100 in federal tax.'}
             </p>
           </div>
         </section>
@@ -249,19 +249,19 @@ export default function Page() {
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Subtract pension contribution.'}</strong>
-              {' Example: $67,600 × 9% = $6,084 withheld pre-tax. Adjusted gross = $61,516.'}
+              {' Example: $65,000 × 9% = $5,850 withheld pre-tax. Adjusted gross = $59,150.'}
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Apply standard deduction.'}</strong>
-              {' $61,516 − $16,100 = $45,416 taxable income.'}
+              {' $59,150 − $16,100 = $43,050 taxable income.'}
             </li>
             <li style={{marginBottom:8}}>
               <strong style={{color:'#e8edf8'}}>{'Calculate federal tax.'}</strong>
-              {' 10% on first $12,400 + 12% on next $33,016 = $1,240 + $3,962 = $5,202.'}
+              {' 10% on first $12,400 + 12% on next $30,650 = $1,240 + $3,678 = $4,918.'}
             </li>
             <li>
               <strong style={{color:'#e8edf8'}}>{'Subtract FICA.'}</strong>
-              {' $67,600 × 7.65% = $5,172 (or less if exempt from SS). Net take-home = $51,132.'}
+              {' $65,000 × 7.65% = $4,973 (or less if exempt from SS). Net take-home = $49,259 (Texas, no state tax).'}
             </li>
           </ol>
         </section>
@@ -297,23 +297,23 @@ export default function Page() {
           {[
             {
               q:'How much does a police officer take home after taxes in 2026?',
-              a:'A police officer earning $65,000 takes home $49,200 in Texas, $47,100 in Illinois, and $44,800 in California — before pension contributions of 8-12% which reduce net pay further.'
+              a:'A police officer earning $65,000 takes home $54,408 in Texas, $51,335 in Illinois, and $51,673 in California — before pension contributions of 8-12% which reduce net pay further.'
             },
             {
               q:'What is the average police officer salary in 2026?',
-              a:'The national average is approximately $67,600. Ranges from $45,000 in rural departments to $100,000+ for NYPD with overtime. The median patrol officer earns $58,000-$72,000.'
+              a:'Police pay varies widely by department, state, and overtime. This guide uses a $65,000 example salary; check your own department pay scale for exact figures.'
             },
             {
               q:'How much do police officers pay into pensions?',
-              a:'Most departments require 8-12% employee contributions. On $67,600 salary, that is $5,408-$8,112/year withheld. These are pre-tax in most states — they lower your taxable income but reduce your paycheck.'
+              a:'Most departments require 8-12% employee contributions. On a $65,000 salary, that is $5,200-$7,800/year withheld. These are pre-tax in most states — they lower your taxable income but reduce your paycheck.'
             },
             {
               q:'Does police overtime get taxed at a higher rate?',
-              a:'No — there is no separate overtime tax rate. Overtime is taxed as regular income. However, it pushes total earnings into higher brackets. The 2026 overtime deduction (up to $12,500 single) may apply for eligible officers.'
+              a:'No — there is no separate overtime tax rate. Overtime is taxed as regular income. However, it pushes total earnings into higher brackets. The 2026 overtime deduction (up to $12,500 single, on the premium part of FLSA-required overtime only) may apply for eligible officers.'
             },
             {
               q:'Which state pays police officers the most after taxes?',
-              a:'Washington state — no income tax plus average police salary above $75,000. Take-home is approximately $57,500/year. Texas and Florida rank second and third with zero state income tax.'
+              a:'Among the states in our table, Texas and Florida leave the most because they have no state income tax: a single officer earning $65,000 takes home about $54,408/year. Washington is close at about $54,031.'
             },
             {
               q:'Do police officers pay Social Security in 2026?',
