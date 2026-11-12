@@ -2,32 +2,32 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 export const metadata: Metadata = {
   title: 'Electrician Salary After Taxes 2026 — Take-Home Pay by State',
-  description: 'How much do electricians take home after taxes in 2026? Average electrician salary $65,000. See net pay for all states.',
+  description: 'How much do electricians take home after taxes in 2026? Example: $65,000 salary, single filer. See net pay for all states.',
   keywords: 'electrician salary after taxes 2026, electrician take home pay, electrician paycheck calculator, journeyman electrician salary net',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/electrician-salary-after-taxes' },
 }
 export default function Page() {
   const rows: string[][] = [
-    ['Texas','None','$49,716','$23.90'],
-    ['Florida','None','$49,716','$23.90'],
-    ['California','9.30%','$44,460','$21.37'],
-    ['New York','6.85%','$46,344','$22.28'],
-    ['Illinois','4.95%','$47,484','$22.83'],
-    ['Washington','None','$49,716','$23.90'],
-    ['Pennsylvania','3.07%','$48,552','$23.34'],
+    ['Texas','None','$54,408','$26.16'],
+    ['Florida','None','$54,408','$26.16'],
+    ['California','9.30%','$51,673','$24.84'],
+    ['New York','6.85%','$51,463','$24.74'],
+    ['Illinois','4.95%','$51,335','$24.68'],
+    ['Washington','None','$54,031','$25.98'],
+    ['Pennsylvania','3.07%','$52,412','$25.20'],
   ]
   return (
     <>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', fontFamily: 'system-ui,sans-serif' }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do electricians take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"An electrician earning $65,000/year takes home approximately $49,716 in Texas, $47,484 in Illinois, and $44,460 in California after all taxes."}},{"@type":"Question","name":"What is the average electrician salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national average electrician salary is $65,000–$75,000 in 2026. Journeyman electricians in union markets like New York or California can earn $90,000–$120,000 including benefits."}},{"@type":"Question","name":"Do electricians pay more taxes as self-employed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-employed electricians pay 15.3% SE tax on net profit plus income tax. However, they can deduct tools, vehicle mileage, home office, and other business expenses."}}]}) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do electricians take home after taxes?","acceptedAnswer":{"@type":"Answer","text":"An electrician earning $65,000/year takes home approximately $54,408 in Texas, $51,335 in Illinois, and $51,673 in California after federal tax, FICA and state income tax (single filer, no 401(k), estimate)."}},{"@type":"Question","name":"What is the average electrician salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national average electrician salary is $65,000–$75,000 in 2026. Journeyman electricians in union markets like New York or California can earn $90,000–$120,000 including benefits."}},{"@type":"Question","name":"Do electricians pay more taxes as self-employed?","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-employed electricians pay 15.3% SE tax on net profit plus income tax. However, they can deduct tools, vehicle mileage, home office, and other business expenses."}}]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Electrician Salary After Taxes 2026 — Take-Home Pay by State","item":"https://www.privatepaycheck.com/blog/electrician-salary-after-taxes"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Electrician Salary After Taxes 2026 — Take-Home Pay by State","description":"How much do electricians take home after taxes in 2026? Average electrician salary $65,000. See net pay for all states.","url":"https://www.privatepaycheck.com/blog/electrician-salary-after-taxes","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Electrician Salary After Taxes 2026 — Take-Home Pay by State","description":"How much do electricians take home after taxes in 2026? Example: $65,000 salary, single filer. See net pay for all states.","url":"https://www.privatepaycheck.com/blog/electrician-salary-after-taxes","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"reviewedBy":{"@type":"Organization","name":"the PrivatePaycheck Team","url":"https://www.privatepaycheck.com"},"publisher":{"@type":"Organization","name":"PrivatePaycheck","url":"https://www.privatepaycheck.com"}}' }} />
       <nav style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 24 }}><a href="/" style={{ color: '#9aa3bc' }}>Home</a> › <a href="/blog" style={{ color: '#9aa3bc' }}>Blog</a> › Electrician Salary After Taxes</nav>
       <h1 style={{ fontSize: 34, fontWeight: 900, marginBottom: 8 }}>Electrician Salary After Taxes 2026</h1>
       <p style={{ fontSize: 13, color: '#9aa3bc', marginBottom: 20 }}>By the PrivatePaycheck Team · Updated May 2026 · ~5 min read</p>
       <div className="answer-first" style={{ background: 'rgba(245,200,66,0.08)', border: '1px solid rgba(245,200,66,0.25)', borderRadius: '10px', padding: '16px 20px', marginBottom: '24px' }}>
         <p style={{ margin: 0, fontSize: '15px', lineHeight: 1.75, color: '#e8edf8' }}>
-          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Electrician salary after taxes in 2026: median gross ~$61,000/year. Take-home = <strong style={{color:"#fff"}}>$46,400–$49,200/year</strong> ($3,867–$4,100/month). Journeyman electricians in TX keep ~$3,200 more/year than CA due to no state income tax.
+          <strong style={{ color: '#F5C842' }}>Quick answer:</strong> Electrician salary after taxes in 2026: on a $65,000 salary (single filer, no 401(k)), take-home is about <strong style={{color:"#fff"}}>$51,335–$54,408/year</strong> ($4,278–$4,534/month) depending on state. A Texas electrician keeps about $2,735 more per year than a California one because Texas has no state income tax.
         </p>
       </div>
       <div style={{ background: '#0f1a3a', border: '1px solid #2a3a6a', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
@@ -41,7 +41,7 @@ export default function Page() {
           <li>Use the free calculator above for your exact state + filing status breakdown</li>
         </ul>
       </div>
-      <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>The average electrician earns <strong>$65,000/year</strong> in 2026. After taxes, take-home is <strong>$44,460–$49,716</strong> by state.</p>
+      <p style={{ fontSize: 17, color: '#c8d0e7', marginBottom: 32 }}>Example: an electrician earning <strong>$65,000/year</strong> in 2026 (single filer, no 401(k)). After taxes, take-home is about <strong>$51,335–$54,408</strong> by state.</p>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead><tr style={{ background: '#1a2550' }}>
           <th style={{ padding: '10px 14px', textAlign: 'left' }}>State</th>
