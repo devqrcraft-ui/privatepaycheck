@@ -2,17 +2,17 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Firefighter Salary After Taxes 2026: $56K = $43,200 Take-Home',
-  description: 'A firefighter earning $56,800 in 2026 takes home $43,200-$46,400 after taxes. State-by-state breakdown, overtime impact, and free paycheck calculator.',
+  title: 'Firefighter Salary After Taxes 2026: $56.8K = $47,819 Take-Home',
+  description: 'A firefighter earning $56,800 in 2026 takes home $45,152-$47,819 after taxes. State-by-state breakdown, overtime impact, and free paycheck calculator.',
   alternates: { canonical: 'https://www.privatepaycheck.com/blog/firefighter-salary-after-taxes' },
   openGraph: {
-    title: 'Firefighter Salary After Taxes 2026: $56K = $43,200 Take-Home',
+    title: 'Firefighter Salary After Taxes 2026: $56.8K = $47,819 Take-Home',
     description: 'See your real firefighter take-home pay after federal, state, and FICA deductions. All 50 states.',
     type: 'article',
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a firefighter take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A firefighter earning $56,800 (national median) takes home approximately $43,200 in Texas, $41,800 in Illinois, and $38,600 in California after federal tax, FICA, and state income tax. Monthly that is $3,600, $3,483, and $3,217 respectively."}},{"@type":"Question","name":"What is the average firefighter salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national median firefighter salary is approximately $56,800 in 2026 according to BLS data. Senior firefighters and lieutenants earn $65,000-$90,000. Firefighters in California and New York average $80,000-$105,000 due to higher cost-of-living adjustments."}},{"@type":"Question","name":"How is firefighter overtime taxed in 2026?","acceptedAnswer":{"@type":"Answer","text":"Firefighter overtime is taxed as ordinary income — the same rate as regular pay. On a $56,800 base salary, overtime hours at 1.5x rate are taxed at your marginal bracket (22% federal for most firefighters). A $10,000 overtime year nets approximately $6,800 after federal and FICA taxes."}},{"@type":"Question","name":"Do firefighters pay into Social Security in 2026?","acceptedAnswer":{"@type":"Answer","text":"Most firefighters pay into Social Security (6.2% of wages up to $184,500). However, some states — including Massachusetts, Ohio, and Louisiana — have alternative pension systems where firefighters do not pay Social Security, reducing FICA withholding to only 1.45% Medicare."}},{"@type":"Question","name":"Which state pays firefighters the most after taxes?","acceptedAnswer":{"@type":"Answer","text":"Texas offers strong after-tax pay — average firefighter salary $58,000 with zero state income tax. Take-home is approximately $44,200/year. Washington and Nevada also rank high with no state income tax and above-average firefighter salaries."}},{"@type":"Question","name":"How do pension contributions affect firefighter take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Most firefighter pension plans require 8-12% employee contributions. On $56,800, a 10% contribution withholds $5,680/year pre-tax. This reduces taxable income but cuts monthly take-home. The pre-tax treatment saves approximately $680-$1,250 in federal tax depending on bracket."}},{"@type":"Question","name":"How do I calculate my firefighter take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Start with gross annual salary. Subtract federal income tax (using your bracket and the $16,100 standard deduction for single filers), FICA (7.65% or 1.45% if exempt from SS), state income tax (0-9.3%), and pension contributions (8-12%). Use our free paycheck calculator for an exact monthly result."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a firefighter take home after taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"A firefighter earning $56,800 (national median) takes home approximately $47,819 in Texas, $45,152 in Illinois, and $45,683 in California after federal tax, FICA, and state income tax. Monthly that is $3,985, $3,763, and $3,807 respectively."}},{"@type":"Question","name":"What is the average firefighter salary in 2026?","acceptedAnswer":{"@type":"Answer","text":"The national median firefighter salary is approximately $56,800 in 2026 according to BLS data. Senior firefighters and lieutenants earn $65,000-$90,000. Firefighters in California and New York average $80,000-$105,000 due to higher cost-of-living adjustments."}},{"@type":"Question","name":"How is firefighter overtime taxed in 2026?","acceptedAnswer":{"@type":"Answer","text":"Firefighter overtime is taxed as ordinary income — the same rate as regular pay. On a $56,800 base salary, overtime hours at 1.5x rate are taxed at your marginal bracket (12% federal on roughly the first $9,700 of extra pay, 22% above that for a single filer on this salary). A $10,000 overtime year in Texas nets approximately $8,005 after federal and FICA taxes."}},{"@type":"Question","name":"Do firefighters pay into Social Security in 2026?","acceptedAnswer":{"@type":"Answer","text":"Most firefighters pay into Social Security (6.2% of wages up to $184,500). However, some states — including Massachusetts, Ohio, and Louisiana — have alternative pension systems where firefighters do not pay Social Security, reducing FICA withholding to only 1.45% Medicare."}},{"@type":"Question","name":"Which state pays firefighters the most after taxes?","acceptedAnswer":{"@type":"Answer","text":"Among the states in our table, Texas, Florida and Nevada leave the most because they have no state income tax: a single firefighter earning $56,800 takes home about $47,819/year. Washington is close at about $47,489."}},{"@type":"Question","name":"How do pension contributions affect firefighter take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Most firefighter pension plans require 8-12% employee contributions. On $56,800, a 10% contribution withholds $5,680/year pre-tax. This reduces taxable income but cuts monthly take-home. The pre-tax treatment saves approximately $680-$1,250 in federal tax depending on bracket."}},{"@type":"Question","name":"How do I calculate my firefighter take-home pay?","acceptedAnswer":{"@type":"Answer","text":"Start with gross annual salary. Subtract federal income tax (using your bracket and the $16,100 standard deduction for single filers), FICA (7.65% or 1.45% if exempt from SS), state income tax (0-9.3%), and pension contributions (8-12%). Use our free paycheck calculator for an exact monthly result."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.privatepaycheck.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.privatepaycheck.com/blog"},{"@type":"ListItem","position":3,"name":"Firefighter Salary After Taxes 2026","item":"https://www.privatepaycheck.com/blog/firefighter-salary-after-taxes"}]}'
 
@@ -55,7 +55,7 @@ export default function Page() {
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A firefighter earning $56,800 in 2026 takes home approximately $43,200 after federal tax and FICA — about $3,600/month in Texas. In California, state income tax and SDI drop that to $38,600 ($3,217/month). Pension contributions of 8-12% reduce net pay further but are pre-tax, lowering your taxable income.'}
+            {'A firefighter earning $56,800 in 2026 takes home approximately $47,819 after federal tax and FICA — about $3,985/month in Texas. In California, state income tax and SDI drop that to $45,683 ($3,807/month). Pension contributions of 8-12% reduce net pay further but are pre-tax, lowering your taxable income.'}
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function Page() {
         <div style={{background:'rgba(245,200,66,0.08)', border:'1px solid rgba(245,200,66,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
           <div style={{fontWeight:800, color:'#F5C842', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'National median firefighter salary is $56,800 in 2026 — take-home $38,600-$46,400 by state'}</li>
+            <li>{'National median firefighter salary is $56,800 in 2026 — take-home $45,152-$47,819 by state'}</li>
             <li>{'FICA tax is 7.65% of gross — $4,345/year on $56,800 salary'}</li>
             <li>{'No-income-tax states (TX, FL, WA) save firefighters $2,000-$5,000/year vs California'}</li>
             <li>{'Some states exempt firefighters from Social Security — cutting FICA to just 1.45%'}</li>
@@ -113,14 +113,14 @@ export default function Page() {
               </thead>
               <tbody>
                 {[
-                  {state:'Texas', tax:'0%', annual:'$46,400', monthly:'$3,867'},
-                  {state:'Florida', tax:'0%', annual:'$46,400', monthly:'$3,867'},
-                  {state:'Washington', tax:'0%', annual:'$46,400', monthly:'$3,867'},
-                  {state:'Nevada', tax:'0%', annual:'$46,400', monthly:'$3,867'},
-                  {state:'Pennsylvania', tax:'3.07%', annual:'$44,656', monthly:'$3,721'},
-                  {state:'Illinois', tax:'4.95%', annual:'$43,588', monthly:'$3,632'},
-                  {state:'New York', tax:'6.85%', annual:'$42,508', monthly:'$3,542'},
-                  {state:'New Jersey', tax:'6.37%', annual:'$42,780', monthly:'$3,565'},
+                  {state:'Texas', tax:'$0', annual:'$47,819', monthly:'$3,985'},
+                  {state:'Florida', tax:'$0', annual:'$47,819', monthly:'$3,985'},
+                  {state:'Washington', tax:'$329', annual:'$47,489', monthly:'$3,957'},
+                  {state:'Nevada', tax:'$0', annual:'$47,819', monthly:'$3,985'},
+                  {state:'Pennsylvania', tax:'$1,744', annual:'$46,075', monthly:'$3,840'},
+                  {state:'Illinois', tax:'$2,667', annual:'$45,152', monthly:'$3,763'},
+                  {state:'New York', tax:'$2,501', annual:'$45,317', monthly:'$3,776'},
+                  {state:'New Jersey', tax:'$1,591', annual:'$46,228', monthly:'$3,852'},
                 ].map((row, i) => (
                   <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)', fontWeight:600}}>{row.state}</td>
@@ -131,9 +131,9 @@ export default function Page() {
                 ))}
                 <tr style={{background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#F5C842', fontWeight:700}}>California</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'9.3% + 1.3% SDI'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$38,600'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$3,217'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$2,136'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$45,683'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$3,807'}</td>
                 </tr>
               </tbody>
             </table>
@@ -167,7 +167,7 @@ export default function Page() {
               <tbody>
                 {[
                   {item:'Gross Salary', rate:'—', amt:'$56,800'},
-                  {item:'Federal Income Tax', rate:'10-12%', amt:'−$4,674'},
+                  {item:'Federal Income Tax', rate:'10-12%', amt:'−$4,636'},
                   {item:'Social Security (FICA)', rate:'6.20%', amt:'−$3,522'},
                   {item:'Medicare (FICA)', rate:'1.45%', amt:'−$824'},
                   {item:'State Income Tax (TX)', rate:'0%', amt:'$0'},
@@ -180,8 +180,8 @@ export default function Page() {
                 ))}
                 <tr style={{background:'rgba(245,200,66,0.08)', borderTop:'1px solid rgba(245,200,66,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#F5C842', fontWeight:700}}>Net Take-Home</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'~18.4%'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$47,780 / $3,982/mo'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'~15.8%'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#F5C842', fontWeight:700}}>{'$47,819 / $3,985/mo'}</td>
                 </tr>
               </tbody>
             </table>
@@ -208,17 +208,17 @@ export default function Page() {
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'$5,000 overtime gross → $3,240 net after 22% federal + 7.65% FICA (Texas)'}</li>
-            <li>{'$10,000 overtime gross → $6,480 net after 22% federal + 7.65% FICA (Texas)'}</li>
-            <li>{'$10,000 overtime gross → $5,760 net in California (add 9.3% + 1.3% SDI)'}</li>
+            <li>{'$5,000 overtime gross → about $4,018 net after 12% federal + 7.65% FICA (Texas)'}</li>
+            <li>{'$10,000 overtime gross → about $8,005 net after 12%/22% federal + 7.65% FICA (Texas)'}</li>
+            <li>{'$10,000 overtime gross → about $7,243 net in California (federal, FICA, state income tax and SDI)'}</li>
             <li>{'FLSA Section 7(k) exemption: fire departments can use 28-day work period for OT threshold'}</li>
           </ul>
 
           {/* INFORMATION GAIN */}
           <div style={{background:'rgba(245,200,66,0.05)', border:'1px solid rgba(245,200,66,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
-            <div style={{fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
+            <div style={{fontWeight:800, color:'#F5C842', marginBottom:8, fontSize:13}}>Worked example (estimate)</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'A Texas firefighter earning $56,800 base plus $12,000 overtime takes home $55,800/year total. The same firefighter in California earns $56,800 base plus $12,000 overtime but takes home only $49,200 — a $6,600 annual difference entirely due to state income tax and SDI on the same gross pay.'}
+              {'A Texas firefighter earning $56,800 base plus $12,000 overtime takes home about $57,231/year total (single filer, estimate). The same firefighter in California earns $56,800 base plus $12,000 overtime but takes home about $54,147 — a difference of about $3,084 a year from state income tax and SDI on the same gross pay.'}
             </p>
           </div>
         </section>
@@ -302,7 +302,7 @@ export default function Page() {
           {[
             {
               q:'How much does a firefighter take home after taxes in 2026?',
-              a:'A firefighter earning $56,800 takes home approximately $46,400 in Texas, $43,600 in Illinois, and $38,600 in California after federal tax, FICA, and state income tax. Monthly that is $3,867, $3,633, and $3,217 respectively.'
+              a:'A firefighter earning $56,800 takes home approximately $47,819 in Texas, $45,152 in Illinois, and $45,683 in California after federal tax, FICA, and state income tax. Monthly that is $3,985, $3,763, and $3,807 respectively.'
             },
             {
               q:'What is the average firefighter salary in 2026?',
@@ -310,11 +310,11 @@ export default function Page() {
             },
             {
               q:'Which state pays firefighters the most after taxes?',
-              a:'Texas offers strong after-tax pay — average salary $58,000 with zero state income tax. Take-home is approximately $47,200/year. Washington and Nevada also rank high with no state income tax and above-average fire department salaries.'
+              a:'Among the states in our table, Texas, Florida and Nevada leave the most because they have no state income tax: a single firefighter earning $56,800 takes home about $47,819/year. Washington is close at about $47,489.'
             },
             {
               q:'How is firefighter overtime taxed in 2026?',
-              a:'Overtime is taxed as ordinary income at your marginal bracket — 22% federal for most firefighters on $56,800 base. A $10,000 overtime year nets approximately $6,480 after 22% federal and 7.65% FICA in Texas, or $5,760 in California.'
+              a:'Overtime is taxed as ordinary income at your marginal bracket. For a single filer on a $56,800 base, the first roughly $9,700 of extra pay is taxed at 12% federal and the rest at 22%. A $10,000 overtime year nets approximately $8,005 after federal tax and 7.65% FICA in Texas, or about $7,243 in California.'
             },
             {
               q:'Do firefighters pay into Social Security in 2026?',
