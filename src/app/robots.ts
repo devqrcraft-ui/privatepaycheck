@@ -7,12 +7,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
         disallow: [
-          '/_next/static/',
-          '/_next/image/',
           '/api/',
-          '/*.js$',
-          '/*.css$',
-          '/*.woff2$',
           '/hr',
           '/week',
           '/tip-calculator/methodology',
@@ -20,7 +15,6 @@ export default function robots(): MetadataRoute.Robots {
           '/bonus-tax-calculator/methodology',
           '/hourly-paycheck-calculator/methodology',
           '/minimum-wage/methodology',
-          '/sitemap.xml',
         ],
       },
       {
