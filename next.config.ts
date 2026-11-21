@@ -67,8 +67,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/texas-paycheck-calculator-guide',
+        destination: '/blog/texas-paycheck-calculator-guide',
+        permanent: true,
+      },
+      {
         source: '/blog/:state((?!nurse-).*)-paycheck-calculator',
-        destination: '/blog',
+        destination: '/:state-paycheck-calculator',
         permanent: true,
       },
       {
