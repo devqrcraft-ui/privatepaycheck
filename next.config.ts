@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/:state(wisconsin|colorado|wyoming|indiana|nebraska|washington|tennessee|ohio|alaska)',
-        destination: '/all-states',
+        destination: '/:state-paycheck-calculator',
         permanent: true,
       },
       {
