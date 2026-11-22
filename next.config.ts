@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/bonus-calculator/:state',
-        destination: '/bonus-tax-calculator',
+        destination: '/bonus-tax-calculator/:state',
         permanent: true,
       },
       {
