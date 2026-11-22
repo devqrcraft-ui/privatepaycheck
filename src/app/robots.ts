@@ -32,6 +32,7 @@ export default function robots(): MetadataRoute.Robots {
           'YouBot',
         ],
         allow: '/',
+        disallow: '/api/',
       },
     ],
     sitemap: 'https://www.privatepaycheck.com/sitemap.xml',
