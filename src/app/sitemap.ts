@@ -88,11 +88,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updatedByAudit = new Date('2026-11-06T00:00:00Z');
 
   return [
-      { url: `https://www.privatepaycheck.com/compare-states-taxes`, lastModified: new Date( ) },
-      { url: `https://www.privatepaycheck.com/housekeeper`, lastModified: new Date( ) },
-      { url: `https://www.privatepaycheck.com/nanny`, lastModified: new Date( ) },
-      { url: `https://www.privatepaycheck.com/housekeeper-tax-guide`, lastModified: new Date( ) },
-      { url: `https://www.privatepaycheck.com/nanny-tax-guide`, lastModified: new Date( ) },
+      { url: `https://www.privatepaycheck.com/compare-states-taxes`, lastModified: new Date('2026-08-21T00:00:00Z') },
+      { url: `https://www.privatepaycheck.com/housekeeper`, lastModified: new Date('2026-08-25T00:00:00Z') },
+      { url: `https://www.privatepaycheck.com/nanny`, lastModified: new Date('2026-08-25T00:00:00Z') },
+      { url: `https://www.privatepaycheck.com/housekeeper-tax-guide`, lastModified: new Date('2026-08-25T00:00:00Z') },
+      { url: `https://www.privatepaycheck.com/nanny-tax-guide`, lastModified: new Date('2026-08-25T00:00:00Z') },
     { url: BASE_URL,                                      lastModified: updatedByAudit, changeFrequency: 'weekly',  priority: 1.0 },
     { url: `${BASE_URL}/all-states`,                      lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/bonus-tax-calculator`,            lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
